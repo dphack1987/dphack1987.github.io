@@ -4,15 +4,23 @@ def update_html_files():
     root_dir = os.getcwd()
     # Use absolute path for GitHub Pages root
     css_link = '<link rel="stylesheet" href="/assets/css/wix-menu.css">'
-    home_path = os.path.join(root_dir, 'home.html')
-    with open(home_path, 'r', encoding='utf-8') as hf:
-        home_content = hf.read()
-    h_start = home_content.find('<header>')
-    h_end = home_content.find('</header>')
-    home_header = ''
-    if h_start != -1 and h_end != -1:
-        home_header = home_content[h_start:h_end+len('</header>')]
-        home_header = home_header.replace('href="./', 'href="/')
+    home_marker = 'Mapa Turístico del Quindío'
+
+    def remove_home_header(block: str) -> str:
+        pos = block.find('<header')
+        changed = False
+        while pos != -1:
+            end = block.find('</header>', pos)
+            if end == -1:
+                break
+            segment = block[pos:end+len('</header>')]
+            if home_marker in segment:
+                block = block.replace(segment, '')
+                changed = True
+                pos = block.find('<header')
+            else:
+                pos = block.find('<header', end)
+        return block
     
     count = 0
     # Walk through all files in the directory and subdirectories
@@ -24,6 +32,10 @@ def update_html_files():
                 try:
                     with open(file_path, 'r', encoding='utf-8') as f:
                         content = f.read()
+
+                    # Remove any previously injected Home header to restore original Wix header
+                    if home_marker in content and '<header' in content:
+                        content = remove_home_header(content)
                     
                     # Check if the link already exists (checking both relative and absolute)
                     if 'assets/css/wix-menu.css' in content:
@@ -44,16 +56,6 @@ def update_html_files():
                     # Insert the link before the closing head tag
                     if '</head>' in content and '"/assets/css/wix-menu.css"' not in content:
                         content = content.replace('</head>', f'  {css_link}\n</head>')
-                    
-                    # Inject Home header HTML right after the opening body tag if not present
-                    if home_header and '<header>' not in content:
-                        if '<body>' in content:
-                            content = content.replace('<body>', '<body>\n' + home_header + '\n', 1)
-                        elif '<body ' in content:
-                            start = content.find('<body ')
-                            end = content.find('>', start)
-                            if start != -1 and end != -1:
-                                content = content[:end+1] + '\n' + home_header + '\n' + content[end+1:]
                     
                     with open(file_path, 'w', encoding='utf-8') as f:
                         f.write(content)
