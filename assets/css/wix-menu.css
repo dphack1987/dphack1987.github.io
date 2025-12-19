@@ -2,19 +2,18 @@
    CUSTOM MENU OVERRIDES - ADDED BY TRAE
    ========================================== */
 
-/* 1. Force the Site Header to allow overflow */
+/* 1. Force the Site Header to allow overflow - KEEP ORIGINAL SIZE */
 #SITE_HEADER {
     overflow: visible !important;
-    height: auto !important;
-    min-height: 80px !important;
+    /* Removed height overrides to restore original appearance */
     z-index: 99999 !important;
 }
 
-/* 2. Target the specific container that usually clips content in Wix */
+/* 2. Target the specific container that usually clips content */
 [data-mesh-id="SITE_HEADERinlineContent"],
 [data-mesh-id="SITE_HEADERinlineContent-gridContainer"] {
     overflow: visible !important;
-    height: auto !important;
+    /* Removed height overrides */
 }
 
 /* 3. Reset the Menu Container */
@@ -22,37 +21,52 @@
     overflow: visible !important;
 }
 
-/* 4. Fix for specific Wix menu items being cut off */
+/* 4. Fix for cut-off items */
 .wixui-dropdown-menu__submenu {
     z-index: 100000 !important;
 }
 
-/* 5. General reset for containers that might clip */
+/* 5. General overflow reset */
 #site-root {
-    overflow-x: hidden; /* Keep horizontal scroll hidden if needed */
-    overflow-y: visible !important; /* Allow vertical expansion */
+    overflow-x: hidden;
+    overflow-y: visible !important;
 }
-
 #masterPage {
     overflow: visible !important;
 }
 
-/* 6. Ensure Dropdowns are on top */
+/* 6. Z-index fixes */
 .wixui-dropdown-menu,
 .wixui-horizontal-menu,
 .wixui-mobile-menu {
     z-index: 9999 !important;
 }
 
-/* 7. Mobile adjustments */
+/* 7. VISIBILITY IMPROVEMENTS (Typography) */
+/* Make text more visible (bold) without increasing size */
+.wixui-dropdown-menu__item-label, 
+.wixui-horizontal-menu__item-label,
+.wixui-dropdown-menu a,
+.wixui-horizontal-menu a {
+    font-weight: 700 !important; /* Bold for better visibility */
+    opacity: 1 !important;
+    text-shadow: 0 0 1px rgba(0,0,0,0.2); /* Slight contrast boost */
+}
+
+/* Optional: Ensure color is visible if background is light */
+.wixui-dropdown-menu__item-label, 
+.wixui-horizontal-menu__item-label {
+    color: #000000 !important; /* Force black for maximum contrast if needed, or remove if user wants theme color */
+}
+
+/* 8. Mobile adjustments */
 @media screen and (max-width: 768px) {
     #SITE_HEADER {
         position: relative !important;
     }
-    
     .wixui-dropdown-menu {
         display: flex !important;
         flex-wrap: wrap !important;
-        height: auto !important;
+        /* Allow wrap but rely on overflow:visible for height */
     }
 }
