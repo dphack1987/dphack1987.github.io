@@ -4,6 +4,20 @@ def update_html_files():
     root_dir = os.getcwd()
     # Use absolute path for GitHub Pages root
     css_link = '<link rel="stylesheet" href="/assets/css/wix-menu.css">'
+    global_header = (
+        '<div class="global-header">'
+        '<h1>Mapa Turístico del Quindío</h1>'
+        '<p>Plataforma turística del Quindío unificada para el Eje Cafetero</p>'
+        '<nav class="global-nav">'
+        '<a href="/mapa-circasia-digital/">Mapa Circasia Digital</a>'
+        '<a href="/mapa-del-quinío.html">Mapa del Quindío</a>'
+        '<a href="/municipios-del-quindío.html">Municipios</a>'
+        '<a href="/sitios-turisticos.html">Sitios Turísticos</a>'
+        '<a href="/alojamientos.html">Alojamientos</a>'
+        '<a href="/parqué-del-café.html">Parque del Café</a>'
+        '</nav>'
+        '</div>'
+    )
     
     count = 0
     # Walk through all files in the directory and subdirectories
@@ -25,7 +39,7 @@ def update_html_files():
                         # Simplest: if it has EXACTLY '/assets/css/wix-menu.css', skip.
                         if '"/assets/css/wix-menu.css"' in content:
                             # print(f"Skipping {filename}: Already has correct absolute CSS link")
-                            continue
+                            pass
                         else:
                             # It might have the relative one 'assets/css/...'. 
                             # Let's replace the relative one with absolute if found, or just add absolute.
@@ -33,16 +47,26 @@ def update_html_files():
                             content = content.replace('<link rel="stylesheet" href="assets/css/wix-menu.css">', '')
                     
                     # Insert the link before the closing head tag
-                    if '</head>' in content:
-                        new_content = content.replace('</head>', f'  {css_link}\n</head>')
-                        
-                        with open(file_path, 'w', encoding='utf-8') as f:
-                            f.write(new_content)
-                        print(f"Updated {filename} in {dirpath}")
-                        count += 1
-                    else:
-                        print(f"Skipping {filename}: No </head> tag found")
-                        
+                    if '</head>' in content and '"/assets/css/wix-menu.css"' not in content:
+                        content = content.replace('</head>', f'  {css_link}\n</head>')
+                    
+                    # Inject global header/menu right after the opening body tag if not present
+                    if 'class="global-header"' not in content:
+                        # Try exact <body>
+                        if '<body>' in content:
+                            content = content.replace('<body>', '<body>\n' + global_header + '\n', 1)
+                        elif '<body ' in content:
+                            # Insert after the first > following <body 
+                            start = content.find('<body ')
+                            end = content.find('>', start)
+                            if start != -1 and end != -1:
+                                content = content[:end+1] + '\n' + global_header + '\n' + content[end+1:]
+                    
+                    with open(file_path, 'w', encoding='utf-8') as f:
+                        f.write(content)
+                    print(f"Updated {filename} in {dirpath}")
+                    count += 1
+                    
                 except Exception as e:
                     print(f"Error processing {file_path}: {e}")
     

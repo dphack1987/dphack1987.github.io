@@ -70,3 +70,9 @@
         /* Allow wrap but rely on overflow:visible for height */
     }
 }
+.global-header{padding:48px 20px;text-align:center;background:linear-gradient(135deg,#1b5e20,#2e7d32);color:#fff}
+.global-header h1{margin:0;font-weight:800;letter-spacing:.5px}
+.global-header p{margin:10px 0 0;opacity:.9}
+.global-nav{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:24px 0}
+.global-nav a{text-decoration:none;padding:12px 16px;border-radius:8px;background:#eee;color:#222}
+#SITE_HEADER,.wixui-dropdown-menu,.wixui-horizontal-menu,.wixui-mobile-menu{display:none!important}
