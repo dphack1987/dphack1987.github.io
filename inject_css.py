@@ -4,20 +4,15 @@ def update_html_files():
     root_dir = os.getcwd()
     # Use absolute path for GitHub Pages root
     css_link = '<link rel="stylesheet" href="/assets/css/wix-menu.css">'
-    global_header = (
-        '<div class="global-header">'
-        '<h1>Mapa Turístico del Quindío</h1>'
-        '<p>Plataforma turística del Quindío unificada para el Eje Cafetero</p>'
-        '<nav class="global-nav">'
-        '<a href="/mapa-circasia-digital/">Mapa Circasia Digital</a>'
-        '<a href="/mapa-del-quinío.html">Mapa del Quindío</a>'
-        '<a href="/municipios-del-quindío.html">Municipios</a>'
-        '<a href="/sitios-turisticos.html">Sitios Turísticos</a>'
-        '<a href="/alojamientos.html">Alojamientos</a>'
-        '<a href="/parqué-del-café.html">Parque del Café</a>'
-        '</nav>'
-        '</div>'
-    )
+    home_path = os.path.join(root_dir, 'home.html')
+    with open(home_path, 'r', encoding='utf-8') as hf:
+        home_content = hf.read()
+    h_start = home_content.find('<header>')
+    h_end = home_content.find('</header>')
+    home_header = ''
+    if h_start != -1 and h_end != -1:
+        home_header = home_content[h_start:h_end+len('</header>')]
+        home_header = home_header.replace('href="./', 'href="/')
     
     count = 0
     # Walk through all files in the directory and subdirectories
@@ -50,17 +45,15 @@ def update_html_files():
                     if '</head>' in content and '"/assets/css/wix-menu.css"' not in content:
                         content = content.replace('</head>', f'  {css_link}\n</head>')
                     
-                    # Inject global header/menu right after the opening body tag if not present
-                    if 'class="global-header"' not in content:
-                        # Try exact <body>
+                    # Inject Home header HTML right after the opening body tag if not present
+                    if home_header and '<header>' not in content:
                         if '<body>' in content:
-                            content = content.replace('<body>', '<body>\n' + global_header + '\n', 1)
+                            content = content.replace('<body>', '<body>\n' + home_header + '\n', 1)
                         elif '<body ' in content:
-                            # Insert after the first > following <body 
                             start = content.find('<body ')
                             end = content.find('>', start)
                             if start != -1 and end != -1:
-                                content = content[:end+1] + '\n' + global_header + '\n' + content[end+1:]
+                                content = content[:end+1] + '\n' + home_header + '\n' + content[end+1:]
                     
                     with open(file_path, 'w', encoding='utf-8') as f:
                         f.write(content)
