@@ -75,4 +75,7 @@
 .global-header p{margin:10px 0 0;opacity:.9}
 .global-nav{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:24px 0}
 .global-nav a{text-decoration:none;padding:12px 16px;border-radius:8px;background:#eee;color:#222}
+.global-header,.global-header *{font-family:Montserrat,Arial,sans-serif}
+.global-header{position:sticky;top:0;z-index:100000;box-shadow:0 2px 12px rgba(0,0,0,.15)}
+#SITE_CONTAINER,#site-root{margin-top:140px!important}
 #SITE_HEADER,.wixui-dropdown-menu,.wixui-horizontal-menu,.wixui-mobile-menu{display:none!important}
