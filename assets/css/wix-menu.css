@@ -42,11 +42,9 @@
     z-index: 9999 !important;
 }
 
-/* 7. Iframe sizing constraints to avoid layout breakage */
+/* 7. Iframe sizing constraints (non-intrusive) */
 iframe {
-    display: block !important;
     max-width: 100% !important;
     border: 0 !important;
-    min-height: 300px !important;
 }
 #SITE_HEADER,.wixui-dropdown-menu,.wixui-horizontal-menu,.wixui-mobile-menu{display:none!important}
