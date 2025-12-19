@@ -44,8 +44,9 @@
 
 /* 7. Iframe sizing constraints to avoid layout breakage */
 iframe {
+    display: block !important;
     max-width: 100% !important;
-    max-height: 80vh !important;
     border: 0 !important;
+    min-height: 300px !important;
 }
 #SITE_HEADER,.wixui-dropdown-menu,.wixui-horizontal-menu,.wixui-mobile-menu{display:none!important}

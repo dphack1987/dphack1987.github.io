@@ -1,4 +1,5 @@
 import os
+import re
 
 def update_html_files():
     root_dir = os.getcwd()
@@ -22,6 +23,24 @@ def update_html_files():
                 pos = block.find('<header', end)
         return block
     
+    def remove_global_header(block: str) -> str:
+        start = block.find('<div class="global-header"')
+        while start != -1:
+            end = block.find('</div>', start)
+            if end == -1:
+                break
+            block = block[:start] + block[end+6:]
+            start = block.find('<div class="global-header"')
+        return block
+    
+    def normalize_wix_css_link(block: str) -> str:
+        # Remove any existing wix-menu.css links (relative or absolute)
+        block = re.sub(r'<link[^>]+href="[^"]*assets/css/wix-menu\.css"[^>]*>\s*', '', block, flags=re.IGNORECASE)
+        # Ensure a single absolute link before </head>
+        if '</head>' in block and '"/assets/css/wix-menu.css"' not in block:
+            block = block.replace('</head>', f'  {css_link}\n</head>')
+        return block
+    
     count = 0
     # Walk through all files in the directory and subdirectories
     for dirpath, dirnames, filenames in os.walk(root_dir):
@@ -37,25 +56,12 @@ def update_html_files():
                     if home_marker in content and '<header' in content:
                         content = remove_home_header(content)
                     
-                    # Check if the link already exists (checking both relative and absolute)
-                    if 'assets/css/wix-menu.css' in content:
-                        # If it has the old relative link 'assets/css...', replace it or leave it?
-                        # If it's deep, the relative link is broken. 
-                        # Let's force update to absolute path if it's the wrong relative one,
-                        # or just ensure the absolute one is there.
-                        # Simplest: if it has EXACTLY '/assets/css/wix-menu.css', skip.
-                        if '"/assets/css/wix-menu.css"' in content:
-                            # print(f"Skipping {filename}: Already has correct absolute CSS link")
-                            pass
-                        else:
-                            # It might have the relative one 'assets/css/...'. 
-                            # Let's replace the relative one with absolute if found, or just add absolute.
-                            # To avoid duplicates, let's remove the old one first if it exists without slash
-                            content = content.replace('<link rel="stylesheet" href="assets/css/wix-menu.css">', '')
+                    # Remove any previously injected global header block
+                    if 'class="global-header"' in content:
+                        content = remove_global_header(content)
                     
-                    # Insert the link before the closing head tag
-                    if '</head>' in content and '"/assets/css/wix-menu.css"' not in content:
-                        content = content.replace('</head>', f'  {css_link}\n</head>')
+                    # Normalize CSS link to a single absolute link
+                    content = normalize_wix_css_link(content)
                     
                     with open(file_path, 'w', encoding='utf-8') as f:
                         f.write(content)
