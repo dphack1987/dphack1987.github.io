@@ -8,7 +8,7 @@
   <meta charset='utf-8'>
   <meta name="viewport" content="width=device-width, initial-scale=1" id="wixDesktopViewport" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <style>#WIX_ADS{display:none!important}.flag-co{position:fixed;top:0;left:0;right:0;height:36px;z-index:100000;background:linear-gradient(to bottom,#FCD116 0 50%,#003893 50% 75%,#CE1126 75% 100%);pointer-events:none}body{padding-top:36px}</style>
+  <style>#WIX_ADS{display:none!important}#SITE_HEADER,#SITE_FOOTER,#SITE_HEADER-placeholder,#SITE_FOOTER-placeholder{display:none!important}.flag-co{position:fixed;top:0;left:0;right:0;height:36px;z-index:100000;background:linear-gradient(to bottom,#FCD116 0 50%,#003893 50% 75%,#CE1126 75% 100%);pointer-events:none}body{padding-top:180px}</style>
 
   
 
@@ -279,11 +279,71 @@
 </head>
 <body class='' >
 <div class="flag-co"></div>
+
 <script>(function(){try{if(!location.search){location.replace(location.pathname+"?v=20251203");}}catch(e){}})()</script>
-<div style="max-width:1200px;margin:320px auto 24px auto;padding:0 12px">
+<div style="max-width:1200px;margin:24px auto;padding:0 12px">
   <div style="border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;background:#fff">
+    <div style="padding:8px 12px;background:#f8f9fa;font-weight:600;display:flex;align-items:center;justify-content:space-between">
+      <span>Pautas</span>
+      <button aria-label="Alternar galería" onclick="(function(){var g=document.getElementById('pautasGalleryCir');var e=document.getElementById('pautasToggleCir');if(!g)return;var c=g.getAttribute('data-collapsed')==='true';g.style.maxHeight=c?'none':'112px';g.style.overflow=c?'visible':'hidden';g.setAttribute('data-collapsed', c?'false':'true');e.textContent=c?'Ocultar':'Ver más';})()" style="border:1px solid #d1d5db;background:#fff;color:#111827;padding:4px 8px;border-radius:6px;cursor:pointer">Ver más</button>
+    </div>
+    <div style="padding:8px 4px">
+      <div id="pautasGalleryCir" data-collapsed="true" style="display:flex;overflow-x:auto;gap:10px;align-items:center;padding:4px 2px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;max-height:112px;overflow:hidden">
+        <img src="../../../../pautas/del%20eje.png" alt="Pauta del eje" loading="lazy" decoding="async" style="height:90px;width:auto;border:1px solid #e5e7eb;border-radius:8px;filter:grayscale(70%);opacity:.9;scroll-snap-align:start">
+        <img id="pautasToggleCir" src="../../../../pautas/p1.png" alt="Pauta 1" loading="lazy" decoding="async" style="height:90px;width:auto;border:1px solid #e5e7eb;border-radius:8px;filter:grayscale(70%);opacity:.9;scroll-snap-align:start">
+        <img src="../../../../pautas/p2.png" alt="Pauta 2" loading="lazy" decoding="async" style="height:90px;width:auto;border:1px solid #e5e7eb;border-radius:8px;filter:grayscale(70%);opacity:.9;scroll-snap-align:start">
+        <img src="../../../../pautas/p3.png" alt="Pauta 3" loading="lazy" decoding="async" style="height:90px;width:auto;border:1px solid #e5e7eb;border-radius:8px;filter:grayscale(70%);opacity:.9;scroll-snap-align:start">
+        <img src="../../../../pautas/p4.png" alt="Pauta 4" loading="lazy" decoding="async" style="height:90px;width:auto;border:1px solid #e5e7eb;border-radius:8px;filter:grayscale(70%);opacity:.9;scroll-snap-align:start">
+        <img src="../../../../pautas/p5.png" alt="Pauta 5" loading="lazy" decoding="async" style="height:90px;width:auto;border:1px solid #e5e7eb;border-radius:8px;filter:grayscale(70%);opacity:.9;scroll-snap-align:start">
+        <img src="../../../../pautas/p6.png" alt="Pauta 6" loading="lazy" decoding="async" style="height:90px;width:auto;border:1px solid #e5e7eb;border-radius:8px;filter:grayscale(70%);opacity:.9;scroll-snap-align:start">
+        <img src="../../../../pautas/p7.png" alt="Pauta 7" loading="lazy" decoding="async" style="height:90px;width:auto;border:1px solid #e5e7eb;border-radius:8px;filter:grayscale(70%);opacity:.9;scroll-snap-align:start">
+        <img src="../../../../pautas/p8.png" alt="Pauta 8" loading="lazy" decoding="async" style="height:90px;width:auto;border:1px solid #e5e7eb;border-radius:8px;filter:grayscale(70%);opacity:.9;scroll-snap-align:start">
+        <img src="../../../../pautas/p9.png" alt="Pauta 9" loading="lazy" decoding="async" style="height:90px;width:auto;border:1px solid #e5e7eb;border-radius:8px;filter:grayscale(70%);opacity:.9;scroll-snap-align:start">
+        <img src="../../../../pautas/p10.png" alt="Pauta 10" loading="lazy" decoding="async" style="height:90px;width:auto;border:1px solid #e5e7eb;border-radius:8px;filter:grayscale(70%);opacity:.9;scroll-snap-align:start">
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:16px;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;background:#fff">
     <div style="padding:8px 12px;background:#f8f9fa;font-weight:600">Mapa Circasia 2025</div>
-    <iframe src="https://mapa-circasia-digital-2.vercel.app/" style="width:100%;height:640px;border:0"></iframe>
+    <iframe src="https://mapa-circasia-digital-2.vercel.app/" style="width:100%;height:820px;border:0"></iframe>
+  </div>
+  <div style="margin-top:16px;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;background:#fff">
+    <div style="padding:8px 12px;background:#f8f9fa;font-weight:600">Circasia, Quindío — Información</div>
+    <div style="padding:12px;display:grid;gap:8px">
+      <p style="margin:0;color:#374151">Municipio ubicado al norte del departamento del Quindío, integrado al área metropolitana de Armenia y conectado por la Autopista del Café.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px">
+        <div style="border:1px solid #e5e7eb;border-radius:8px;padding:10px;background:#fafafa">
+          <div style="font-weight:600;margin-bottom:4px;color:#111827">Ubicación y límites</div>
+          <div style="color:#374151">Norte: Filandia · Sur: Armenia · Oeste: Montenegro y Quimbaya · Este: Salento</div>
+        </div>
+        <div style="border:1px solid #e5e7eb;border-radius:8px;padding:10px;background:#fafafa">
+          <div style="font-weight:600;margin-bottom:4px;color:#111827">Altitud</div>
+          <div style="color:#374151">Cabecera a ~1.771 m s. n. m.</div>
+        </div>
+        <div style="border:1px solid #e5e7eb;border-radius:8px;padding:10px;background:#fafafa">
+          <div style="font-weight:600;margin-bottom:4px;color:#111827">Fundación</div>
+          <div style="color:#374151">10 de agosto de 1884 · Municipio desde 1906</div>
+        </div>
+      </div>
+      <div style="border:1px solid #e5e7eb;border-radius:8px;padding:10px;background:#fafafa">
+        <div style="font-weight:600;margin-bottom:4px;color:#111827">Atractivos destacados</div>
+        <div style="color:#374151">Cementerio Libre · Reserva Natural Bremen · Mirador Alto de la Cruz · Parque Bolívar · Casa de la Cultura</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:8px">
+        <div style="border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;background:#fff">
+          <div style="padding:8px 12px;background:#f8f9fa;font-weight:600;color:#111827">Escudo de Circasia</div>
+          <div style="padding:12px;display:flex;align-items:center;justify-content:center;background:#ffffff">
+            <img src="../../../../assets/images/circasia/escudo-circasia.svg" alt="Escudo de Circasia" style="max-width:100%;height:160px;object-fit:contain">
+          </div>
+        </div>
+        <div style="border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;background:#fff">
+          <div style="padding:8px 12px;background:#f8f9fa;font-weight:600;color:#111827">Bandera de Circasia</div>
+          <div style="padding:12px;display:flex;align-items:center;justify-content:center;background:#ffffff">
+            <img src="../../../../assets/images/circasia/bandera-circasia.svg" alt="Bandera de Circasia" style="max-width:100%;height:120px;object-fit:contain">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <script type="text/javascript">
