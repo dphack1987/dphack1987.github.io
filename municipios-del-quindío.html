@@ -279,6 +279,7 @@
     <link rel="stylesheet" href="/assets/css/wix-menu.css">
 </head>
 <body class='' >
+<div id="menu-container"></div>
 
 
 
@@ -546,6 +547,13 @@ visitar en este Departamento&hellip;</span></h1></div><!--/$--><!--$--><div id="
 
 
 
+<script>
+  fetch('./menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+    });
+</script>
 </body>
 
 <!-- Mirrored from parraprietodavid87.wixsite.com/mapaturisticoquin/municipios-del-quindío by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Nov 2025 22:08:14 GMT -->

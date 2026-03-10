@@ -387,6 +387,7 @@
     <link rel="stylesheet" href="/assets/css/wix-menu.css">
 </head>
 <body class='' >
+<div id="menu-container"></div>
 
 
 
@@ -1081,6 +1082,13 @@
 
 
 
+<script>
+  fetch('./menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+    });
+</script>
 </body>
 
 <!-- Mirrored from parraprietodavid87.wixsite.com/mapaturisticoquin/parqué-del-café by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Nov 2025 22:08:18 GMT -->

@@ -38,14 +38,7 @@
     <div>
       <h2>Explora el departamento</h2>
       <p>Visita mapas y secciones clave del turismo regional. Contenido servido de forma estática bajo nuestro dominio.</p>
-      <nav>
-        <a href="https://mapa-circasia-digital-2.vercel.app/">Mapa Circasia Digital</a>
-        <a href="./mapa-del-quinío.html">Mapa del Quindío</a>
-        <a href="./municipios-del-quindío.html">Municipios</a>
-        <a href="./sitios-turisticos.html">Sitios Turísticos</a>
-        <a href="./alojamientos.html">Alojamientos</a>
-        <a href="./parqué-del-café.html">Parque del Café</a>
-      </nav>
+      <div id="menu-container"></div>
     </div>
     <img src="./assets/images/117a1a_605549e7c9c74700b15b8335584a6348f000.jpg" alt="Paisaje del Quindío">
   </section>
@@ -77,5 +70,12 @@
 <footer>
   <div>© 2025 www.mapaturisticodelquindio.com</div>
 </footer>
+<script>
+  fetch('./menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+    });
+</script>
 </body>
 </html>
