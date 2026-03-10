@@ -9,8 +9,16 @@
     <link rel="stylesheet" href="/assets/css/wix-menu.css">
 </head>
 <body>
+<div id="menu-container"></div>
 
 
 
+<script>
+  fetch('./menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+    });
+</script>
 </body>
 </html>

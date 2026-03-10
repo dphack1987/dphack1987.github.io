@@ -378,6 +378,7 @@ url("https://static.wixstatic.com/ufonts/4db780_f702d8a84a034005a3618c3d0e6e1ab7
     <link rel="stylesheet" href="/assets/css/wix-menu.css">
 </head>
 <body class='' >
+<div id="menu-container"></div>
 
 
 
@@ -1063,6 +1064,13 @@ LLENO DE AVENTURAS</span></span></span></h1></div><!--/$--><!--$--><div id="comp
 
 
 
+<script>
+  fetch('./menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+    });
+</script>
 </body>
 
 <!-- Mirrored from parraprietodavid87.wixsite.com/mapaturisticoquin/copia-de-qinti-parque-en-la-montaña by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Nov 2025 22:08:19 GMT -->
