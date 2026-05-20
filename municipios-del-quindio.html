@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Municipios del Quindío — Guía Turística Completa</title>
+  <meta name="description" content="Conoce los 12 municipios del Quindío: Armenia, Salento, Circasia, Filandia, Montenegro, Quimbaya y más. Historia, turismo y cómo llegar.">
+  <link rel="canonical" href="https://www.mapaturisticodelquindio.com/municipios-del-quindio.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Municipios del Quindío",
+    "url": "https://www.mapaturisticodelquindio.com/municipios-del-quindio.html"
+  }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <style>
+    .muni-detail-card {
+      background: white; border-radius: 24px; overflow: hidden;
+      box-shadow: 0 8px 32px rgba(16,185,129,.1); margin-bottom: 32px;
+      display: grid; grid-template-columns: 1fr 2fr; gap: 0;
+      transition: all .35s ease;
+    }
+    .muni-detail-card:hover { box-shadow: 0 16px 56px rgba(16,185,129,.18); transform: translateY(-4px); }
+    .muni-detail-left {
+      background: linear-gradient(135deg, #059669, #10b981);
+      padding: 40px 32px; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center; color: white;
+    }
+    .muni-detail-left .big-emoji { font-size: 4rem; margin-bottom: 12px; }
+    .muni-detail-left h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 6px; }
+    .muni-detail-left .km-badge {
+      background: rgba(255,255,255,.2); padding: 6px 16px; border-radius: 50px;
+      font-size: .85rem; font-weight: 700; margin-top: 8px;
+    }
+    .muni-detail-right { padding: 32px; }
+    .muni-detail-right p { color: #6b7280; line-height: 1.7; margin-bottom: 20px; }
+    .muni-negocios h4 { font-size: 1rem; font-weight: 700; color: #064e3b; margin-bottom: 12px; }
+    .muni-neg-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .muni-neg-chip {
+      padding: 8px 16px; background: #f0fdf4; color: #059669;
+      border-radius: 50px; font-size: .85rem; font-weight: 600;
+      border: 1px solid #d1fae5; text-decoration: none; transition: all .2s;
+    }
+    .muni-neg-chip:hover { background: #059669; color: white; }
+    @media (max-width: 640px) {
+      .muni-detail-card { grid-template-columns: 1fr; }
+      .muni-detail-left { padding: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="page-hero">
+    <h1>🏘️ Municipios del Quindío</h1>
+    <p>12 municipios, cada uno con su propia magia. Descúbrelos todos.</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Mapa general -->
+    <div style="margin-bottom:48px;">
+      <div id="mapa-interactivo" aria-label="Mapa de los municipios del Quindío"></div>
+    </div>
+
+    <!-- Grid rápido -->
+    <div style="text-align:center;margin-bottom:32px;">
+      <span class="section-label">Elige tu destino</span>
+      <h2 class="section-title">Los 12 municipios</h2>
+    </div>
+    <div class="municipios-grid" id="muni-grid" role="list" style="margin-bottom:60px;"></div>
+
+    <!-- Detalle con negocios -->
+    <div style="text-align:center;margin-bottom:40px;">
+      <span class="section-label">Guía detallada</span>
+      <h2 class="section-title">Qué hacer en cada municipio</h2>
+    </div>
+    <div id="muni-detalle" role="list"></div>
+
+    <div class="cta-anunciate">
+      <h2>¿Tu negocio no aparece aquí?</h2>
+      <p>Publica tu empresa en el municipio correspondiente y llega a turistas que buscan exactamente lo que ofreces.</p>
+      <a href="./anunciate.html" class="btn-cta">📣 Publicar mi negocio</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>🌿 Mapa Turístico</h4>
+        <p style="color:#6b7280;font-size:.9rem">La plataforma turística del Quindío.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <a href="./index.html">Inicio</a>
+        <a href="./sitios-turisticos.html">Sitios Turísticos</a>
+        <a href="./alojamientos.html">Alojamientos</a>
+        <a href="./anunciate.html">Anúnciate</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 www.mapaturisticodelquindio.com</p></div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="./assets/js/datos.js"></script>
+  <script src="./assets/js/nav.js"></script>
+  <script>
+    // ── MAPA ──────────────────────────────────────────────────
+    const map = L.map('mapa-interactivo', { scrollWheelZoom: false }).setView([4.55, -75.68], 9);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a>'
+    }).addTo(map);
+
+    MUNICIPIOS.forEach(m => {
+      const negs = getNegociosByMunicipio(m.id);
+      const negList = negs.length
+        ? negs.map(n => `<span style="font-size:.8rem;color:#059669">• ${n.nombre}</span>`).join('<br>')
+        : '<span style="font-size:.8rem;color:#9ca3af">Sin negocios registrados aún</span>';
+
+      L.circleMarker([m.lat, m.lng], {
+        radius: 10, fillColor: '#059669', color: 'white',
+        weight: 3, opacity: 1, fillOpacity: 0.85
+      }).addTo(map).bindPopup(`
+        <div style="min-width:200px;font-family:Inter,sans-serif">
+          <div style="font-size:2rem;margin-bottom:6px">${m.emoji}</div>
+          <strong style="font-size:1.1rem;color:#064e3b">${m.nombre}</strong><br>
+          <span style="font-size:.8rem;color:#6b7280">${m.km > 0 ? m.km + ' km de Armenia' : 'Capital del Quindío'}</span>
+          <p style="font-size:.85rem;color:#374151;margin:8px 0">${m.desc}</p>
+          <div style="margin-top:8px">${negList}</div>
+        </div>`);
+    });
+
+    // ── GRID RÁPIDO ───────────────────────────────────────────
+    const muniGrid = document.getElementById('muni-grid');
+    MUNICIPIOS.forEach(m => {
+      const a = document.createElement('a');
+      a.className = 'muni-card';
+      a.href = `#muni-${m.id}`;
+      a.setAttribute('role', 'listitem');
+      a.innerHTML = `
+        <div class="muni-emoji">${m.emoji}</div>
+        <h3>${m.nombre}</h3>
+        <p>${m.desc}</p>
+        <div class="muni-km">${m.km > 0 ? '📍 ' + m.km + ' km de Armenia' : '🏙️ Capital'}</div>
+      `;
+      muniGrid.appendChild(a);
+    });
+
+    // ── DETALLE POR MUNICIPIO ─────────────────────────────────
+    const detalleContainer = document.getElementById('muni-detalle');
+    MUNICIPIOS.forEach(m => {
+      const negs = getNegociosByMunicipio(m.id);
+      const chips = negs.length
+        ? negs.map(n => `<a href="https://wa.me/${n.whatsapp}" target="_blank" rel="noopener" class="muni-neg-chip">
+            ${n.nombre}
+          </a>`).join('')
+        : '<span style="color:#9ca3af;font-size:.9rem">Próximamente — <a href="./anunciate.html" style="color:#059669;font-weight:700">¿Eres de ${m.nombre}? Anúnciate</a></span>';
+
+      const div = document.createElement('div');
+      div.className = 'muni-detail-card';
+      div.id = `muni-${m.id}`;
+      div.setAttribute('role', 'listitem');
+      div.setAttribute('itemscope', '');
+      div.setAttribute('itemtype', 'https://schema.org/City');
+      div.innerHTML = `
+        <div class="muni-detail-left">
+          <div class="big-emoji">${m.emoji}</div>
+          <h2 itemprop="name">${m.nombre}</h2>
+          <div class="km-badge">${m.km > 0 ? m.km + ' km de Armenia' : 'Capital del Quindío'}</div>
+        </div>
+        <div class="muni-detail-right">
+          <p itemprop="description">${m.desc}</p>
+          <div class="muni-negocios">
+            <h4>🏢 Negocios en ${m.nombre}</h4>
+            <div class="muni-neg-list">${chips}</div>
+          </div>
+        </div>`;
+      detalleContainer.appendChild(div);
+    });
+  </script>
+</body>
+</html>

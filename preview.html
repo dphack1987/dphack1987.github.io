@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preview - Mapa Turístico del Quindío</title>
+  <meta name="description" content="Vista previa del nuevo diseño moderno y llamativo">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    :root {
+      --grad-1: linear-gradient(135deg, #059669 0%, #10b981 25%, #f59e0b 50%, #fbbf24 75%, #059669 100%);
+      --grad-2: linear-gradient(135deg, #064e3b 0%, #059669 50%, #10b981 100%);
+      --grad-3: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #f97316 100%);
+      --glass: rgba(255,255,255,0.85);
+    }
+    body {
+      font-family: 'Inter', 'Poppins', system-ui, sans-serif;
+      background: #0f172a;
+      background-image: radial-gradient(circle at 10% 20%, rgba(5,150,105,0.15) 0%, transparent 20%),
+                        radial-gradient(circle at 90% 80%, rgba(245,158,11,0.12) 0%, transparent 20%);
+      color: #f1f5f9; margin: 0; padding: 0; min-height: 100vh;
+    }
+    .preview-header {
+      padding: 40px 24px; text-align: center; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+    .preview-header h1 {
+      font-size: 2.5rem; font-weight: 800; margin-bottom: 12px;
+      background: var(--grad-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .preview-header p { color: #94a3b8; max-width: 600px; margin: 0 auto; }
+    .preview-container { max-width: 1280px; margin: 0 auto; padding: 40px 24px; }
+    .preview-card {
+      background: rgba(255,255,255,0.08); backdrop-filter: blur(20px);
+      border-radius: 24px; padding: 32px; margin-bottom: 32px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .preview-card h2 {
+      font-size: 1.4rem; font-weight: 800; margin-bottom: 16px;
+      background: var(--grad-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-preview {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: 28px; padding: 48px; position: relative; overflow: hidden;
+    }
+    .hero-preview::before {
+      content: ''; position: absolute; inset: 0; background: radial-gradient(circle, rgba(5,150,105,0.15) 0%, transparent 40%);
+    }
+    .hero-preview h1 {
+      font-size: 3rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px;
+      background: var(--grad-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-preview p { color: #e2e8f0; font-size: 1.15rem; line-height: 1.8; margin-bottom: 32px; }
+    .btn-preview {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 16px 32px; border-radius: 50px; font-weight: 700; font-size: 1rem;
+      background: var(--grad-2); color: white; text-decoration: none;
+      box-shadow: 0 10px 30px rgba(16,185,129,0.4);
+    }
+    .btn-preview:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(16,185,129,0.5); }
+    .stats-preview {
+      display: flex; justify-content: space-around; flex-wrap: wrap; gap: 24px;
+      background: var(--glass); backdrop-filter: blur(20px); border-radius: 24px;
+      padding: 32px; margin-top: 40px;
+    }
+    .stat-preview { text-align: center; }
+    .stat-preview .num { font-size: 2.5rem; font-weight: 800; color: #10b981; }
+    .stat-preview .label { font-size: .85rem; color: #6b7280; text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; }
+    .categories-preview {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 16px; margin-top: 32px;
+    }
+    .cat-preview {
+      background: white; border-radius: 20px; padding: 24px 16px; text-align: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1); transition: all .3s ease;
+    }
+    .cat-preview:hover { transform: translateY(-8px) scale(1.05); box-shadow: 0 16px 40px rgba(16,185,129,0.3); }
+    .cat-preview .icon { font-size: 2.5rem; margin-bottom: 10px; }
+    .cat-preview h4 { font-size: .95rem; font-weight: 700; color: #064e3b; margin-bottom: 4px; }
+    .cat-preview span { font-size: .8rem; color: #059669; font-weight: 600; }
+    .cta-preview {
+      background: var(--grad-1); border-radius: 28px; padding: 48px; text-align: center; color: white; margin-top: 48px;
+    }
+    .cta-preview h2 { font-size: 2rem; font-weight: 800; margin-bottom: 12px; }
+    .cta-preview p { font-size: 1.1rem; opacity: .9; margin-bottom: 24px; }
+    .btn-cta-preview {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 16px 36px; border-radius: 50px; font-weight: 800; font-size: 1rem;
+      background: white; color: #059669; text-decoration: none;
+    }
+    .btn-cta-preview:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.3); }
+    .note {
+      background: rgba(245,158,11,0.1); border-left: 4px solid #f59e0b; padding: 16px 20px;
+      border-radius: 8px; margin-top: 40px; color: #fbbf24;
+    }
+    @media (max-width: 768px) {
+      .hero-preview { grid-template-columns: 1fr; }
+      .hero-preview h1 { font-size: 2.2rem; }
+      .stats-preview { flex-direction: column; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-header">
+    <h1>Preview del Nuevo Diseño</h1>
+    <p>Este es un vistazo del nuevo diseño moderno y llamativo que se aplicará a tu sitio web</p>
+  </div>
+
+  <div class="preview-container">
+    <div class="preview-card">
+      <h2>🎨 Diseño Moderno</h2>
+      <p>El nuevo diseño features:</p>
+      <ul style="margin-left:24px; margin-top:12px; color:#e2e8f0; line-height:1.8;">
+        <li>Fondo oscuro con gradientes vibrantes</li>
+        <li>Card con efectos glassmorphism</li>
+        <li>Animaciones suaves al hacer hover</li>
+        <li>Tipografía moderna con Poppins e Inter</li>
+        <li>Botones con gradientes y sombras</li>
+        <li>Mapa interactivo integrado en el hero</li>
+      </ul>
+    </div>
+
+    <div class="preview-card">
+      <h2>🚀 Hero Section</h2>
+      <div class="hero-preview">
+        <div>
+          <h1>🌿 Descubre el Quindío</h1>
+          <p>La plataforma turística definitiva del Eje Cafetero. Mapas interactivos, alojamientos, sitios turísticos, agencias y más — todo en un solo lugar.</p>
+          <div style="display:flex; gap:16px; flex-wrap:wrap;">
+            <a href="./sitios-turisticos.html" class="btn-preview">🎡 Explorar sitios</a>
+            <a href="./municipios-del-quindio.html" class="btn-preview" style="background:rgba(255,255,255,0.2);border:2px solid rgba(255,255,255,0.3);backdrop-filter:blur(10px);">🏘️ Ver municipios</a>
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.1);border-radius:24px;height:300px;display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,0.2);">
+          <div style="text-align:center;">
+            <div style="font-size:4rem;margin-bottom:12px;">🗺️</div>
+            <div style="font-size:1.2rem;font-weight:700;">Mapa Interactivo</div>
+            <div style="font-size:.9rem;color:#94a3b8;">Explora el Quindío</div>
+          </div>
+        </div>
+      </div>
+      <div class="stats-preview">
+        <div class="stat-preview"><div class="num">12</div><div class="label">Municipios</div></div>
+        <div class="stat-preview"><div class="num">50+</div><div class="label">Sitios</div></div>
+        <div class="stat-preview"><div class="num">30+</div><div class="label">Alojamientos</div></div>
+        <div class="stat-preview"><div class="num">15+</div><div class="label">Agencias</div></div>
+      </div>
+    </div>
+
+    <div class="preview-card">
+      <h2>🗺️ Categorías</h2>
+      <div class="categories-preview">
+        <div class="cat-preview"><div class="icon">🗺️</div><h4>Mapas</h4><span>Interactivos</span></div>
+        <div class="cat-preview"><div class="icon">🏘️</div><h4>Municipios</h4><span>Conócelos</span></div>
+        <div class="cat-preview"><div class="icon">🎡</div><h4>Sitios</h4><span>Descubre</span></div>
+        <div class="cat-preview"><div class="icon">🏨</div><h4>Alojamientos</h4><span>Dónde dormir</span></div>
+        <div class="cat-preview"><div class="icon">🧭</div><h4>Agencias</h4><span>Tours y planes</span></div>
+        <div class="cat-preview"><div class="icon">🚍</div><h4>Transporte</h4><span>Cómo llegar</span></div>
+        <div class="cat-preview"><div class="icon">🏡</div><h4>Fincas</h4><span>Alquiler</span></div>
+        <div class="cat-preview"><div class="icon">📣</div><h4>Anúnciate</h4><span>Para empresarios</span></div>
+      </div>
+    </div>
+
+    <div class="cta-preview">
+      <h2>¿Tienes un negocio turístico?</h2>
+      <p>Llega a miles de turistas que visitan el Quindío cada mes. Publica tu negocio en el mapa y empieza a recibir clientes hoy.</p>
+      <a href="./anunciate.html" class="btn-cta-preview">📣 Quiero anunciarme</a>
+    </div>
+
+    <div class="note">
+      <strong>Nota:</strong> Este es un preview del diseño. Para ver el sitio completo con todos los mapas interactivos y funcionalidad, por favor revisa el archivo <code>index.html</code> que ya ha sido actualizado.
+    </div>
+  </div>
+</body>
+</html>

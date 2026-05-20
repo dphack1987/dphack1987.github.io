@@ -1,0 +1,337 @@
+/* ============================================================
+   MAPA TURÍSTICO DEL QUINDÍO — Estilos globales
+   ============================================================ */
+
+:root {
+  --green-1: #059669;
+  --green-2: #10b981;
+  --green-3: #34d399;
+  --green-4: #d1fae5;
+  --amber-1: #f59e0b;
+  --amber-2: #fbbf24;
+  --bg:      #f0fdf4;
+  --bg2:     #ecfdf5;
+  --text:    #064e3b;
+  --text-2:  #065f46;
+  --text-3:  #6b7280;
+  --white:   #ffffff;
+  --shadow:  rgba(16,185,129,.12);
+  --shadow2: rgba(16,185,129,.22);
+  --radius:  16px;
+  --radius2: 24px;
+  --nav-h:   72px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', 'Poppins', system-ui, sans-serif;
+  background: linear-gradient(135deg, var(--bg) 0%, var(--bg2) 100%);
+  color: var(--text);
+  line-height: 1.6;
+  padding-top: var(--nav-h);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* ── NAVBAR ─────────────────────────────────────────────────── */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  height: var(--nav-h);
+  background: rgba(255,255,255,.88);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255,255,255,.4);
+  box-shadow: 0 4px 24px var(--shadow);
+  display: flex; align-items: center;
+}
+.navbar-inner {
+  max-width: 1280px; margin: 0 auto; padding: 0 24px;
+  width: 100%; display: flex; justify-content: space-between; align-items: center;
+}
+.nav-logo {
+  font-weight: 800; font-size: 1.25rem; letter-spacing: -.5px;
+  background: linear-gradient(135deg, var(--green-1), var(--amber-1));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-logo span { font-size: 1.6rem; }
+.nav-links { display: flex; gap: 4px; align-items: center; }
+.nav-links a {
+  padding: 8px 14px; border-radius: 10px; font-weight: 600; font-size: .9rem;
+  color: var(--text-2); transition: all .25s ease;
+}
+.nav-links a:hover, .nav-links a.active {
+  background: rgba(16,185,129,.1); color: var(--green-1);
+}
+/* Hamburger */
+.nav-toggle {
+  display: none; flex-direction: column; gap: 5px; cursor: pointer;
+  padding: 8px; border: none; background: none;
+}
+.nav-toggle span {
+  display: block; width: 24px; height: 2px;
+  background: var(--text); border-radius: 2px; transition: all .3s ease;
+}
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+/* Mobile drawer */
+.nav-drawer {
+  display: none; position: fixed; top: var(--nav-h); left: 0; right: 0;
+  background: rgba(255,255,255,.97); backdrop-filter: blur(20px);
+  padding: 20px 24px 32px; z-index: 999;
+  border-bottom: 1px solid var(--green-4);
+  box-shadow: 0 8px 32px var(--shadow);
+  flex-direction: column; gap: 4px;
+}
+.nav-drawer.open { display: flex; }
+.nav-drawer a {
+  padding: 14px 16px; border-radius: 12px; font-weight: 600;
+  color: var(--text-2); font-size: 1rem; transition: all .2s;
+}
+.nav-drawer a:hover { background: var(--green-4); color: var(--green-1); }
+
+/* ── HERO / HEADER ──────────────────────────────────────────── */
+.page-hero {
+  padding: 60px 24px 40px; text-align: center;
+  background: linear-gradient(135deg, rgba(16,185,129,.06) 0%, rgba(245,158,11,.04) 100%);
+  border-bottom: 1px solid var(--green-4);
+}
+.page-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -1px;
+  background: linear-gradient(135deg, var(--green-1), var(--amber-1));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 12px;
+}
+.page-hero p { color: var(--text-2); font-size: 1.1rem; max-width: 600px; margin: 0 auto; font-weight: 500; }
+
+/* ── CONTENEDOR ─────────────────────────────────────────────── */
+.container { max-width: 1280px; margin: 0 auto; padding: 48px 24px; }
+.section-label {
+  display: inline-block; padding: 6px 18px;
+  background: linear-gradient(135deg, rgba(16,185,129,.12), rgba(245,158,11,.1));
+  border-radius: 50px; color: var(--green-1); font-weight: 700;
+  font-size: .8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px;
+}
+.section-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; letter-spacing: -.5px;
+  color: var(--text); margin-bottom: 8px;
+}
+.section-sub { color: var(--text-3); font-size: 1rem; margin-bottom: 40px; }
+
+/* ── BUSCADOR ───────────────────────────────────────────────── */
+.search-bar {
+  display: flex; gap: 12px; max-width: 680px; margin: 0 auto 40px;
+  background: white; border-radius: 50px; padding: 8px 8px 8px 24px;
+  box-shadow: 0 8px 32px var(--shadow2); border: 1px solid rgba(16,185,129,.15);
+}
+.search-bar input {
+  flex: 1; border: none; outline: none; font-size: 1rem; color: var(--text);
+  font-family: inherit; background: transparent;
+}
+.search-bar input::placeholder { color: var(--text-3); }
+.search-bar button {
+  padding: 12px 28px; border-radius: 50px; border: none; cursor: pointer;
+  background: linear-gradient(135deg, var(--green-1), var(--green-2));
+  color: white; font-weight: 700; font-size: .95rem; transition: all .3s;
+}
+.search-bar button:hover { transform: scale(1.04); box-shadow: 0 6px 20px rgba(16,185,129,.4); }
+
+/* ── FILTROS ────────────────────────────────────────────────── */
+.filtros {
+  display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 36px;
+}
+.filtro-btn {
+  padding: 10px 22px; border-radius: 50px; border: 2px solid var(--green-4);
+  background: white; color: var(--text-2); font-weight: 600; font-size: .9rem;
+  cursor: pointer; transition: all .25s ease;
+}
+.filtro-btn:hover, .filtro-btn.active {
+  background: var(--green-1); color: white; border-color: var(--green-1);
+  box-shadow: 0 4px 16px rgba(16,185,129,.3);
+}
+
+/* ── TARJETA DE NEGOCIO ─────────────────────────────────────── */
+.cards-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 28px;
+}
+.biz-card {
+  background: white; border-radius: var(--radius2); overflow: hidden;
+  box-shadow: 0 8px 32px var(--shadow); border: 1px solid rgba(255,255,255,.6);
+  transition: all .4s cubic-bezier(.4,0,.2,1); display: flex; flex-direction: column;
+}
+.biz-card:hover { transform: translateY(-10px); box-shadow: 0 20px 60px var(--shadow2); }
+.biz-card-img {
+  width: 100%; height: 200px; object-fit: cover; transition: transform .5s ease;
+}
+.biz-card:hover .biz-card-img { transform: scale(1.05); }
+.biz-card-img-wrap { overflow: hidden; position: relative; }
+.biz-badge {
+  position: absolute; top: 12px; right: 12px;
+  padding: 4px 12px; border-radius: 50px; font-size: .75rem; font-weight: 700;
+  backdrop-filter: blur(8px);
+}
+.biz-badge.premium { background: rgba(245,158,11,.9); color: white; }
+.biz-badge.estandar { background: rgba(16,185,129,.85); color: white; }
+.biz-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+.biz-tipo { font-size: .8rem; font-weight: 700; color: var(--green-1); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.biz-card-body h3 { font-size: 1.2rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+.biz-card-body p { color: var(--text-3); font-size: .92rem; line-height: 1.6; flex: 1; margin-bottom: 16px; }
+.biz-servicios { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.biz-tag {
+  padding: 4px 10px; background: var(--green-4); color: var(--green-1);
+  border-radius: 50px; font-size: .75rem; font-weight: 600;
+}
+.biz-precio { font-weight: 700; color: var(--amber-1); font-size: .95rem; margin-bottom: 20px; }
+.biz-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn-wa {
+  flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px 16px; border-radius: 50px; font-weight: 700; font-size: .9rem;
+  background: #25d366; color: white; transition: all .3s; border: none; cursor: pointer;
+  text-decoration: none;
+}
+.btn-wa:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,.4); }
+.btn-maps {
+  padding: 12px 16px; border-radius: 50px; font-weight: 700; font-size: .9rem;
+  background: white; color: var(--green-1); border: 2px solid var(--green-4);
+  transition: all .3s; cursor: pointer; text-decoration: none;
+  display: flex; align-items: center; gap: 6px;
+}
+.btn-maps:hover { border-color: var(--green-1); background: var(--green-4); }
+.btn-tel {
+  padding: 12px 16px; border-radius: 50px; font-weight: 700; font-size: .9rem;
+  background: white; color: var(--text-2); border: 2px solid var(--green-4);
+  transition: all .3s; cursor: pointer; text-decoration: none;
+  display: flex; align-items: center; gap: 6px;
+}
+.btn-tel:hover { border-color: var(--green-1); }
+
+/* ── MAPA ───────────────────────────────────────────────────── */
+#mapa-interactivo {
+  width: 100%; height: 500px; border-radius: var(--radius2);
+  box-shadow: 0 16px 60px var(--shadow2); border: 1px solid var(--green-4);
+  overflow: hidden;
+}
+
+/* ── MUNICIPIOS GRID ────────────────────────────────────────── */
+.municipios-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px;
+}
+.muni-card {
+  background: white; border-radius: var(--radius2); padding: 28px 20px; text-align: center;
+  box-shadow: 0 6px 24px var(--shadow); border: 1px solid rgba(255,255,255,.6);
+  transition: all .35s ease; text-decoration: none; display: block;
+}
+.muni-card:hover { transform: translateY(-8px); box-shadow: 0 16px 48px var(--shadow2); }
+.muni-emoji { font-size: 3rem; margin-bottom: 12px; }
+.muni-card h3 { font-size: 1.1rem; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+.muni-card p { font-size: .85rem; color: var(--text-3); line-height: 1.5; margin-bottom: 10px; }
+.muni-km { font-size: .8rem; font-weight: 700; color: var(--green-1); }
+
+/* ── ITINERARIOS ────────────────────────────────────────────── */
+.itinerarios-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px;
+}
+.itin-card {
+  background: white; border-radius: var(--radius2); overflow: hidden;
+  box-shadow: 0 8px 32px var(--shadow); border: 1px solid rgba(255,255,255,.6);
+  transition: all .4s ease;
+}
+.itin-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px var(--shadow2); }
+.itin-header {
+  padding: 28px; background: linear-gradient(135deg, var(--green-1), var(--green-2));
+  color: white;
+}
+.itin-header .emoji { font-size: 2.5rem; margin-bottom: 10px; }
+.itin-header h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 4px; }
+.itin-header .duracion { font-size: .85rem; opacity: .85; font-weight: 600; }
+.itin-body { padding: 24px; }
+.itin-body p { color: var(--text-3); font-size: .92rem; margin-bottom: 16px; }
+.itin-dia { margin-bottom: 12px; }
+.itin-dia strong { font-size: .85rem; color: var(--green-1); font-weight: 700; display: block; margin-bottom: 4px; }
+.itin-dia ul { list-style: none; }
+.itin-dia ul li { font-size: .88rem; color: var(--text-2); padding: 2px 0 2px 16px; position: relative; }
+.itin-dia ul li::before { content: "→"; position: absolute; left: 0; color: var(--green-2); font-size: .8rem; }
+
+/* ── FOOTER ─────────────────────────────────────────────────── */
+footer {
+  margin-top: 80px; padding: 48px 24px 32px; text-align: center;
+  background: rgba(255,255,255,.6); backdrop-filter: blur(10px);
+  border-top: 1px solid var(--green-4);
+}
+.footer-grid {
+  max-width: 1280px; margin: 0 auto 32px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px;
+  text-align: left;
+}
+.footer-col h4 { font-weight: 800; color: var(--text); margin-bottom: 14px; font-size: 1rem; }
+.footer-col a { display: block; color: var(--text-3); font-size: .9rem; padding: 4px 0; transition: color .2s; }
+.footer-col a:hover { color: var(--green-1); }
+.footer-bottom { color: var(--text-3); font-size: .9rem; border-top: 1px solid var(--green-4); padding-top: 24px; }
+.footer-aliados { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 32px; }
+.footer-aliados img { height: 40px; border-radius: 8px; opacity: .7; transition: opacity .2s; filter: grayscale(30%); }
+.footer-aliados img:hover { opacity: 1; filter: none; }
+
+/* ── ANUNCIATE CTA ──────────────────────────────────────────── */
+.cta-anunciate {
+  background: linear-gradient(135deg, var(--green-1), var(--green-2));
+  border-radius: var(--radius2); padding: 48px 40px; text-align: center; color: white;
+  margin: 60px 0;
+}
+.cta-anunciate h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 12px; }
+.cta-anunciate p { font-size: 1.05rem; opacity: .9; margin-bottom: 28px; max-width: 560px; margin-left: auto; margin-right: auto; }
+.btn-cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 40px; border-radius: 50px; font-weight: 800; font-size: 1rem;
+  background: white; color: var(--green-1); transition: all .3s; text-decoration: none;
+  box-shadow: 0 8px 32px rgba(0,0,0,.15);
+}
+.btn-cta:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 16px 48px rgba(0,0,0,.2); }
+
+/* ── FORMULARIO ─────────────────────────────────────────────── */
+.form-card {
+  background: white; border-radius: var(--radius2); padding: 40px;
+  box-shadow: 0 12px 48px var(--shadow); max-width: 680px; margin: 0 auto;
+}
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-weight: 700; color: var(--text); margin-bottom: 8px; font-size: .95rem; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 14px 18px; border: 2px solid var(--green-4);
+  border-radius: var(--radius); font-family: inherit; font-size: 1rem; color: var(--text);
+  transition: border-color .2s; outline: none; background: white;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  border-color: var(--green-2);
+}
+.form-group textarea { resize: vertical; min-height: 120px; }
+.btn-submit {
+  width: 100%; padding: 16px; border-radius: 50px; border: none; cursor: pointer;
+  background: linear-gradient(135deg, var(--green-1), var(--green-2));
+  color: white; font-weight: 800; font-size: 1.05rem; transition: all .3s;
+}
+.btn-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(16,185,129,.4); }
+
+/* ── SCHEMA BADGE ───────────────────────────────────────────── */
+.no-results { text-align: center; padding: 60px 20px; color: var(--text-3); }
+.no-results .icon { font-size: 3rem; margin-bottom: 12px; }
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  .cards-grid { grid-template-columns: 1fr; }
+  .municipios-grid { grid-template-columns: repeat(2, 1fr); }
+  .itinerarios-grid { grid-template-columns: 1fr; }
+  .search-bar { flex-direction: column; border-radius: var(--radius2); padding: 16px; }
+  .search-bar button { border-radius: var(--radius); }
+  #mapa-interactivo { height: 350px; }
+  .cta-anunciate { padding: 36px 24px; }
+  .form-card { padding: 28px 20px; }
+}
+@media (max-width: 480px) {
+  .municipios-grid { grid-template-columns: 1fr; }
+  .biz-actions { flex-direction: column; }
+}
