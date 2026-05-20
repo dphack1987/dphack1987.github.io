@@ -73,7 +73,7 @@
     }
     .navbar-logo {
       font-weight: 800;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       background: linear-gradient(135deg, var(--primary-1), var(--accent-1));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -81,8 +81,21 @@
       text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       letter-spacing: -0.5px;
+      padding: 8px 16px;
+      border-radius: 14px;
+      transition: all 0.3s ease;
+    }
+    .navbar-logo:hover {
+      background: linear-gradient(135deg, var(--accent-1), var(--primary-1));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .logo-icon {
+      font-size: 2.2rem;
+      display: block;
     }
     .navbar-links {
       display: flex;
@@ -448,7 +461,10 @@
   <div class="bg-pattern"></div>
   <nav class="navbar">
     <div class="navbar-container">
-      <a href="#" class="navbar-logo">🌿 Mapa Turístico</a>
+      <a href="#" class="navbar-logo">
+        <span class="logo-icon">🌿</span>
+        <span>MAPA TURÍSTICO</span>
+      </a>
       <div class="navbar-links">
         <a href="#inicio">Inicio</a>
         <a href="#categorias">Categorías</a>
