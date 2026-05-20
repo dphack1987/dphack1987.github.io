@@ -221,3 +221,75 @@ footer{margin-top:80px;padding:48px 24px 32px;text-align:center;
   .municipios-grid{grid-template-columns:1fr}
   .biz-actions{flex-direction:column}
 }
+
+/* ── PAUTAS / BANNERS ── */
+.pautas-section{padding:40px 32px;background:linear-gradient(135deg,rgba(16,185,129,.05),rgba(245,158,11,.04))}
+.pautas-section .section-head{margin-bottom:28px}
+.pautas-track-wrap{overflow:hidden;border-radius:16px;position:relative}
+.pautas-track-wrap::before,.pautas-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.pautas-track-wrap::before{left:0;background:linear-gradient(to right,rgba(240,253,244,1),transparent)}
+.pautas-track-wrap::after{right:0;background:linear-gradient(to left,rgba(240,253,244,1),transparent)}
+.pautas-track{display:flex;gap:16px;animation:scroll-pautas 40s linear infinite;width:max-content}
+.pautas-track:hover{animation-play-state:paused}
+@keyframes scroll-pautas{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.pauta-item{flex-shrink:0;width:180px;height:120px;border-radius:12px;overflow:hidden;
+  box-shadow:0 4px 16px rgba(0,0,0,.1);transition:all .3s;cursor:pointer}
+.pauta-item:hover{transform:scale(1.06);box-shadow:0 8px 28px rgba(16,185,129,.25)}
+.pauta-item img{width:100%;height:100%;object-fit:cover}
+
+/* Carrusel lento para pautas grandes */
+.pautas-track-2{animation-duration:55s;animation-direction:reverse}
+
+/* Grid de pautas en páginas internas */
+.pautas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;margin:32px 0}
+.pauta-grid-item{border-radius:12px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);
+  transition:all .3s;aspect-ratio:4/3}
+.pauta-grid-item:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(16,185,129,.2)}
+.pauta-grid-item img{width:100%;height:100%;object-fit:cover}
+
+/* Banner horizontal entre secciones */
+.banner-strip{padding:24px 32px;background:white;border-top:1px solid #d1fae5;border-bottom:1px solid #d1fae5}
+.banner-strip-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:16px;overflow:hidden}
+.banner-strip-label{font-size:.75rem;font-weight:700;color:var(--g1);text-transform:uppercase;letter-spacing:2px;white-space:nowrap;padding-right:16px;border-right:2px solid #d1fae5}
+.banner-strip-track{display:flex;gap:12px;animation:scroll-pautas 30s linear infinite;width:max-content}
+.banner-strip-track:hover{animation-play-state:paused}
+.banner-item{flex-shrink:0;height:64px;width:auto;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.banner-item img{height:100%;width:auto;object-fit:cover}
+
+@media(max-width:768px){
+  .pauta-item{width:140px;height:94px}
+  .pautas-section{padding:32px 16px}
+  .banner-strip{padding:16px}
+  .banner-item{height:48px}
+}
+
+/* ── BARRA DE MENÚ ESTILO ORIGINAL (rojo + botones amarillos) ── */
+.menu-bar{
+  background:#c0392b;
+  background-image:repeating-linear-gradient(90deg,rgba(0,0,0,.08) 0px,rgba(0,0,0,.08) 2px,transparent 2px,transparent 20px),
+    repeating-linear-gradient(0deg,rgba(0,0,0,.05) 0px,rgba(0,0,0,.05) 2px,transparent 2px,transparent 20px);
+  padding:10px 16px;overflow-x:auto;white-space:nowrap;
+  border-top:3px solid #922b21;border-bottom:3px solid #922b21;
+  scrollbar-width:none;-ms-overflow-style:none;
+}
+.menu-bar::-webkit-scrollbar{display:none}
+.menu-bar-inner{display:inline-flex;gap:6px;align-items:center;min-width:max-content;padding:0 8px}
+.menu-bar a{
+  display:inline-block;padding:10px 18px;border-radius:6px;
+  background:linear-gradient(180deg,#f9e04b 0%,#e6c200 100%);
+  color:#1a0a00;font-weight:700;font-size:.85rem;text-decoration:none;
+  border:1px solid #c9a800;box-shadow:0 3px 8px rgba(0,0,0,.25);
+  transition:all .2s;white-space:nowrap;
+}
+.menu-bar a:hover{
+  background:linear-gradient(180deg,#fff176 0%,#f9e04b 100%);
+  transform:translateY(-2px);box-shadow:0 5px 14px rgba(0,0,0,.3);
+}
+.menu-bar a.active{
+  background:linear-gradient(180deg,#a5d6a7 0%,#66bb6a 100%);
+  color:#1b5e20;border-color:#388e3c;
+}
+@media(max-width:768px){
+  .menu-bar{padding:8px 12px}
+  .menu-bar a{padding:8px 14px;font-size:.8rem}
+}

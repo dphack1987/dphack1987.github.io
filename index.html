@@ -12,7 +12,7 @@
     :root{--g1:#059669;--g2:#10b981;--a1:#f59e0b;--a2:#fbbf24;--dark:#0a2e1f;--bg:#f0fdf4;--text:#064e3b;--text2:#065f46;--text3:#6b7280;--nav-h:80px}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{font-family:'Inter',system-ui,sans-serif;background:linear-gradient(135deg,#f0fdf4 0%,#ecfdf5 100%);color:var(--text);overflow-x:hidden;padding-top:var(--nav-h)}
+    body{font-family:'Inter',system-ui,sans-serif;background:linear-gradient(135deg,#f0fdf4 0%,#ecfdf5 100%);color:var(--text);overflow-x:hidden;padding-top:calc(var(--nav-h) + 52px)}
     img{max-width:100%;display:block}
     a{text-decoration:none;color:inherit}
     /* NAVBAR */
@@ -156,20 +156,35 @@
     </button>
   </div>
   <div class="nav-drawer" id="navDrawer">
-    <a href="/">🏠 Inicio</a>
+    <a href="/">🏠 Home</a>
+    <a href="https://mapa-circasia-digital-2.vercel.app/" target="_blank" rel="noopener">🗺️ Mapa de Circasia 2025</a>
+    <a href="./alquiler-finca-hoteles.html">🏡 Alquiler Finca hoteles</a>
     <a href="https://mapaquindio.vercel.app/" target="_blank" rel="noopener">🗺️ Mapa del Quindío</a>
-    <a href="https://mapa-circasia-digital-2.vercel.app/" target="_blank" rel="noopener">🗺️ Mapa Circasia</a>
-    <a href="https://mapa-calarca-2026.vercel.app/" target="_blank" rel="noopener">🗺️ Mapa Calarcá</a>
-    <a href="./municipios-del-quindio.html">🏘️ Municipios</a>
-    <a href="./sitios-turisticos.html">🎡 Sitios Turísticos</a>
+    <a href="./quindio-comercial.html">🛍️ Quindío Comercial</a>
+    <a href="./municipios-del-quindio.html">🏘️ Municipios del Quindío</a>
+    <a href="./agencias-operadoras-turisticas.html">🧭 Agencias Operadoras Turísticas</a>
+    <a href="./sitios-turisticos.html">🎡 Atractivos Turísticos</a>
     <a href="./alojamientos.html">🏨 Alojamientos</a>
-    <a href="./agencias-operadoras-turisticas.html">🧭 Agencias</a>
-    <a href="./empresas-de-transporte.html">🚍 Transporte</a>
-    <a href="./alquiler-finca-hoteles.html">🏡 Fincas</a>
-    <a href="./centros-comerciales.html">🛒 Centros Comerciales</a>
     <a href="./anunciate.html">📣 Anúnciate</a>
   </div>
 </nav>
+
+<!-- ── BARRA MENÚ ESTILO ORIGINAL ── -->
+<div class="menu-bar" role="navigation" aria-label="Menú principal">
+  <div class="menu-bar-inner">
+    <a href="/" class="active">Home</a>
+    <a href="https://mapa-circasia-digital-2.vercel.app/" target="_blank" rel="noopener">Mapa de Circasia 2025</a>
+    <a href="./alquiler-finca-hoteles.html">Alquiler Finca hoteles</a>
+    <a href="https://mapaquindio.vercel.app/" target="_blank" rel="noopener">Mapa del Quindío</a>
+    <a href="./quindio-comercial.html">Quindío Comercial</a>
+    <a href="./municipios-del-quindio.html">Municipios del Quindío</a>
+    <a href="./agencias-operadoras-turisticas.html">Agencias Operadoras Turísticas</a>
+    <a href="./sitios-turisticos.html">Atractivos Turísticos</a>
+    <a href="./alojamientos.html">Alojamientos</a>
+    <a href="https://mapa-calarca-2026.vercel.app/" target="_blank" rel="noopener">Mapa Calarcá 2026</a>
+    <a href="./anunciate.html">📣 Anúnciate</a>
+  </div>
+</div>
 
 <!-- ── HERO ── -->
 <section class="hero">
@@ -236,6 +251,42 @@
     </nav>
   </div>
 </section>
+
+<!-- ── BANNER PAUTAS 1 — entre categorías y mapas ── -->
+<div class="banner-strip">
+  <div class="banner-strip-inner">
+    <span class="banner-strip-label">Nuestros aliados</span>
+    <div class="banner-strip-track" id="banner1">
+      <div class="banner-item"><img src="./pautas/p1.png" alt="Anunciante" loading="lazy"></div>
+      <div class="banner-item"><img src="./pautas/p2.png" alt="Anunciante" loading="lazy"></div>
+      <div class="banner-item"><img src="./pautas/p3.png" alt="Anunciante" loading="lazy"></div>
+      <div class="banner-item"><img src="./pautas/p4.png" alt="Anunciante" loading="lazy"></div>
+      <div class="banner-item"><img src="./pautas/p5.png" alt="Anunciante" loading="lazy"></div>
+      <div class="banner-item"><img src="./pautas/p6.png" alt="Anunciante" loading="lazy"></div>
+      <div class="banner-item"><img src="./pautas/p7.png" alt="Anunciante" loading="lazy"></div>
+      <div class="banner-item"><img src="./pautas/p8.png" alt="Anunciante" loading="lazy"></div>
+      <div class="banner-item"><img src="./pautas/p9.png" alt="Anunciante" loading="lazy"></div>
+      <div class="banner-item"><img src="./pautas/p10.png" alt="Anunciante" loading="lazy"></div>
+      <div class="banner-item"><img src="./pautas/p11.png" alt="Anunciante" loading="lazy"></div>
+      <div class="banner-item"><img src="./pautas/p12.png" alt="Anunciante" loading="lazy"></div>
+      <div class="banner-item"><img src="./pautas/p13.png" alt="Anunciante" loading="lazy"></div>
+      <!-- duplicado para loop infinito -->
+      <div class="banner-item"><img src="./pautas/p1.png" alt="Anunciante" loading="lazy"></div>
+      <div class="banner-item"><img src="./pautas/p2.png" alt="Anunciante" loading="lazy"></div>
+      <div class="banner-item"><img src="./pautas/p3.png" alt="Anunciante" loading="lazy"></div>
+      <div class="banner-item"><img src="./pautas/p4.png" alt="Anunciante" loading="lazy"></div>
+      <div class="banner-item"><img src="./pautas/p5.png" alt="Anunciante" loading="lazy"></div>
+      <div class="banner-item"><img src="./pautas/p6.png" alt="Anunciante" loading="lazy"></div>
+      <div class="banner-item"><img src="./pautas/p7.png" alt="Anunciante" loading="lazy"></div>
+      <div class="banner-item"><img src="./pautas/p8.png" alt="Anunciante" loading="lazy"></div>
+      <div class="banner-item"><img src="./pautas/p9.png" alt="Anunciante" loading="lazy"></div>
+      <div class="banner-item"><img src="./pautas/p10.png" alt="Anunciante" loading="lazy"></div>
+      <div class="banner-item"><img src="./pautas/p11.png" alt="Anunciante" loading="lazy"></div>
+      <div class="banner-item"><img src="./pautas/p12.png" alt="Anunciante" loading="lazy"></div>
+      <div class="banner-item"><img src="./pautas/p13.png" alt="Anunciante" loading="lazy"></div>
+    </div>
+  </div>
+</div>
 
 <!-- ── MAPAS INTERACTIVOS ── -->
 <section class="section">
@@ -357,6 +408,93 @@
             <a href="./sitios-turisticos.html" class="btn-ver">Ver más</a>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CARRUSEL PAUTAS GRANDE ── -->
+<section class="pautas-section">
+  <div style="max-width:1280px;margin:0 auto">
+    <div class="section-head">
+      <div class="chip">Anunciantes del Quindío</div>
+      <h2 class="section-h2">Nuestros aliados comerciales</h2>
+      <p class="section-sub">Empresas y negocios que confían en el Mapa Turístico del Quindío</p>
+    </div>
+    <!-- Fila 1 — pautas generales -->
+    <div class="pautas-track-wrap" style="margin-bottom:16px">
+      <div class="pautas-track">
+        <div class="pauta-item"><img src="./pautas/p1.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p2.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p3.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p4.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p5.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p6.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p7.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p8.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p9.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p10.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p11.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p12.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p13.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p14.png" alt="Anunciante" loading="lazy"></div>
+        <!-- duplicado loop -->
+        <div class="pauta-item"><img src="./pautas/p1.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p2.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p3.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p4.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p5.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p6.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p7.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p8.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p9.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p10.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p11.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p12.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p13.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p14.png" alt="Anunciante" loading="lazy"></div>
+      </div>
+    </div>
+    <!-- Fila 2 — pautas p15-p27 + circasia (dirección inversa) -->
+    <div class="pautas-track-wrap">
+      <div class="pautas-track pautas-track-2">
+        <div class="pauta-item"><img src="./pautas/p15.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p16.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p17.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p18.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p19.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p21.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p22.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p23.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p24.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p25.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p26.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/P27.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas_circasia/pauta1.jpg" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas_circasia/pauta2.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas_circasia/pauta3.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas_circasia/pauta4.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas_circasia/pauta5.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas_circasia/pauta6.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas_circasia/pauta7.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas_circasia/pauta8.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <!-- duplicado loop -->
+        <div class="pauta-item"><img src="./pautas/p15.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p16.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p17.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p18.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p19.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p21.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p22.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas/p23.png" alt="Anunciante" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas_circasia/pauta1.jpg" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas_circasia/pauta2.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas_circasia/pauta3.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas_circasia/pauta4.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas_circasia/pauta5.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas_circasia/pauta6.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas_circasia/pauta7.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="pauta-item"><img src="./pautas_circasia/pauta8.png" alt="Anunciante Circasia" loading="lazy"></div>
       </div>
     </div>
   </div>
