@@ -166,7 +166,7 @@
   <div class="bg-pattern"></div>
 
   <!-- ── HEADER ÚNICO: logo + barra roja ── -->
-  <header class="site-header">
+  <div class="site-header">
     <div class="header-top">
       <a href="/" class="nav-logo">
         <img src="./media/logo.jpg" alt="Mapa Turístico del Quindío">
@@ -190,7 +190,7 @@
         <a href="./anunciate.html">📣 Anúnciate</a>
       </div>
     </nav>
-  </header>
+  </div>
 
   <!-- Drawer móvil -->
   <div class="nav-drawer" id="navDrawer">
@@ -208,12 +208,47 @@
   </div>
 
   <!-- ── HERO ── -->
-  <header id="inicio">
+  <section id="inicio" style="padding:80px 24px 50px;text-align:center;position:relative;overflow:hidden">
     <div class="hero-glow"></div>
     <div class="hero-glow-2"></div>
-    <h1>🌿 MAPA TURÍSTICO DEL QUINDÍO</h1>
-    <p>Tu guía completa para descubrir el encanto del Eje Cafetero</p>
-  </header>
+    <h1 style="font-weight:800;letter-spacing:-1.5px;font-size:clamp(2.5rem,6vw,4.5rem);background:linear-gradient(135deg,#059669,#f59e0b,#10b981);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative;z-index:1;line-height:1.1;margin-bottom:20px">🌿 MAPA TURÍSTICO DEL QUINDÍO</h1>
+    <p style="margin:0 auto;font-size:clamp(1rem,2.5vw,1.35rem);color:#059669;position:relative;z-index:1;max-width:700px;font-weight:500">Tu guía completa para descubrir el encanto del Eje Cafetero</p>
+  </section>
+
+  <!-- ── MAPA DEL QUINDÍO — visible y navegable ── -->
+  <section style="padding:0 24px 60px;max-width:1280px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:24px">
+      <span style="display:inline-block;padding:8px 20px;background:linear-gradient(135deg,rgba(16,185,129,.12),rgba(245,158,11,.1));border-radius:50px;color:#059669;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px">Explora ahora</span>
+      <h2 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;background:linear-gradient(135deg,#064e3b,#059669);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.5px">Mapa Interactivo del Quindío</h2>
+    </div>
+    <div style="position:relative;border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(16,185,129,.2);border:2px solid rgba(16,185,129,.15)">
+      <iframe
+        src="https://mapaquindio.vercel.app/"
+        title="Mapa Turístico del Quindío"
+        width="100%"
+        height="600"
+        style="display:block;border:none"
+        loading="lazy"
+        allow="fullscreen"
+      ></iframe>
+      <div style="position:absolute;bottom:16px;right:16px">
+        <a href="https://mapaquindio.vercel.app/" target="_blank" rel="noopener"
+           style="display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:50px;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);color:#059669;font-weight:700;font-size:.9rem;box-shadow:0 6px 20px rgba(0,0,0,.15);text-decoration:none;transition:all .3s">
+          🗺️ Abrir en pantalla completa
+        </a>
+      </div>
+    </div>
+    <div style="display:flex;gap:12px;justify-content:center;margin-top:16px;flex-wrap:wrap">
+      <a href="https://mapa-circasia-digital-2.vercel.app/" target="_blank" rel="noopener"
+         style="padding:10px 22px;border-radius:50px;background:rgba(255,255,255,.8);backdrop-filter:blur(10px);color:#059669;font-weight:700;font-size:.88rem;border:1px solid rgba(16,185,129,.2);box-shadow:0 4px 12px rgba(16,185,129,.1);text-decoration:none">
+        🗺️ Mapa Circasia 2025
+      </a>
+      <a href="https://mapa-calarca-2026.vercel.app/" target="_blank" rel="noopener"
+         style="padding:10px 22px;border-radius:50px;background:rgba(255,255,255,.8);backdrop-filter:blur(10px);color:#059669;font-weight:700;font-size:.88rem;border:1px solid rgba(16,185,129,.2);box-shadow:0 4px 12px rgba(16,185,129,.1);text-decoration:none">
+        🗺️ Mapa Calarcá 2026
+      </a>
+    </div>
+  </section>
 
   <div class="container">
     <!-- Hero section con imagen -->
