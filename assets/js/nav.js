@@ -1,80 +1,81 @@
 /**
- * Navbar universal — se inyecta en todas las páginas
- * Incluye hamburger menu para móvil
+ * Navbar universal con logo — se inyecta en todas las páginas internas
+ * El index.html tiene su propio navbar inline
  */
 (function () {
+  const base = document.querySelector('base')?.href || '/';
+  const isRoot = window.location.pathname === '/' || window.location.pathname.endsWith('index.html');
+  if (isRoot) return; // index.html tiene su propio navbar
+
+  // Detectar profundidad de ruta para rutas relativas
+  const depth = (window.location.pathname.match(/\//g) || []).length - 1;
+  const prefix = depth > 1 ? '../'.repeat(depth - 1) : './';
+
   const links = [
-    { href: "/",                          label: "Inicio" },
-    { href: "/mapa-de-circasia-2025.html",label: "🗺️ Mapa" },
-    { href: "/municipios-del-quindio.html",label: "Municipios" },
-    { href: "/sitios-turisticos.html",    label: "Sitios Turísticos" },
-    { href: "/alojamientos.html",         label: "Alojamientos" },
-    { href: "/agencias-operadoras-turisticas.html", label: "Agencias" },
-    { href: "/empresas-de-transporte.html",label: "Transporte" },
-    { href: "/alquiler-finca-hoteles.html",label: "Fincas" },
-    { href: "/anunciate.html",            label: "📣 Anúnciate" },
+    { href: prefix + 'index.html',                              label: 'Inicio' },
+    { href: 'https://mapaquindio.vercel.app/',                  label: '🗺️ Mapa Quindío', ext: true },
+    { href: 'https://mapa-circasia-digital-2.vercel.app/',      label: '🗺️ Circasia', ext: true },
+    { href: 'https://mapa-calarca-2026.vercel.app/',            label: '🗺️ Calarcá', ext: true },
+    { href: prefix + 'municipios-del-quindio.html',             label: 'Municipios' },
+    { href: prefix + 'sitios-turisticos.html',                  label: 'Sitios' },
+    { href: prefix + 'alojamientos.html',                       label: 'Alojamientos' },
+    { href: prefix + 'anunciate.html',                          label: '📣 Anúnciate', cta: true },
   ];
 
-  const current = window.location.pathname.replace(/\/$/, "") || "/";
+  const current = window.location.pathname;
 
-  function buildLinks(isMobile) {
-    return links.map(l => {
-      const active = current === l.href || current.endsWith(l.href) ? ' class="active"' : '';
-      return `<a href="${l.href}"${active}>${l.label}</a>`;
-    }).join("");
-  }
-
-  const nav = document.createElement("nav");
-  nav.className = "navbar";
-  nav.setAttribute("role", "navigation");
-  nav.setAttribute("aria-label", "Navegación principal");
-  nav.innerHTML = `
-    <div class="navbar-inner">
-      <a href="/" class="nav-logo" aria-label="Mapa Turístico del Quindío - Inicio">
-        <span aria-hidden="true">🌿</span>
-        <span>MAPA TURÍSTICO</span>
-      </a>
-      <div class="nav-links" role="menubar">
-        ${buildLinks(false)}
+  const navHTML = `
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
+      <div class="nav-inner">
+        <a href="${prefix}index.html" class="nav-logo" aria-label="Inicio">
+          <img src="${prefix}media/logo.jpg" alt="Mapa Turístico del Quindío">
+        </a>
+        <div class="nav-links" role="menubar">
+          ${links.map(l => `<a href="${l.href}"${l.cta ? ' class="nav-cta"' : ''}${l.ext ? ' target="_blank" rel="noopener"' : ''}${current.includes(l.href.replace('./', '')) ? ' aria-current="page"' : ''}>${l.label}</a>`).join('')}
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-drawer">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div class="nav-drawer" id="nav-drawer" role="menu" aria-hidden="true">
-      ${buildLinks(true)}
-    </div>
-  `;
+      <div class="nav-drawer" id="navDrawer" role="menu" aria-hidden="true">
+        <a href="${prefix}index.html">🏠 Inicio</a>
+        <a href="https://mapaquindio.vercel.app/" target="_blank" rel="noopener">🗺️ Mapa del Quindío</a>
+        <a href="https://mapa-circasia-digital-2.vercel.app/" target="_blank" rel="noopener">🗺️ Mapa Circasia</a>
+        <a href="https://mapa-calarca-2026.vercel.app/" target="_blank" rel="noopener">🗺️ Mapa Calarcá</a>
+        <a href="${prefix}municipios-del-quindio.html">🏘️ Municipios</a>
+        <a href="${prefix}sitios-turisticos.html">🎡 Sitios Turísticos</a>
+        <a href="${prefix}alojamientos.html">🏨 Alojamientos</a>
+        <a href="${prefix}agencias-operadoras-turisticas.html">🧭 Agencias</a>
+        <a href="${prefix}empresas-de-transporte.html">🚍 Transporte</a>
+        <a href="${prefix}alquiler-finca-hoteles.html">🏡 Fincas</a>
+        <a href="${prefix}centros-comerciales.html">🛒 Centros Comerciales</a>
+        <a href="${prefix}anunciate.html">📣 Anúnciate</a>
+      </div>
+    </nav>`;
 
-  // Insert before body content
-  document.body.insertBefore(nav, document.body.firstChild);
+  document.body.insertAdjacentHTML('afterbegin', navHTML);
 
-  // Toggle logic
-  const toggle = nav.querySelector(".nav-toggle");
-  const drawer = nav.querySelector(".nav-drawer");
-  toggle.addEventListener("click", () => {
-    const open = drawer.classList.toggle("open");
-    toggle.classList.toggle("open", open);
-    toggle.setAttribute("aria-expanded", open);
-    drawer.setAttribute("aria-hidden", !open);
+  const toggle = document.getElementById('navToggle');
+  const drawer = document.getElementById('navDrawer');
+
+  toggle.addEventListener('click', () => {
+    const open = drawer.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open);
+    drawer.setAttribute('aria-hidden', !open);
   });
 
-  // Close on link click
-  drawer.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", () => {
-      drawer.classList.remove("open");
-      toggle.classList.remove("open");
-      toggle.setAttribute("aria-expanded", "false");
-      drawer.setAttribute("aria-hidden", "true");
-    });
-  });
+  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    drawer.classList.remove('open');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    drawer.setAttribute('aria-hidden', 'true');
+  }));
 
-  // Close on outside click
-  document.addEventListener("click", e => {
-    if (!nav.contains(e.target)) {
-      drawer.classList.remove("open");
-      toggle.classList.remove("open");
-      toggle.setAttribute("aria-expanded", "false");
+  document.addEventListener('click', e => {
+    if (!document.querySelector('.navbar').contains(e.target)) {
+      drawer.classList.remove('open');
+      toggle.classList.remove('open');
     }
   });
 })();

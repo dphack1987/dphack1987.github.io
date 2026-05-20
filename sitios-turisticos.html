@@ -4,200 +4,68 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sitios Turísticos del Quindío — Mapa Turístico</title>
-  <meta name="description" content="Descubre los mejores sitios turísticos del Quindío: Parque del Café, Valle del Cocora, Mirador Mano de Acaime, ecoparques y más. Con mapa, precios y contacto directo.">
+  <meta name="description" content="Los mejores sitios turísticos del Quindío: Parque del Café, Valle del Cocora, Mirador Mano de Acaime, ecoparques y más.">
   <link rel="canonical" href="https://www.mapaturisticodelquindio.com/sitios-turisticos.html">
-  <meta property="og:title" content="Sitios Turísticos del Quindío">
-  <meta property="og:description" content="Los mejores sitios turísticos del Eje Cafetero con mapa interactivo y contacto directo.">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Sitios Turísticos del Quindío",
-    "url": "https://www.mapaturisticodelquindio.com/sitios-turisticos.html",
-    "description": "Los mejores sitios turísticos del departamento del Quindío, Colombia."
-  }
-  </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body>
-
   <header class="page-hero">
     <h1>🎡 Sitios Turísticos</h1>
     <p>Los mejores destinos del Quindío con mapa, precios y contacto directo</p>
   </header>
-
   <div class="container">
-
-    <!-- Buscador -->
     <div class="search-bar" role="search">
-      <label for="buscar-sitio" class="sr-only">Buscar sitio turístico</label>
-      <input type="search" id="buscar-sitio" placeholder="🔍 Buscar sitio, municipio o actividad..." aria-label="Buscar sitio turístico">
-      <button onclick="buscar()" aria-label="Buscar">Buscar</button>
+      <input type="search" id="q" placeholder="🔍 Buscar sitio, municipio o actividad..." aria-label="Buscar">
+      <button onclick="buscar()">Buscar</button>
     </div>
-
-    <!-- Filtros -->
-    <div class="filtros" role="group" aria-label="Filtrar por tipo">
-      <button class="filtro-btn active" onclick="filtrar('todos', this)">Todos</button>
-      <button class="filtro-btn" onclick="filtrar('sitio-turistico', this)">🎡 Atracciones</button>
-      <button class="filtro-btn" onclick="filtrar('agencia', this)">🧭 Actividades</button>
+    <div class="filtros">
+      <button class="filtro-btn active" onclick="filtrar('todos',this)">Todos</button>
+      <button class="filtro-btn" onclick="filtrar('sitio-turistico',this)">🎡 Atracciones</button>
+      <button class="filtro-btn" onclick="filtrar('agencia',this)">🧭 Actividades</button>
     </div>
-
-    <!-- Mapa -->
-    <div style="margin-bottom:48px;">
-      <div id="mapa-interactivo" aria-label="Mapa de sitios turísticos del Quindío"></div>
-    </div>
-
-    <!-- Grid de tarjetas -->
-    <div id="cards-container" class="cards-grid" role="list" aria-live="polite"></div>
-    <div id="no-results" class="no-results" style="display:none" aria-live="polite">
-      <div class="icon">🔍</div>
-      <p>No se encontraron resultados. Intenta con otro término.</p>
-    </div>
-
-    <!-- CTA -->
+    <div style="margin-bottom:48px"><div id="mapa-interactivo"></div></div>
+    <div id="cards" class="cards-grid" role="list" aria-live="polite"></div>
+    <div id="empty" class="no-results" style="display:none"><div class="icon">🔍</div><p>Sin resultados.</p></div>
     <div class="cta-anunciate">
       <h2>¿Tienes un sitio turístico?</h2>
-      <p>Publica tu atracción en el mapa y llega a miles de turistas que visitan el Quindío cada mes.</p>
+      <p>Publica tu atracción y llega a miles de turistas que visitan el Quindío.</p>
       <a href="./anunciate.html" class="btn-cta">📣 Publicar mi sitio</a>
     </div>
-
   </div>
-
   <footer>
     <div class="footer-grid">
-      <div class="footer-col">
-        <h4>🌿 Mapa Turístico</h4>
-        <p style="color:#6b7280;font-size:.9rem">La plataforma turística del Quindío.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Navegación</h4>
-        <a href="./index.html">Inicio</a>
-        <a href="./municipios-del-quindio.html">Municipios</a>
-        <a href="./alojamientos.html">Alojamientos</a>
-        <a href="./anunciate.html">Anúnciate</a>
-      </div>
+      <div class="footer-col"><h4>🌿 Mapa Turístico</h4><p style="color:#6b7280;font-size:.9rem">La plataforma turística del Quindío.</p></div>
+      <div class="footer-col"><h4>Navegación</h4><a href="./index.html">Inicio</a><a href="./municipios-del-quindio.html">Municipios</a><a href="./alojamientos.html">Alojamientos</a><a href="./anunciate.html">Anúnciate</a></div>
     </div>
     <div class="footer-bottom"><p>© 2026 www.mapaturisticodelquindio.com</p></div>
   </footer>
-
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="./assets/js/datos.js"></script>
   <script src="./assets/js/nav.js"></script>
   <script>
-    const CATEGORIAS_PAGINA = ['sitio-turistico', 'agencia'];
-    let todosLosNegocios = NEGOCIOS.filter(n => CATEGORIAS_PAGINA.includes(n.categoria));
-    let negociosFiltrados = [...todosLosNegocios];
-
-    // ── MAPA ──────────────────────────────────────────────────
-    const map = L.map('mapa-interactivo', { scrollWheelZoom: false })
-      .setView([4.58, -75.65], 10);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a>'
-    }).addTo(map);
-
-    const markers = {};
-    todosLosNegocios.forEach(n => {
-      if (!n.lat) return;
-      const m = L.marker([n.lat, n.lng])
-        .addTo(map)
-        .bindPopup(popupHTML(n));
-      markers[n.id] = m;
-    });
-
-    function popupHTML(n) {
-      return `
-        <div style="min-width:220px;font-family:Inter,sans-serif">
-          <img src="${n.imagen}" alt="${n.nombre}" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px">
-          <strong style="font-size:1rem;color:#064e3b">${n.nombre}</strong><br>
-          <span style="font-size:.8rem;color:#059669;font-weight:600">${n.tipo}</span>
-          <p style="font-size:.85rem;color:#374151;margin:8px 0">${n.precio}</p>
-          <div style="display:flex;gap:8px;flex-wrap:wrap">
-            <a href="https://wa.me/${n.whatsapp}" target="_blank" rel="noopener"
-               style="padding:8px 14px;background:#25d366;color:white;border-radius:50px;font-size:.8rem;font-weight:700;text-decoration:none">
-              💬 WhatsApp
-            </a>
-            <a href="${n.maps}" target="_blank" rel="noopener"
-               style="padding:8px 14px;background:#f0fdf4;color:#059669;border:1px solid #d1fae5;border-radius:50px;font-size:.8rem;font-weight:700;text-decoration:none">
-              📍 Cómo llegar
-            </a>
-          </div>
-        </div>`;
+    const CATS = ['sitio-turistico','agencia'];
+    let todos = NEGOCIOS.filter(n=>CATS.includes(n.categoria));
+    let lista = [...todos];
+    const map = L.map('mapa-interactivo',{scrollWheelZoom:false}).setView([4.58,-75.65],10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap'}).addTo(map);
+    todos.forEach(n=>{if(!n.lat)return;L.marker([n.lat,n.lng]).addTo(map).bindPopup(`<b>${n.nombre}</b><br>${n.tipo}<br>${n.precio}<br><a href="https://wa.me/${n.whatsapp}" target="_blank">💬 WhatsApp</a>`)});
+    function render(l){
+      const c=document.getElementById('cards'),e=document.getElementById('empty');
+      c.innerHTML='';if(!l.length){e.style.display='block';return}e.style.display='none';
+      l.forEach(n=>{const d=document.createElement('article');d.className='biz-card';d.setAttribute('role','listitem');
+        d.innerHTML=`<div class="biz-card-img-wrap"><img src="${n.imagen}" alt="${n.nombre}" class="biz-card-img" loading="lazy"><span class="biz-badge ${n.nivel}">${n.nivel==='premium'?'⭐ Premium':'✓ Verificado'}</span></div>
+        <div class="biz-card-body"><div class="biz-tipo">${n.tipo}</div><h3>${n.nombre}</h3><p>${n.descripcion}</p>
+        <div class="biz-servicios">${n.servicios.slice(0,3).map(s=>`<span class="biz-tag">${s}</span>`).join('')}</div>
+        <div class="biz-precio">💰 ${n.precio}</div>
+        <div class="biz-actions"><a href="https://wa.me/${n.whatsapp}" target="_blank" rel="noopener" class="btn-wa">💬 WhatsApp</a><a href="${n.maps}" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a><a href="tel:${n.telefono}" class="btn-tel">📞</a></div></div>`;
+        c.appendChild(d)});
     }
-
-    // ── TARJETAS ──────────────────────────────────────────────
-    function renderCards(lista) {
-      const container = document.getElementById('cards-container');
-      const noResults = document.getElementById('no-results');
-      container.innerHTML = '';
-      if (lista.length === 0) {
-        noResults.style.display = 'block';
-        return;
-      }
-      noResults.style.display = 'none';
-      lista.forEach(n => {
-        const tags = n.servicios.slice(0, 3).map(s => `<span class="biz-tag">${s}</span>`).join('');
-        const div = document.createElement('article');
-        div.className = 'biz-card';
-        div.setAttribute('role', 'listitem');
-        div.setAttribute('itemscope', '');
-        div.setAttribute('itemtype', 'https://schema.org/TouristAttraction');
-        div.innerHTML = `
-          <div class="biz-card-img-wrap">
-            <img src="${n.imagen}" alt="${n.nombre}" class="biz-card-img" loading="lazy" width="600" height="200" itemprop="image">
-            <span class="biz-badge ${n.nivel}">${n.nivel === 'premium' ? '⭐ Premium' : '✓ Verificado'}</span>
-          </div>
-          <div class="biz-card-body">
-            <div class="biz-tipo" itemprop="additionalType">${n.tipo}</div>
-            <h3 itemprop="name">${n.nombre}</h3>
-            <p itemprop="description">${n.descripcion}</p>
-            <div class="biz-servicios">${tags}</div>
-            <div class="biz-precio">💰 ${n.precio}</div>
-            <div class="biz-actions">
-              <a href="https://wa.me/${n.whatsapp}" target="_blank" rel="noopener" class="btn-wa"
-                 aria-label="Contactar ${n.nombre} por WhatsApp" onclick="gtag&&gtag('event','whatsapp_click',{negocio:'${n.id}'})">
-                💬 WhatsApp
-              </a>
-              <a href="${n.maps}" target="_blank" rel="noopener" class="btn-maps"
-                 aria-label="Cómo llegar a ${n.nombre}" onclick="gtag&&gtag('event','maps_click',{negocio:'${n.id}'})">
-                📍 Llegar
-              </a>
-              <a href="tel:${n.telefono}" class="btn-tel" aria-label="Llamar a ${n.nombre}">📞</a>
-            </div>
-          </div>`;
-        container.appendChild(div);
-      });
-    }
-
-    renderCards(negociosFiltrados);
-
-    // ── FILTROS ───────────────────────────────────────────────
-    function filtrar(cat, btn) {
-      document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      negociosFiltrados = cat === 'todos'
-        ? [...todosLosNegocios]
-        : todosLosNegocios.filter(n => n.categoria === cat);
-      renderCards(negociosFiltrados);
-    }
-
-    // ── BÚSQUEDA ──────────────────────────────────────────────
-    function buscar() {
-      const q = document.getElementById('buscar-sitio').value.toLowerCase().trim();
-      if (!q) { renderCards(todosLosNegocios); return; }
-      const res = todosLosNegocios.filter(n =>
-        n.nombre.toLowerCase().includes(q) ||
-        n.descripcion.toLowerCase().includes(q) ||
-        n.municipio.toLowerCase().includes(q) ||
-        n.tipo.toLowerCase().includes(q) ||
-        n.servicios.some(s => s.toLowerCase().includes(q))
-      );
-      renderCards(res);
-    }
-    document.getElementById('buscar-sitio').addEventListener('keydown', e => {
-      if (e.key === 'Enter') buscar();
-    });
+    render(lista);
+    function filtrar(cat,btn){document.querySelectorAll('.filtro-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');lista=cat==='todos'?[...todos]:todos.filter(n=>n.categoria===cat);render(lista)}
+    function buscar(){const q=document.getElementById('q').value.toLowerCase().trim();if(!q){render(todos);return}render(todos.filter(n=>n.nombre.toLowerCase().includes(q)||n.descripcion.toLowerCase().includes(q)||n.municipio.toLowerCase().includes(q)||n.servicios.some(s=>s.toLowerCase().includes(q))))}
+    document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter')buscar()});
   </script>
 </body>
 </html>

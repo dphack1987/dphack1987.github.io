@@ -4,129 +4,60 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Empresas de Transporte del Quindío — Cómo Llegar</title>
-  <meta name="description" content="Empresas de transporte en el Quindío. Rutas intermunicipales, transporte aéreo, alquiler de vehículos y más.">
+  <meta name="description" content="Empresas de transporte en el Quindío. Rutas intermunicipales, transporte aéreo y más.">
   <link rel="canonical" href="https://www.mapaturisticodelquindio.com/empresas-de-transporte.html">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body>
-
   <header class="page-hero">
     <h1>🚍 Empresas de Transporte</h1>
-    <p>Cómo llegar al Quindío y moverte entre sus municipios. Rutas, horarios y contacto directo.</p>
+    <p>Cómo llegar al Quindío y moverte entre sus municipios.</p>
   </header>
-
   <div class="container">
-
     <div class="search-bar" role="search">
-      <label for="buscar-transporte" class="sr-only">Buscar empresa de transporte</label>
-      <input type="search" id="buscar-transporte" placeholder="🔍 Buscar empresa, ruta o servicio..." aria-label="Buscar transporte">
-      <button onclick="buscar()" aria-label="Buscar">Buscar</button>
+      <input type="search" id="q" placeholder="🔍 Buscar empresa, ruta o servicio..." aria-label="Buscar">
+      <button onclick="buscar()">Buscar</button>
     </div>
-
-    <div style="margin-bottom:48px;">
-      <div id="mapa-interactivo" aria-label="Mapa de transporte"></div>
-    </div>
-
-    <div id="cards-container" class="cards-grid" role="list" aria-live="polite"></div>
-    <div id="no-results" class="no-results" style="display:none">
-      <div class="icon">🚍</div>
-      <p>No se encontraron empresas de transporte con ese criterio.</p>
-    </div>
-
+    <div style="margin-bottom:48px"><div id="mapa-interactivo"></div></div>
+    <div id="cards" class="cards-grid" role="list" aria-live="polite"></div>
+    <div id="empty" class="no-results" style="display:none"><div class="icon">🚍</div><p>Sin resultados.</p></div>
     <div class="cta-anunciate">
       <h2>¿Tienes una empresa de transporte?</h2>
-      <p>Publica tu empresa y llega a turistas que buscan cómo llegar al Quindío o moverse entre municipios.</p>
+      <p>Publica tu empresa y llega a turistas que buscan cómo moverse por el Quindío.</p>
       <a href="./anunciate.html" class="btn-cta">📣 Publicar mi empresa</a>
     </div>
-
   </div>
-
   <footer>
     <div class="footer-grid">
       <div class="footer-col"><h4>🌿 Mapa Turístico</h4><p style="color:#6b7280;font-size:.9rem">La plataforma turística del Quindío.</p></div>
-      <div class="footer-col">
-        <h4>Navegación</h4>
-        <a href="./index.html">Inicio</a>
-        <a href="./sitios-turisticos.html">Sitios Turísticos</a>
-        <a href="./alojamientos.html">Alojamientos</a>
-        <a href="./anunciate.html">Anúnciate</a>
-      </div>
+      <div class="footer-col"><h4>Navegación</h4><a href="./index.html">Inicio</a><a href="./sitios-turisticos.html">Sitios Turísticos</a><a href="./alojamientos.html">Alojamientos</a><a href="./anunciate.html">Anúnciate</a></div>
     </div>
     <div class="footer-bottom"><p>© 2026 www.mapaturisticodelquindio.com</p></div>
   </footer>
-
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="./assets/js/datos.js"></script>
   <script src="./assets/js/nav.js"></script>
   <script>
-    let todosLosNegocios = NEGOCIOS.filter(n => n.categoria === 'transporte');
-
-    const map = L.map('mapa-interactivo', { scrollWheelZoom: false }).setView([4.58, -75.65], 10);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a>'
-    }).addTo(map);
-
-    todosLosNegocios.forEach(n => {
-      if (!n.lat) return;
-      L.marker([n.lat, n.lng]).addTo(map).bindPopup(`
-        <div style="min-width:200px;font-family:Inter,sans-serif">
-          <strong style="color:#064e3b">${n.nombre}</strong><br>
-          <span style="font-size:.8rem;color:#059669;font-weight:600">${n.tipo}</span>
-          <p style="font-size:.85rem;color:#374151;margin:8px 0">${n.precio}</p>
-          <a href="tel:${n.telefono}"
-             style="display:inline-block;padding:8px 14px;background:#059669;color:white;border-radius:50px;font-size:.8rem;font-weight:700;text-decoration:none">
-            📞 Llamar
-          </a>
-        </div>`);
-    });
-
-    function renderCards(lista) {
-      const container = document.getElementById('cards-container');
-      const noResults = document.getElementById('no-results');
-      container.innerHTML = '';
-      if (lista.length === 0) { noResults.style.display = 'block'; return; }
-      noResults.style.display = 'none';
-      lista.forEach(n => {
-        const tags = n.servicios.slice(0, 3).map(s => `<span class="biz-tag">${s}</span>`).join('');
-        const div = document.createElement('article');
-        div.className = 'biz-card';
-        div.setAttribute('role', 'listitem');
-        div.innerHTML = `
-          <div class="biz-card-img-wrap">
-            <img src="${n.imagen}" alt="${n.nombre}" class="biz-card-img" loading="lazy" width="600" height="200">
-            <span class="biz-badge ${n.nivel}">${n.nivel === 'premium' ? '⭐ Premium' : '✓ Verificado'}</span>
-          </div>
-          <div class="biz-card-body">
-            <div class="biz-tipo">${n.tipo} · ${n.municipio}</div>
-            <h3>${n.nombre}</h3>
-            <p>${n.descripcion}</p>
-            <div class="biz-servicios">${tags}</div>
-            <div class="biz-precio">💰 ${n.precio}</div>
-            <div class="biz-actions">
-              <a href="tel:${n.telefono}" class="btn-tel" onclick="gtag&&gtag('event','phone_click',{negocio:'${n.id}'})">📞 Llamar</a>
-              <a href="${n.maps}" target="_blank" rel="noopener" class="btn-maps">📍 Ubicación</a>
-            </div>
-          </div>`;
-        container.appendChild(div);
-      });
+    let todos=NEGOCIOS.filter(n=>n.categoria==='transporte');
+    const map=L.map('mapa-interactivo',{scrollWheelZoom:false}).setView([4.58,-75.65],10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap'}).addTo(map);
+    todos.forEach(n=>{if(!n.lat)return;L.marker([n.lat,n.lng]).addTo(map).bindPopup(`<b>${n.nombre}</b><br>${n.tipo}<br>${n.precio}<br><a href="tel:${n.telefono}">📞 Llamar</a>`)});
+    function render(l){
+      const c=document.getElementById('cards'),e=document.getElementById('empty');
+      c.innerHTML='';if(!l.length){e.style.display='block';return}e.style.display='none';
+      l.forEach(n=>{const d=document.createElement('article');d.className='biz-card';
+        d.innerHTML=`<div class="biz-card-img-wrap"><img src="${n.imagen}" alt="${n.nombre}" class="biz-card-img" loading="lazy"><span class="biz-badge ${n.nivel}">${n.nivel==='premium'?'⭐ Premium':'✓ Verificado'}</span></div>
+        <div class="biz-card-body"><div class="biz-tipo">${n.tipo} · ${n.municipio}</div><h3>${n.nombre}</h3><p>${n.descripcion}</p>
+        <div class="biz-servicios">${n.servicios.slice(0,3).map(s=>`<span class="biz-tag">${s}</span>`).join('')}</div>
+        <div class="biz-precio">💰 ${n.precio}</div>
+        <div class="biz-actions"><a href="tel:${n.telefono}" class="btn-tel" style="flex:1;justify-content:center">📞 Llamar</a><a href="${n.maps}" target="_blank" rel="noopener" class="btn-maps">📍 Ubicación</a></div></div>`;
+        c.appendChild(d)});
     }
-
-    renderCards(todosLosNegocios);
-
-    function buscar() {
-      const q = document.getElementById('buscar-transporte').value.toLowerCase().trim();
-      if (!q) { renderCards(todosLosNegocios); return; }
-      renderCards(todosLosNegocios.filter(n =>
-        n.nombre.toLowerCase().includes(q) ||
-        n.descripcion.toLowerCase().includes(q) ||
-        n.servicios.some(s => s.toLowerCase().includes(q))
-      ));
-    }
-    document.getElementById('buscar-transporte').addEventListener('keydown', e => {
-      if (e.key === 'Enter') buscar();
-    });
+    render(todos);
+    function buscar(){const q=document.getElementById('q').value.toLowerCase().trim();if(!q){render(todos);return}render(todos.filter(n=>n.nombre.toLowerCase().includes(q)||n.descripcion.toLowerCase().includes(q)||n.servicios.some(s=>s.toLowerCase().includes(q))))}
+    document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter')buscar()});
   </script>
 </body>
 </html>
