@@ -14,13 +14,48 @@
       --a1:#f59e0b;--a2:#fbbf24;
       --dark:#064e3b;--text:#064e3b;--t2:#065f46;--t3:#6b7280;
       --bg1:#f0fdf4;--bg2:#ecfdf5;
+      --nav-h:132px;
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{font-family:'Inter','Poppins',sans-serif;line-height:1.6;color:var(--text);
-      background:var(--bg1);overflow-x:hidden}
+      background:var(--bg1);overflow-x:hidden;padding-top:var(--nav-h)}
     img{max-width:100%;display:block}
     a{text-decoration:none;color:inherit}
+
+    /* ══ HEADER ÚNICO ══ */
+    .site-header{position:fixed;top:0;left:0;right:0;z-index:1000;
+      background:rgba(255,255,255,.97);backdrop-filter:blur(20px) saturate(180%);
+      box-shadow:0 4px 24px rgba(16,185,129,.15)}
+    .header-top{height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid rgba(16,185,129,.12)}
+    .nav-logo{display:flex;align-items:center;gap:12px}
+    .nav-logo img{height:64px;width:auto;object-fit:contain}
+    .nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:none}
+    .nav-toggle span{display:block;width:26px;height:2px;background:var(--text);border-radius:2px;transition:all .3s}
+    .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-toggle.open span:nth-child(2){opacity:0}
+    .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .menu-bar{height:52px;background:#c0392b;
+      background-image:repeating-linear-gradient(90deg,rgba(0,0,0,.07) 0,rgba(0,0,0,.07) 2px,transparent 2px,transparent 22px),
+        repeating-linear-gradient(0deg,rgba(0,0,0,.04) 0,rgba(0,0,0,.04) 2px,transparent 2px,transparent 22px);
+      overflow-x:auto;white-space:nowrap;scrollbar-width:none;
+      border-top:2px solid #922b21;border-bottom:2px solid #922b21;display:flex;align-items:center}
+    .menu-bar::-webkit-scrollbar{display:none}
+    .menu-bar-inner{display:inline-flex;gap:5px;align-items:center;padding:0 16px;min-width:max-content}
+    .menu-bar a{display:inline-block;padding:8px 16px;border-radius:5px;
+      background:linear-gradient(180deg,#f9e04b 0%,#e6c200 100%);
+      color:#1a0a00;font-weight:700;font-size:.82rem;
+      border:1px solid #c9a800;box-shadow:0 2px 6px rgba(0,0,0,.2);transition:all .2s;white-space:nowrap}
+    .menu-bar a:hover{background:linear-gradient(180deg,#fff176 0%,#f9e04b 100%);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.25)}
+    .menu-bar a.active{background:linear-gradient(180deg,#a5d6a7 0%,#66bb6a 100%);color:#1b5e20;border-color:#388e3c}
+    .nav-drawer{display:none;position:fixed;top:var(--nav-h);left:0;right:0;
+      background:rgba(255,255,255,.98);backdrop-filter:blur(20px);
+      padding:20px 28px 32px;z-index:999;border-bottom:2px solid rgba(16,185,129,.15);
+      box-shadow:0 16px 48px rgba(16,185,129,.12);flex-direction:column;gap:4px}
+    .nav-drawer.open{display:flex}
+    .nav-drawer a{padding:14px 18px;border-radius:14px;font-weight:600;color:var(--text);font-size:1rem;transition:all .2s}
+    .nav-drawer a:hover{background:#f0fdf4;color:var(--p1)}
+    @media(max-width:768px){:root{--nav-h:80px}.menu-bar{display:none}.nav-toggle{display:flex}}
 
     /* ══ HERO FULL-WIDTH ══ */
     .hero{position:relative;min-height:85vh;display:flex;align-items:center;overflow:hidden}
@@ -29,13 +64,13 @@
     .hero-inner{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:80px 32px;
       display:flex;align-items:center;gap:40px}
     .hero-logo-wrap{display:flex}
-    .hero-logo-wrap img{height:140px;width:auto;object-fit:contain;
+    .hero-logo-wrap img{height:220px;width:auto;object-fit:contain;
                         filter:drop-shadow(0 8px 32px rgba(0,0,0,.4))}
-    @media(max-width:1200px){.hero-logo-wrap img{height:120px}}
-    @media(max-width:900px){.hero-logo-wrap img{height:100px}}
-    @media(max-width:600px){.hero-logo-wrap img{height:80px}}
-    @media(max-width:480px){.hero-logo-wrap img{height:64px}}
-    @media(max-width:360px){.hero-logo-wrap img{height:56px}}
+    @media(max-width:1200px){.hero-logo-wrap img{height:180px}}
+    @media(max-width:900px){.hero-logo-wrap img{height:140px}}
+    @media(max-width:600px){.hero-logo-wrap img{height:100px}}
+    @media(max-width:480px){.hero-logo-wrap img{height:80px}}
+    @media(max-width:360px){.hero-logo-wrap img{height:64px}}
     .hero-text{margin-left:40px}
     .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;
       background:rgba(16,185,129,.25);border:1px solid rgba(16,185,129,.5);
@@ -173,7 +208,43 @@
 </head>
 <body>
 
-
+  <!-- ══ HEADER ÚNICO ══ -->
+  <div class="site-header">
+    <div class="header-top">
+      <a href="/" class="nav-logo">
+        <img src="./assets/images/logo_mapaquindio-com.png" alt="Mapa Turístico del Quindío" style="height:64px;width:auto;object-fit:contain">
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="menu-bar" role="navigation" aria-label="Menú principal">
+      <div class="menu-bar-inner">
+        <a href="/" class="active">Home</a>
+        <a href="https://mapa-circasia-digital-2.vercel.app/" target="_blank" rel="noopener">Mapa de Circasia 2025</a>
+        <a href="./alquiler-finca-hoteles.html">Alquiler Finca hoteles</a>
+        <a href="https://mapaquindio.vercel.app/" target="_blank" rel="noopener">Mapa del Quindío</a>
+        <a href="./quindio-comercial.html">Quindío Comercial</a>
+        <a href="./municipios-del-quindio.html">Municipios del Quindío</a>
+        <a href="./agencias-operadoras-turisticas.html">Agencias Operadoras Turísticas</a>
+        <a href="./sitios-turisticos.html">Atractivos Turísticos</a>
+        <a href="./alojamientos.html">Alojamientos</a>
+        <a href="https://mapa-calarca-2026.vercel.app/" target="_blank" rel="noopener">Mapa Calarcá 2026</a>
+        <a href="./anunciate.html">📣 Anúnciate</a>
+      </div>
+    </nav>
+  </div>
+  <div class="nav-drawer" id="navDrawer">
+    <a href="/">🏠 Home</a>
+    <a href="https://mapa-circasia-digital-2.vercel.app/" target="_blank" rel="noopener">🗺️ Mapa de Circasia 2025</a>
+    <a href="./alquiler-finca-hoteles.html">🏡 Alquiler Finca hoteles</a>
+    <a href="https://mapaquindio.vercel.app/" target="_blank" rel="noopener">🗺️ Mapa del Quindío</a>
+    <a href="./quindio-comercial.html">🛍️ Quindío Comercial</a>
+    <a href="./municipios-del-quindio.html">🏘️ Municipios del Quindío</a>
+    <a href="./agencias-operadoras-turisticas.html">🧭 Agencias Operadoras Turísticas</a>
+    <a href="./sitios-turisticos.html">🎡 Atractivos Turísticos</a>
+    <a href="./alojamientos.html">🏨 Alojamientos</a>
+    <a href="https://mapa-calarca-2026.vercel.app/" target="_blank" rel="noopener">🗺️ Mapa Calarcá 2026</a>
+    <a href="./anunciate.html">📣 Anúnciate</a>
+  </div>
 
   <!-- ══ HERO ══ -->
   <section class="hero" id="inicio">
@@ -183,7 +254,7 @@
       <div class="hero-logo-wrap">
         <img src="./assets/images/logo_mapaquindio-com.png"
              alt="Mapa Turístico del Quindío"
-             style="height:140px;width:auto;object-fit:contain;
+             style="height:220px;width:auto;object-fit:contain;
                     filter:drop-shadow(0 8px 32px rgba(0,0,0,.4))">
       </div>
       <div class="hero-text">
