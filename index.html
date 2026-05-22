@@ -154,6 +154,17 @@
     .cat-card h4{color:var(--text);font-size:1rem;font-weight:800;margin-bottom:4px;position:relative;z-index:1}
     .cat-card span{color:var(--p1);font-size:.8rem;font-weight:700;position:relative;z-index:1}
 
+    /* ══ HOTELES Y FINCAS ══ */
+    .hoteles-section{padding:72px 32px;background:white}
+    .hoteles-section-inner{max-width:1280px;margin:0 auto}
+    .hoteles-preview{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:36px 0 32px;border-radius:20px;overflow:hidden}
+    .hoteles-preview a{display:block;height:200px;overflow:hidden;border-radius:16px;box-shadow:0 8px 28px rgba(16,185,129,.15);transition:transform .35s}
+    .hoteles-preview a:hover{transform:translateY(-6px) scale(1.02)}
+    .hoteles-preview img{width:100%;height:100%;object-fit:cover}
+    .hoteles-cta-wrap{text-align:center}
+    @media(max-width:900px){.hoteles-preview{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:480px){.hoteles-preview{grid-template-columns:1fr}.hoteles-preview a{height:180px}}
+
     /* ══ DECORACIÓN STRIP ══ */
     .decor-strip{height:160px;overflow:hidden;position:relative}
     .decor-strip img{width:100%;height:100%;object-fit:cover;filter:saturate(1.2)}
@@ -223,7 +234,7 @@
       <div class="menu-bar-inner">
         <a href="/" class="active">Home</a>
         <a href="https://mapa-circasia-digital-2.vercel.app/" target="_blank" rel="noopener">Mapa de Circasia 2025</a>
-        <a href="./alquiler-finca-hoteles.html">Alquiler Finca hoteles</a>
+        <a href="./alquiler-finca-hoteles.html">Hoteles</a>
         <a href="https://mapaquindio.vercel.app/" target="_blank" rel="noopener">Mapa del Quindío</a>
         <a href="./quindio-comercial.html">Quindío Comercial</a>
         <a href="./municipios-del-quindio.html">Municipios del Quindío</a>
@@ -238,7 +249,7 @@
   <div class="nav-drawer" id="navDrawer">
     <a href="/">🏠 Home</a>
     <a href="https://mapa-circasia-digital-2.vercel.app/" target="_blank" rel="noopener">🗺️ Mapa de Circasia 2025</a>
-    <a href="./alquiler-finca-hoteles.html">🏡 Alquiler Finca hoteles</a>
+    <a href="./alquiler-finca-hoteles.html">🏨 Hoteles</a>
     <a href="https://mapaquindio.vercel.app/" target="_blank" rel="noopener">🗺️ Mapa del Quindío</a>
     <a href="./quindio-comercial.html">🛍️ Quindío Comercial</a>
     <a href="./municipios-del-quindio.html">🏘️ Municipios del Quindío</a>
@@ -308,6 +319,26 @@
       <div class="paisaje-item"><img src="./assets/images/paisajes/5860.jpg" alt="Paisaje Quindío" loading="lazy"></div>
     </div>
   </div>
+
+  <!-- ══ HOTELES Y FINCAS ══ -->
+  <section class="hoteles-section" id="hoteles">
+    <div class="hoteles-section-inner">
+      <div class="sec-head">
+        <div class="sec-chip">Dónde hospedarte</div>
+        <h2 class="sec-h2">Hoteles y fincas en el Quindío</h2>
+        <p class="sec-sub">Hoteles, fincas hotel y hospedajes con fotos reales y reserva directa por WhatsApp</p>
+      </div>
+      <div class="hoteles-preview">
+        <a href="./alquiler-finca-hoteles.html" title="Chalet Alemania"><img src="./assets/images/alojamientos/chalet-alemania.jpg" alt="Chalet Alemania" loading="lazy"></a>
+        <a href="./alquiler-finca-hoteles.html" title="Finca San Miguel"><img src="./assets/images/alojamientos/finca_san_miguel.jpg" alt="Finca San Miguel" loading="lazy"></a>
+        <a href="./alquiler-finca-hoteles.html" title="Hotel Armont"><img src="./assets/images/alojamientos/armont.jpg" alt="Hotel Armont" loading="lazy"></a>
+        <a href="./alquiler-finca-hoteles.html" title="Ticlan Hotel"><img src="./assets/images/alojamientos/ticlan.jpg" alt="Ticlan Hotel" loading="lazy"></a>
+      </div>
+      <div class="hoteles-cta-wrap">
+        <a href="./alquiler-finca-hoteles.html" class="btn-hero">🏨 Ver hoteles y fincas →</a>
+      </div>
+    </div>
+  </section>
 
   <!-- ══ BANNER INVITACIÓN A PAUTAR ══ -->
   <section style="padding:0;position:relative;overflow:hidden">
@@ -392,7 +423,7 @@
         <a href="./alojamientos.html" class="cat-card"><span class="cat-icon">🏨</span><h4>Alojamientos</h4><span>Dónde dormir</span></a>
         <a href="./agencias-operadoras-turisticas.html" class="cat-card"><span class="cat-icon">🧭</span><h4>Agencias</h4><span>Tours y planes</span></a>
         <a href="./empresas-de-transporte.html" class="cat-card"><span class="cat-icon">🚍</span><h4>Transporte</h4><span>Cómo llegar</span></a>
-        <a href="./alquiler-finca-hoteles.html" class="cat-card"><span class="cat-icon">🏡</span><h4>Fincas</h4><span>Alquiler</span></a>
+        <a href="./alquiler-finca-hoteles.html" class="cat-card"><span class="cat-icon">🏨</span><h4>Hoteles</h4><span>Fincas y más</span></a>
         <a href="./centros-comerciales.html" class="cat-card"><span class="cat-icon">🛒</span><h4>Compras</h4><span>Centros</span></a>
         <a href="./quindio-comercial.html" class="cat-card"><span class="cat-icon">🛍️</span><h4>Quindío Comercial</h4><span>Negocios</span></a>
         <a href="./anunciate.html" class="cat-card"><span class="cat-icon">📣</span><h4>Anúnciate</h4><span>Para empresarios</span></a>

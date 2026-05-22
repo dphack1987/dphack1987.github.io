@@ -13,12 +13,19 @@
 <body>
   <header class="page-hero">
     <h1>🏡 Alquiler Finca Hoteles</h1>
-    <p>Fincas turísticas del Quindío para descansar, celebrar y disfrutar del campo cafetero.</p>
+    <p>Hoteles, fincas hotel y hospedajes del Quindío — catálogo con fotos de nuestro directorio de alojamientos.</p>
   </header>
   <div class="container">
     <div class="search-bar" role="search">
-      <input type="search" id="q" placeholder="🔍 Buscar finca, municipio o servicio..." aria-label="Buscar">
+      <input type="search" id="q" placeholder="🔍 Buscar por nombre, municipio o servicio..." aria-label="Buscar">
       <button onclick="buscar()">Buscar</button>
+    </div>
+    <div class="filtros">
+      <button class="filtro-btn active" onclick="filtrar('todos',this)">Todos</button>
+      <button class="filtro-btn" onclick="filtrar('Finca Hotel',this)">🏡 Finca Hotel</button>
+      <button class="filtro-btn" onclick="filtrar('Hotel',this)">🏨 Hotel</button>
+      <button class="filtro-btn" onclick="filtrar('Hotel Boutique',this)">✨ Hotel Boutique</button>
+      <button class="filtro-btn" onclick="filtrar('Hospedaje',this)">🛏️ Hospedaje</button>
     </div>
     <div style="margin-bottom:48px"><div id="mapa-interactivo"></div></div>
     <div id="cards" class="cards-grid" role="list" aria-live="polite"></div>
@@ -53,14 +60,14 @@
   <script src="./assets/js/datos.js"></script>
   <script src="./assets/js/nav.js"></script>
   <script>
-    let todos = NEGOCIOS.filter(n => n.categoria === 'alojamiento' && n.tipo === 'Finca Hotel');
+    let todos = NEGOCIOS.filter(n => n.categoria === 'alojamiento' && n.imagen && n.imagen.includes('alojamientos/'));
     let lista = [...todos];
     const map = L.map('mapa-interactivo', { scrollWheelZoom: false }).setView([4.58, -75.65], 10);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
     todos.forEach(n => {
       if (!n.lat) return;
       L.marker([n.lat, n.lng]).addTo(map).bindPopup(
-        `<b>${n.nombre}</b><br>${n.tipo}<br>${n.precio}<br><a href="https://wa.me/${n.whatsapp}" target="_blank">💬 WhatsApp</a>`
+        `<b>${n.nombre}</b><br>${n.tipo}<br>${n.precio}<br><a href="https://wa.me/${n.whatsapp}?text=Hola%2C%20quiero%20reservar" target="_blank">💬 Reservar</a>`
       );
     });
     function render(l) {
@@ -76,14 +83,22 @@
         <div class="biz-card-body"><div class="biz-tipo">${n.tipo} · ${n.municipio}</div><h3>${n.nombre}</h3><p>${n.descripcion}</p>
         <div class="biz-servicios">${n.servicios.slice(0, 4).map(s => `<span class="biz-tag">${s}</span>`).join('')}</div>
         <div class="biz-precio">💰 ${n.precio}</div>
-        <div class="biz-actions"><a href="https://wa.me/${n.whatsapp}" target="_blank" rel="noopener" class="btn-wa">💬 WhatsApp</a><a href="${n.maps}" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a><a href="tel:${n.telefono}" class="btn-tel">📞</a></div></div>`;
+        <div class="biz-actions"><a href="https://wa.me/${n.whatsapp}?text=Hola%2C%20quiero%20reservar%20en%20${encodeURIComponent(n.nombre)}" target="_blank" rel="noopener" class="btn-wa">💬 Reservar</a><a href="${n.maps}" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a><a href="tel:${n.telefono}" class="btn-tel">📞</a></div></div>`;
         c.appendChild(d);
       });
     }
     render(lista);
+    function filtrar(tipo, btn) {
+      document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (tipo === 'todos') lista = [...todos];
+      else if (tipo === 'Hotel') lista = todos.filter(n => n.tipo === 'Hotel');
+      else lista = todos.filter(n => n.tipo === tipo);
+      render(lista);
+    }
     function buscar() {
       const q = document.getElementById('q').value.toLowerCase().trim();
-      if (!q) { render(todos); return; }
+      if (!q) { render(lista); return; }
       render(todos.filter(n =>
         n.nombre.toLowerCase().includes(q) ||
         n.descripcion.toLowerCase().includes(q) ||
