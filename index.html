@@ -168,9 +168,12 @@
       box-shadow:0 10px 40px rgba(16,185,129,.1);border:1px solid rgba(255,255,255,.8);
       transition:all .4s cubic-bezier(.4,0,.2,1);position:relative}
     .dest-card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;
-      background:linear-gradient(90deg,var(--p1),var(--a1))}
+      background:linear-gradient(90deg,var(--p1),var(--a1));z-index:2}
     .dest-card:hover{transform:translateY(-12px);box-shadow:0 22px 64px rgba(16,185,129,.2)}
-    .dest-card-body{padding:36px}
+    .dest-card-img-wrap{height:220px;overflow:hidden;position:relative;background:#064e3b}
+    .dest-card-img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+    .dest-card:hover .dest-card-img{transform:scale(1.06)}
+    .dest-card-body{padding:28px 32px 32px}
     .dest-icon{width:72px;height:72px;background:linear-gradient(135deg,var(--p1),var(--p2));
       border-radius:18px;display:flex;align-items:center;justify-content:center;
       font-size:2.2rem;margin-bottom:20px;box-shadow:0 8px 24px rgba(16,185,129,.3)}
@@ -408,47 +411,57 @@
       <div class="sec-head">
         <div class="sec-chip">Lo más popular</div>
         <h2 class="sec-h2">Destinos y servicios destacados</h2>
-        <p class="sec-sub">Los mejores negocios turísticos del Quindío con contacto directo</p>
+        <p class="sec-sub">Atractivos turísticos del Quindío con fotos reales y contacto directo</p>
       </div>
       <div class="dest-grid">
         <div class="dest-card">
+          <div class="dest-card-img-wrap">
+            <img src="./assets/images/atractivos turisticos/domo_aves.jpg" alt="Domo de las Aves, Calarcá" class="dest-card-img" loading="lazy">
+          </div>
           <div class="dest-card-body">
-            <div class="dest-icon">🎢</div>
-            <h3>Parque del Café</h3>
-            <p>El parque temático más importante del Eje Cafetero. Atracciones, shows del café y gastronomía típica en Montenegro.</p>
-            <a href="./parque-del-cafe.html">Ver más →</a>
+            <h3>Domo de las Aves</h3>
+            <p>Santuario de aves con más de 100 especies en su hábitat natural. Experiencia única de avistamiento en Calarcá.</p>
+            <a href="./sitios-turisticos.html">Ver más →</a>
           </div>
         </div>
         <div class="dest-card">
+          <div class="dest-card-img-wrap">
+            <img src="./assets/images/atractivos turisticos/nueva_albania.jpg" alt="Nueva Albania, Calarcá" class="dest-card-img" loading="lazy">
+          </div>
           <div class="dest-card-body">
-            <div class="dest-icon">🐴</div>
-            <h3>Cabalgatas El Carmelo</h3>
-            <p>Recorridos a caballo por los cafetales y el Valle del Cocora en Salento. Guías expertos, experiencia auténtica.</p>
-            <a href="./cabalgatas-el-carmelo.html">Ver más →</a>
+            <h3>Nueva Albania</h3>
+            <p>Destino con aventura, naturaleza y cultura cafetera. Senderismo, cabalgatas y gastronomía típica.</p>
+            <a href="./sitios-turisticos.html">Ver más →</a>
           </div>
         </div>
         <div class="dest-card">
+          <div class="dest-card-img-wrap">
+            <img src="./assets/images/atractivos turisticos/quinti.jpg" alt="Qinti Parque en la Montaña, Circasia" class="dest-card-img" loading="lazy">
+          </div>
           <div class="dest-card-body">
-            <div class="dest-icon">🏘️</div>
-            <h3>Municipios del Quindío</h3>
-            <p>Información completa de los 12 municipios del Quindío: Armenia, Salento, Circasia, Filandia y más.</p>
-            <a href="./municipios-del-quindio.html">Ver municipios →</a>
+            <h3>Qinti Parque en la Montaña</h3>
+            <p>Ecoparque en Circasia con tirolesa, canopy, senderismo y vista panorámica al Quindío.</p>
+            <a href="./sitios-turisticos.html">Ver más →</a>
           </div>
         </div>
         <div class="dest-card">
+          <div class="dest-card-img-wrap">
+            <img src="./assets/images/atractivos turisticos/recuca.jpg" alt="La Recuca, finca cafetera" class="dest-card-img" loading="lazy">
+          </div>
           <div class="dest-card-body">
-            <div class="dest-icon">🏨</div>
-            <h3>Alojamientos</h3>
-            <p>Las mejores opciones de hospedaje para tu visita al Quindío. Hoteles, fincas y hospedajes con reserva directa.</p>
-            <a href="./alojamientos.html">Ver alojamientos →</a>
+            <h3>La Recuca</h3>
+            <p>Finca cafetera con recorrido del café de la mata a la taza. Cata, gastronomía y tienda de productos.</p>
+            <a href="./sitios-turisticos.html">Ver más →</a>
           </div>
         </div>
         <div class="dest-card">
+          <div class="dest-card-img-wrap">
+            <img src="./assets/images/atractivos turisticos/peñas.jpg" alt="Vista panorámica Las Peñas, Quindío" class="dest-card-img" loading="lazy">
+          </div>
           <div class="dest-card-body">
-            <div class="dest-icon">🏡</div>
-            <h3>Alquiler Finca Hoteles</h3>
-            <p>Las mejores fincas turísticas del Eje Cafetero. Disfruta y descansa en el corazón del Paisaje Cultural Cafetero.</p>
-            <a href="./alquiler-finca-hoteles.html">Ver fincas →</a>
+            <h3>Las Peñas</h3>
+            <p>Vistas a las montañas del Quindío y paisaje cafetero. Ideal para descanso y turismo de naturaleza en Calarcá.</p>
+            <a href="./sitios-turisticos.html">Ver más →</a>
           </div>
         </div>
         <div class="dest-card">
