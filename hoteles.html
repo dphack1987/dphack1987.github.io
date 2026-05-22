@@ -3,54 +3,41 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Alquiler Finca Hoteles en el Quindío — Eje Cafetero</title>
-  <meta name="description" content="Fincas hotel y alquiler de fincas turísticas en el Quindío. Pasadías, hospedaje y experiencias en el Paisaje Cultural Cafetero.">
-  <link rel="canonical" href="https://www.mapaturisticodelquindio.com/alquiler-finca-hoteles.html">
+  <title>Hoteles en el Quindío — Eje Cafetero</title>
+  <meta name="description" content="Hoteles y hospedaje boutique del Quindío. Reserva directa por WhatsApp sin comisiones.">
+  <link rel="canonical" href="https://www.mapaturisticodelquindio.com/hoteles.html">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body>
   <header class="page-hero">
-    <h1>🏡 Alquiler Finca Hoteles</h1>
-    <p>Fincas hotel y hospedajes del Quindío — catálogo con fotos de la carpeta de alojamientos.</p>
+    <h1>🏨 Hoteles</h1>
+    <p>Hoteles del Quindío con fotos del directorio oficial. Reserva directa, sin intermediarios.</p>
   </header>
   <div class="container">
     <div class="search-bar" role="search">
-      <input type="search" id="q" placeholder="🔍 Buscar finca, municipio o servicio..." aria-label="Buscar">
+      <input type="search" id="q" placeholder="🔍 Buscar hotel, municipio o servicio..." aria-label="Buscar">
       <button onclick="buscar()">Buscar</button>
     </div>
     <div class="filtros">
       <button class="filtro-btn active" onclick="filtrar('todos',this)">Todos</button>
-      <button class="filtro-btn" onclick="filtrar('Finca Hotel',this)">🏡 Finca Hotel</button>
-      <button class="filtro-btn" onclick="filtrar('Hospedaje',this)">🛏️ Hospedaje</button>
+      <button class="filtro-btn" onclick="filtrar('Hotel',this)">🏨 Hotel</button>
+      <button class="filtro-btn" onclick="filtrar('Hotel Boutique',this)">✨ Boutique</button>
     </div>
     <div style="margin-bottom:48px"><div id="mapa-interactivo"></div></div>
     <div id="cards" class="cards-grid" role="list" aria-live="polite"></div>
-    <div id="empty" class="no-results" style="display:none"><div class="icon">🏡</div><p>Sin resultados.</p></div>
+    <div id="empty" class="no-results" style="display:none"><div class="icon">🏨</div><p>Sin resultados.</p></div>
     <div class="cta-anunciate">
-      <h2>¿Tienes una finca hotel?</h2>
-      <p>Publica tu finca y recibe contacto directo de turistas sin comisiones.</p>
-      <a href="./anunciate.html" class="btn-cta">📣 Publicar mi finca</a>
-    </div>
-  </div>
-  <div class="banner-strip">
-    <div class="banner-strip-inner">
-      <span class="banner-strip-label">Aliados</span>
-      <div class="banner-strip-track">
-        <div class="banner-item"><img src="./pautas/p13.png" alt="Anunciante" loading="lazy"></div>
-        <div class="banner-item"><img src="./pautas/p14.png" alt="Anunciante" loading="lazy"></div>
-        <div class="banner-item"><img src="./pautas/p15.png" alt="Anunciante" loading="lazy"></div>
-        <div class="banner-item"><img src="./pautas/p16.png" alt="Anunciante" loading="lazy"></div>
-        <div class="banner-item"><img src="./pautas/p17.png" alt="Anunciante" loading="lazy"></div>
-        <div class="banner-item"><img src="./pautas/p18.png" alt="Anunciante" loading="lazy"></div>
-      </div>
+      <h2>¿Tienes un hotel?</h2>
+      <p>Publica tu hotel y recibe reservas directas de turistas.</p>
+      <a href="./anunciate.html" class="btn-cta">📣 Publicar mi hotel</a>
     </div>
   </div>
   <footer>
     <div class="footer-grid">
       <div class="footer-col"><h4>🌿 Mapa Turístico</h4><p style="color:#6b7280;font-size:.9rem">La plataforma turística del Quindío.</p></div>
-      <div class="footer-col"><h4>Navegación</h4><a href="./index.html">Inicio</a><a href="./alojamientos.html">Alojamientos</a><a href="./sitios-turisticos.html">Sitios Turísticos</a><a href="./anunciate.html">Anúnciate</a></div>
+      <div class="footer-col"><h4>Navegación</h4><a href="./index.html">Inicio</a><a href="./alquiler-finca-hoteles.html">Alquiler Finca hoteles</a><a href="./anunciate.html">Anúnciate</a></div>
     </div>
     <div class="footer-bottom"><p>© 2026 www.mapaturisticodelquindio.com</p></div>
   </footer>
@@ -58,7 +45,7 @@
   <script src="./assets/js/datos.js"></script>
   <script src="./assets/js/nav.js"></script>
   <script>
-    let todos = NEGOCIOS.filter(n => n.categoria === 'alojamiento' && n.imagen && n.imagen.includes('alojamientos/'));
+    let todos = NEGOCIOS.filter(n => n.imagen && n.imagen.includes('hoteles/'));
     let lista = [...todos];
     const map = L.map('mapa-interactivo', { scrollWheelZoom: false }).setView([4.58, -75.65], 10);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);

@@ -32,7 +32,7 @@ const NEGOCIOS = [
     servicios:['WiFi','Parqueadero','Restaurante','Aire acondicionado'],
     precio:'Desde $120.000/noche', telefono:'+57 300 000 0001', whatsapp:'573000000001',
     maps:'https://maps.google.com/?q=Hotel+Armont+Calarca',
-    imagen: IMG + 'alojamientos/armont.jpg', nivel:'estandar', lat:4.52, lng:-75.64
+    imagen: IMG + 'hoteles/armont.jpg', nivel:'estandar', lat:4.52, lng:-75.64
   },
   {
     id:'chalet-alemania', nombre:'Chalet Alemania', categoria:'alojamiento', tipo:'Finca Hotel',
@@ -56,7 +56,7 @@ const NEGOCIOS = [
     servicios:['WiFi','Parqueadero','Desayuno'],
     precio:'Desde $90.000/noche', telefono:'+57 300 000 0004', whatsapp:'573000000004',
     maps:'https://maps.google.com/?q=Hotel+El+Descanso+Calarca',
-    imagen: IMG + 'alojamientos/hotel_descanso.jpg', nivel:'estandar', lat:4.519, lng:-75.635
+    imagen: IMG + 'hoteles/hotel_descanso.jpg', nivel:'estandar', lat:4.519, lng:-75.635
   },
   {
     id:'hotel-gran-chaparral', nombre:'Hotel Gran Chaparral', categoria:'alojamiento', tipo:'Hotel',
@@ -64,7 +64,7 @@ const NEGOCIOS = [
     servicios:['Restaurante','WiFi','Parqueadero','Eventos'],
     precio:'Desde $150.000/noche', telefono:'+57 300 000 0005', whatsapp:'573000000005',
     maps:'https://maps.google.com/?q=Hotel+Gran+Chaparral+Calarca',
-    imagen: IMG + 'alojamientos/hotel-gran-chaparral.jpg', nivel:'premium', lat:4.518, lng:-75.633
+    imagen: IMG + 'hoteles/hotel-gran-chaparral.jpg', nivel:'premium', lat:4.518, lng:-75.633
   },
   {
     id:'marta-cecilia', nombre:'Hospedaje Marta Cecilia', categoria:'alojamiento', tipo:'Hospedaje',
@@ -80,7 +80,7 @@ const NEGOCIOS = [
     servicios:['Piscina','WiFi','Parqueadero','Restaurante'],
     precio:'Desde $130.000/noche', telefono:'+57 300 000 0007', whatsapp:'573000000007',
     maps:'https://maps.google.com/?q=Hotel+Las+Penas+Calarca',
-    imagen: IMG + 'alojamientos/peñas.jpg', nivel:'estandar', lat:4.516, lng:-75.631
+    imagen: IMG + 'hoteles/peñas.jpg', nivel:'estandar', lat:4.516, lng:-75.631
   },
   {
     id:'ticlan', nombre:'Ticlan Hotel', categoria:'alojamiento', tipo:'Hotel Boutique',
@@ -88,7 +88,7 @@ const NEGOCIOS = [
     servicios:['WiFi','Bar','Restaurante','Parqueadero'],
     precio:'Desde $160.000/noche', telefono:'+57 300 000 0008', whatsapp:'573000000008',
     maps:'https://maps.google.com/?q=Ticlan+Hotel+Calarca',
-    imagen: IMG + 'alojamientos/ticlan.jpg', nivel:'premium', lat:4.515, lng:-75.630
+    imagen: IMG + 'hoteles/ticlan.jpg', nivel:'premium', lat:4.515, lng:-75.630
   },
 
   /* ATRACTIVOS TURÍSTICOS */

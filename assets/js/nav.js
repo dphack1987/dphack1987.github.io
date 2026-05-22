@@ -25,7 +25,8 @@
         <div class="menu-bar-inner">
           <a href="${p}index.html">Home</a>
           <a href="https://mapa-circasia-digital-2.vercel.app/" target="_blank" rel="noopener">Mapa de Circasia 2025</a>
-          <a href="${p}alquiler-finca-hoteles.html"${active('alquiler-finca-hoteles')}>Hoteles</a>
+          <a href="${p}hoteles.html"${active('hoteles')}>Hoteles</a>
+          <a href="${p}alquiler-finca-hoteles.html"${active('alquiler-finca-hoteles')}>Alquiler Finca hoteles</a>
           <a href="https://mapaquindio.vercel.app/" target="_blank" rel="noopener">Mapa del Quindío</a>
           <a href="${p}quindio-comercial.html"${active('quindio-comercial')}>Quindío Comercial</a>
           <a href="${p}municipios-del-quindio.html"${active('municipios-del-quindio')}>Municipios del Quindío</a>
@@ -40,7 +41,8 @@
     <div class="nav-drawer" id="navDrawer">
       <a href="${p}index.html">🏠 Home</a>
       <a href="https://mapa-circasia-digital-2.vercel.app/" target="_blank" rel="noopener">🗺️ Mapa de Circasia 2025</a>
-      <a href="${p}alquiler-finca-hoteles.html">🏨 Hoteles</a>
+      <a href="${p}hoteles.html">🏨 Hoteles</a>
+      <a href="${p}alquiler-finca-hoteles.html">🏡 Alquiler Finca hoteles</a>
       <a href="https://mapaquindio.vercel.app/" target="_blank" rel="noopener">🗺️ Mapa del Quindío</a>
       <a href="${p}quindio-comercial.html">🛍️ Quindío Comercial</a>
       <a href="${p}municipios-del-quindio.html">🏘️ Municipios del Quindío</a>
