@@ -7,6 +7,9 @@ Sitemap: https://www.mapaturisticodelquindio.com/sitemap.xml
 Disallow: /cgi-bin/
 Disallow: /tmp/
 Disallow: /private/
+Disallow: /sitio-liberado/
+Disallow: /en/
+Disallow: /media/
 
 # Google specific
 User-agent: Googlebot

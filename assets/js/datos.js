@@ -270,6 +270,9 @@ const ITINERARIOS = [
   }
 ];
 
+/* Alias para plantillas que usan descripcion (sin cambiar diseño) */
+NEGOCIOS.forEach(n => { if (n.desc) n.descripcion = n.desc; });
+
 /* ── HELPERS ── */
 function getNegociosByCategoria(cat){ return NEGOCIOS.filter(n=>n.categoria===cat) }
 function getNegociosByMunicipio(mun){ return NEGOCIOS.filter(n=>n.municipio===mun) }
