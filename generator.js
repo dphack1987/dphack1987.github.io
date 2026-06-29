@@ -143,6 +143,11 @@ function generarPagina(ruta) {
     </div>
   `;
 
+  // Contenido único por página para SEO
+  const municipioDesc = municipio.desc || 'Descubre todo lo que este municipio tiene para ofrecer.';
+  const municipioEmoji = municipio.emoji || '🌿';
+  const distanciaDesdeArmenia = municipio.km ? `A ${municipio.km} km de Armenia, la capital del Quindío.` : '';
+
   // Script minimalista para el mapa
   const mapScript = `
     <script>
@@ -183,7 +188,18 @@ ${JSON.stringify(schema, null, 2)}
     <p>${ruta.meta_descripcion}</p>
   </header>
   <div class="container">
+    <!-- Contenido único por municipio para SEO -->
+    <div style="background: white; padding: 32px; border-radius: 16px; margin-bottom: 48px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
+      <h2 style="color: #059669; margin-bottom: 16px; font-size: 1.8rem;">${municipioEmoji} ¿Por qué visitar ${ruta.municipio}?</h2>
+      <p style="font-size: 1.1rem; color: #333; line-height: 1.8;">
+        ${municipioDesc} ${distanciaDesdeArmenia}
+      </p>
+      <p style="font-size: 1rem; color: #666; line-height: 1.7; margin-top: 16px;">
+        Aquí encontrarás las mejores opciones de ${titleCase(ruta.categoria.toLowerCase())} para tu viaje, con información detallada, fotos reales y contacto directo por WhatsApp.
+      </p>
+    </div>
     <div style="margin-bottom:48px"><div id="mapa-interactivo"></div></div>
+    <h2 style="color: #059669; margin-bottom: 24px; font-size: 1.6rem;">${emoji} Mejores ${titleCase(ruta.categoria.toLowerCase())} en ${ruta.municipio}</h2>
     <div id="cards" class="cards-grid" role="list" aria-live="polite">
       ${cardsHTML}
     </div>
