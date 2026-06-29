@@ -1,0 +1,17 @@
+# Caché para assets estáticos (1 año, immutable)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+/pautas/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Caché para HTML (1 hora)
+/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# Caché para fuentes y leaflet (1 año)
+https://fonts.googleapis.com/*
+  Cache-Control: public, max-age=31536000
+https://fonts.gstatic.com/*
+  Cache-Control: public, max-age=31536000
+https://unpkg.com/*
+  Cache-Control: public, max-age=31536000, immutable

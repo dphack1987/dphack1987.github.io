@@ -6,9 +6,15 @@
   <title>Pasadías en La Tebaida | Mapa Turístico del Quindío</title>
   <meta name="description" content="Pasadías en La Tebaida: planes de un día completo con actividades, comida y tours por el Quindío.">
   <link rel="canonical" href="https://www.mapaturisticodelquindio.com/pasadias-en-la-tebaida.html">
+  <!-- Preconectar a dominios críticos para performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com">
+  <!-- Cargar fuentes y CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="assets/css/main.css">
+  <!-- Schema.org -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -31,11 +37,15 @@
   </header>
   <div class="container">
     <div style="margin-bottom:48px"><div id="mapa-interactivo"></div></div>
-    <div id="cards" class="cards-grid" role="list" aria-live="polite"></div>
-    <div id="empty" class="no-results" style="">
+    <div id="cards" class="cards-grid" role="list" aria-live="polite">
+      
+    </div>
+    
+    <div class="no-results">
       <div class="icon">📅</div>
       <p>Próximamente agregaremos negocios en esta categoría.</p>
     </div>
+  
     <div class="cta-anunciate">
       <h2>¿Tienes un negocio en La Tebaida?</h2>
       <p>Publica tu negocio y recibe contacto directo de turistas sin comisiones.</p>
@@ -62,44 +72,16 @@
     </div>
     <div class="footer-bottom"><p>© 2026 www.mapaturisticodelquindio.com</p></div>
   </footer>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="assets/js/datos.js"></script>
-  <script src="assets/js/nav.js"></script>
-  <script>
-    const RUTA_SLUG = 'pasadias-en-la-tebaida';
-    const CATEGORIA_RUTA = 'pasadías';
-    const MUNICIPIO_RUTA = 'La Tebaida';
-    const CATEGORIA_NEGOCIO = 'sitio-turistico';
-    const MUNICIPIO_ID = 'la-tebaida';
-    let todos = NEGOCIOS.filter(n => n.categoria === CATEGORIA_NEGOCIO && n.municipio === MUNICIPIO_ID);
-    let lista = [...todos];
-    const map = L.map('mapa-interactivo', { scrollWheelZoom: false }).setView([4.45, -75.7833], 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
-    todos.forEach(n => {
-      if (!n.lat) return;
-      L.marker([n.lat, n.lng]).addTo(map).bindPopup(
-        `<b>${n.nombre}</b><br>${n.tipo}<br>${n.precio}<br><a href="https://wa.me/${n.whatsapp}?text=Hola%2C%20quiero%20reservar" target="_blank">💬 Contactar</a>`
-      );
-    });
-    function render(l) {
-      const c = document.getElementById('cards'), e = document.getElementById('empty');
-      c.innerHTML = '';
-      if (!l.length) { e.style.display = 'block'; return; }
-      e.style.display = 'none';
-      l.forEach(n => {
-        const d = document.createElement('article');
-        d.className = 'biz-card';
-        d.setAttribute('role', 'listitem');
-        d.id = n.id;
-        d.innerHTML = `<div class="biz-card-img-wrap"><img src="${n.imagen}" alt="${n.nombre}" class="biz-card-img" loading="lazy"><span class="biz-badge ${n.nivel}">${n.nivel === 'premium' ? '⭐ Premium' : '✓ Verificado'}</span></div>
-        <div class="biz-card-body"><div class="biz-tipo">${n.tipo} · ${getMunicipioById(n.municipio)?.nombre}</div><h3>${n.nombre}</h3><p>${n.desc || n.descripcion}</p>
-        <div class="biz-servicios">${(n.servicios || []).slice(0, 4).map(s => `<span class="biz-tag">${s}</span>`).join('')}</div>
-        <div class="biz-precio">💰 ${n.precio}</div>
-        <div class="biz-actions"><a href="https://wa.me/${n.whatsapp}?text=Hola%2C%20quiero%20contactar%20con%20${encodeURIComponent(n.nombre)}" target="_blank" rel="noopener" class="btn-wa">💬 Contactar</a><a href="${n.maps}" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a><a href="tel:${n.telefono}" class="btn-tel">📞</a></div></div>`;
-        c.appendChild(d);
-      });
-    }
-    render(lista);
-  </script>
+  <!-- Scripts al final del body -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script src="assets/js/datos.js" defer></script>
+  <script src="assets/js/nav.js" defer></script>
+  
+    <script>
+      const map = L.map('mapa-interactivo', { scrollWheelZoom: false }).setView([4.45, -75.7833], 13);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+      
+    </script>
+  
 </body>
 </html>

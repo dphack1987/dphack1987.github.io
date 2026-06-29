@@ -6,9 +6,15 @@
   <title>Turismo De Aventura en Calarcá | Mapa Turístico del Quindío</title>
   <meta name="description" content="Turismo de aventura en Calarcá: canopy, tirolesa, caminatas, cabalgatas y más adrenalina en el Quindío.">
   <link rel="canonical" href="https://www.mapaturisticodelquindio.com/turismo-de-aventura-en-calarca.html">
+  <!-- Preconectar a dominios críticos para performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com">
+  <!-- Cargar fuentes y CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="assets/css/main.css">
+  <!-- Schema.org -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -24,7 +30,7 @@
         "@type": "ListItem",
         "position": 1,
         "name": "Domo de las Aves",
-        "url": "https://www.mapaturisticodelquindio.com/turismo-de-aventura-en-calarca#domo-aves",
+        "url": "https://www.mapaturisticodelquindio.com/turismo-de-aventura-en-calarca.html#domo-aves",
         "item": {
           "@type": "TouristAttraction",
           "name": "Domo de las Aves",
@@ -42,7 +48,7 @@
         "@type": "ListItem",
         "position": 2,
         "name": "Nueva Albania",
-        "url": "https://www.mapaturisticodelquindio.com/turismo-de-aventura-en-calarca#nueva-albania",
+        "url": "https://www.mapaturisticodelquindio.com/turismo-de-aventura-en-calarca.html#nueva-albania",
         "item": {
           "@type": "TouristAttraction",
           "name": "Nueva Albania",
@@ -60,7 +66,7 @@
         "@type": "ListItem",
         "position": 3,
         "name": "La Recuca",
-        "url": "https://www.mapaturisticodelquindio.com/turismo-de-aventura-en-calarca#recuca",
+        "url": "https://www.mapaturisticodelquindio.com/turismo-de-aventura-en-calarca.html#recuca",
         "item": {
           "@type": "TouristAttraction",
           "name": "La Recuca",
@@ -86,11 +92,67 @@
   </header>
   <div class="container">
     <div style="margin-bottom:48px"><div id="mapa-interactivo"></div></div>
-    <div id="cards" class="cards-grid" role="list" aria-live="polite"></div>
-    <div id="empty" class="no-results" style="display:none">
-      <div class="icon">🎢</div>
-      <p>Próximamente agregaremos negocios en esta categoría.</p>
+    <div id="cards" class="cards-grid" role="list" aria-live="polite">
+      
+    <article class="biz-card" role="listitem" id="domo-aves">
+      <div class="biz-card-img-wrap">
+        <img src="./assets/images/atractivos turisticos/domo_aves.webp" alt="Domo de las Aves" class="biz-card-img" loading="lazy">
+        <span class="biz-badge premium">⭐ Premium</span>
+      </div>
+      <div class="biz-card-body">
+        <div class="biz-tipo">Atracción Natural · Calarcá</div>
+        <h3>Domo de las Aves</h3>
+        <p>Santuario de aves con más de 100 especies en su hábitat natural. Experiencia única de avistamiento.</p>
+        <div class="biz-servicios"><span class="biz-tag">Avistamiento de aves</span><span class="biz-tag">Guía especializado</span><span class="biz-tag">Fotografía</span><span class="biz-tag">Senderos</span></div>
+        <div class="biz-precio">💰 Desde $25.000/persona</div>
+        <div class="biz-actions">
+          <a href="https://wa.me/573000000009?text=Hola%2C%20quiero%20contactar%20con%20Domo%20de%20las%20Aves" target="_blank" rel="noopener" class="btn-wa">💬 Contactar</a>
+          <a href="https://maps.google.com/?q=Domo+de+las+Aves+Calarca" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a>
+          <a href="tel:+57 300 000 0009" class="btn-tel">📞</a>
+        </div>
+      </div>
+    </article>
+  
+    <article class="biz-card" role="listitem" id="nueva-albania">
+      <div class="biz-card-img-wrap">
+        <img src="./assets/images/atractivos turisticos/nueva_albania.webp" alt="Nueva Albania" class="biz-card-img" loading="lazy">
+        <span class="biz-badge estandar">✓ Verificado</span>
+      </div>
+      <div class="biz-card-body">
+        <div class="biz-tipo">Atracción Turística · Calarcá</div>
+        <h3>Nueva Albania</h3>
+        <p>Destino turístico con actividades de aventura, naturaleza y cultura cafetera.</p>
+        <div class="biz-servicios"><span class="biz-tag">Senderismo</span><span class="biz-tag">Cabalgatas</span><span class="biz-tag">Gastronomía</span><span class="biz-tag">Cultura cafetera</span></div>
+        <div class="biz-precio">💰 Desde $30.000/persona</div>
+        <div class="biz-actions">
+          <a href="https://wa.me/573000000010?text=Hola%2C%20quiero%20contactar%20con%20Nueva%20Albania" target="_blank" rel="noopener" class="btn-wa">💬 Contactar</a>
+          <a href="https://maps.google.com/?q=Nueva+Albania+Calarca" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a>
+          <a href="tel:+57 300 000 0010" class="btn-tel">📞</a>
+        </div>
+      </div>
+    </article>
+  
+    <article class="biz-card" role="listitem" id="recuca">
+      <div class="biz-card-img-wrap">
+        <img src="./assets/images/atractivos turisticos/recuca.webp" alt="La Recuca" class="biz-card-img" loading="lazy">
+        <span class="biz-badge premium">⭐ Premium</span>
+      </div>
+      <div class="biz-card-body">
+        <div class="biz-tipo">Finca Cafetera · Calarcá</div>
+        <h3>La Recuca</h3>
+        <p>Finca cafetera con recorrido completo del proceso del café de la mata a la taza.</p>
+        <div class="biz-servicios"><span class="biz-tag">Tour del café</span><span class="biz-tag">Cata</span><span class="biz-tag">Gastronomía</span><span class="biz-tag">Tienda</span></div>
+        <div class="biz-precio">💰 Desde $35.000/persona</div>
+        <div class="biz-actions">
+          <a href="https://wa.me/573000000012?text=Hola%2C%20quiero%20contactar%20con%20La%20Recuca" target="_blank" rel="noopener" class="btn-wa">💬 Contactar</a>
+          <a href="https://maps.google.com/?q=La+Recuca+Calarca" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a>
+          <a href="tel:+57 300 000 0012" class="btn-tel">📞</a>
+        </div>
+      </div>
+    </article>
+  
     </div>
+    
     <div class="cta-anunciate">
       <h2>¿Tienes un negocio en Calarcá?</h2>
       <p>Publica tu negocio y recibe contacto directo de turistas sin comisiones.</p>
@@ -117,44 +179,28 @@
     </div>
     <div class="footer-bottom"><p>© 2026 www.mapaturisticodelquindio.com</p></div>
   </footer>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="assets/js/datos.js"></script>
-  <script src="assets/js/nav.js"></script>
-  <script>
-    const RUTA_SLUG = 'turismo-de-aventura-en-calarca';
-    const CATEGORIA_RUTA = 'turismo de aventura';
-    const MUNICIPIO_RUTA = 'Calarcá';
-    const CATEGORIA_NEGOCIO = 'sitio-turistico';
-    const MUNICIPIO_ID = 'calarca';
-    let todos = NEGOCIOS.filter(n => n.categoria === CATEGORIA_NEGOCIO && n.municipio === MUNICIPIO_ID);
-    let lista = [...todos];
-    const map = L.map('mapa-interactivo', { scrollWheelZoom: false }).setView([4.5167, -75.6333], 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
-    todos.forEach(n => {
-      if (!n.lat) return;
-      L.marker([n.lat, n.lng]).addTo(map).bindPopup(
-        `<b>${n.nombre}</b><br>${n.tipo}<br>${n.precio}<br><a href="https://wa.me/${n.whatsapp}?text=Hola%2C%20quiero%20reservar" target="_blank">💬 Contactar</a>`
-      );
-    });
-    function render(l) {
-      const c = document.getElementById('cards'), e = document.getElementById('empty');
-      c.innerHTML = '';
-      if (!l.length) { e.style.display = 'block'; return; }
-      e.style.display = 'none';
-      l.forEach(n => {
-        const d = document.createElement('article');
-        d.className = 'biz-card';
-        d.setAttribute('role', 'listitem');
-        d.id = n.id;
-        d.innerHTML = `<div class="biz-card-img-wrap"><img src="${n.imagen}" alt="${n.nombre}" class="biz-card-img" loading="lazy"><span class="biz-badge ${n.nivel}">${n.nivel === 'premium' ? '⭐ Premium' : '✓ Verificado'}</span></div>
-        <div class="biz-card-body"><div class="biz-tipo">${n.tipo} · ${getMunicipioById(n.municipio)?.nombre}</div><h3>${n.nombre}</h3><p>${n.desc || n.descripcion}</p>
-        <div class="biz-servicios">${(n.servicios || []).slice(0, 4).map(s => `<span class="biz-tag">${s}</span>`).join('')}</div>
-        <div class="biz-precio">💰 ${n.precio}</div>
-        <div class="biz-actions"><a href="https://wa.me/${n.whatsapp}?text=Hola%2C%20quiero%20contactar%20con%20${encodeURIComponent(n.nombre)}" target="_blank" rel="noopener" class="btn-wa">💬 Contactar</a><a href="${n.maps}" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a><a href="tel:${n.telefono}" class="btn-tel">📞</a></div></div>`;
-        c.appendChild(d);
-      });
-    }
-    render(lista);
-  </script>
+  <!-- Scripts al final del body -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script src="assets/js/datos.js" defer></script>
+  <script src="assets/js/nav.js" defer></script>
+  
+    <script>
+      const map = L.map('mapa-interactivo', { scrollWheelZoom: false }).setView([4.5167, -75.6333], 13);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+      
+        L.marker([4.52, -75.62]).addTo(map).bindPopup(
+          `<b>Domo de las Aves</b><br>Atracción Natural<br>Desde $25.000/persona<br><a href="https://wa.me/573000000009?text=Hola%2C%20quiero%20reservar" target="_blank">💬 Contactar</a>`
+        );
+      
+        L.marker([4.51, -75.61]).addTo(map).bindPopup(
+          `<b>Nueva Albania</b><br>Atracción Turística<br>Desde $30.000/persona<br><a href="https://wa.me/573000000010?text=Hola%2C%20quiero%20reservar" target="_blank">💬 Contactar</a>`
+        );
+      
+        L.marker([4.513, -75.628]).addTo(map).bindPopup(
+          `<b>La Recuca</b><br>Finca Cafetera<br>Desde $35.000/persona<br><a href="https://wa.me/573000000012?text=Hola%2C%20quiero%20reservar" target="_blank">💬 Contactar</a>`
+        );
+      
+    </script>
+  
 </body>
 </html>

@@ -1,12 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 
-// Función para capitalizar texto (como .title() en Python)
+// Función para capitalizar texto
 function titleCase(str) {
   return str.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 }
 
-// 1. Cargar datos de negocios y municipios
+// Cargar datos de negocios y municipios
 const dataContent = fs.readFileSync(path.join(__dirname, 'assets', 'js', 'datos.js'), 'utf8');
 const wrapped = `
 ${dataContent}
@@ -17,10 +17,10 @@ fs.writeFileSync(tempFile, wrapped, 'utf8');
 const { MUNICIPIOS, NEGOCIOS } = require(tempFile);
 fs.unlinkSync(tempFile);
 
-// 2. Cargar rutas SEO generadas
+// Cargar rutas SEO
 const rutasSeo = JSON.parse(fs.readFileSync(path.join(__dirname, 'rutas_seo.json'), 'utf8'));
 
-// 3. Mapear categorías de rutasSeo a categorías de negocios (para filtrar correctamente)
+// Mapear categorías de rutasSeo a categorías de negocios
 const CATEGORIA_NEGOCIOS_MAP = {
   "alojamiento": "alojamiento",
   "hoteles": "alojamiento",
@@ -47,20 +47,54 @@ const CATEGORIAS_EMOJIS = {
   "rutas turísticas": "🗺️"
 };
 
-// 4. Corregir rutas de imágenes para páginas generadas
-NEGOCIOS.forEach(n => {
-  if (n.imagen) {
-    n.imagen = n.imagen.replace('./assets/images/', 'assets/images/');
-  }
-});
+// Corregir rutas de imágenes (usar WebP)
+function getOptimalImagePath(imgPath) {
+  if (!imgPath) return '';
+  return imgPath.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+}
 
-// 5. Función para generar Schema.org
+// Función para renderizar una tarjeta de negocio (HTML estático)
+function renderBizCard(biz) {
+  const servicios = (biz.servicios || []).slice(0, 4).map(s => `<span class="biz-tag">${s}</span>`).join('');
+  const nivelBadge = biz.nivel === 'premium' ? '⭐ Premium' : '✓ Verificado';
+  const imgPath = getOptimalImagePath(biz.imagen || '');
+  const imgTag = imgPath ? `<img src="${imgPath}" alt="${biz.nombre}" class="biz-card-img" loading="lazy">` : '';
+  
+  return `
+    <article class="biz-card" role="listitem" id="${biz.id}">
+      <div class="biz-card-img-wrap">
+        ${imgTag}
+        <span class="biz-badge ${biz.nivel || 'estandar'}">${nivelBadge}</span>
+      </div>
+      <div class="biz-card-body">
+        <div class="biz-tipo">${biz.tipo} · ${getMunicipioName(biz.municipio)}</div>
+        <h3>${biz.nombre}</h3>
+        <p>${biz.desc || biz.descripcion || ''}</p>
+        <div class="biz-servicios">${servicios}</div>
+        <div class="biz-precio">💰 ${biz.precio || ''}</div>
+        <div class="biz-actions">
+          <a href="https://wa.me/${biz.whatsapp}?text=Hola%2C%20quiero%20contactar%20con%20${encodeURIComponent(biz.nombre)}" target="_blank" rel="noopener" class="btn-wa">💬 Contactar</a>
+          <a href="${biz.maps}" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a>
+          <a href="tel:${biz.telefono}" class="btn-tel">📞</a>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+// Helper para obtener nombre de municipio
+function getMunicipioName(munId) {
+  const mun = MUNICIPIOS.find(m => m.id === munId);
+  return mun ? mun.nombre : munId;
+}
+
+// Función para generar Schema.org
 function generarSchema(ruta, negociosFiltrados) {
   const itemListElements = negociosFiltrados.map((n, i) => ({
     "@type": "ListItem",
     "position": i + 1,
     "name": n.nombre,
-    "url": `${ruta.url}#${n.id}`,
+    "url": `${ruta.url}.html#${n.id}`,
     "item": {
       "@type": ruta.tipo_schema,
       "name": n.nombre,
@@ -89,7 +123,7 @@ function generarSchema(ruta, negociosFiltrados) {
   };
 }
 
-// 6. Plantilla HTML base
+// Plantilla HTML base (con contenido estático completo)
 function generarPagina(ruta) {
   const categoriaNegocio = CATEGORIA_NEGOCIOS_MAP[ruta.categoria];
   const municipioId = MUNICIPIOS.find(m => m.nombre === ruta.municipio)?.id || ruta.municipio.toLowerCase().replace(/\s/g, '-');
@@ -101,6 +135,26 @@ function generarPagina(ruta) {
 
   const emoji = CATEGORIAS_EMOJIS[ruta.categoria];
   const schema = generarSchema(ruta, negociosFiltrados);
+  const cardsHTML = negociosFiltrados.map(renderBizCard).join('');
+  const emptyState = negociosFiltrados.length ? '' : `
+    <div class="no-results">
+      <div class="icon">${emoji}</div>
+      <p>Próximamente agregaremos negocios en esta categoría.</p>
+    </div>
+  `;
+
+  // Script minimalista para el mapa
+  const mapScript = `
+    <script>
+      const map = L.map('mapa-interactivo', { scrollWheelZoom: false }).setView([${municipio.lat}, ${municipio.lng}], 13);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+      ${negociosFiltrados.filter(n => n.lat).map(n => `
+        L.marker([${n.lat}, ${n.lng}]).addTo(map).bindPopup(
+          \`<b>${n.nombre}</b><br>${n.tipo}<br>${n.precio}<br><a href="https://wa.me/${n.whatsapp}?text=Hola%2C%20quiero%20reservar" target="_blank">💬 Contactar</a>\`
+        );
+      `).join('')}
+    </script>
+  `;
 
   return `<!DOCTYPE html>
 <html lang="es">
@@ -110,9 +164,15 @@ function generarPagina(ruta) {
   <title>${ruta.titulo}</title>
   <meta name="description" content="${ruta.meta_descripcion}">
   <link rel="canonical" href="${ruta.url}.html">
+  <!-- Preconectar a dominios críticos para performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com">
+  <!-- Cargar fuentes y CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="assets/css/main.css">
+  <!-- Schema.org -->
   <script type="application/ld+json">
 ${JSON.stringify(schema, null, 2)}
   </script>
@@ -124,11 +184,10 @@ ${JSON.stringify(schema, null, 2)}
   </header>
   <div class="container">
     <div style="margin-bottom:48px"><div id="mapa-interactivo"></div></div>
-    <div id="cards" class="cards-grid" role="list" aria-live="polite"></div>
-    <div id="empty" class="no-results" style="${negociosFiltrados.length ? 'display:none' : ''}">
-      <div class="icon">${emoji}</div>
-      <p>Próximamente agregaremos negocios en esta categoría.</p>
+    <div id="cards" class="cards-grid" role="list" aria-live="polite">
+      ${cardsHTML}
     </div>
+    ${emptyState}
     <div class="cta-anunciate">
       <h2>¿Tienes un negocio en ${ruta.municipio}?</h2>
       <p>Publica tu negocio y recibe contacto directo de turistas sin comisiones.</p>
@@ -155,54 +214,18 @@ ${JSON.stringify(schema, null, 2)}
     </div>
     <div class="footer-bottom"><p>© 2026 www.mapaturisticodelquindio.com</p></div>
   </footer>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="assets/js/datos.js"></script>
-  <script src="assets/js/nav.js"></script>
-  <script>
-    const RUTA_SLUG = '${ruta.slug}';
-    const CATEGORIA_RUTA = '${ruta.categoria}';
-    const MUNICIPIO_RUTA = '${ruta.municipio}';
-    const CATEGORIA_NEGOCIO = '${categoriaNegocio}';
-    const MUNICIPIO_ID = '${municipioId}';
-    let todos = NEGOCIOS.filter(n => n.categoria === CATEGORIA_NEGOCIO && n.municipio === MUNICIPIO_ID);
-    let lista = [...todos];
-    const map = L.map('mapa-interactivo', { scrollWheelZoom: false }).setView([${municipio.lat}, ${municipio.lng}], 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
-    todos.forEach(n => {
-      if (!n.lat) return;
-      L.marker([n.lat, n.lng]).addTo(map).bindPopup(
-        \`<b>\${n.nombre}</b><br>\${n.tipo}<br>\${n.precio}<br><a href="https://wa.me/\${n.whatsapp}?text=Hola%2C%20quiero%20reservar" target="_blank">💬 Contactar</a>\`
-      );
-    });
-    function render(l) {
-      const c = document.getElementById('cards'), e = document.getElementById('empty');
-      c.innerHTML = '';
-      if (!l.length) { e.style.display = 'block'; return; }
-      e.style.display = 'none';
-      l.forEach(n => {
-        const d = document.createElement('article');
-        d.className = 'biz-card';
-        d.setAttribute('role', 'listitem');
-        d.id = n.id;
-        d.innerHTML = \`<div class="biz-card-img-wrap"><img src="\${n.imagen}" alt="\${n.nombre}" class="biz-card-img" loading="lazy"><span class="biz-badge \${n.nivel}">\${n.nivel === 'premium' ? '⭐ Premium' : '✓ Verificado'}</span></div>
-        <div class="biz-card-body"><div class="biz-tipo">\${n.tipo} · \${getMunicipioById(n.municipio)?.nombre}</div><h3>\${n.nombre}</h3><p>\${n.desc || n.descripcion}</p>
-        <div class="biz-servicios">\${(n.servicios || []).slice(0, 4).map(s => \`<span class="biz-tag">\${s}</span>\`).join('')}</div>
-        <div class="biz-precio">💰 \${n.precio}</div>
-        <div class="biz-actions"><a href="https://wa.me/\${n.whatsapp}?text=Hola%2C%20quiero%20contactar%20con%20\${encodeURIComponent(n.nombre)}" target="_blank" rel="noopener" class="btn-wa">💬 Contactar</a><a href="\${n.maps}" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a><a href="tel:\${n.telefono}" class="btn-tel">📞</a></div></div>\`;
-        c.appendChild(d);
-      });
-    }
-    render(lista);
-  </script>
+  <!-- Scripts al final del body -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script src="assets/js/datos.js" defer></script>
+  <script src="assets/js/nav.js" defer></script>
+  ${mapScript}
 </body>
 </html>`;
 }
 
-// 7. Generar todas las páginas y sitemap
+// Generar todas las páginas y sitemap
 function generarTodo() {
   const urls = [];
-
-  // Generar cada página desde rutasSeo
   rutasSeo.forEach(ruta => {
     const html = generarPagina(ruta);
     const filePath = path.join(__dirname, `${ruta.slug}.html`);
@@ -233,7 +256,7 @@ ${urls.map(url => `  <url><loc>${url}</loc><changefreq>weekly</changefreq><prior
 </urlset>`;
   fs.writeFileSync(sitemapPath, sitemapContent, 'utf8');
   console.log(`\nSitemap actualizado con ${urls.length} nuevas URLs!`);
-  console.log(`\nTotal de páginas generadas: ${urls.length}`);
+  console.log(`Total de páginas generadas: ${urls.length}`);
 }
 
 generarTodo();

@@ -6,9 +6,15 @@
   <title>Restaurantes en Calarcá | Mapa Turístico del Quindío</title>
   <meta name="description" content="Restaurantes en Calarcá con comida típica del Quindío, internacional y fusion. Encuentra tu lugar ideal para comer.">
   <link rel="canonical" href="https://www.mapaturisticodelquindio.com/restaurantes-en-calarca.html">
+  <!-- Preconectar a dominios críticos para performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com">
+  <!-- Cargar fuentes y CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="assets/css/main.css">
+  <!-- Schema.org -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -24,7 +30,7 @@
         "@type": "ListItem",
         "position": 1,
         "name": "Bendito Pekado",
-        "url": "https://www.mapaturisticodelquindio.com/restaurantes-en-calarca#bendito-pekado",
+        "url": "https://www.mapaturisticodelquindio.com/restaurantes-en-calarca.html#bendito-pekado",
         "item": {
           "@type": "Restaurant",
           "name": "Bendito Pekado",
@@ -42,7 +48,7 @@
         "@type": "ListItem",
         "position": 2,
         "name": "Bisonte Parrilla",
-        "url": "https://www.mapaturisticodelquindio.com/restaurantes-en-calarca#bisonte-parrilla",
+        "url": "https://www.mapaturisticodelquindio.com/restaurantes-en-calarca.html#bisonte-parrilla",
         "item": {
           "@type": "Restaurant",
           "name": "Bisonte Parrilla",
@@ -60,7 +66,7 @@
         "@type": "ListItem",
         "position": 3,
         "name": "Coma Parado",
-        "url": "https://www.mapaturisticodelquindio.com/restaurantes-en-calarca#coma-parado",
+        "url": "https://www.mapaturisticodelquindio.com/restaurantes-en-calarca.html#coma-parado",
         "item": {
           "@type": "Restaurant",
           "name": "Coma Parado",
@@ -78,7 +84,7 @@
         "@type": "ListItem",
         "position": 4,
         "name": "La Talanquera",
-        "url": "https://www.mapaturisticodelquindio.com/restaurantes-en-calarca#la-talanquera",
+        "url": "https://www.mapaturisticodelquindio.com/restaurantes-en-calarca.html#la-talanquera",
         "item": {
           "@type": "Restaurant",
           "name": "La Talanquera",
@@ -96,7 +102,7 @@
         "@type": "ListItem",
         "position": 5,
         "name": "Master Gourmet",
-        "url": "https://www.mapaturisticodelquindio.com/restaurantes-en-calarca#master-gourmet",
+        "url": "https://www.mapaturisticodelquindio.com/restaurantes-en-calarca.html#master-gourmet",
         "item": {
           "@type": "Restaurant",
           "name": "Master Gourmet",
@@ -122,11 +128,105 @@
   </header>
   <div class="container">
     <div style="margin-bottom:48px"><div id="mapa-interactivo"></div></div>
-    <div id="cards" class="cards-grid" role="list" aria-live="polite"></div>
-    <div id="empty" class="no-results" style="display:none">
-      <div class="icon">🍴</div>
-      <p>Próximamente agregaremos negocios en esta categoría.</p>
+    <div id="cards" class="cards-grid" role="list" aria-live="polite">
+      
+    <article class="biz-card" role="listitem" id="bendito-pekado">
+      <div class="biz-card-img-wrap">
+        <img src="./assets/images/gastronomia/bendito-pekado.webp" alt="Bendito Pekado" class="biz-card-img" loading="lazy">
+        <span class="biz-badge estandar">✓ Verificado</span>
+      </div>
+      <div class="biz-card-body">
+        <div class="biz-tipo">Restaurante · Calarcá</div>
+        <h3>Bendito Pekado</h3>
+        <p>Restaurante con cocina fusión y los mejores sabores del Eje Cafetero.</p>
+        <div class="biz-servicios"><span class="biz-tag">Almuerzo</span><span class="biz-tag">Cena</span><span class="biz-tag">Reservas</span><span class="biz-tag">Eventos</span></div>
+        <div class="biz-precio">💰 Menú desde $25.000</div>
+        <div class="biz-actions">
+          <a href="https://wa.me/573000000013?text=Hola%2C%20quiero%20contactar%20con%20Bendito%20Pekado" target="_blank" rel="noopener" class="btn-wa">💬 Contactar</a>
+          <a href="https://maps.google.com/?q=Bendito+Pekado+Calarca" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a>
+          <a href="tel:+57 300 000 0013" class="btn-tel">📞</a>
+        </div>
+      </div>
+    </article>
+  
+    <article class="biz-card" role="listitem" id="bisonte-parrilla">
+      <div class="biz-card-img-wrap">
+        <img src="./assets/images/gastronomia/bisonte-parrilla.webp" alt="Bisonte Parrilla" class="biz-card-img" loading="lazy">
+        <span class="biz-badge estandar">✓ Verificado</span>
+      </div>
+      <div class="biz-card-body">
+        <div class="biz-tipo">Parrilla · Calarcá</div>
+        <h3>Bisonte Parrilla</h3>
+        <p>Las mejores carnes a la parrilla del Quindío. Ambiente familiar y acogedor.</p>
+        <div class="biz-servicios"><span class="biz-tag">Parrilla</span><span class="biz-tag">Domicilios</span><span class="biz-tag">Reservas</span></div>
+        <div class="biz-precio">💰 Menú desde $30.000</div>
+        <div class="biz-actions">
+          <a href="https://wa.me/573000000014?text=Hola%2C%20quiero%20contactar%20con%20Bisonte%20Parrilla" target="_blank" rel="noopener" class="btn-wa">💬 Contactar</a>
+          <a href="https://maps.google.com/?q=Bisonte+Parrilla+Calarca" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a>
+          <a href="tel:+57 300 000 0014" class="btn-tel">📞</a>
+        </div>
+      </div>
+    </article>
+  
+    <article class="biz-card" role="listitem" id="coma-parado">
+      <div class="biz-card-img-wrap">
+        <img src="./assets/images/gastronomia/coma_parado.webp" alt="Coma Parado" class="biz-card-img" loading="lazy">
+        <span class="biz-badge estandar">✓ Verificado</span>
+      </div>
+      <div class="biz-card-body">
+        <div class="biz-tipo">Restaurante · Calarcá</div>
+        <h3>Coma Parado</h3>
+        <p>Gastronomía típica del Quindío en un ambiente informal y delicioso.</p>
+        <div class="biz-servicios"><span class="biz-tag">Desayunos</span><span class="biz-tag">Almuerzos</span><span class="biz-tag">Comida típica</span></div>
+        <div class="biz-precio">💰 Menú desde $15.000</div>
+        <div class="biz-actions">
+          <a href="https://wa.me/573000000015?text=Hola%2C%20quiero%20contactar%20con%20Coma%20Parado" target="_blank" rel="noopener" class="btn-wa">💬 Contactar</a>
+          <a href="https://maps.google.com/?q=Coma+Parado+Calarca" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a>
+          <a href="tel:+57 300 000 0015" class="btn-tel">📞</a>
+        </div>
+      </div>
+    </article>
+  
+    <article class="biz-card" role="listitem" id="la-talanquera">
+      <div class="biz-card-img-wrap">
+        <img src="./assets/images/gastronomia/la-talanquera.webp" alt="La Talanquera" class="biz-card-img" loading="lazy">
+        <span class="biz-badge premium">⭐ Premium</span>
+      </div>
+      <div class="biz-card-body">
+        <div class="biz-tipo">Restaurante · Calarcá</div>
+        <h3>La Talanquera</h3>
+        <p>Restaurante campestre con vista al paisaje cafetero y cocina tradicional.</p>
+        <div class="biz-servicios"><span class="biz-tag">Almuerzo</span><span class="biz-tag">Cena</span><span class="biz-tag">Vista panorámica</span><span class="biz-tag">Eventos</span></div>
+        <div class="biz-precio">💰 Menú desde $28.000</div>
+        <div class="biz-actions">
+          <a href="https://wa.me/573000000016?text=Hola%2C%20quiero%20contactar%20con%20La%20Talanquera" target="_blank" rel="noopener" class="btn-wa">💬 Contactar</a>
+          <a href="https://maps.google.com/?q=La+Talanquera+Calarca" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a>
+          <a href="tel:+57 300 000 0016" class="btn-tel">📞</a>
+        </div>
+      </div>
+    </article>
+  
+    <article class="biz-card" role="listitem" id="master-gourmet">
+      <div class="biz-card-img-wrap">
+        <img src="./assets/images/gastronomia/master_gourmet.webp" alt="Master Gourmet" class="biz-card-img" loading="lazy">
+        <span class="biz-badge premium">⭐ Premium</span>
+      </div>
+      <div class="biz-card-body">
+        <div class="biz-tipo">Restaurante · Calarcá</div>
+        <h3>Master Gourmet</h3>
+        <p>Alta cocina en el corazón del Quindío. Experiencias gastronómicas únicas.</p>
+        <div class="biz-servicios"><span class="biz-tag">Alta cocina</span><span class="biz-tag">Maridaje</span><span class="biz-tag">Reservas</span><span class="biz-tag">Eventos privados</span></div>
+        <div class="biz-precio">💰 Menú desde $45.000</div>
+        <div class="biz-actions">
+          <a href="https://wa.me/573000000017?text=Hola%2C%20quiero%20contactar%20con%20Master%20Gourmet" target="_blank" rel="noopener" class="btn-wa">💬 Contactar</a>
+          <a href="https://maps.google.com/?q=Master+Gourmet+Calarca" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a>
+          <a href="tel:+57 300 000 0017" class="btn-tel">📞</a>
+        </div>
+      </div>
+    </article>
+  
     </div>
+    
     <div class="cta-anunciate">
       <h2>¿Tienes un negocio en Calarcá?</h2>
       <p>Publica tu negocio y recibe contacto directo de turistas sin comisiones.</p>
@@ -153,44 +253,36 @@
     </div>
     <div class="footer-bottom"><p>© 2026 www.mapaturisticodelquindio.com</p></div>
   </footer>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="assets/js/datos.js"></script>
-  <script src="assets/js/nav.js"></script>
-  <script>
-    const RUTA_SLUG = 'restaurantes-en-calarca';
-    const CATEGORIA_RUTA = 'restaurantes';
-    const MUNICIPIO_RUTA = 'Calarcá';
-    const CATEGORIA_NEGOCIO = 'gastronomia';
-    const MUNICIPIO_ID = 'calarca';
-    let todos = NEGOCIOS.filter(n => n.categoria === CATEGORIA_NEGOCIO && n.municipio === MUNICIPIO_ID);
-    let lista = [...todos];
-    const map = L.map('mapa-interactivo', { scrollWheelZoom: false }).setView([4.5167, -75.6333], 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
-    todos.forEach(n => {
-      if (!n.lat) return;
-      L.marker([n.lat, n.lng]).addTo(map).bindPopup(
-        `<b>${n.nombre}</b><br>${n.tipo}<br>${n.precio}<br><a href="https://wa.me/${n.whatsapp}?text=Hola%2C%20quiero%20reservar" target="_blank">💬 Contactar</a>`
-      );
-    });
-    function render(l) {
-      const c = document.getElementById('cards'), e = document.getElementById('empty');
-      c.innerHTML = '';
-      if (!l.length) { e.style.display = 'block'; return; }
-      e.style.display = 'none';
-      l.forEach(n => {
-        const d = document.createElement('article');
-        d.className = 'biz-card';
-        d.setAttribute('role', 'listitem');
-        d.id = n.id;
-        d.innerHTML = `<div class="biz-card-img-wrap"><img src="${n.imagen}" alt="${n.nombre}" class="biz-card-img" loading="lazy"><span class="biz-badge ${n.nivel}">${n.nivel === 'premium' ? '⭐ Premium' : '✓ Verificado'}</span></div>
-        <div class="biz-card-body"><div class="biz-tipo">${n.tipo} · ${getMunicipioById(n.municipio)?.nombre}</div><h3>${n.nombre}</h3><p>${n.desc || n.descripcion}</p>
-        <div class="biz-servicios">${(n.servicios || []).slice(0, 4).map(s => `<span class="biz-tag">${s}</span>`).join('')}</div>
-        <div class="biz-precio">💰 ${n.precio}</div>
-        <div class="biz-actions"><a href="https://wa.me/${n.whatsapp}?text=Hola%2C%20quiero%20contactar%20con%20${encodeURIComponent(n.nombre)}" target="_blank" rel="noopener" class="btn-wa">💬 Contactar</a><a href="${n.maps}" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a><a href="tel:${n.telefono}" class="btn-tel">📞</a></div></div>`;
-        c.appendChild(d);
-      });
-    }
-    render(lista);
-  </script>
+  <!-- Scripts al final del body -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script src="assets/js/datos.js" defer></script>
+  <script src="assets/js/nav.js" defer></script>
+  
+    <script>
+      const map = L.map('mapa-interactivo', { scrollWheelZoom: false }).setView([4.5167, -75.6333], 13);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+      
+        L.marker([4.519, -75.634]).addTo(map).bindPopup(
+          `<b>Bendito Pekado</b><br>Restaurante<br>Menú desde $25.000<br><a href="https://wa.me/573000000013?text=Hola%2C%20quiero%20reservar" target="_blank">💬 Contactar</a>`
+        );
+      
+        L.marker([4.518, -75.633]).addTo(map).bindPopup(
+          `<b>Bisonte Parrilla</b><br>Parrilla<br>Menú desde $30.000<br><a href="https://wa.me/573000000014?text=Hola%2C%20quiero%20reservar" target="_blank">💬 Contactar</a>`
+        );
+      
+        L.marker([4.517, -75.632]).addTo(map).bindPopup(
+          `<b>Coma Parado</b><br>Restaurante<br>Menú desde $15.000<br><a href="https://wa.me/573000000015?text=Hola%2C%20quiero%20reservar" target="_blank">💬 Contactar</a>`
+        );
+      
+        L.marker([4.516, -75.631]).addTo(map).bindPopup(
+          `<b>La Talanquera</b><br>Restaurante<br>Menú desde $28.000<br><a href="https://wa.me/573000000016?text=Hola%2C%20quiero%20reservar" target="_blank">💬 Contactar</a>`
+        );
+      
+        L.marker([4.515, -75.63]).addTo(map).bindPopup(
+          `<b>Master Gourmet</b><br>Restaurante<br>Menú desde $45.000<br><a href="https://wa.me/573000000017?text=Hola%2C%20quiero%20reservar" target="_blank">💬 Contactar</a>`
+        );
+      
+    </script>
+  
 </body>
 </html>
