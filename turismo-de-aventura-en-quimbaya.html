@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Turismo De Aventura en Quimbaya | Mapa Turístico del Quindío</title>
+  <meta name="description" content="Turismo de aventura en Quimbaya: canopy, tirolesa, caminatas, cabalgatas y más adrenalina en el Quindío.">
+  <link rel="canonical" href="https://www.mapaturisticodelquindio.com/turismo-de-aventura-en-quimbaya.html">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemPage",
+  "name": "Turismo De Aventura en Quimbaya | Mapa Turístico del Quindío",
+  "description": "Turismo de aventura en Quimbaya: canopy, tirolesa, caminatas, cabalgatas y más adrenalina en el Quindío.",
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "Los mejores turismo de aventura en Quimbaya",
+    "description": "Turismo de aventura en Quimbaya: canopy, tirolesa, caminatas, cabalgatas y más adrenalina en el Quindío.",
+    "itemListElement": []
+  }
+}
+  </script>
+</head>
+<body>
+  <header class="page-hero">
+    <h1>🎢 Turismo De Aventura en Quimbaya</h1>
+    <p>Turismo de aventura en Quimbaya: canopy, tirolesa, caminatas, cabalgatas y más adrenalina en el Quindío.</p>
+  </header>
+  <div class="container">
+    <div style="margin-bottom:48px"><div id="mapa-interactivo"></div></div>
+    <div id="cards" class="cards-grid" role="list" aria-live="polite"></div>
+    <div id="empty" class="no-results" style="">
+      <div class="icon">🎢</div>
+      <p>Próximamente agregaremos negocios en esta categoría.</p>
+    </div>
+    <div class="cta-anunciate">
+      <h2>¿Tienes un negocio en Quimbaya?</h2>
+      <p>Publica tu negocio y recibe contacto directo de turistas sin comisiones.</p>
+      <a href="anunciate.html" class="btn-cta">📣 Publicar mi negocio</a>
+    </div>
+  </div>
+  <div class="banner-strip">
+    <div class="banner-strip-inner">
+      <span class="banner-strip-label">Aliados</span>
+      <div class="banner-strip-track">
+        <div class="banner-item"><img src="pautas/p13.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="pautas/p14.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="pautas/p15.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="pautas/p16.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="pautas/p17.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="pautas/p18.png" alt="Anunciante" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col"><h4>🌿 Mapa Turístico</h4><p style="color:#6b7280;font-size:.9rem">La plataforma turística del Quindío.</p></div>
+      <div class="footer-col"><h4>Navegación</h4><a href="index.html">Inicio</a><a href="alojamientos.html">Alojamientos</a><a href="sitios-turisticos.html">Sitios Turísticos</a><a href="anunciate.html">Anúnciate</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 www.mapaturisticodelquindio.com</p></div>
+  </footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="assets/js/datos.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script>
+    const RUTA_SLUG = 'turismo-de-aventura-en-quimbaya';
+    const CATEGORIA_RUTA = 'turismo de aventura';
+    const MUNICIPIO_RUTA = 'Quimbaya';
+    const CATEGORIA_NEGOCIO = 'sitio-turistico';
+    const MUNICIPIO_ID = 'quimbaya';
+    let todos = NEGOCIOS.filter(n => n.categoria === CATEGORIA_NEGOCIO && n.municipio === MUNICIPIO_ID);
+    let lista = [...todos];
+    const map = L.map('mapa-interactivo', { scrollWheelZoom: false }).setView([4.6167, -75.7667], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+    todos.forEach(n => {
+      if (!n.lat) return;
+      L.marker([n.lat, n.lng]).addTo(map).bindPopup(
+        `<b>${n.nombre}</b><br>${n.tipo}<br>${n.precio}<br><a href="https://wa.me/${n.whatsapp}?text=Hola%2C%20quiero%20reservar" target="_blank">💬 Contactar</a>`
+      );
+    });
+    function render(l) {
+      const c = document.getElementById('cards'), e = document.getElementById('empty');
+      c.innerHTML = '';
+      if (!l.length) { e.style.display = 'block'; return; }
+      e.style.display = 'none';
+      l.forEach(n => {
+        const d = document.createElement('article');
+        d.className = 'biz-card';
+        d.setAttribute('role', 'listitem');
+        d.id = n.id;
+        d.innerHTML = `<div class="biz-card-img-wrap"><img src="${n.imagen}" alt="${n.nombre}" class="biz-card-img" loading="lazy"><span class="biz-badge ${n.nivel}">${n.nivel === 'premium' ? '⭐ Premium' : '✓ Verificado'}</span></div>
+        <div class="biz-card-body"><div class="biz-tipo">${n.tipo} · ${getMunicipioById(n.municipio)?.nombre}</div><h3>${n.nombre}</h3><p>${n.desc || n.descripcion}</p>
+        <div class="biz-servicios">${(n.servicios || []).slice(0, 4).map(s => `<span class="biz-tag">${s}</span>`).join('')}</div>
+        <div class="biz-precio">💰 ${n.precio}</div>
+        <div class="biz-actions"><a href="https://wa.me/${n.whatsapp}?text=Hola%2C%20quiero%20contactar%20con%20${encodeURIComponent(n.nombre)}" target="_blank" rel="noopener" class="btn-wa">💬 Contactar</a><a href="${n.maps}" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a><a href="tel:${n.telefono}" class="btn-tel">📞</a></div></div>`;
+        c.appendChild(d);
+      });
+    }
+    render(lista);
+  </script>
+</body>
+</html>

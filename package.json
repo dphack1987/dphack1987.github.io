@@ -1,0 +1,11 @@
+{
+  "name": "mapaturistico-web",
+  "version": "1.0.0",
+  "description": "Mapa Turístico del Quindío - SEO Programático",
+  "scripts": {
+    "generate": "node generator.js"
+  },
+  "keywords": ["seo", "quindio", "turismo"],
+  "author": "",
+  "license": "ISC"
+}
