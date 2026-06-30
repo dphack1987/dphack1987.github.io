@@ -100,6 +100,298 @@
     </div>
     <div class="footer-bottom"><p>© 2026 www.mapaturisticodelquindio.com</p></div>
   </footer>
+  
+    <style>
+      /* SUITE DE CONVERSIÓN - CSS EMBEBIDO (NO PETICIONES EXTRA) */
+      :root{
+        --sc-primary:#059669;
+        --sc-primary-dark:#047857;
+        --sc-accent:#f59e0b;
+        --sc-bg:#ffffff;
+        --sc-text:#1f2937;
+        --sc-light:#f0fdf4;
+        --sc-gray:#9ca3af;
+        --sc-dark-gray:#4b5563;
+      }
+      /* Widget Flotante Principal */
+      .sc-widget { position:fixed; right:16px; bottom:16px; z-index:99999; font-family:'Inter',system-ui,sans-serif; }
+      .sc-toggle {
+        width:64px; height:64px; border-radius:50%;
+        background:linear-gradient(135deg,var(--sc-primary),var(--sc-primary-dark));
+        border:none; color:white; font-size:28px; cursor:pointer;
+        box-shadow:0 8px 32px rgba(5,150,105,.45);
+        transition:all .3s cubic-bezier(.4,0,.2,1);
+        display:flex; align-items:center; justify-content:center;
+        animation:sc-pulse 2.5s infinite;
+      }
+      @keyframes sc-pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.08);}}
+      .sc-toggle:hover{transform:scale(1.12); box-shadow:0 12px 40px rgba(5,150,105,.55);}
+      .sc-panel {
+        position:absolute; bottom:80px; right:0;
+        width:380px; max-width:92vw; background:var(--sc-bg);
+        border-radius:24px; box-shadow:0 24px 80px rgba(0,0,0,.25);
+        overflow:hidden; transform-origin:bottom right;
+        transform:scale(0); opacity:0; transition:all .35s cubic-bezier(.4,0,.2,1);
+      }
+      .sc-panel.active{transform:scale(1); opacity:1;}
+      .sc-header {
+        background:linear-gradient(135deg,var(--sc-primary),var(--sc-primary-dark));
+        color:white; padding:20px; text-align:center;
+      }
+      .sc-header h3{margin:0 0 6px 0; font-size:20px; font-weight:800;}
+      .sc-header p{margin:0; font-size:13px; opacity:.92;}
+      .sc-badge-vip{
+        display:inline-flex; align-items:center; gap:6px;
+        background:linear-gradient(135deg,#fbbf24,var(--sc-accent));
+        color:#78350f; padding:6px 14px; border-radius:20px;
+        font-size:11px; font-weight:800; margin-top:10px;
+      }
+      /* Comparador de Precios */
+      .sc-comparador{
+        background:linear-gradient(135deg,#fef3c7,#fde68a);
+        margin:16px; padding:16px; border-radius:16px;
+        border:2px solid #fbbf24;
+      }
+      .sc-comparador-tit{font-weight:800; color:#78350f; font-size:14px; margin-bottom:12px; display:flex; align-items:center; gap:6px;}
+      .sc-precios{display:flex; justify-content:space-between; align-items:center; gap:12px;}
+      .sc-precio-antiguo{text-decoration:line-through; color:var(--sc-gray); font-weight:600; font-size:15px;}
+      .sc-precio-nuevo{
+        font-weight:900; font-size:22px; color:var(--sc-primary);
+        display:flex; align-items:center; gap:8px;
+      }
+      .sc-tag-ahorro{
+        background:var(--sc-primary); color:white; font-size:11px; font-weight:800;
+        padding:3px 10px; border-radius:12px;
+      }
+      /* Formulario */
+      .sc-form{padding:0 16px 16px;}
+      .sc-campo{margin-bottom:14px;}
+      .sc-campo label{display:block; margin-bottom:6px; font-weight:700; font-size:13px; color:var(--sc-text);}
+      .sc-campo input,.sc-campo select{
+        width:100%; padding:13px 14px; border:2px solid #e5e7eb;
+        border-radius:14px; font-size:15px; transition:all .2s;
+        box-sizing:border-box; background:white;
+      }
+      .sc-campo input:focus,.sc-campo select:focus{
+        outline:none; border-color:var(--sc-primary);
+        box-shadow:0 0 0 5px rgba(5,150,105,.12);
+      }
+      .sc-btn-enviar{
+        width:100%; padding:15px;
+        background:linear-gradient(135deg,var(--sc-primary),var(--sc-primary-dark));
+        color:white; border:none; border-radius:14px;
+        font-size:16px; font-weight:900; cursor:pointer;
+        transition:all .3s; display:flex; align-items:center; justify-content:center; gap:10px;
+        box-shadow:0 6px 20px rgba(5,150,105,.35);
+      }
+      .sc-btn-enviar:hover{transform:translateY(-2px); box-shadow:0 10px 28px rgba(5,150,105,.45);}
+      .sc-btn-enviar:disabled{opacity:.6; cursor:not-allowed; transform:none;}
+      .sc-error{color:#dc2626; font-size:12px; margin-top:6px; display:none;}
+      .sc-error.active{display:block;}
+      /* Éxito */
+      .sc-exito{padding:24px 16px; text-align:center; display:none;}
+      .sc-exito.active{display:block;}
+      .sc-exito-icon{font-size:56px; margin-bottom:10px;}
+      .sc-exito h3{margin:0 0 8px 0; color:var(--sc-primary); font-size:20px;}
+      .sc-exito p{margin:0; color:var(--sc-dark-gray); font-size:14px; line-height:1.6;}
+      /* Alertas de Escasez (Toasts) */
+      .sc-toast-container{position:fixed; left:16px; bottom:16px; z-index:99998; display:flex; flex-direction:column; gap:10px;}
+      .sc-toast{
+        background:white; padding:12px 16px; border-radius:12px;
+        box-shadow:0 8px 28px rgba(0,0,0,.18);
+        border-left:4px solid var(--sc-accent);
+        display:flex; align-items:center; gap:10px; font-size:13px; color:var(--sc-text);
+        animation:sc-toast-in .4s ease-out;
+        max-width:320px;
+      }
+      @keyframes sc-toast-in{from{transform:translateX(-100%); opacity:0;}to{transform:translateX(0); opacity:1;}}
+      .sc-toast-icon{font-size:18px;}
+    </style>
+
+    <!-- SUITE DE CONVERSIÓN PRINCIPAL -->
+    <div class="sc-widget" id="sc-widget">
+      <button class="sc-toggle" id="sc-toggle" aria-label="Abrir cotizador">💰</button>
+      <div class="sc-panel" id="sc-panel">
+        <div class="sc-header">
+          <h3>Cotiza tu Viaje Ahora</h3>
+          <p>Congela la tarifa especial directa (sin comisiones)</p>
+          <div class="sc-badge-vip">⭐ SOLO HOY - 17% OFF</div>
+        </div>
+
+        <!-- 1. COMPARADOR DE PRECIOS -->
+        <div class="sc-comparador">
+          <div class="sc-comparador-tit">💸 Compara y Ahorra</div>
+          <div class="sc-precios">
+            <div class="sc-precio-antiguo">$350.000 COP<br><small style="font-size:11px;">Booking/Airbnb</small></div>
+            <div class="sc-precio-nuevo">
+              $290.000 COP
+              <span class="sc-tag-ahorro">¡Ahorra 17%!</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. FORMULARIO CON CAPTURA CONTEXTUAL -->
+        <form id="sc-form" class="sc-form">
+          <input type="hidden" id="sc-municipio" value="Circasia">
+          <input type="hidden" id="sc-categoria" value="cafés especiales">
+          <div class="sc-campo">
+            <label for="sc-nombre">Tu Nombre</label>
+            <input type="text" id="sc-nombre" placeholder="Ej: Juan Pérez" required autocomplete="name">
+          </div>
+          <div class="sc-campo">
+            <label for="sc-telefono">WhatsApp</label>
+            <input type="tel" id="sc-telefono" placeholder="Ej: 3001234567" required autocomplete="tel">
+          </div>
+          <div class="sc-campo">
+            <label for="sc-fecha">Fecha de Viaje</label>
+            <input type="date" id="sc-fecha" required>
+          </div>
+          <div class="sc-campo">
+            <label for="sc-personas">Número de Personas</label>
+            <input type="number" id="sc-personas" min="1" max="50" value="2" required>
+          </div>
+          <div id="sc-error" class="sc-error"></div>
+          <button type="submit" id="sc-btn-enviar" class="sc-btn-enviar">
+            📲 Cotizar y Abrir WhatsApp
+          </button>
+        </form>
+
+        <!-- MENSAJE DE ÉXITO -->
+        <div id="sc-exito" class="sc-exito">
+          <div class="sc-exito-icon">✅</div>
+          <h3>¡Listo! WhatsApp Abierto</h3>
+          <p>Envía el mensaje pre-redactado y los mejores establecimientos Premium te contactan en menos de 5 minutos.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. TOASTS DE ESCASEZ DINÁMICOS -->
+    <div class="sc-toast-container" id="sc-toast-container"></div>
+
+    <!-- 4. LOGICA JAVASCRIPT NATIVA (TODO EMBEBIDO) -->
+    <script>
+    (function(){
+      'use strict';
+      const municipio = 'Circasia';
+      const categoria = 'cafés especiales';
+
+      // === TOGGLE DEL WIDGET ===
+      const btnToggle = document.getElementById('sc-toggle');
+      const panel = document.getElementById('sc-panel');
+      btnToggle.addEventListener('click', function(){ panel.classList.toggle('active'); });
+      document.addEventListener('click', function(e){
+        if(!panel.contains(e.target) && !btnToggle.contains(e.target)){ panel.classList.remove('active'); }
+      });
+
+      // === ALERTAS DE ESCASEZ (TOASTS) ===
+      const toastContainer = document.getElementById('sc-toast-container');
+      const mensajesScasez = [
+        {icon:'🔥', texto:'3 personas están viendo '+categoria+' en '+municipio+' justo ahora.'},
+        {icon:'⏰', texto:'Última reserva directa procesada hace 18 minutos en este destino.'},
+        {icon:'👀', texto:'12 turistas consultaron '+categoria+' en '+municipio+' en las últimas 2 horas.'},
+        {icon:'⭐', texto:'¡Un establecimiento Premium en '+municipio+' acaba de confirmar disponibilidad para esta semana!'},
+        {icon:'💬', texto:'Una pareja de Bogotá acaba de reservar '+categoria+' en '+municipio+' usando el cotizador.'}
+      ];
+      function crearToast(mensaje){
+        const toast = document.createElement('div');
+        toast.className = 'sc-toast';
+        toast.innerHTML = '<span class="sc-toast-icon">'+mensaje.icon+'</span><span>'+mensaje.texto+'</span>';
+        toastContainer.appendChild(toast);
+        setTimeout(function(){
+          toast.style.opacity = '0';
+          toast.style.transform = 'translateX(-100%)';
+          setTimeout(function(){ toast.remove(); }, 400);
+        }, 4500);
+      }
+      // Iniciar toasts después de 3 segundos, cada 8-15 segundos
+      setTimeout(function(){
+        crearToast(mensajesScasez[0]);
+        let index = 1;
+        setInterval(function(){
+          crearToast(mensajesScasez[index % mensajesScasez.length]);
+          index++;
+        }, 8000 + Math.random()*7000);
+      }, 3000);
+
+      // === FORMULARIO Y ENVÍO ===
+      const form = document.getElementById('sc-form');
+      const btnEnviar = document.getElementById('sc-btn-enviar');
+      const errorDiv = document.getElementById('sc-error');
+      const exitoDiv = document.getElementById('sc-exito');
+
+      function validarDatos(datos){
+        if(datos.nombre.length < 3){ return 'Por favor, ingresa tu nombre completo'; }
+        const telLimpio = datos.telefono.replace(/\D/g, '');
+        if(telLimpio.length < 10){ return 'Por favor, ingresa un teléfono válido (10 dígitos)'; }
+        if(!datos.fecha){ return 'Por favor, selecciona una fecha de viaje'; }
+        if(!datos.personas || datos.personas < 1){ return 'Por favor, indica el número de personas'; }
+        return null;
+      }
+
+      function formatearFecha(fechaStr){
+        const fecha = new Date(fechaStr);
+        const opciones = {year:'numeric', month:'long', day:'numeric'};
+        return fecha.toLocaleDateString('es-ES', opciones);
+      }
+
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+        const datos = {
+          nombre: document.getElementById('sc-nombre').value.trim(),
+          telefono: document.getElementById('sc-telefono').value.trim(),
+          fecha: document.getElementById('sc-fecha').value,
+          personas: parseInt(document.getElementById('sc-personas').value),
+          municipio: municipio,
+          categoria: categoria
+        };
+
+        // Validar
+        const error = validarDatos(datos);
+        if(error){ errorDiv.textContent = error; errorDiv.classList.add('active'); return; }
+        errorDiv.classList.remove('active');
+
+        // Deshabilitar botón
+        btnEnviar.disabled = true;
+        btnEnviar.innerHTML = '⏳ Procesando...';
+
+        // 1. Envío Asíncrono al Backend
+        const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+            ? 'http://localhost:5000/api/leads'
+            : 'https://tu-backend.com/api/leads';
+        try{
+          fetch(API_URL, {
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({
+              cliente_nombre: datos.nombre,
+              cliente_telefono: datos.telefono,
+              municipio_destino: datos.municipio,
+              categoria_interes: datos.categoria,
+              fecha_viaje: datos.fecha,
+              personas: datos.personas,
+              presupuesto: '200000-400000'
+            })
+          }).catch(function(err){ /* Silencioso para demo */ });
+        }catch(err){ /* Silencioso para demo */ }
+
+        // 2. ABRIR WHATSAPP INMEDIATAMENTE (Cierre Directo)
+        const fechaFormateada = formatearFecha(datos.fecha);
+        const mensajeWhatsApp = encodeURIComponent(
+          "Hola, acabo de cotizar mi viaje a " + municipio + " en el Mapa Turístico del Quindío para el " + fechaFormateada +
+          " para " + datos.personas + " persona(s). Tengo el presupuesto listo y quiero congelar la tarifa especial directa de $290.000 COP. " +
+          "¿Me confirman disponibilidad para proceder? ¡Gracias!"
+        );
+        // Número de central o pautante (cambia esto a tu número)
+        const numeroWhatsApp = '573001234567';
+        window.open('https://wa.me/' + numeroWhatsApp + '?text=' + mensajeWhatsApp, '_blank');
+
+        // 3. Mostrar éxito
+        form.style.display = 'none';
+        exitoDiv.classList.add('active');
+      });
+    })();
+    </script>
+  
   <!-- Scripts al final del body -->
   <script src="assets/js/datos.js" defer></script>
   <script src="assets/js/nav.js" defer></script>

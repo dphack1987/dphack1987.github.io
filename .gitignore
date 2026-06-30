@@ -1,0 +1,4 @@
+monetizacion.db
+eventos_produccion.jsonl
+*.tmp
+.DS_Store
