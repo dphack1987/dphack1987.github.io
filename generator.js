@@ -55,10 +55,11 @@ function getOptimalImagePath(imgPath) {
 
 // Función para renderizar una tarjeta de negocio (HTML estático)
 function renderBizCard(biz) {
+  const municipioNombre = getMunicipioName(biz.municipio);
   const servicios = (biz.servicios || []).slice(0, 4).map(s => `<span class="biz-tag">${s}</span>`).join('');
   const nivelBadge = biz.nivel === 'premium' ? '⭐ Premium' : '✓ Verificado';
   const imgPath = getOptimalImagePath(biz.imagen || '');
-  const imgTag = imgPath ? `<img src="${imgPath}" alt="${biz.nombre}" class="biz-card-img" loading="lazy">` : '';
+  const imgTag = imgPath ? `<img src="${imgPath}" alt="${biz.nombre} en ${municipioNombre}, Departamento del Quindío, Colombia" class="biz-card-img" loading="lazy">` : '';
   
   return `
     <article class="biz-card" role="listitem" id="${biz.id}">
@@ -67,7 +68,7 @@ function renderBizCard(biz) {
         <span class="biz-badge ${biz.nivel || 'estandar'}">${nivelBadge}</span>
       </div>
       <div class="biz-card-body">
-        <div class="biz-tipo">${biz.tipo} · ${getMunicipioName(biz.municipio)}</div>
+        <div class="biz-tipo">${biz.tipo} · ${municipioNombre}, Departamento del Quindío</div>
         <h3>${biz.nombre}</h3>
         <p>${biz.desc || biz.descripcion || ''}</p>
         <div class="biz-servicios">${servicios}</div>
@@ -146,7 +147,20 @@ function generarPagina(ruta) {
   // Contenido único por página para SEO
   const municipioDesc = municipio.desc || 'Descubre todo lo que este municipio tiene para ofrecer.';
   const municipioEmoji = municipio.emoji || '🌿';
-  const distanciaDesdeArmenia = municipio.km ? `A ${municipio.km} km de Armenia, la capital del Quindío.` : '';
+  const distanciaDesdeArmenia = municipio.km ? `A ${municipio.km} km de Armenia, la capital del Departamento del Quindío, Colombia.` : '';
+  
+  // Contenido especial para Filandia y "La Casa de Encanto"
+  const contenidoEncanto = ruta.municipio === 'Filandia' ? `
+    <div style="background: linear-gradient(135deg, #fef3c7, #fde68a); padding: 32px; border-radius: 16px; margin-bottom: 48px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); border: 2px solid #fbbf24;">
+      <h2 style="color: #92400e; margin-bottom: 16px; font-size: 1.7rem;">🏠 La arquitectura que inspiró la casa de Encanto</h2>
+      <p style="font-size: 1.1rem; color: #78350f; line-height: 1.8;">
+        Filandia, conocida como el "Mirador del Quindío", cautiva a sus visitantes con su colorida arquitectura colonial, balcones llenos de flores y calles empedradas que parecen sacadas de un cuento de hadas. Esta belleza única fue la fuente de inspiración para la magnífica casa de la película Disney "Encanto".
+      </p>
+      <p style="font-size: 1rem; color: #78350f; line-height: 1.7; margin-top: 16px;">
+        ¡Ven y descubre el turismo en Filandia Quindío! Aquí encontrarás rutas turísticas del Eje Cafetero, fincas cafeteras, glampings y todo lo que necesitas para vivir una experiencia inolvidable en el corazón del Paisaje Cultural Cafetero.
+      </p>
+    </div>
+  ` : '';
 
   // Script minimalista para el mapa
   const mapScript = `
@@ -184,22 +198,23 @@ ${JSON.stringify(schema, null, 2)}
 </head>
 <body>
   <header class="page-hero">
-    <h1>${emoji} ${titleCase(ruta.categoria)} en ${ruta.municipio}</h1>
+    <h1>${emoji} ${titleCase(ruta.categoria)} en ${ruta.municipio}, Departamento del Quindío, Colombia</h1>
     <p>${ruta.meta_descripcion}</p>
   </header>
   <div class="container">
     <!-- Contenido único por municipio para SEO -->
     <div style="background: white; padding: 32px; border-radius: 16px; margin-bottom: 48px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
-      <h2 style="color: #059669; margin-bottom: 16px; font-size: 1.8rem;">${municipioEmoji} ¿Por qué visitar ${ruta.municipio}?</h2>
+      <h2 style="color: #059669; margin-bottom: 16px; font-size: 1.8rem;">${municipioEmoji} ¿Por qué visitar ${ruta.municipio} en el Departamento del Quindío?</h2>
       <p style="font-size: 1.1rem; color: #333; line-height: 1.8;">
         ${municipioDesc} ${distanciaDesdeArmenia}
       </p>
       <p style="font-size: 1rem; color: #666; line-height: 1.7; margin-top: 16px;">
-        Aquí encontrarás las mejores opciones de ${titleCase(ruta.categoria.toLowerCase())} para tu viaje, con información detallada, fotos reales y contacto directo por WhatsApp.
+        Aquí encontrarás las mejores opciones de ${titleCase(ruta.categoria.toLowerCase())} para tu viaje por el Departamento del Quindío, Colombia, con información detallada, fotos reales y contacto directo por WhatsApp.
       </p>
     </div>
+    ${contenidoEncanto}
     <div style="margin-bottom:48px"><div id="mapa-interactivo"></div></div>
-    <h2 style="color: #059669; margin-bottom: 24px; font-size: 1.6rem;">${emoji} Mejores ${titleCase(ruta.categoria.toLowerCase())} en ${ruta.municipio}</h2>
+    <h2 style="color: #059669; margin-bottom: 24px; font-size: 1.6rem;">${emoji} Mejores ${titleCase(ruta.categoria.toLowerCase())} en ${ruta.municipio}, Quindío</h2>
     <div id="cards" class="cards-grid" role="list" aria-live="polite">
       ${cardsHTML}
     </div>
