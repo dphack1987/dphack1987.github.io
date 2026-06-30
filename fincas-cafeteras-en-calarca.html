@@ -684,6 +684,77 @@
     })();
     </script>
   
+  <!-- DON CHUCHO - CHATBOT DE TURISMO (CARGA HÍBRIDA)
+  <style>
+    .dc-burbuja{position:fixed;right:100px;bottom:16px;z-index:99998;font-family:'Inter',system-ui,sans-serif;}
+    .dc-boton{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#059669,#047857);border:none;color:#fff;font-size:28px;cursor:pointer;box-shadow:0 8px 32px rgba(5,150,105,.45);transition:all .3s cubic-bezier(.4,0,.2,1);display:flex;align-items:center;justify-content:center;animation:dc-pulse 2.5s infinite;}
+    @keyframes dc-pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.08);}}
+    .dc-boton:hover{transform:scale(1.12);box-shadow:0 12px 40px rgba(5,150,105,.55);}
+    .dc-panel{position:absolute;bottom:80px;right:0;width:380px;max-width:92vw;background:#fff;border-radius:24px;box-shadow:0 24px 80px rgba(0,0,0,.25);overflow:hidden;transform-origin:bottom right;transform:scale(0);opacity:0;transition:all .35s cubic-bezier(.4,0,.2,1);display:none;}
+    .dc-panel.active{transform:scale(1);opacity:1;display:block;}
+    .dc-header{background:linear-gradient(135deg,#059669,#047857);color:#fff;padding:16px 20px;display:flex;align-items:center;gap:12px;}
+    .dc-avatar{width:48px;height:48px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;}
+    .dc-titulo{display:flex;flex-direction:column;}
+    .dc-titulo strong{font-size:16px;font-weight:800;}
+    .dc-titulo span{font-size:12px;opacity:.9;}
+    .dc-mensajes{padding:16px;max-height:380px;overflow-y:auto;}
+    .dc-mensaje{margin-bottom:12px;}
+    .dc-mensaje.dc-bot{display:flex;gap:10px;align-items:flex-start;}
+    .dc-mensaje.dc-bot .dc-texto{background:#f0fdf4;border-radius:16px 16px 16px 4px;padding:10px 14px;color:#064e3b;font-size:14px;line-height:1.5;}
+    .dc-mensaje.dc-user{display:flex;justify-content:flex-end;}
+    .dc-mensaje.dc-user .dc-texto{background:#059669;color:#fff;border-radius:16px 16px 4px 16px;padding:10px 14px;font-size:14px;line-height:1.5;max-width:80%;}
+    .dc-respuestas{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+    .dc-respuesta{background:#fff;border:2px solid #059669;color:#059669;padding:8px 14px;border-radius:20px;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;}
+    .dc-respuesta:hover{background:#059669;color:#fff;}
+    .dc-inputarea{padding:12px 16px 20px;border-top:1px solid #e5e7eb;display:flex;gap:10px;}
+    .dc-input{flex:1;padding:12px 14px;border:2px solid #e5e7eb;border-radius:14px;font-size:14px;outline:none;transition:all .2s;}
+    .dc-input:focus{border-color:#059669;box-shadow:0 0 0 5px rgba(5,150,105,.12);}
+    .dc-enviar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#059669,#047857);border:none;color:#fff;font-size:20px;cursor:pointer;transition:all .2s;}
+    .dc-enviar:hover{transform:scale(1.05);}
+  </style>
+  <div class="dc-burbuja" id="dcBurbuja">
+    <button class="dc-boton" id="dcBoton" aria-label="Abrir chat con Don Chucho">🤠</button>
+    <div class="dc-panel" id="dcPanel">
+      <div class="dc-header">
+        <div class="dc-avatar">🤠</div>
+        <div class="dc-titulo">
+          <strong>Don Chucho</strong>
+          <span>Activo ahora en Calarcá</span>
+        </div>
+      </div>
+      <div class="dc-mensajes" id="dcMensajes"></div>
+      <div class="dc-respuestas" id="dcRespuestas"></div>
+      <div class="dc-inputarea">
+        <input type="text" id="dcInput" class="dc-input" placeholder="¿Qué quieres saber?">
+        <button id="dcEnviar" class="dc-enviar">➤</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){
+      const dcMunicipio='Calarcá';
+      const dcCategoria='fincas cafeteras';
+      let dcInicializado=false;
+      function dcInit(){if(dcInicializado)return;dcInicializado=true;
+        const dcMensajes=document.getElementById('dcMensajes');
+        const dcRespuestas=document.getElementById('dcRespuestas');
+        const dcInput=document.getElementById('dcInput');
+        const dcEnviar=document.getElementById('dcEnviar');
+        dcAgregarMensaje('bot','¡Hola, pariente! Veo que anda planeando su viaje a '+dcMunicipio+'. ¿Qué le provoca hacer por acá?');
+        dcRespuestas.innerHTML='<button class="dc-respuesta" data-accion="mapa">🗺️ Ver mapa del pueblo</button><button class="dc-respuesta" data-accion="cafe">☕ ¿Dónde hay buen café?</button><button class="dc-respuesta" data-accion="cotizar">🛌 Buscar hospedaje Premium</button>';
+        dcRespuestas.querySelectorAll('.dc-respuesta').forEach(b=>b.addEventListener('click',function(){const a=this.dataset.accion;if(a==='cotizar'){document.getElementById('sc-panel').classList.add('active');dcAgregarMensaje('bot','¡Claro que sí! Abrí el cotizador de inmediato para que te contacten los mejores hospedajes Premium.');}else dcAgregarMensaje('bot','¡Excelente elección! Déjame te ayudo con eso...');}));
+        function dcAgregarMensaje(t,texto){const m=document.createElement('div');m.className='dc-mensaje dc-'+t;if(t==='bot'){m.innerHTML='<div class="dc-avatar">🤠</div><div class="dc-texto">'+texto+'</div>';}else if(t==='user'){m.innerHTML='<div class="dc-texto">'+texto+'</div>';}dcMensajes.appendChild(m);dcMensajes.scrollTop=dcMensajes.scrollHeight;}
+        async function dcEnviarMensaje(texto){if(!texto.trim())return;dcAgregarMensaje('user',texto);
+          try{const res=await fetch('https://tu-backend.com/api/chatbot',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({mensaje:texto,municipio:dcMunicipio,categoria:dcCategoria})});const datos=await res.json();dcAgregarMensaje('bot',datos.respuesta||'¡Claro que sí, pariente! Aquí te cuento...');}catch(e){dcAgregarMensaje('bot','¡Uy, me quedé sin señal! Pero tranquilos, que ya vuelvo.');}
+        }
+        dcEnviar.addEventListener('click',()=>dcEnviarMensaje(dcInput.value));dcInput.addEventListener('keypress',e=>{if(e.key==='Enter')dcEnviarMensaje(dcInput.value);});
+      }
+      const dcBoton=document.getElementById('dcBoton');const dcPanel=document.getElementById('dcPanel');
+      dcBoton.addEventListener('click',function(){dcPanel.classList.toggle('active');if(!dcInicializado)dcInit();});
+      document.addEventListener('click',e=>{if(!dcPanel.contains(e.target)&&!dcBoton.contains(e.target))dcPanel.classList.remove('active');});
+    })();
+  </script>
+
   <!-- Scripts al final del body -->
   <script src="assets/js/datos.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
