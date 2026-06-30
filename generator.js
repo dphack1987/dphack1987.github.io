@@ -87,6 +87,22 @@ const MUNICIPIOS_KG = {
   }
 };
 
+// Función para normalizar nombres de municipios (sin acentos, minúsculas, etc.)
+function normalizeMunicipioName(name) {
+  return name
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/\s+/g, "");
+}
+
+// Crear un mapa normalizado para búsqueda
+const MUNICIPIOS_KG_NORMALIZED = {};
+for (const [key, value] of Object.entries(MUNICIPIOS_KG)) {
+  const normalizedKey = normalizeMunicipioName(key);
+  MUNICIPIOS_KG_NORMALIZED[normalizedKey] = value;
+}
+
 // Corregir rutas de imágenes (usar WebP)
 function getOptimalImagePath(imgPath) {
   if (!imgPath) return '';
@@ -131,7 +147,8 @@ function getMunicipioName(munId) {
 
 // Función para generar Schema.org con Knowledge Graph y Speakable
 function generarSchema(ruta, negociosFiltrados) {
-  const kg = MUNICIPIOS_KG[ruta.municipio] || {};
+  const normalizedMunicipio = normalizeMunicipioName(ruta.municipio);
+  const kg = MUNICIPIOS_KG_NORMALIZED[normalizedMunicipio] || {};
   const itemListElements = negociosFiltrados.map((n, i) => ({
     "@type": "ListItem",
     "position": i + 1,
