@@ -6,13 +6,13 @@
   <title>Alquiler De Fincas en Filandia | Mapa Turístico del Quindío</title>
   <meta name="description" content="Alquiler de fincas en Filandia para grupos, familias o parejas. Espacio privado y naturaleza cerca.">
   <link rel="canonical" href="https://www.mapaturisticodelquindio.com/alquiler-de-fincas-en-filandia.html">
-  <!-- Preconectar a dominios críticos para performance -->
+  <!-- Preconectar y preload de assets críticos para WPO -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://unpkg.com">
-  <!-- Cargar fuentes y CSS -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="preload" href="assets/css/main.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+  <!-- Cargar CSS principal -->
   <link rel="stylesheet" href="assets/css/main.css">
   <!-- Schema.org -->
   <script type="application/ld+json">
@@ -21,6 +21,16 @@
   "@type": "ItemPage",
   "name": "Alquiler De Fincas en Filandia | Mapa Turístico del Quindío",
   "description": "Alquiler de fincas en Filandia para grupos, familias o parejas. Espacio privado y naturaleza cerca.",
+  "sameAs": [
+    "https://es.wikipedia.org/wiki/Filandia",
+    "https://www.wikidata.org/wiki/Q1441183"
+  ],
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "#respuesta-directa-ia"
+    ]
+  },
   "mainEntity": {
     "@type": "ItemList",
     "name": "Los mejores alquiler de fincas en Filandia",
@@ -35,6 +45,12 @@
     <h1>🏡 Alquiler De Fincas en Filandia, Departamento del Quindío, Colombia</h1>
     <p>Alquiler de fincas en Filandia para grupos, familias o parejas. Espacio privado y naturaleza cerca.</p>
   </header>
+  
+  <!-- Bloque de respuesta directa para IA y búsquedas por voz -->
+  <div id="respuesta-directa-ia" style="display: none;">
+    En Filandia, Quindío, encontrarás Alquiler De Fincas perfectos para tu viaje por el Eje Cafetero.
+  </div>
+  
   <div class="container">
     <!-- Contenido único por municipio para SEO -->
     <div style="background: white; padding: 32px; border-radius: 16px; margin-bottom: 48px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
@@ -100,9 +116,35 @@
   <script src="assets/js/nav.js" defer></script>
   
     <script>
-      const map = L.map('mapa-interactivo', { scrollWheelZoom: false }).setView([4.6736, -75.6547], 13);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+      let mapLoaded = false;
+      const mapContainer = document.getElementById('mapa-interactivo');
       
+      function loadMap() {
+        if (mapLoaded) return;
+        mapLoaded = true;
+        
+        // Cargar CSS de Leaflet
+        const leafletCss = document.createElement('link');
+        leafletCss.rel = 'stylesheet';
+        leafletCss.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+        document.head.appendChild(leafletCss);
+        
+        // Cargar JS de Leaflet y luego inicializar mapa
+        const leafletJs = document.createElement('script');
+        leafletJs.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+        leafletJs.onload = function() {
+          const map = L.map('mapa-interactivo', { scrollWheelZoom: false }).setView([4.6736, -75.6547], 13);
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+          
+        };
+        document.body.appendChild(leafletJs);
+      }
+      
+      // Cargar mapa al pasar el mouse o tocar
+      mapContainer.addEventListener('mouseover', loadMap, { once: true });
+      mapContainer.addEventListener('touchstart', loadMap, { once: true });
+      // Opcionalmente cargar después de 2 segundos para usabilidad
+      setTimeout(loadMap, 2000);
     </script>
   
 </body>

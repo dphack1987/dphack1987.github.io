@@ -47,6 +47,46 @@ const CATEGORIAS_EMOJIS = {
   "rutas turísticas": "🗺️"
 };
 
+// Mapeo de municipios con sus entidades de Knowledge Graph (Wikidata + Wikipedia)
+const MUNICIPIOS_KG = {
+  "Armenia": {
+    sameAs: ["https://es.wikipedia.org/wiki/Armenia_(Quind%C3%ADo)", "https://www.wikidata.org/wiki/Q11078"]
+  },
+  "Calarcá": {
+    sameAs: ["https://es.wikipedia.org/wiki/Calarc%C3%A1", "https://www.wikidata.org/wiki/Q1066231"]
+  },
+  "Circasia": {
+    sameAs: ["https://es.wikipedia.org/wiki/Circasia", "https://www.wikidata.org/wiki/Q1066261"]
+  },
+  "Filandia": {
+    sameAs: ["https://es.wikipedia.org/wiki/Filandia", "https://www.wikidata.org/wiki/Q1441183"]
+  },
+  "La Tebaida": {
+    sameAs: ["https://es.wikipedia.org/wiki/La_Tebaida", "https://www.wikidata.org/wiki/Q16939914"]
+  },
+  "Montenegro": {
+    sameAs: ["https://es.wikipedia.org/wiki/Montenegro_(Quind%C3%ADo)", "https://www.wikidata.org/wiki/Q1441268"]
+  },
+  "Quimbaya": {
+    sameAs: ["https://es.wikipedia.org/wiki/Quimbaya_(Quind%C3%ADo)", "https://www.wikidata.org/wiki/Q1441290"]
+  },
+  "Salento": {
+    sameAs: ["https://es.wikipedia.org/wiki/Salento_(Quind%C3%ADo)", "https://www.wikidata.org/wiki/Q1441118"]
+  },
+  "Buenavista": {
+    sameAs: ["https://es.wikipedia.org/wiki/Buenavista_(Quind%C3%ADo)", "https://www.wikidata.org/wiki/Q1066220"]
+  },
+  "Córdoba": {
+    sameAs: ["https://es.wikipedia.org/wiki/C%C3%B3rdoba_(Quind%C3%ADo)", "https://www.wikidata.org/wiki/Q1066265"]
+  },
+  "Génova": {
+    sameAs: ["https://es.wikipedia.org/wiki/G%C3%A9nova_(Quind%C3%ADo)", "https://www.wikidata.org/wiki/Q1441206"]
+  },
+  "Pijao": {
+    sameAs: ["https://es.wikipedia.org/wiki/Pijao_(Quind%C3%ADo)", "https://www.wikidata.org/wiki/Q1441297"]
+  }
+};
+
 // Corregir rutas de imágenes (usar WebP)
 function getOptimalImagePath(imgPath) {
   if (!imgPath) return '';
@@ -89,8 +129,9 @@ function getMunicipioName(munId) {
   return mun ? mun.nombre : munId;
 }
 
-// Función para generar Schema.org
+// Función para generar Schema.org con Knowledge Graph y Speakable
 function generarSchema(ruta, negociosFiltrados) {
+  const kg = MUNICIPIOS_KG[ruta.municipio] || {};
   const itemListElements = negociosFiltrados.map((n, i) => ({
     "@type": "ListItem",
     "position": i + 1,
@@ -115,6 +156,11 @@ function generarSchema(ruta, negociosFiltrados) {
     "@type": "ItemPage",
     "name": ruta.titulo,
     "description": ruta.meta_descripcion,
+    "sameAs": kg.sameAs,
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["#respuesta-directa-ia"]
+    },
     "mainEntity": {
       "@type": "ItemList",
       "name": `Los mejores ${ruta.categoria} en ${ruta.municipio}`,
@@ -149,6 +195,9 @@ function generarPagina(ruta) {
   const municipioEmoji = municipio.emoji || '🌿';
   const distanciaDesdeArmenia = municipio.km ? `A ${municipio.km} km de Armenia, la capital del Departamento del Quindío, Colombia.` : '';
   
+  // Respuesta directa para IA y búsquedas por voz (máx 160 caracteres)
+  const respuestaDirecta = `En ${ruta.municipio}, Quindío, encontrarás ${titleCase(ruta.categoria.toLowerCase())} perfectos para tu viaje por el Eje Cafetero.`;
+  
   // Contenido especial para Filandia y "La Casa de Encanto"
   const contenidoEncanto = ruta.municipio === 'Filandia' ? `
     <div style="background: linear-gradient(135deg, #fef3c7, #fde68a); padding: 32px; border-radius: 16px; margin-bottom: 48px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); border: 2px solid #fbbf24;">
@@ -162,16 +211,42 @@ function generarPagina(ruta) {
     </div>
   ` : '';
 
-  // Script minimalista para el mapa
+  // Script para carga híbrida del mapa (solo al interactuar)
   const mapScript = `
     <script>
-      const map = L.map('mapa-interactivo', { scrollWheelZoom: false }).setView([${municipio.lat}, ${municipio.lng}], 13);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
-      ${negociosFiltrados.filter(n => n.lat).map(n => `
-        L.marker([${n.lat}, ${n.lng}]).addTo(map).bindPopup(
-          \`<b>${n.nombre}</b><br>${n.tipo}<br>${n.precio}<br><a href="https://wa.me/${n.whatsapp}?text=Hola%2C%20quiero%20reservar" target="_blank">💬 Contactar</a>\`
-        );
-      `).join('')}
+      let mapLoaded = false;
+      const mapContainer = document.getElementById('mapa-interactivo');
+      
+      function loadMap() {
+        if (mapLoaded) return;
+        mapLoaded = true;
+        
+        // Cargar CSS de Leaflet
+        const leafletCss = document.createElement('link');
+        leafletCss.rel = 'stylesheet';
+        leafletCss.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+        document.head.appendChild(leafletCss);
+        
+        // Cargar JS de Leaflet y luego inicializar mapa
+        const leafletJs = document.createElement('script');
+        leafletJs.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+        leafletJs.onload = function() {
+          const map = L.map('mapa-interactivo', { scrollWheelZoom: false }).setView([${municipio.lat}, ${municipio.lng}], 13);
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+          ${negociosFiltrados.filter(n => n.lat).map(n => `
+            L.marker([${n.lat}, ${n.lng}]).addTo(map).bindPopup(
+              \`<b>${n.nombre}</b><br>${n.tipo}<br>${n.precio}<br><a href="https://wa.me/${n.whatsapp}?text=Hola%2C%20quiero%20reservar" target="_blank">💬 Contactar</a>\`
+            );
+          `).join('')}
+        };
+        document.body.appendChild(leafletJs);
+      }
+      
+      // Cargar mapa al pasar el mouse o tocar
+      mapContainer.addEventListener('mouseover', loadMap, { once: true });
+      mapContainer.addEventListener('touchstart', loadMap, { once: true });
+      // Opcionalmente cargar después de 2 segundos para usabilidad
+      setTimeout(loadMap, 2000);
     </script>
   `;
 
@@ -183,13 +258,13 @@ function generarPagina(ruta) {
   <title>${ruta.titulo}</title>
   <meta name="description" content="${ruta.meta_descripcion}">
   <link rel="canonical" href="${ruta.url}.html">
-  <!-- Preconectar a dominios críticos para performance -->
+  <!-- Preconectar y preload de assets críticos para WPO -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://unpkg.com">
-  <!-- Cargar fuentes y CSS -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="preload" href="assets/css/main.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+  <!-- Cargar CSS principal -->
   <link rel="stylesheet" href="assets/css/main.css">
   <!-- Schema.org -->
   <script type="application/ld+json">
@@ -201,6 +276,12 @@ ${JSON.stringify(schema, null, 2)}
     <h1>${emoji} ${titleCase(ruta.categoria)} en ${ruta.municipio}, Departamento del Quindío, Colombia</h1>
     <p>${ruta.meta_descripcion}</p>
   </header>
+  
+  <!-- Bloque de respuesta directa para IA y búsquedas por voz -->
+  <div id="respuesta-directa-ia" style="display: none;">
+    ${respuestaDirecta}
+  </div>
+  
   <div class="container">
     <!-- Contenido único por municipio para SEO -->
     <div style="background: white; padding: 32px; border-radius: 16px; margin-bottom: 48px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">

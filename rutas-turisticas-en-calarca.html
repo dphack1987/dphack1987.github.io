@@ -6,13 +6,13 @@
   <title>Rutas Turísticas en Calarcá | Mapa Turístico del Quindío</title>
   <meta name="description" content="Rutas turísticas en Calarcá: guías completas para explorar lo mejor del Quindío, desde cafés hasta miradores.">
   <link rel="canonical" href="https://www.mapaturisticodelquindio.com/rutas-turisticas-en-calarca.html">
-  <!-- Preconectar a dominios críticos para performance -->
+  <!-- Preconectar y preload de assets críticos para WPO -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://unpkg.com">
-  <!-- Cargar fuentes y CSS -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="preload" href="assets/css/main.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+  <!-- Cargar CSS principal -->
   <link rel="stylesheet" href="assets/css/main.css">
   <!-- Schema.org -->
   <script type="application/ld+json">
@@ -21,6 +21,16 @@
   "@type": "ItemPage",
   "name": "Rutas Turísticas en Calarcá | Mapa Turístico del Quindío",
   "description": "Rutas turísticas en Calarcá: guías completas para explorar lo mejor del Quindío, desde cafés hasta miradores.",
+  "sameAs": [
+    "https://es.wikipedia.org/wiki/Calarc%C3%A1",
+    "https://www.wikidata.org/wiki/Q1066231"
+  ],
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "#respuesta-directa-ia"
+    ]
+  },
   "mainEntity": {
     "@type": "ItemList",
     "name": "Los mejores rutas turísticas en Calarcá",
@@ -90,6 +100,12 @@
     <h1>🗺️ Rutas Turísticas en Calarcá, Departamento del Quindío, Colombia</h1>
     <p>Rutas turísticas en Calarcá: guías completas para explorar lo mejor del Quindío, desde cafés hasta miradores.</p>
   </header>
+  
+  <!-- Bloque de respuesta directa para IA y búsquedas por voz -->
+  <div id="respuesta-directa-ia" style="display: none;">
+    En Calarcá, Quindío, encontrarás Rutas Turísticas perfectos para tu viaje por el Eje Cafetero.
+  </div>
+  
   <div class="container">
     <!-- Contenido único por municipio para SEO -->
     <div style="background: white; padding: 32px; border-radius: 16px; margin-bottom: 48px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
@@ -197,21 +213,47 @@
   <script src="assets/js/nav.js" defer></script>
   
     <script>
-      const map = L.map('mapa-interactivo', { scrollWheelZoom: false }).setView([4.5167, -75.6333], 13);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+      let mapLoaded = false;
+      const mapContainer = document.getElementById('mapa-interactivo');
       
-        L.marker([4.52, -75.62]).addTo(map).bindPopup(
-          `<b>Domo de las Aves</b><br>Atracción Natural<br>Desde $25.000/persona<br><a href="https://wa.me/573000000009?text=Hola%2C%20quiero%20reservar" target="_blank">💬 Contactar</a>`
-        );
+      function loadMap() {
+        if (mapLoaded) return;
+        mapLoaded = true;
+        
+        // Cargar CSS de Leaflet
+        const leafletCss = document.createElement('link');
+        leafletCss.rel = 'stylesheet';
+        leafletCss.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+        document.head.appendChild(leafletCss);
+        
+        // Cargar JS de Leaflet y luego inicializar mapa
+        const leafletJs = document.createElement('script');
+        leafletJs.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+        leafletJs.onload = function() {
+          const map = L.map('mapa-interactivo', { scrollWheelZoom: false }).setView([4.5167, -75.6333], 13);
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+          
+            L.marker([4.52, -75.62]).addTo(map).bindPopup(
+              `<b>Domo de las Aves</b><br>Atracción Natural<br>Desde $25.000/persona<br><a href="https://wa.me/573000000009?text=Hola%2C%20quiero%20reservar" target="_blank">💬 Contactar</a>`
+            );
+          
+            L.marker([4.51, -75.61]).addTo(map).bindPopup(
+              `<b>Nueva Albania</b><br>Atracción Turística<br>Desde $30.000/persona<br><a href="https://wa.me/573000000010?text=Hola%2C%20quiero%20reservar" target="_blank">💬 Contactar</a>`
+            );
+          
+            L.marker([4.513, -75.628]).addTo(map).bindPopup(
+              `<b>La Recuca</b><br>Finca Cafetera<br>Desde $35.000/persona<br><a href="https://wa.me/573000000012?text=Hola%2C%20quiero%20reservar" target="_blank">💬 Contactar</a>`
+            );
+          
+        };
+        document.body.appendChild(leafletJs);
+      }
       
-        L.marker([4.51, -75.61]).addTo(map).bindPopup(
-          `<b>Nueva Albania</b><br>Atracción Turística<br>Desde $30.000/persona<br><a href="https://wa.me/573000000010?text=Hola%2C%20quiero%20reservar" target="_blank">💬 Contactar</a>`
-        );
-      
-        L.marker([4.513, -75.628]).addTo(map).bindPopup(
-          `<b>La Recuca</b><br>Finca Cafetera<br>Desde $35.000/persona<br><a href="https://wa.me/573000000012?text=Hola%2C%20quiero%20reservar" target="_blank">💬 Contactar</a>`
-        );
-      
+      // Cargar mapa al pasar el mouse o tocar
+      mapContainer.addEventListener('mouseover', loadMap, { once: true });
+      mapContainer.addEventListener('touchstart', loadMap, { once: true });
+      // Opcionalmente cargar después de 2 segundos para usabilidad
+      setTimeout(loadMap, 2000);
     </script>
   
 </body>
