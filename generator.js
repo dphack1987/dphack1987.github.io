@@ -110,13 +110,14 @@ function getOptimalImagePath(imgPath) {
 }
 
 // Función para renderizar una tarjeta de negocio (HTML estático)
-function renderBizCard(biz, categoria, municipio) {
+function renderBizCard(biz, categoria, municipio, isFirst) {
   const municipioNombre = getMunicipioName(biz.municipio);
   const servicios = (biz.servicios || []).slice(0, 4).map(s => `<span class="biz-tag">${s}</span>`).join('');
   const nivelBadge = biz.nivel === 'premium' ? '⭐ Premium' : '✓ Verificado';
   const imgPath = getOptimalImagePath(biz.imagen || '');
   const altText = `${categoria} en ${municipio}, Quindío`;
-  const imgTag = imgPath ? `<img src="${imgPath}" alt="${altText}" title="${altText}" class="biz-card-img" loading="lazy">` : '';
+  const priorityAttr = isFirst ? 'fetchpriority="high"' : 'loading="lazy"';
+  const imgTag = imgPath ? `<img src="${imgPath}" alt="${altText}" title="${altText}" class="biz-card-img" ${priorityAttr}>` : '';
   
   return `
     <article class="biz-card" role="listitem" id="${biz.id}">
@@ -227,7 +228,7 @@ function generarPagina(ruta) {
 
   const emoji = CATEGORIAS_EMOJIS[ruta.categoria];
   const schema = generarSchema(ruta, negociosFiltrados);
-  const cardsHTML = negociosFiltrados.map(biz => renderBizCard(biz, ruta.categoria, ruta.municipio)).join('');
+  const cardsHTML = negociosFiltrados.map((biz, index) => renderBizCard(biz, ruta.categoria, ruta.municipio, index === 0)).join('');
   const emptyState = negociosFiltrados.length ? '' : `
     <div class="no-results">
       <div class="icon">${emoji}</div>
@@ -520,8 +521,8 @@ function generarPagina(ruta) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${ruta.titulo}</title>
-  <meta name="description" content="${ruta.meta_descripcion}">
+  <title>${titleCase(ruta.categoria)} en ${ruta.municipio} 2026 | Mapa Turístico</title>
+  <meta name="description" content="¿Buscas ${ruta.categoria} en ${ruta.municipio}? Encuentra los mejores aquí. Mapa interactivo, contacto directo y reservas sin comisiones.">
   <link rel="canonical" href="${ruta.url}.html">
   
   <!-- Meta datos geográficos -->
@@ -530,17 +531,38 @@ function generarPagina(ruta) {
   <meta name="geo.position" content="${municipio.lat};${municipio.lng}">
   <meta name="ICBM" content="${municipio.lat}, ${municipio.lng}">
   
-  <!-- Preconectar y preload de assets críticos para WPO -->
+  <!-- Preconectar y preload de assets críticos para WPO (Core Web Vitals) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://{s}.tile.openstreetmap.org" crossorigin>
   <link rel="preload" href="assets/css/main.css" as="style">
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
   <!-- Cargar CSS principal -->
   <link rel="stylesheet" href="assets/css/main.css">
-  <!-- Schema.org -->
+  <!-- Schema.org JSON-LD para Rich Snippets -->
   <script type="application/ld+json">
 ${JSON.stringify(schema, null, 2)}
+  </script>
+  <!-- Schema.org para TouristAttraction/LocalBusiness adicional -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TouristAttraction",
+      "name": "${titleCase(ruta.categoria)} en ${ruta.municipio}",
+      "description": "¿Buscas ${ruta.categoria} en ${ruta.municipio}? Encuentra los mejores aquí.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "${ruta.municipio}",
+        "addressRegion": "Quindío",
+        "addressCountry": "CO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": ${municipio.lat},
+        "longitude": ${municipio.lng}
+      }
+    }
   </script>
 </head>
 <body>
