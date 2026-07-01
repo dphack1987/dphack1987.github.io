@@ -257,12 +257,12 @@ function generarPagina(ruta) {
   );
 
   // Buscar pautante real para esta combinación de municipio y categoría
+  const normalizeCat = (cat) => cat.toLowerCase().replace(/\s+/g, '-').trim();
   const pautante = pautantes.find(p => 
     p.municipio === ruta.municipio && 
-    (p.categoria === ruta.categoria || 
-     p.categoria === 'turismo' && ruta.categoria.includes('turismo') || 
-     p.categoria === 'hotel' && ruta.categoria.includes('hotel') || 
-     p.categoria === 'parapente' && ruta.categoria.includes('aventura'))
+    (normalizeCat(p.categoria) === normalizeCat(ruta.categoria) || 
+     normalizeCat(p.categoria).includes(normalizeCat(ruta.categoria)) || 
+     normalizeCat(ruta.categoria).includes(normalizeCat(p.categoria)))
   );
   
   // Configurar variables para WhatsApp y dataLayer
@@ -271,10 +271,12 @@ function generarPagina(ruta) {
   let comercioCategoria = null;
   
   if (pautante) {
+    // Limpiar número de WhatsApp (quitar espacios, caracteres no numéricos)
+    const cleanWhatsapp = pautante.whatsapp.replace(/\D/g, '');
     const mensajeCodificado = encodeURIComponent(
       pautante.mensaje_predeterminado || `Hola, vi su negocio en el Mapa de ${ruta.municipio}`
     );
-    whatsappUrl = `https://wa.me/${pautante.whatsapp}?text=${mensajeCodificado}`;
+    whatsappUrl = `https://wa.me/${cleanWhatsapp}?text=${mensajeCodificado}`;
     comercioNombre = pautante.comercio;
     comercioCategoria = pautante.categoria;
   }
@@ -920,8 +922,8 @@ function generarPagina(ruta) {
             '💰 Presupuesto: ' + datos.presupuesto + ' COP/noche\n\n' +
             '¿Tienes disponibilidad? ¡Quiero reservar ya!'
           );
-          const urlFinal = 'https://wa.me/${pautante?.whatsapp || '573001234567'}?text=' + mensajePersonalizado;
-          window.open(urlFinal, '_blank');
+          // Usar el WhatsApp preconfigurado
+          window.open(whatsappUrl, '_blank');
           ` : `
           // Si no hay pautante, usar el mensaje genérico
           const fechaFormateada = formatearFecha(datos.fecha);

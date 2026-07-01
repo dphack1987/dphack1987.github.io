@@ -625,7 +625,7 @@
         }
         
         // URL de WhatsApp configurada (usa pautante si existe, else fallback)
-        const whatsappUrl = 'https://wa.me/57313XXXXXXX?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20habitaciones%20desde%20el%20Mapa%20de%20Salento';
+        const whatsappUrl = 'https://wa.me/573001234567?text=Hola%2C%20quiero%20consultar%20informaci%C3%B3n';
         
         form.addEventListener('submit', async function(e){
           e.preventDefault();
@@ -649,11 +649,10 @@
           localStorage.setItem('quindio_leads', JSON.stringify(leads));
           
           
-          // Si hay pautante, usar su mensaje personalizado
-          const nombreComercio = 'Palta Hotel';
+          // Si no hay pautante, usar el mensaje genérico
           const fechaFormateada = formatearFecha(datos.fecha);
-          const mensajePersonalizado = encodeURIComponent(
-            '¡Hola ' + nombreComercio + '! ✋
+          const mensajeWhatsApp = encodeURIComponent(
+            '¡Hola! ✋
 ' +
             'Mi nombre es ' + datos.nombre + ', vi tu negocio en el Mapa Turístico del Quindío 🗺️.
 ' +
@@ -668,8 +667,7 @@
 ' +
             '¿Tienes disponibilidad? ¡Quiero reservar ya!'
           );
-          const urlFinal = 'https://wa.me/57313XXXXXXX?text=' + mensajePersonalizado;
-          window.open(urlFinal, '_blank');
+          window.open(whatsappUrl, '_blank');
           ;
           form.style.display='none'; exitoDiv.classList.add('active');
         });
@@ -888,9 +886,7 @@
         url: window.location.href,
         timestamp: new Date().toISOString(),
         dispositivo: /Mobi/.test(navigator.userAgent) ? 'mobile' : 'desktop'
-        ,
-        comercio_nombre: 'Palta Hotel',
-        comercio_categoria: 'hotel'
+        
       };
       
       // Almacenar intención en LocalStorage
@@ -916,10 +912,6 @@
             eventLabel = link.closest('.biz-card').querySelector('h3')?.textContent || 'Negocio';
           }
           
-          eventLabel = 'Palta Hotel';
-          eventComercio = 'Palta Hotel';
-          eventComercioCat = 'hotel';
-          
           
           window.dataLayer.push({
             'event': 'contacto_whatsapp',
@@ -927,9 +919,7 @@
             'event_label': eventLabel,
             'municipio': 'Salento',
             'categoria': 'hoteles'
-            ,
-            'comercio_nombre': eventComercio,
-            'comercio_categoria': eventComercioCat
+            
           });
         });
       });

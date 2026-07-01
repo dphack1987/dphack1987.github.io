@@ -1,26 +1,50 @@
 [
   {
     "municipio": "Filandia",
-    "categoria": "turismo",
-    "comercio": "La Casa de Encanto Real",
-    "whatsapp": "57311XXXXXXX",
+    "categoria": "turismo de aventura",
+    "comercio": "Mirador El Encanto",
+    "whatsapp": "573209369950",
     "mensaje_predeterminado": "Hola, vi su negocio en el Mapa de Filandia y quiero info sobre la locación de Encanto",
     "destacado": true
   },
   {
-    "municipio": "Buenavista",
-    "categoria": "parapente",
-    "comercio": "Parapente Aventuras Quindío",
-    "whatsapp": "57312XXXXXXX",
-    "mensaje_predeterminado": "Hola, quiero reservar un vuelo en parapente desde el Mapa de Buenavista",
+    "municipio": "Calarcá",
+    "categoria": "alojamiento",
+    "comercio": "Chalet La Alemania",
+    "whatsapp": "573234444450",
+    "mensaje_predeterminado": "Hola, quiero reservar una estadia desde el Mapa Turistico del Quindio",
     "destacado": true
   },
   {
-    "municipio": "Salento",
-    "categoria": "hotel",
-    "comercio": "Palta Hotel",
-    "whatsapp": "57313XXXXXXX",
-    "mensaje_predeterminado": "Hola, quiero consultar disponibilidad de habitaciones desde el Mapa de Salento",
+    "municipio": "Armenia",
+    "categoria": "hoteles",
+    "comercio": "Isa Victory Hotel",
+    "whatsapp": "573207707079",
+    "mensaje_predeterminado": "Hola, quiero consultar disponibilidad de habitaciones desde el Mapa del Quindio",
+    "destacado": true
+  },
+  {
+    "municipio": "Armenia",
+    "categoria": "restaurantes",
+    "comercio": "Jhon Chewing",
+    "whatsapp": "573228391293",
+    "mensaje_predeterminado": "Hola, quiero consultar el Menu de Hoy desde el Mapa del Quindio",
+    "destacado": true
+  },
+  {
+    "municipio": "Armenia",
+    "categoria": "restaurantes",
+    "comercio": "La Feria Del Platano",
+    "whatsapp": "573164805446",
+    "mensaje_predeterminado": "Hola, quiero consultar el Menu de Hoy desde el Mapa del Quindio",
+    "destacado": true
+  },
+  {
+    "municipio": "Armenia",
+    "categoria": "restaurantes",
+    "comercio": "Restaurante Magangue",
+    "whatsapp": "573186011957",
+    "mensaje_predeterminado": "Hola, quiero consultar el Menu de Hoy desde el Mapa del Quindio",
     "destacado": true
   }
 ]

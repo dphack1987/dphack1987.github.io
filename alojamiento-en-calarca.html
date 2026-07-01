@@ -917,7 +917,7 @@
         }
         
         // URL de WhatsApp configurada (usa pautante si existe, else fallback)
-        const whatsappUrl = 'https://wa.me/573001234567?text=Hola%2C%20quiero%20consultar%20informaci%C3%B3n';
+        const whatsappUrl = 'https://wa.me/573234444450?text=Hola%2C%20quiero%20reservar%20una%20estadia%20desde%20el%20Mapa%20Turistico%20del%20Quindio';
         
         form.addEventListener('submit', async function(e){
           e.preventDefault();
@@ -941,10 +941,11 @@
           localStorage.setItem('quindio_leads', JSON.stringify(leads));
           
           
-          // Si no hay pautante, usar el mensaje genérico
+          // Si hay pautante, usar su mensaje personalizado
+          const nombreComercio = 'Chalet La Alemania';
           const fechaFormateada = formatearFecha(datos.fecha);
-          const mensajeWhatsApp = encodeURIComponent(
-            '¡Hola! ✋
+          const mensajePersonalizado = encodeURIComponent(
+            '¡Hola ' + nombreComercio + '! ✋
 ' +
             'Mi nombre es ' + datos.nombre + ', vi tu negocio en el Mapa Turístico del Quindío 🗺️.
 ' +
@@ -959,6 +960,7 @@
 ' +
             '¿Tienes disponibilidad? ¡Quiero reservar ya!'
           );
+          // Usar el WhatsApp preconfigurado
           window.open(whatsappUrl, '_blank');
           ;
           form.style.display='none'; exitoDiv.classList.add('active');
@@ -1178,7 +1180,9 @@
         url: window.location.href,
         timestamp: new Date().toISOString(),
         dispositivo: /Mobi/.test(navigator.userAgent) ? 'mobile' : 'desktop'
-        
+        ,
+        comercio_nombre: 'Chalet La Alemania',
+        comercio_categoria: 'alojamiento'
       };
       
       // Almacenar intención en LocalStorage
@@ -1204,6 +1208,10 @@
             eventLabel = link.closest('.biz-card').querySelector('h3')?.textContent || 'Negocio';
           }
           
+          eventLabel = 'Chalet La Alemania';
+          eventComercio = 'Chalet La Alemania';
+          eventComercioCat = 'alojamiento';
+          
           
           window.dataLayer.push({
             'event': 'contacto_whatsapp',
@@ -1211,7 +1219,9 @@
             'event_label': eventLabel,
             'municipio': 'Calarcá',
             'categoria': 'alojamiento'
-            
+            ,
+            'comercio_nombre': eventComercio,
+            'comercio_categoria': eventComercioCat
           });
         });
       });

@@ -625,7 +625,7 @@
         }
         
         // URL de WhatsApp configurada (usa pautante si existe, else fallback)
-        const whatsappUrl = 'https://wa.me/573001234567?text=Hola%2C%20quiero%20consultar%20informaci%C3%B3n';
+        const whatsappUrl = 'https://wa.me/573207707079?text=Hola%2C%20quiero%20consultar%20disponibilidad%20de%20habitaciones%20desde%20el%20Mapa%20del%20Quindio';
         
         form.addEventListener('submit', async function(e){
           e.preventDefault();
@@ -649,10 +649,11 @@
           localStorage.setItem('quindio_leads', JSON.stringify(leads));
           
           
-          // Si no hay pautante, usar el mensaje genérico
+          // Si hay pautante, usar su mensaje personalizado
+          const nombreComercio = 'Isa Victory Hotel';
           const fechaFormateada = formatearFecha(datos.fecha);
-          const mensajeWhatsApp = encodeURIComponent(
-            '¡Hola! ✋
+          const mensajePersonalizado = encodeURIComponent(
+            '¡Hola ' + nombreComercio + '! ✋
 ' +
             'Mi nombre es ' + datos.nombre + ', vi tu negocio en el Mapa Turístico del Quindío 🗺️.
 ' +
@@ -667,6 +668,7 @@
 ' +
             '¿Tienes disponibilidad? ¡Quiero reservar ya!'
           );
+          // Usar el WhatsApp preconfigurado
           window.open(whatsappUrl, '_blank');
           ;
           form.style.display='none'; exitoDiv.classList.add('active');
@@ -886,7 +888,9 @@
         url: window.location.href,
         timestamp: new Date().toISOString(),
         dispositivo: /Mobi/.test(navigator.userAgent) ? 'mobile' : 'desktop'
-        
+        ,
+        comercio_nombre: 'Isa Victory Hotel',
+        comercio_categoria: 'hoteles'
       };
       
       // Almacenar intención en LocalStorage
@@ -912,6 +916,10 @@
             eventLabel = link.closest('.biz-card').querySelector('h3')?.textContent || 'Negocio';
           }
           
+          eventLabel = 'Isa Victory Hotel';
+          eventComercio = 'Isa Victory Hotel';
+          eventComercioCat = 'hoteles';
+          
           
           window.dataLayer.push({
             'event': 'contacto_whatsapp',
@@ -919,7 +927,9 @@
             'event_label': eventLabel,
             'municipio': 'Armenia',
             'categoria': 'hoteles'
-            
+            ,
+            'comercio_nombre': eventComercio,
+            'comercio_categoria': eventComercioCat
           });
         });
       });

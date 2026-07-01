@@ -635,7 +635,7 @@
         }
         
         // URL de WhatsApp configurada (usa pautante si existe, else fallback)
-        const whatsappUrl = 'https://wa.me/57311XXXXXXX?text=Hola%2C%20vi%20su%20negocio%20en%20el%20Mapa%20de%20Filandia%20y%20quiero%20info%20sobre%20la%20locaci%C3%B3n%20de%20Encanto';
+        const whatsappUrl = 'https://wa.me/573209369950?text=Hola%2C%20vi%20su%20negocio%20en%20el%20Mapa%20de%20Filandia%20y%20quiero%20info%20sobre%20la%20locaci%C3%B3n%20de%20Encanto';
         
         form.addEventListener('submit', async function(e){
           e.preventDefault();
@@ -660,7 +660,7 @@
           
           
           // Si hay pautante, usar su mensaje personalizado
-          const nombreComercio = 'La Casa de Encanto Real';
+          const nombreComercio = 'Mirador El Encanto';
           const fechaFormateada = formatearFecha(datos.fecha);
           const mensajePersonalizado = encodeURIComponent(
             '¡Hola ' + nombreComercio + '! ✋
@@ -678,8 +678,8 @@
 ' +
             '¿Tienes disponibilidad? ¡Quiero reservar ya!'
           );
-          const urlFinal = 'https://wa.me/57311XXXXXXX?text=' + mensajePersonalizado;
-          window.open(urlFinal, '_blank');
+          // Usar el WhatsApp preconfigurado
+          window.open(whatsappUrl, '_blank');
           ;
           form.style.display='none'; exitoDiv.classList.add('active');
         });
@@ -899,8 +899,8 @@
         timestamp: new Date().toISOString(),
         dispositivo: /Mobi/.test(navigator.userAgent) ? 'mobile' : 'desktop'
         ,
-        comercio_nombre: 'La Casa de Encanto Real',
-        comercio_categoria: 'turismo'
+        comercio_nombre: 'Mirador El Encanto',
+        comercio_categoria: 'turismo de aventura'
       };
       
       // Almacenar intención en LocalStorage
@@ -926,9 +926,9 @@
             eventLabel = link.closest('.biz-card').querySelector('h3')?.textContent || 'Negocio';
           }
           
-          eventLabel = 'La Casa de Encanto Real';
-          eventComercio = 'La Casa de Encanto Real';
-          eventComercioCat = 'turismo';
+          eventLabel = 'Mirador El Encanto';
+          eventComercio = 'Mirador El Encanto';
+          eventComercioCat = 'turismo de aventura';
           
           
           window.dataLayer.push({
