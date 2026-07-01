@@ -624,18 +624,8 @@
           return fecha.toLocaleDateString('es-ES', opciones); 
         }
         
-        // Obtener primer negocio para enviar WhatsApp directo a él!
-        const primerNegocioWhatsApp = (function(){
-          const firstCard = document.querySelector('.biz-card');
-          if(firstCard){
-            const waLink = firstCard.querySelector('a[href^="https://wa.me"]');
-            if(waLink){
-              const url = new URL(waLink.href);
-              return url.pathname.replace('/',''); // quitar "/"
-            }
-          }
-          return '573001234567'; // default
-        })();
+        // URL de WhatsApp configurada (usa pautante si existe, else fallback)
+        const whatsappUrl = 'https://wa.me/573001234567?text=Hola%2C%20quiero%20consultar%20informaci%C3%B3n';
         
         form.addEventListener('submit', async function(e){
           e.preventDefault();
@@ -658,26 +648,27 @@
           leads.push({ ...datos, timestamp: new Date().toISOString() });
           localStorage.setItem('quindio_leads', JSON.stringify(leads));
           
-          // Mensaje ULTRA-calificado para WhatsApp
+          
+          // Si no hay pautante, usar el mensaje genérico
           const fechaFormateada = formatearFecha(datos.fecha);
           const mensajeWhatsApp = encodeURIComponent(
             '¡Hola! ✋
-'+
-            'Mi nombre es '+datos.nombre+', vi tu negocio en el Mapa Turístico del Quindío 🗺️.
-'+
-            '📌 Buscando: '+titleCase(datos.categoria)+' en '+datos.municipio+'
-'+
-            '📅 Fecha tentativa: '+fechaFormateada+'
-'+
-            '👥 Personas: '+datos.personas+'
-'+
-            '💰 Presupuesto: '+datos.presupuesto+' COP/noche
+' +
+            'Mi nombre es ' + datos.nombre + ', vi tu negocio en el Mapa Turístico del Quindío 🗺️.
+' +
+            '📌 Buscando: ' + titleCase(datos.categoria) + ' en ' + datos.municipio + '
+' +
+            '📅 Fecha tentativa: ' + fechaFormateada + '
+' +
+            '👥 Personas: ' + datos.personas + '
+' +
+            '💰 Presupuesto: ' + datos.presupuesto + ' COP/noche
 
-'+
+' +
             '¿Tienes disponibilidad? ¡Quiero reservar ya!'
           );
-          
-          window.open('https://wa.me/'+primerNegocioWhatsApp+'?text='+mensajeWhatsApp, '_blank');
+          window.open(whatsappUrl, '_blank');
+          ;
           form.style.display='none'; exitoDiv.classList.add('active');
         });
         
@@ -895,6 +886,7 @@
         url: window.location.href,
         timestamp: new Date().toISOString(),
         dispositivo: /Mobi/.test(navigator.userAgent) ? 'mobile' : 'desktop'
+        
       };
       
       // Almacenar intención en LocalStorage
@@ -910,16 +902,24 @@
         'turismo_quindio': usuarioIntencion
       });
       
-      // Seguimiento de clicks en WhatsApp
-      document.querySelectorAll('.biz-card a[href^="https://wa.me"]').forEach((link) => {
+      // Seguimiento de clicks en WhatsApp (incluye pautante si existe)
+      document.querySelectorAll('.biz-card a[href^="https://wa.me"], .sc-btn-enviar').forEach((link) => {
         link.addEventListener('click', function() {
-          const bizName = this.closest('.biz-card').querySelector('h3')?.textContent || 'Negocio';
+          let eventLabel = 'Negocio';
+          let eventComercio = null;
+          let eventComercioCat = null;
+          if (link.closest('.biz-card')) {
+            eventLabel = link.closest('.biz-card').querySelector('h3')?.textContent || 'Negocio';
+          }
+          
+          
           window.dataLayer.push({
             'event': 'contacto_whatsapp',
             'event_category': 'conversion',
-            'event_label': bizName,
+            'event_label': eventLabel,
             'municipio': 'Pijao',
             'categoria': 'hoteles'
+            
           });
         });
       });

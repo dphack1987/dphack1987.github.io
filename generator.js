@@ -20,6 +20,14 @@ fs.unlinkSync(tempFile);
 // Cargar rutas SEO
 const rutasSeo = JSON.parse(fs.readFileSync(path.join(__dirname, 'rutas_seo.json'), 'utf8'));
 
+// Cargar pautantes reales (empresarios locales)
+let pautantes = [];
+try {
+  pautantes = JSON.parse(fs.readFileSync(path.join(__dirname, 'pautantes.json'), 'utf8'));
+} catch (e) {
+  console.warn('⚠️ No se encontró pautantes.json o hubo error al leerlo: usando fallback');
+}
+
 // Mapear categorías de rutasSeo a categorías de negocios
 const CATEGORIA_NEGOCIOS_MAP = {
   "alojamiento": "alojamiento",
@@ -247,6 +255,29 @@ function generarPagina(ruta) {
   const negociosFiltrados = NEGOCIOS.filter(
     n => n.categoria === categoriaNegocio && n.municipio === municipioId
   );
+
+  // Buscar pautante real para esta combinación de municipio y categoría
+  const pautante = pautantes.find(p => 
+    p.municipio === ruta.municipio && 
+    (p.categoria === ruta.categoria || 
+     p.categoria === 'turismo' && ruta.categoria.includes('turismo') || 
+     p.categoria === 'hotel' && ruta.categoria.includes('hotel') || 
+     p.categoria === 'parapente' && ruta.categoria.includes('aventura'))
+  );
+  
+  // Configurar variables para WhatsApp y dataLayer
+  let whatsappUrl = 'https://wa.me/573001234567?text=Hola%2C%20quiero%20consultar%20informaci%C3%B3n';
+  let comercioNombre = null;
+  let comercioCategoria = null;
+  
+  if (pautante) {
+    const mensajeCodificado = encodeURIComponent(
+      pautante.mensaje_predeterminado || `Hola, vi su negocio en el Mapa de ${ruta.municipio}`
+    );
+    whatsappUrl = `https://wa.me/${pautante.whatsapp}?text=${mensajeCodificado}`;
+    comercioNombre = pautante.comercio;
+    comercioCategoria = pautante.categoria;
+  }
 
   const emoji = CATEGORIAS_EMOJIS[ruta.categoria];
   const schema = generarSchema(ruta, negociosFiltrados);
@@ -852,18 +883,8 @@ function generarPagina(ruta) {
           return fecha.toLocaleDateString('es-ES', opciones); 
         }
         
-        // Obtener primer negocio para enviar WhatsApp directo a él!
-        const primerNegocioWhatsApp = (function(){
-          const firstCard = document.querySelector('.biz-card');
-          if(firstCard){
-            const waLink = firstCard.querySelector('a[href^="https://wa.me"]');
-            if(waLink){
-              const url = new URL(waLink.href);
-              return url.pathname.replace('/',''); // quitar "/"
-            }
-          }
-          return '573001234567'; // default
-        })();
+        // URL de WhatsApp configurada (usa pautante si existe, else fallback)
+        const whatsappUrl = '${whatsappUrl}';
         
         form.addEventListener('submit', async function(e){
           e.preventDefault();
@@ -886,19 +907,35 @@ function generarPagina(ruta) {
           leads.push({ ...datos, timestamp: new Date().toISOString() });
           localStorage.setItem('quindio_leads', JSON.stringify(leads));
           
-          // Mensaje ULTRA-calificado para WhatsApp
+          ${comercioNombre ? `
+          // Si hay pautante, usar su mensaje personalizado
+          const nombreComercio = '${comercioNombre}';
           const fechaFormateada = formatearFecha(datos.fecha);
-          const mensajeWhatsApp = encodeURIComponent(
-            '¡Hola! ✋\n'+
-            'Mi nombre es '+datos.nombre+', vi tu negocio en el Mapa Turístico del Quindío 🗺️.\n'+
-            '📌 Buscando: '+titleCase(datos.categoria)+' en '+datos.municipio+'\n'+
-            '📅 Fecha tentativa: '+fechaFormateada+'\n'+
-            '👥 Personas: '+datos.personas+'\n'+
-            '💰 Presupuesto: '+datos.presupuesto+' COP/noche\n\n'+
+          const mensajePersonalizado = encodeURIComponent(
+            '¡Hola ' + nombreComercio + '! ✋\n' +
+            'Mi nombre es ' + datos.nombre + ', vi tu negocio en el Mapa Turístico del Quindío 🗺️.\n' +
+            '📌 Buscando: ' + titleCase(datos.categoria) + ' en ' + datos.municipio + '\n' +
+            '📅 Fecha tentativa: ' + fechaFormateada + '\n' +
+            '👥 Personas: ' + datos.personas + '\n' +
+            '💰 Presupuesto: ' + datos.presupuesto + ' COP/noche\n\n' +
             '¿Tienes disponibilidad? ¡Quiero reservar ya!'
           );
-          
-          window.open('https://wa.me/'+primerNegocioWhatsApp+'?text='+mensajeWhatsApp, '_blank');
+          const urlFinal = 'https://wa.me/${pautante?.whatsapp || '573001234567'}?text=' + mensajePersonalizado;
+          window.open(urlFinal, '_blank');
+          ` : `
+          // Si no hay pautante, usar el mensaje genérico
+          const fechaFormateada = formatearFecha(datos.fecha);
+          const mensajeWhatsApp = encodeURIComponent(
+            '¡Hola! ✋\n' +
+            'Mi nombre es ' + datos.nombre + ', vi tu negocio en el Mapa Turístico del Quindío 🗺️.\n' +
+            '📌 Buscando: ' + titleCase(datos.categoria) + ' en ' + datos.municipio + '\n' +
+            '📅 Fecha tentativa: ' + fechaFormateada + '\n' +
+            '👥 Personas: ' + datos.personas + '\n' +
+            '💰 Presupuesto: ' + datos.presupuesto + ' COP/noche\n\n' +
+            '¿Tienes disponibilidad? ¡Quiero reservar ya!'
+          );
+          window.open(whatsappUrl, '_blank');
+          `};
           form.style.display='none'; exitoDiv.classList.add('active');
         });
         
@@ -1225,6 +1262,9 @@ ${JSON.stringify(schema, null, 2)}
         url: window.location.href,
         timestamp: new Date().toISOString(),
         dispositivo: /Mobi/.test(navigator.userAgent) ? 'mobile' : 'desktop'
+        ${comercioNombre ? `,
+        comercio_nombre: '${comercioNombre}',
+        comercio_categoria: '${comercioCategoria}'` : ''}
       };
       
       // Almacenar intención en LocalStorage
@@ -1240,16 +1280,30 @@ ${JSON.stringify(schema, null, 2)}
         'turismo_quindio': usuarioIntencion
       });
       
-      // Seguimiento de clicks en WhatsApp
-      document.querySelectorAll('.biz-card a[href^="https://wa.me"]').forEach((link) => {
+      // Seguimiento de clicks en WhatsApp (incluye pautante si existe)
+      document.querySelectorAll('.biz-card a[href^="https://wa.me"], .sc-btn-enviar').forEach((link) => {
         link.addEventListener('click', function() {
-          const bizName = this.closest('.biz-card').querySelector('h3')?.textContent || 'Negocio';
+          let eventLabel = 'Negocio';
+          let eventComercio = null;
+          let eventComercioCat = null;
+          if (link.closest('.biz-card')) {
+            eventLabel = link.closest('.biz-card').querySelector('h3')?.textContent || 'Negocio';
+          }
+          ${comercioNombre ? `
+          eventLabel = '${comercioNombre}';
+          eventComercio = '${comercioNombre}';
+          eventComercioCat = '${comercioCategoria}';
+          ` : ''}
+          
           window.dataLayer.push({
             'event': 'contacto_whatsapp',
             'event_category': 'conversion',
-            'event_label': bizName,
+            'event_label': eventLabel,
             'municipio': '${ruta.municipio}',
             'categoria': '${ruta.categoria}'
+            ${comercioNombre ? `,
+            'comercio_nombre': eventComercio,
+            'comercio_categoria': eventComercioCat` : ''}
           });
         });
       });

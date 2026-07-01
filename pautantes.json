@@ -1,0 +1,26 @@
+[
+  {
+    "municipio": "Filandia",
+    "categoria": "turismo",
+    "comercio": "La Casa de Encanto Real",
+    "whatsapp": "57311XXXXXXX",
+    "mensaje_predeterminado": "Hola, vi su negocio en el Mapa de Filandia y quiero info sobre la locación de Encanto",
+    "destacado": true
+  },
+  {
+    "municipio": "Buenavista",
+    "categoria": "parapente",
+    "comercio": "Parapente Aventuras Quindío",
+    "whatsapp": "57312XXXXXXX",
+    "mensaje_predeterminado": "Hola, quiero reservar un vuelo en parapente desde el Mapa de Buenavista",
+    "destacado": true
+  },
+  {
+    "municipio": "Salento",
+    "categoria": "hotel",
+    "comercio": "Palta Hotel",
+    "whatsapp": "57313XXXXXXX",
+    "mensaje_predeterminado": "Hola, quiero consultar disponibilidad de habitaciones desde el Mapa de Salento",
+    "destacado": true
+  }
+]
