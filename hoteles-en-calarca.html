@@ -940,26 +940,23 @@
           leads.push({ ...datos, timestamp: new Date().toISOString() });
           localStorage.setItem('quindio_leads', JSON.stringify(leads));
           
+          const numeroWhatsApp = '573001234567';
+
           
           // Si no hay pautante, usar el mensaje genérico
           const fechaFormateada = formatearFecha(datos.fecha);
           const mensajeWhatsApp = encodeURIComponent(
-            '¡Hola! ✋
-' +
-            'Mi nombre es ' + datos.nombre + ', vi tu negocio en el Mapa Turístico del Quindío 🗺️.
-' +
-            '📌 Buscando: ' + titleCase(datos.categoria) + ' en ' + datos.municipio + '
-' +
-            '📅 Fecha tentativa: ' + fechaFormateada + '
-' +
-            '👥 Personas: ' + datos.personas + '
-' +
-            '💰 Presupuesto: ' + datos.presupuesto + ' COP/noche
-
-' +
+            '¡Hola! ✋\n' +
+            'Mi nombre es ' + datos.nombre + ', vi tu negocio en el Mapa Turístico del Quindío 🗺️.\n' +
+            '📌 Buscando: ' + titleCase(datos.categoria) + ' en ' + datos.municipio + '\n' +
+            '📅 Fecha tentativa: ' + fechaFormateada + '\n' +
+            '👥 Personas: ' + datos.personas + '\n' +
+            '💰 Presupuesto: ' + datos.presupuesto + ' COP/noche\n\n' +
             '¿Tienes disponibilidad? ¡Quiero reservar ya!'
           );
-          window.open(whatsappUrl, '_blank');
+          // Crear URL con el mensaje genérico
+          const urlFinal = 'https://wa.me/' + numeroWhatsApp + '?text=' + mensajeWhatsApp;
+          window.open(urlFinal, '_blank');
           ;
           form.style.display='none'; exitoDiv.classList.add('active');
         });

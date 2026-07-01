@@ -267,12 +267,14 @@ function generarPagina(ruta) {
   
   // Configurar variables para WhatsApp y dataLayer
   let whatsappUrl = 'https://wa.me/573001234567?text=Hola%2C%20quiero%20consultar%20informaci%C3%B3n';
+  let whatsappNumber = '573001234567';
   let comercioNombre = null;
   let comercioCategoria = null;
   
   if (pautante) {
     // Limpiar número de WhatsApp (quitar espacios, caracteres no numéricos)
     const cleanWhatsapp = pautante.whatsapp.replace(/\D/g, '');
+    whatsappNumber = cleanWhatsapp;
     const mensajeCodificado = encodeURIComponent(
       pautante.mensaje_predeterminado || `Hola, vi su negocio en el Mapa de ${ruta.municipio}`
     );
@@ -909,34 +911,39 @@ function generarPagina(ruta) {
           leads.push({ ...datos, timestamp: new Date().toISOString() });
           localStorage.setItem('quindio_leads', JSON.stringify(leads));
           
+          const numeroWhatsApp = '${whatsappNumber}';
+
           ${comercioNombre ? `
           // Si hay pautante, usar su mensaje personalizado
           const nombreComercio = '${comercioNombre}';
           const fechaFormateada = formatearFecha(datos.fecha);
           const mensajePersonalizado = encodeURIComponent(
-            '¡Hola ' + nombreComercio + '! ✋\n' +
-            'Mi nombre es ' + datos.nombre + ', vi tu negocio en el Mapa Turístico del Quindío 🗺️.\n' +
-            '📌 Buscando: ' + titleCase(datos.categoria) + ' en ' + datos.municipio + '\n' +
-            '📅 Fecha tentativa: ' + fechaFormateada + '\n' +
-            '👥 Personas: ' + datos.personas + '\n' +
-            '💰 Presupuesto: ' + datos.presupuesto + ' COP/noche\n\n' +
+            '¡Hola ' + nombreComercio + '! ✋\\n' +
+            'Mi nombre es ' + datos.nombre + ', vi tu negocio en el Mapa Turístico del Quindío 🗺️.\\n' +
+            '📌 Buscando: ' + titleCase(datos.categoria) + ' en ' + datos.municipio + '\\n' +
+            '📅 Fecha tentativa: ' + fechaFormateada + '\\n' +
+            '👥 Personas: ' + datos.personas + '\\n' +
+            '💰 Presupuesto: ' + datos.presupuesto + ' COP/noche\\n\\n' +
             '¿Tienes disponibilidad? ¡Quiero reservar ya!'
           );
-          // Usar el WhatsApp preconfigurado
-          window.open(whatsappUrl, '_blank');
+          // Crear URL con el nuevo mensaje personalizado
+          const urlFinal = 'https://wa.me/' + numeroWhatsApp + '?text=' + mensajePersonalizado;
+          window.open(urlFinal, '_blank');
           ` : `
           // Si no hay pautante, usar el mensaje genérico
           const fechaFormateada = formatearFecha(datos.fecha);
           const mensajeWhatsApp = encodeURIComponent(
-            '¡Hola! ✋\n' +
-            'Mi nombre es ' + datos.nombre + ', vi tu negocio en el Mapa Turístico del Quindío 🗺️.\n' +
-            '📌 Buscando: ' + titleCase(datos.categoria) + ' en ' + datos.municipio + '\n' +
-            '📅 Fecha tentativa: ' + fechaFormateada + '\n' +
-            '👥 Personas: ' + datos.personas + '\n' +
-            '💰 Presupuesto: ' + datos.presupuesto + ' COP/noche\n\n' +
+            '¡Hola! ✋\\n' +
+            'Mi nombre es ' + datos.nombre + ', vi tu negocio en el Mapa Turístico del Quindío 🗺️.\\n' +
+            '📌 Buscando: ' + titleCase(datos.categoria) + ' en ' + datos.municipio + '\\n' +
+            '📅 Fecha tentativa: ' + fechaFormateada + '\\n' +
+            '👥 Personas: ' + datos.personas + '\\n' +
+            '💰 Presupuesto: ' + datos.presupuesto + ' COP/noche\\n\\n' +
             '¿Tienes disponibilidad? ¡Quiero reservar ya!'
           );
-          window.open(whatsappUrl, '_blank');
+          // Crear URL con el mensaje genérico
+          const urlFinal = 'https://wa.me/' + numeroWhatsApp + '?text=' + mensajeWhatsApp;
+          window.open(urlFinal, '_blank');
           `};
           form.style.display='none'; exitoDiv.classList.add('active');
         });
