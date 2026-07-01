@@ -47,6 +47,28 @@ const CATEGORIAS_EMOJIS = {
   "rutas turísticas": "🗺️"
 };
 
+// Categorías transaccionales vs informativas
+const CATEGORIAS_TRANSACCIONALES = ["hoteles", "glamping", "fincas cafeteras", "restaurantes", "cafés especiales", "alquiler de fincas", "alojamiento"];
+const CATEGORIAS_INFORMATIVAS = ["turismo de aventura", "pasadías", "rutas turísticas"];
+
+// Preguntas long-tail por categoría y municipio
+const PREGUNTAS_LONG_TAIL = {
+  "Filandia": {
+    "turismo de aventura": "¿Qué hacer en Filandia? Turismo de aventura",
+    "rutas turísticas": "Rutas turísticas en Filandia Quindío",
+    "default": "¿Qué visitar en Filandia Quindío?"
+  },
+  "Salento": {
+    "turismo de aventura": "Valle de Cocora y turismo de aventura en Salento",
+    "default": "¿Qué hacer en Salento Quindío?"
+  },
+  "default": {
+    "turismo de aventura": "Turismo de aventura en el Quindío",
+    "rutas turísticas": "Rutas turísticas del Eje Cafetero",
+    "default": "¿Qué hacer en el Quindío?"
+  }
+};
+
 // Mapeo de municipios con sus entidades de Knowledge Graph (Wikidata + Wikipedia)
 const MUNICIPIOS_KG = {
   "Armenia": {
@@ -241,9 +263,39 @@ function generarPagina(ruta) {
   const municipioEmoji = municipio.emoji || '🌿';
   const distanciaDesdeArmenia = municipio.km ? `A ${municipio.km} km de Armenia, la capital del Departamento del Quindío, Colombia.` : '';
   
-  // Respuesta directa para IA y búsquedas por voz (máx 160 caracteres) - Pregunta-Respuesta
-  const categoriaLower = ruta.categoria.toLowerCase();
-  const preguntaRespuesta = `¿Buscas ${categoriaLower} en ${ruta.municipio}? Encuentra los mejores ${categoriaLower} en ${ruta.municipio}, Quindío, aquí.`;
+  // Generar meta-tags persuasivos según tipo de categoría
+  let pageTitle, metaDescription;
+  if (CATEGORIAS_TRANSACCIONALES.includes(ruta.categoria)) {
+    // Categorías transaccionales
+    pageTitle = `${emoji} ${titleCase(ruta.categoria)} en ${ruta.municipio} | Reservas DIRECTAS por WhatsApp (Sin Comisiones) 2026`;
+    metaDescription = `Ahorra hasta un 20% reservando tu ${ruta.categoria} en ${ruta.municipio}, Quindío directamente con propietarios locales a su WhatsApp. ¡Mapa interactivo y ubicación 100% real aquí!`;
+  } else {
+    // Categorías informativas/de aventura
+    const preguntasMunicipio = PREGUNTAS_LONG_TAIL[ruta.municipio] || PREGUNTAS_LONG_TAIL.default;
+    const preguntaLongTail = preguntasMunicipio[ruta.categoria] || preguntasMunicipio.default;
+    pageTitle = `📍 ${preguntaLongTail} | Ubicación, Precios y Mapa Virtual ${ruta.municipio}`;
+    metaDescription = `¿Buscando información real sobre turismo en ${ruta.municipio}? No des vueltas. Descubre la guía hiperlocal de ${ruta.municipio} con precios reales 2026, mapas de acceso y contacto directo sin intermediarios.`;
+  }
+  
+  // Mejorar bloque de respuesta directa para IA (Posición Cero)
+  let preguntaRespuestaHTML;
+  if (ruta.municipio === 'Filandia') {
+    preguntaRespuestaHTML = `
+      <h3>¿Dónde queda la casa que inspiró la película Encanto en Filandia?</h3>
+      <p>La casa de Encanto está inspirada en la arquitectura colonial de Filandia, Quindío, con balcones coloridos y calles empedradas.</p>
+    `;
+  } else if (ruta.categoria === 'turismo de aventura' && ruta.municipio === 'Salento') {
+    preguntaRespuestaHTML = `
+      <h3>¿Qué hacer en el Valle de Cocora y Salento?</h3>
+      <p>El Valle de Cocora en Salento es ideal para senderismo, ver palmas de cera y turismo de aventura en el Quindío.</p>
+    `;
+  } else {
+    const categoriaLower = ruta.categoria.toLowerCase();
+    preguntaRespuestaHTML = `
+      <h3>¿Buscas ${categoriaLower} en ${ruta.municipio}?</h3>
+      <p>Encuentra los mejores ${categoriaLower} en ${ruta.municipio}, Quindío, con contacto directo por WhatsApp.</p>
+    `;
+  }
   
   // Contenido especial para Filandia y "La Casa de Encanto"
   const contenidoEncanto = ruta.municipio === 'Filandia' ? `
@@ -946,8 +998,8 @@ function generarPagina(ruta) {
   <!-- End Google Tag Manager -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${titleCase(ruta.categoria)} en ${ruta.municipio} 2026 | Mapa Turístico</title>
-  <meta name="description" content="¿Buscas ${ruta.categoria} en ${ruta.municipio}? Encuentra los mejores aquí. Mapa interactivo, contacto directo y reservas sin comisiones.">
+  <title>${pageTitle}</title>
+  <meta name="description" content="${metaDescription}">
   <link rel="canonical" href="${ruta.url}.html">
   
   <!-- Meta datos geográficos -->
@@ -1000,9 +1052,9 @@ ${JSON.stringify(schema, null, 2)}
     <p>${ruta.meta_descripcion}</p>
   </header>
   
-  <!-- Bloque de respuesta directa para IA y búsquedas por voz -->
+  <!-- Bloque de respuesta directa para IA y búsquedas por voz (Posición Cero) -->
   <div id="respuesta-directa-ia" style="display: none;">
-    ${preguntaRespuesta}
+    ${preguntaRespuestaHTML}
   </div>
   
   <div class="container">
