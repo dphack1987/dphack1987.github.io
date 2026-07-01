@@ -445,6 +445,41 @@
       .dc-respuestas { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; padding:0 18px 10px; }
       .dc-respuesta { background:#fff; border:3px solid #f59e0b; color:#d97706; padding:12px 20px; border-radius:28px; font-size:15px; font-weight:900; cursor:pointer; transition:all 0.25s; flex:1 1 calc(50% - 10px); text-align:center; }
       .dc-respuesta:hover { background:linear-gradient(135deg,#f59e0b,#d97706); color:#fff; transform:translateY(-3px); box-shadow:0 6px 20px rgba(245,158,11,0.4); }
+      
+      /* Módulo de Transporte */
+      .transport-widget { position:fixed; left:20px; bottom:20px; z-index:99996; font-family:'Inter',system-ui,sans-serif; }
+      .transport-btn {
+        background:linear-gradient(135deg,#7c3aed,#6d28d9);
+        color:#fff; border:none; padding:14px 20px; border-radius:16px;
+        font-size:15px; font-weight:900; cursor:pointer; box-shadow:0 10px 32px rgba(124,58,237,0.5);
+        display:flex; align-items:center; gap:10px; transition:all 0.3s;
+      }
+      .transport-btn:hover { transform:translateY(-3px); box-shadow:0 16px 40px rgba(124,58,237,0.65); }
+      .transport-panel {
+        position:absolute; bottom:80px; left:0; width:400px; max-width:92vw; background:#fff;
+        border-radius:24px; box-shadow:0 24px 80px rgba(0,0,0,0.3); overflow:hidden;
+        transform:scale(0); opacity:0; transform-origin:bottom left; transition:all 0.35s; display:none;
+      }
+      .transport-panel.active { transform:scale(1); opacity:1; display:block; }
+      .transport-header {
+        background:linear-gradient(135deg,#7c3aed,#6d28d9); color:#fff; padding:20px 24px;
+      }
+      .transport-header h3 { margin:0; font-size:20px; font-weight:900; }
+      .transport-header p { margin:6px 0 0; font-size:13px; opacity:0.95; }
+      .transport-form { padding:20px; }
+      .transport-service-select { display:flex; gap:10px; margin-bottom:18px; flex-wrap:wrap; }
+      .transport-service-option {
+        flex:1 1 calc(33% - 7px); padding:12px 8px; border:2px solid #e5e7eb; border-radius:14px; text-align:center; cursor:pointer;
+        transition:all 0.2s; font-weight:800; font-size:13px;
+      }
+      .transport-service-option.selected { border-color:#7c3aed; background:#f3e8ff; color:#7c3aed; }
+      .transport-service-option:hover { border-color:#7c3aed; background:#faf5ff; }
+      .transport-btn-send {
+        width:100%; padding:16px; background:linear-gradient(135deg,#7c3aed,#6d28d9); color:#fff;
+        border:none; border-radius:14px; font-size:17px; font-weight:900; margin-top:12px; cursor:pointer; box-shadow:0 6px 20px rgba(124,58,237,0.45);
+        transition:all 0.25s;
+      }
+      .transport-btn-send:hover { transform:translateY(-2px); box-shadow:0 12px 32px rgba(124,58,237,0.6); }
     </style>
 
     <!-- Cotizador -->
@@ -531,7 +566,61 @@
 
     <div class="sc-toast-container" id="sc-toast-container"></div>
 
-    <!-- Script Master -->
+    <!-- Módulo de Solicitud de Transporte -->
+    <div class="transport-widget" id="transportWidget">
+      <button class="transport-btn" id="transportBtn">
+        🚗 ¿Necesitas transporte?
+      </button>
+      <div class="transport-panel" id="transportPanel">
+        <div class="transport-header">
+          <h3>🚕 Solicita tu Transporte Aquí</h3>
+          <p>Taxi · Willys · Transporte Especial en el Quindío</p>
+        </div>
+        <div class="transport-form">
+          <div class="transport-service-select">
+            <div class="transport-service-option selected" data-service="Taxi Urbano">🚕 Taxi</div>
+            <div class="transport-service-option" data-service="Willys Tradicional">🚙 Willys</div>
+            <div class="transport-service-option" data-service="Van / Transporte Especial">🚌 Van/Especial</div>
+          </div>
+          <div class="sc-campo">
+            <label>Origen</label>
+            <input type="text" id="transportOrigen" value="Calarcá" />
+          </div>
+          <div class="sc-campo">
+            <label>Destino</label>
+            <select id="transportDestino">
+              <option value="">Selecciona un destino</option>
+              <option value="Valle de Cocora">Valle de Cocora</option>
+              <option value="Parque del Café">Parque del Café</option>
+              <option value="Panaca">Panaca</option>
+              <option value="Aeropuerto El Edén">Aeropuerto El Edén</option>
+              <option value="Armenia">Armenia</option>
+              <option value="Salento">Salento</option>
+              <option value="Filandia">Filandia</option>
+              <option value="Circasia">Circasia</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+          <div class="sc-campo">
+            <label>Pasajeros</label>
+            <input type="number" id="transportPassengers" min="1" max="20" value="2" />
+          </div>
+          <div class="sc-campo">
+            <label>Tu Nombre</label>
+            <input type="text" id="transportName" placeholder="Tu nombre" />
+          </div>
+          <div class="sc-campo">
+            <label>WhatsApp (para confirmar)</label>
+            <input type="tel" id="transportWhatsApp" placeholder="3001234567" />
+          </div>
+          <button class="transport-btn-send" id="transportSendBtn">
+            📲 Solicitar y Abrir WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script><!-- Script Master -->
     <script>
       (function(){
         'use strict';
@@ -793,6 +882,61 @@
             // No hacer nada si el usuario niega la geolocalización
           }, { enableHighAccuracy: true, timeout: 8000, maximumAge: 60000 });
         }
+        
+        // --- Módulo de Transporte ---
+        const transportBtn = document.getElementById('transportBtn');
+        const transportPanel = document.getElementById('transportPanel');
+        const transportOptions = document.querySelectorAll('.transport-service-option');
+        const transportSendBtn = document.getElementById('transportSendBtn');
+        
+        let selectedService = 'Taxi Urbano';
+        
+        transportBtn.addEventListener('click', function(){
+          transportPanel.classList.toggle('active');
+        });
+        
+        transportOptions.forEach(opt => {
+          opt.addEventListener('click', function(){
+            transportOptions.forEach(o => o.classList.remove('selected'));
+            this.classList.add('selected');
+            selectedService = this.dataset.service;
+          });
+        });
+        
+        transportSendBtn.addEventListener('click', function(){
+          const service = selectedService;
+          const origen = document.getElementById('transportOrigen').value;
+          const destino = document.getElementById('transportDestino').value;
+          const passengers = document.getElementById('transportPassengers').value;
+          const name = document.getElementById('transportName').value;
+          const wa = document.getElementById('transportWhatsApp').value;
+          
+          if(!destino){ alert('Por favor selecciona un destino'); return; }
+          if(!name || !wa){ alert('Por favor completa tu nombre y WhatsApp'); return; }
+          
+          const message = encodeURIComponent(
+            "🚕 NUEVO SERVICIO DE TRANSPORTE - MAPA TURÍSTICO DEL QUINDÍO 🗺️
+
+"+
+            "Usuario: "+name+"
+"+
+            "Tipo: "+service+"
+"+
+            "Origen: "+origen+"
+"+
+            "Destino: "+destino+"
+"+
+            "Pasajeros: "+passengers+"
+"+
+            "WhatsApp: "+wa+"
+
+"+
+            "Solicitado desde el celular vía www.mapaturisticodelquindio.com. ¡Toca aquí para confirmar tarifa directa con el cliente!"
+          );
+          
+          window.open("https://wa.me/573001234567?text="+message, "_blank");
+        });
+        
       })();
     </script>
   
