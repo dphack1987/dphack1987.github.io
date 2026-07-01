@@ -1,0 +1,225 @@
+import json
+from unidecode import unidecode
+
+# ------------------------------
+# Datos de entrada (configurable)
+# ------------------------------
+CATEGORIAS = [
+    "alojamiento",
+    "hoteles",
+    "glamping",
+    "fincas cafeteras",
+    "restaurantes",
+    "cafés especiales",
+    "turismo de aventura",
+    "alquiler de fincas",
+    "pasadías",
+    "rutas turísticas"
+]
+
+MUNICIPIOS = [
+    "Armenia",
+    "Calarcá",
+    "Circasia",
+    "Filandia",
+    "La Tebaida",
+    "Montenegro",
+    "Quimbaya",
+    "Salento",
+    "Buenavista",
+    "Córdoba",
+    "Genova",
+    "Pijao"
+]
+
+# Plantillas dinámicas para meta-descripciones (por categoría, para mayor relevancia)
+META_DESCRIPTION_TEMPLATES = {
+    "alojamiento": "Encuentra los mejores {categoria} en {municipio}, Quindío. Compara opciones, ver fotos y contacta directamente con el establecimiento.",
+    "hoteles": "Hoteles en {municipio}, Quindío: desde económicos hasta boutique con piscina y desayuno incluido. Reserva tu estadía ideal.",
+    "glamping": "Glamping único en {municipio}: dormir en la naturaleza del Quindío con todas las comodidades. ¡Experiencia inolvidable!",
+    "fincas cafeteras": "Fincas cafeteras en {municipio}: vive el proceso del café desde la mata hasta la taza en el Paisaje Cultural Cafetero.",
+    "restaurantes": "Restaurantes en {municipio} con comida típica del Quindío, internacional y fusion. Encuentra tu lugar ideal para comer.",
+    "cafés especiales": "Cafés especiales en {municipio}: catas de café, baristas expertos y ambientes acogedores en el corazón del Eje Cafetero.",
+    "turismo de aventura": "Turismo de aventura en {municipio}: canopy, tirolesa, caminatas, cabalgatas y más adrenalina en el Quindío.",
+    "alquiler de fincas": "Alquiler de fincas en {municipio} para grupos, familias o parejas. Espacio privado y naturaleza cerca.",
+    "pasadías": "Pasadías en {municipio}: planes de un día completo con actividades, comida y tours por el Quindío.",
+    "rutas turísticas": "Rutas turísticas en {municipio}: guías completas para explorar lo mejor del Quindío, desde cafés hasta miradores."
+}
+
+# ------------------------------
+# Funciones de utilidad
+# ------------------------------
+def generar_slug(texto: str) -> str:
+    """Genera un slug limpio: sin acentos, minúsculas, separado por guiones."""
+    # Eliminar acentos
+    texto_limpio = unidecode(texto)
+    # Convertir a minúsculas
+    texto_limpio = texto_limpio.lower()
+    # Reemplazar espacios y caracteres no deseados por guiones
+    texto_limpio = texto_limpio.replace(" ", "-").replace("/", "-")
+    # Eliminar guiones duplicados
+    while "--" in texto_limpio:
+        texto_limpio = texto_limpio.replace("--", "-")
+    return texto_limpio.strip("-")
+
+def generar_ruta_seo(categoria: str, municipio: str) -> dict:
+    """Genera un objeto completo de ruta SEO."""
+    # Slug de la ruta (ej: glamping-en-salento)
+    slug_categoria = generar_slug(categoria)
+    slug_municipio = generar_slug(municipio)
+    slug_ruta = f"{slug_categoria}-en-{slug_municipio}"
+
+    # Título optimizado
+    titulo = f"{categoria.title()} en {municipio} | Mapa Turístico del Quindío"
+
+    # Meta-descripción dinámica
+    template = META_DESCRIPTION_TEMPLATES.get(categoria, META_DESCRIPTION_TEMPLATES["alojamiento"])
+    meta_descripcion = template.format(categoria=categoria, municipio=municipio)
+
+    # URL completa (para indexación)
+    url = f"https://www.mapaturisticodelquindio.com/{slug_ruta}"
+
+    return {
+        "categoria": categoria,
+        "municipio": municipio,
+        "slug": slug_ruta,
+        "url": url,
+        "titulo": titulo,
+        "meta_descripcion": meta_descripcion,
+        "tipo_schema": "Guide"  # O "TouristInformationCenter" según categoría
+    }
+
+# ------------------------------
+# Ejecución principal
+# ------------------------------
+def main():
+    # Generar todas las rutas
+    rutas_seo = []
+    for categoria in CATEGORIAS:
+        for municipio in MUNICIPIOS:
+            ruta = generar_ruta_seo(categoria, municipio)
+            rutas_seo.append(ruta)
+
+    # Guardar en archivo JSON
+    with open("rutas_seo.json", "w", encoding="utf-8") as f:
+        json.dump(rutas_seo, f, ensure_ascii=False, indent=2)
+
+    print(f"✅ Generadas {len(rutas_seo)} rutas SEO en 'rutas_seo.json'")
+    print(f"📊 Ejemplos de rutas:")
+    for ruta in rutas_seo[:3]:
+        print(f"  - {ruta['url']}")
+
+if __name__ == "__main__":
+    main()import json
+from unidecode import unidecode
+
+# ------------------------------
+# Datos de entrada (configurable)
+# ------------------------------
+CATEGORIAS = [
+    "alojamiento",
+    "hoteles",
+    "glamping",
+    "fincas cafeteras",
+    "restaurantes",
+    "cafés especiales",
+    "turismo de aventura",
+    "alquiler de fincas",
+    "pasadías",
+    "rutas turísticas"
+]
+
+MUNICIPIOS = [
+    "Armenia",
+    "Calarcá",
+    "Circasia",
+    "Filandia",
+    "La Tebaida",
+    "Montenegro",
+    "Quimbaya",
+    "Salento",
+    "Buenavista",
+    "Córdoba",
+    "Genova",
+    "Pijao"
+]
+
+# Plantillas dinámicas para meta-descripciones (por categoría, para mayor relevancia)
+META_DESCRIPTION_TEMPLATES = {
+    "alojamiento": "Encuentra los mejores {categoria} en {municipio}, Quindío. Compara opciones, ver fotos y contacta directamente con el establecimiento.",
+    "hoteles": "Hoteles en {municipio}, Quindío: desde económicos hasta boutique con piscina y desayuno incluido. Reserva tu estadía ideal.",
+    "glamping": "Glamping único en {municipio}: dormir en la naturaleza del Quindío con todas las comodidades. ¡Experiencia inolvidable!",
+    "fincas cafeteras": "Fincas cafeteras en {municipio}: vive el proceso del café desde la mata hasta la taza en el Paisaje Cultural Cafetero.",
+    "restaurantes": "Restaurantes en {municipio} con comida típica del Quindío, internacional y fusion. Encuentra tu lugar ideal para comer.",
+    "cafés especiales": "Cafés especiales en {municipio}: catas de café, baristas expertos y ambientes acogedores en el corazón del Eje Cafetero.",
+    "turismo de aventura": "Turismo de aventura en {municipio}: canopy, tirolesa, caminatas, cabalgatas y más adrenalina en el Quindío.",
+    "alquiler de fincas": "Alquiler de fincas en {municipio} para grupos, familias o parejas. Espacio privado y naturaleza cerca.",
+    "pasadías": "Pasadías en {municipio}: planes de un día completo con actividades, comida y tours por el Quindío.",
+    "rutas turísticas": "Rutas turísticas en {municipio}: guías completas para explorar lo mejor del Quindío, desde cafés hasta miradores."
+}
+
+# ------------------------------
+# Funciones de utilidad
+# ------------------------------
+def generar_slug(texto: str) -> str:
+    """Genera un slug limpio: sin acentos, minúsculas, separado por guiones."""
+    # Eliminar acentos
+    texto_limpio = unidecode(texto)
+    # Convertir a minúsculas
+    texto_limpio = texto_limpio.lower()
+    # Reemplazar espacios y caracteres no deseados por guiones
+    texto_limpio = texto_limpio.replace(" ", "-").replace("/", "-")
+    # Eliminar guiones duplicados
+    while "--" in texto_limpio:
+        texto_limpio = texto_limpio.replace("--", "-")
+    return texto_limpio.strip("-")
+
+def generar_ruta_seo(categoria: str, municipio: str) -> dict:
+    """Genera un objeto completo de ruta SEO."""
+    # Slug de la ruta (ej: glamping-en-salento)
+    slug_categoria = generar_slug(categoria)
+    slug_municipio = generar_slug(municipio)
+    slug_ruta = f"{slug_categoria}-en-{slug_municipio}"
+
+    # Título optimizado
+    titulo = f"{categoria.title()} en {municipio} | Mapa Turístico del Quindío"
+
+    # Meta-descripción dinámica
+    template = META_DESCRIPTION_TEMPLATES.get(categoria, META_DESCRIPTION_TEMPLATES["alojamiento"])
+    meta_descripcion = template.format(categoria=categoria, municipio=municipio)
+
+    # URL completa (para indexación)
+    url = f"https://www.mapaturisticodelquindio.com/{slug_ruta}"
+
+    return {
+        "categoria": categoria,
+        "municipio": municipio,
+        "slug": slug_ruta,
+        "url": url,
+        "titulo": titulo,
+        "meta_descripcion": meta_descripcion,
+        "tipo_schema": "Guide"  # O "TouristInformationCenter" según categoría
+    }
+
+# ------------------------------
+# Ejecución principal
+# ------------------------------
+def main():
+    # Generar todas las rutas
+    rutas_seo = []
+    for categoria in CATEGORIAS:
+        for municipio in MUNICIPIOS:
+            ruta = generar_ruta_seo(categoria, municipio)
+            rutas_seo.append(ruta)
+
+    # Guardar en archivo JSON
+    with open("rutas_seo.json", "w", encoding="utf-8") as f:
+        json.dump(rutas_seo, f, ensure_ascii=False, indent=2)
+
+    print(f"✅ Generadas {len(rutas_seo)} rutas SEO en 'rutas_seo.json'")
+    print(f"📊 Ejemplos de rutas:")
+    for ruta in rutas_seo[:3]:
+        print(f"  - {ruta['url']}")
+
+if __name__ == "__main__":
+    main()sitemap.xml
