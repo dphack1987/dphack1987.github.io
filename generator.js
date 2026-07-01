@@ -937,6 +937,13 @@ function generarPagina(ruta) {
   return `<!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K26DGM6J');</script>
+  <!-- End Google Tag Manager -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${titleCase(ruta.categoria)} en ${ruta.municipio} 2026 | Mapa Turístico</title>
@@ -984,6 +991,10 @@ ${JSON.stringify(schema, null, 2)}
   </script>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K26DGM6J"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <header class="page-hero">
     <h1>${emoji} ${titleCase(ruta.categoria)} en ${ruta.municipio}, Departamento del Quindío, Colombia</h1>
     <p>${ruta.meta_descripcion}</p>
@@ -1150,13 +1161,11 @@ ${JSON.stringify(schema, null, 2)}
     })();
   </script>
 
-  <!-- RASTREO DE INTENCIÓN PURA + PÍXELES PUBLICITARIOS -->
+  <!-- RASTREO DE INTENCIÓN PURA - PARA GTM -->
   <script>
     (function() {
       'use strict';
-      // --------------------------
-      // 1. CAPTURA DE INTENCIÓN
-      // --------------------------
+      // Captura de intención
       const usuarioIntencion = {
         municipio: '${ruta.municipio}',
         categoria: '${ruta.categoria}',
@@ -1166,81 +1175,29 @@ ${JSON.stringify(schema, null, 2)}
         dispositivo: /Mobi/.test(navigator.userAgent) ? 'mobile' : 'desktop'
       };
       
-      // Almacenar intención en LocalStorage (para retargeting)
+      // Almacenar intención en LocalStorage
       let historialIntenciones = JSON.parse(localStorage.getItem('quindio_intenciones') || '[]');
       historialIntenciones.push(usuarioIntencion);
-      historialIntenciones = historialIntenciones.slice(-20); // Mantener últimos 20
+      historialIntenciones = historialIntenciones.slice(-20);
       localStorage.setItem('quindio_intenciones', JSON.stringify(historialIntenciones));
       
-      // --------------------------
-      // 2. CONFIGURACIÓN DE PÍXELES
-      // --------------------------
-      // ===== META PIXEL (FACEBOOK/INSTAGRAM) =====
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId: 'TU_ID_DE_APP_AQUI', // Reemplazar con tu ID de App Meta
-          xfbml: true,
-          version: 'v19.0'
-        });
-      };
-      if(typeof fbq === 'undefined'){
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', 'TU_PIXEL_ID_AQUI'); // Reemplazar con tu Pixel ID
-        fbq('track', 'PageView');
-        
-        // Trackear intención específica
-        fbq('trackCustom', 'VisitaTuristica', {
-          municipio: '${ruta.municipio}',
-          categoria: '${ruta.categoria}',
-          content_name: '${ruta.titulo}'
-        });
-      } else {
-        fbq('track', 'PageView');
-        fbq('trackCustom', 'VisitaTuristica', {
-          municipio: '${ruta.municipio}',
-          categoria: '${ruta.categoria}',
-          content_name: '${ruta.titulo}'
-        });
-      }
-
-      // ===== GOOGLE ADS / ANALYTICS =====
+      // Push to dataLayer for GTM
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'TU_GA4_ID_AQUI'); // Reemplazar con tu GA4 ID
-      gtag('config', 'TU_GOOGLE_ADS_ID_AQUI'); // Reemplazar con tu Google Ads ID
-      
-      // Evento personalizado de intención turística
-      gtag('event', 'visita_intencion', {
-        event_category: 'turismo_quindio',
-        event_label: '${ruta.categoria}-${ruta.municipio}',
-        municipio: '${ruta.municipio}',
-        categoria: '${ruta.categoria}'
+      window.dataLayer.push({
+        'event': 'visita_intencion',
+        'turismo_quindio': usuarioIntencion
       });
-
-      // --------------------------
-      // 3. SEGUIMIENTO DE INTERACCIONES
-      // --------------------------
-      document.querySelectorAll('.biz-card a[href^="https://wa.me"]').forEach((link, index) => {
-        link.addEventListener('click', function(e) {
-          // Trackear click de WhatsApp
+      
+      // Seguimiento de clicks en WhatsApp
+      document.querySelectorAll('.biz-card a[href^="https://wa.me"]').forEach((link) => {
+        link.addEventListener('click', function() {
           const bizName = this.closest('.biz-card').querySelector('h3')?.textContent || 'Negocio';
-          
-          fbq('track', 'Contact', {
-            content_name: bizName,
-            municipio: '${ruta.municipio}',
-            categoria: '${ruta.categoria}'
-          });
-          gtag('event', 'contacto_whatsapp', {
-            event_category: 'conversion',
-            event_label: bizName
+          window.dataLayer.push({
+            'event': 'contacto_whatsapp',
+            'event_category': 'conversion',
+            'event_label': bizName,
+            'municipio': '${ruta.municipio}',
+            'categoria': '${ruta.categoria}'
           });
         });
       });
