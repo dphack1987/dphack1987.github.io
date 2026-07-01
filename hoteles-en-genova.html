@@ -414,6 +414,103 @@
     })();
   </script>
 
+  <!-- RASTREO DE INTENCIÓN PURA + PÍXELES PUBLICITARIOS -->
+  <script>
+    (function() {
+      'use strict';
+      // --------------------------
+      // 1. CAPTURA DE INTENCIÓN
+      // --------------------------
+      const usuarioIntencion = {
+        municipio: 'Genova',
+        categoria: 'hoteles',
+        pagina: 'hoteles-en-genova',
+        url: window.location.href,
+        timestamp: new Date().toISOString(),
+        dispositivo: /Mobi/.test(navigator.userAgent) ? 'mobile' : 'desktop'
+      };
+      
+      // Almacenar intención en LocalStorage (para retargeting)
+      let historialIntenciones = JSON.parse(localStorage.getItem('quindio_intenciones') || '[]');
+      historialIntenciones.push(usuarioIntencion);
+      historialIntenciones = historialIntenciones.slice(-20); // Mantener últimos 20
+      localStorage.setItem('quindio_intenciones', JSON.stringify(historialIntenciones));
+      
+      // --------------------------
+      // 2. CONFIGURACIÓN DE PÍXELES
+      // --------------------------
+      // ===== META PIXEL (FACEBOOK/INSTAGRAM) =====
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId: 'TU_ID_DE_APP_AQUI', // Reemplazar con tu ID de App Meta
+          xfbml: true,
+          version: 'v19.0'
+        });
+      };
+      if(typeof fbq === 'undefined'){
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'TU_PIXEL_ID_AQUI'); // Reemplazar con tu Pixel ID
+        fbq('track', 'PageView');
+        
+        // Trackear intención específica
+        fbq('trackCustom', 'VisitaTuristica', {
+          municipio: 'Genova',
+          categoria: 'hoteles',
+          content_name: 'Hoteles en Genova | Mapa Turístico del Quindío'
+        });
+      } else {
+        fbq('track', 'PageView');
+        fbq('trackCustom', 'VisitaTuristica', {
+          municipio: 'Genova',
+          categoria: 'hoteles',
+          content_name: 'Hoteles en Genova | Mapa Turístico del Quindío'
+        });
+      }
+
+      // ===== GOOGLE ADS / ANALYTICS =====
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'TU_GA4_ID_AQUI'); // Reemplazar con tu GA4 ID
+      gtag('config', 'TU_GOOGLE_ADS_ID_AQUI'); // Reemplazar con tu Google Ads ID
+      
+      // Evento personalizado de intención turística
+      gtag('event', 'visita_intencion', {
+        event_category: 'turismo_quindio',
+        event_label: 'hoteles-Genova',
+        municipio: 'Genova',
+        categoria: 'hoteles'
+      });
+
+      // --------------------------
+      // 3. SEGUIMIENTO DE INTERACCIONES
+      // --------------------------
+      document.querySelectorAll('.biz-card a[href^="https://wa.me"]').forEach((link, index) => {
+        link.addEventListener('click', function(e) {
+          // Trackear click de WhatsApp
+          const bizName = this.closest('.biz-card').querySelector('h3')?.textContent || 'Negocio';
+          
+          fbq('track', 'Contact', {
+            content_name: bizName,
+            municipio: 'Genova',
+            categoria: 'hoteles'
+          });
+          gtag('event', 'contacto_whatsapp', {
+            event_category: 'conversion',
+            event_label: bizName
+          });
+        });
+      });
+    })();
+  </script>
+
   <!-- Scripts al final del body -->
   <script src="assets/js/datos.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
