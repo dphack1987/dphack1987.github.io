@@ -601,7 +601,544 @@
     });
   </script>
 
-  <!-- SUITE DE CONVERSIÓN -->
+  <!-- SUITE DE CONVERSIÓN COMPLETA -->
+  <style>
+    /* Estilos Base */
+    .sc-widget { position:fixed; right:20px; bottom:20px; z-index:99999; font-family:'Inter',system-ui,sans-serif; }
+    .sc-toggle {
+      width:80px; height:80px; border-radius:50%;
+      background:linear-gradient(135deg, #059669, #047857);
+      border:none; color:#fff; font-size:40px; cursor:pointer;
+      box-shadow:0 12px 48px rgba(5,150,105,0.65);
+      transition:all 0.35s cubic-bezier(0.4,0,0.2,1);
+      display:flex; align-items:center; justify-content:center;
+      animation:sc-pulse 2s infinite, sc-glow 3s infinite alternate;
+      position:relative;
+    }
+    @keyframes sc-pulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.12); } }
+    @keyframes sc-glow { 0% { box-shadow:0 12px 48px rgba(5,150,105,0.45); } 100% { box-shadow:0 20px 64px rgba(5,150,105,0.75); } }
+    .sc-toggle:hover { transform:scale(1.2); box-shadow:0 18px 60px rgba(5,150,105,0.85); }
+    .sc-badge {
+      position:absolute; top:-8px; right:-8px;
+      background:linear-gradient(135deg,#ef4444,#dc2626);
+      color:#fff; padding:4px 10px; border-radius:20px;
+      font-size:12px; font-weight:900; white-space:nowrap;
+      box-shadow:0 4px 16px rgba(239,68,68,0.5);
+      animation:sc-bounce 1.5s infinite;
+    }
+    @keyframes sc-bounce { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-4px); } }
+    .sc-panel {
+      position:absolute; bottom:100px; right:0;
+      width:400px; max-width:92vw; background:#fff;
+      border-radius:28px; box-shadow:0 28px 96px rgba(0,0,0,0.35);
+      overflow:hidden; transform-origin:bottom right;
+      transform:scale(0); opacity:0; transition:all 0.4s cubic-bezier(0.4,0,0.2,1);
+      display:none;
+    }
+    .sc-panel.active { transform:scale(1); opacity:1; display:block; }
+    .sc-header {
+      background:linear-gradient(135deg, #059669, #047857);
+      color:#fff; padding:20px 24px; text-align:center;
+    }
+    .sc-header h3 { margin:0 0 8px 0; font-size:22px; font-weight:900; }
+    .sc-header p { margin:0; font-size:14px; opacity:0.95; }
+    .sc-badge-vip {
+      display:inline-flex; align-items:center; gap:6px;
+      background:linear-gradient(135deg,#fbbf24,#f59e0b);
+      color:#78350f; padding:8px 16px; border-radius:24px;
+      font-size:13px; font-weight:900; margin-top:14px;
+      box-shadow:0 6px 20px rgba(245,158,11,0.4);
+    }
+    .sc-comparador {
+      background:linear-gradient(135deg,#fef3c7,#fde68a);
+      margin:18px; padding:18px; border-radius:20px;
+      border:3px solid #fbbf24;
+    }
+    .sc-comparador-tit { font-weight:900; color:#78350f; font-size:16px; margin-bottom:14px; display:flex; align-items:center; gap:8px; }
+    .sc-precios { display:flex; justify-content:space-between; align-items:center; gap:14px; }
+    .sc-precio-antiguo { text-decoration:line-through; color:#9ca3af; font-weight:700; font-size:16px; }
+    .sc-precio-nuevo { font-weight:900; font-size:24px; color:#059669; display:flex; align-items:center; gap:10px; }
+    .sc-tag-ahorro { background:#059669; color:#fff; font-size:12px; font-weight:900; padding:6px 12px; border-radius:20px; box-shadow:0 4px 12px rgba(5,150,105,0.3); }
+    .sc-form { padding:0 18px 18px; }
+    .sc-campo { margin-bottom:16px; }
+    .sc-campo label { display:block; margin-bottom:8px; font-weight:800; font-size:14px; color:#1f2937; }
+    .sc-campo input,.sc-campo select { width:100%; padding:14px 16px; border:2px solid #e5e7eb; border-radius:16px; font-size:16px; transition:all 0.25s; box-sizing:border-box; background:#fff; }
+    .sc-campo input:focus,.sc-campo select:focus { outline:none; border-color:#059669; box-shadow:0 0 0 6px rgba(5,150,105,0.15); }
+    .sc-btn-enviar { width:100%; padding:16px; background:linear-gradient(135deg, #059669, #047857); color:#fff; border:none; border-radius:16px; font-size:18px; font-weight:900; cursor:pointer; transition:all 0.25s; display:flex; align-items:center; justify-content:center; gap:12px; box-shadow:0 8px 24px rgba(5,150,105,0.45); }
+    .sc-btn-enviar:hover { transform:translateY(-2px); box-shadow:0 12px 32px rgba(5,150,105,0.6); }
+    .sc-btn-enviar:disabled { opacity:0.6; cursor:not-allowed; transform:none; }
+    .sc-error { color:#dc2626; font-size:13px; margin-top:8px; display:none; }
+    .sc-error.active { display:block; }
+    .sc-exito { padding:26px 20px; text-align:center; display:none; }
+    .sc-exito.active { display:block; }
+    .sc-exito-icon { font-size:64px; margin-bottom:12px; }
+    .sc-exito h3 { margin:0 0 10px 0; color:#059669; font-size:22px; }
+    .sc-exito p { margin:0; color:#4b5563; font-size:15px; line-height:1.7; }
+    
+    /* Efecto Booking: Toasts y Badges */
+    .sc-toast-container { position:fixed; left:20px; bottom:20px; z-index:99997; display:flex; flex-direction:column; gap:12px; }
+    .sc-toast { background:#fff; padding:14px 20px; border-radius:16px; box-shadow:0 10px 32px rgba(0,0,0,0.2); border-left:5px solid #f59e0b; display:flex; align-items:center; gap:12px; font-size:14px; color:#1f2937; animation:sc-toast-in 0.45s ease-out; max-width:340px; }
+    @keyframes sc-toast-in { from { transform:translateX(-100%); opacity:0; } to { transform:translateX(0); opacity:1; } }
+    .sc-toast-icon { font-size:20px; }
+
+    /* Don Chucho Cerrador de Ventas */
+    .dc-burbuja { position:fixed; right:110px; bottom:20px; z-index:99998; font-family:'Inter',system-ui,sans-serif; }
+    .dc-boton {
+      width:80px; height:80px; border-radius:50%;
+      background:linear-gradient(135deg,#f59e0b,#d97706);
+      border:none; color:#fff; font-size:40px; cursor:pointer;
+      box-shadow:0 12px 48px rgba(245,158,11,0.65);
+      transition:all 0.35s cubic-bezier(0.4,0,0.2,1);
+      display:flex; align-items:center; justify-content:center;
+      animation:dc-pulse 2s infinite, dc-glow 3s infinite alternate;
+      position:relative;
+    }
+    @keyframes dc-pulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.12); } }
+    @keyframes dc-glow { 0% { box-shadow:0 12px 48px rgba(245,158,11,0.45); } 100% { box-shadow:0 20px 64px rgba(245,158,11,0.75); } }
+    .dc-boton:hover { transform:scale(1.2); box-shadow:0 18px 60px rgba(245,158,11,0.85); }
+    .dc-badge { position:absolute; top:-8px; right:-8px; background:linear-gradient(135deg,#10b981,#059669); color:#fff; padding:4px 10px; border-radius:20px; font-size:12px; font-weight:900; white-space:nowrap; box-shadow:0 4px 16px rgba(16,185,129,0.5); animation:dc-bounce 1.5s infinite; }
+    @keyframes dc-bounce { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-4px); } }
+    .dc-panel { position:absolute; bottom:100px; right:0; width:400px; max-width:92vw; background:#fff; border-radius:28px; box-shadow:0 28px 96px rgba(0,0,0,0.35); overflow:hidden; transform-origin:bottom right; transform:scale(0); opacity:0; transition:all 0.4s cubic-bezier(0.4,0,0.2,1); display:none; }
+    .dc-panel.active { transform:scale(1); opacity:1; display:block; }
+    .dc-header { background:linear-gradient(135deg,#f59e0b,#d97706); color:#1f2937; padding:18px 22px; display:flex; align-items:center; gap:14px; }
+    .dc-avatar { width:56px; height:56px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; font-size:28px; box-shadow:0 4px 16px rgba(0,0,0,0.15); }
+    .dc-titulo { display:flex; flex-direction:column; }
+    .dc-titulo strong { font-size:18px; font-weight:900; color:#fff; }
+    .dc-titulo span { font-size:13px; opacity:0.95; color:#fff; }
+    .dc-mensajes { padding:18px; max-height:400px; overflow-y:auto; }
+    .dc-mensaje { margin-bottom:14px; }
+    .dc-mensaje.dc-bot { display:flex; gap:12px; align-items:flex-start; }
+    .dc-mensaje.dc-bot .dc-texto { background:linear-gradient(135deg,#fef3c7,#fde68a); border-radius:18px 18px 18px 6px; padding:12px 16px; color:#78350f; font-size:15px; line-height:1.6; font-weight:600; }
+    .dc-mensaje.dc-user { display:flex; justify-content:flex-end; }
+    .dc-mensaje.dc-user .dc-texto { background:linear-gradient(135deg,#059669,#047857); color:#fff; border-radius:18px 18px 6px 18px; padding:12px 16px; font-size:15px; line-height:1.6; font-weight:600; max-width:80%; }
+    .dc-respuestas { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; padding:0 18px 10px; }
+    .dc-respuesta { background:#fff; border:3px solid #f59e0b; color:#d97706; padding:12px 20px; border-radius:28px; font-size:15px; font-weight:900; cursor:pointer; transition:all 0.25s; flex:1 1 calc(50% - 10px); text-align:center; }
+    .dc-respuesta:hover { background:linear-gradient(135deg,#f59e0b,#d97706); color:#fff; transform:translateY(-3px); box-shadow:0 6px 20px rgba(245,158,11,0.4); }
+    
+    /* Módulo de Transporte */
+    .transport-widget { position:fixed; left:20px; bottom:20px; z-index:99996; font-family:'Inter',system-ui,sans-serif; }
+    .transport-btn {
+      background:linear-gradient(135deg,#7c3aed,#6d28d9);
+      color:#fff; border:none; padding:14px 20px; border-radius:16px;
+      font-size:15px; font-weight:900; cursor:pointer; box-shadow:0 10px 32px rgba(124,58,237,0.5);
+      display:flex; align-items:center; gap:10px; transition:all 0.3s;
+    }
+    .transport-btn:hover { transform:translateY(-3px); box-shadow:0 16px 40px rgba(124,58,237,0.65); }
+    .transport-panel {
+      position:absolute; bottom:80px; left:0; width:400px; max-width:92vw; background:#fff;
+      border-radius:24px; box-shadow:0 24px 80px rgba(0,0,0,0.3); overflow:hidden;
+      transform:scale(0); opacity:0; transform-origin:bottom left; transition:all 0.35s; display:none;
+    }
+    .transport-panel.active { transform:scale(1); opacity:1; display:block; }
+    .transport-header {
+      background:linear-gradient(135deg,#7c3aed,#6d28d9); color:#fff; padding:20px 24px;
+    }
+    .transport-header h3 { margin:0; font-size:20px; font-weight:900; }
+    .transport-header p { margin:6px 0 0; font-size:13px; opacity:0.95; }
+    .transport-form { padding:20px; }
+    .transport-service-select { display:flex; gap:10px; margin-bottom:18px; flex-wrap:wrap; }
+    .transport-service-option {
+      flex:1 1 calc(33% - 7px); padding:12px 8px; border:2px solid #e5e7eb; border-radius:14px; text-align:center; cursor:pointer;
+      transition:all 0.2s; font-weight:800; font-size:13px;
+    }
+    .transport-service-option.selected { border-color:#7c3aed; background:#f3e8ff; color:#7c3aed; }
+    .transport-service-option:hover { border-color:#7c3aed; background:#faf5ff; }
+    .transport-btn-send {
+      width:100%; padding:16px; background:linear-gradient(135deg,#7c3aed,#6d28d9); color:#fff;
+      border:none; border-radius:14px; font-size:17px; font-weight:900; margin-top:12px; cursor:pointer; box-shadow:0 6px 20px rgba(124,58,237,0.45);
+      transition:all 0.25s;
+    }
+    .transport-btn-send:hover { transform:translateY(-2px); box-shadow:0 12px 32px rgba(124,58,237,0.6); }
+  </style>
+
+  <!-- Cotizador -->
+  <div class="sc-widget" id="sc-widget">
+    <button class="sc-toggle" id="sc-toggle" aria-label="Abrir cotizador">
+      💰
+      <span class="sc-badge">17% OFF!</span>
+    </button>
+    <div class="sc-panel" id="sc-panel">
+      <div class="sc-header">
+        <h3>Cotiza tu Viaje Ahora</h3>
+        <p>Congela la tarifa especial directa (sin comisiones)</p>
+        <div class="sc-badge-vip">⭐ SOLO HOY</div>
+      </div>
+
+      <div class="sc-comparador">
+        <div class="sc-comparador-tit">💸 Compara y ahorra hasta 17%</div>
+        <div class="sc-precios">
+          <div class="sc-precio-antiguo">$350.000 COP<br><small style="font-size:12px;">Booking/Airbnb</small></div>
+          <div class="sc-precio-nuevo">$290.000 COP<span class="sc-tag-ahorro">¡Ahorras!</span></div>
+        </div>
+      </div>
+
+      <form id="sc-form" class="sc-form">
+        <input type="hidden" id="sc-municipio" value="Quindío">
+        <input type="hidden" id="sc-categoria" value="viajes al Quindío">
+        <div class="sc-campo">
+          <label for="sc-nombre">Tu Nombre</label>
+          <input type="text" id="sc-nombre" placeholder="Ej: Juan Pérez" required autocomplete="name">
+        </div>
+        <div class="sc-campo">
+          <label for="sc-telefono">WhatsApp</label>
+          <input type="tel" id="sc-telefono" placeholder="Ej: 3001234567" required autocomplete="tel">
+        </div>
+        <div class="sc-campo">
+          <label for="sc-fecha">Fecha de Viaje</label>
+          <input type="date" id="sc-fecha" required>
+        </div>
+        <div class="sc-campo">
+          <label for="sc-personas">Número de Personas</label>
+          <input type="number" id="sc-personas" min="1" max="50" value="2" required>
+        </div>
+        <div class="sc-campo">
+          <label for="sc-presupuesto">Presupuesto por Noche (COP)</label>
+          <select id="sc-presupuesto" required>
+            <option value="100000-200000">$100k - $200k</option>
+            <option value="200000-350000" selected>$200k - $350k</option>
+            <option value="350000-500000">$350k - $500k</option>
+            <option value="500000+">$500k+</option>
+          </select>
+        </div>
+        <div id="sc-error" class="sc-error"></div>
+        <button type="submit" id="sc-btn-enviar" class="sc-btn-enviar">
+          📲 Cotizar y Abrir WhatsApp
+        </button>
+      </form>
+
+      <div id="sc-exito" class="sc-exito">
+        <div class="sc-exito-icon">✅</div>
+        <h3>¡Listo! WhatsApp Abierto</h3>
+        <p>Envía el mensaje pre-redactado y los mejores establecimientos Premium te contactan en menos de 5 minutos.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Don Chucho - Cerrador de Ventas Automatizado -->
+  <div class="dc-burbuja" id="dcBurbuja">
+    <button class="dc-boton" id="dcBoton" aria-label="Abrir chat con Don Chucho">
+      🤠
+      <span class="dc-badge">¡Te ayuda!</span>
+    </button>
+    <div class="dc-panel" id="dcPanel">
+      <div class="dc-header">
+        <div class="dc-avatar">🤠</div>
+        <div class="dc-titulo">
+          <strong>Don Chucho</strong>
+          <span>Tu guía experto en el Quindío</span>
+        </div>
+      </div>
+      <div class="dc-mensajes" id="dcMensajes"></div>
+      <div class="dc-respuestas" id="dcRespuestas"></div>
+    </div>
+  </div>
+
+  <div class="sc-toast-container" id="sc-toast-container"></div>
+
+  <!-- Módulo de Solicitud de Transporte -->
+  <div class="transport-widget" id="transportWidget">
+    <button class="transport-btn" id="transportBtn">
+      🚗 ¿Necesitas transporte?
+    </button>
+    <div class="transport-panel" id="transportPanel">
+      <div class="transport-header">
+        <h3>🚕 Solicita tu Transporte Aquí</h3>
+        <p>Taxi · Willys · Transporte Especial en el Quindío</p>
+      </div>
+      <div class="transport-form">
+        <div class="transport-service-select">
+          <div class="transport-service-option selected" data-service="Taxi Urbano">🚕 Taxi</div>
+          <div class="transport-service-option" data-service="Willys Tradicional">🚙 Willys</div>
+          <div class="transport-service-option" data-service="Van / Transporte Especial">🚌 Van/Especial</div>
+        </div>
+        <div class="sc-campo">
+          <label>Origen</label>
+          <input type="text" id="transportOrigen" value="Armenia" />
+        </div>
+        <div class="sc-campo">
+          <label>Destino</label>
+          <select id="transportDestino">
+            <option value="">Selecciona un destino</option>
+            <option value="Valle de Cocora">Valle de Cocora</option>
+            <option value="Parque del Café">Parque del Café</option>
+            <option value="Panaca">Panaca</option>
+            <option value="Aeropuerto El Edén">Aeropuerto El Edén</option>
+            <option value="Armenia">Armenia</option>
+            <option value="Salento">Salento</option>
+            <option value="Filandia">Filandia</option>
+            <option value="Circasia">Circasia</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+        <div class="sc-campo">
+          <label>Pasajeros</label>
+          <input type="number" id="transportPassengers" min="1" max="20" value="2" />
+        </div>
+        <div class="sc-campo">
+          <label>Tu Nombre</label>
+          <input type="text" id="transportName" placeholder="Tu nombre" />
+        </div>
+        <div class="sc-campo">
+          <label>WhatsApp (para confirmar)</label>
+          <input type="tel" id="transportWhatsApp" placeholder="3001234567" />
+        </div>
+        <button class="transport-btn-send" id="transportSendBtn">
+          📲 Solicitar y Abrir WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      'use strict';
+      const municipio = 'Quindío';
+      const categoria = 'viajes al Quindío';
+      
+      // --- Helper function titleCase ---
+      function titleCase(str) {
+        return str.replace(/\w\S*/g, function(txt){
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        });
+      }
+      
+      // --- 1. Don Chucho Cerrador de Ventas ---
+      let dcInicializado = false;
+      let dcDatosUsuario = {
+        plan: '',
+        fecha: '',
+        presupuesto: ''
+      };
+      
+      function dcInit(){
+        if(dcInicializado) return; dcInicializado=true;
+        const dcMensajesDiv = document.getElementById('dcMensajes');
+        const dcRespuestasDiv = document.getElementById('dcRespuestas');
+        
+        function dcAgregarMensaje(t, texto){
+          const m = document.createElement('div');
+          m.className='dc-mensaje dc-'+t;
+          if(t==='bot'){
+            m.innerHTML='<div class="dc-avatar">🤠</div><div class="dc-texto">'+texto+'</div>';
+          } else if(t==='user'){
+            m.innerHTML='<div class="dc-texto">'+texto+'</div>';
+          }
+          dcMensajesDiv.appendChild(m);
+          dcMensajesDiv.scrollTop = dcMensajesDiv.scrollHeight;
+        }
+        
+        function dcMostrarRespuestas(opciones){
+          dcRespuestasDiv.innerHTML = opciones.map(o => 
+            '<button class="dc-respuesta" data-val="'+o.valor+'">'+o.texto+'</button>'
+          ).join('');
+          dcRespuestasDiv.querySelectorAll('.dc-respuesta').forEach(b => b.addEventListener('click', function(){
+            const valor = this.dataset.val;
+            dcAgregarMensaje('user', this.textContent);
+            dcHandleRespuesta(valor);
+          }));
+        }
+        
+        function dcHandleRespuesta(valor){
+          if(!dcDatosUsuario.plan){
+            dcDatosUsuario.plan = valor;
+            localStorage.setItem('dc_datos', JSON.stringify(dcDatosUsuario));
+            dcAgregarMensaje('bot','¡Perfecto! ¿Y para qué fecha planeas tu viaje?');
+            dcMostrarRespuestas([
+              {texto:'📅 Esta semana', valor:'esta_semana'},
+              {texto:'📅 Próximo fin de semana', valor:'prox_finde'},
+              {texto:'📅 Dentro de 2-4 semanas', valor:'2_4_semanas'},
+              {texto:'📅 Más adelante', valor:'mas_adelante'}
+            ]);
+          } else if(!dcDatosUsuario.fecha){
+            dcDatosUsuario.fecha = valor;
+            localStorage.setItem('dc_datos', JSON.stringify(dcDatosUsuario));
+            dcAgregarMensaje('bot','¡Excelente! ¿Y cuál es tu presupuesto por noche?');
+            dcMostrarRespuestas([
+              {texto:'💰 $100k - $200k COP', valor:'100k_200k'},
+              {texto:'💰 $200k - $350k COP', valor:'200k_350k'},
+              {texto:'💰 $350k - $500k COP', valor:'350k_500k'},
+              {texto:'💰 $500k+ COP', valor:'500k_mas'}
+            ]);
+          } else {
+            dcDatosUsuario.presupuesto = valor;
+            localStorage.setItem('dc_datos', JSON.stringify(dcDatosUsuario));
+            // Cerrador de Ventas!
+            dcAgregarMensaje('bot','¡Listo, pariente! Tengo 2 opciones PREMIUM en '+municipio+' que se ajustan perfecto a tu presupuesto y tienen disponibilidad ¡ahorita mismo! Toca aquí abajo para abrir el cotizador y congelar tu tarifa especial.');
+            dcRespuestasDiv.innerHTML = '<button class="dc-respuesta" id="dcCerrar" style="flex:1 1 100%; background:linear-gradient(135deg,#059669,#047857); border-color:#059669; color:#fff;">🎯 ¡Congelar Tarifa y Cotizar Ahora!</button>';
+            document.getElementById('dcCerrar').addEventListener('click', function(){
+              document.getElementById('sc-panel').classList.add('active');
+            });
+          }
+        }
+        
+        // Iniciar conversación
+        dcAgregarMensaje('bot','¡Hola, pariente! Veo que anda planeando su viaje por el '+municipio+'. ¿Qué plan busca usted?');
+        dcMostrarRespuestas([
+          {texto:'🏨 Hospedaje', valor:'hospedaje'},
+          {texto:'🏊 Pasadía/Tour', valor:'pasadia'},
+          {texto:'☕ Café Especial', valor:'cafe'},
+          {texto:'🎢 Aventura', valor:'aventura'}
+        ]);
+      }
+      
+      const dcBoton = document.getElementById('dcBoton');
+      const dcPanel = document.getElementById('dcPanel');
+      dcBoton.addEventListener('click', function(){ dcPanel.classList.toggle('active'); if(!dcInicializado) dcInit(); });
+      document.addEventListener('click', function(e){ if(!dcPanel.contains(e.target) && !dcBoton.contains(e.target)){ dcPanel.classList.remove('active'); } });
+      
+      // --- 2. Efecto Booking: Toasts de Escasez y Badges ---
+      const toastContainer = document.getElementById('sc-toast-container');
+      const ciudades = ['Bogotá','Medellín','Cali','Barranquilla','Cartagena','Pereira','Manizales'];
+      const nombres = ['Carlos','Ana','Luis','Sofía','Diego','Valentina','Juan','Camila','Andrés','Laura'];
+      const categoriasToast = ['hospedaje','cabaña','glamping','finca cafetera','pasadía','tour'];
+      
+      function crearToast(mensaje){
+        const toast = document.createElement('div');
+        toast.className='sc-toast';
+        toast.innerHTML = '<span class="sc-toast-icon">'+mensaje.icon+'</span><span>'+mensaje.texto+'</span>';
+        toastContainer.appendChild(toast);
+        setTimeout(function(){
+          toast.style.opacity='0'; toast.style.transform='translateX(-100%)';
+          setTimeout(function(){ toast.remove(); }, 450);
+        }, 5000);
+      }
+      
+      function generarToastAleatorio(){
+        const tipo = Math.floor(Math.random() * 5);
+        let msj;
+        const cat = categoria;
+        const ciudadRand = ciudades[Math.floor(Math.random()*ciudades.length)];
+        const nombreRand = nombres[Math.floor(Math.random()*nombres.length)];
+        const minutosRand = Math.floor(Math.random()*35)+5;
+        switch(tipo){
+          case 0: msj = {icon:'🔥', texto: (Math.floor(Math.random()*5)+2)+' personas están viendo '+cat+' en '+municipio+' justo ahora.'}; break;
+          case 1: msj = {icon:'⏰', texto:'¡Última reserva hace '+minutosRand+' minutos en este destino!'}; break;
+          case 2: msj = {icon:'👀', texto:(Math.floor(Math.random()*20)+5)+' turistas consultaron '+cat+' en '+municipio+' en las últimas 2 horas.'}; break;
+          case 3: msj = {icon:'⭐', texto:'¡Un establecimiento Premium en '+municipio+' acaba de confirmar disponibilidad!'}; break;
+          case 4: msj = {icon:'💬', texto:nombreRand+' de '+ciudadRand+' reservó un '+categoriasToast[Math.floor(Math.random()*categoriasToast.length)]+' hace '+minutosRand+' minutos.'}; break;
+        }
+        crearToast(msj);
+      }
+      
+      setTimeout(function(){
+        generarToastAleatorio();
+        setInterval(generarToastAleatorio, 8500 + Math.random()*7500);
+      }, 3500);
+      
+      // --- 3. Cotizador con WhatsApp ULTRA-calificado ---
+      const btnToggle = document.getElementById('sc-toggle');
+      const panel = document.getElementById('sc-panel');
+      const form = document.getElementById('sc-form');
+      const btnEnviar = document.getElementById('sc-btn-enviar');
+      const errorDiv = document.getElementById('sc-error');
+      const exitoDiv = document.getElementById('sc-exito');
+      
+      btnToggle.addEventListener('click', function(){ panel.classList.toggle('active'); });
+      document.addEventListener('click', function(e){ if(!panel.contains(e.target) && !btnToggle.contains(e.target)){ panel.classList.remove('active'); } });
+      
+      function validarDatos(datos){ 
+        if(datos.nombre.length<3) return 'Por favor, ingresa tu nombre completo.'; 
+        const telLimpio = datos.telefono.replace(/\D/g,''); 
+        if(telLimpio.length<10) return 'Por favor, ingresa un teléfono válido (10 dígitos).'; 
+        if(!datos.fecha) return 'Por favor, selecciona una fecha de viaje.'; 
+        if(!datos.personas || datos.personas<1) return 'Por favor, indica el número de personas.'; 
+        if(!datos.presupuesto) return 'Por favor, selecciona tu presupuesto.';
+        return null; 
+      }
+      
+      function formatearFecha(fechaStr){ 
+        const fecha = new Date(fechaStr); 
+        const opciones = { year:'numeric', month:'long', day:'numeric' }; 
+        return fecha.toLocaleDateString('es-ES', opciones); 
+      }
+      
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+        const datos = { 
+          nombre:document.getElementById('sc-nombre').value.trim(), 
+          telefono:document.getElementById('sc-telefono').value.trim(), 
+          fecha:document.getElementById('sc-fecha').value, 
+          personas:parseInt(document.getElementById('sc-personas').value), 
+          presupuesto:document.getElementById('sc-presupuesto').value,
+          municipio:municipio, 
+          categoria:categoria 
+        };
+        const error = validarDatos(datos);
+        if(error){ errorDiv.textContent=error; errorDiv.classList.add('active'); return; }
+        errorDiv.classList.remove('active');
+        btnEnviar.disabled = true; btnEnviar.innerHTML = '⏳ Procesando...';
+        
+        // Guardar lead en localStorage
+        let leads = JSON.parse(localStorage.getItem('quindio_leads') || '[]');
+        leads.push({ ...datos, timestamp: new Date().toISOString() });
+        localStorage.setItem('quindio_leads', JSON.stringify(leads));
+        
+        // Mensaje ULTRA-calificado para WhatsApp
+        const fechaFormateada = formatearFecha(datos.fecha);
+        const mensajeWhatsApp = encodeURIComponent(
+          '¡Hola! ✋\n'+
+          'Mi nombre es '+datos.nombre+', vi tu negocio en el Mapa Turístico del Quindío 🗺️.\n'+
+          '📌 Buscando: '+titleCase(datos.categoria)+' en '+datos.municipio+'\n'+
+          '📅 Fecha tentativa: '+fechaFormateada+'\n'+
+          '👥 Personas: '+datos.personas+'\n'+
+          '💰 Presupuesto: '+datos.presupuesto+' COP/noche\n\n'+
+          '¿Tienes disponibilidad? ¡Quiero reservar ya!'
+        );
+        
+        window.open('https://wa.me/573001234567?text='+mensajeWhatsApp, '_blank');
+        form.style.display='none'; exitoDiv.classList.add('active');
+      });
+      
+      // --- Módulo de Transporte ---
+      const transportBtn = document.getElementById('transportBtn');
+      const transportPanel = document.getElementById('transportPanel');
+      const transportOptions = document.querySelectorAll('.transport-service-option');
+      const transportSendBtn = document.getElementById('transportSendBtn');
+      
+      let selectedService = 'Taxi Urbano';
+      
+      transportBtn.addEventListener('click', function(){
+        transportPanel.classList.toggle('active');
+      });
+      
+      transportOptions.forEach(opt => {
+        opt.addEventListener('click', function(){
+          transportOptions.forEach(o => o.classList.remove('selected'));
+          this.classList.add('selected');
+          selectedService = this.dataset.service;
+        });
+      });
+      
+      transportSendBtn.addEventListener('click', function(){
+        const service = selectedService;
+        const origen = document.getElementById('transportOrigen').value;
+        const destino = document.getElementById('transportDestino').value;
+        const passengers = document.getElementById('transportPassengers').value;
+        const name = document.getElementById('transportName').value;
+        const wa = document.getElementById('transportWhatsApp').value;
+        
+        if(!destino){ alert('Por favor selecciona un destino'); return; }
+        if(!name || !wa){ alert('Por favor completa tu nombre y WhatsApp'); return; }
+        
+        const message = encodeURIComponent(
+          "🚕 NUEVO SERVICIO DE TRANSPORTE - MAPA TURÍSTICO DEL QUINDÍO 🗺️\n\n"+
+          "Usuario: "+name+"\n"+
+          "Tipo: "+service+"\n"+
+          "Origen: "+origen+"\n"+
+          "Destino: "+destino+"\n"+
+          "Pasajeros: "+passengers+"\n"+
+          "WhatsApp: "+wa+"\n\n"+
+          "Solicitado desde el celular vía www.mapaturisticodelquindio.com. ¡Toca aquí para confirmar tarifa directa con el cliente!"
+        );
+        
+        window.open("https://wa.me/573001234567?text="+message, "_blank");
+      });
+      
+    })();
+  </script>
+
+</body>
+</html>
   <style>
     :root{--sc-primary:#059669;--sc-primary-dark:#047857;--sc-accent:#f59e0b;--sc-bg:#fff;--sc-text:#1f2937;--sc-light:#f0fdf4;--sc-gray:#9ca3af;--sc-dark-gray:#4b5563;}
     .sc-widget{position:fixed;right:16px;bottom:16px;z-index:99999;font-family:'Inter',system-ui,sans-serif;}
