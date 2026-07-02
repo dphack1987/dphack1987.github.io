@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 
 // Función para capitalizar texto
@@ -1353,7 +1353,7 @@ function generarTodo() {
   <url><loc>https://www.mapaturisticodelquindio.com/municipios-del-quindio.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.mapaturisticodelquindio.com/mapa-del-quindio.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.mapaturisticodelquindio.com/mapa-circasia.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.mapaturisticodelquindio.com/mapa-de-circasia-2026.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.mapaturisticodelquindio.com/mapa-de-circasia-2025.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.mapaturisticodelquindio.com/contacto.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.mapaturisticodelquindio.com/anunciate.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 ${urls.map(url => `  <url><loc>${url}</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>`).join('\n')}
@@ -1364,3 +1364,4 @@ ${urls.map(url => `  <url><loc>${url}</loc><changefreq>weekly</changefreq><prior
 }
 
 generarTodo();
+
