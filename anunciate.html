@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anúnciate en el Mapa Turístico del Quindío — Oportunidad Comercial</title>
+  <meta name="description" content="Publica tu negocio turístico en el Mapa Turístico del Quindío. Llega a miles de visitantes. Planes desde $0. Contacto directo por WhatsApp.">
+  <link rel="canonical" href="https://www.mapaturisticodelquindio.com/anunciate.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Anúnciate en el Mapa Turístico del Quindío",
+    "description": "Oportunidad comercial para negocios turísticos del Quindío."
+  }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <style>
+    .planes-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;
+      margin: 48px 0;
+    }
+    .plan-card {
+      background: white; border-radius: 24px; padding: 32px; text-align: center;
+      box-shadow: 0 8px 32px rgba(16,185,129,.1); border: 1px solid rgba(255,255,255,.6);
+      transition: all .35s ease; display: flex; flex-direction: column;
+    }
+    .plan-card:hover { transform: translateY(-8px); box-shadow: 0 16px 48px rgba(16,185,129,.2); }
+    .plan-card.featured { border: 2px solid #059669; box-shadow: 0 12px 40px rgba(16,185,129,.15); }
+    .plan-name { font-size: 1.2rem; font-weight: 800; color: #064e3b; margin-bottom: 8px; }
+    .plan-price { font-size: 2.2rem; font-weight: 800; color: #f59e0b; margin-bottom: 16px; }
+    .plan-price span { font-size: 1rem; color: #6b7280; font-weight: 500; }
+    .plan-features { flex: 1; list-style: none; margin: 24px 0; text-align: left; }
+    .plan-features li {
+      padding: 10px 0; border-bottom: 1px solid #f3f4f6; font-size: .95rem; color: #374151;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .plan-features li::before { content: "✓"; color: #059669; font-weight: 700; }
+    .btn-plan {
+      padding: 14px 28px; border-radius: 50px; font-weight: 700; font-size: 1rem;
+      background: #059669; color: white; border: none; cursor: pointer; transition: all .3s;
+    }
+    .btn-plan:hover { background: #047857; transform: translateY(-2px); }
+    .plan-card.featured .btn-plan { background: #f59e0b; }
+    .plan-card.featured .btn-plan:hover { background: #d97706; }
+  </style>
+</head>
+<body>
+
+  <header class="page-hero">
+    <h1>📣 Anúnciate en el Mapa</h1>
+    <p>La oportunidad comercial para negocios turísticos del Quindío</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Intro -->
+    <div style="text-align:center;max-width:720px;margin:0 auto 48px;">
+      <h2 style="font-size:1.6rem;font-weight:800;color:#064e3b;margin-bottom:12px;">¿Por qué anunciarte aquí?</h2>
+      <p style="color:#6b7280;line-height:1.7;">
+        Miles de turistas buscan alojamientos, restaurantes, agencias y transporte en el Quindío cada mes.
+        Tu negocio aparecerá en el mapa interactivo, en búsquedas y en las páginas de los municipios.
+        <strong>Contacto directo por WhatsApp</strong> — sin comisiones por reserva.
+      </p>
+    </div>
+
+    <!-- Planes -->
+    <div style="text-align:center;margin-bottom:32px;">
+      <span class="section-label">Nuestros planes</span>
+      <h2 class="section-title">Elige el que mejor se adapte a tu negocio</h2>
+    </div>
+
+    <div class="planes-grid">
+      <!-- Plan Básico -->
+      <div class="plan-card">
+        <div class="plan-name">🟢 Básico</div>
+        <div class="plan-price">$0<span>/mes</span></div>
+        <ul class="plan-features">
+          <li>Marcador en el mapa</li>
+          <li>Nombre y categoría</li>
+          <li>Ubicación en municipio</li>
+          <li>Enlace a tu sitio web</li>
+        </ul>
+        <button class="btn-plan" onclick="abrirFormulario('basico')">Listar gratis</button>
+      </div>
+
+      <!-- Plan Estándar -->
+      <div class="plan-card">
+        <div class="plan-name">🟡 Estándar</div>
+        <div class="plan-price">$49.000<span>/mes</span></div>
+        <ul class="plan-features">
+          <li>Todo lo del Básico</li>
+          <li>Imagen destacada</li>
+          <li>Descripción completa</li>
+          <li>Servicios y precios</li>
+          <li>Botón WhatsApp directo</li>
+          <li>En el buscador</li>
+        </ul>
+        <button class="btn-plan" onclick="abrirFormulario('estandar')">Publicar</button>
+      </div>
+
+      <!-- Plan Premium -->
+      <div class="plan-card featured">
+        <div class="plan-name">⭐ Premium</div>
+        <div class="plan-price">$129.000<span>/mes</span></div>
+        <ul class="plan-features">
+          <li>Todo lo del Estándar</li>
+          <li>Página propia del negocio</li>
+          <li>Destacado en homepage</li>
+          <li>Aparición en itinerarios</li>
+          <li>Estadísticas de visitas</li>
+          <li>Soporte prioritario</li>
+        </ul>
+        <button class="btn-plan" onclick="abrirFormulario('premium')">Publicar Premium</button>
+      </div>
+    </div>
+
+    <!-- Formulario -->
+    <div class="form-card" id="form-card" style="display:none;">
+      <h2 style="font-size:1.4rem;font-weight:800;color:#064e3b;margin-bottom:24px;">Completa tu solicitud</h2>
+      <form id="anunciate-form" onsubmit="enviarForm(event)">
+        <div class="form-group">
+          <label for="nombre">Nombre del negocio *</label>
+          <input type="text" id="nombre" required placeholder="Ej: Finca Hotel La Dulcera">
+        </div>
+        <div class="form-group">
+          <label for="tipo">Tipo de negocio *</label>
+          <select id="tipo" required>
+            <option value="">Selecciona...</option>
+            <option value="alojamiento">Alojamiento (Hotel, Finca, Hospedaje)</option>
+            <option value="sitio-turistico">Sitio Turístico (Parque, Mirador, Atracción)</option>
+            <option value="agencia">Agencia / Actividad (Cabalgatas, Tours)</option>
+            <option value="transporte">Transporte (Empresa, Taxi, Alquiler)</option>
+            <option value="finca">Finca para alquiler</option>
+            <option value="restaurante">Restaurante / Café</option>
+            <option value="comercial">Centro comercial / Tienda</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="municipio">Municipio *</label>
+          <select id="municipio" required>
+            <option value="">Selecciona...</option>
+            <option value="armenia">Armenia</option>
+            <option value="circasia">Circasia</option>
+            <option value="salento">Salento</option>
+            <option value="filandia">Filandia</option>
+            <option value="montenegro">Montenegro</option>
+            <option value="quimbaya">Quimbaya</option>
+            <option value="calarca">Calarcá</option>
+            <option value="buenavista">Buenavista</option>
+            <option value="pijao">Pijao</option>
+            <option value="cordoba">Córdoba</option>
+            <option value="genova">Génova</option>
+            <option value="la-tebaida">La Tebaida</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="plan">Plan seleccionado *</label>
+          <select id="plan" required>
+            <option value="basico">Básico (Gratis)</option>
+            <option value="estandar">Estándar ($49.000/mes)</option>
+            <option value="premium">Premium ($129.000/mes)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="telefono">Teléfono / WhatsApp *</label>
+          <input type="tel" id="telefono" required placeholder="+57 300 000 0000">
+        </div>
+        <div class="form-group">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" placeholder="tu@correo.com">
+        </div>
+        <div class="form-group">
+          <label for="mensaje">Mensaje adicional</label>
+          <textarea id="mensaje" placeholder="¿Algo más que quieras compartir?"></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Enviar solicitud</button>
+      </form>
+    </div>
+
+    <!-- Galería de anunciantes actuales -->
+    <div style="text-align:center;margin:48px 0 28px">
+      <span class="section-label">Quiénes ya están con nosotros</span>
+      <h2 class="section-title">Nuestros anunciantes</h2>
+      <p class="section-sub">Más de 35 negocios turísticos del Quindío ya confían en el Mapa Turístico</p>
+    </div>
+    <div class="pautas-grid">
+      <div class="pauta-grid-item"><img src="./pautas/p1.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/p2.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/p3.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/p4.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/p5.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/p6.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/p7.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/p8.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/p9.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/p10.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/p11.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/p12.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/p13.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/p14.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/p15.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/p16.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/p17.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/p18.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/p19.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/p21.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/p22.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/p23.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/p24.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/p25.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/p26.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas/P27.png" alt="Anunciante" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas_circasia/pauta1.jpg" alt="Anunciante Circasia" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas_circasia/pauta2.png" alt="Anunciante Circasia" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas_circasia/pauta3.png" alt="Anunciante Circasia" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas_circasia/pauta4.png" alt="Anunciante Circasia" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas_circasia/pauta5.png" alt="Anunciante Circasia" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas_circasia/pauta6.png" alt="Anunciante Circasia" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas_circasia/pauta7.png" alt="Anunciante Circasia" loading="lazy"></div>
+      <div class="pauta-grid-item"><img src="./pautas_circasia/pauta8.png" alt="Anunciante Circasia" loading="lazy"></div>
+    </div>
+
+    <!-- FAQ -->
+    <div style="text-align:center;margin:48px 0;">
+      <span class="section-label">Preguntas frecuentes</span>
+      <h2 class="section-title">Lo que debes saber</h2>
+    </div>
+    <div style="max-width:720px;margin:0 auto 48px;">
+      <div style="background:white;border-radius:20px;padding:24px;margin-bottom:16px;box-shadow:0 4px 16px rgba(16,185,129,.08);">
+        <h3 style="font-weight:700;color:#064e3b">¿Cuánto tiempo tarda en aparecer mi negocio?</h3>
+        <p style="color:#6b7280;margin-top:8px;">Una vez verifiquemos tu solicitud (máximo 24h), tu negocio aparecerá en el mapa.</p>
+      </div>
+      <div style="background:white;border-radius:20px;padding:24px;margin-bottom:16px;box-shadow:0 4px 16px rgba(16,185,129,.08);">
+        <h3 style="font-weight:700;color:#064e3b">¿Cómo recibo las reservas?</h3>
+        <p style="color:#6b7280;margin-top:8px;">Tus clientes te contactan directamente por WhatsApp. Sin comisiones, sin intermediarios.</p>
+      </div>
+      <div style="background:white;border-radius:20px;padding:24px;box-shadow:0 4px 16px rgba(16,185,129,.08);">
+        <h3 style="font-weight:700;color:#064e3b">¿Puedo actualizar mi información?</h3>
+        <p style="color:#6b7280;margin-top:8px;">Sí, en cualquier momento. Solo contáctanos y actualizamos tu perfil.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col"><h4>🌿 Mapa Turístico</h4><p style="color:#6b7280;font-size:.9rem">La plataforma turística del Quindío.</p></div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <a href="./index.html">Inicio</a>
+        <a href="./sitios-turisticos.html">Sitios Turísticos</a>
+        <a href="./alojamientos.html">Alojamientos</a>
+        <a href="./anunciate.html">Anúnciate</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 www.mapaturisticodelquindio.com</p></div>
+  </footer>
+
+  <script src="./assets/js/nav.js"></script>
+  <script>
+    function abrirFormulario(plan) {
+      document.getElementById('form-card').style.display = 'block';
+      document.getElementById('plan').value = plan;
+      window.scrollTo({ top: document.getElementById('form-card').offsetTop - 80, behavior: 'smooth' });
+    }
+
+    function enviarForm(e) {
+      e.preventDefault();
+      const form = e.target;
+      const datos = {
+        nombre: document.getElementById('nombre').value,
+        tipo: document.getElementById('tipo').value,
+        municipio: document.getElementById('municipio').value,
+        plan: document.getElementById('plan').value,
+        telefono: document.getElementById('telefono').value,
+        email: document.getElementById('email').value,
+        mensaje: document.getElementById('mensaje').value
+      };
+
+      // Simulación de envío
+      const btn = form.querySelector('.btn-submit');
+      const originalText = btn.textContent;
+      btn.textContent = 'Enviando...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.textContent = '¡Solicitud enviada!';
+        btn.style.background = '#059669';
+        alert(`¡Gracias ${datos.nombre}! Hemos recibido tu solicitud para el plan ${datos.plan}.\n\nTe contactaremos por WhatsApp al ${datos.telefono} para confirmar los detalles.`);
+        form.reset();
+        btn.textContent = originalText;
+        btn.disabled = false;
+        btn.style.background = '';
+      }, 1500);
+    }
+  </script>
+</body>
+</html>

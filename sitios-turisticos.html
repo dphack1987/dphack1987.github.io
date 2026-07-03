@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sitios Turísticos del Quindío — Mapa Turístico</title>
+  <meta name="description" content="Los mejores sitios turísticos del Quindío: Parque del Café, Valle del Cocora, Mirador Mano de Acaime, ecoparques y más.">
+  <link rel="canonical" href="https://www.mapaturisticodelquindio.com/sitios-turisticos.html">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
+  <header class="page-hero">
+    <h1>🎡 Sitios Turísticos</h1>
+    <p>Los mejores destinos del Quindío con mapa, precios y contacto directo</p>
+  </header>
+  <div class="container">
+    <div class="search-bar" role="search">
+      <input type="search" id="q" placeholder="🔍 Buscar sitio, municipio o actividad..." aria-label="Buscar">
+      <button onclick="buscar()">Buscar</button>
+    </div>
+    <div class="filtros">
+      <button class="filtro-btn active" onclick="filtrar('todos',this)">Todos</button>
+      <button class="filtro-btn" onclick="filtrar('sitio-turistico',this)">🎡 Atracciones</button>
+      <button class="filtro-btn" onclick="filtrar('agencia',this)">🧭 Actividades</button>
+    </div>
+    <div style="margin-bottom:48px"><div id="mapa-interactivo"></div></div>
+    <div id="cards" class="cards-grid" role="list" aria-live="polite"></div>
+    <div id="empty" class="no-results" style="display:none"><div class="icon">🔍</div><p>Sin resultados.</p></div>
+    <div class="cta-anunciate">
+      <h2>¿Tienes un sitio turístico?</h2>
+      <p>Publica tu atracción y llega a miles de turistas que visitan el Quindío.</p>
+      <a href="./anunciate.html" class="btn-cta">📣 Publicar mi sitio</a>
+    </div>
+  </div>
+  <!-- Pautas -->
+  <div class="banner-strip">
+    <div class="banner-strip-inner">
+      <span class="banner-strip-label">Aliados</span>
+      <div class="banner-strip-track">
+        <div class="banner-item"><img src="./pautas/p1.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p2.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p3.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p4.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p5.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p6.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p7.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p8.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p9.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p10.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p11.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p12.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p1.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p2.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p3.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p4.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p5.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p6.png" alt="Anunciante" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col"><h4>🌿 Mapa Turístico</h4><p style="color:#6b7280;font-size:.9rem">La plataforma turística del Quindío.</p></div>
+      <div class="footer-col"><h4>Navegación</h4><a href="./index.html">Inicio</a><a href="./municipios-del-quindio.html">Municipios</a><a href="./alojamientos.html">Alojamientos</a><a href="./anunciate.html">Anúnciate</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 www.mapaturisticodelquindio.com</p></div>
+  </footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="./assets/js/datos.js"></script>
+  <script src="./assets/js/nav.js"></script>
+  <script>
+    const CATS = ['sitio-turistico','agencia'];
+    let todos = NEGOCIOS.filter(n=>CATS.includes(n.categoria));
+    let lista = [...todos];
+    const map = L.map('mapa-interactivo',{scrollWheelZoom:false}).setView([4.58,-75.65],10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap'}).addTo(map);
+    todos.forEach(n=>{if(!n.lat)return;L.marker([n.lat,n.lng]).addTo(map).bindPopup(`<b>${n.nombre}</b><br>${n.tipo}<br>${n.precio}<br><a href="https://wa.me/${n.whatsapp}" target="_blank">💬 WhatsApp</a>`)});
+    function render(l){
+      const c=document.getElementById('cards'),e=document.getElementById('empty');
+      c.innerHTML='';if(!l.length){e.style.display='block';return}e.style.display='none';
+      l.forEach(n=>{const d=document.createElement('article');d.className='biz-card';d.setAttribute('role','listitem');
+        d.innerHTML=`<div class="biz-card-img-wrap"><img src="${n.imagen}" alt="${n.nombre}" class="biz-card-img" loading="lazy"><span class="biz-badge ${n.nivel}">${n.nivel==='premium'?'⭐ Premium':'✓ Verificado'}</span></div>
+        <div class="biz-card-body"><div class="biz-tipo">${n.tipo}</div><h3>${n.nombre}</h3><p>${n.descripcion}</p>
+        <div class="biz-servicios">${n.servicios.slice(0,3).map(s=>`<span class="biz-tag">${s}</span>`).join('')}</div>
+        <div class="biz-precio">💰 ${n.precio}</div>
+        <div class="biz-actions"><a href="https://wa.me/${n.whatsapp}" target="_blank" rel="noopener" class="btn-wa">💬 WhatsApp</a><a href="${n.maps}" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a><a href="tel:${n.telefono}" class="btn-tel">📞</a></div></div>`;
+        c.appendChild(d)});
+    }
+    render(lista);
+    function filtrar(cat,btn){document.querySelectorAll('.filtro-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');lista=cat==='todos'?[...todos]:todos.filter(n=>n.categoria===cat);render(lista)}
+    function buscar(){const q=document.getElementById('q').value.toLowerCase().trim();if(!q){render(todos);return}render(todos.filter(n=>n.nombre.toLowerCase().includes(q)||n.descripcion.toLowerCase().includes(q)||n.municipio.toLowerCase().includes(q)||n.servicios.some(s=>s.toLowerCase().includes(q))))}
+    document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter')buscar()});
+  </script>
+</body>
+</html>

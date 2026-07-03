@@ -1,0 +1,20 @@
+HTTrack3.49-2+htsswf+htsjava launched on Wed, 03 Dec 2025 11:19:22 at https://parraprietodavid87.wixsite.com/mapaturisticoquin
+("C:\Program Files\WinHTTrack\httrack.exe" https://parraprietodavid87.wixsite.com/mapaturisticoquin -O sitio-liberado/httrack-mirror -%v -c8 -r2 -I )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+11:19:23	Warning: 	Note: due to https://parraprietodavid87.wixsite.com remote robots.txt rules, links beginning with these path will be forbidden: *?lightbox= (see in the options to disable this)
+11:20:58	Error: 	"Not Found" (404) at link https://parraprietodavid87.wixsite.com/ (from https://parraprietodavid87.wixsite.com/mapaturisticoquin)
+11:20:58	Error: 	"Not Found" (404) at link https://parraprietodavid87.wixsite.com/t (from https://parraprietodavid87.wixsite.com/mapaturisticoquin)
+11:20:58	Error: 	"Not Found" (404) at link https://parraprietodavid87.wixsite.com/e (from https://parraprietodavid87.wixsite.com/mapaturisticoquin)
+11:21:50	Error: 	"Not Found" (404) at link https://parraprietodavid87.wixsite.com/api/ (from https://parraprietodavid87.wixsite.com/mapaturisticoquin)
+11:21:50	Error: 	"Not Found" (404) at link https://parraprietodavid87.wixsite.com/envelope/ (from https://parraprietodavid87.wixsite.com/mapaturisticoquin)
+11:21:50	Error: 	"Not Found" (404) at link https://parraprietodavid87.wixsite.com/sitemap.xml (from https://parraprietodavid87.wixsite.com/mapaturisticoquin)
+11:21:50	Error: 	"Not Found" (404) at link https://parraprietodavid87.wixsite.com/feed.xml (from https://parraprietodavid87.wixsite.com/mapaturisticoquin)
+11:21:50	Error: 	"Not Found" (404) at link https://parraprietodavid87.wixsite.com/decodeURIComponent(e (from https://parraprietodavid87.wixsite.com/mapaturisticoquin)
+
+HTTrack Website Copier/3.49-2 mirror complete in 2 minutes 28 seconds : 45 links scanned, 36 files written (18712886 bytes overall) [4868889 bytes received at 32897 bytes/sec], 18732958 bytes transferred using HTTP compression in 44 files, ratio 25%
+(8 errors, 1 warnings, 0 messages)

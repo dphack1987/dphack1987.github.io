@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Municipios del Quindío — Guía Turística Completa</title>
+  <meta name="description" content="Conoce los 12 municipios del Quindío: Armenia, Salento, Circasia, Filandia, Montenegro, Quimbaya y más.">
+  <link rel="canonical" href="https://www.mapaturisticodelquindio.com/municipios-del-quindio.html">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <style>
+    .muni-detail{background:white;border-radius:24px;overflow:hidden;box-shadow:0 8px 32px rgba(16,185,129,.1);margin-bottom:28px;display:grid;grid-template-columns:220px 1fr;transition:all .3s}
+    .muni-detail:hover{box-shadow:0 16px 56px rgba(16,185,129,.18);transform:translateY(-4px)}
+    .muni-left{background:linear-gradient(135deg,#059669,#10b981);padding:36px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:white}
+    .muni-left .em{font-size:3.5rem;margin-bottom:10px}
+    .muni-left h2{font-size:1.4rem;font-weight:800;margin-bottom:6px}
+    .muni-left .km{background:rgba(255,255,255,.2);padding:5px 14px;border-radius:50px;font-size:.82rem;font-weight:700}
+    .muni-right{padding:28px}
+    .muni-right p{color:#6b7280;line-height:1.7;margin-bottom:16px}
+    .muni-negs h4{font-size:.9rem;font-weight:700;color:#064e3b;margin-bottom:10px}
+    .neg-chips{display:flex;flex-wrap:wrap;gap:8px}
+    .neg-chip{padding:7px 14px;background:#f0fdf4;color:#059669;border-radius:50px;font-size:.82rem;font-weight:600;border:1px solid #d1fae5;text-decoration:none;transition:all .2s}
+    .neg-chip:hover{background:#059669;color:white}
+    @media(max-width:640px){.muni-detail{grid-template-columns:1fr}.muni-left{padding:24px}}
+  </style>
+</head>
+<body>
+  <header class="page-hero">
+    <h1>🏘️ Municipios del Quindío</h1>
+    <p>12 municipios, cada uno con su propia magia. Descúbrelos todos.</p>
+  </header>
+  <div class="container">
+    <div style="margin-bottom:48px"><div id="mapa-interactivo"></div></div>
+    <div style="text-align:center;margin-bottom:32px">
+      <span class="section-label">Elige tu destino</span>
+      <h2 class="section-title">Los 12 municipios</h2>
+    </div>
+    <div class="municipios-grid" id="muni-grid" style="margin-bottom:60px"></div>
+    <div style="text-align:center;margin-bottom:36px">
+      <span class="section-label">Guía detallada</span>
+      <h2 class="section-title">Qué hacer en cada municipio</h2>
+    </div>
+    <div id="muni-detalle"></div>
+    <div class="cta-anunciate">
+      <h2>¿Tu negocio no aparece aquí?</h2>
+      <p>Publica tu empresa en el municipio correspondiente y llega a turistas que buscan exactamente lo que ofreces.</p>
+      <a href="./anunciate.html" class="btn-cta">📣 Publicar mi negocio</a>
+    </div>
+  </div>
+  <!-- Pautas Circasia -->
+  <div class="banner-strip">
+    <div class="banner-strip-inner">
+      <span class="banner-strip-label">Circasia</span>
+      <div class="banner-strip-track">
+        <div class="banner-item"><img src="./pautas_circasia/pauta1.jpg" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_circasia/pauta2.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_circasia/pauta3.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_circasia/pauta4.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_circasia/pauta5.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_circasia/pauta6.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_circasia/pauta7.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_circasia/pauta8.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_circasia/pauta1.jpg" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_circasia/pauta2.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_circasia/pauta3.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_circasia/pauta4.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_circasia/pauta5.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_circasia/pauta6.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_circasia/pauta7.png" alt="Anunciante Circasia" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_circasia/pauta8.png" alt="Anunciante Circasia" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col"><h4>🌿 Mapa Turístico</h4><p style="color:#6b7280;font-size:.9rem">La plataforma turística del Quindío.</p></div>
+      <div class="footer-col"><h4>Navegación</h4><a href="./index.html">Inicio</a><a href="./sitios-turisticos.html">Sitios Turísticos</a><a href="./alojamientos.html">Alojamientos</a><a href="./anunciate.html">Anúnciate</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 www.mapaturisticodelquindio.com</p></div>
+  </footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="./assets/js/datos.js"></script>
+  <script src="./assets/js/nav.js"></script>
+  <script>
+    const map=L.map('mapa-interactivo',{scrollWheelZoom:false}).setView([4.55,-75.68],9);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap'}).addTo(map);
+    MUNICIPIOS.forEach(m=>{
+      const negs=getNegociosByMunicipio(m.id);
+      L.circleMarker([m.lat,m.lng],{radius:10,fillColor:'#059669',color:'white',weight:3,fillOpacity:.85}).addTo(map)
+        .bindPopup(`<div style="min-width:180px;font-family:Inter,sans-serif"><div style="font-size:2rem">${m.emoji}</div><strong style="color:#064e3b">${m.nombre}</strong><br><span style="font-size:.8rem;color:#6b7280">${m.km>0?m.km+' km de Armenia':'Capital'}</span><p style="font-size:.85rem;margin:8px 0;color:#374151">${m.desc}</p>${negs.map(n=>`<span style="font-size:.78rem;color:#059669">• ${n.nombre}</span><br>`).join('')}</div>`);
+    });
+    const grid=document.getElementById('muni-grid');
+    MUNICIPIOS.forEach(m=>{
+      const a=document.createElement('a');a.className='muni-card';a.href=`#muni-${m.id}`;
+      a.innerHTML=`<div class="muni-emoji">${m.emoji}</div><h3>${m.nombre}</h3><p>${m.desc}</p><div class="muni-km">${m.km>0?'📍 '+m.km+' km de Armenia':'🏙️ Capital'}</div>`;
+      grid.appendChild(a);
+    });
+    const det=document.getElementById('muni-detalle');
+    MUNICIPIOS.forEach(m=>{
+      const negs=getNegociosByMunicipio(m.id);
+      const chips=negs.length?negs.map(n=>`<a href="https://wa.me/${n.whatsapp}" target="_blank" rel="noopener" class="neg-chip">${n.nombre}</a>`).join(''):`<span style="color:#9ca3af;font-size:.88rem">Próximamente — <a href="./anunciate.html" style="color:#059669;font-weight:700">Anúnciate</a></span>`;
+      const div=document.createElement('div');div.className='muni-detail';div.id=`muni-${m.id}`;
+      div.innerHTML=`<div class="muni-left"><div class="em">${m.emoji}</div><h2>${m.nombre}</h2><div class="km">${m.km>0?m.km+' km':'Capital'}</div></div><div class="muni-right"><p>${m.desc}</p><div class="muni-negs"><h4>🏢 Negocios en ${m.nombre}</h4><div class="neg-chips">${chips}</div></div></div>`;
+      det.appendChild(div);
+    });
+  </script>
+</body>
+</html>
