@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Quindío Comercial | Mapa Turístico del Quindío</title>
-  <meta name="description" content="Descubre los negocios locales del Quindío: tiendas, restaurantes, servicios y más, en el corazón del Eje Cafetero.">
-  <link rel="canonical" href="https://www.mapaturisticodelquindio.com/quindio-comercial.html">
+  <title>Municipios del Quindío | Mapa Turístico del Quindío</title>
+  <meta name="description" content="Descubre los 12 municipios del departamento del Quindío: Armenia, Salento, Circasia, Filandia, y más, en el corazón del Eje Cafetero.">
+  <link rel="canonical" href="https://www.mapaturisticodelquindio.com/municipios-del-quindio.html">
   <meta name="theme-color" content="#059669">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -108,6 +108,14 @@
     .mapa-frame-wrap{background:white;border-radius:24px;padding:12px;box-shadow:0 18px 60px rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.12)}
     .mapa-frame-wrap iframe{width:100%;height:600px;border-radius:16px;border:none;display:block}
 
+    /* MUNICIPIOS GRID */
+    .municipios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:48px}
+    .municipio-card{background:white;border-radius:18px;padding:28px;box-shadow:0 10px 40px rgba(16,185,129,.1);border:1px solid rgba(255,255,255,.8);transition:all .3s}
+    .municipio-card:hover{transform:translateY(-8px);box-shadow:0 18px 56px rgba(16,185,129,.2)}
+    .municipio-icon{font-size:3rem;margin-bottom:12px}
+    .municipio-card h3{font-size:1.4rem;font-weight:800;margin-bottom:8px}
+    .municipio-card p{color:var(--t3);font-size:.95rem}
+
     /* FOOTER */
     .footer{padding:48px 32px 32px;background:var(--dark);color:rgba(255,255,255,.8);text-align:center}
     .footer-logo{margin:0 auto 20px;height:56px;object-fit:contain}
@@ -132,8 +140,8 @@
         <a href="https://mapa-circasia-digital-2.vercel.app/" target="_blank" rel="noopener">Mapa de Circasia 2025</a>
         <a href="./alquiler-finca-hoteles.html">Alquiler Finca hoteles</a>
         <a href="https://mapaquindio.vercel.app/" target="_blank" rel="noopener">Mapa del Quindío</a>
-        <a href="./quindio-comercial.html" class="active">Quindío Comercial</a>
-        <a href="./municipios-del-quindio.html">Municipios del Quindío</a>
+        <a href="./quindio-comercial.html">Quindío Comercial</a>
+        <a href="./municipios-del-quindio.html" class="active">Municipios del Quindío</a>
         <a href="./agencias-operadoras-turisticas.html">Agencias Operadoras Turísticas</a>
         <a href="./sitios-turisticos.html">Atractivos Turísticos</a>
         <a href="./alojamientos.html">Alojamientos</a>
@@ -165,25 +173,98 @@
     <div class="hero-decor"></div>
     <div class="hero-inner">
       <div class="hero-text">
-        <div class="hero-badge">🏪 Comercio</div>
-        <h1 class="hero-title">Quindío<br><em>Comercial</em></h1>
-        <p class="hero-desc">Descubre los negocios locales del Quindío: tiendas, restaurantes, servicios y más, en el corazón del Eje Cafetero.</p>
+        <div class="hero-badge">🏘️ Municipios</div>
+        <h1 class="hero-title">12 Municipios<br><em>del Quindío</em></h1>
+        <p class="hero-desc">Descubre todos los municipios del departamento del Quindío, en el corazón del Eje Cafetero: Armenia, Salento, Circasia, Filandia y más.</p>
         <div class="hero-btns">
           <a href="#mapa" class="btn-hero">Ver mapa</a>
-          <a href="/" class="btn-hero-outline">Volver al inicio</a>
+          <a href="#municipios" class="btn-hero-outline">Ver municipios</a>
         </div>
       </div>
     </div>
     <div class="hero-scroll"><div class="hero-scroll-arrow"></div>Descubre más</div>
   </section>
 
+  <!-- MUNICIPIOS SECTION -->
+  <section class="mapa-section" id="municipios">
+    <div class="mapa-section-inner">
+      <div class="sec-head">
+        <div class="sec-chip">Municipios</div>
+        <h2 class="sec-h2">Los 12 Municipios del Quindío</h2>
+        <p class="sec-sub">Conoce cada pueblo y ciudad del departamento del Quindío.</p>
+      </div>
+      <div class="municipios-grid">
+        <div class="municipio-card">
+          <div class="municipio-icon">🏙️</div>
+          <h3>Armenia</h3>
+          <p>Capital del departamento, corazón del Eje Cafetero.</p>
+        </div>
+        <div class="municipio-card">
+          <div class="municipio-icon">🌄</div>
+          <h3>Salento</h3>
+          <p>Pueblo colorido, entrada al Valle del Cocora.</p>
+        </div>
+        <div class="municipio-card">
+          <div class="municipio-icon">🌳</div>
+          <h3>Circasia</h3>
+          <p>Pueblo tranquilo, famoso por sus fincas cafeteras.</p>
+        </div>
+        <div class="municipio-card">
+          <div class="municipio-icon">🏡</div>
+          <h3>Filandia</h3>
+          <p>Pueblo colonial, con vistas panorámicas.</p>
+        </div>
+        <div class="municipio-card">
+          <div class="municipio-icon">⛪</div>
+          <h3>Calarcá</h3>
+          <p>Pueblo cercano a Armenia, con bellas iglesias.</p>
+        </div>
+        <div class="municipio-card">
+          <div class="municipio-icon">🌺</div>
+          <h3>Montenegro</h3>
+          <p>Hogar del Parque Nacional del Café.</p>
+        </div>
+        <div class="municipio-card">
+          <div class="municipio-icon">🐎</div>
+          <h3>Quimbaya</h3>
+          <p>Pueblo con tradición en la ganadería y caficultura.</p>
+        </div>
+        <div class="municipio-card">
+          <div class="municipio-icon">🌿</div>
+          <h3>La Tebaida</h3>
+          <p>Pueblo rural, rodeado de naturaleza.</p>
+        </div>
+        <div class="municipio-card">
+          <div class="municipio-icon">🏞️</div>
+          <h3>Génova</h3>
+          <p>Pueblo en el sur del departamento.</p>
+        </div>
+        <div class="municipio-card">
+          <div class="municipio-icon">🌾</div>
+          <h3>Pijao</h3>
+          <p>Pueblo con paisajes cafeteros.</p>
+        </div>
+        <div class="municipio-card">
+          <div class="municipio-icon">🌲</div>
+          <h3>Córdoba</h3>
+          <p>Pueblo tranquilo y acogedor.</p>
+        </div>
+        <div class="municipio-card">
+          <div class="municipio-icon">🏜️</div>
+          <h3>Buenavista</h3>
+          <p>Pueblo con vistas impresionantes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- MAP SECTION -->
-  <section class="mapa-section" id="mapa">
+  <section class="mapa-section" id="mapa" style="background: white;">
     <div class="mapa-section-inner">
       <div class="sec-head">
         <div class="sec-chip">Mapa</div>
-        <h2 class="sec-h2">Negocios del Quindío</h2>
-        <p class="sec-sub">Explora todos los negocios locales en el mapa interactivo del departamento.</p>
+        <h2 class="sec-h2">Mapa de los Municipios</h2>
+        <p class="sec-sub">Explora los municipios del Quindío en el mapa interactivo.</p>
       </div>
       <div class="mapa-frame-wrap">
         <iframe src="https://mapaquindio.vercel.app/" title="Mapa del Quindío" loading="lazy" allow="fullscreen"></iframe>
