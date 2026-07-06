@@ -25,13 +25,14 @@
       div.className = 'pauta-grid-item';
       const waLink = (window.generateWhatsAppLink && typeof window.generateWhatsAppLink === 'function') ? window.generateWhatsAppLink(p) : (`https://wa.me/${(p.whatsapp||'')}`);
       const webp = (p.imagen || '').replace(/\.(png|jpe?g)$/i, '.webp');
+      const detailUrl = `./pauta.html?id=${encodeURIComponent(p.id)}`;
       div.innerHTML = `
         <picture>
           <source type="image/webp" srcset="${webp}">
           <img src="${p.imagen}" alt="${p.nombre}" loading="lazy" data-pauta-id="${p.id}" style="cursor:zoom-in">
         </picture>
         <div class="pauta-desc"><strong>${p.nombre}</strong><p>${p.desc||''}</p>
-        <div style="margin-top:8px;display:flex;gap:8px"><a href="${waLink}" target="_blank" rel="noopener" class="btn-wa">💬 WhatsApp</a><a href="#" class="btn-maps" data-pauta-map="${p.maps||'#'}">📍 Llegar</a></div>
+        <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap"><a href="${waLink}" target="_blank" rel="noopener" class="btn-wa">💬 WhatsApp</a><a href="${detailUrl}" class="btn-maps">📄 Ver ficha</a><a href="#" class="btn-maps" data-pauta-map="${p.maps||'#'}">📍 Llegar</a></div>
         </div>`;
       container.appendChild(div);
     });
