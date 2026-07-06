@@ -57,24 +57,32 @@ a{text-decoration:none;color:inherit}
 @media(max-width:768px){
   .menu-bar{display:none}
   .nav-toggle{display:flex}
-  .nav-drawer{top:80px}
+  .nav-drawer{top:80px;background:rgba(255,255,255,.98);border-top:0;border-bottom:0;padding:18px 20px;}
   .nav-drawer a{
-    background:#f8fafc;
+    display:block;
+    width:100%;
+    margin-bottom:10px;
+    background:#ffffff;
     color:var(--text2);
-    border:1px solid #d1fae5;
-    box-shadow:none;
-    border-radius:14px;
+    border:1px solid #e2e8f0;
+    box-shadow:0 6px 18px rgba(15,23,42,.04);
+    border-radius:16px;
+    padding:14px 16px;
   }
+  .nav-drawer a:last-child{margin-bottom:0}
   .nav-drawer a:hover{
-    background:rgba(16,185,129,.12);
+    background:rgba(16,185,129,.08);
     color:var(--g1);
-    border-color:rgba(16,185,129,.3);
+    border-color:rgba(16,185,129,.25);
   }
   .nav-drawer a.active{
     background:rgba(16,185,129,.15);
     color:var(--g1);
     border-color:rgba(16,185,129,.35);
   }
+  .nav-logo{position:static;left:auto;top:auto;margin-bottom:12px}
+  .header-top{justify-content:space-between;flex-wrap:nowrap}
+  .nav-toggle{order:2}
 }
 
 /* ── PAGE HERO ── */
