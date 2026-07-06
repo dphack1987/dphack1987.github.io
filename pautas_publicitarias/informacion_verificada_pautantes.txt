@@ -1,4 +1,4 @@
-. Quindío Travel
+1. Quindío Travel
 Tipo de servicio: Operador turístico.
 
 Nombre de contacto: Alvaro Alzate Ortiz.
@@ -15,7 +15,7 @@ Correo electrónico: quindiotravel@yahoo.com.
 
 Sitio web: www.quindiotravel.net.
 
-. Buen Vuelo Tours
+2. Buen Vuelo Tours
 Tipo de servicio: Agencia de viajes y turismo.
 
 Eslogan: "¡Somos tus cómplices en la aventura de explorar el mundo!"
@@ -32,7 +32,7 @@ Correo electrónico: reservas@buenvuelotours.com.
 
 Sitio web: www.buenvuelotours.com.
 
-. Del Eje (Experiencias de Turismo)
+3. Del Eje (Experiencias de Turismo)
 Tipo de servicio: Agencia de experiencias y turismo.
 
 Servicios: Alojamientos, Transporte, Entrada a los Parques temáticos.
@@ -47,7 +47,7 @@ Instagram: @agenciaexperienciasdeleje.
 
 Correo electrónico: comercial.hotelesdeleje@gmail.com.
 
-. Julián Arrubla Vélez
+4. Julián Arrubla Vélez
 Tipo de servicio: Guía de turismo - Tour guide / Guia cuyabro.
 
 Tarjeta Profesional (TP): 2719.
@@ -62,7 +62,7 @@ Correo electrónico: cuyabrito2@gmail.com.
 
 Redes / Perfil: Guia cuyabro.
 
-. Enlaces Viajes y Turismo
+5. Enlaces Viajes y Turismo
 Tipo de servicio: Agencia de viajes y turismo.
 
 Eslogan: "Experiencias que cambian vidas".
@@ -71,7 +71,7 @@ Dirección: Cra 13 A # 1N - 05 Local 3 (Armenia, Quindío).
 
 Celular: 322 654 2124.
 
-. Casa Campestre La Cosecha
+6. Casa Campestre La Cosecha
 Tipo de establecimiento: Casa campestre.
 
 Ubicación: Km 2.4 vía Armenia - Pueblo Tapao, Quindío - Colombia.
@@ -80,7 +80,7 @@ Celulares: 315 699 9060 - 310 353 6520.
 
 Correo electrónico: casacampestrelacosecha@gmail.com.
 
-. Finca Cafetera El Ocaso
+7. Finca Cafetera El Ocaso
 Tipo de establecimiento: Finca cafetera / Café - tour - hotel.
 
 Ubicación: Salento - Colombia.
@@ -89,7 +89,7 @@ Celular: +57 313 425 3669.
 
 Sitio web: www.fincaelocasosalento.com.
 
-. La Floresta Hotel Campestre
+8. La Floresta Hotel Campestre
 Tipo de establecimiento: Hotel campestre / Turismo ecológico.
 
 Eslogan: "Naturaleza que inspira, experiencia que transforma - Tradición en turismo ecológico".
@@ -110,7 +110,7 @@ Sitio web: www.hotelcampestrelafloresta.co.
 
 Correo electrónico: reservaslaflorestahotel@gmail.com.
 
-. Hacienda Moraleja
+9. Hacienda Moraleja
 Tipo de establecimiento: Hacienda / Alojamiento.
 
 Servicios: Restaurante, Glamping, Alojamiento, Eventos, Noche romántica.
@@ -123,7 +123,7 @@ Instagram: haciendamoraleja.
 
 Correo electrónico: haciendamoraleja@gmail.com.
 
-. Alma Nativa Hotel Campestre
+10. Alma Nativa Hotel Campestre
 Tipo de establecimiento: Hotel campestre.
 
 Eslogan: "Reconecta contigo".
@@ -138,7 +138,7 @@ Instagram: @almanativahotelcampestre.
 
 Sitio web: www.hotelcampestrealmanativa.com.
 
-. Hotel Café Café Campestre
+11. Hotel Café Café Campestre
 Tipo de establecimiento: Hotel campestre.
 
 Eslogan: "Tradición, naturaleza y confort en el Quindío".
@@ -149,7 +149,7 @@ Instagram: @hotelcampestrecafecafe.
 
 Sitio web: www.hotelcampestrecafecafe.com.
 
-. Hotel Delirio Campestre Quindío
+12. Hotel Delirio Campestre Quindío
 Tipo de establecimiento: Hotel campestre.
 
 Ubicación: Km 1 via Montenegro, Parque del cafe, Montenegro, Quindío.
@@ -160,7 +160,7 @@ Instagram: @hoteldelirio.
 
 Correo electrónico: reservas@deliriocampestre.com.
 
-. Linaje Salvaje
+13. Linaje Salvaje
 Tipo de establecimiento: Hotel.
 
 Ubicación: Vía Albania km 8 Vía Calarcá - Barcelona, Quindío.
@@ -177,14 +177,14 @@ Teléfonos: 606 733 9858 - 310 3983619.
 
 Instagram / Facebook: turronycafeaxm.
 
-. Cerámicas El Alfarero
+2. Cerámicas El Alfarero
 Tipo de servicio/Productos: Puesto de alfarero donde enseñan a hacer vasijas. Venta de productos de arcilla como ceniceros, móviles, pebeteros, candeleros de mesa y pared, materas pequeñas, lapiceras, joyeros, móviles de chorotes y bohíos.
 
 Ubicación: Centro Artesanal Plaza de Bolívar, Circasia - Quindío.
 
 Celular: 320 617 8498.
 
-. Reserva Natural Cascadas de Río Verde
+3. Reserva Natural Cascadas de Río Verde
 Tipo de servicio: Plan de pasadía turístico y ecoturismo.
 
 Incluye: Entrada a la reserva, póliza de accidentes, transporte en Willys desde Córdoba, recorrido experiencia, baño en las cascadas, acompañamiento permanente de un intérprete ambiental y cultural, guía de turismo, refrigerio y almuerzo.
@@ -195,14 +195,14 @@ Ubicación: Córdoba, Quindío.
 
 Informes: 317 4426044.
 
-. Complejo Turístico y Deportivo Soledén
+4. Complejo Turístico y Deportivo Soledén
 Tipo de servicio: Complejo recreativo y deportivo de Comfenalco Quindío.
 
 Planes destacados: Pasaporte multiatracciones que incluye piscinas, lago, tirolina, almuerzo y refrigerio.
 
 Sitio web: soleden.co.
 
-. Ecoparque Peñas Blancas
+5. Ecoparque Peñas Blancas
 Tipo de alojamiento/servicio: Ecobachaco (alojamiento ancestral en superadobe).
 
 Sitios web:
@@ -213,7 +213,7 @@ www.ecoparquepenasblancas.com
 
 Celular: 3103967951.
 
-. Finca Las Flores
+6. Finca Las Flores
 Tipo de servicio: Recorrido de cacao tradicional.
 
 Ubicación: Finca Las Flores, Vereda las Brisas, Génova - Quindío.
@@ -224,7 +224,7 @@ Instagram / Facebook: La ruta del cacao Génova.
 
 Celular: +57 320 9555062.
 
-. La Pequeña Granja de Mamá Lulú
+7. La Pequeña Granja de Mamá Lulú
 Tipo de servicio: Turismo académico y científico, recorridos agroecológicos, posada nativa, restaurante típico y tienda artesanal.
 
 Ubicación: Vereda Palermo, Quimbaya, Quindío, Colombia.
@@ -235,7 +235,7 @@ Correo electrónico: granjaluluquimbaya@yahoo.es.
 
 Sitio web: www.granjamamalulu.com.
 
-. Jardín Botánico del Quindío
+8. Jardín Botánico del Quindío
 Tipo de servicio: Centro de investigación, educación y conservación ambiental.
 
 Atractivos: Avistamiento de aves endémicas, mariposas exóticas y escondidas, mariposario único.
@@ -246,7 +246,7 @@ WhatsApp: +57 310 4045223.
 
 Correo electrónico: comunicaciones@jardinbotanicoquindio.org.
 
-. El Laberinto Mil Caminos
+9. El Laberinto Mil Caminos
 Tipo de servicio: Atracción turística / Laberinto.
 
 Ubicación: Vereda Morelia Alta, Quimbaya, Quindío.
@@ -255,7 +255,7 @@ Teléfono / WhatsApp: 317 1129239.
 
 Sitio web y entradas: www.laberintomilcaminos.com.
 
-. Mirador Encanto Filandia
+10. Mirador Encanto Filandia
 Tipo de servicio: Mirador y cafetería.
 
 Ubicación: Calle 7 #7-29, Filandia, Colombia.
@@ -263,12 +263,12 @@ Ubicación: Calle 7 #7-29, Filandia, Colombia.
 Celular: 320 9369950.
 
 Facebook: encantofilandia.
-. Turismo PANACA
+1. Turismo PANACA
 Eslogan / Mensaje: "Diseñamos experiencias que se sienten, se viven y se recuerdan. En Turismo PANACA creamos planes para viajar, aprender y compartir".
 
 Acción: Reserva ahora.
 
-. Parque Los Arrieros
+2. Parque Los Arrieros
 Eslogan: "Tradición, cultura y diversión en familia".
 
 Ubicación: Quimbaya - Quindío.
@@ -277,7 +277,7 @@ WhatsApp: 3136107681.
 
 Sitio web: www.parquelosarrieros.com.
 
-. Q'inti (Parque en la Montaña)
+3. Q'inti (Parque en la Montaña)
 Atractivos: La Casa Cafetera al Revés, 17 estaciones para tomar fotografías.
 
 Ubicación: Córdoba, Quindío.
@@ -286,7 +286,7 @@ Celular: 312 6815139.
 
 Correo electrónico: qintiparque@gmail.com.
 
-. Finca La Alejandra (Territorio Paisaje)
+4. Finca La Alejandra (Territorio Paisaje)
 Tipo de servicio: Recorrido Cacaotero.
 
 Eslogan: "¡Tu experiencia con el chocolate! Un plan diferente en el Quindío... Deleita tus sentidos con el proceso del chocolate del árbol a la taza. Te esperamos".
@@ -297,7 +297,7 @@ Instagram: @territoriopaisaje / @laalejandracacao.
 
 Contactos: 314 657 3393 - 300 7921748.
 
-. Recuca
+5. Recuca
 Tipo de servicio: Recorrido de la cultura cafetera.
 
 Ubicación: Calarcá - Quindío.
@@ -310,7 +310,7 @@ Correo electrónico: luchorecuca@hotmail.com.
 
 Sitio web: www.recuca.com.
 
-. Centro Comercial SanSur
+6. Centro Comercial SanSur
 Eslogan: "Eventos y promociones para toda la familia".
 
 Categorías / Servicios: Moda, Calzado, Belleza, Tecnología, Comida, Café, Juegos, Supermercado, Cajero y mucho más.
@@ -325,7 +325,7 @@ Lunes a Viernes: 8:00 AM – 9:00 PM.
 
 Sábados, Domingos y Festivos: 8:00 AM – 10:00 PM.
 
-. Unicentro Armenia
+7. Unicentro Armenia
 Eslogan: "Un espacio para tod@s".
 
 Instagram: @UNICENTROARMENIAOFICIAL.
@@ -342,14 +342,14 @@ Celular: 302 3478080
 
 Dirección: Carrera 14 # 14Norte - 30
 
-. Cantina El Desmadre
+2. Cantina El Desmadre
 Instagram: @eldesmadrecantina.axm
 
 Dirección: Cra 16 # 21N, Barrio Laureles; Armenia Q
 
 Reservas: +57 313 7768567
 
-. La Fogata Steak House
+3. La Fogata Steak House
 Año de establecimiento: ESTD 1963
 
 WhatsApp: 312 248 02 91
@@ -358,7 +358,7 @@ Dirección: AV BOLÍVAR 14N – 39
 
 Ubicación: ARMENIA – QUINDÍO
 
-. La Fogata Express
+4. La Fogata Express
 Ubicación: CIRCASIA ROOF TOP
 
 Dirección: CENTRO ARTESANAL PARQUE PRINCIPAL
@@ -367,26 +367,26 @@ Piso: PISO 3
 
 Teléfono: 310 214 71 35
 
-. Restaurante Magangué Altavista
+5. Restaurante Magangué Altavista
 WhatsApp: +57 318 6011957
 
 Dirección: Calle 17 # 13 - 50 Segundo Piso
 
 Ubicación: Por Calle Real, Armenia, Colombia
 
-. Classic Arepa Town Fast Food
+6. Classic Arepa Town Fast Food
 Dirección: Calle 50 Containers de los naranjos local 10, Armenia, Colombia
 
 WhatsApp / Celular: 314 5621785
 
-. John Chewing Food
+7. John Chewing Food
 Eslogan: ¡La Buena Comida Alegra la Vida!
 
 Domicilio: 322 839 1293 - 305 341 3183
 
 Dirección: Antiguo Estadio San Jose, Frente a las canchas sintéticas local 1
 
-. MostRicos
+8. MostRicos
 Plato destacado: BOMBA NUCLEAR
 
 Sede 1: Barrio Granada Cra 23e 11-84 Piso 2
@@ -397,7 +397,7 @@ Domicilios: 304 245 1420
 
 Instagram: @mostricosarmenia
 
-. SánDukes
+9. SánDukes
 Eslogan: ¡Comiendo SANO Y delicioso!
 
 Menú Sánduches:
@@ -436,7 +436,7 @@ Correo electrónico: caminoalfutbolarmenia@gmail.com
 
 Teléfono: 316 4026653
 
-. Soledén (Comfenalco Quindío)
+2. Soledén (Comfenalco Quindío)
 Mensaje: "En Soledén tienes planes para todos los gustos y todas las edades".
 
 Oferta: Pasaporte multiatracciones (paquete completo de diversión desde $13.600).
@@ -447,14 +447,14 @@ Sitio web / Informes: soleden.co
 
 Entidad: Vigilado Supersubsidio.
 
-. El Fogón Cuyabro
+3. El Fogón Cuyabro
 Eslogan: ¡Sabor de Casa, Corazón Paisa! Sabor que nace de nuestras raíces.
 
 Dirección: Parque Sucre, carrera 14 #12-48.
 
 Domicilios: 311 386 2329.
 
-. El Roble
+4. El Roble
 Mensaje: Ven a vivir El Roble.
 
 Tipo de comida: Comida típica con la mejor sazón.
@@ -465,7 +465,7 @@ Reserva aquí: 317 517 1403.
 
 Acción: Escanea para ver el menú.
 
-. La Feria del Plátano
+5. La Feria del Plátano
 Tipo de comida: Comida típica.
 
 Platos destacados: Sancocho de gallina, Bandeja paisa, Chuleta de cerdo.
@@ -476,14 +476,14 @@ Instagram: @laferiadelplatano.
 
 Nuestras sedes: Sede Sagrada Familia - Sede Privilegio Mall.
 
-. Ecoparque Peñas Blancas
+6. Ecoparque Peñas Blancas
 Servicio destacado: Ecobachaco (Alojamiento ancestral en superadobe, temperatura constante, sueño profundo y relajamiento total).
 
 Sitios web: www.calarca.net/ecoparquepenasblancas / www.ecoparquepenasblancas.com.
 
 Celular: 310 3967951.
 
-. Hacienda Moraleja
+7. Hacienda Moraleja
 Servicios: Restaurante, Glamping, Alojamiento, Eventos, Noche romántica.
 
 Instagram: haciendamoraleja.
@@ -500,7 +500,7 @@ Nombre de la agrupación: ORQUESTA QUINTA BASE.
 
 Celular: 313 683 31 86.
 
-. Hotel El Bosque (hotel_el_bosque_armenia.jpg)
+2. Hotel El Bosque (hotel_el_bosque_armenia.jpg)
 Ubicación general: ARMENIA QUINDIO.
 
 Lema: LO MEJOR EN CALIDAD Y PRECIO EN EL CENTRO DE LA CIUDAD.
@@ -509,7 +509,7 @@ Teléfono: 3176471482.
 
 Nombre del establecimiento: HOTEL EL BOSQUE.
 
-. Isa Victory Hotel (hotel_isa_victory.jpg)
+3. Isa Victory Hotel (hotel_isa_victory.jpg)
 Nombre: ISAVICTORY HOTEL.
 
 Lema / Descripción: Comfort, diseño y ubicación premium en el norte de Armenia, Quindío.
@@ -552,7 +552,7 @@ Sitio web: www.isavictoryhotelboutique.com.co
 
 Reservas: Indicado junto a un código QR.
 
-. Hotel San Jerónimo (hotel_san_jeronimo.jpg)
+4. Hotel San Jerónimo (hotel_san_jeronimo.jpg)
 Nombre: Hotel SAN JERONIMO.
 
 Eslogan: A better rest just one place.
@@ -569,7 +569,7 @@ Teléfono: +57 310 831 4719
 
 Dirección: Cra 14 #14-14 Armenia-Quindío
 
-. Reina Querida (reina__querida.jpg)
+5. Reina Querida (reina__querida.jpg)
 Nombre de la marca: Reina Querida (Piononos & cremas).
 
 Frases destacadas:
@@ -584,7 +584,7 @@ Dirección / Ubicación: Calle 22 Norte 14-40 Edificio Zona-L lc 6, Armenia, Qui
 
 Especialidad: Piononos y cremas.
 
-. Confia Seguros (seguros_confia.jpg)
+6. Confia Seguros (seguros_confia.jpg)
 Nombre de la empresa: CONFIA SEGUROS.
 
 Lema: Respaldo y Tranquilidad.
@@ -599,7 +599,7 @@ Teléfono: 315 486 1761
 
 Correo electrónico: diana.prieto@asesorsura.com
 
-. Anatolia (anatolia.jpg)
+7. Anatolia (anatolia.jpg)
 Nombre: Anatolia.
 
 Eslogan: Un encuentro de sabores en Quindio.
@@ -608,7 +608,7 @@ Dirección y Ubicación: Avenida 19 # 35 norte 41, Armenia, Quindio.
 
 Celular: 311 701 1653.
 
-. Artesanías Turrón y Café (artesanias_turronycafe_2.jpg)
+8. Artesanías Turrón y Café (artesanias_turronycafe_2.jpg)
 Nombre comercial: Artesanías Turrón y Café.
 
 Categorías mencionadas: ARTESANÍAS, BISUTERÍA, DULCERIA Y MUCHO MAS...
@@ -623,7 +623,7 @@ Redes sociales: Facebook e Instagram: turronycafeaxm.
 A continuación, presento la transcripción detallada y organizada del texto de cada una de las imágenes proporcionadas:
 
 Sector Cafeterías y Experiencias de Café
-. Café La Terraza (cafe_la_terraza.jpg)
+1. Café La Terraza (cafe_la_terraza.jpg)
 Nombre: Café La Terraza.
 
 Ubicación: ¡Visítanos en la Plaza de Bolívar! Cll 20 entre Carreras 14 y 15.
@@ -636,7 +636,7 @@ Lema: Tu café de origen, siempre fresco y delicioso.
 
 Redes sociales: Facebook: /Café La Terraza - Armenia.
 
-. Café Sensorial (cafe_sensorial.jpg)
+2. Café Sensorial (cafe_sensorial.jpg)
 Nombre: Café Sensorial.
 
 Lema: Tu historia en cada taza / Aroma, tradición.
@@ -649,7 +649,7 @@ Ubicación: Parque Fundadores – Local 07.
 
 Contacto: Llámanos o escríbenos por WhatsApp: 311 711 3473.
 
-. Queso & Café (queso_y_cafe.jpg)
+3. Queso & Café (queso_y_cafe.jpg)
 Nombre: Queso & Café.
 
 Lema: Armenia - Quindío • Tradición •.
@@ -658,7 +658,7 @@ Descripción: ¡Llegamos a Laureles, Armenia! Ven y disfruta de los mejores pand
 
 Ubicación: Calle 22 Norte Cra 14 - 28 Edificio Torre Ele local 1.
 
-. Tienda de Café & Academia Cafeína (tienda_de_cafe_y_academia_cafeina.jpg)
+4. Tienda de Café & Academia Cafeína (tienda_de_cafe_y_academia_cafeina.jpg)
 Nombre: Cafeína Coffee Shop.
 
 Especialidad: Tienda de café & academia.
@@ -690,7 +690,7 @@ Instagram: @Cafeina.coffeeshop
 Facebook: cafeina coffee shop
 
 Sector Turismo y Alojamiento
-. Del Eje Experiencias de Turismo (del_eje_2.jpg)
+5. Del Eje Experiencias de Turismo (del_eje_2.jpg)
 Nombre: Del Eje - Experiencias de Turismo.
 
 Servicios: Alojamientos, Transporte, Entrada a los Parques temáticos.
@@ -708,7 +708,7 @@ Correo electrónico: comercial.hotelesdeleje@gmail.com
 Redes sociales: Instagram: @agenciaexperienciasdeleje (incluye código QR).
 
 Sector Transporte y Agencias de Viajes
-. Radio Taxi del Quindío (radio_taxi.jpg)
+6. Radio Taxi del Quindío (radio_taxi.jpg)
 Nombre: Radio Taxi del Quindío (Desde 1991).
 
 Lema: Pide un taxi a cualquier hora del día 24/7.
@@ -721,7 +721,7 @@ PBX: 7462222
 
 WhatsApp: 311 542 2222
 
-. Rutas y Turismo (rutas_y_turismo.jpg)
+7. Rutas y Turismo (rutas_y_turismo.jpg)
 Nombre: Rutas y Turismo - Agencia de Viajes.
 
 Especialidad: Transportes Especiales.
@@ -736,7 +736,7 @@ Correos electrónicos: rutasturismo01@gmail.com / reservas@rutasyturismo.com
 
 Sitio Web: www.rutasyturismo.com (incluye código QR).
 
-. Joselu Transporte y Turismo (transportes_joselu.jpg)
+8. Joselu Transporte y Turismo (transportes_joselu.jpg)
 Nombre: J- Joselu Transporte y Turismo.
 
 Eslogan: ¿A dónde quieres ir hoy?
@@ -747,7 +747,7 @@ Teléfono / WhatsApp: 302 2153132 / +57 302 2153132
 
 Correo electrónico: gerenciajoselu@gmail.com
 
-. Mocca Aventura y Café (transportes_mocca.jpg)
+9. Mocca Aventura y Café (transportes_mocca.jpg)
 Nombre: Mocca Aventura y Café.
 
 Descripción: Operadora y transporte turístico. Somos una operadora turística y de transporte del eje cafetero, donde cada tour es a través del corazón del eje.
@@ -760,7 +760,7 @@ Instagram: @mocca_c.f
 
 Facebook: mocca aventura y café
 
-. Transportes Unión Cafetera (transportes_union_cafetera.jpg)
+10. Transportes Unión Cafetera (transportes_union_cafetera.jpg)
 Nombre de la marca: Transequin - Unión Cafetera.
 
 Registro Nacional de Turismo: RNT 65574.

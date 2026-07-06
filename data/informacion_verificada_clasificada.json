@@ -1,0 +1,521 @@
+{
+  "agencias_y_operadores": [
+    {
+      "id": "quindio-travel",
+      "nombre": "Quindío Travel",
+      "tipo": "Operador turístico",
+      "descripcion": "Planes turísticos para el Quindío y el Eje Cafetero.",
+      "ubicacion": "Armenia, Quindío",
+      "telefono": "3174426044",
+      "email": "quindiotravel@yahoo.com",
+      "website": "www.quindiotravel.net"
+    },
+    {
+      "id": "buen-vuelo-tours",
+      "nombre": "Buen Vuelo Tours",
+      "tipo": "Agencia de viajes y turismo",
+      "descripcion": "Experiencias turísticas con reserva y acompañamiento personalizado.",
+      "ubicacion": "Armenia, Quindío",
+      "whatsapp": "3012042819",
+      "instagram": "@buenvuelotours",
+      "email": "reservas@buenvuelotours.com",
+      "website": "www.buenvuelotours.com"
+    },
+    {
+      "id": "enlaces-viajes-y-turismo",
+      "nombre": "Enlaces Viajes y Turismo",
+      "tipo": "Agencia de viajes y turismo",
+      "descripcion": "Agencia especializada en experiencias de turismo en el Quindío.",
+      "ubicacion": "Cra 13 A # 1N - 05 Local 3, Armenia, Quindío",
+      "telefono": "3226542124"
+    },
+    {
+      "id": "turismo-panaca",
+      "nombre": "Turismo PANACA",
+      "tipo": "Operador turístico",
+      "descripcion": "Diseñan experiencias para viajar, aprender y compartir.",
+      "website": "www.panaca.co"
+    }
+  ],
+  "guias_turisticos": [
+    {
+      "id": "julian-arrubla-velez",
+      "nombre": "Julián Arrubla Vélez",
+      "tipo": "Guía de turismo",
+      "descripcion": "Tour guide / Guia cuyabro registrado en el RNT.",
+      "rnt": "66504",
+      "whatsapp": "+573218995839",
+      "email": "cuyabrito2@gmail.com"
+    }
+  ],
+  "alojamientos": [
+    {
+      "id": "casa-campestre-la-cosecha",
+      "nombre": "Casa Campestre La Cosecha",
+      "tipo": "Casa campestre",
+      "descripcion": "Casa campestre en Km 2.4 vía Armenia - Pueblo Tapao.",
+      "ubicacion": "Km 2.4 vía Armenia - Pueblo Tapao, Quindío",
+      "telefonos": ["3156999060", "3103536520"],
+      "email": "casacampestrelacosecha@gmail.com"
+    },
+    {
+      "id": "finca-cafetera-el-ocaso",
+      "nombre": "Finca Cafetera El Ocaso",
+      "tipo": "Finca cafetera / Hotel",
+      "descripcion": "Finca cafetera con tour, alojamiento y café en Salento.",
+      "ubicacion": "Salento, Quindío",
+      "telefono": "+573134253669",
+      "website": "www.fincaelocasosalento.com"
+    },
+    {
+      "id": "la-floresta-hotel-campestre",
+      "nombre": "La Floresta Hotel Campestre",
+      "tipo": "Hotel campestre",
+      "descripcion": "Hotel ecológico con circuito ecológico, piscina y auditorio.",
+      "ubicacion": "Km 3 vía Armenia al aeropuerto, Quindío",
+      "telefonos": ["+573123281021", "3155479289"],
+      "instagram": "@florestahotelcampestrearmenia",
+      "website": "www.hotelcampestrelafloresta.co",
+      "email": "reservaslaflorestahotel@gmail.com"
+    },
+    {
+      "id": "hacienda-moraleja",
+      "nombre": "Hacienda Moraleja",
+      "tipo": "Hacienda / Alojamiento",
+      "descripcion": "Restaurante, glamping, alojamiento y eventos en Calarcá.",
+      "ubicacion": "Km 7 Vía Calarcá / Barcelona, Quindío",
+      "telefono": "3206834432",
+      "email": "haciendamoraleja@gmail.com",
+      "instagram": "@haciendamoraleja"
+    },
+    {
+      "id": "alma-nativa-hotel-campestre",
+      "nombre": "Alma Nativa Hotel Campestre",
+      "tipo": "Hotel campestre",
+      "descripcion": "Hotel campestre con habitaciones familiares, dobles y luxury.",
+      "ubicacion": "Calarcá Vía Barcelona, Vereda La Albania",
+      "whatsapp": "+573105752469",
+      "instagram": "@almanativahotelcampestre",
+      "website": "www.hotelcampestrealmanativa.com"
+    },
+    {
+      "id": "hotel-cafe-cafe-campestre",
+      "nombre": "Hotel Café Café Campestre",
+      "tipo": "Hotel campestre",
+      "descripcion": "Tradición, naturaleza y confort en el Quindío.",
+      "telefonos": ["3114187558", "3118146565"],
+      "instagram": "@hotelcampestrecafecafe",
+      "website": "www.hotelcampestrecafecafe.com"
+    },
+    {
+      "id": "hotel-delirio-campestre-quindio",
+      "nombre": "Hotel Delirio Campestre Quindío",
+      "tipo": "Hotel campestre",
+      "descripcion": "Alojamiento con aire campestre en Montenegro, cerca del Parque del Café.",
+      "ubicacion": "Km 1 vía Montenegro, Parque del Café, Montenegro",
+      "telefono": "3202568458",
+      "instagram": "@hoteldelirio",
+      "email": "reservas@deliriocampestre.com"
+    },
+    {
+      "id": "linaje-salvaje",
+      "nombre": "Linaje Salvaje",
+      "tipo": "Hotel",
+      "descripcion": "Hotel ubicado en vía Albania km 8 vía Calarcá - Barcelona.",
+      "whatsapp": "3137321433",
+      "instagram": "@linajesalvajehotel"
+    },
+    {
+      "id": "hotel-el-bosque",
+      "nombre": "Hotel El Bosque",
+      "tipo": "Hotel",
+      "descripcion": "Hotel en el centro de Armenia con buena relación calidad-precio.",
+      "telefono": "3176471482"
+    },
+    {
+      "id": "isa-victory-hotel",
+      "nombre": "Isa Victory Hotel",
+      "tipo": "Hotel boutique",
+      "descripcion": "Hotel premium con gimnasio, restaurante, coworking y sky club.",
+      "ubicacion": "Av Bolívar 21 Norte 47, Armenia",
+      "telefonos": ["067340909", "+573207707079", "3207707019"],
+      "email": "reservas@isavictoryhotel.com",
+      "website": "www.isavictoryhotelboutique.com.co"
+    },
+    {
+      "id": "hotel-san-jeronimo",
+      "nombre": "Hotel San Jerónimo",
+      "tipo": "Hotel",
+      "descripcion": "Hotel moderno con desayuno, WiFi y aire acondicionado.",
+      "ubicacion": "Cra 14 #14-14, Armenia",
+      "telefono": "+573108314719",
+      "instagram": "@sanjeronimoarmeniaquindio",
+      "email": "hotelsanjeronimoarmenia@gmail.com"
+    }
+  ],
+  "atractivos_y_experiencias": [
+    {
+      "id": "reserva-natural-cascadas-rio-verde",
+      "nombre": "Reserva Natural Cascadas de Río Verde",
+      "tipo": "Plan de pasadía turístico y ecoturismo",
+      "descripcion": "Reserva natural con transporte en Willys, guía ambiental y almuerzo.",
+      "ubicacion": "Córdoba, Quindío",
+      "telefono": "3174426044",
+      "operador": "Quindío Travel"
+    },
+    {
+      "id": "complejo-soleden",
+      "nombre": "Complejo Turístico y Deportivo Soledén",
+      "tipo": "Complejo recreativo y deportivo",
+      "descripcion": "Pasaporte multiatracciones con piscinas, lago, tirolesa y comida.",
+      "website": "soleden.co"
+    },
+    {
+      "id": "ecoparque-penas-blancas",
+      "nombre": "Ecoparque Peñas Blancas",
+      "tipo": "Ecoparque",
+      "descripcion": "Alojamiento ancestral en superadobe y experiencias ecológicas.",
+      "website": "www.calarca.net/ecoparquepenasblancas",
+      "telefono": "3103967951"
+    },
+    {
+      "id": "finca-las-flores",
+      "nombre": "Finca Las Flores",
+      "tipo": "Recorrido de cacao tradicional",
+      "descripcion": "Experiencia del cacao en Génova con recorridos y talleres.",
+      "email": "larutadelcacaogenova@gmail.com",
+      "instagram": "La ruta del cacao Génova",
+      "telefono": "+573209555062"
+    },
+    {
+      "id": "la-pequena-granja-de-mama-lulu",
+      "nombre": "La Pequeña Granja de Mamá Lulú",
+      "tipo": "Turismo académico y científico",
+      "descripcion": "Recorridos agroecológicos, posada nativa y restaurante típico.",
+      "ubicacion": "Vereda Palermo, Quimbaya",
+      "telefonos": ["3113894646", "3128319359"],
+      "email": "granjaluluquimbaya@yahoo.es",
+      "website": "www.granjamamalulu.com"
+    },
+    {
+      "id": "jardin-botanico-del-quindio",
+      "nombre": "Jardín Botánico del Quindío",
+      "tipo": "Atractivo ambiental",
+      "descripcion": "Centro de conservación con mariposario y avistamiento de aves.",
+      "ubicacion": "Av. Centenario No. 15-190, Calarcá",
+      "whatsapp": "+573104045223",
+      "email": "comunicaciones@jardinbotanicoquindio.org"
+    },
+    {
+      "id": "el-laberinto-mil-caminos",
+      "nombre": "El Laberinto Mil Caminos",
+      "tipo": "Atracción turística",
+      "descripcion": "Laberinto turístico en Quimbaya con visitas y actividades familiares.",
+      "telefono": "3171129239",
+      "website": "www.laberintomilcaminos.com"
+    },
+    {
+      "id": "mirador-encanto-filandia",
+      "nombre": "Mirador Encanto Filandia",
+      "tipo": "Mirador y cafetería",
+      "descripcion": "Mirador con cafetería y vistas panorámicas en Filandia.",
+      "ubicacion": "Calle 7 #7-29, Filandia",
+      "telefono": "3209369950",
+      "facebook": "encantofilandia"
+    },
+    {
+      "id": "parque-los-arrieros",
+      "nombre": "Parque Los Arrieros",
+      "tipo": "Parque temático",
+      "descripcion": "Parque familiar de tradición y cultura en Quimbaya.",
+      "ubicacion": "Quimbaya, Quindío",
+      "whatsapp": "3136107681",
+      "website": "www.parquelosarrieros.com"
+    },
+    {
+      "id": "qinti-parque-en-la-montana",
+      "nombre": "Q'inti (Parque en la Montaña)",
+      "tipo": "Parque temático",
+      "descripcion": "Parque con la Casa Cafetera al Revés y 17 estaciones fotográficas.",
+      "ubicacion": "Córdoba, Quindío",
+      "telefono": "3126815139",
+      "email": "qintiparque@gmail.com"
+    },
+    {
+      "id": "finca-la-alejandra-territorio-paisaje",
+      "nombre": "Finca La Alejandra (Territorio Paisaje)",
+      "tipo": "Recorrido cacaotero",
+      "descripcion": "Experiencia de chocolate del árbol a la taza con alojamiento y transporte.",
+      "instagram": "@territoriopaisaje / @laalejandracacao",
+      "telefonos": ["3146573393", "3007921748"]
+    },
+    {
+      "id": "recuca",
+      "nombre": "Recuca",
+      "tipo": "Recorrido de cultura cafetera",
+      "descripcion": "Experiencia del café con visitas guiadas en Calarcá.",
+      "telefonos": ["3108303779", "3113839885", "3108303780"],
+      "email": "luchorecuca@hotmail.com",
+      "website": "www.recuca.com"
+    }
+  ],
+  "transporte": [
+    {
+      "id": "radio-taxi-del-quindio",
+      "nombre": "Radio Taxi del Quindío",
+      "tipo": "Taxi 24/7",
+      "descripcion": "Servicio de taxis con app disponible para descarga.",
+      "telefono": "7462222",
+      "whatsapp": "3115422222"
+    },
+    {
+      "id": "rutas-y-turismo",
+      "nombre": "Rutas y Turismo",
+      "tipo": "Agencia de transporte especial",
+      "descripcion": "Transporte para eventos, alojamiento rural y guianza especializada.",
+      "telefonos": ["3104631678", "3105386253"],
+      "emails": ["rutasturismo01@gmail.com", "reservas@rutasyturismo.com"],
+      "website": "www.rutasyturismo.com"
+    },
+    {
+      "id": "joselu-transporte-y-turismo",
+      "nombre": "Joselu Transporte y Turismo",
+      "tipo": "Transporte turístico",
+      "descripcion": "Servicio de transporte turístico para rutas y paseos del Eje Cafetero.",
+      "telefono": "3022153132",
+      "whatsapp": "+573022153132",
+      "email": "gerenciajoselu@gmail.com"
+    },
+    {
+      "id": "mocca-aventura-y-cafe",
+      "nombre": "Mocca Aventura y Café",
+      "tipo": "Operadora y transporte turístico",
+      "descripcion": "Tours y transporte turístico con enfoque en experiencias cafeteras.",
+      "telefonos": ["3117043170", "3123695751"],
+      "instagram": "@mocca_c.f",
+      "facebook": "mocca aventura y café"
+    },
+    {
+      "id": "transportes-union-cafetera",
+      "nombre": "Transportes Unión Cafetera",
+      "tipo": "Transporte especializado",
+      "descripcion": "Transporte escolar, empresarial, de salud y turístico con RNT.",
+      "rnt": "65574",
+      "telefonos": ["3005908383", "3103099222"],
+      "email": "secretariatransequin@gmail.com",
+      "website": "www.unioncafetera.com"
+    }
+  ],
+  "gastronomia": [
+    {
+      "id": "dos-cielos-boutique-de-licores",
+      "nombre": "Dos Cielos Boutique de Licores",
+      "tipo": "Tiendas de licores",
+      "descripcion": "Boutique de licores en Armenia.",
+      "instagram": "@doscielos.axm",
+      "telefono": "3023478080",
+      "ubicacion": "Carrera 14 # 14Norte - 30"
+    },
+    {
+      "id": "cantina-el-desmadre",
+      "nombre": "Cantina El Desmadre",
+      "tipo": "Restaurante",
+      "descripcion": "Cantina con ambiente juvenil y reservaciones en Armenia.",
+      "instagram": "@eldesmadrecantina.axm",
+      "ubicacion": "Cra 16 # 21N, Barrio Laureles, Armenia",
+      "telefono": "+573137768567"
+    },
+    {
+      "id": "la-fogata-steak-house",
+      "nombre": "La Fogata Steak House",
+      "tipo": "Restaurante",
+      "descripcion": "Restaurante clásico fundado en 1963 en Armenia.",
+      "whatsapp": "3122480291",
+      "direccion": "Av Bolivar 14N – 39, Armenia"
+    },
+    {
+      "id": "la-fogata-express",
+      "nombre": "La Fogata Express",
+      "tipo": "Restaurante",
+      "descripcion": "Sucursal express en el Centro Artesanal de Circasia.",
+      "direccion": "Centro Artesanal Parque Principal, Piso 3",
+      "telefono": "3102147135"
+    },
+    {
+      "id": "restaurante-mangague-altavista",
+      "nombre": "Restaurante Magangué Altavista",
+      "tipo": "Restaurante",
+      "descripcion": "Restaurante con sabor tradicional en la calle real de Armenia.",
+      "whatsapp": "+573186011957"
+    },
+    {
+      "id": "classic-arepa-town-fast-food",
+      "nombre": "Classic Arepa Town Fast Food",
+      "tipo": "Comida rápida",
+      "descripcion": "Local de arepas y comida rápida en Armenia.",
+      "direccion": "Calle 50 Containers de los naranjos local 10, Armenia",
+      "whatsapp": "3145621785"
+    },
+    {
+      "id": "john-chewing-food",
+      "nombre": "John Chewing Food",
+      "tipo": "Comida rápida",
+      "descripcion": "Restaurante con domicilio en el antiguo estadio San José.",
+      "telefonos": ["3228391293", "3053413183"]
+    },
+    {
+      "id": "mostricos",
+      "nombre": "MostRicos",
+      "tipo": "Comida rápida",
+      "descripcion": "Local de comida rápida famoso por la Bomba Nuclear.",
+      "instagram": "@mostricosarmenia",
+      "telefonos": ["3042451420"]
+    },
+    {
+      "id": "sandukes",
+      "nombre": "SánDukes",
+      "tipo": "Comida rápida",
+      "descripcion": "Sandwichería con opciones saladas y dulces saludables.",
+      "telefono": "3214077605"
+    },
+    {
+      "id": "el-fogon-cuyabro",
+      "nombre": "El Fogón Cuyabro",
+      "tipo": "Restaurante",
+      "descripcion": "Cocina típica de casa con sabor paisa.",
+      "direccion": "Parque Sucre, carrera 14 #12-48",
+      "telefono": "3113862329"
+    },
+    {
+      "id": "el-roble",
+      "nombre": "El Roble",
+      "tipo": "Restaurante típico",
+      "descripcion": "Comida típica en vía Armenia – Pereira.",
+      "telefono": "3175171403"
+    },
+    {
+      "id": "la-feria-del-platano",
+      "nombre": "La Feria del Plátano",
+      "tipo": "Restaurante típico",
+      "descripcion": "Restaurante de comida típica con varias sedes.",
+      "whatsapp": "+573164805446",
+      "instagram": "@laferiadelplatano"
+    }
+  ],
+  "tiendas_de_cafe": [
+    {
+      "id": "anatolia",
+      "nombre": "Anatolia",
+      "tipo": "Cafetería",
+      "descripcion": "Encuentro de sabores en Armenia.",
+      "direccion": "Avenida 19 # 35 norte 41, Armenia",
+      "telefono": "3117011653"
+    },
+    {
+      "id": "cafe-la-terraza",
+      "nombre": "Café La Terraza",
+      "tipo": "Cafetería",
+      "descripcion": "Café de origen fresco en la Plaza de Bolívar.",
+      "telefono": "3164469365"
+    },
+    {
+      "id": "cafe-sensorial",
+      "nombre": "Café Sensorial",
+      "tipo": "Cafetería",
+      "descripcion": "Espresso, latte y cold brew en Parque Fundadores.",
+      "telefono": "3117113473"
+    },
+    {
+      "id": "queso-y-cafe",
+      "nombre": "Queso & Café",
+      "tipo": "Cafetería",
+      "descripcion": "Pan de bono y café en Laureles, Armenia.",
+      "direccion": "Calle 22 Norte Cra 14 - 28, Armenia"
+    },
+    {
+      "id": "cafeina-coffee-shop",
+      "nombre": "Cafeína Coffee Shop",
+      "tipo": "Tienda de café y academia",
+      "descripcion": "Café, capacitación en barismo y cata en Armenia.",
+      "direccion": "Calle 17N #10-30 Barrio El Nogal, Armenia",
+      "telefonos": ["3174393457", "3152271880"],
+      "email": "cafeinacoffeeshop@gmail.com",
+      "instagram": "@Cafeina.coffeeshop"
+    }
+  ],
+  "centros_comerciales": [
+    {
+      "id": "centro-comercial-sansur",
+      "nombre": "Centro Comercial SanSur",
+      "tipo": "Centro comercial",
+      "descripcion": "Centro comercial con moda, tecnología, comida y entretenimiento.",
+      "direccion": "Cra 18 # 59-37, Armenia",
+      "telefonos": ["3046102606", "6067358850"]
+    },
+    {
+      "id": "unicentro-armenia",
+      "nombre": "Unicentro Armenia",
+      "tipo": "Centro comercial",
+      "descripcion": "Centro comercial con tiendas, entretenimiento y redes activas.",
+      "instagram": "@UNICENTROARMENIAOFICIAL"
+    }
+  ],
+  "artesanias": [
+    {
+      "id": "artesanias-turron-y-cafe",
+      "nombre": "Artesanías Turrón y Café",
+      "tipo": "Artesanías y dulcería",
+      "descripcion": "Artesanías, bisutería y dulcería en Armenia.",
+      "direccion": "Cra 14 # 14-43, Armenia",
+      "telefonos": ["6067339858", "3103983619"],
+      "instagram": "@turronycafeaxm"
+    },
+    {
+      "id": "ceramicas-el-alfarero",
+      "nombre": "Cerámicas El Alfarero",
+      "tipo": "Artesanías",
+      "descripcion": "Alfarería con vasijas de arcilla en Circasia.",
+      "direccion": "Centro Artesanal Plaza de Bolívar, Circasia",
+      "telefono": "3206178498"
+    }
+  ],
+  "deportes_y_entretenimiento": [
+    {
+      "id": "camino-al-futbol",
+      "nombre": "Camino al Fútbol",
+      "tipo": "Formación deportiva",
+      "descripcion": "Formación deportiva integral con espíritu y valores.",
+      "email": "caminoalfutbolarmenia@gmail.com",
+      "telefono": "3164026653"
+    }
+  ],
+  "grupos_musicales": [
+    {
+      "id": "orquesta-quinta-base",
+      "nombre": "Orquesta Quinta Base",
+      "tipo": "Orquesta",
+      "descripcion": "Orquesta para eventos con experiencia y repertorio completo.",
+      "telefono": "3136833186"
+    }
+  ],
+  "postres_y_dulces": [
+    {
+      "id": "reina-querida",
+      "nombre": "Reina Querida",
+      "tipo": "Piononos y cremas",
+      "descripcion": "Postres tradicionales y cremas artesanales en Armenia.",
+      "direccion": "Calle 22 Norte 14-40 Edificio Zona-L lc 6, Armenia"
+    }
+  ],
+  "seguros": [
+    {
+      "id": "confia-seguros",
+      "nombre": "Confia Seguros",
+      "tipo": "Seguros",
+      "descripcion": "Asesoría en gestión, tendencias y riesgos.",
+      "contacto": "Diana María Prieto Correa",
+      "telefono": "3154861761",
+      "email": "diana.prieto@asesorsura.com"
+    }
+  ]
+}
