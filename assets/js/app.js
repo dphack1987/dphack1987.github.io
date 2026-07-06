@@ -283,7 +283,8 @@
     slider.innerHTML = '';
 
     slidesData.forEach((item, index) => {
-      const src = item.imagen || item;
+      const raw = item.imagen || item;
+      const src = typeof raw === 'string' ? encodeURI(raw) : raw;
       const title = item.nombre || '';
       const slide = document.createElement('div');
       slide.className = `hero-slide${index === 0 ? ' active' : ''}`;
