@@ -270,7 +270,7 @@
     const slider = document.getElementById('hero-slider');
     if (!slider || typeof NEGOCIOS === 'undefined') return;
 
-    const slidesData = NEGOCIOS.filter(item => item.imagen).slice(0, 6);
+    const slidesData = NEGOCIOS.filter(item => item.imagen && String(item.imagen).includes('pautas_publicitarias')).slice(0, 8);
     if (!slidesData.length) return;
 
     slider.innerHTML = '';
