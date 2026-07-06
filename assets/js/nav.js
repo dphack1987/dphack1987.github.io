@@ -21,6 +21,10 @@
     { label: 'Agencias Operadoras Turísticas', url: 'agencias-operadoras-turisticas.html' },
     { label: 'Atractivos Turísticos', url: 'sitios-turisticos.html' },
     { label: 'Alojamientos', url: 'alojamientos.html' },
+    { label: 'Reservar hotel Quindío', url: 'reservar-hotel-quindio.html' },
+    { label: 'Hospedaje Armenia', url: 'hospedaje-armenia.html' },
+    { label: 'Finca Quindío', url: 'finca-para-alquilar-quindio.html' },
+    { label: 'Transporte aeropuerto Armenia', url: 'transporte-aeropuerto-armenia.html' },
     { label: 'Mapa Calarcá 2026', url: 'mapa-de-calarca-2026.html' },
     { label: 'Anúnciate', url: 'anunciate.html' }
   ];
