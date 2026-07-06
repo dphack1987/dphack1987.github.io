@@ -1,0 +1,12 @@
+{
+  "name": "mapa-turistico-quindio",
+  "version": "1.0.0",
+  "description": "Mapa Turístico del Quindío",
+  "main": "generator.js",
+  "scripts": {
+    "generate-data": "node ./scripts/generate-data.js"
+  },
+  "keywords": ["turismo", "quindio", "mapa"],
+  "author": "",
+  "license": "ISC"
+}

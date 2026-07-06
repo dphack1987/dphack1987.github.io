@@ -749,6 +749,54 @@ const ITINERARIOS = [
 ];
 
 /* ── HELPERS ── */
+function generateSchemaOrg(negocio) {
+  let type, schema = {
+    "@context": "https://schema.org",
+    "name": negocio.nombre,
+    "telephone": negocio.telefono || `+57${negocio.whatsapp}`,
+    "url": window.location.href,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": negocio.municipio,
+      "addressRegion": "Quindío",
+      "addressCountry": "CO"
+    }
+  };
+
+  switch (negocio.categoria) {
+    case 'alojamiento':
+      schema["@type"] = negocio.tipo.includes('Finca') ? "LodgingBusiness" : "Hotel";
+      schema["priceRange"] = negocio.precio;
+      break;
+    case 'sitio-turistico':
+      schema["@type"] = "TouristAttraction";
+      break;
+    case 'gastronomia':
+    case 'cafe':
+      schema["@type"] = "Restaurant";
+      schema["servesCuisine"] = "Colombiana";
+      break;
+    case 'agencia':
+      schema["@type"] = "TravelAgency";
+      break;
+    case 'transporte':
+      schema["@type"] = "LocalBusiness";
+      break;
+    default:
+      schema["@type"] = "LocalBusiness";
+  }
+
+  if (negocio.lat && negocio.lng) {
+    schema["geo"] = {
+      "@type": "GeoCoordinates",
+      "latitude": negocio.lat,
+      "longitude": negocio.lng
+    };
+  }
+
+  return schema;
+}
+
 function getNegociosByCategoria(cat){ return NEGOCIOS.filter(n=>n.categoria===cat) }
 function getNegociosByMunicipio(mun){ return NEGOCIOS.filter(n=>n.municipio===mun) }
 function getNegocioById(id){ return NEGOCIOS.find(n=>n.id===id) }

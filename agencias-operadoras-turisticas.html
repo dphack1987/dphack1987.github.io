@@ -62,25 +62,132 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="./assets/js/datos.js"></script>
   <script src="./assets/js/nav.js"></script>
+  <!-- Botón de geolocalización y control de radio -->
+  <button id="btn-geolocate" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; padding: 14px 24px; border: none; border-radius: 50px; background: linear-gradient(135deg, #059669, #10b981); color: white; font-weight: 800; font-size: 16px; cursor: pointer; box-shadow: 0 4px 15px rgba(5, 150, 105, 0.4); transition: transform 0.2s ease, box-shadow 0.2s ease;">
+    📍 ¿Qué hay cerca de mí?
+  </button>
+  <div id="distance-slider" style="position: fixed; bottom: 80px; right: 20px; z-index: 1000; background: white; padding: 10px 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: none;">
+    <label style="font-weight: 700; color: #059669;">Radio de búsqueda: <span id="distance-value">2</span> km</label>
+    <input type="range" id="distance-input" min="1" max="5" step="0.5" value="2" style="width: 180px; margin-top: 8px;">
+  </div>
+
   <script>
-    let todos=NEGOCIOS.filter(n=>['agencia','sitio-turistico'].includes(n.categoria));
-    const map=L.map('mapa-interactivo',{scrollWheelZoom:false}).setView([4.58,-75.65],10);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap'}).addTo(map);
-    todos.forEach(n=>{if(!n.lat)return;L.marker([n.lat,n.lng]).addTo(map).bindPopup(`<b>${n.nombre}</b><br>${n.tipo}<br>${n.precio}<br><a href="https://wa.me/${n.whatsapp}" target="_blank">💬 Reservar</a>`)});
-    function render(l){
-      const c=document.getElementById('cards'),e=document.getElementById('empty');
-      c.innerHTML='';if(!l.length){e.style.display='block';return}e.style.display='none';
-      l.forEach(n=>{const d=document.createElement('article');d.className='biz-card';
-        d.innerHTML=`<div class="biz-card-img-wrap"><img src="${n.imagen}" alt="${n.nombre}" class="biz-card-img" loading="lazy"><span class="biz-badge ${n.nivel}">${n.nivel==='premium'?'⭐ Premium':'✓ Verificado'}</span></div>
+    let todos = NEGOCIOS.filter(n => ['agencia', 'sitio-turistico'].includes(n.categoria));
+    const map = L.map('mapa-interactivo', { scrollWheelZoom: false }).setView([4.58, -75.65], 10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+
+    // Variables globales para geolocalización
+    let userMarker = null;
+    let userCircle = null;
+    let allMarkers = [];
+
+    // Inicializar todos los marcadores y guardarlos
+    todos.forEach(negocio => {
+      if (!negocio.lat) return;
+      const marker = L.marker([negocio.lat, negocio.lng])
+        .addTo(map)
+        .bindPopup(`<b>${negocio.nombre}</b><br>${negocio.tipo}<br>${negocio.precio}<br><a href="https://wa.me/${negocio.whatsapp}" target="_blank">💬 Reservar</a>`);
+      marker.options.negocio = negocio;
+      allMarkers.push(marker);
+    });
+
+    function render(l) {
+      const c = document.getElementById('cards'), e = document.getElementById('empty');
+      c.innerHTML = ''; if (!l.length) { e.style.display = 'block'; return } e.style.display = 'none';
+      l.forEach(n => {
+        const d = document.createElement('article'); d.className = 'biz-card';
+        d.innerHTML = `<div class="biz-card-img-wrap"><img src="${n.imagen}" alt="${n.nombre}" class="biz-card-img" loading="lazy"><span class="biz-badge ${n.nivel}">${n.nivel === 'premium' ? '⭐ Premium' : '✓ Verificado'}</span></div>
         <div class="biz-card-body"><div class="biz-tipo">${n.tipo} · ${n.municipio}</div><h3>${n.nombre}</h3><p>${n.descripcion}</p>
-        <div class="biz-servicios">${n.servicios.slice(0,3).map(s=>`<span class="biz-tag">${s}</span>`).join('')}</div>
+        <div class="biz-servicios">${n.servicios.slice(0, 3).map(s => `<span class="biz-tag">${s}</span>`).join('')}</div>
         <div class="biz-precio">💰 ${n.precio}</div>
         <div class="biz-actions"><a href="https://wa.me/${n.whatsapp}?text=Hola%2C%20quiero%20información%20sobre%20${encodeURIComponent(n.nombre)}" target="_blank" rel="noopener" class="btn-wa">💬 Reservar</a><a href="${n.maps}" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a><a href="tel:${n.telefono}" class="btn-tel">📞</a></div></div>`;
-        c.appendChild(d)});
+        c.appendChild(d);
+      });
     }
     render(todos);
-    function buscar(){const q=document.getElementById('q').value.toLowerCase().trim();if(!q){render(todos);return}render(todos.filter(n=>n.nombre.toLowerCase().includes(q)||n.descripcion.toLowerCase().includes(q)||n.municipio.toLowerCase().includes(q)||n.servicios.some(s=>s.toLowerCase().includes(q))))}
-    document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter')buscar()});
+
+    function buscar() {
+      const q = document.getElementById('q').value.toLowerCase().trim();
+      if (!q) { render(todos); return }
+      render(todos.filter(n => n.nombre.toLowerCase().includes(q) || n.descripcion.toLowerCase().includes(q) || n.municipio.toLowerCase().includes(q) || n.servicios.some(s => s.toLowerCase().includes(q))))
+    }
+    document.getElementById('q').addEventListener('keydown', e => { if (e.key === 'Enter') buscar() });
+
+    // Geolocalización
+    const btnGeolocate = document.getElementById('btn-geolocate');
+    const distanceSlider = document.getElementById('distance-slider');
+    const distanceInput = document.getElementById('distance-input');
+    const distanceValue = document.getElementById('distance-value');
+
+    btnGeolocate.addEventListener('click', () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          position => {
+            const userLat = position.coords.latitude;
+            const userLng = position.coords.longitude;
+            const radiusKm = parseFloat(distanceInput.value);
+
+            distanceSlider.style.display = 'block';
+
+            if (userMarker) map.removeLayer(userMarker);
+            if (userCircle) map.removeLayer(userCircle);
+
+            userMarker = L.marker([userLat, userLng], { icon: L.divIcon({ className: 'user-marker', html: '📍', iconSize: [30, 30] }) })
+              .addTo(map)
+              .bindPopup('Tu ubicación actual');
+            userCircle = L.circle([userLat, userLng], { radius: radiusKm * 1000, color: '#059669', fillColor: '#10b981', fillOpacity: 0.2 })
+              .addTo(map);
+
+            map.setView([userLat, userLng], 14);
+
+            filterBusinessesByDistance(userLat, userLng, radiusKm);
+          },
+          error => alert('No se pudo acceder a tu ubicación. Por favor, permite el acceso a la geolocalización.'),
+          { enableHighAccuracy: true, timeout: 10000 }
+        );
+      } else {
+        alert('Tu navegador no soporta geolocalización.');
+      }
+    });
+
+    function calculateDistance(lat1, lon1, lat2, lon2) {
+      const R = 6371;
+      const dLat = (lat2 - lat1) * Math.PI / 180;
+      const dLon = (lon2 - lon1) * Math.PI / 180;
+      const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      return R * c;
+    }
+
+    function filterBusinessesByDistance(userLat, userLng, radiusKm) {
+      const filtered = [];
+      allMarkers.forEach(marker => {
+        const negocio = marker.options.negocio;
+        if (!negocio.lat) return;
+
+        const distance = calculateDistance(userLat, userLng, negocio.lat, negocio.lng);
+
+        if (distance <= radiusKm) {
+          marker.addTo(map);
+          filtered.push(negocio);
+        } else {
+          map.removeLayer(marker);
+        }
+      });
+      render(filtered);
+    }
+
+    distanceInput.addEventListener('input', e => {
+      distanceValue.textContent = e.target.value;
+      if (userMarker) {
+        const userLatLng = userMarker.getLatLng();
+        const radiusKm = parseFloat(e.target.value);
+        userCircle.setRadius(radiusKm * 1000);
+        filterBusinessesByDistance(userLatLng.lat, userLatLng.lng, radiusKm);
+      }
+    });
   </script>
 </body>
 </html>
