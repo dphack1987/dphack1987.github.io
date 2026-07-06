@@ -1,0 +1,872 @@
+[
+  {
+    "categoria": "agencias_de_turismo",
+    "file": "./pautas_publicitarias/agencias_de_turismo/agencia_operador_turistico_quindiotravel.png",
+    "filename": "agencia_operador_turistico_quindiotravel.png",
+    "matched": true,
+    "pautante": {
+      "id": "complejo-soleden",
+      "nombre": "Complejo Turístico y Deportivo Soledén",
+      "telefono": "+57 300 000 0099",
+      "whatsapp": "5730000000099",
+      "maps": "https://soleden.co",
+      "imagen_field": "./pautas_publicitarias/atractivos_turisticos/Complejo_Turístico_y_Deportivo_Soledén.png"
+    }
+  },
+  {
+    "categoria": "agencias_de_turismo",
+    "file": "./pautas_publicitarias/agencias_de_turismo/buen_vuelo_tours.png",
+    "filename": "buen_vuelo_tours.png",
+    "matched": false
+  },
+  {
+    "categoria": "agencias_de_turismo",
+    "file": "./pautas_publicitarias/agencias_de_turismo/del_eje.png",
+    "filename": "del_eje.png",
+    "matched": true,
+    "pautante": {
+      "id": "jardin-botanico-del-quindio",
+      "nombre": "Jardín Botánico del Quindío",
+      "telefono": "+57 310 404 5223",
+      "whatsapp": "573104045223",
+      "maps": "https://maps.google.com/?q=Jardín+Botánico+del+Quindío+Calarca",
+      "imagen_field": "./pautas_publicitarias/atractivos_turisticos/Complejo_Turístico_y_Deportivo_Soledén.png"
+    }
+  },
+  {
+    "categoria": "agencias_de_turismo",
+    "file": "./pautas_publicitarias/agencias_de_turismo/informacion_agencias_turismo.xlsx",
+    "filename": "informacion_agencias_turismo.xlsx",
+    "matched": true,
+    "pautante": {
+      "id": "turismo-panaca",
+      "nombre": "Turismo PANACA",
+      "telefono": "+57 300 000 0100",
+      "whatsapp": "5730000000100",
+      "maps": "https://maps.google.com/?q=PANACA+Quindio",
+      "imagen_field": "./pautas_publicitarias/atractivos_turisticos/Complejo_Turístico_y_Deportivo_Soledén.png"
+    }
+  },
+  {
+    "categoria": "agencias_de_turismo",
+    "file": "./pautas_publicitarias/agencias_de_turismo/juan_arrubla.png",
+    "filename": "juan_arrubla.png",
+    "matched": false
+  },
+  {
+    "categoria": "agencias_de_turismo",
+    "file": "./pautas_publicitarias/agencias_de_turismo/viajes_turismo_enlaces.png",
+    "filename": "viajes_turismo_enlaces.png",
+    "matched": true,
+    "pautante": {
+      "id": "turismo-panaca",
+      "nombre": "Turismo PANACA",
+      "telefono": "+57 300 000 0100",
+      "whatsapp": "5730000000100",
+      "maps": "https://maps.google.com/?q=PANACA+Quindio",
+      "imagen_field": "./pautas_publicitarias/atractivos_turisticos/Complejo_Turístico_y_Deportivo_Soledén.png"
+    }
+  },
+  {
+    "categoria": "Alquiler_de_fincas_quindio",
+    "file": "./pautas_publicitarias/Alquiler_de_fincas_quindio/casa_campestre_lacosecha.png",
+    "filename": "casa_campestre_lacosecha.png",
+    "matched": true,
+    "pautante": {
+      "id": "casa-campestre-la-cosecha",
+      "nombre": "Casa Campestre La Cosecha",
+      "telefono": "+57 315 699 9060",
+      "whatsapp": "573156999060",
+      "maps": "https://maps.google.com/?q=Casa+Campestre+La+Cosecha+Quindio",
+      "imagen_field": "./pautas_publicitarias/Alquiler_de_fincas/casa_campestre_lacosecha.png"
+    }
+  },
+  {
+    "categoria": "Alquiler_de_fincas_quindio",
+    "file": "./pautas_publicitarias/Alquiler_de_fincas_quindio/finca_cafetera_el_ocaso.png",
+    "filename": "finca_cafetera_el_ocaso.png",
+    "matched": true,
+    "pautante": {
+      "id": "finca-cafetera-el-ocaso",
+      "nombre": "Finca Cafetera El Ocaso",
+      "telefono": "+57 313 425 3669",
+      "whatsapp": "573134253669",
+      "maps": "https://maps.google.com/?q=Finca+El+Ocaso+Salento",
+      "imagen_field": "./pautas_publicitarias/Alquiler_de_fincas/finca_cafetera_el_ocaso.png"
+    }
+  },
+  {
+    "categoria": "Alquiler_de_fincas_quindio",
+    "file": "./pautas_publicitarias/Alquiler_de_fincas_quindio/finca_la_floresta.png",
+    "filename": "finca_la_floresta.png",
+    "matched": true,
+    "pautante": {
+      "id": "finca-las-flores",
+      "nombre": "Finca Las Flores",
+      "telefono": "+57 320 955 5062",
+      "whatsapp": "573209555062",
+      "maps": "https://maps.google.com/?q=Finca+Las+Flores+Genova",
+      "imagen_field": "./pautas_publicitarias/atractivos_turisticos/quinti_casa_patasarriba.png"
+    }
+  },
+  {
+    "categoria": "Alquiler_de_fincas_quindio",
+    "file": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hacienda_moraleja.png",
+    "filename": "hacienda_moraleja.png",
+    "matched": true,
+    "pautante": {
+      "id": "hacienda-moraleja",
+      "nombre": "Hacienda Moraleja",
+      "telefono": "+57 320 683 4432",
+      "whatsapp": "573206834432",
+      "maps": "https://maps.google.com/?q=Hacienda+Moraleja+Calarca",
+      "imagen_field": "./pautas_publicitarias/Alquiler_de_fincas/hotel_delirio_campestre_quindio.png"
+    }
+  },
+  {
+    "categoria": "Alquiler_de_fincas_quindio",
+    "file": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_alma_nativa.png",
+    "filename": "hotel_alma_nativa.png",
+    "matched": true,
+    "pautante": {
+      "id": "armont",
+      "nombre": "Hotel Armont",
+      "telefono": "+57 300 000 0001",
+      "whatsapp": "573000000001",
+      "maps": "https://maps.google.com/?q=Hotel+Armont+Calarca",
+      "imagen_field": "./assets/images/alojamientos/armont.jpg"
+    }
+  },
+  {
+    "categoria": "Alquiler_de_fincas_quindio",
+    "file": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_cafe_cafe_campestre.png",
+    "filename": "hotel_cafe_cafe_campestre.png",
+    "matched": true,
+    "pautante": {
+      "id": "la-floresta-hotel-campestre",
+      "nombre": "La Floresta Hotel Campestre",
+      "telefono": "+57 312 328 1021",
+      "whatsapp": "573123281021",
+      "maps": "https://maps.google.com/?q=Km+3+vía+Armenia+al+aeropuerto",
+      "imagen_field": "./pautas_publicitarias/Alquiler_de_fincas/hotel_cafe_cafe_campestre.png"
+    }
+  },
+  {
+    "categoria": "Alquiler_de_fincas_quindio",
+    "file": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_deliriocampestre.png",
+    "filename": "hotel_deliriocampestre.png",
+    "matched": true,
+    "pautante": {
+      "id": "hotel-delirio-campestre",
+      "nombre": "Hotel Delirio Campestre Quindío",
+      "telefono": "+57 320 256 8458",
+      "whatsapp": "573202568458",
+      "maps": "https://maps.google.com/?q=Hotel+Delirio+Campestre+Quindio",
+      "imagen_field": "./pautas_publicitarias/Alquiler_de_fincas/hotel_delirio_campestre_quindio.png"
+    }
+  },
+  {
+    "categoria": "Alquiler_de_fincas_quindio",
+    "file": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_linaje_salvaje.png",
+    "filename": "hotel_linaje_salvaje.png",
+    "matched": true,
+    "pautante": {
+      "id": "linaje-salvaje",
+      "nombre": "Linaje Salvaje",
+      "telefono": "+57 313 732 1433",
+      "whatsapp": "573137321433",
+      "maps": "https://maps.google.com/?q=Linaje+Salvaje+Quindio",
+      "imagen_field": "./pautas_publicitarias/Alquiler_de_fincas/hotel_cafe_cafe_campestre.png"
+    }
+  },
+  {
+    "categoria": "artesanias",
+    "file": "./pautas_publicitarias/artesanias/artesanias_turronycafe.png",
+    "filename": "artesanias_turronycafe.png",
+    "matched": false
+  },
+  {
+    "categoria": "artesanias",
+    "file": "./pautas_publicitarias/artesanias/ceramicas_alfarero.jpg",
+    "filename": "ceramicas_alfarero.jpg",
+    "matched": false
+  },
+  {
+    "categoria": "atractivos_turisticos",
+    "file": "./pautas_publicitarias/atractivos_turisticos/cascadas_rio_verde.png",
+    "filename": "cascadas_rio_verde.png",
+    "matched": true,
+    "pautante": {
+      "id": "cascadas-rio-verde",
+      "nombre": "Reserva Natural Cascadas de Río Verde",
+      "telefono": "+57 317 442 6044",
+      "whatsapp": "573174426044",
+      "maps": "https://maps.google.com/?q=Reserva+Natural+Cascadas+de+Río+Verde+Cordoba",
+      "imagen_field": "./pautas_publicitarias/atractivos_turisticos/cascadas_rio_verde.png"
+    }
+  },
+  {
+    "categoria": "atractivos_turisticos",
+    "file": "./pautas_publicitarias/atractivos_turisticos/Complejo_Turístico_y_Deportivo_Soledén.png",
+    "filename": "Complejo_Turístico_y_Deportivo_Soledén.png",
+    "matched": true,
+    "pautante": {
+      "id": "complejo-soleden",
+      "nombre": "Complejo Turístico y Deportivo Soledén",
+      "telefono": "+57 300 000 0099",
+      "whatsapp": "5730000000099",
+      "maps": "https://soleden.co",
+      "imagen_field": "./pautas_publicitarias/atractivos_turisticos/Complejo_Turístico_y_Deportivo_Soledén.png"
+    }
+  },
+  {
+    "categoria": "atractivos_turisticos",
+    "file": "./pautas_publicitarias/atractivos_turisticos/eco_parque_peñas_blancas.png",
+    "filename": "eco_parque_peñas_blancas.png",
+    "matched": true,
+    "pautante": {
+      "id": "ecoparque-penas-blancas",
+      "nombre": "Ecoparque Peñas Blancas",
+      "telefono": "+57 310 396 7951",
+      "whatsapp": "573103967951",
+      "maps": "https://www.calarca.net/ecoparquepenasblancas",
+      "imagen_field": "./pautas_publicitarias/atractivos_turisticos/parque_los_arrieros.png"
+    }
+  },
+  {
+    "categoria": "atractivos_turisticos",
+    "file": "./pautas_publicitarias/atractivos_turisticos/finca_las_flores.png",
+    "filename": "finca_las_flores.png",
+    "matched": true,
+    "pautante": {
+      "id": "finca-las-flores",
+      "nombre": "Finca Las Flores",
+      "telefono": "+57 320 955 5062",
+      "whatsapp": "573209555062",
+      "maps": "https://maps.google.com/?q=Finca+Las+Flores+Genova",
+      "imagen_field": "./pautas_publicitarias/atractivos_turisticos/quinti_casa_patasarriba.png"
+    }
+  },
+  {
+    "categoria": "atractivos_turisticos",
+    "file": "./pautas_publicitarias/atractivos_turisticos/Granja_agricola_mama_lulu.png",
+    "filename": "Granja_agricola_mama_lulu.png",
+    "matched": true,
+    "pautante": {
+      "id": "la-pequena-granja-mama-lulu",
+      "nombre": "La Pequeña Granja de Mamá Lulú",
+      "telefono": "+57 311 389 4646",
+      "whatsapp": "573113894646",
+      "maps": "https://www.granjamamalulu.com",
+      "imagen_field": "./pautas_publicitarias/atractivos_turisticos/recorrido_cacaotero.png"
+    }
+  },
+  {
+    "categoria": "atractivos_turisticos",
+    "file": "./pautas_publicitarias/atractivos_turisticos/jardin_botanico_del_quindio.png",
+    "filename": "jardin_botanico_del_quindio.png",
+    "matched": true,
+    "pautante": {
+      "id": "jardin-botanico-del-quindio",
+      "nombre": "Jardín Botánico del Quindío",
+      "telefono": "+57 310 404 5223",
+      "whatsapp": "573104045223",
+      "maps": "https://maps.google.com/?q=Jardín+Botánico+del+Quindío+Calarca",
+      "imagen_field": "./pautas_publicitarias/atractivos_turisticos/Complejo_Turístico_y_Deportivo_Soledén.png"
+    }
+  },
+  {
+    "categoria": "atractivos_turisticos",
+    "file": "./pautas_publicitarias/atractivos_turisticos/laberinto_mil_caminos.png",
+    "filename": "laberinto_mil_caminos.png",
+    "matched": true,
+    "pautante": {
+      "id": "el-laberinto-mil-caminos",
+      "nombre": "El Laberinto Mil Caminos",
+      "telefono": "+57 317 112 9239",
+      "whatsapp": "573171129239",
+      "maps": "https://www.laberintomilcaminos.com",
+      "imagen_field": "./pautas_publicitarias/atractivos_turisticos/parque_los_arrieros.png"
+    }
+  },
+  {
+    "categoria": "atractivos_turisticos",
+    "file": "./pautas_publicitarias/atractivos_turisticos/mirador_encanto_filandia.png",
+    "filename": "mirador_encanto_filandia.png",
+    "matched": true,
+    "pautante": {
+      "id": "mirador-encanto-filandia",
+      "nombre": "Mirador Encanto Filandia",
+      "telefono": "+57 320 936 9950",
+      "whatsapp": "573209369950",
+      "maps": "https://maps.google.com/?q=Mirador+Encanto+Filandia",
+      "imagen_field": "./pautas_publicitarias/atractivos_turisticos/quinti_casa_patasarriba.png"
+    }
+  },
+  {
+    "categoria": "atractivos_turisticos",
+    "file": "./pautas_publicitarias/atractivos_turisticos/panaca.png",
+    "filename": "panaca.png",
+    "matched": true,
+    "pautante": {
+      "id": "turismo-panaca",
+      "nombre": "Turismo PANACA",
+      "telefono": "+57 300 000 0100",
+      "whatsapp": "5730000000100",
+      "maps": "https://maps.google.com/?q=PANACA+Quindio",
+      "imagen_field": "./pautas_publicitarias/atractivos_turisticos/Complejo_Turístico_y_Deportivo_Soledén.png"
+    }
+  },
+  {
+    "categoria": "atractivos_turisticos",
+    "file": "./pautas_publicitarias/atractivos_turisticos/parque_los_arrieros.png",
+    "filename": "parque_los_arrieros.png",
+    "matched": true,
+    "pautante": {
+      "id": "ecoparque-penas-blancas",
+      "nombre": "Ecoparque Peñas Blancas",
+      "telefono": "+57 310 396 7951",
+      "whatsapp": "573103967951",
+      "maps": "https://www.calarca.net/ecoparquepenasblancas",
+      "imagen_field": "./pautas_publicitarias/atractivos_turisticos/parque_los_arrieros.png"
+    }
+  },
+  {
+    "categoria": "atractivos_turisticos",
+    "file": "./pautas_publicitarias/atractivos_turisticos/quinti_casa_patasarriba.png",
+    "filename": "quinti_casa_patasarriba.png",
+    "matched": true,
+    "pautante": {
+      "id": "finca-las-flores",
+      "nombre": "Finca Las Flores",
+      "telefono": "+57 320 955 5062",
+      "whatsapp": "573209555062",
+      "maps": "https://maps.google.com/?q=Finca+Las+Flores+Genova",
+      "imagen_field": "./pautas_publicitarias/atractivos_turisticos/quinti_casa_patasarriba.png"
+    }
+  },
+  {
+    "categoria": "atractivos_turisticos",
+    "file": "./pautas_publicitarias/atractivos_turisticos/recorrido_cacaotero.png",
+    "filename": "recorrido_cacaotero.png",
+    "matched": true,
+    "pautante": {
+      "id": "la-pequena-granja-mama-lulu",
+      "nombre": "La Pequeña Granja de Mamá Lulú",
+      "telefono": "+57 311 389 4646",
+      "whatsapp": "573113894646",
+      "maps": "https://www.granjamamalulu.com",
+      "imagen_field": "./pautas_publicitarias/atractivos_turisticos/recorrido_cacaotero.png"
+    }
+  },
+  {
+    "categoria": "atractivos_turisticos",
+    "file": "./pautas_publicitarias/atractivos_turisticos/recorrido_de_la_cultura_cafetera.png",
+    "filename": "recorrido_de_la_cultura_cafetera.png",
+    "matched": true,
+    "pautante": {
+      "id": "casa-campestre-la-cosecha",
+      "nombre": "Casa Campestre La Cosecha",
+      "telefono": "+57 315 699 9060",
+      "whatsapp": "573156999060",
+      "maps": "https://maps.google.com/?q=Casa+Campestre+La+Cosecha+Quindio",
+      "imagen_field": "./pautas_publicitarias/Alquiler_de_fincas/casa_campestre_lacosecha.png"
+    }
+  },
+  {
+    "categoria": "Centros Comerciales",
+    "file": "./pautas_publicitarias/Centros Comerciales/centro_comercial_sansur.png",
+    "filename": "centro_comercial_sansur.png",
+    "matched": true,
+    "pautante": {
+      "id": "centro-comercial-sansur",
+      "nombre": "Centro Comercial SanSur",
+      "telefono": "+57 304 610 2606",
+      "whatsapp": "573046102606",
+      "maps": "https://maps.google.com/?q=Centro+Comercial+SanSur+Armenia",
+      "imagen_field": "./pautas_publicitarias/Centros_Comerciales/centro_comercial_sansur.png"
+    }
+  },
+  {
+    "categoria": "Centros Comerciales",
+    "file": "./pautas_publicitarias/Centros Comerciales/centro_comercial_unicentro.png",
+    "filename": "centro_comercial_unicentro.png",
+    "matched": true,
+    "pautante": {
+      "id": "centro-comercial-sansur",
+      "nombre": "Centro Comercial SanSur",
+      "telefono": "+57 304 610 2606",
+      "whatsapp": "573046102606",
+      "maps": "https://maps.google.com/?q=Centro+Comercial+SanSur+Armenia",
+      "imagen_field": "./pautas_publicitarias/Centros_Comerciales/centro_comercial_sansur.png"
+    }
+  },
+  {
+    "categoria": "Cocteles_licores",
+    "file": "./pautas_publicitarias/Cocteles_licores/boutique_licores_doscielos.png",
+    "filename": "boutique_licores_doscielos.png",
+    "matched": true,
+    "pautante": {
+      "id": "dos-cielos-boutique",
+      "nombre": "Dos Cielos Boutique de Licores",
+      "telefono": "+57 302 347 8080",
+      "whatsapp": "573023478080",
+      "maps": "https://maps.google.com/?q=Dos+Cielos+Boutique+de+Licores+Armenia",
+      "imagen_field": "./pautas_publicitarias/Cocteles_licores/boutique_licores_doscielos.png"
+    }
+  },
+  {
+    "categoria": "Cocteles_licores",
+    "file": "./pautas_publicitarias/Cocteles_licores/cantina_el_desmadre.png",
+    "filename": "cantina_el_desmadre.png",
+    "matched": true,
+    "pautante": {
+      "id": "cantina-el-desmadre",
+      "nombre": "Cantina El Desmadre",
+      "telefono": "+57 313 776 8567",
+      "whatsapp": "573137768567",
+      "maps": "https://maps.google.com/?q=Cantina+El+Desmadre+Armenia",
+      "imagen_field": "./pautas_publicitarias/Cocteles_licores/cantina_el_desmadre.png"
+    }
+  },
+  {
+    "categoria": "Cocteles_licores",
+    "file": "./pautas_publicitarias/Cocteles_licores/lafogata_circasia.png",
+    "filename": "lafogata_circasia.png",
+    "matched": true,
+    "pautante": {
+      "id": "la-fogata-express",
+      "nombre": "La Fogata Express",
+      "telefono": "+57 310 214 7135",
+      "whatsapp": "573102147135",
+      "maps": "https://maps.google.com/?q=La+Fogata+Express+Circasia",
+      "imagen_field": "./pautas_publicitarias/Cocteles_licores/lafogata_circasia.png"
+    }
+  },
+  {
+    "categoria": "Cocteles_licores",
+    "file": "./pautas_publicitarias/Cocteles_licores/la_fogata.png",
+    "filename": "la_fogata.png",
+    "matched": true,
+    "pautante": {
+      "id": "la-fogata-steak-house",
+      "nombre": "La Fogata Steak House",
+      "telefono": "+57 312 248 0291",
+      "whatsapp": "573122480291",
+      "maps": "https://maps.google.com/?q=La+Fogata+Steak+House+Armenia",
+      "imagen_field": "./pautas_publicitarias/Cocteles_licores/la_fogata.png"
+    }
+  },
+  {
+    "categoria": "Comidas_Rapidas",
+    "file": "./pautas_publicitarias/Comidas_Rapidas/arepa_town.png",
+    "filename": "arepa_town.png",
+    "matched": true,
+    "pautante": {
+      "id": "arepa-town",
+      "nombre": "Classic Arepa Town Fast Food",
+      "telefono": "+57 314 562 1785",
+      "whatsapp": "573145621785",
+      "maps": "https://maps.google.com/?q=Classic+Arepa+Town+Fast+Food+Armenia",
+      "imagen_field": "./pautas_publicitarias/Comidas_Rapidas/arepa_town.png"
+    }
+  },
+  {
+    "categoria": "Comidas_Rapidas",
+    "file": "./pautas_publicitarias/Comidas_Rapidas/jhon_chewing_food.png",
+    "filename": "jhon_chewing_food.png",
+    "matched": true,
+    "pautante": {
+      "id": "john-chewing-food",
+      "nombre": "John Chewing Food",
+      "telefono": "+57 322 839 1293",
+      "whatsapp": "573228391293",
+      "maps": "https://maps.google.com/?q=John+Chewing+Food+Armenia",
+      "imagen_field": "./pautas_publicitarias/Comidas_Rapidas/jhon_chewing_food.png"
+    }
+  },
+  {
+    "categoria": "Comidas_Rapidas",
+    "file": "./pautas_publicitarias/Comidas_Rapidas/mostricos.png",
+    "filename": "mostricos.png",
+    "matched": true,
+    "pautante": {
+      "id": "mostricos",
+      "nombre": "MostRicos",
+      "telefono": "+57 304 245 1420",
+      "whatsapp": "573042451420",
+      "maps": "https://maps.google.com/?q=MostRicos+Armenia",
+      "imagen_field": "./pautas_publicitarias/Comidas_Rapidas/mostricos.png"
+    }
+  },
+  {
+    "categoria": "Comidas_Rapidas",
+    "file": "./pautas_publicitarias/Comidas_Rapidas/sanduches_sandukes.png",
+    "filename": "sanduches_sandukes.png",
+    "matched": true,
+    "pautante": {
+      "id": "sandukes",
+      "nombre": "SánDukes",
+      "telefono": "+57 321 407 7605",
+      "whatsapp": "573214077605",
+      "maps": "https://maps.google.com/?q=SánDukes+Armenia",
+      "imagen_field": "./pautas_publicitarias/Comidas_Rapidas/sanduches_sandukes.png"
+    }
+  },
+  {
+    "categoria": "comida_de_mar",
+    "file": "./pautas_publicitarias/comida_de_mar/restaurante_magangue.png",
+    "filename": "restaurante_magangue.png",
+    "matched": true,
+    "pautante": {
+      "id": "restaurante-magangue-altavista",
+      "nombre": "Restaurante Magangué Altavista",
+      "telefono": "+57 318 601 1957",
+      "whatsapp": "573186011957",
+      "maps": "https://maps.google.com/?q=Restaurante+Magangué+Altavista+Armenia",
+      "imagen_field": "./pautas_publicitarias/comida_de_mar/restaurante_magangue.png"
+    }
+  },
+  {
+    "categoria": "Deportes y entretenimiento",
+    "file": "./pautas_publicitarias/Deportes y entretenimiento/camino_al_futbol.png",
+    "filename": "camino_al_futbol.png",
+    "matched": true,
+    "pautante": {
+      "id": "camino-al-futbol",
+      "nombre": "Camino al Fútbol",
+      "telefono": "+57 316 402 6653",
+      "whatsapp": "573164026653",
+      "maps": "https://maps.google.com/?q=Camino+al+Fútbol+Armenia",
+      "imagen_field": "./pautas_publicitarias/Deportes_y_entretenimiento/camino_al_futbol.png"
+    }
+  },
+  {
+    "categoria": "Deportes y entretenimiento",
+    "file": "./pautas_publicitarias/Deportes y entretenimiento/Complejo_Turístico_y_Deportivo_Soledén.png",
+    "filename": "Complejo_Turístico_y_Deportivo_Soledén.png",
+    "matched": true,
+    "pautante": {
+      "id": "complejo-soleden",
+      "nombre": "Complejo Turístico y Deportivo Soledén",
+      "telefono": "+57 300 000 0099",
+      "whatsapp": "5730000000099",
+      "maps": "https://soleden.co",
+      "imagen_field": "./pautas_publicitarias/atractivos_turisticos/Complejo_Turístico_y_Deportivo_Soledén.png"
+    }
+  },
+  {
+    "categoria": "Gastronomia_tipica",
+    "file": "./pautas_publicitarias/Gastronomia_tipica/restaurante_el_fogon.png",
+    "filename": "restaurante_el_fogon.png",
+    "matched": true,
+    "pautante": {
+      "id": "el-fogon-cuyabro",
+      "nombre": "El Fogón Cuyabro",
+      "telefono": "+57 311 386 2329",
+      "whatsapp": "573113862329",
+      "maps": "https://maps.google.com/?q=El+Fogón+Cuyabro+Armenia",
+      "imagen_field": "./pautas_publicitarias/Gastronomia_tipica/restaurante_el_fogon.png"
+    }
+  },
+  {
+    "categoria": "Gastronomia_tipica",
+    "file": "./pautas_publicitarias/Gastronomia_tipica/restaurante_el_roble.png",
+    "filename": "restaurante_el_roble.png",
+    "matched": true,
+    "pautante": {
+      "id": "el-roble",
+      "nombre": "El Roble",
+      "telefono": "+57 317 517 1403",
+      "whatsapp": "573175171403",
+      "maps": "https://maps.google.com/?q=El+Roble+Km+12+vía+Armenia+-+Pereira",
+      "imagen_field": "./pautas_publicitarias/Gastronomia_tipica/restaurante_el_roble.png"
+    }
+  },
+  {
+    "categoria": "Gastronomia_tipica",
+    "file": "./pautas_publicitarias/Gastronomia_tipica/restaurante_la_feria_del_platano.png",
+    "filename": "restaurante_la_feria_del_platano.png",
+    "matched": true,
+    "pautante": {
+      "id": "la-feria-del-platano",
+      "nombre": "La Feria del Plátano",
+      "telefono": "+57 316 480 5446",
+      "whatsapp": "573164805446",
+      "maps": "https://maps.google.com/?q=La+Feria+del+Plátano+Armenia",
+      "imagen_field": "./pautas_publicitarias/Gastronomia_tipica/restaurante_la_feria_del_platano.png"
+    }
+  },
+  {
+    "categoria": "glamping",
+    "file": "./pautas_publicitarias/glamping/eco_parque_peñas_blancas.png",
+    "filename": "eco_parque_peñas_blancas.png",
+    "matched": true,
+    "pautante": {
+      "id": "ecoparque-penas-blancas",
+      "nombre": "Ecoparque Peñas Blancas",
+      "telefono": "+57 310 396 7951",
+      "whatsapp": "573103967951",
+      "maps": "https://www.calarca.net/ecoparquepenasblancas",
+      "imagen_field": "./pautas_publicitarias/atractivos_turisticos/parque_los_arrieros.png"
+    }
+  },
+  {
+    "categoria": "glamping",
+    "file": "./pautas_publicitarias/glamping/hacienda_moraleja.png",
+    "filename": "hacienda_moraleja.png",
+    "matched": true,
+    "pautante": {
+      "id": "hacienda-moraleja",
+      "nombre": "Hacienda Moraleja",
+      "telefono": "+57 320 683 4432",
+      "whatsapp": "573206834432",
+      "maps": "https://maps.google.com/?q=Hacienda+Moraleja+Calarca",
+      "imagen_field": "./pautas_publicitarias/Alquiler_de_fincas/hotel_delirio_campestre_quindio.png"
+    }
+  },
+  {
+    "categoria": "grupos_musicales",
+    "file": "./pautas_publicitarias/grupos_musicales/orquesta_quinta_base.png",
+    "filename": "orquesta_quinta_base.png",
+    "matched": true,
+    "pautante": {
+      "id": "orquesta-quinta-base",
+      "nombre": "Orquesta Quinta Base",
+      "telefono": "+57 313 683 3186",
+      "whatsapp": "573136833186",
+      "maps": "https://maps.google.com/?q=Orquesta+Quinta+Base+Armenia",
+      "imagen_field": "./pautas_publicitarias/grupos_musicales/orquesta_quinta_base.png"
+    }
+  },
+  {
+    "categoria": "hoteles_armenia",
+    "file": "./pautas_publicitarias/hoteles_armenia/hotel_el_bosque_armenia.png",
+    "filename": "hotel_el_bosque_armenia.png",
+    "matched": true,
+    "pautante": {
+      "id": "hotel-el-bosque",
+      "nombre": "Hotel El Bosque",
+      "telefono": "+57 317 647 1482",
+      "whatsapp": "573176471482",
+      "maps": "https://maps.google.com/?q=Hotel+El+Bosque+Armenia",
+      "imagen_field": "./pautas_publicitarias/hoteles_armenia/hotel_el_bosque_armenia.png"
+    }
+  },
+  {
+    "categoria": "hoteles_armenia",
+    "file": "./pautas_publicitarias/hoteles_armenia/hotel_isa_victory.png",
+    "filename": "hotel_isa_victory.png",
+    "matched": true,
+    "pautante": {
+      "id": "armont",
+      "nombre": "Hotel Armont",
+      "telefono": "+57 300 000 0001",
+      "whatsapp": "573000000001",
+      "maps": "https://maps.google.com/?q=Hotel+Armont+Calarca",
+      "imagen_field": "./assets/images/alojamientos/armont.jpg"
+    }
+  },
+  {
+    "categoria": "hoteles_armenia",
+    "file": "./pautas_publicitarias/hoteles_armenia/hotel_san_jeronimo.png",
+    "filename": "hotel_san_jeronimo.png",
+    "matched": true,
+    "pautante": {
+      "id": "isa-victory-hotel",
+      "nombre": "Isa Victory Hotel",
+      "telefono": "+57 320 770 7079",
+      "whatsapp": "573207707079",
+      "maps": "https://maps.google.com/?q=Isa+Victory+Hotel+Armenia",
+      "imagen_field": "./pautas_publicitarias/hoteles_armenia/hotel_san_jerónimo.png"
+    }
+  },
+  {
+    "categoria": "postres_y_dulces",
+    "file": "./pautas_publicitarias/postres_y_dulces/reina__querida.png",
+    "filename": "reina__querida.png",
+    "matched": true,
+    "pautante": {
+      "id": "reina-querida",
+      "nombre": "Reina Querida",
+      "telefono": "+57 300 000 0102",
+      "whatsapp": "5730000000102",
+      "maps": "https://maps.google.com/?q=Reina+Querida+Armenia",
+      "imagen_field": "./pautas_publicitarias/postres_y_dulces/reina__querida.png"
+    }
+  },
+  {
+    "categoria": "seguros",
+    "file": "./pautas_publicitarias/seguros/seguros_confia.png",
+    "filename": "seguros_confia.png",
+    "matched": true,
+    "pautante": {
+      "id": "confia-seguros",
+      "nombre": "Confia Seguros",
+      "telefono": "+57 315 486 1761",
+      "whatsapp": "573154861761",
+      "maps": "https://maps.google.com/?q=Confia+Seguros+Armenia",
+      "imagen_field": "./pautas_publicitarias/seguros/seguros_confia.png"
+    }
+  },
+  {
+    "categoria": "Tiendas_de_cafe",
+    "file": "./pautas_publicitarias/Tiendas_de_cafe/anatolia.png",
+    "filename": "anatolia.png",
+    "matched": true,
+    "pautante": {
+      "id": "anatolia",
+      "nombre": "Anatolia",
+      "telefono": "+57 311 701 1653",
+      "whatsapp": "573117011653",
+      "maps": "https://maps.google.com/?q=Anatolia+Armenia",
+      "imagen_field": "./pautas_publicitarias/Tiendas_de_cafe/anatolia.png"
+    }
+  },
+  {
+    "categoria": "Tiendas_de_cafe",
+    "file": "./pautas_publicitarias/Tiendas_de_cafe/artesanias_turronycafe.png",
+    "filename": "artesanias_turronycafe.png",
+    "matched": false
+  },
+  {
+    "categoria": "Tiendas_de_cafe",
+    "file": "./pautas_publicitarias/Tiendas_de_cafe/cafe_la_terraza.png",
+    "filename": "cafe_la_terraza.png",
+    "matched": true,
+    "pautante": {
+      "id": "cafe-la-terraza",
+      "nombre": "Café La Terraza",
+      "telefono": "+57 316 446 9365",
+      "whatsapp": "573164469365",
+      "maps": "https://maps.google.com/?q=Café+La+Terraza+Armenia",
+      "imagen_field": "./pautas_publicitarias/Tiendas_de_cafe/cafe_la_terraza.png"
+    }
+  },
+  {
+    "categoria": "Tiendas_de_cafe",
+    "file": "./pautas_publicitarias/Tiendas_de_cafe/cafe_sensorial.png",
+    "filename": "cafe_sensorial.png",
+    "matched": true,
+    "pautante": {
+      "id": "cafe-sensorial",
+      "nombre": "Café Sensorial",
+      "telefono": "+57 311 711 3473",
+      "whatsapp": "573117113473",
+      "maps": "https://maps.google.com/?q=Café+Sensorial+Armenia",
+      "imagen_field": "./pautas_publicitarias/Tiendas_de_cafe/cafe_sensorial.png"
+    }
+  },
+  {
+    "categoria": "Tiendas_de_cafe",
+    "file": "./pautas_publicitarias/Tiendas_de_cafe/queso_y_cafe.png",
+    "filename": "queso_y_cafe.png",
+    "matched": true,
+    "pautante": {
+      "id": "queso-y-cafe",
+      "nombre": "Queso & Café",
+      "telefono": "+57 300 000 0103",
+      "whatsapp": "5730000000103",
+      "maps": "https://maps.google.com/?q=Queso+%26+Café+Armenia",
+      "imagen_field": "./pautas_publicitarias/Tiendas_de_cafe/queso_y_cafe.png"
+    }
+  },
+  {
+    "categoria": "Tiendas_de_cafe",
+    "file": "./pautas_publicitarias/Tiendas_de_cafe/tienda_de_cafe_y_academia_cafeina.png",
+    "filename": "tienda_de_cafe_y_academia_cafeina.png",
+    "matched": true,
+    "pautante": {
+      "id": "cafeina-coffee-shop",
+      "nombre": "Tienda de Café & Academia Cafeína",
+      "telefono": "+57 317 439 3457",
+      "whatsapp": "573174393457",
+      "maps": "https://maps.google.com/?q=Cafeína+Coffee+Shop+Armenia",
+      "imagen_field": "./pautas_publicitarias/Tiendas_de_cafe/tienda_de_cafe_y_academia_cafeina.png"
+    }
+  },
+  {
+    "categoria": "Transportes",
+    "file": "./pautas_publicitarias/Transportes/del_eje.png",
+    "filename": "del_eje.png",
+    "matched": true,
+    "pautante": {
+      "id": "jardin-botanico-del-quindio",
+      "nombre": "Jardín Botánico del Quindío",
+      "telefono": "+57 310 404 5223",
+      "whatsapp": "573104045223",
+      "maps": "https://maps.google.com/?q=Jardín+Botánico+del+Quindío+Calarca",
+      "imagen_field": "./pautas_publicitarias/atractivos_turisticos/Complejo_Turístico_y_Deportivo_Soledén.png"
+    }
+  },
+  {
+    "categoria": "Transportes",
+    "file": "./pautas_publicitarias/Transportes/radio_taxi.png",
+    "filename": "radio_taxi.png",
+    "matched": true,
+    "pautante": {
+      "id": "radio-taxi-quindio",
+      "nombre": "Radio Taxi del Quindío",
+      "telefono": "+57 311 542 2222",
+      "whatsapp": "573115422222",
+      "maps": "https://maps.google.com/?q=Radio+Taxi+del+Quindío",
+      "imagen_field": "./pautas_publicitarias/Transportes/radio_taxi.png"
+    }
+  },
+  {
+    "categoria": "Transportes",
+    "file": "./pautas_publicitarias/Transportes/rutas_y_turismo.png",
+    "filename": "rutas_y_turismo.png",
+    "matched": true,
+    "pautante": {
+      "id": "complejo-soleden",
+      "nombre": "Complejo Turístico y Deportivo Soledén",
+      "telefono": "+57 300 000 0099",
+      "whatsapp": "5730000000099",
+      "maps": "https://soleden.co",
+      "imagen_field": "./pautas_publicitarias/atractivos_turisticos/Complejo_Turístico_y_Deportivo_Soledén.png"
+    }
+  },
+  {
+    "categoria": "Transportes",
+    "file": "./pautas_publicitarias/Transportes/transportes_joselu.png",
+    "filename": "transportes_joselu.png",
+    "matched": true,
+    "pautante": {
+      "id": "joselu-transporte",
+      "nombre": "Joselu Transporte y Turismo",
+      "telefono": "+57 302 215 3132",
+      "whatsapp": "573022153132",
+      "maps": "https://maps.google.com/?q=Joselu+Transporte+y+Turismo",
+      "imagen_field": "./pautas_publicitarias/Transportes/transportes_joselu.png"
+    }
+  },
+  {
+    "categoria": "Transportes",
+    "file": "./pautas_publicitarias/Transportes/transportes_mocca.png",
+    "filename": "transportes_mocca.png",
+    "matched": true,
+    "pautante": {
+      "id": "mocca-aventura-y-cafe",
+      "nombre": "Mocca Aventura y Café",
+      "telefono": "+57 311 704 3170",
+      "whatsapp": "573117043170",
+      "maps": "https://maps.google.com/?q=Mocca+Aventura+y+Café",
+      "imagen_field": "./pautas_publicitarias/Transportes/transportes_mocca.png"
+    }
+  },
+  {
+    "categoria": "Transportes",
+    "file": "./pautas_publicitarias/Transportes/transportes_union_cafetera.png",
+    "filename": "transportes_union_cafetera.png",
+    "matched": true,
+    "pautante": {
+      "id": "transportes-union-cafetera",
+      "nombre": "Transportes Unión Cafetera",
+      "telefono": "+57 300 590 8383",
+      "whatsapp": "573005908383",
+      "maps": "https://www.unioncafetera.com",
+      "imagen_field": "./pautas_publicitarias/Transportes/transportes_union_cafetera.png"
+    }
+  }
+]
