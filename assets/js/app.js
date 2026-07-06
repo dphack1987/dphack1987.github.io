@@ -268,18 +268,27 @@
   // ------------------------------
   function initHeroSlider() {
     const slider = document.getElementById('hero-slider');
-    if (!slider || typeof NEGOCIOS === 'undefined') return;
+    if (!slider) return;
 
-    const slidesData = NEGOCIOS.filter(item => item.imagen && String(item.imagen).includes('pautas_publicitarias')).slice(0, 8);
+    // Preferir HERO_SLIDES generado desde carpeta pautas_publicitarias
+    let slidesData = [];
+    if (typeof HERO_SLIDES !== 'undefined' && Array.isArray(HERO_SLIDES) && HERO_SLIDES.length) {
+      slidesData = HERO_SLIDES.slice(0, 12).map(p => ({ imagen: p, nombre: '' }));
+    } else if (typeof NEGOCIOS !== 'undefined') {
+      slidesData = NEGOCIOS.filter(item => item.imagen && String(item.imagen).includes('pautas_publicitarias')).slice(0, 12);
+    }
+
     if (!slidesData.length) return;
 
     slider.innerHTML = '';
 
     slidesData.forEach((item, index) => {
+      const src = item.imagen || item;
+      const title = item.nombre || '';
       const slide = document.createElement('div');
       slide.className = `hero-slide${index === 0 ? ' active' : ''}`;
       slide.setAttribute('aria-hidden', index === 0 ? 'false' : 'true');
-      slide.innerHTML = `\n        <img src="${item.imagen}" alt="${item.nombre || 'Anunciante del Quindío'}">\n        <div class="hero-slide-meta">\n          <span>Publicidad recomendada</span>\n          <strong>${item.nombre || 'Negocio del Quindío'}</strong>\n        </div>\n      `;
+      slide.innerHTML = `\n        <img src="${src}" alt="${title || 'Publicidad del Quindío'}">\n        <div class="hero-slide-meta">\n          <span>Publicidad recomendada</span>\n          <strong>${title || 'Negocio del Quindío'}</strong>\n        </div>\n      `;
       slider.appendChild(slide);
     });
 
