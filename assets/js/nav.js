@@ -33,7 +33,7 @@
     <div class="site-header">
       <div class="header-top">
         <a href="${p}index.html" class="nav-logo">
-            <img src="${p}assets/images/logo_mapa/logo.png" srcset="${p}assets/images/logo_mapa/logo@2x.png 2x" alt="Mapa Turístico del Quindío">
+          <img src="${p}logo_mapa/logo.png" srcset="${p}logo_mapa/logo@2x.png 2x" alt="Mapa Turístico del Quindío">
         </a>
         <button class="nav-toggle" id="navToggle" aria-label="Menú">
           <span></span><span></span><span></span>
