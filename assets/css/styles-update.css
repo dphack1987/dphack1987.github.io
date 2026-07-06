@@ -1,0 +1,103 @@
+:root {
+  --finca-card-bg: rgba(255, 255, 255, 0.96);
+  --finca-card-border: rgba(5, 150, 105, 0.12);
+}
+
+.grid-hospedajes {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .grid-hospedajes {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.finca-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: var(--finca-card-bg);
+  border: 1px solid var(--finca-card-border);
+  border-radius: 22px;
+  overflow: hidden;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+@media (min-width: 768px) {
+  .finca-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 22px 60px rgba(6, 78, 59, 0.14);
+  }
+}
+
+.finca-card .biz-card-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.finca-card .biz-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.finca-card:hover .biz-card-img {
+  transform: scale(1.05);
+}
+
+.finca-card .biz-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px;
+}
+
+.finca-card .biz-card-body h3 {
+  margin: 0;
+}
+
+.finca-card .biz-card-body .biz-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+@media (max-width: 480px) {
+  .finca-card .biz-card-body .biz-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+.finca-card .btn-wa,
+.finca-card .btn-cotizar,
+.finca-card .btn-maps {
+  width: 100%;
+}
+
+.finca-card .biz-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.finca-card .biz-tipo {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+
+#don-chucho-root,
+.don-chucho-panel,
+.don-chucho-widget {
+  z-index: 9999 !important;
+}

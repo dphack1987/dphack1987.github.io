@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="./assets/css/styles-update.css">
 </head>
 <body>
   <header class="page-hero">
@@ -34,7 +35,9 @@
       <button class="filtro-btn" onclick="filtrar('Finca Turística',this)">🌿 Finca Turística</button>
     </div>
     <div style="margin-bottom:48px"><div id="mapa-interactivo"></div></div>
-    <div id="cards" class="cards-grid" role="list" aria-live="polite" data-list-category="alojamientos"></div>
+    <div class="grid-hospedajes">
+      <div id="cards" class="cards-grid" role="list" aria-live="polite" data-list-category="alojamientos"></div>
+    </div>
     <div id="empty" class="no-results" style="display:none"><div class="icon">🏡</div><p>Sin resultados.</p></div>
     <div style="background:white;border-radius:20px;padding:28px;margin:40px 0;box-shadow:0 6px 24px rgba(16,185,129,.1);border-left:4px solid #059669">
       <h3 style="color:#064e3b;margin-bottom:8px">💡 Consejo para tu estadía</h3>
