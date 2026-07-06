@@ -58,6 +58,23 @@ a{text-decoration:none;color:inherit}
   .menu-bar{display:none}
   .nav-toggle{display:flex}
   .nav-drawer{top:80px}
+  .nav-drawer a{
+    background:#f8fafc;
+    color:var(--text2);
+    border:1px solid #d1fae5;
+    box-shadow:none;
+    border-radius:14px;
+  }
+  .nav-drawer a:hover{
+    background:rgba(16,185,129,.12);
+    color:var(--g1);
+    border-color:rgba(16,185,129,.3);
+  }
+  .nav-drawer a.active{
+    background:rgba(16,185,129,.15);
+    color:var(--g1);
+    border-color:rgba(16,185,129,.35);
+  }
 }
 
 /* ── PAGE HERO ── */
