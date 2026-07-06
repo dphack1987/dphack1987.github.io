@@ -33,7 +33,7 @@
     <div class="site-header">
       <div class="header-top">
         <a href="${p}index.html" class="nav-logo">
-          <img src="${p}assets/images/logo mapaquindio-com.png" alt="Mapa Turístico del Quindío">
+            <img src="${p}assets/images/logo_mapa/logo.png" srcset="${p}assets/images/logo_mapa/logo@2x.png 2x" alt="Mapa Turístico del Quindío">
         </a>
         <button class="nav-toggle" id="navToggle" aria-label="Menú">
           <span></span><span></span><span></span>
@@ -64,4 +64,9 @@
     drawer.classList.remove('open');
     toggle.classList.remove('open');
   }));
+
+// load optional Don Chucho config (so you can set window.DON_CHUCHO_API_URL)
+const configScript = document.createElement('script'); configScript.src = p + 'assets/js/don-chucho-config.js'; configScript.defer = true; document.body.appendChild(configScript);
+// load Don Chucho widget script if exists
+const script = document.createElement('script'); script.src = p + 'assets/js/don-chucho.js'; script.defer = true; document.body.appendChild(script);
 })();

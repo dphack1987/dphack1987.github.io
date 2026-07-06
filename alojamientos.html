@@ -40,6 +40,10 @@
     </div>
   </div>
   <!-- Pautas -->
+  <div class="pautas-section" style="margin:28px 0;">
+    <h3 style="margin:0 0 12px;color:var(--text);font-size:1.05rem">Aliados y anuncios</h3>
+    <div class="pautas-grid" data-list-pauta="alojamiento"></div>
+  </div>
   <div class="banner-strip">
     <div class="banner-strip-inner">
       <span class="banner-strip-label">Aliados</span>
@@ -75,7 +79,9 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="./assets/js/datos.js"></script>
   <script src="./assets/js/whatsapp.js"></script>
+  <script src="./assets/js/pautas.js"></script>
   <script src="./assets/js/nav.js"></script>
+  <script src="./assets/js/listings.js"></script>
   <script>
     let todos = NEGOCIOS.filter(n=>n.categoria==='alojamiento');
     let lista = [...todos];

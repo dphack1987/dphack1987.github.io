@@ -1,24 +1,29 @@
 (function(){
-  const container = document.querySelector('.pautas-grid');
-  if(!container) return;
+  const containers = Array.from(document.querySelectorAll('.pautas-grid, [data-list-pauta]'));
+  if(!containers.length) return;
 
   async function loadPautantes(){
     try{
       const res = await fetch('./data/pautantes.json');
       const data = await res.json();
-      renderPautas(data);
+      // prepare lookup and modal once
       setupModal(data);
+      // render for each container (filter by data-list-pauta if present)
+      containers.forEach(c => renderPautasForContainer(c, data));
     }catch(e){
       console.error('No se pudo cargar pautantes', e);
     }
   }
 
-  function renderPautas(data){
+  function renderPautasForContainer(container, data){
+    const cat = container.getAttribute('data-list-pauta');
+    let list = data;
+    if(cat) list = data.filter(p => p.categoria === cat);
     container.innerHTML = '';
-    data.forEach(p => {
+    list.forEach(p => {
       const div = document.createElement('div');
       div.className = 'pauta-grid-item';
-      div.innerHTML = `<img src="${p.imagen}" alt="${p.nombre}" loading="lazy" data-pauta-id="${p.id}" style="cursor:zoom-in">`;
+      div.innerHTML = `<img src="${p.imagen}" alt="${p.nombre}" loading="lazy" data-pauta-id="${p.id}" style="cursor:zoom-in"><div class="pauta-desc"><strong>${p.nombre}</strong><p>${p.desc||''}</p></div>`;
       container.appendChild(div);
     });
 
@@ -54,10 +59,10 @@
     overlay.addEventListener('click', (e)=>{
       if(e.target === overlay) closeModal();
     });
-    document.getElementById('closePauta').addEventListener('click', closeModal);
+    overlay.querySelector('#closePauta').addEventListener('click', closeModal);
 
     // store data for lookup
-    window.__pautantes = (data||[]).reduce((acc,x)=>{acc[x.id]=x;return acc;},{})
+    window.__pautantes = (data||[]).reduce((acc,x)=>{acc[x.id]=x;return acc;},{});
   }
 
   function openModal(id){

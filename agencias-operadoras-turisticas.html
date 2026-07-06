@@ -21,13 +21,17 @@
       <button onclick="buscar()">Buscar</button>
     </div>
     <div style="margin-bottom:48px"><div id="mapa-interactivo"></div></div>
-    <div id="cards" class="cards-grid" role="list" aria-live="polite"></div>
+    <div id="cards" class="cards-grid" role="list" aria-live="polite" data-list-category="agencias_y_operadores"></div>
     <div id="empty" class="no-results" style="display:none"><div class="icon">🧭</div><p>Sin resultados.</p></div>
     <div class="cta-anunciate">
       <h2>¿Tienes una agencia o actividad turística?</h2>
       <p>Llega a turistas que buscan exactamente lo que ofreces.</p>
       <a href="./anunciate.html" class="btn-cta">📣 Publicar mi agencia</a>
     </div>
+  </div>
+  <div class="pautas-section" style="margin:28px 0;">
+    <h3 style="margin:0 0 12px;color:var(--text);font-size:1.05rem">Aliados y anuncios</h3>
+    <div class="pautas-grid" data-list-pauta="agencia"></div>
   </div>
   <div class="banner-strip">
     <div class="banner-strip-inner">
@@ -62,6 +66,8 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="./assets/js/datos.js"></script>
   <script src="./assets/js/whatsapp.js"></script>
+  <script src="./assets/js/pautas.js"></script>
+  <script src="./assets/js/listings.js"></script>
   <script src="./assets/js/nav.js"></script>
   <!-- Botón de geolocalización y control de radio -->
   <button id="btn-geolocate" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; padding: 14px 24px; border: none; border-radius: 50px; background: linear-gradient(135deg, #059669, #10b981); color: white; font-weight: 800; font-size: 16px; cursor: pointer; box-shadow: 0 4px 15px rgba(5, 150, 105, 0.4); transition: transform 0.2s ease, box-shadow 0.2s ease;">
