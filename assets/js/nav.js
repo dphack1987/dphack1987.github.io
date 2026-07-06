@@ -10,55 +10,24 @@
   const cur = window.location.pathname;
   const active = (href) => cur.includes(href.replace('./', '')) ? ' class="active"' : '';
 
-  const CATEGORIAS_MENU = {
-    turismo: {
-      label: "🗺️ Turismo y Mapas",
-      items: [
-        { id: "agencias_de_turismo", label: "Agencias de Turismo", url: "agencias-de-turismo.html" },
-        { id: "atractivos_turisticos", label: "Atractivos Turísticos", url: "sitios-turisticos.html" },
-        { id: "alquiler_de_fincas_quindio", label: "Alquiler de Fincas", url: "alquileres-fincas.html" },
-        { id: "hoteles_armenia", label: "Hoteles Armenia", url: "alojamientos.html" },
-        { id: "glamping", label: "Glampings", url: "glamping.html" },
-        { id: "artesanias", label: "Artesanías", url: "artesanias.html" }
-      ]
-    },
-    gastronomia: {
-      label: "🍲 Gastronomía",
-      items: [
-        { id: "gastronomia_tipica", label: "Gastronomía Típica", url: "gastronomia-tipica.html" },
-        { id: "comida_de_mar", label: "Comida de Mar", url: "comida-de-mar.html" },
-        { id: "comidas_rapidas", label: "Comidas Rápidas", url: "comidas-rapidas.html" },
-        { id: "tiendas_de_cafe", label: "Tiendas de Café", url: "tiendas-de-cafe.html" },
-        { id: "postres_y_dulces", label: "Postres y Dulces", url: "postres-y-dulces.html" },
-        { id: "cocteles_licores", label: "Cocteles y Licores", url: "cocteles-licores.html" }
-      ]
-    },
-    comercio_servicios: {
-      label: "🛍️ Comercio y Servicios",
-      items: [
-        { id: "centros_comerciales", label: "Centros Comerciales", url: "centros-comerciales.html" },
-        { id: "transportes", label: "Transportes", url: "transportes.html" },
-        { id: "deportes_y_entretenimiento", label: "Deportes y Entretenimiento", url: "entretenimiento.html" },
-        { id: "seguros", label: "Seguros", url: "seguros.html" }
-      ]
-    }
-  };
+  // Menu ordered exactly as requested by the user
+  const MENU_ITEMS = [
+    { label: 'Home', url: 'index.html' },
+    { label: 'Mapa de Circasia 2025', url: 'mapa-de-circasia-2025.html' },
+    { label: 'Alquiler Finca hoteles', url: 'alquiler-finca-hoteles.html' },
+    { label: 'Mapa del Quindío', url: 'mapa-del-quindio.html' },
+    { label: 'Quindío Comercial', url: 'quindio-comercial.html' },
+    { label: 'Municipios del Quindío', url: 'municipios-del-quindio.html' },
+    { label: 'Agencias Operadoras Turísticas', url: 'agencias-operadoras-turisticas.html' },
+    { label: 'Atractivos Turísticos', url: 'sitios-turisticos.html' },
+    { label: 'Alojamientos', url: 'alojamientos.html' },
+    { label: 'Mapa Calarcá 2026', url: 'mapa-de-calarca-2026.html' },
+    { label: 'Anúnciate', url: 'anunciate.html' }
+  ];
 
-  const renderCategoriaGroups = () => Object.entries(CATEGORIAS_MENU).map(([, macro]) => `
-          <div class="menu-group">
-            <span class="menu-group-label">${macro.label}</span>
-            <div class="menu-group-items">
-              ${macro.items.map(item => `<a href="${p}${item.url}"${active(item.url)}>${item.label}</a>`).join('')}
-            </div>
-          </div>
-        `).join('');
+  const renderPrimaryMenu = () => MENU_ITEMS.map(item => `<a href="${p}${item.url}"${active(item.url)}>${item.label}</a>`).join('');
 
-  const renderDrawerSections = () => Object.entries(CATEGORIAS_MENU).map(([, macro]) => `
-        <div class="nav-drawer-section">
-          <div class="nav-drawer-section-title">${macro.label}</div>
-          ${macro.items.map(item => `<a href="${p}${item.url}">${item.label}</a>`).join('')}
-        </div>
-      `).join('');
+  const renderDrawerMenu = () => MENU_ITEMS.map(item => `<a href="${p}${item.url}">${item.label}</a>`).join('');
 
   const html = `
     <div class="site-header">
@@ -85,8 +54,7 @@
             </div>
           </div>
           
-          ${renderCategoriaGroups()}
-          <a href="${p}anunciate.html"${active('anunciate')}>🚀 Anúnciate</a>
+          ${renderPrimaryMenu()}
         </div>
       </nav>
     </div>
@@ -102,7 +70,7 @@
         <a href="https://mapaquindio.vercel.app/" target="_blank" rel="noopener">Mapa general</a>
       </div>
       
-      ${renderDrawerSections()}
+      ${renderDrawerMenu()}
       
       <a href="${p}anunciate.html" style="font-weight:800;">📣 Anúnciate</a>
     </div>`;
