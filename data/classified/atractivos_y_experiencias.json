@@ -1,0 +1,116 @@
+[
+  {
+    "id": "reserva-natural-cascadas-rio-verde",
+    "nombre": "Reserva Natural Cascadas de Río Verde",
+    "tipo": "Plan de pasadía turístico y ecoturismo",
+    "descripcion": "Reserva natural con transporte en Willys, guía ambiental y almuerzo.",
+    "ubicacion": "Córdoba, Quindío",
+    "telefono": "3174426044",
+    "operador": "Quindío Travel"
+  },
+  {
+    "id": "complejo-soleden",
+    "nombre": "Complejo Turístico y Deportivo Soledén",
+    "tipo": "Complejo recreativo y deportivo",
+    "descripcion": "Pasaporte multiatracciones con piscinas, lago, tirolesa y comida.",
+    "website": "soleden.co"
+  },
+  {
+    "id": "ecoparque-penas-blancas",
+    "nombre": "Ecoparque Peñas Blancas",
+    "tipo": "Ecoparque",
+    "descripcion": "Alojamiento ancestral en superadobe y experiencias ecológicas.",
+    "website": "www.calarca.net/ecoparquepenasblancas",
+    "telefono": "3103967951"
+  },
+  {
+    "id": "finca-las-flores",
+    "nombre": "Finca Las Flores",
+    "tipo": "Recorrido de cacao tradicional",
+    "descripcion": "Experiencia del cacao en Génova con recorridos y talleres.",
+    "email": "larutadelcacaogenova@gmail.com",
+    "instagram": "La ruta del cacao Génova",
+    "telefono": "+573209555062"
+  },
+  {
+    "id": "la-pequena-granja-de-mama-lulu",
+    "nombre": "La Pequeña Granja de Mamá Lulú",
+    "tipo": "Turismo académico y científico",
+    "descripcion": "Recorridos agroecológicos, posada nativa y restaurante típico.",
+    "ubicacion": "Vereda Palermo, Quimbaya",
+    "telefonos": [
+      "3113894646",
+      "3128319359"
+    ],
+    "email": "granjaluluquimbaya@yahoo.es",
+    "website": "www.granjamamalulu.com"
+  },
+  {
+    "id": "jardin-botanico-del-quindio",
+    "nombre": "Jardín Botánico del Quindío",
+    "tipo": "Atractivo ambiental",
+    "descripcion": "Centro de conservación con mariposario y avistamiento de aves.",
+    "ubicacion": "Av. Centenario No. 15-190, Calarcá",
+    "whatsapp": "+573104045223",
+    "email": "comunicaciones@jardinbotanicoquindio.org"
+  },
+  {
+    "id": "el-laberinto-mil-caminos",
+    "nombre": "El Laberinto Mil Caminos",
+    "tipo": "Atracción turística",
+    "descripcion": "Laberinto turístico en Quimbaya con visitas y actividades familiares.",
+    "telefono": "3171129239",
+    "website": "www.laberintomilcaminos.com"
+  },
+  {
+    "id": "mirador-encanto-filandia",
+    "nombre": "Mirador Encanto Filandia",
+    "tipo": "Mirador y cafetería",
+    "descripcion": "Mirador con cafetería y vistas panorámicas en Filandia.",
+    "ubicacion": "Calle 7 #7-29, Filandia",
+    "telefono": "3209369950",
+    "facebook": "encantofilandia"
+  },
+  {
+    "id": "parque-los-arrieros",
+    "nombre": "Parque Los Arrieros",
+    "tipo": "Parque temático",
+    "descripcion": "Parque familiar de tradición y cultura en Quimbaya.",
+    "ubicacion": "Quimbaya, Quindío",
+    "whatsapp": "3136107681",
+    "website": "www.parquelosarrieros.com"
+  },
+  {
+    "id": "qinti-parque-en-la-montana",
+    "nombre": "Q'inti (Parque en la Montaña)",
+    "tipo": "Parque temático",
+    "descripcion": "Parque con la Casa Cafetera al Revés y 17 estaciones fotográficas.",
+    "ubicacion": "Córdoba, Quindío",
+    "telefono": "3126815139",
+    "email": "qintiparque@gmail.com"
+  },
+  {
+    "id": "finca-la-alejandra-territorio-paisaje",
+    "nombre": "Finca La Alejandra (Territorio Paisaje)",
+    "tipo": "Recorrido cacaotero",
+    "descripcion": "Experiencia de chocolate del árbol a la taza con alojamiento y transporte.",
+    "instagram": "@territoriopaisaje / @laalejandracacao",
+    "telefonos": [
+      "3146573393",
+      "3007921748"
+    ]
+  },
+  {
+    "id": "recuca",
+    "nombre": "Recuca",
+    "tipo": "Recorrido de cultura cafetera",
+    "descripcion": "Experiencia del café con visitas guiadas en Calarcá.",
+    "telefonos": [
+      "3108303779",
+      "3113839885",
+      "3108303780"
+    ],
+    "email": "luchorecuca@hotmail.com",
+    "website": "www.recuca.com"
+  }
+]

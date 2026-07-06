@@ -1,0 +1,101 @@
+[
+  {
+    "id": "dos-cielos-boutique-de-licores",
+    "nombre": "Dos Cielos Boutique de Licores",
+    "tipo": "Tiendas de licores",
+    "descripcion": "Boutique de licores en Armenia.",
+    "instagram": "@doscielos.axm",
+    "telefono": "3023478080",
+    "ubicacion": "Carrera 14 # 14Norte - 30"
+  },
+  {
+    "id": "cantina-el-desmadre",
+    "nombre": "Cantina El Desmadre",
+    "tipo": "Restaurante",
+    "descripcion": "Cantina con ambiente juvenil y reservaciones en Armenia.",
+    "instagram": "@eldesmadrecantina.axm",
+    "ubicacion": "Cra 16 # 21N, Barrio Laureles, Armenia",
+    "telefono": "+573137768567"
+  },
+  {
+    "id": "la-fogata-steak-house",
+    "nombre": "La Fogata Steak House",
+    "tipo": "Restaurante",
+    "descripcion": "Restaurante clásico fundado en 1963 en Armenia.",
+    "whatsapp": "3122480291",
+    "direccion": "Av Bolivar 14N – 39, Armenia"
+  },
+  {
+    "id": "la-fogata-express",
+    "nombre": "La Fogata Express",
+    "tipo": "Restaurante",
+    "descripcion": "Sucursal express en el Centro Artesanal de Circasia.",
+    "direccion": "Centro Artesanal Parque Principal, Piso 3",
+    "telefono": "3102147135"
+  },
+  {
+    "id": "restaurante-mangague-altavista",
+    "nombre": "Restaurante Magangué Altavista",
+    "tipo": "Restaurante",
+    "descripcion": "Restaurante con sabor tradicional en la calle real de Armenia.",
+    "whatsapp": "+573186011957"
+  },
+  {
+    "id": "classic-arepa-town-fast-food",
+    "nombre": "Classic Arepa Town Fast Food",
+    "tipo": "Comida rápida",
+    "descripcion": "Local de arepas y comida rápida en Armenia.",
+    "direccion": "Calle 50 Containers de los naranjos local 10, Armenia",
+    "whatsapp": "3145621785"
+  },
+  {
+    "id": "john-chewing-food",
+    "nombre": "John Chewing Food",
+    "tipo": "Comida rápida",
+    "descripcion": "Restaurante con domicilio en el antiguo estadio San José.",
+    "telefonos": [
+      "3228391293",
+      "3053413183"
+    ]
+  },
+  {
+    "id": "mostricos",
+    "nombre": "MostRicos",
+    "tipo": "Comida rápida",
+    "descripcion": "Local de comida rápida famoso por la Bomba Nuclear.",
+    "instagram": "@mostricosarmenia",
+    "telefonos": [
+      "3042451420"
+    ]
+  },
+  {
+    "id": "sandukes",
+    "nombre": "SánDukes",
+    "tipo": "Comida rápida",
+    "descripcion": "Sandwichería con opciones saladas y dulces saludables.",
+    "telefono": "3214077605"
+  },
+  {
+    "id": "el-fogon-cuyabro",
+    "nombre": "El Fogón Cuyabro",
+    "tipo": "Restaurante",
+    "descripcion": "Cocina típica de casa con sabor paisa.",
+    "direccion": "Parque Sucre, carrera 14 #12-48",
+    "telefono": "3113862329"
+  },
+  {
+    "id": "el-roble",
+    "nombre": "El Roble",
+    "tipo": "Restaurante típico",
+    "descripcion": "Comida típica en vía Armenia – Pereira.",
+    "telefono": "3175171403"
+  },
+  {
+    "id": "la-feria-del-platano",
+    "nombre": "La Feria del Plátano",
+    "tipo": "Restaurante típico",
+    "descripcion": "Restaurante de comida típica con varias sedes.",
+    "whatsapp": "+573164805446",
+    "instagram": "@laferiadelplatano"
+  }
+]

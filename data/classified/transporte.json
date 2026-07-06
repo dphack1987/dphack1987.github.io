@@ -1,0 +1,59 @@
+[
+  {
+    "id": "radio-taxi-del-quindio",
+    "nombre": "Radio Taxi del Quindío",
+    "tipo": "Taxi 24/7",
+    "descripcion": "Servicio de taxis con app disponible para descarga.",
+    "telefono": "7462222",
+    "whatsapp": "3115422222"
+  },
+  {
+    "id": "rutas-y-turismo",
+    "nombre": "Rutas y Turismo",
+    "tipo": "Agencia de transporte especial",
+    "descripcion": "Transporte para eventos, alojamiento rural y guianza especializada.",
+    "telefonos": [
+      "3104631678",
+      "3105386253"
+    ],
+    "emails": [
+      "rutasturismo01@gmail.com",
+      "reservas@rutasyturismo.com"
+    ],
+    "website": "www.rutasyturismo.com"
+  },
+  {
+    "id": "joselu-transporte-y-turismo",
+    "nombre": "Joselu Transporte y Turismo",
+    "tipo": "Transporte turístico",
+    "descripcion": "Servicio de transporte turístico para rutas y paseos del Eje Cafetero.",
+    "telefono": "3022153132",
+    "whatsapp": "+573022153132",
+    "email": "gerenciajoselu@gmail.com"
+  },
+  {
+    "id": "mocca-aventura-y-cafe",
+    "nombre": "Mocca Aventura y Café",
+    "tipo": "Operadora y transporte turístico",
+    "descripcion": "Tours y transporte turístico con enfoque en experiencias cafeteras.",
+    "telefonos": [
+      "3117043170",
+      "3123695751"
+    ],
+    "instagram": "@mocca_c.f",
+    "facebook": "mocca aventura y café"
+  },
+  {
+    "id": "transportes-union-cafetera",
+    "nombre": "Transportes Unión Cafetera",
+    "tipo": "Transporte especializado",
+    "descripcion": "Transporte escolar, empresarial, de salud y turístico con RNT.",
+    "rnt": "65574",
+    "telefonos": [
+      "3005908383",
+      "3103099222"
+    ],
+    "email": "secretariatransequin@gmail.com",
+    "website": "www.unioncafetera.com"
+  }
+]

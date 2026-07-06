@@ -1,0 +1,118 @@
+[
+  {
+    "id": "casa-campestre-la-cosecha",
+    "nombre": "Casa Campestre La Cosecha",
+    "tipo": "Casa campestre",
+    "descripcion": "Casa campestre en Km 2.4 vía Armenia - Pueblo Tapao.",
+    "ubicacion": "Km 2.4 vía Armenia - Pueblo Tapao, Quindío",
+    "telefonos": [
+      "3156999060",
+      "3103536520"
+    ],
+    "email": "casacampestrelacosecha@gmail.com"
+  },
+  {
+    "id": "finca-cafetera-el-ocaso",
+    "nombre": "Finca Cafetera El Ocaso",
+    "tipo": "Finca cafetera / Hotel",
+    "descripcion": "Finca cafetera con tour, alojamiento y café en Salento.",
+    "ubicacion": "Salento, Quindío",
+    "telefono": "+573134253669",
+    "website": "www.fincaelocasosalento.com"
+  },
+  {
+    "id": "la-floresta-hotel-campestre",
+    "nombre": "La Floresta Hotel Campestre",
+    "tipo": "Hotel campestre",
+    "descripcion": "Hotel ecológico con circuito ecológico, piscina y auditorio.",
+    "ubicacion": "Km 3 vía Armenia al aeropuerto, Quindío",
+    "telefonos": [
+      "+573123281021",
+      "3155479289"
+    ],
+    "instagram": "@florestahotelcampestrearmenia",
+    "website": "www.hotelcampestrelafloresta.co",
+    "email": "reservaslaflorestahotel@gmail.com"
+  },
+  {
+    "id": "hacienda-moraleja",
+    "nombre": "Hacienda Moraleja",
+    "tipo": "Hacienda / Alojamiento",
+    "descripcion": "Restaurante, glamping, alojamiento y eventos en Calarcá.",
+    "ubicacion": "Km 7 Vía Calarcá / Barcelona, Quindío",
+    "telefono": "3206834432",
+    "email": "haciendamoraleja@gmail.com",
+    "instagram": "@haciendamoraleja"
+  },
+  {
+    "id": "alma-nativa-hotel-campestre",
+    "nombre": "Alma Nativa Hotel Campestre",
+    "tipo": "Hotel campestre",
+    "descripcion": "Hotel campestre con habitaciones familiares, dobles y luxury.",
+    "ubicacion": "Calarcá Vía Barcelona, Vereda La Albania",
+    "whatsapp": "+573105752469",
+    "instagram": "@almanativahotelcampestre",
+    "website": "www.hotelcampestrealmanativa.com"
+  },
+  {
+    "id": "hotel-cafe-cafe-campestre",
+    "nombre": "Hotel Café Café Campestre",
+    "tipo": "Hotel campestre",
+    "descripcion": "Tradición, naturaleza y confort en el Quindío.",
+    "telefonos": [
+      "3114187558",
+      "3118146565"
+    ],
+    "instagram": "@hotelcampestrecafecafe",
+    "website": "www.hotelcampestrecafecafe.com"
+  },
+  {
+    "id": "hotel-delirio-campestre-quindio",
+    "nombre": "Hotel Delirio Campestre Quindío",
+    "tipo": "Hotel campestre",
+    "descripcion": "Alojamiento con aire campestre en Montenegro, cerca del Parque del Café.",
+    "ubicacion": "Km 1 vía Montenegro, Parque del Café, Montenegro",
+    "telefono": "3202568458",
+    "instagram": "@hoteldelirio",
+    "email": "reservas@deliriocampestre.com"
+  },
+  {
+    "id": "linaje-salvaje",
+    "nombre": "Linaje Salvaje",
+    "tipo": "Hotel",
+    "descripcion": "Hotel ubicado en vía Albania km 8 vía Calarcá - Barcelona.",
+    "whatsapp": "3137321433",
+    "instagram": "@linajesalvajehotel"
+  },
+  {
+    "id": "hotel-el-bosque",
+    "nombre": "Hotel El Bosque",
+    "tipo": "Hotel",
+    "descripcion": "Hotel en el centro de Armenia con buena relación calidad-precio.",
+    "telefono": "3176471482"
+  },
+  {
+    "id": "isa-victory-hotel",
+    "nombre": "Isa Victory Hotel",
+    "tipo": "Hotel boutique",
+    "descripcion": "Hotel premium con gimnasio, restaurante, coworking y sky club.",
+    "ubicacion": "Av Bolívar 21 Norte 47, Armenia",
+    "telefonos": [
+      "067340909",
+      "+573207707079",
+      "3207707019"
+    ],
+    "email": "reservas@isavictoryhotel.com",
+    "website": "www.isavictoryhotelboutique.com.co"
+  },
+  {
+    "id": "hotel-san-jeronimo",
+    "nombre": "Hotel San Jerónimo",
+    "tipo": "Hotel",
+    "descripcion": "Hotel moderno con desayuno, WiFi y aire acondicionado.",
+    "ubicacion": "Cra 14 #14-14, Armenia",
+    "telefono": "+573108314719",
+    "instagram": "@sanjeronimoarmeniaquindio",
+    "email": "hotelsanjeronimoarmenia@gmail.com"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "anatolia",
+    "nombre": "Anatolia",
+    "tipo": "Cafetería",
+    "descripcion": "Encuentro de sabores en Armenia.",
+    "direccion": "Avenida 19 # 35 norte 41, Armenia",
+    "telefono": "3117011653"
+  },
+  {
+    "id": "cafe-la-terraza",
+    "nombre": "Café La Terraza",
+    "tipo": "Cafetería",
+    "descripcion": "Café de origen fresco en la Plaza de Bolívar.",
+    "telefono": "3164469365"
+  },
+  {
+    "id": "cafe-sensorial",
+    "nombre": "Café Sensorial",
+    "tipo": "Cafetería",
+    "descripcion": "Espresso, latte y cold brew en Parque Fundadores.",
+    "telefono": "3117113473"
+  },
+  {
+    "id": "queso-y-cafe",
+    "nombre": "Queso & Café",
+    "tipo": "Cafetería",
+    "descripcion": "Pan de bono y café en Laureles, Armenia.",
+    "direccion": "Calle 22 Norte Cra 14 - 28, Armenia"
+  },
+  {
+    "id": "cafeina-coffee-shop",
+    "nombre": "Cafeína Coffee Shop",
+    "tipo": "Tienda de café y academia",
+    "descripcion": "Café, capacitación en barismo y cata en Armenia.",
+    "direccion": "Calle 17N #10-30 Barrio El Nogal, Armenia",
+    "telefonos": [
+      "3174393457",
+      "3152271880"
+    ],
+    "email": "cafeinacoffeeshop@gmail.com",
+    "instagram": "@Cafeina.coffeeshop"
+  }
+]

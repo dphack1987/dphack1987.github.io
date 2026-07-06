@@ -1,0 +1,22 @@
+[
+  {
+    "id": "artesanias-turron-y-cafe",
+    "nombre": "Artesanías Turrón y Café",
+    "tipo": "Artesanías y dulcería",
+    "descripcion": "Artesanías, bisutería y dulcería en Armenia.",
+    "direccion": "Cra 14 # 14-43, Armenia",
+    "telefonos": [
+      "6067339858",
+      "3103983619"
+    ],
+    "instagram": "@turronycafeaxm"
+  },
+  {
+    "id": "ceramicas-el-alfarero",
+    "nombre": "Cerámicas El Alfarero",
+    "tipo": "Artesanías",
+    "descripcion": "Alfarería con vasijas de arcilla en Circasia.",
+    "direccion": "Centro Artesanal Plaza de Bolívar, Circasia",
+    "telefono": "3206178498"
+  }
+]

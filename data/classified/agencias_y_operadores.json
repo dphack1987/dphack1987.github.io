@@ -1,0 +1,38 @@
+[
+  {
+    "id": "quindio-travel",
+    "nombre": "Quindío Travel",
+    "tipo": "Operador turístico",
+    "descripcion": "Planes turísticos para el Quindío y el Eje Cafetero.",
+    "ubicacion": "Armenia, Quindío",
+    "telefono": "3174426044",
+    "email": "quindiotravel@yahoo.com",
+    "website": "www.quindiotravel.net"
+  },
+  {
+    "id": "buen-vuelo-tours",
+    "nombre": "Buen Vuelo Tours",
+    "tipo": "Agencia de viajes y turismo",
+    "descripcion": "Experiencias turísticas con reserva y acompañamiento personalizado.",
+    "ubicacion": "Armenia, Quindío",
+    "whatsapp": "3012042819",
+    "instagram": "@buenvuelotours",
+    "email": "reservas@buenvuelotours.com",
+    "website": "www.buenvuelotours.com"
+  },
+  {
+    "id": "enlaces-viajes-y-turismo",
+    "nombre": "Enlaces Viajes y Turismo",
+    "tipo": "Agencia de viajes y turismo",
+    "descripcion": "Agencia especializada en experiencias de turismo en el Quindío.",
+    "ubicacion": "Cra 13 A # 1N - 05 Local 3, Armenia, Quindío",
+    "telefono": "3226542124"
+  },
+  {
+    "id": "turismo-panaca",
+    "nombre": "Turismo PANACA",
+    "tipo": "Operador turístico",
+    "descripcion": "Diseñan experiencias para viajar, aprender y compartir.",
+    "website": "www.panaca.co"
+  }
+]

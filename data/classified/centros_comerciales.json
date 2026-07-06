@@ -1,0 +1,20 @@
+[
+  {
+    "id": "centro-comercial-sansur",
+    "nombre": "Centro Comercial SanSur",
+    "tipo": "Centro comercial",
+    "descripcion": "Centro comercial con moda, tecnología, comida y entretenimiento.",
+    "direccion": "Cra 18 # 59-37, Armenia",
+    "telefonos": [
+      "3046102606",
+      "6067358850"
+    ]
+  },
+  {
+    "id": "unicentro-armenia",
+    "nombre": "Unicentro Armenia",
+    "tipo": "Centro comercial",
+    "descripcion": "Centro comercial con tiendas, entretenimiento y redes activas.",
+    "instagram": "@UNICENTROARMENIAOFICIAL"
+  }
+]

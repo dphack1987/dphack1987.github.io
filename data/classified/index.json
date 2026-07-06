@@ -1,0 +1,54 @@
+{
+  "agencias_y_operadores": {
+    "count": 4,
+    "file": "data/classified/agencias_y_operadores.json"
+  },
+  "guias_turisticos": {
+    "count": 1,
+    "file": "data/classified/guias_turisticos.json"
+  },
+  "alojamientos": {
+    "count": 11,
+    "file": "data/classified/alojamientos.json"
+  },
+  "atractivos_y_experiencias": {
+    "count": 12,
+    "file": "data/classified/atractivos_y_experiencias.json"
+  },
+  "transporte": {
+    "count": 5,
+    "file": "data/classified/transporte.json"
+  },
+  "gastronomia": {
+    "count": 12,
+    "file": "data/classified/gastronomia.json"
+  },
+  "tiendas_de_cafe": {
+    "count": 5,
+    "file": "data/classified/tiendas_de_cafe.json"
+  },
+  "centros_comerciales": {
+    "count": 2,
+    "file": "data/classified/centros_comerciales.json"
+  },
+  "artesanias": {
+    "count": 2,
+    "file": "data/classified/artesanias.json"
+  },
+  "deportes_y_entretenimiento": {
+    "count": 1,
+    "file": "data/classified/deportes_y_entretenimiento.json"
+  },
+  "grupos_musicales": {
+    "count": 1,
+    "file": "data/classified/grupos_musicales.json"
+  },
+  "postres_y_dulces": {
+    "count": 1,
+    "file": "data/classified/postres_y_dulces.json"
+  },
+  "seguros": {
+    "count": 1,
+    "file": "data/classified/seguros.json"
+  }
+}
