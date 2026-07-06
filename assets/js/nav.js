@@ -41,35 +41,11 @@
       </div>
       <nav class="menu-bar" role="navigation" aria-label="Menú principal">
         <div class="menu-bar-inner">
-          <a href="${p}index.html"${active('index.html')}>🏠 Home</a>
-          
-          <div class="menu-group">
-            <span class="menu-group-label">🗺️ Mapas</span>
-            <div class="menu-group-items">
-              <a href="${p}mapa-del-quindio.html"${active('mapa-del-quindio')}>Mapa Quindío</a>
-              <a href="${p}mapa-de-circasia-2025.html"${active('mapa-de-circasia-2025')}>Mapa Circasia 2025</a>
-              <a href="${p}mapa-de-calarca-2026.html"${active('mapa-de-calarca-2026')}>Mapa Calarcá 2026</a>
-              <a href="https://mapa-armenia-2026.vercel.app/" target="_blank" rel="noopener">Mapa Armenia 2026</a>
-              <a href="https://mapaquindio.vercel.app/" target="_blank" rel="noopener">Mapa general</a>
-            </div>
-          </div>
-          
           ${renderPrimaryMenu()}
         </div>
       </nav>
     </div>
     <div class="nav-drawer" id="navDrawer">
-      <a href="${p}index.html">🏠 Home</a>
-      
-      <div class="nav-drawer-section">
-        <div class="nav-drawer-section-title">🗺️ Mapas</div>
-        <a href="${p}mapa-del-quindio.html">Mapa Quindío</a>
-        <a href="${p}mapa-de-circasia-2025.html">Mapa Circasia 2025</a>
-        <a href="${p}mapa-de-calarca-2026.html">Mapa Calarcá 2026</a>
-        <a href="https://mapa-armenia-2026.vercel.app/" target="_blank" rel="noopener">Mapa Armenia 2026</a>
-        <a href="https://mapaquindio.vercel.app/" target="_blank" rel="noopener">Mapa general</a>
-      </div>
-      
       ${renderDrawerMenu()}
       
       <a href="${p}anunciate.html" style="font-weight:800;">📣 Anúnciate</a>
