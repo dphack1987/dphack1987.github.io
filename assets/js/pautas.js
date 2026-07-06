@@ -23,7 +23,16 @@
     list.forEach(p => {
       const div = document.createElement('div');
       div.className = 'pauta-grid-item';
-      div.innerHTML = `<img src="${p.imagen}" alt="${p.nombre}" loading="lazy" data-pauta-id="${p.id}" style="cursor:zoom-in"><div class="pauta-desc"><strong>${p.nombre}</strong><p>${p.desc||''}</p></div>`;
+      const waLink = (window.generateWhatsAppLink && typeof window.generateWhatsAppLink === 'function') ? window.generateWhatsAppLink(p) : (`https://wa.me/${(p.whatsapp||'')}`);
+      const webp = (p.imagen || '').replace(/\.(png|jpe?g)$/i, '.webp');
+      div.innerHTML = `
+        <picture>
+          <source type="image/webp" srcset="${webp}">
+          <img src="${p.imagen}" alt="${p.nombre}" loading="lazy" data-pauta-id="${p.id}" style="cursor:zoom-in">
+        </picture>
+        <div class="pauta-desc"><strong>${p.nombre}</strong><p>${p.desc||''}</p>
+        <div style="margin-top:8px;display:flex;gap:8px"><a href="${waLink}" target="_blank" rel="noopener" class="btn-wa">💬 WhatsApp</a><a href="#" class="btn-maps" data-pauta-map="${p.maps||'#'}">📍 Llegar</a></div>
+        </div>`;
       container.appendChild(div);
     });
 
@@ -33,6 +42,15 @@
         openModal(id);
       });
     });
+
+      // handle pauta-map buttons inside grid
+      container.querySelectorAll('.btn-maps[data-pauta-map]').forEach(btn=>{
+        btn.addEventListener('click',(e)=>{
+          e.preventDefault();
+          const href = btn.getAttribute('data-pauta-map') || '#';
+          if(href && href !== '#') window.open(href, '_blank');
+        })
+      })
   }
 
   function setupModal(data){
@@ -71,8 +89,12 @@
     const overlay = document.getElementById('pautaModalOverlay');
     overlay.classList.add('open');
     const modal = document.getElementById('pautaModal');
-    modal.querySelector('.pauta-media img').src = item.imagen;
-    modal.querySelector('.pauta-media img').alt = item.nombre;
+    const webp = (item.imagen||'').replace(/\.(png|jpe?g)$/i, '.webp');
+    modal.querySelector('.pauta-media').innerHTML = `
+      <picture>
+        <source type="image/webp" srcset="${webp}">
+        <img src="${item.imagen}" alt="${item.nombre}" loading="lazy">
+      </picture>`;
     document.getElementById('pautaTitle').textContent = item.nombre;
     document.getElementById('pautaDesc').textContent = item.desc || '';
     const meta = document.getElementById('pautaMeta');
