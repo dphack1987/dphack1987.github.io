@@ -249,6 +249,30 @@ a,button,.nav-toggle,.filtro-btn{min-width:var(--touch-target);min-height:var(--
 .floating-btn .wa{background:#25d366;color:white}
 .floating-btn .transporte{background:linear-gradient(135deg,var(--g1),var(--g2));color:white}
 
+/* Don Chucho widget */
+#don-chucho-root{position:fixed;right:20px;bottom:20px;z-index:11000;font-family:inherit}
+.don-chucho-btn{background:linear-gradient(135deg,var(--g1),var(--g2));color:white;padding:12px 18px;border-radius:999px;box-shadow:0 12px 30px rgba(0,0,0,.2);cursor:pointer;display:flex;align-items:center;gap:10px;font-weight:800}
+.don-chucho-panel{width:360px;background:white;border-radius:12px;box-shadow:0 24px 80px rgba(0,0,0,.35);overflow:hidden;display:none;flex-direction:column}
+.don-chucho-panel.open{display:flex}
+.don-chucho-panel .dc-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid #f0f0f0;background:linear-gradient(90deg,rgba(5,150,105,.06),rgba(245,158,11,.03))}
+.don-chucho-panel .dc-body{padding:12px 14px;display:flex;flex-direction:column;gap:10px}
+.dc-chat{height:180px;overflow:auto;padding:8px;border-radius:8px;background:#fbfefb;border:1px solid #f0f5f0}
+.dc-msg{padding:8px 10px;border-radius:10px;margin-bottom:8px;max-width:85%}
+.dc-user{background:#e6f4ea;color:var(--text2);margin-left:auto}
+.dc-bot{background:#fff9e6;color:var(--text);}
+.dc-input-row{display:flex;gap:8px}
+.dc-input-row input{flex:1;padding:10px;border:1px solid #e6e6e6;border-radius:8px}
+.dc-input-row button{padding:10px 12px;border-radius:8px;border:none;background:linear-gradient(135deg,var(--g1),var(--g2));color:white;font-weight:800}
+.dc-divider{text-align:center;font-weight:800;color:var(--text3);font-size:.9rem;margin-top:6px}
+.dc-quote label{display:block;font-weight:700;margin-bottom:6px}
+.dc-quote select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6}
+.dc-fields{display:flex;gap:8px;margin-top:8px}
+.dc-fields label{flex:1;display:flex;flex-direction:column;font-size:.9rem}
+.dc-total{font-weight:900;margin-top:8px}
+.dc-actions{display:flex;gap:8px;margin-top:8px}
+.dc-actions .btn-wa{flex:1;background:#25d366;color:white;padding:10px;border-radius:8px;border:none;font-weight:800}
+@media(max-width:480px){.don-chucho-panel{width:100%;right:8px;left:8px;bottom:80px}}
+
 /* ── MODAL DE PAUTAS ── */
 .pauta-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;z-index:10000;padding:24px}
 .pauta-modal-overlay.open{display:flex}
@@ -289,6 +313,16 @@ a,button,.nav-toggle,.filtro-btn{min-width:var(--touch-target);min-height:var(--
   transition:all .3s;aspect-ratio:4/3}
 .pauta-grid-item:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(16,185,129,.2)}
 .pauta-grid-item img{width:100%;height:100%;object-fit:cover}
+
+/* Smart filters styling */
+.smart-filters{margin:18px 0 8px;display:flex;flex-direction:column;gap:8px}
+.smart-filters-row{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.experience-filters{display:flex;flex-wrap:wrap;gap:8px}
+.sf-btn{padding:8px 12px;border-radius:999px;background:#fff;border:1px solid #e6e6e6;cursor:pointer;font-weight:700}
+.sf-btn.active{background:linear-gradient(135deg,var(--g1),var(--g2));color:white;border-color:transparent}
+.season-filter{display:flex;align-items:center;gap:8px}
+.season-filter label{font-weight:700;color:var(--text3)}
+.season-filter select{padding:8px;border-radius:8px;border:1px solid #e6e6e6}
 
 /* Banner horizontal entre secciones */
 .banner-strip{padding:24px 32px;background:white;border-top:1px solid #d1fae5;border-bottom:1px solid #d1fae5}
