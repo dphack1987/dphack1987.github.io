@@ -3,8 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="refresh" content="0;url=https://mapa-circasia-digital-2.vercel.app/">
-<script>window.location.replace('https://mapa-circasia-digital-2.vercel.app/');</script>
-<title>Mapa de Circasia — Redirigiendo...</title>
+<script>
+  window.location.replace('https://mapa-circasia-digital-2.vercel.app/');
+  // Fallback si Vercel no responde
+  setTimeout(() => {
+    if (!window.location.hostname.includes('vercel')) {
+      document.body.innerHTML = '<div style="padding:40px;text-align:center;font-family:Arial,sans-serif"><h1>🗺️ Mapa de Circasia 2025</h1><p>Redirigiendo al mapa interactivo...</p><p style="color:#666;margin-top:20px">Si no redirige automáticamente, <a href="https://mapa-circasia-digital-2.vercel.app/" style="color:#059669;text-decoration:none">haz clic aquí</a></p><hr style="margin:30px 0"><p style="color:#999;font-size:14px">O vuelve al <a href="./index.html" style="color:#059669">inicio</a></p></div>';
+    }
+  }, 3000);
+</script>
+<title>Mapa de Circasia 2025 — Redirigiendo...</title>
 </head>
-<body><p>Redirigiendo al <a href="https://mapa-circasia-digital-2.vercel.app/">Mapa de Circasia</a>...</p></body>
+<body>
+<div style="padding:40px;text-align:center;font-family:Arial,sans-serif">
+<h1>🗺️ Mapa de Circasia 2025</h1>
+<p>Redirigiendo al <a href="https://mapa-circasia-digital-2.vercel.app/">Mapa de Circasia</a>...</p>
+</div>
+</body>
 </html>

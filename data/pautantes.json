@@ -16,7 +16,7 @@
     "telefono": "+57 300 000 0001",
     "whatsapp": "573000000001",
     "maps": "https://maps.google.com/?q=Hotel+Armont+Calarca",
-    "imagen": "./assets/images/alojamientos/armont.jpg",
+    "imagen": "./pautas_publicitarias/hoteles_armenia/hotel_el_bosque_armenia.png",
     "nivel": "estandar",
     "lat": 4.52,
     "lng": -75.64
@@ -37,7 +37,7 @@
     "telefono": "+57 315 699 9060",
     "whatsapp": "573156999060",
     "maps": "https://maps.google.com/?q=Casa+Campestre+La+Cosecha+Quindio",
-    "imagen": "./pautas_publicitarias/Alquiler_de_fincas/casa_campestre_lacosecha.png",
+    "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/casa_campestre_lacosecha.png",
     "nivel": "premium",
     "lat": 4.48,
     "lng": -75.7
@@ -58,7 +58,7 @@
     "telefono": "+57 313 425 3669",
     "whatsapp": "573134253669",
     "maps": "https://maps.google.com/?q=Finca+El+Ocaso+Salento",
-    "imagen": "./pautas_publicitarias/Alquiler_de_fincas/finca_cafetera_el_ocaso.png",
+    "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/finca_cafetera_el_ocaso.png",
     "nivel": "premium",
     "lat": 4.6367,
     "lng": -75.5711
@@ -83,7 +83,7 @@
     "telefono": "+57 312 328 1021",
     "whatsapp": "573123281021",
     "maps": "https://maps.google.com/?q=Km+3+vía+Armenia+al+aeropuerto",
-    "imagen": "./pautas_publicitarias/Alquiler_de_fincas/hotel_cafe_cafe_campestre.png",
+    "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/finca_la_floresta.png",
     "nivel": "premium",
     "lat": 4.5,
     "lng": -75.6
@@ -105,7 +105,7 @@
     "telefono": "+57 320 683 4432",
     "whatsapp": "573206834432",
     "maps": "https://maps.google.com/?q=Hacienda+Moraleja+Calarca",
-    "imagen": "./pautas_publicitarias/Alquiler_de_fincas/hotel_delirio_campestre_quindio.png",
+    "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hacienda_moraleja.png",
     "nivel": "estandar",
     "lat": 4.53,
     "lng": -75.62
@@ -126,7 +126,7 @@
     "telefono": "+57 310 575 2469",
     "whatsapp": "573105752469",
     "maps": "https://maps.google.com/?q=Alma+Nativa+Hotel+Campestre+Calarca",
-    "imagen": "./pautas_publicitarias/Alquiler_de_fincas/hotel_delirio_campestre_quindio.png",
+    "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_alma_nativa.png",
     "nivel": "premium",
     "lat": 4.52,
     "lng": -75.61
@@ -148,7 +148,7 @@
     "telefono": "+57 311 418 7558",
     "whatsapp": "573114187558",
     "maps": "https://maps.google.com/?q=Hotel+Café+Café+Campestre+Quindio",
-    "imagen": "./pautas_publicitarias/Alquiler_de_fincas/hotel_cafe_cafe_campestre.png",
+    "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_cafe_cafe_campestre.png",
     "nivel": "premium",
     "lat": 4.54,
     "lng": -75.69
@@ -170,7 +170,7 @@
     "telefono": "+57 320 256 8458",
     "whatsapp": "573202568458",
     "maps": "https://maps.google.com/?q=Hotel+Delirio+Campestre+Quindio",
-    "imagen": "./pautas_publicitarias/Alquiler_de_fincas/hotel_delirio_campestre_quindio.png",
+    "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_deliriocampestre.png",
     "nivel": "estandar",
     "lat": 4.5667,
     "lng": -75.75
@@ -955,7 +955,7 @@
     "telefono": "+57 300 000 0025",
     "whatsapp": "5730000000025",
     "maps": "https://maps.google.com/?q=Diana+Seguros+Armenia",
-    "imagen": "./assets/images/seguro de viajes/diana_seguros.jpg",
+    "imagen": "./assets/images/decoraciones/2151973988.jpg",
     "nivel": "estandar",
     "lat": 4.534,
     "lng": -75.681

@@ -112,5 +112,14 @@
     ],
     "email": "luchorecuca@hotmail.com",
     "website": "www.recuca.com"
+  },
+  {
+    "id": "panaca",
+    "nombre": "PANACA",
+    "tipo": "Parque temático agrícola",
+    "descripcion": "Parque diseñado para viajar, aprender y compartir experiencias de agricultura y emprendimiento rural.",
+    "ubicacion": "Montenegro, Quindío",
+    "website": "www.panaca.co",
+    "imagen": "./pautas_publicitarias/atractivos_turisticos/panaca.png"
   }
 ]

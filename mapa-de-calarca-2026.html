@@ -4,10 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Mapa Calarcá 2026 — Mapa Turístico del Quindío</title>
-  <meta http-equiv="refresh" content="0;url=https://mapaquindio.vercel.app/">
-  <script>window.location.replace('https://mapaquindio.vercel.app/');</script>
+  <meta http-equiv="refresh" content="0;url=https://mapa-calarca-2026.vercel.app/">
+  <script>
+    window.location.replace('https://mapa-calarca-2026.vercel.app/');
+    setTimeout(() => {
+      if (!window.location.hostname.includes('vercel')) {
+        document.body.innerHTML = '<div style="padding:40px;text-align:center;font-family:Arial,sans-serif"><h1>🗺️ Mapa de Calarcá 2026</h1><p>Redirigiendo...</p><p style="color:#666;margin-top:20px"><a href="https://mapa-calarca-2026.vercel.app/" style="color:#059669;text-decoration:none">Haz clic aquí</a></p></div>';
+      }
+    }, 3000);
+  </script>
 </head>
 <body>
-  <p>Redirigiendo al <a href="https://mapaquindio.vercel.app/">Mapa Calarcá 2026</a>...</p>
+  <p>Redirigiendo al <a href="https://mapa-calarca-2026.vercel.app/">Mapa Calarcá 2026</a>...</p>
 </body>
 </html>
