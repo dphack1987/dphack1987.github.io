@@ -10,6 +10,56 @@
   const cur = window.location.pathname;
   const active = (href) => cur.includes(href.replace('./', '')) ? ' class="active"' : '';
 
+  const CATEGORIAS_MENU = {
+    turismo: {
+      label: "🗺️ Turismo y Mapas",
+      items: [
+        { id: "agencias_de_turismo", label: "Agencias de Turismo", url: "agencias-de-turismo.html" },
+        { id: "atractivos_turisticos", label: "Atractivos Turísticos", url: "sitios-turisticos.html" },
+        { id: "alquiler_de_fincas_quindio", label: "Alquiler de Fincas", url: "alquileres-fincas.html" },
+        { id: "hoteles_armenia", label: "Hoteles Armenia", url: "alojamientos.html" },
+        { id: "glamping", label: "Glampings", url: "glamping.html" },
+        { id: "artesanias", label: "Artesanías", url: "artesanias.html" }
+      ]
+    },
+    gastronomia: {
+      label: "🍲 Gastronomía",
+      items: [
+        { id: "gastronomia_tipica", label: "Gastronomía Típica", url: "gastronomia-tipica.html" },
+        { id: "comida_de_mar", label: "Comida de Mar", url: "comida-de-mar.html" },
+        { id: "comidas_rapidas", label: "Comidas Rápidas", url: "comidas-rapidas.html" },
+        { id: "tiendas_de_cafe", label: "Tiendas de Café", url: "tiendas-de-cafe.html" },
+        { id: "postres_y_dulces", label: "Postres y Dulces", url: "postres-y-dulces.html" },
+        { id: "cocteles_licores", label: "Cocteles y Licores", url: "cocteles-licores.html" }
+      ]
+    },
+    comercio_servicios: {
+      label: "🛍️ Comercio y Servicios",
+      items: [
+        { id: "centros_comerciales", label: "Centros Comerciales", url: "centros-comerciales.html" },
+        { id: "transportes", label: "Transportes", url: "transportes.html" },
+        { id: "deportes_y_entretenimiento", label: "Deportes y Entretenimiento", url: "entretenimiento.html" },
+        { id: "seguros", label: "Seguros", url: "seguros.html" }
+      ]
+    }
+  };
+
+  const renderCategoriaGroups = () => Object.entries(CATEGORIAS_MENU).map(([, macro]) => `
+          <div class="menu-group">
+            <span class="menu-group-label">${macro.label}</span>
+            <div class="menu-group-items">
+              ${macro.items.map(item => `<a href="${p}${item.url}"${active(item.url)}>${item.label}</a>`).join('')}
+            </div>
+          </div>
+        `).join('');
+
+  const renderDrawerSections = () => Object.entries(CATEGORIAS_MENU).map(([, macro]) => `
+        <div class="nav-drawer-section">
+          <div class="nav-drawer-section-title">${macro.label}</div>
+          ${macro.items.map(item => `<a href="${p}${item.url}">${item.label}</a>`).join('')}
+        </div>
+      `).join('');
+
   const html = `
     <div class="site-header">
       <div class="header-top">
@@ -35,25 +85,8 @@
             </div>
           </div>
           
-          <div class="menu-group">
-            <span class="menu-group-label">🏘️ Turismo</span>
-            <div class="menu-group-items">
-              <a href="${p}municipios-del-quindio.html"${active('municipios-del-quindio')}>Municipios</a>
-              <a href="${p}sitios-turisticos.html"${active('sitios-turisticos')}>Atractivos Turísticos</a>
-              <a href="${p}alojamientos.html"${active('alojamientos')}>Alojamientos</a>
-              <a href="${p}alquiler-finca-hoteles.html"${active('alquiler-finca-hoteles')}>Alquiler Fincas y Hoteles</a>
-              <a href="${p}empresas-de-transporte.html"${active('empresas-de-transporte')}>Transporte</a>
-              <a href="${p}agencias-operadoras-turisticas.html"${active('agencias-operadoras')}>Agencias Turísticas</a>
-            </div>
-          </div>
-          
-          <div class="menu-group">
-            <span class="menu-group-label">🛍️ Comercio</span>
-            <div class="menu-group-items">
-              <a href="${p}quindio-comercial.html"${active('quindio-comercial')}>Quindío Comercial</a>
-              <a href="${p}anunciate.html"${active('anunciate')}>Anúnciate</a>
-            </div>
-          </div>
+          ${renderCategoriaGroups()}
+          <a href="${p}anunciate.html"${active('anunciate')}>🚀 Anúnciate</a>
         </div>
       </nav>
     </div>
@@ -69,21 +102,7 @@
         <a href="https://mapaquindio.vercel.app/" target="_blank" rel="noopener">Mapa general</a>
       </div>
       
-      <div class="nav-drawer-section">
-        <div class="nav-drawer-section-title">🏘️ Turismo</div>
-        <a href="${p}municipios-del-quindio.html">Municipios</a>
-        <a href="${p}sitios-turisticos.html">Atractivos Turísticos</a>
-        <a href="${p}alojamientos.html">Alojamientos</a>
-        <a href="${p}alquiler-finca-hoteles.html">Alquiler Fincas y Hoteles</a>
-        <a href="${p}empresas-de-transporte.html">Transporte</a>
-        <a href="${p}agencias-operadoras-turisticas.html">Agencias Turísticas</a>
-      </div>
-      
-      <div class="nav-drawer-section">
-        <div class="nav-drawer-section-title">🛍️ Comercio</div>
-        <a href="${p}quindio-comercial.html">Quindío Comercial</a>
-        <a href="${p}anunciate.html">Anúnciate</a>
-      </div>
+      ${renderDrawerSections()}
       
       <a href="${p}anunciate.html" style="font-weight:800;">📣 Anúnciate</a>
     </div>`;

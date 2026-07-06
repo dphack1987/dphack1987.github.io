@@ -23,10 +23,11 @@ a{text-decoration:none;color:inherit}
 .site-header{position:fixed;top:0;left:0;right:0;z-index:1000;
   background:rgba(255,255,255,.97);backdrop-filter:blur(20px) saturate(180%);
   box-shadow:0 4px 24px rgba(16,185,129,.12)}
-.header-top{height:80px;display:flex;align-items:center;justify-content:space-between;
-  padding:0 28px;border-bottom:1px solid rgba(16,185,129,.1)}
-.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.header-top{position:relative;height:80px;display:flex;align-items:center;justify-content:flex-start;
+  padding:0 16px;border-bottom:1px solid rgba(16,185,129,.1)}
+.nav-logo{position:absolute;left:16px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:12px;text-decoration:none}
 .nav-logo img{height:62px;width:auto;object-fit:contain}
+.nav-toggle{margin-left:auto}
 .nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:none}
 .nav-toggle span{display:block;width:26px;height:2px;background:#064e3b;border-radius:2px;transition:all .3s}
 .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
