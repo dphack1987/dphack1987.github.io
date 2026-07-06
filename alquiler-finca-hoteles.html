@@ -20,6 +20,14 @@
       <input type="search" id="q" placeholder="🔍 Buscar finca, municipio o servicio..." aria-label="Buscar">
       <button onclick="buscar()">Buscar</button>
     </div>
+    <!-- Filtros dinámicos -->
+    <div id="filtros-dinamicos" style="display:flex;gap:8px;flex-wrap:wrap;margin:14px 0">
+      <button class="filtro-btn active" data-filter="all">Todos</button>
+      <button class="filtro-btn" data-filter="piscina">Piscina</button>
+      <button class="filtro-btn" data-filter="familiar">Familiar</button>
+      <button class="filtro-btn" data-filter="pet">Pet Friendly</button>
+      <button class="filtro-btn" data-filter="lujo">Lujo</button>
+    </div>
     <div class="filtros">
       <button class="filtro-btn active" onclick="filtrar('todos',this)">Todos</button>
       <button class="filtro-btn" onclick="filtrar('Finca Hotel',this)">🏡 Finca Hotel</button>
@@ -84,37 +92,105 @@
   <script src="./assets/js/nav.js"></script>
   <script src="./assets/js/pautas_fincas_gallery.js" defer></script>
   <script>
-    // placeholders — serán rellenados cuando listings.js invoque onListingsLoaded
-    let todos = [];
-    let lista = [];
-    const map = L.map('mapa-interactivo', {scrollWheelZoom: false}).setView([4.58, -75.65], 10);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '© OpenStreetMap'}).addTo(map);
-    const markers = [];
+    document.addEventListener('DOMContentLoaded', function(){
+      // placeholders — serán rellenados cuando listings.js invoque onListingsLoaded
+      let todos = [];
+      let lista = [];
+      const map = L.map('mapa-interactivo', {scrollWheelZoom: false}).setView([4.58, -75.65], 10);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '© OpenStreetMap'}).addTo(map);
+      const markers = [];
 
-    function render(l){
-      const c = document.getElementById('cards'), e = document.getElementById('empty');
-      c.innerHTML = ''; if(!l.length){e.style.display = 'block'; return;} e.style.display = 'none';
-      l.forEach(n => {const d = document.createElement('article'); d.className = 'biz-card'; d.setAttribute('role','listitem');
-        d.innerHTML = `<div class="biz-card-img-wrap"><img src="${n.imagen}" alt="${n.nombre}" class="biz-card-img" loading="lazy"><span class="biz-badge ${n.nivel}">${n.nivel === 'premium' ? '⭐ Premium' : '✓ Verificado'}</span></div>
-        <div class="biz-card-body"><div class="biz-tipo">${n.tipo} · ${n.municipio}</div><h3>${n.nombre}</h3><p>${n.descripcion}</p>
-        <div class="biz-servicios">${(n.servicios||[]).slice(0,4).map(s => `<span class="biz-tag">${s}</span>`).join('')}</div>
-        <div class="biz-precio">${n.precio? '💰 '+n.precio: ''}</div>
-        <div class="biz-actions"><a href="${(window.generateWhatsAppLink && typeof window.generateWhatsAppLink==='function')?window.generateWhatsAppLink(n):('#')}" target="_blank" rel="noopener" class="btn-wa">💬 Reservar</a><a href="${n.maps||'#'}" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a>${n.telefono?`<a href="tel:${n.telefono}" class="btn-tel">📞</a>`:''}</div></div>`;
-        c.appendChild(d)});
-    }
+      function normalizeCategories(n){
+        const cats = new Set();
+        (n.servicios||[]).forEach(s => { const ss = s.toString().toLowerCase(); if(ss.includes('piscina')) cats.add('piscina'); if(ss.includes('famil')||ss.includes('familiar')) cats.add('familiar'); if(ss.includes('mascota')||ss.includes('pet')) cats.add('pet'); });
+        if((n.nivel||'').toLowerCase().includes('premium') || (n.nivel||'').toLowerCase().includes('lux')) cats.add('lujo');
+        return Array.from(cats).join(' ');
+      }
 
-    function filtrar(tipo,btn){document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); lista = tipo === 'todos' ? [...todos] : todos.filter(n => n.tipo === tipo); render(lista);}
-    function buscar(){const q = document.getElementById('q').value.toLowerCase().trim(); if(!q){render(todos); return;} render(todos.filter(n => n.nombre.toLowerCase().includes(q) || (n.municipio||'').toLowerCase().includes(q) || (n.servicios||[]).some(s => s.toLowerCase().includes(q))));}
-    document.getElementById('q').addEventListener('keydown', e => {if(e.key === 'Enter') buscar();});
+      function render(l){
+        const c = document.getElementById('cards'), e = document.getElementById('empty');
+        c.innerHTML = ''; if(!l.length){e.style.display = 'block'; return;} e.style.display = 'none';
+        l.forEach(n => {
+          const d = document.createElement('article'); d.className = 'finca-card biz-card'; d.setAttribute('role','listitem');
+          const categories = normalizeCategories(n);
+          d.setAttribute('data-category', categories);
+          const nombre = n.nombre || 'Finca';
+          const precioBase = (n.precio && n.precio.replace(/[^0-9]/g,'').trim()) || '';
+          const telefono = n.telefono || '';
+          const whatsappMsg = encodeURIComponent(`Hola, vi ${nombre} en MapaTurísticoDelQuindío y quiero reservar`);
+          const waLink = telefono ? `https://wa.me/${telefono.replace(/\D/g,'')}?text=${whatsappMsg}` : `https://wa.me/?text=${whatsappMsg}`;
+          d.innerHTML = `
+            <div class="biz-card-img-wrap"><img src="${n.imagen||''}" alt="${nombre}" class="biz-card-img" loading="lazy"></div>
+            <div class="biz-card-body">
+              <div style="display:flex;justify-content:space-between;align-items:center"><div class="biz-tipo">${n.tipo||''}</div><div class="biz-badge ${n.nivel||''}">${n.nivel === 'premium' ? '⭐ Premium' : (n.nivel||'')}</div></div>
+              <h3>${nombre}</h3>
+              <div class="biz-precio">${n.precio? '💰 '+n.precio : ''}</div>
+              <div style="margin-top:10px;display:flex;gap:8px">
+                <a href="${waLink}" target="_blank" rel="noopener" class="btn-wa">💬 WhatsApp</a>
+                <button class="btn-cta btn-cotizar" data-nombre="${encodeURIComponent(nombre)}" data-precio="${precioBase}">Cotizar</button>
+                <a href="${n.maps||'#'}" target="_blank" class="btn-maps">📍 Llegar</a>
+              </div>
+            </div>`;
+          c.appendChild(d);
+        });
+      }
 
-    window.onListingsLoaded = function(items){
-      // seleccionar solo fincas
-      todos = items.filter(n => ['Finca Hotel','Finca Turística'].includes(n.tipo));
-      lista = [...todos];
-      // añadir marcadores
-      todos.forEach(n => { if(!n.lat) return; const m = L.marker([n.lat, n.lng]).addTo(map).bindPopup(`<b>${n.nombre}</b><br>${n.tipo}<br>${n.precio||''}<br><a href="${(window.generateWhatsAppLink && typeof window.generateWhatsAppLink==='function')?window.generateWhatsAppLink(n):('#')}" target="_blank">💬 Reservar</a>`); markers.push(m); });
-      render(lista);
-    };
+      // Filters logic
+      const filtrosContainer = document.getElementById('filtros-dinamicos');
+      filtrosContainer.addEventListener('click', function(e){
+        const btn = e.target.closest('button[data-filter]');
+        if(!btn) return;
+        filtrosContainer.querySelectorAll('button[data-filter]').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.getAttribute('data-filter');
+        const cards = document.querySelectorAll('.finca-card');
+        cards.forEach(card => {
+          const cats = card.getAttribute('data-category') || '';
+          if(f === 'all' || (cats.split(' ').includes(f))) card.classList.remove('hidden'); else card.classList.add('hidden');
+        });
+      });
+
+      // Modal for cotizar
+      function openModal(nombre, precio){
+        let backdrop = document.getElementById('cotizarModalBackdrop');
+        if(!backdrop){
+          backdrop = document.createElement('div'); backdrop.id='cotizarModalBackdrop'; backdrop.className='modal-backdrop';
+          backdrop.innerHTML = `<div class="modal" role="dialog" aria-modal="true"><h3>Calcular presupuesto</h3><p id="modal-nombre"></p><div class="row"><label>Noches</label><input id="modal-noches" type="number" min="1" value="1"></div><div style="margin-top:8px">Precio por noche: <strong id="modal-precio"></strong></div><div class="modal-actions"><button id="modal-cancel" class="btn-tel">Cerrar</button><button id="modal-calc" class="btn-cta">Calcular</button></div><div id="modal-result" style="margin-top:12px;font-weight:800"></div></div>`;
+          document.body.appendChild(backdrop);
+          document.getElementById('modal-cancel').addEventListener('click', ()=>backdrop.remove());
+          document.getElementById('modal-calc').addEventListener('click', ()=>{
+            const noches = parseInt(document.getElementById('modal-noches').value) || 1;
+            const precioN = parseFloat(document.getElementById('modal-precio').dataset.raw) || 0;
+            const total = noches * precioN;
+            document.getElementById('modal-result').textContent = `Total estimado: $${total.toLocaleString()}`;
+          });
+        }
+        document.getElementById('modal-nombre').textContent = decodeURIComponent(nombre);
+        const precioNode = document.getElementById('modal-precio');
+        precioNode.textContent = precio ? `$${parseFloat(precio).toLocaleString()}` : 'Consultar';
+        precioNode.dataset.raw = precio || 0;
+      }
+
+      document.body.addEventListener('click', function(e){
+        const btn = e.target.closest('.btn-cotizar'); if(!btn) return;
+        const nombre = btn.getAttribute('data-nombre'); const precio = btn.getAttribute('data-precio'); openModal(nombre, precio);
+      });
+
+      function buscar(){const q = document.getElementById('q').value.toLowerCase().trim(); if(!q){document.querySelectorAll('.finca-card').forEach(c=>c.classList.remove('hidden')); return;} document.querySelectorAll('.finca-card').forEach(c => {
+        const txt = (c.textContent || '').toLowerCase(); if(txt.includes(q)) c.classList.remove('hidden'); else c.classList.add('hidden');
+      });}
+
+      document.getElementById('q').addEventListener('keydown', e => {if(e.key === 'Enter') buscar();});
+
+      window.onListingsLoaded = function(items){
+        // seleccionar solo fincas
+        todos = items.filter(n => ['Finca Hotel','Finca Turística'].includes(n.tipo));
+        lista = [...todos];
+        // añadir marcadores
+        todos.forEach(n => { if(!n.lat) return; const m = L.marker([n.lat, n.lng]).addTo(map).bindPopup(`<b>${n.nombre}</b><br>${n.tipo}<br>${n.precio||''}<br><a href="${(n.telefono?('https://wa.me/'+n.telefono.replace(/\D/g,'')):'#')}" target="_blank">💬 Reservar</a>`); markers.push(m); });
+        render(lista);
+      };
+    });
   </script>
 </body>
 </html>
