@@ -26,13 +26,14 @@
           <a href="${p}index.html"${active('index.html')}>Home</a>
           <a href="https://mapa-armenia-2026.vercel.app/" target="_blank" rel="noopener">Mapa Armenia 2026</a>
           <a href="https://mapa-circasia-digital-2.vercel.app/" target="_blank" rel="noopener">Mapa de Circasia 2025</a>
-          <a href="${p}alquiler-finca-hoteles.html"${active('alquiler-finca-hoteles')}>Alquiler Finca hoteles</a>
+          <a href="${p}alquiler-finca-hoteles.html"${active('alquiler-finca-hoteles')}>Alquiler Fincas</a>
           <a href="https://mapaquindio.vercel.app/" target="_blank" rel="noopener">Mapa del Quindío</a>
           <a href="${p}quindio-comercial.html"${active('quindio-comercial')}>Quindío Comercial</a>
           <a href="${p}municipios-del-quindio.html"${active('municipios-del-quindio')}>Municipios del Quindío</a>
-          <a href="${p}agencias-operadoras-turisticas.html"${active('agencias-operadoras')}>Agencias Operadoras Turísticas</a>
+          <a href="${p}agencias-operadoras-turisticas.html"${active('agencias-operadoras')}>Agencias Turísticas</a>
           <a href="${p}sitios-turisticos.html"${active('sitios-turisticos')}>Atractivos Turísticos</a>
           <a href="${p}alojamientos.html"${active('alojamientos')}>Alojamientos</a>
+          <a href="${p}empresas-de-transporte.html"${active('empresas-de-transporte')}>Transporte</a>
           <a href="https://mapa-calarca-2026.vercel.app/" target="_blank" rel="noopener">Mapa Calarcá 2026</a>
           <a href="${p}anunciate.html"${active('anunciate')}>📣 Anúnciate</a>
         </div>
@@ -42,13 +43,14 @@
       <a href="${p}index.html">🏠 Home</a>
       <a href="https://mapa-armenia-2026.vercel.app/" target="_blank" rel="noopener">🗺️ Mapa Armenia 2026</a>
       <a href="https://mapa-circasia-digital-2.vercel.app/" target="_blank" rel="noopener">🗺️ Mapa de Circasia 2025</a>
-      <a href="${p}alquiler-finca-hoteles.html">🏡 Alquiler Finca hoteles</a>
+      <a href="${p}alquiler-finca-hoteles.html">🏡 Alquiler Fincas</a>
       <a href="https://mapaquindio.vercel.app/" target="_blank" rel="noopener">🗺️ Mapa del Quindío</a>
       <a href="${p}quindio-comercial.html">🛍️ Quindío Comercial</a>
       <a href="${p}municipios-del-quindio.html">🏘️ Municipios del Quindío</a>
-      <a href="${p}agencias-operadoras-turisticas.html">🧭 Agencias Operadoras Turísticas</a>
+      <a href="${p}agencias-operadoras-turisticas.html">🧭 Agencias Turísticas</a>
       <a href="${p}sitios-turisticos.html">🎡 Atractivos Turísticos</a>
       <a href="${p}alojamientos.html">🏨 Alojamientos</a>
+      <a href="${p}empresas-de-transporte.html">🚌 Transporte</a>
       <a href="https://mapa-calarca-2026.vercel.app/" target="_blank" rel="noopener">🗺️ Mapa Calarcá 2026</a>
       <a href="${p}anunciate.html">📣 Anúnciate</a>
     </div>`;

@@ -295,3 +295,14 @@ footer{margin-top:80px;padding:48px 24px 32px;text-align:center;
   .menu-bar{padding:8px 12px}
   .menu-bar a{padding:8px 14px;font-size:.8rem}
 }
+
+/* Category cards hover */
+.category-card:hover {
+  transform: translateY(-8px);
+}
+.category-card:hover a {
+  transform: scale(1.05);
+}
+.category-card a:hover {
+  opacity: 0.9;
+}
