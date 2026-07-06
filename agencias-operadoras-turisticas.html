@@ -61,6 +61,7 @@
   </footer>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="./assets/js/datos.js"></script>
+  <script src="./assets/js/whatsapp.js"></script>
   <script src="./assets/js/nav.js"></script>
   <!-- Botón de geolocalización y control de radio -->
   <button id="btn-geolocate" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; padding: 14px 24px; border: none; border-radius: 50px; background: linear-gradient(135deg, #059669, #10b981); color: white; font-weight: 800; font-size: 16px; cursor: pointer; box-shadow: 0 4px 15px rgba(5, 150, 105, 0.4); transition: transform 0.2s ease, box-shadow 0.2s ease;">
@@ -86,7 +87,7 @@
       if (!negocio.lat) return;
       const marker = L.marker([negocio.lat, negocio.lng])
         .addTo(map)
-        .bindPopup(`<b>${negocio.nombre}</b><br>${negocio.tipo}<br>${negocio.precio}<br><a href="https://wa.me/${negocio.whatsapp}" target="_blank">💬 Reservar</a>`);
+        .bindPopup(`<b>${negocio.nombre}</b><br>${negocio.tipo}<br>${negocio.precio}<br><a href="${generateWhatsAppLink(negocio)}" target="_blank">💬 Reservar</a>`);
       marker.options.negocio = negocio;
       allMarkers.push(marker);
     });
@@ -100,7 +101,7 @@
         <div class="biz-card-body"><div class="biz-tipo">${n.tipo} · ${n.municipio}</div><h3>${n.nombre}</h3><p>${n.descripcion}</p>
         <div class="biz-servicios">${n.servicios.slice(0, 3).map(s => `<span class="biz-tag">${s}</span>`).join('')}</div>
         <div class="biz-precio">💰 ${n.precio}</div>
-        <div class="biz-actions"><a href="https://wa.me/${n.whatsapp}?text=Hola%2C%20quiero%20información%20sobre%20${encodeURIComponent(n.nombre)}" target="_blank" rel="noopener" class="btn-wa">💬 Reservar</a><a href="${n.maps}" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a><a href="tel:${n.telefono}" class="btn-tel">📞</a></div></div>`;
+        <div class="biz-actions"><a href="${generateWhatsAppLink(n)}" target="_blank" rel="noopener" class="btn-wa">💬 Reservar</a><a href="${n.maps}" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a><a href="tel:${n.telefono}" class="btn-tel">📞</a></div></div>`;
         c.appendChild(d);
       });
     }

@@ -74,13 +74,14 @@
   </footer>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="./assets/js/datos.js"></script>
+  <script src="./assets/js/whatsapp.js"></script>
   <script src="./assets/js/nav.js"></script>
   <script>
     let todos = NEGOCIOS.filter(n=>n.categoria==='alojamiento');
     let lista = [...todos];
     const map = L.map('mapa-interactivo',{scrollWheelZoom:false}).setView([4.58,-75.65],10);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap'}).addTo(map);
-    todos.forEach(n=>{if(!n.lat)return;L.marker([n.lat,n.lng]).addTo(map).bindPopup(`<b>${n.nombre}</b><br>${n.tipo}<br>${n.precio}<br><a href="https://wa.me/${n.whatsapp}?text=Hola%2C%20quiero%20reservar" target="_blank">💬 Reservar</a>`)});
+    todos.forEach(n=>{if(!n.lat)return;L.marker([n.lat,n.lng]).addTo(map).bindPopup(`<b>${n.nombre}</b><br>${n.tipo}<br>${n.precio}<br><a href="${generateWhatsAppLink(n)}" target="_blank">💬 Reservar</a>`)});
     function render(l){
       const c=document.getElementById('cards'),e=document.getElementById('empty');
       c.innerHTML='';if(!l.length){e.style.display='block';return}e.style.display='none';
@@ -89,7 +90,7 @@
         <div class="biz-card-body"><div class="biz-tipo">${n.tipo} · ${n.municipio}</div><h3>${n.nombre}</h3><p>${n.descripcion}</p>
         <div class="biz-servicios">${n.servicios.slice(0,4).map(s=>`<span class="biz-tag">${s}</span>`).join('')}</div>
         <div class="biz-precio">💰 ${n.precio}</div>
-        <div class="biz-actions"><a href="https://wa.me/${n.whatsapp}?text=Hola%2C%20quiero%20reservar%20en%20${encodeURIComponent(n.nombre)}" target="_blank" rel="noopener" class="btn-wa">💬 Reservar</a><a href="${n.maps}" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a><a href="tel:${n.telefono}" class="btn-tel">📞</a></div></div>`;
+        <div class="biz-actions"><a href="${generateWhatsAppLink(n)}" target="_blank" rel="noopener" class="btn-wa">💬 Reservar</a><a href="${n.maps}" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a><a href="tel:${n.telefono}" class="btn-tel">📞</a></div></div>`;
         c.appendChild(d)});
     }
     render(lista);

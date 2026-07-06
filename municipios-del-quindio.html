@@ -81,6 +81,7 @@
   </footer>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="./assets/js/datos.js"></script>
+  <script src="./assets/js/whatsapp.js"></script>
   <script src="./assets/js/nav.js"></script>
   <script>
     const map=L.map('mapa-interactivo',{scrollWheelZoom:false}).setView([4.55,-75.68],9);
@@ -99,7 +100,7 @@
     const det=document.getElementById('muni-detalle');
     MUNICIPIOS.forEach(m=>{
       const negs=getNegociosByMunicipio(m.id);
-      const chips=negs.length?negs.map(n=>`<a href="https://wa.me/${n.whatsapp}" target="_blank" rel="noopener" class="neg-chip">${n.nombre}</a>`).join(''):`<span style="color:#9ca3af;font-size:.88rem">Próximamente — <a href="./anunciate.html" style="color:#059669;font-weight:700">Anúnciate</a></span>`;
+      const chips=negs.length?negs.map(n=>`<a href="${generateWhatsAppLink(n)}" target="_blank" rel="noopener" class="neg-chip">${n.nombre}</a>`).join(''):`<span style="color:#9ca3af;font-size:.88rem">Próximamente — <a href="./anunciate.html" style="color:#059669;font-weight:700">Anúnciate</a></span>`;
       const div=document.createElement('div');div.className='muni-detail';div.id=`muni-${m.id}`;
       div.innerHTML=`<div class="muni-left"><div class="em">${m.emoji}</div><h2>${m.nombre}</h2><div class="km">${m.km>0?m.km+' km':'Capital'}</div></div><div class="muni-right"><p>${m.desc}</p><div class="muni-negs"><h4>🏢 Negocios en ${m.nombre}</h4><div class="neg-chips">${chips}</div></div></div>`;
       det.appendChild(div);
