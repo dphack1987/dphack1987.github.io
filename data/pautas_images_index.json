@@ -599,7 +599,15 @@
     "categoria": "Tiendas_de_cafe",
     "file": "./pautas_publicitarias/Tiendas_de_cafe/artesanias_turronycafe.png",
     "filename": "artesanias_turronycafe.png",
-    "matched": false
+    "matched": true,
+    "pautante": {
+      "id": "artesanias-turron-y-cafe",
+      "nombre": "Artesanías Turrón y Café",
+      "telefono": "+57 310 398 3619",
+      "whatsapp": "573103983619",
+      "maps": "https://maps.google.com/?q=Artesan%C3%ADas+Turr%C3%B3n+y+Caf%C3%A9+Armenia",
+      "imagen_field": "./pautas_publicitarias/artesanias/artesanias_turronycafe.png"
+    }
   },
   {
     "categoria": "Tiendas_de_cafe",

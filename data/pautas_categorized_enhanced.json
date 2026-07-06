@@ -18,7 +18,15 @@
       {
         "filename": "buen_vuelo_tours.png",
         "file": "./pautas_publicitarias/agencias_de_turismo/buen_vuelo_tours.png",
-        "matched": false
+        "matched": true,
+        "pautante": {
+          "id": "buen-vuelo-tours",
+          "nombre": "Buen Vuelo Tours",
+          "telefono": "+57 301 204 2819",
+          "whatsapp": "573012042819",
+          "maps": "https://maps.google.com/?q=Buen+Vuelo+Tours+Armenia",
+          "imagen_field": "./pautas_publicitarias/agencias_de_turismo/buen_vuelo_tours.png"
+        }
       },
       {
         "filename": "del_eje.png",
@@ -49,7 +57,15 @@
       {
         "filename": "juan_arrubla.png",
         "file": "./pautas_publicitarias/agencias_de_turismo/juan_arrubla.png",
-        "matched": false
+        "matched": true,
+        "pautante": {
+          "id": "juan-arrubla",
+          "nombre": "Juan Arrubla",
+          "telefono": "+57 321 899 5839",
+          "whatsapp": "573218995839",
+          "maps": "https://maps.google.com/?q=Juan+Arrubla+Armenia",
+          "imagen_field": "./pautas_publicitarias/agencias_de_turismo/juan_arrubla.png"
+        }
       },
       {
         "filename": "viajes_turismo_enlaces.png",
@@ -181,12 +197,28 @@
       {
         "filename": "artesanias_turronycafe.png",
         "file": "./pautas_publicitarias/artesanias/artesanias_turronycafe.png",
-        "matched": false
+        "matched": true,
+        "pautante": {
+          "id": "artesanias-turron-y-cafe",
+          "nombre": "Artesanías Turrón y Café",
+          "telefono": "+57 310 398 3619",
+          "whatsapp": "573103983619",
+          "maps": "https://maps.google.com/?q=Artesanías+Turrón+y+Café+Armenia",
+          "imagen_field": "./pautas_publicitarias/artesanias/artesanias_turronycafe.png"
+        }
       },
       {
         "filename": "ceramicas_alfarero.jpg",
         "file": "./pautas_publicitarias/artesanias/ceramicas_alfarero.jpg",
-        "matched": false
+        "matched": true,
+        "pautante": {
+          "id": "ceramicas-el-alfarero",
+          "nombre": "Cerámicas El Alfarero",
+          "telefono": "+57 320 617 8498",
+          "whatsapp": "573206178498",
+          "maps": "https://maps.google.com/?q=Cerámicas+El+Alfarero+Circasia",
+          "imagen_field": "./pautas_publicitarias/artesanias/ceramicas_alfarero.jpg"
+        }
       }
     ]
   },
@@ -750,7 +782,15 @@
       {
         "filename": "artesanias_turronycafe.png",
         "file": "./pautas_publicitarias/Tiendas_de_cafe/artesanias_turronycafe.png",
-        "matched": false
+        "matched": true,
+        "pautante": {
+          "id": "artesanias-turron-y-cafe",
+          "nombre": "Artesanías Turrón y Café",
+          "telefono": "+57 310 398 3619",
+          "whatsapp": "573103983619",
+          "maps": "https://maps.google.com/?q=Artesan%C3%ADas+Turr%C3%B3n+y+Caf%C3%A9+Armenia",
+          "imagen_field": "./pautas_publicitarias/artesanias/artesanias_turronycafe.png"
+        }
       },
       {
         "filename": "cafe_la_terraza.png",
