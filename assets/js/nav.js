@@ -65,6 +65,13 @@
     toggle.classList.remove('open');
   }));
 
+  document.addEventListener('click', (event) => {
+    if (!drawer.contains(event.target) && !toggle.contains(event.target) && drawer.classList.contains('open')) {
+      drawer.classList.remove('open');
+      toggle.classList.remove('open');
+    }
+  });
+
 // load optional Don Chucho config (so you can set window.DON_CHUCHO_API_URL)
 const configScript = document.createElement('script'); configScript.src = p + 'assets/js/don-chucho-config.js'; configScript.defer = true; document.body.appendChild(configScript);
 // load Don Chucho widget script if exists
