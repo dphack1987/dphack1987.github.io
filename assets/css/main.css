@@ -659,16 +659,6 @@ a,button,.nav-toggle,.filtro-btn{min-width:var(--touch-target);min-height:var(--
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-.hero-img-wrap {
-  border-radius: 32px;
-  overflow: hidden;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
-}
-.hero-img-wrap img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
 .hero-scroll {
   position: absolute;
   bottom: 32px;

@@ -264,6 +264,44 @@
 
 
   // ------------------------------
+  // SLIDER DEL HERO (PUBLICIDAD)
+  // ------------------------------
+  function initHeroSlider() {
+    const slider = document.getElementById('hero-slider');
+    if (!slider || typeof NEGOCIOS === 'undefined') return;
+
+    const slidesData = NEGOCIOS.filter(item => item.imagen).slice(0, 6);
+    if (!slidesData.length) return;
+
+    slider.innerHTML = '';
+
+    slidesData.forEach((item, index) => {
+      const slide = document.createElement('div');
+      slide.className = `hero-slide${index === 0 ? ' active' : ''}`;
+      slide.setAttribute('aria-hidden', index === 0 ? 'false' : 'true');
+      slide.innerHTML = `\n        <img src="${item.imagen}" alt="${item.nombre || 'Anunciante del Quindío'}">\n        <div class="hero-slide-meta">\n          <span>Publicidad recomendada</span>\n          <strong>${item.nombre || 'Negocio del Quindío'}</strong>\n        </div>\n      `;
+      slider.appendChild(slide);
+    });
+
+    const totalEl = document.getElementById('hero-slide-total');
+    const currentEl = document.getElementById('hero-slide-current');
+    if (totalEl) totalEl.textContent = String(slidesData.length);
+    if (currentEl) currentEl.textContent = '1';
+
+    let currentIndex = 0;
+    setInterval(() => {
+      const slides = slider.querySelectorAll('.hero-slide');
+      if (!slides.length) return;
+      slides[currentIndex].classList.remove('active');
+      slides[currentIndex].setAttribute('aria-hidden', 'true');
+      currentIndex = (currentIndex + 1) % slides.length;
+      slides[currentIndex].classList.add('active');
+      slides[currentIndex].setAttribute('aria-hidden', 'false');
+      if (currentEl) currentEl.textContent = String(currentIndex + 1);
+    }, 3000);
+  }
+
+  // ------------------------------
   // INICIALIZACIÓN DE TODO
   // ------------------------------
   document.addEventListener('DOMContentLoaded', () => {
@@ -279,5 +317,6 @@
     initTransporte();
     initMapObserver();
     initBuscador();
+    initHeroSlider();
   });
 })();
