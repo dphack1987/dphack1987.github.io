@@ -56,7 +56,8 @@ a{text-decoration:none;color:inherit}
 .nav-drawer a:hover{background:#f0fdf4;color:#059669}
 @media(max-width:768px){
   .menu-bar{display:none}
-  .nav-toggle{display:flex}
+  .nav-toggle{display:flex;order:2;padding:12px 14px;border-radius:16px;border:1px solid rgba(16,185,129,.2);background:#ffffff;box-shadow:0 12px 30px rgba(16,185,129,.12);}
+  .nav-toggle span{width:28px;height:3px}
   .nav-drawer{top:80px;background:rgba(255,255,255,.98);border-top:0;border-bottom:0;padding:18px 20px;}
   .nav-drawer a{
     display:block;
@@ -80,9 +81,9 @@ a{text-decoration:none;color:inherit}
     color:var(--g1);
     border-color:rgba(16,185,129,.35);
   }
-  .nav-logo{position:static;left:auto;top:auto;margin-bottom:12px}
-  .header-top{justify-content:space-between;flex-wrap:nowrap}
-  .nav-toggle{order:2}
+  .nav-logo{position:relative;left:auto;top:auto;margin:0;order:1;}
+  .nav-logo img{height:52px}
+  .header-top{justify-content:space-between;align-items:center;flex-wrap:nowrap;gap:10px}
 }
 
 /* ── PAGE HERO ── */
