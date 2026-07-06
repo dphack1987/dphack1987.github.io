@@ -15,6 +15,10 @@
   <header class="page-hero">
     <h1>🏡 Alquiler Finca Hoteles</h1>
     <p>Fincas turísticas y fincas hoteles en el Quindío. Reserva directa sin comisiones.</p>
+    <div class="page-hero-actions">
+      <a href="https://mapa-armenia-2026.vercel.app/" target="_blank" rel="noopener" class="btn-cta">🗺️ Ver mapa Armenia 2026</a>
+      <a href="#fincas-gallery" class="btn-cta btn-cta--secondary">🏡 Ver pautas protagonistas</a>
+    </div>
   </header>
   <div class="container">
     <div class="search-bar" role="search">
@@ -29,14 +33,18 @@
       <button class="filtro-btn" data-filter="pet">Pet Friendly</button>
       <button class="filtro-btn" data-filter="lujo">Lujo</button>
     </div>
-    <div class="filtros">
-      <button class="filtro-btn active" onclick="filtrar('todos',this)">Todos</button>
-      <button class="filtro-btn" onclick="filtrar('Finca Hotel',this)">🏡 Finca Hotel</button>
-      <button class="filtro-btn" onclick="filtrar('Finca Turística',this)">🌿 Finca Turística</button>
+    <div class="hero-stats">
+      <div class="stat-card"><strong>+11 aliados</strong><span>Selección verificada</span></div>
+      <div class="stat-card"><strong>Reservas directas</strong><span>Sin comisiones</span></div>
+      <div class="stat-card"><strong>Llegada fácil</strong><span>WhatsApp y dirección</span></div>
     </div>
     <div style="margin-bottom:48px"><div id="mapa-interactivo"></div></div>
+    <section class="recommendations-section">
+      <div class="recommendations-header"><h2>Recomendados para tu próxima estadía</h2><p>Propiedades destacadas con experiencia certificada y contacto directo.</p></div>
+      <div id="recommended-cards" class="cards-grid"></div>
+    </section>
     <div class="grid-hospedajes">
-      <div id="cards" class="cards-grid" role="list" aria-live="polite" data-list-category="alojamientos"></div>
+      <div id="cards" class="cards-grid" role="list" aria-live="polite" data-list-category="aliados"></div>
     </div>
     <div id="empty" class="no-results" style="display:none"><div class="icon">🏡</div><p>Sin resultados.</p></div>
     <div style="background:white;border-radius:20px;padding:28px;margin:40px 0;box-shadow:0 6px 24px rgba(16,185,129,.1);border-left:4px solid #059669">
@@ -50,33 +58,38 @@
     </div>
   </div>
   <!-- Pautas -->
-  <div class="pautas-section" style="margin:28px 0;">
-    <h3 style="margin:0 0 12px;color:var(--text);font-size:1.05rem">Aliados y anuncios</h3>
+  <section class="pautas-section" aria-labelledby="pautas-protagonistas">
+    <div class="pauta-spotlight">
+      <div>
+        <p class="eyebrow">Pautas protagonistas</p>
+        <h3 id="pautas-protagonistas">Las mejores opciones se muestran primero para impulsar reservas</h3>
+        <p>Destacamos alojamientos, fincas y experiencias con imagen, contacto directo y CTA claro para que cada visita se convierta en una oportunidad real.</p>
+      </div>
+      <a href="https://mapa-armenia-2026.vercel.app/" target="_blank" rel="noopener" class="btn-cta">🌐 Explorar el mapa</a>
+    </div>
     <div class="pautas-grid" data-list-pauta="alojamiento"></div>
     <div id="fincas-gallery" class="cards-grid" style="margin-top:18px"></div>
-  </div>
+  </section>
   <div class="banner-strip">
     <div class="banner-strip-inner">
       <span class="banner-strip-label">Aliados</span>
       <div class="banner-strip-track">
-        <div class="banner-item"><img src="./pautas/p13.png" alt="Anunciante" loading="lazy"></div>
-        <div class="banner-item"><img src="./pautas/p14.png" alt="Anunciante" loading="lazy"></div>
-        <div class="banner-item"><img src="./pautas/p15.png" alt="Anunciante" loading="lazy"></div>
-        <div class="banner-item"><img src="./pautas/p16.png" alt="Anunciante" loading="lazy"></div>
-        <div class="banner-item"><img src="./pautas/p17.png" alt="Anunciante" loading="lazy"></div>
-        <div class="banner-item"><img src="./pautas/p18.png" alt="Anunciante" loading="lazy"></div>
-        <div class="banner-item"><img src="./pautas/p19.png" alt="Anunciante" loading="lazy"></div>
-        <div class="banner-item"><img src="./pautas/p21.png" alt="Anunciante" loading="lazy"></div>
-        <div class="banner-item"><img src="./pautas/p22.png" alt="Anunciante" loading="lazy"></div>
-        <div class="banner-item"><img src="./pautas/p23.png" alt="Anunciante" loading="lazy"></div>
-        <div class="banner-item"><img src="./pautas/p24.png" alt="Anunciante" loading="lazy"></div>
-        <div class="banner-item"><img src="./pautas/p25.png" alt="Anunciante" loading="lazy"></div>
-        <div class="banner-item"><img src="./pautas/p13.png" alt="Anunciante" loading="lazy"></div>
-        <div class="banner-item"><img src="./pautas/p14.png" alt="Anunciante" loading="lazy"></div>
-        <div class="banner-item"><img src="./pautas/p15.png" alt="Anunciante" loading="lazy"></div>
-        <div class="banner-item"><img src="./pautas/p16.png" alt="Anunciante" loading="lazy"></div>
-        <div class="banner-item"><img src="./pautas/p17.png" alt="Anunciante" loading="lazy"></div>
-        <div class="banner-item"><img src="./pautas/p18.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Alquiler_de_fincas_quindio/casa_campestre_lacosecha.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Alquiler_de_fincas_quindio/finca_cafetera_el_ocaso.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Alquiler_de_fincas_quindio/finca_la_floresta.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Alquiler_de_fincas_quindio/hacienda_moraleja.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_alma_nativa.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_cafe_cafe_campestre.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_deliriocampestre.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_linaje_salvaje.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Alquiler_de_fincas_quindio/casa_campestre_lacosecha.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Alquiler_de_fincas_quindio/finca_cafetera_el_ocaso.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Alquiler_de_fincas_quindio/finca_la_floresta.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Alquiler_de_fincas_quindio/hacienda_moraleja.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_alma_nativa.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_cafe_cafe_campestre.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_deliriocampestre.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_linaje_salvaje.png" alt="Anunciante" loading="lazy"></div>
       </div>
     </div>
   </div>
@@ -179,19 +192,40 @@
         const nombre = btn.getAttribute('data-nombre'); const precio = btn.getAttribute('data-precio'); openModal(nombre, precio);
       });
 
-      function buscar(){const q = document.getElementById('q').value.toLowerCase().trim(); if(!q){document.querySelectorAll('.finca-card').forEach(c=>c.classList.remove('hidden')); return;} document.querySelectorAll('.finca-card').forEach(c => {
-        const txt = (c.textContent || '').toLowerCase(); if(txt.includes(q)) c.classList.remove('hidden'); else c.classList.add('hidden');
-      });}
+      function buscar(){
+        const q = document.getElementById('q').value.toLowerCase().trim();
+        const cards = document.querySelectorAll('.finca-card');
+        if(!q){cards.forEach(c=>c.classList.remove('hidden')); return;}
+        cards.forEach(c => {
+          const txt = (c.textContent || '').toLowerCase();
+          if(txt.includes(q)) c.classList.remove('hidden'); else c.classList.add('hidden');
+        });
+      }
 
       document.getElementById('q').addEventListener('keydown', e => {if(e.key === 'Enter') buscar();});
 
+      function renderRecommendations(items){
+        const container = document.getElementById('recommended-cards');
+        container.innerHTML = '';
+        if(!items || !items.length) return;
+        items.slice(0,3).forEach(n => {
+          const d = document.createElement('article'); d.className = 'biz-card recommendation-card';
+          const link = n.maps && /^https?:\/\//.test(n.maps) ? n.maps : (n.maps ? 'https://' + n.maps : '#');
+          d.innerHTML = `<div class="biz-card-img-wrap"><img src="${n.imagen||''}" alt="${n.nombre}" class="biz-card-img" loading="lazy"></div>
+            <div class="biz-card-body"><div class="biz-card-meta"><span class="biz-chip">${n.lujo ? 'Escapada Premium' : 'Selección'}</span><span class="biz-chip">${n.piscina ? 'Piscina' : 'Confort'}</span></div>
+            <h3>${n.nombre}</h3><p>${n.descripcion}</p>
+            <div class="biz-precio">${n.precio ? '💰 '+n.precio : 'Consultar precio'}</div>
+            <div class="biz-actions"><a href="${window.generateWhatsAppLink(n)}" target="_blank" rel="noopener" class="btn-wa">💬 WhatsApp</a><a href="${link}" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a></div></div>`;
+          container.appendChild(d);
+        });
+      }
+
       window.onListingsLoaded = function(items){
-        // seleccionar solo fincas
-        todos = items.filter(n => ['Finca Hotel','Finca Turística'].includes(n.tipo));
-        lista = [...todos];
-        // añadir marcadores
-        todos.forEach(n => { if(!n.lat) return; const m = L.marker([n.lat, n.lng]).addTo(map).bindPopup(`<b>${n.nombre}</b><br>${n.tipo}<br>${n.precio||''}<br><a href="${(n.telefono?('https://wa.me/'+n.telefono.replace(/\D/g,'')):'#')}" target="_blank">💬 Reservar</a>`); markers.push(m); });
+        todos = items.map(n => ({...n, maps: n.maps && /^https?:\/\//.test(n.maps) ? n.maps : (n.maps ? 'https://'+n.maps : '')}));
+        lista = [...todos].sort((a,b) => ((b.lujo?2:0)+(b.piscina?1:0)+(b.pet?0.5:0)) - ((a.lujo?2:0)+(a.piscina?1:0)+(a.pet?0.5:0)));
         render(lista);
+        renderRecommendations(lista);
+        lista.forEach(n => { if(!n.lat || !n.lng) return; const m = L.marker([n.lat, n.lng]).addTo(map).bindPopup(`<b>${n.nombre}</b><br>${n.tipo}<br>${n.precio||''}<br><a href="${window.generateWhatsAppLink(n)}" target="_blank">💬 Reservar</a>`); markers.push(m); });
       };
     });
   </script>

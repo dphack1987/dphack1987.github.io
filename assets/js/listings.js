@@ -1,14 +1,18 @@
 (function(){
   async function loadCategory(category){
-    try{
-      const res = await fetch(`./data/classified/${category}.json`);
-      if(!res.ok) throw new Error('not found');
-      const data = await res.json();
-      return data.map(normalize);
-    }catch(e){
-      console.warn('No se pudo cargar categoría', category, e.message);
-      return [];
+    const paths = [`./data/classified/${category}.json`, `./data/${category}.json`];
+    for(const path of paths){
+      try{
+        const res = await fetch(path);
+        if(!res.ok) throw new Error('not found');
+        const data = await res.json();
+        return data.map(normalize);
+      }catch(e){
+        // continue to next fallback path
+      }
     }
+    console.warn('No se pudo cargar categoría', category);
+    return [];
   }
 
   function normalize(item){
