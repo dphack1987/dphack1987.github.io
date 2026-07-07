@@ -22,7 +22,7 @@ const TEMPLATES = {
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "${municipio.schema.type}",
+    "@type": "${municipio.schema['@type'] || 'City'}",
     "name": "${municipio.nombre}",
     "description": "${municipio.descripcion}",
     "location": {
@@ -56,13 +56,15 @@ const TEMPLATES = {
 </body>
 </html>
   `,
-  negocio: (negocio) => `
+  negocio: (negocio) => {
+    const municipio = masterData.municipios.find(m => m.id === negocio.municipioId) || masterData.municipios[0];
+    return `
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${negocio.nombre} - ${masterData.municipios.find(m => m.id === negocio.municipioId).nombre} | Mapa Turístico del Quindío</title>
+  <title>${negocio.nombre} - ${municipio.nombre} | Mapa Turístico del Quindío</title>
   <meta name="description" content="${negocio.descripcionLong}">
   <meta name="keywords" content="${negocio.palabrasClave.join(', ')}">
   <link rel="canonical" href="https://www.mapaturisticodelquindio.com/negocios/${negocio.slug}">
@@ -70,13 +72,13 @@ const TEMPLATES = {
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "${negocio.schema.type}",
+    "@type": "${negocio.schema['@type'] || 'LocalBusiness'}",
     "name": "${negocio.nombre}",
     "description": "${negocio.descripcionLong}",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "${negocio.direccion}",
-      "addressLocality": "${masterData.municipios.find(m => m.id === negocio.municipioId).nombre}",
+      "addressLocality": "${municipio.nombre}",
       "addressRegion": "Quindío",
       "addressCountry": "CO"
     },
@@ -114,7 +116,7 @@ const TEMPLATES = {
   <script src="../assets/js/app.js"></script>
 </body>
 </html>
-  `
+  `}
 };
 
 // Asegurar directorios existan
