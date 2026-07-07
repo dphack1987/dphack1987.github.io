@@ -133,7 +133,7 @@ const NEGOCIOS = [
     "telefono": "+57 300 000 0001",
     "whatsapp": "573000000001",
     "maps": "https://maps.google.com/?q=Hotel+Armont+Calarca",
-    "imagen": "./assets/images/alojamientos/armont.jpg",
+    "imagen": "./pautas_publicitarias/hoteles_armenia/hotel_el_bosque_armenia.png",
     "nivel": "estandar",
     "lat": 4.52,
     "lng": -75.64
@@ -154,7 +154,7 @@ const NEGOCIOS = [
     "telefono": "+57 315 699 9060",
     "whatsapp": "573156999060",
     "maps": "https://maps.google.com/?q=Casa+Campestre+La+Cosecha+Quindio",
-    "imagen": "./pautas_publicitarias/Alquiler_de_fincas/casa_campestre_lacosecha.png",
+    "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/casa_campestre_lacosecha.png",
     "nivel": "premium",
     "lat": 4.48,
     "lng": -75.7
@@ -175,7 +175,7 @@ const NEGOCIOS = [
     "telefono": "+57 313 425 3669",
     "whatsapp": "573134253669",
     "maps": "https://maps.google.com/?q=Finca+El+Ocaso+Salento",
-    "imagen": "./pautas_publicitarias/Alquiler_de_fincas/finca_cafetera_el_ocaso.png",
+    "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/finca_cafetera_el_ocaso.png",
     "nivel": "premium",
     "lat": 4.6367,
     "lng": -75.5711
@@ -200,7 +200,7 @@ const NEGOCIOS = [
     "telefono": "+57 312 328 1021",
     "whatsapp": "573123281021",
     "maps": "https://maps.google.com/?q=Km+3+vía+Armenia+al+aeropuerto",
-    "imagen": "./pautas_publicitarias/Alquiler_de_fincas/hotel_cafe_cafe_campestre.png",
+    "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/finca_la_floresta.png",
     "nivel": "premium",
     "lat": 4.5,
     "lng": -75.6
@@ -222,7 +222,7 @@ const NEGOCIOS = [
     "telefono": "+57 320 683 4432",
     "whatsapp": "573206834432",
     "maps": "https://maps.google.com/?q=Hacienda+Moraleja+Calarca",
-    "imagen": "./pautas_publicitarias/Alquiler_de_fincas/hotel_delirio_campestre_quindio.png",
+    "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hacienda_moraleja.png",
     "nivel": "estandar",
     "lat": 4.53,
     "lng": -75.62
@@ -243,7 +243,7 @@ const NEGOCIOS = [
     "telefono": "+57 310 575 2469",
     "whatsapp": "573105752469",
     "maps": "https://maps.google.com/?q=Alma+Nativa+Hotel+Campestre+Calarca",
-    "imagen": "./pautas_publicitarias/Alquiler_de_fincas/hotel_delirio_campestre_quindio.png",
+    "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_alma_nativa.png",
     "nivel": "premium",
     "lat": 4.52,
     "lng": -75.61
@@ -265,7 +265,7 @@ const NEGOCIOS = [
     "telefono": "+57 311 418 7558",
     "whatsapp": "573114187558",
     "maps": "https://maps.google.com/?q=Hotel+Café+Café+Campestre+Quindio",
-    "imagen": "./pautas_publicitarias/Alquiler_de_fincas/hotel_cafe_cafe_campestre.png",
+    "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_cafe_cafe_campestre.png",
     "nivel": "premium",
     "lat": 4.54,
     "lng": -75.69
@@ -287,7 +287,7 @@ const NEGOCIOS = [
     "telefono": "+57 320 256 8458",
     "whatsapp": "573202568458",
     "maps": "https://maps.google.com/?q=Hotel+Delirio+Campestre+Quindio",
-    "imagen": "./pautas_publicitarias/Alquiler_de_fincas/hotel_delirio_campestre_quindio.png",
+    "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_deliriocampestre.png",
     "nivel": "estandar",
     "lat": 4.5667,
     "lng": -75.75
@@ -309,7 +309,7 @@ const NEGOCIOS = [
     "telefono": "+57 313 732 1433",
     "whatsapp": "573137321433",
     "maps": "https://maps.google.com/?q=Linaje+Salvaje+Quindio",
-    "imagen": "./pautas_publicitarias/Alquiler_de_fincas/hotel_cafe_cafe_campestre.png",
+    "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_linaje_salvaje.png",
     "nivel": "estandar",
     "lat": 4.55,
     "lng": -75.6
@@ -377,7 +377,7 @@ const NEGOCIOS = [
     "telefono": "+57 310 831 4719",
     "whatsapp": "573108314719",
     "maps": "https://maps.google.com/?q=Hotel+San+Jerónimo+Armenia",
-    "imagen": "./pautas_publicitarias/hoteles_armenia/hotel_san_jerónimo.png",
+    "imagen": "./pautas_publicitarias/hoteles_armenia/hotel_san_jeronimo.png",
     "nivel": "estandar",
     "lat": 4.535,
     "lng": -75.683
@@ -669,7 +669,7 @@ const NEGOCIOS = [
     "telefono": "+57 304 610 2606",
     "whatsapp": "573046102606",
     "maps": "https://maps.google.com/?q=Centro+Comercial+SanSur+Armenia",
-    "imagen": "./pautas_publicitarias/Centros_Comerciales/centro_comercial_sansur.png",
+    "imagen": "./pautas_publicitarias/Centros Comerciales/centro_comercial_sansur.png",
     "nivel": "premium",
     "lat": 4.52,
     "lng": -75.69
@@ -696,7 +696,7 @@ const NEGOCIOS = [
     "telefono": "+57 300 000 0101",
     "whatsapp": "5730000000101",
     "maps": "https://www.unicentrodearmenia.com",
-    "imagen": "./pautas_publicitarias/Centros_Comerciales/centro_comercial_sansur.png",
+    "imagen": "./pautas_publicitarias/Centros Comerciales/centro_comercial_unicentro.png",
     "nivel": "premium",
     "lat": 4.55,
     "lng": -75.68
@@ -986,7 +986,7 @@ const NEGOCIOS = [
     "telefono": "+57 316 402 6653",
     "whatsapp": "573164026653",
     "maps": "https://maps.google.com/?q=Camino+al+Fútbol+Armenia",
-    "imagen": "./pautas_publicitarias/Deportes_y_entretenimiento/camino_al_futbol.png",
+    "imagen": "./pautas_publicitarias/Deportes y entretenimiento/camino_al_futbol.png",
     "nivel": "estandar",
     "lat": 4.53,
     "lng": -75.68
@@ -1072,7 +1072,7 @@ const NEGOCIOS = [
     "telefono": "+57 300 000 0025",
     "whatsapp": "5730000000025",
     "maps": "https://maps.google.com/?q=Diana+Seguros+Armenia",
-    "imagen": "./assets/images/seguro de viajes/diana_seguros.jpg",
+    "imagen": "./assets/images/decoraciones/2151973988.jpg",
     "nivel": "estandar",
     "lat": 4.534,
     "lng": -75.681
@@ -1249,6 +1249,83 @@ const NEGOCIOS = [
     "nivel": "premium",
     "lat": 4.53,
     "lng": -75.68
+  },
+  {
+    "id": "buen-vuelo-tours",
+    "nombre": "Buen Vuelo Tours",
+    "categoria": "agencia",
+    "tipo": "Agencia de viajes y turismo",
+    "municipio": "armenia",
+    "desc": "Agencia de viajes y turismo en Armenia, Quindío.",
+    "servicios": [
+      "Tours",
+      "Reservas",
+      "Transporte",
+      "Asesoría"
+    ],
+    "precio": "Consultar",
+    "telefono": "+57 301 204 2819",
+    "whatsapp": "573012042819",
+    "maps": "https://maps.google.com/?q=Buen+Vuelo+Tours+Armenia",
+    "imagen": "./pautas_publicitarias/agencias_de_turismo/buen_vuelo_tours.png",
+    "nivel": "estandar"
+  },
+  {
+    "id": "juan-arrubla",
+    "nombre": "Juan Arrubla",
+    "categoria": "guia",
+    "tipo": "Guía turístico",
+    "municipio": "armenia",
+    "desc": "Guía de turismo local en Armenia y alrededores.",
+    "servicios": [
+      "Guianza",
+      "Tours",
+      "Rutas personalizadas"
+    ],
+    "precio": "Consultar",
+    "telefono": "+57 321 899 5839",
+    "whatsapp": "573218995839",
+    "maps": "https://maps.google.com/?q=Juan+Arrubla+Armenia",
+    "imagen": "./pautas_publicitarias/agencias_de_turismo/juan_arrubla.png",
+    "nivel": "estandar"
+  },
+  {
+    "id": "artesanias-turron-y-cafe",
+    "nombre": "Artesanías Turrón y Café",
+    "categoria": "artesanias",
+    "tipo": "Artesanías",
+    "municipio": "armenia",
+    "desc": "Tienda de artesanía, bisutería y dulcería en Armenia.",
+    "servicios": [
+      "Artesanías",
+      "Dulces",
+      "Regalos"
+    ],
+    "precio": "Consultar",
+    "telefono": "+57 310 398 3619",
+    "whatsapp": "573103983619",
+    "maps": "https://maps.google.com/?q=Artesanías+Turrón+y+Café+Armenia",
+    "imagen": "./pautas_publicitarias/artesanias/artesanias_turronycafe.png",
+    "nivel": "estandar"
+  },
+  {
+    "id": "ceramicas-el-alfarero",
+    "nombre": "Cerámicas El Alfarero",
+    "categoria": "artesanias",
+    "tipo": "Artesanía",
+    "municipio": "circasia",
+    "desc": "Puesto de alfarería en el Centro Artesanal Plaza de Bolívar, Circasia.",
+    "servicios": [
+      "Cerámica",
+      "Piezas de barro",
+      "Clases"
+    ],
+    "precio": "Consultar",
+    "telefono": "+57 320 617 8498",
+    "whatsapp": "573206178498",
+    "maps": "https://maps.google.com/?q=Cerámicas+El+Alfarero+Circasia",
+    "imagen": "./pautas_publicitarias/artesanias/ceramicas_alfarero.jpg",
+    "nivel": "estandar"
   }
 ];
 

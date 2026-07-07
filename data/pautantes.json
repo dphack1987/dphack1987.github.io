@@ -192,7 +192,7 @@
     "telefono": "+57 313 732 1433",
     "whatsapp": "573137321433",
     "maps": "https://maps.google.com/?q=Linaje+Salvaje+Quindio",
-    "imagen": "./pautas_publicitarias/Alquiler_de_fincas/hotel_cafe_cafe_campestre.png",
+    "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_linaje_salvaje.png",
     "nivel": "estandar",
     "lat": 4.55,
     "lng": -75.6
@@ -238,7 +238,7 @@
     "telefono": "+57 320 770 7079",
     "whatsapp": "573207707079",
     "maps": "https://maps.google.com/?q=Isa+Victory+Hotel+Armenia",
-    "imagen": "./pautas_publicitarias/hoteles_armenia/hotel_san_jerónimo.png",
+    "imagen": "./pautas_publicitarias/hoteles_armenia/hotel_isa_victory.png",
     "nivel": "premium",
     "lat": 4.54,
     "lng": -75.68
@@ -260,7 +260,7 @@
     "telefono": "+57 310 831 4719",
     "whatsapp": "573108314719",
     "maps": "https://maps.google.com/?q=Hotel+San+Jerónimo+Armenia",
-    "imagen": "./pautas_publicitarias/hoteles_armenia/hotel_san_jerónimo.png",
+    "imagen": "./pautas_publicitarias/hoteles_armenia/hotel_san_jeronimo.png",
     "nivel": "estandar",
     "lat": 4.535,
     "lng": -75.683
@@ -552,7 +552,7 @@
     "telefono": "+57 304 610 2606",
     "whatsapp": "573046102606",
     "maps": "https://maps.google.com/?q=Centro+Comercial+SanSur+Armenia",
-    "imagen": "./pautas_publicitarias/Centros_Comerciales/centro_comercial_sansur.png",
+    "imagen": "./pautas_publicitarias/Centros Comerciales/centro_comercial_sansur.png",
     "nivel": "premium",
     "lat": 4.52,
     "lng": -75.69
@@ -579,7 +579,7 @@
     "telefono": "+57 300 000 0101",
     "whatsapp": "5730000000101",
     "maps": "https://www.unicentrodearmenia.com",
-    "imagen": "./pautas_publicitarias/Centros_Comerciales/centro_comercial_sansur.png",
+    "imagen": "./pautas_publicitarias/Centros Comerciales/centro_comercial_unicentro.png",
     "nivel": "premium",
     "lat": 4.55,
     "lng": -75.68
@@ -869,7 +869,7 @@
     "telefono": "+57 316 402 6653",
     "whatsapp": "573164026653",
     "maps": "https://maps.google.com/?q=Camino+al+Fútbol+Armenia",
-    "imagen": "./pautas_publicitarias/Deportes_y_entretenimiento/camino_al_futbol.png",
+    "imagen": "./pautas_publicitarias/Deportes y entretenimiento/camino_al_futbol.png",
     "nivel": "estandar",
     "lat": 4.53,
     "lng": -75.68
