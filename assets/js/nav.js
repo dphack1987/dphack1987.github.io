@@ -26,12 +26,22 @@
     { label: 'Finca Quindío', url: 'finca-para-alquilar-quindio.html' },
     { label: 'Transporte aeropuerto Armenia', url: 'transporte-aeropuerto-armenia.html' },
     { label: 'Mapa Calarcá 2026', url: 'mapa-de-calarca-2026.html' },
+    { label: 'Mapa Armenia 2026', url: 'https://mapa-armenia-2026.vercel.app/', external: true },
     { label: 'Anúnciate', url: 'anunciate.html' }
   ];
 
-  const renderPrimaryMenu = () => MENU_ITEMS.map(item => `<a href="${p}${item.url}"${active(item.url)}>${item.label}</a>`).join('');
+  const renderPrimaryMenu = () => MENU_ITEMS.map(item => {
+    const href = item.external ? item.url : `${p}${item.url}`;
+    const target = item.external ? ' target="_blank" rel="noopener noreferrer"' : '';
+    const activeClass = !item.external ? active(item.url) : '';
+    return `<a href="${href}"${activeClass}${target}>${item.label}</a>`;
+  }).join('');
 
-  const renderDrawerMenu = () => MENU_ITEMS.map(item => `<a href="${p}${item.url}">${item.label}</a>`).join('');
+  const renderDrawerMenu = () => MENU_ITEMS.map(item => {
+    const href = item.external ? item.url : `${p}${item.url}`;
+    const target = item.external ? ' target="_blank" rel="noopener noreferrer"' : '';
+    return `<a href="${href}"${target}>${item.label}</a>`;
+  }).join('');
 
   const html = `
     <div class="site-header">
