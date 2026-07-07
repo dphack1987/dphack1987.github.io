@@ -118,8 +118,10 @@
     const form = document.getElementById('transporte-form');
 
     openBtn.forEach(btn => {
-      btn.addEventListener('click', () => {
-        modal.style.display = 'block';
+      btn.addEventListener('click', (e) => {
+        if (!modal || !form) return;
+        e.preventDefault();
+        modal.style.display = 'flex';
         
         // Precargar datos
         const saved = Storage.get('transporte') || {};
@@ -135,9 +137,11 @@
       });
     });
 
-    closeBtn.addEventListener('click', () => {
-      modal.style.display = 'none';
-    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+    }
 
     window.addEventListener('click', (e) => {
       if (e.target === modal) modal.style.display = 'none';

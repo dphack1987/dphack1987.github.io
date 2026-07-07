@@ -300,15 +300,32 @@ a,button,.nav-toggle,.filtro-btn{min-width:var(--touch-target);min-height:var(--
 .floating-btn .transporte{background:linear-gradient(135deg,var(--g1),var(--g2));color:white}
 
 /* Floating transporte button on bottom-left */
-.floating-transporte{position:fixed;bottom:24px;left:24px;z-index:9998}
+.floating-transporte{position:fixed;bottom:24px;right:24px;z-index:9998}
 .floating-transporte a{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:all .3s;text-decoration:none;background:linear-gradient(135deg,var(--g1),var(--g2));color:white}
 .floating-transporte a:hover{transform:scale(1.08);box-shadow:0 12px 32px rgba(0,0,0,.35)}
 
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;z-index:10001;overflow:auto;padding:24px}
+.modal{background:white;border-radius:24px;padding:32px;max-width:560px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.18);position:relative}
+.modal h2{margin:0 0 12px;font-size:1.5rem}
+.modal p{margin:0 0 18px;color:var(--text3)}
+.modal .form-group{margin-bottom:18px}
+.modal .form-group label{display:block;font-weight:700; margin-bottom:8px; color:var(--text)}
+.modal .form-group input,
+.modal .form-group select,
+.modal .form-group textarea{width:100%;padding:12px 14px;border:1px solid #d1dfe6;border-radius:12px;font-family:inherit;font-size:1rem;outline:none;transition:border-color .2s}
+.modal .form-group input:focus,
+.modal .form-group select:focus,
+.modal .form-group textarea:focus{border-color:var(--g1)}
+.modal button[type=submit]{width:100%;padding:14px 18px;border:none;border-radius:14px;background:linear-gradient(135deg,var(--g1),var(--g2));color:white;font-size:1rem;font-weight:800;cursor:pointer;transition:all .25s}
+.modal button[type=submit]:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(16,185,129,.3)}
+.modal #close-transporte-modal{position:absolute;top:16px;right:16px;background:transparent;border:none;color:var(--text);cursor:pointer;font-size:1.8rem}
+
 /* Don Chucho widget */
-#don-chucho-root{position:fixed;right:20px;bottom:20px;z-index:11000;font-family:inherit}
+.don-chucho-panel, .don-chucho-widget{position:fixed !important;left:12px !important;bottom:12px !important;right:auto !important;z-index:9999 !important}
+#don-chucho-root{position:fixed;left:20px;bottom:20px;right:auto;z-index:11000;font-family:inherit}
 .don-chucho-btn{background:linear-gradient(135deg,var(--g1),var(--g2));color:white;padding:12px 18px;border-radius:999px;box-shadow:0 12px 30px rgba(0,0,0,.2);cursor:pointer;display:flex;align-items:center;gap:10px;font-weight:800}
 .don-chucho-panel{width:360px;background:white;border-radius:12px;box-shadow:0 24px 80px rgba(0,0,0,.35);overflow:hidden;display:none;flex-direction:column}
-.don-chucho-panel.open{display:flex;position:fixed;right:20px;bottom:80px;z-index:11001}
+.don-chucho-panel.open{display:flex;position:fixed;left:20px;bottom:80px;right:auto;z-index:11001}
 .don-chucho-panel .dc-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid #f0f0f0;background:linear-gradient(90deg,rgba(5,150,105,.06),rgba(245,158,11,.03))}
 .don-chucho-panel .dc-body{padding:12px 14px;display:flex;flex-direction:column;gap:10px;max-height:60vh;overflow:auto}
 .dc-chat{height:180px;overflow:auto;padding:8px;border-radius:8px;background:#fbfefb;border:1px solid #f0f5f0}

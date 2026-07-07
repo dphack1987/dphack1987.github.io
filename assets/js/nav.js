@@ -60,15 +60,8 @@
 
   // Floating transporte button (visible en todas las páginas)
   const transporteHref = p + 'empresas-de-transporte.html';
-  const transporteHTML = `<a class="floating-transporte" href="${transporteHref}" aria-label="Transporte">🚕 Transporte</a>`;
+  const transporteHTML = `<div class="floating-transporte"><a class="open-transporte-btn transporte" href="${transporteHref}" aria-label="Solicitar transporte">🚍</a></div>`;
   document.body.insertAdjacentHTML('beforeend', transporteHTML);
-  const transporteStyle = document.createElement('style');
-  transporteStyle.textContent = `
-    .floating-transporte{position:fixed;right:16px;bottom:20px;z-index:1500;background:linear-gradient(135deg,#059669,#10b981);color:#fff;padding:12px 14px;border-radius:999px;box-shadow:0 8px 30px rgba(6,78,59,.18);font-weight:800;text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-size:.95rem}
-    .floating-transporte:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(6,78,59,.22)}
-    @media(min-width:900px){.floating-transporte{right:24px;bottom:28px;padding:14px 16px;font-size:1rem}}
-  `;
-  document.head.appendChild(transporteStyle);
 
   const toggle = document.getElementById('navToggle');
   const drawer = document.getElementById('navDrawer');
