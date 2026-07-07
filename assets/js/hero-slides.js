@@ -21,7 +21,7 @@ const HERO_SLIDES = [
   './pautas_publicitarias/atractivos_turisticos/jardin_botanico_del_quindio.png',
   './pautas_publicitarias/atractivos_turisticos/laberinto_mil_caminos.png',
   './pautas_publicitarias/atractivos_turisticos/mirador_encanto_filandia.png',
-  './pautas_publicitarias/atractivos_turisticos/panacea.png',
+  './pautas_publicitarias/atractivos_turisticos/panaca.png',
   './pautas_publicitarias/atractivos_turisticos/parque_los_arrieros.png',
   './pautas_publicitarias/atractivos_turisticos/quinti_casa_patasarriba.png',
 

@@ -646,7 +646,7 @@ a,button,.nav-toggle,.filtro-btn{min-width:var(--touch-target);min-height:var(--
   left: 0;
   right: 0;
   height: 120px;
-  background: url('./assets/images/decoraciones/10623587_4478904.jpg') center/cover;
+  background: url('../images/decoraciones/10623587_4478904.jpg') center/cover;
   opacity: 0.12;
   mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
 }
