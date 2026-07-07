@@ -355,7 +355,7 @@ const NEGOCIOS = [
     "telefono": "+57 320 770 7079",
     "whatsapp": "573207707079",
     "maps": "https://maps.google.com/?q=Isa+Victory+Hotel+Armenia",
-    "imagen": "./pautas_publicitarias/hoteles_armenia/hotel_san_jerónimo.png",
+    "imagen": "./pautas_publicitarias/hoteles_armenia/hotel_isa_victory.png",
     "nivel": "premium",
     "lat": 4.54,
     "lng": -75.68
@@ -924,7 +924,7 @@ const NEGOCIOS = [
     "telefono": "+57 317 517 1403",
     "whatsapp": "573175171403",
     "maps": "https://maps.google.com/?q=El+Roble+Km+12+vía+Armenia+-+Pereira",
-    "imagen": "./pautas_publicitarias/Gastronomia_tipica/restaurante_la_feria_del_platano.png",
+    "imagen": "./pautas_publicitarias/Gastronomia_tipica/restaurante_el_roble.png",
     "nivel": "estandar",
     "lat": 4.6,
     "lng": -75.65
