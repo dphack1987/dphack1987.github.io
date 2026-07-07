@@ -11,9 +11,23 @@
   <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body>
-  <header class="page-hero">
-    <h1>🛍️ Quindío Comercial</h1>
-    <p>Negocios comerciales, tiendas, cafés y servicios en el Quindío.</p>
+  <header class="page-hero page-hero--commercial">
+    <div class="hero-content">
+      <div class="hero-copy">
+        <div class="hero-badge">🛍️ Quindío Comercial</div>
+        <h1>Explora negocios con historias visuales</h1>
+        <p>Encuentra tiendas, cafés, restaurantes y servicios con acciones rápidas, multimedia integrada y rutas directas desde tu ubicación.</p>
+        <div class="hero-stats">
+          <div class="stat-card"><strong>+200 negocios</strong><span>Restaurantes, cafés y comercios</span></div>
+          <div class="stat-card"><strong>Acción inmediata</strong><span>WhatsApp, ruta y multimedia</span></div>
+          <div class="stat-card"><strong>Inspiración visual</strong><span>Historias y banners dinámicos</span></div>
+        </div>
+      </div>
+      <div class="hero-media-panel">
+        <div class="hero-media-slider" id="commercial-hero-slider" aria-label="Banner dinámico de Quindío Comercial"></div>
+        <div class="story-strip" id="commercial-story-strip" aria-label="Historias destacadas"></div>
+      </div>
+    </div>
   </header>
   <div class="container">
     <div class="search-bar" role="search">
@@ -33,6 +47,12 @@
       <h2>¿Tienes un negocio comercial?</h2>
       <p>Publica tu tienda, restaurante o servicio y llega a miles de turistas y locales.</p>
       <a href="./anunciate.html" class="btn-cta">📣 Publicar mi negocio</a>
+    </div>
+  </div>
+  <div id="media-modal" class="media-modal hidden" role="dialog" aria-modal="true" aria-label="Reproductor de medios">
+    <div class="media-modal-content">
+      <button class="media-close" type="button" onclick="closeMediaModal()" aria-label="Cerrar">×</button>
+      <div id="media-modal-body"></div>
     </div>
   </div>
   <!-- Pautas -->
@@ -72,6 +92,7 @@
   <script src="./assets/js/datos.js"></script>
   <script src="./assets/js/whatsapp.js"></script>
   <script src="./assets/js/nav.js"></script>
+  <script src="./assets/js/quindio-comercial.js"></script>
   <script>
     let todos = NEGOCIOS.filter(n => ['gastronomia', 'cafe', 'comercial'].includes(n.categoria));
     let lista = [...todos];
@@ -82,14 +103,11 @@
       const c = document.getElementById('cards'), e = document.getElementById('empty');
       c.innerHTML = ''; if(!l.length){e.style.display = 'block'; return;} e.style.display = 'none';
       l.forEach(n => {const d = document.createElement('article'); d.className = 'biz-card'; d.setAttribute('role','listitem');
-        d.innerHTML = `<div class="biz-card-img-wrap"><img src="${n.imagen}" alt="${n.nombre}" class="biz-card-img" loading="lazy"><span class="biz-badge ${n.nivel}">${n.nivel === 'premium' ? '⭐ Premium' : '✓ Verificado'}</span></div>
-        <div class="biz-card-body"><div class="biz-tipo">${n.tipo} · ${n.municipio}</div><h3>${n.nombre}</h3><p>${n.descripcion}</p>
-        <div class="biz-servicios">${n.servicios.slice(0,4).map(s => `<span class="biz-tag">${s}</span>`).join('')}</div>
-        <div class="biz-precio">💰 ${n.precio}</div>
-        <div class="biz-actions"><a href="${generateWhatsAppLink(n)}" target="_blank" rel="noopener" class="btn-wa">💬 Contactar</a><a href="${n.maps}" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a><a href="tel:${n.telefono}" class="btn-tel">📞</a></div></div>`;
+        d.innerHTML = renderCommercialCardHTML(n);
         c.appendChild(d)});
     }
     render(lista);
+    initCommercialPage();
     function filtrar(tipo,btn){document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); lista = tipo === 'todos' ? [...todos] : todos.filter(n => n.tipo === tipo); render(lista);}
     function buscar(){const q = document.getElementById('q').value.toLowerCase().trim(); if(!q){render(todos); return;} render(todos.filter(n => n.nombre.toLowerCase().includes(q) || n.municipio.toLowerCase().includes(q) || n.servicios.some(s => s.toLowerCase().includes(q))));}
     document.getElementById('q').addEventListener('keydown', e => {if(e.key === 'Enter') buscar();});
