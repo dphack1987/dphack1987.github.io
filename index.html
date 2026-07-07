@@ -429,7 +429,7 @@
       return Array.from(filtros).some(filtro => {
         const palabras = palabrasClavePorFiltro[filtro] || [];
         return palabras.some(palabra => textoBusqueda.includes(palabra));
-      }
+      });
     }
 
     // Función para renderizar negocios filtrados
@@ -515,7 +515,7 @@
     if (filterParam) {
       const filtersFromUrl = filterParam.split(',');
       filtersFromUrl.forEach(f => {
-        const btn = document.querySelector(`[data-filter="${f}"]');
+        const btn = document.querySelector(`[data-filter="${f}"]`);
         if (btn) btn.click();
       });
     }
