@@ -14,7 +14,7 @@ const HERO_SLIDES = [
   './pautas_publicitarias/hoteles_armenia/hotel_san_jeronimo.png',
 
   './pautas_publicitarias/atractivos_turisticos/cascadas_rio_verde.png',
-  './pautas_publicitarias/atractivos_turisticos/Complejo_Turistico_y_Deportivo_Soledén.png',
+  './pautas_publicitarias/atractivos_turisticos/Complejo_Turístico_y_Deportivo_Soledén.png',
   './pautas_publicitarias/atractivos_turisticos/eco_parque_peñas_blancas.png',
   './pautas_publicitarias/atractivos_turisticos/finca_las_flores.png',
   './pautas_publicitarias/atractivos_turisticos/Granja_agricola_mama_lulu.png',
