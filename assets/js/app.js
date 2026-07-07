@@ -267,71 +267,7 @@
   }
 
 
-  // ------------------------------
-  // SLIDER DEL HERO (PUBLICIDAD)
-  // ------------------------------
-  function initHeroSlider() {
-    const slider = document.getElementById('hero-slider');
-    if (!slider) return;
 
-    // Preferir HERO_SLIDES generado desde carpeta pautas_publicitarias
-    let slidesData = [];
-    if (typeof HERO_SLIDES !== 'undefined' && Array.isArray(HERO_SLIDES) && HERO_SLIDES.length) {
-      slidesData = HERO_SLIDES.slice(0, 24).map(p => ({ imagen: p, nombre: '' }));
-    } else if (typeof NEGOCIOS !== 'undefined') {
-      slidesData = NEGOCIOS.filter(item => item.imagen && String(item.imagen).includes('pautas_publicitarias')).slice(0, 24);
-    }
-
-    if (!slidesData.length) return;
-
-    // Preload images and filter out missing/broken ones
-    const paths = slidesData.map(item => (item.imagen || item));
-
-    function preload(paths) {
-      return Promise.all(paths.map(p => new Promise(resolve => {
-        const img = new Image();
-        const src = typeof p === 'string' ? encodeURI(p) : p;
-        img.onload = () => resolve({ src, ok: true });
-        img.onerror = () => resolve({ src, ok: false });
-        img.src = src;
-      })));
-    }
-
-    preload(paths).then(results => {
-      const ok = results.filter(r => r.ok).map(r => r.src);
-      if (!ok.length) {
-        console.warn('Hero slider: ninguna imagen cargó desde pautas_publicitarias', results);
-        return;
-      }
-
-      slider.innerHTML = '';
-
-      ok.forEach((src, index) => {
-        const slide = document.createElement('div');
-        slide.className = `hero-slide${index === 0 ? ' active' : ''}`;
-        slide.setAttribute('aria-hidden', index === 0 ? 'false' : 'true');
-        slide.innerHTML = `\n          <img src="${src}" alt="Publicidad del Quindío">\n          <div class="hero-slide-meta">\n            <span>Publicidad recomendada</span>\n          </div>\n        `;
-        slider.appendChild(slide);
-      });
-
-      const totalEl = document.getElementById('hero-slide-total');
-      const currentEl = document.getElementById('hero-slide-current');
-      if (totalEl) totalEl.textContent = String(ok.length);
-      if (currentEl) currentEl.textContent = '1';
-
-      let currentIndex = 0;
-      setInterval(() => {
-        const slides = slider.querySelectorAll('.hero-slide');
-        if (!slides.length) return;
-        slides[currentIndex].classList.remove('active');
-        slides[currentIndex].setAttribute('aria-hidden', 'true');
-        currentIndex = (currentIndex + 1) % slides.length;
-        slides[currentIndex].classList.add('active');
-        slides[currentIndex].setAttribute('aria-hidden', 'false');
-        if (currentEl) currentEl.textContent = String(currentIndex + 1);
-      }, 3000);
-    });
-  }
 
   // ------------------------------
   // INICIALIZACIÓN DE TODO
@@ -349,6 +285,5 @@
     initTransporte();
     initMapObserver();
     initBuscador();
-    initHeroSlider();
   });
 })();
