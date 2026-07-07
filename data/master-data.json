@@ -1,0 +1,85 @@
+
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-07T12:00:00Z",
+  "municipios": [
+    {
+      "id": "armenia",
+      "nombre": "Armenia",
+      "slug": "armenia-quindio",
+      "emoji": "🏙️",
+      "descripcion": "Capital del Quindío, ciudad de la eterna primavera y corazón del Eje Cafetero.",
+      "descripcionLong": "Armenia es la capital del departamento del Quindío, conocida como la 'Ciudad de la Eterna Primavera' por su clima agradable todo el año. Fundada en 1889, es un importante centro turístico, cultural y económico del Eje Cafetero colombiano.",
+      "lat": 4.5339,
+      "lng": -75.6811,
+      "altura": 1551,
+      "poblacion": 300000,
+      "gentilicio": "Armeniense",
+      "palabrasClave": ["Armenia Quindío", "Eje Cafetero", "Ciudad de la eterna primavera"],
+      "banner": "./assets/images/paisajes/Quindío.png",
+      "attractions": ["parque-del-cafe", "jardin-botanico"],
+      "alojamientos": ["hotel-el-bosque", "isa-victory-hotel"],
+      "restaurantes": ["el-fogon-cuyabro", "la-feria-del-platano"],
+      "author": {
+        "name": "Equipo Mapa Turístico del Quindío",
+        "email": "contacto@mapaturisticodelquindio.com",
+        "url": "https://www.mapaturisticodelquindio.com"
+      },
+      "schema": {
+        "type": "City",
+        "sameAs": "https://es.wikipedia.org/wiki/Armenia_(Colombia)"
+      }
+    }
+  ],
+  "negocios": [
+    {
+      "id": "hotel-el-bosque",
+      "nombre": "Hotel El Bosque",
+      "slug": "hotel-el-bosque-armenia",
+      "categoria": "alojamiento",
+      "tipo": "Hotel",
+      "municipioId": "armenia",
+      "descripcion": "Lo mejor en calidad y precio en el centro de la ciudad de Armenia, Quindío.",
+      "descripcionLong": "Hotel El Bosque ofrece habitaciones cómodas y equipadas en el corazón de Armenia, con fácil acceso a los principales atractivos turísticos del Quindío.",
+      "direccion": "Cra. 14 #14-14, Armenia, Quindío",
+      "lat": 4.533,
+      "lng": -75.68,
+      "servicios": ["WiFi", "Desayuno", "Parqueadero"],
+      "precioRango": "$80.000 - $150.000 COP",
+      "telefono": "+57 317 647 1482",
+      "whatsapp": "573176471482",
+      "email": "reservas@hotelelbosque.com",
+      "url": "https://hotelelbosquearmenia.com",
+      "maps": "https://maps.google.com/?q=Hotel+El+Bosque+Armenia",
+      "imagen": "./pautas_publicitarias/hoteles_armenia/hotel_el_bosque_armenia.png",
+      "galeria": [
+        "./pautas_publicitarias/hoteles_armenia/hotel_el_bosque_armenia.png",
+        "./assets/images/paisajes/Quindío.png"
+      ],
+      "nivel": "premium",
+      "palabrasClave": ["hotel Armenia", "alojamiento Quindío", "hospedaje Eje Cafetero"],
+      "fechaPublicacion": "2026-01-15",
+      "fechaActualizacion": "2026-07-07",
+      "rating": {
+        "valor": 4.7,
+        "cantidad": 256
+      },
+      "author": {
+        "name": "Equipo Mapa Turístico del Quindío",
+        "url": "https://www.mapaturisticodelquindio.com"
+      },
+      "schema": {
+        "type": "Hotel",
+        "priceRange": "$$",
+        "servesCuisine": ["Colombiana", "Internacional"],
+        "openingHours": ["Mo-Su 00:00-23:59"]
+      },
+      "transporte": ["radio-taxi-quindio", "transportes-union-cafetera"]
+    }
+  ],
+  "categorias": [
+    { "id": "alojamiento", "nombre": "Alojamientos", "slug": "alojamientos-quindio", "icono": "🏨" },
+    { "id": "sitio-turistico", "nombre": "Atractivos Turísticos", "slug": "sitios-turisticos-quindio", "icono": "🎡" },
+    { "id": "gastronomia", "nombre": "Gastronomía", "slug": "gastronomia-quindio", "icono": "🍽️" }
+  ]
+}

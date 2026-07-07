@@ -1,12 +1,19 @@
 {
   "name": "mapa-turistico-quindio",
   "version": "1.0.0",
-  "description": "Mapa Turístico del Quindío",
+  "description": "Mapa Turístico del Quindío - Plataforma turística programática",
   "main": "generator.js",
   "scripts": {
-    "generate-data": "node ./scripts/generate-data.js"
+    "generate-data": "node ./scripts/generate-data.js",
+    "generate-geojson": "node ./scripts/generate-geojson.js",
+    "generate-pages": "node ./scripts/generate-pages.js",
+    "validate-seo": "node ./scripts/validate-seo.js",
+    "build": "npm run generate-data && npm run generate-geojson && npm run generate-pages && npm run validate-seo"
   },
-  "keywords": ["turismo", "quindio", "mapa"],
+  "keywords": ["turismo", "quindio", "mapa", "programmatic-seo", "eje-cafetero"],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jsdom": "^26.0.0"
+  }
 }
