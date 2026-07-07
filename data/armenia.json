@@ -1,0 +1,34 @@
+{
+  "id": "armenia",
+  "nombre": "Armenia",
+  "slug": "armenia",
+  "title": "Armenia, Quindío: La Ciudad de la Eterna Primavera - Guía Oficial 2026",
+  "description": "Descubre Armenia, la capital del Quindío, la ciudad de la eterna primavera. Alojamientos, sitios turísticos, gastronomía y transporte a un solo clic.",
+  "keywords": ["Armenia", "Quindío", "Ciudad de la Eterna Primavera", "Eje Cafetero", "Colombia"],
+  "coordenadas": {
+    "lat": 4.5339,
+    "lng": -75.6811
+  },
+  "banner": "./assets/images/paisajes/48159.jpg",
+  "atractivos": [],
+  "alojamientos": [],
+  "gastronomia": [],
+  "transporte": [],
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "City",
+    "name": "Armenia",
+    "description": "Capital del departamento del Quindío, conocida como la Ciudad de la Eterna Primavera.",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 4.5339,
+      "longitude": -75.6811
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Armenia",
+      "addressRegion": "Quindío",
+      "addressCountry": "CO"
+    }
+  }
+}

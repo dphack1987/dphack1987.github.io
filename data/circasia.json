@@ -1,0 +1,34 @@
+{
+  "id": "circasia",
+  "nombre": "Circasia",
+  "slug": "circasia",
+  "title": "Circasia, Quindío: El Pueblo más Bonito del Mundo - Guía Oficial 2026",
+  "description": "Conoce Circasia, el pueblo más bonito del mundo según National Geographic. Guía completa de alojamientos, sitios turísticos y gastronomía.",
+  "keywords": ["Circasia", "Quindío", "Eje Cafetero", "Pueblo más Bonito del Mundo", "Colombia"],
+  "coordenadas": {
+    "lat": 4.6167,
+    "lng": -75.6333
+  },
+  "banner": "./assets/images/paisajes/56855.jpg",
+  "atractivos": [],
+  "alojamientos": [],
+  "gastronomia": [],
+  "transporte": [],
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "City",
+    "name": "Circasia",
+    "description": "Pueblo del departamento del Quindío, conocido como el Pueblo más Bonito del Mundo.",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 4.6167,
+      "longitude": -75.6333
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Circasia",
+      "addressRegion": "Quindío",
+      "addressCountry": "CO"
+    }
+  }
+}
