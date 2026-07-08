@@ -140,7 +140,7 @@ function startAutoplay() {
   // Start new interval
   slideInterval = setInterval(() => {
     goToSlide(currentSlideIndex + 1);
-  }, 5000); // Change slide every 5 seconds
+  }, 3000); // Change slide every 3 seconds
 }
 
 // Initialize slider when DOM is loaded

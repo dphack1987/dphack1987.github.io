@@ -104,7 +104,7 @@ function renderHeroSlider() {
     slides[current].classList.remove('active');
     current = (current + 1) % slides.length;
     slides[current].classList.add('active');
-  }, 7000);
+  }, 3000);
 }
 
 function renderStoryStrip() {
