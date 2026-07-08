@@ -5,7 +5,11 @@
       "headers": [
         {
           "key": "X-Robots-Tag",
-          "value": "all"
+          "value": "index, follow"
+        },
+        {
+          "key": "Content-Language",
+          "value": "es-CO"
         },
         {
           "key": "Link",

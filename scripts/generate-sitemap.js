@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 
 const BASE_URL = 'https://www.mapaturisticodelquindio.com';
-const DATE = new Date().toISOString().split('T')[0];
 const OUTPUT_PATH = path.join(__dirname, '../sitemap.xml');
 
 // Archivos HTML estáticos del sitio
@@ -31,11 +30,18 @@ const STATIC_PAGES = [
 // Generar URLs para páginas estáticas
 const staticUrls = STATIC_PAGES.map(page => {
   const loc = page === '' ? BASE_URL : `${BASE_URL}/${page}`;
+  // Get file modification time if available, else use current date
+  let lastmod = new Date().toISOString().split('T')[0];
+  const filePath = path.join(__dirname, '../', page || 'index.html');
+  if (fs.existsSync(filePath)) {
+    const stats = fs.statSync(filePath);
+    lastmod = stats.mtime.toISOString().split('T')[0];
+  }
   return `  <url>
     <loc>${loc}</loc>
-    <lastmod>${DATE}</lastmod>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>${page === '' ? '1.0' : '0.8'}</priority>
+    <priority>${page === '' ? '1.0' : '0.9'}</priority>
   </url>`;
 });
 
@@ -47,11 +53,17 @@ if (fs.existsSync(masterDataPath)) {
   if (masterData.municipios && Array.isArray(masterData.municipios)) {
     municipioUrls = masterData.municipios.map(muni => {
       const loc = `${BASE_URL}/municipios/${muni.slug}.html`;
+      const filePath = path.join(__dirname, '../municipios/', `${muni.slug}.html`);
+      let lastmod = new Date().toISOString().split('T')[0];
+      if (fs.existsSync(filePath)) {
+        const stats = fs.statSync(filePath);
+        lastmod = stats.mtime.toISOString().split('T')[0];
+      }
       return `  <url>
     <loc>${loc}</loc>
-    <lastmod>${DATE}</lastmod>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>1.0</priority>
   </url>`;
     });
   }
@@ -64,11 +76,21 @@ if (fs.existsSync(masterDataPath)) {
   if (masterData.negocios && Array.isArray(masterData.negocios)) {
     negocioUrls = masterData.negocios.map(negocio => {
       const loc = `${BASE_URL}/negocios/${negocio.slug}.html`;
+      const filePath = path.join(__dirname, '../negocios/', `${negocio.slug}.html`);
+      let lastmod = new Date().toISOString().split('T')[0];
+      if (fs.existsSync(filePath)) {
+        const stats = fs.statSync(filePath);
+        lastmod = stats.mtime.toISOString().split('T')[0];
+      }
+      // Use negocio.fechaActualizacion if available
+      if (negocio.fechaActualizacion) {
+        lastmod = negocio.fechaActualizacion;
+      }
       return `  <url>
     <loc>${loc}</loc>
-    <lastmod>${DATE}</lastmod>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>`;
     });
   }

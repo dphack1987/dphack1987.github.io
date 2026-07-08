@@ -52,9 +52,57 @@ const generateBreadcrumbList = (type, item) => {
   };
 };
 
+// Generar Schema global para Quindío
+const generateGlobalQuindioSchema = () => {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Quindío",
+        "description": "Departamento del Eje Cafetero colombiano, famoso por su café, paisajes y cultura.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Quindío",
+          "addressCountry": "CO"
+        },
+        "url": "https://www.mapaturisticodelquindio.com",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 4.55,
+          "longitude": -75.68
+        },
+        "sameAs": "https://es.wikipedia.org/wiki/Quind%C3%ADo"
+      },
+      {
+        "@type": "TouristDestination",
+        "name": "Quindío",
+        "description": "Destino turístico del Eje Cafetero colombiano, con paisajes cafeteros, pueblos tradicionales y experiencias auténticas.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Quindío",
+          "addressCountry": "CO"
+        },
+        "url": "https://www.mapaturisticodelquindio.com",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 4.55,
+          "longitude": -75.68
+        },
+        "touristType": [
+          "Ecoturismo",
+          "Turismo cultural",
+          "Turismo gastronómico"
+        ]
+      }
+    ]
+  };
+};
+
 // Generar Schema para Negocio (incluye Offer/Event si aplica)
 const generateNegocioSchema = (negocio, municipio) => {
-  const baseSchema = {
+  const globalSchema = generateGlobalQuindioSchema();
+  const negocioSchema = {
     "@context": "https://schema.org",
     "@graph": [
       {
@@ -98,10 +146,12 @@ const generateNegocioSchema = (negocio, municipio) => {
       generateBreadcrumbList('negocio', negocio)
     ]
   };
+  // Combine global and negocio schemas
+  negocioSchema['@graph'].unshift(...globalSchema['@graph']);
 
   // Añadir Offer si tiene precio definido
   if (negocio.precioRango && negocio.precioRango !== 'Consultar') {
-    baseSchema['@graph'].push({
+    negocioSchema['@graph'].push({
       "@type": "Offer",
       "name": `Reserva en ${negocio.nombre}`,
       "description": negocio.descripcion,
@@ -116,7 +166,7 @@ const generateNegocioSchema = (negocio, municipio) => {
 
   // Añadir Event si es un atractivo turístico
   if (negocio.categoria === 'sitio-turistico') {
-    baseSchema['@graph'].push({
+    negocioSchema['@graph'].push({
       "@type": "Event",
       "name": `Visita a ${negocio.nombre}`,
       "description": negocio.descripcionLong,
@@ -135,7 +185,7 @@ const generateNegocioSchema = (negocio, municipio) => {
     });
   }
 
-  return baseSchema;
+  return negocioSchema;
 };
 
 // Consejos de Local pregenerados (simula IA)
@@ -150,22 +200,10 @@ const CONSEJOS_LOCAL = {
   ginebra: "Consejo de Local: Ginebra es pequeño pero acogedor. Pregunta por las fincas cafeteras cercanas, muchas ofrecen tours sin cita previa."
 };
 
-const TEMPLATES = {
-  municipio: (municipio) => `
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${municipio.nombre} - Qué Ver y Hacer | Mapa Turístico del Quindío 2026</title>
-  <meta name="description" content="Descubre ${municipio.nombre}: atractivos turísticos, alojamientos, restaurantes y más. Guía completa del Quindío sin intermediarios.">
-  <meta name="keywords" content="${municipio.palabrasClave.join(', ')}">
-  <link rel="canonical" href="https://www.mapaturisticodelquindio.com/municipios/${municipio.slug}">
-  <meta name="theme-color" content="#059669">
-  <link rel="stylesheet" href="../assets/css/main.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
-  <script type="application/ld+json">
-  ${JSON.stringify({
+// Generar Schema para Municipio con global Quindío
+const generateMunicipioSchema = (municipio) => {
+  const globalSchema = generateGlobalQuindioSchema();
+  const municipioSchema = {
     "@context": "https://schema.org",
     "@graph": [
       {
@@ -186,7 +224,28 @@ const TEMPLATES = {
       },
       generateBreadcrumbList('municipio', municipio)
     ]
-  }, null, 2)}
+  };
+  // Combine global and municipio schemas
+  municipioSchema['@graph'].unshift(...globalSchema['@graph']);
+  return municipioSchema;
+};
+
+const TEMPLATES = {
+  municipio: (municipio) => `
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${municipio.nombre} - Qué Ver y Hacer | Mapa Turístico del Quindío 2026</title>
+  <meta name="description" content="Descubre ${municipio.nombre}: atractivos turísticos, alojamientos, restaurantes y más. Guía completa del Quindío sin intermediarios.">
+  <meta name="keywords" content="${municipio.palabrasClave.join(', ')}">
+  <link rel="canonical" href="https://www.mapaturisticodelquindio.com/municipios/${municipio.slug}">
+  <meta name="theme-color" content="#059669">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+  <script type="application/ld+json">
+  ${JSON.stringify(generateMunicipioSchema(municipio), null, 2)}
   </script>
 </head>
 <body>
