@@ -135,8 +135,8 @@ const NEGOCIOS = [
     "maps": "https://maps.google.com/?q=Hotel+Armont+Calarca",
     "imagen": "./pautas_publicitarias/hoteles_armenia/hotel_el_bosque_armenia.png",
     "nivel": "estandar",
-    "lat": 4.52,
-    "lng": -75.64
+    "lat": 4.5167,
+    "lng": -75.6333
   },
   {
     "id": "casa-campestre-la-cosecha",
@@ -156,8 +156,8 @@ const NEGOCIOS = [
     "maps": "https://maps.google.com/?q=Casa+Campestre+La+Cosecha+Quindio",
     "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/casa_campestre_lacosecha.png",
     "nivel": "premium",
-    "lat": 4.48,
-    "lng": -75.7
+    "lat": 4.4923,
+    "lng": -75.7153
   },
   {
     "id": "finca-cafetera-el-ocaso",
@@ -177,8 +177,8 @@ const NEGOCIOS = [
     "maps": "https://maps.google.com/?q=Finca+El+Ocaso+Salento",
     "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/finca_cafetera_el_ocaso.png",
     "nivel": "premium",
-    "lat": 4.6367,
-    "lng": -75.5711
+    "lat": 4.6374,
+    "lng": -75.5699
   },
   {
     "id": "la-floresta-hotel-campestre",
@@ -202,8 +202,8 @@ const NEGOCIOS = [
     "maps": "https://maps.google.com/?q=Km+3+vía+Armenia+al+aeropuerto",
     "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/finca_la_floresta.png",
     "nivel": "premium",
-    "lat": 4.5,
-    "lng": -75.6
+    "lat": 4.5291,
+    "lng": -75.712
   },
   {
     "id": "hacienda-moraleja",
@@ -267,8 +267,8 @@ const NEGOCIOS = [
     "maps": "https://maps.google.com/?q=Hotel+Café+Café+Campestre+Quindio",
     "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_cafe_cafe_campestre.png",
     "nivel": "premium",
-    "lat": 4.54,
-    "lng": -75.69
+    "lat": 4.5401,
+    "lng": -75.6912
   },
   {
     "id": "hotel-delirio-campestre",
@@ -289,8 +289,8 @@ const NEGOCIOS = [
     "maps": "https://maps.google.com/?q=Hotel+Delirio+Campestre+Quindio",
     "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_deliriocampestre.png",
     "nivel": "estandar",
-    "lat": 4.5667,
-    "lng": -75.75
+    "lat": 4.5642,
+    "lng": -75.7489
   },
   {
     "id": "linaje-salvaje",
@@ -311,8 +311,8 @@ const NEGOCIOS = [
     "maps": "https://maps.google.com/?q=Linaje+Salvaje+Quindio",
     "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_linaje_salvaje.png",
     "nivel": "estandar",
-    "lat": 4.55,
-    "lng": -75.6
+    "lat": 4.501,
+    "lng": -75.5591
   },
   {
     "id": "hotel-el-bosque",
@@ -379,8 +379,8 @@ const NEGOCIOS = [
     "maps": "https://maps.google.com/?q=Hotel+San+Jerónimo+Armenia",
     "imagen": "./pautas_publicitarias/hoteles_armenia/hotel_san_jeronimo.png",
     "nivel": "estandar",
-    "lat": 4.535,
-    "lng": -75.683
+    "lat": 4.5344,
+    "lng": -75.6808
   },
   {
     "id": "cascadas-rio-verde",
@@ -426,8 +426,8 @@ const NEGOCIOS = [
     "maps": "https://soleden.co",
     "imagen": "./pautas_publicitarias/atractivos_turisticos/Complejo_Turístico_y_Deportivo_Soledén.png",
     "nivel": "premium",
-    "lat": 4.54,
-    "lng": -75.69
+    "lat": 4.5448,
+    "lng": -75.6863
   },
   {
     "id": "ecoparque-penas-blancas",
