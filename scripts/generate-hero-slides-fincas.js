@@ -1,14 +1,35 @@
-// Lista generada de imágenes publicitarias de fincas
-const HERO_SLIDES = [
-  "pautas_publicitarias/Alquiler_de_fincas_quindio/casa_campestre_lacosecha.png",
-  "pautas_publicitarias/Alquiler_de_fincas_quindio/finca_cafetera_el_ocaso.png",
-  "pautas_publicitarias/Alquiler_de_fincas_quindio/finca_la_floresta.png",
-  "pautas_publicitarias/Alquiler_de_fincas_quindio/hacienda_moraleja.png",
-  "pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_alma_nativa.png",
-  "pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_cafe_cafe_campestre.png",
-  "pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_deliriocampestre.png",
-  "pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_linaje_salvaje.png"
-];
+const fs = require('fs');
+const path = require('path');
+
+const pautasDir = path.join(__dirname, '..', 'pautas_publicitarias', 'Alquiler_de_fincas_quindio');
+const outputFile = path.join(__dirname, '..', 'assets', 'js', 'hero-slides-fincas.js');
+
+const allImages = [];
+
+function scanDirectory(dir, relativePath = '') {
+  const items = fs.readdirSync(dir);
+  for (const item of items) {
+    const fullPath = path.join(dir, item);
+    const stat = fs.statSync(fullPath);
+    if (stat.isDirectory()) {
+      scanDirectory(fullPath, path.join(relativePath, item));
+    } else if (
+      item.toLowerCase().endsWith('.png') ||
+      item.toLowerCase().endsWith('.jpg') ||
+      item.toLowerCase().endsWith('.jpeg')
+    ) {
+      const imagePath = path.join('./pautas_publicitarias', 'Alquiler_de_fincas_quindio', relativePath, item).replace(/\\/g, '/');
+      allImages.push(imagePath);
+    }
+  }
+}
+
+console.log('Scanning Alquiler_de_fincas_quindio...');
+scanDirectory(pautasDir);
+console.log(`Found ${allImages.length} images`);
+
+const outputContent = `// Lista generada de imágenes publicitarias de fincas
+const HERO_SLIDES = ${JSON.stringify(allImages, null, 2)};
 
 // Hero Slider Functionality
 let currentSlideIndex = 0;
@@ -27,14 +48,14 @@ function initHeroSlider() {
   // Add all slides from HERO_SLIDES
   HERO_SLIDES.forEach((imageSrc, index) => {
     const slide = document.createElement('div');
-    slide.className = `hero-slide ${index === 0 ? 'active' : ''}`;
+    slide.className = \`hero-slide \${index === 0 ? 'active' : ''}\`;
     slide.setAttribute('aria-hidden', index !== 0);
-    slide.innerHTML = `
-      <img src="${imageSrc}" alt="Finca del Quindío - Slide ${index + 1}" loading="${index === 0 ? 'eager' : 'lazy'}">
+    slide.innerHTML = \`
+      <img src="\${imageSrc}" alt="Finca del Quindío - Slide \${index + 1}" loading="\${index === 0 ? 'eager' : 'lazy'}">
       <div class="hero-slide-meta">
         <span>Publicidad destacada</span>
       </div>
-    `;
+    \`;
     sliderContainer.appendChild(slide);
   });
 
@@ -87,3 +108,7 @@ if (document.readyState === 'loading') {
 } else {
   initHeroSlider();
 }
+`;
+
+fs.writeFileSync(outputFile, outputContent, 'utf8');
+console.log('Generated:', outputFile);
