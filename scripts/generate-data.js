@@ -4,7 +4,7 @@ const path = require('path');
 // ------------------------------
 // DATOS BASE
 // ------------------------------
-const rawData = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/pautantes.json'), 'utf8'));
+const masterData = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/master-data.json'), 'utf8'));
 
 const MUNICIPIOS = [
   { id:'armenia', nombre:'Armenia', emoji:'🏙️', desc:'Capital del Quindío, ciudad de la eterna primavera.', lat:4.5339, lng:-75.6811, km:0 },
@@ -21,9 +21,18 @@ const MUNICIPIOS = [
   { id:'la-tebaida', nombre:'La Tebaida', emoji:'🌞', desc:'Clima cálido, portal de entrada al Quindío.', lat:4.45, lng:-75.7833, km:15 }
 ];
 
-const NEGOCIOS = rawData.map(item => ({
+const NEGOCIOS = masterData.negocios.map(item => ({
   ...item,
-  id: item.id || item.nombre.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ /g, '-').replace(/[^a-z0-9-]/g, '')
+  id: item.id,
+  slug: item.slug,
+  imagen: item.imagen,
+  nombre: item.nombre,
+  desc: item.descripcion,
+  municipio: item.municipioId,
+  lat: item.lat,
+  lng: item.lng,
+  telefono: item.telefono,
+  whatsapp: item.whatsapp
 }));
 
 const ITINERARIOS = [

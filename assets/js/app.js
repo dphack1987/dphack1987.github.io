@@ -199,12 +199,32 @@
       if (typeof NEGOCIOS !== 'undefined') {
         NEGOCIOS.forEach(biz => {
           if (biz.lat && biz.lng) {
-            const marker = L.marker([biz.lat, biz.lng]).addTo(map);
+            // Create custom icon with logo
+            let iconOptions = {
+              iconSize: [32, 32],
+              iconAnchor: [16, 32],
+              popupAnchor: [0, -32],
+            };
+            
+            if (biz.imagen) {
+              iconOptions.iconUrl = biz.imagen;
+            }
+            
+            const customIcon = L.icon(iconOptions);
+            
+            const marker = L.marker([biz.lat, biz.lng], { icon: customIcon }).addTo(map);
+            
+            // Generate popup content with logo, link to negocio page, and WhatsApp
+            const negocioPageUrl = biz.slug ? `./negocios/${biz.slug}.html` : '#';
             marker.bindPopup(`
-              <div style="min-width:200px">
-                <h3 style="margin:0 0 8px;font-weight:800;color:#064e3b">${biz.nombre}</h3>
-                <p style="margin:0 0 8px;color:#6b7280">${biz.desc}</p>
-                <a href="${generateWhatsAppLink(biz)}" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#25d366;color:#fff;padding:8px 14px;border-radius:50px;font-weight:700;text-decoration:none">💬 Contactar</a>
+              <div style="min-width:240px; max-width:300px;">
+                ${biz.imagen ? `<img src="${biz.imagen}" alt="${biz.nombre}" style="width:100%; height:120px; object-fit:cover; border-radius:8px; margin-bottom:12px;">` : ''}
+                <h3 style="margin:0 0 8px;font-weight:800;color:#064e3b; font-size:18px;">${biz.nombre}</h3>
+                <p style="margin:0 0 12px;color:#6b7280; font-size:14px; line-height:1.4;">${biz.desc}</p>
+                <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                  <a href="${negocioPageUrl}" style="display:inline-flex;align-items:center;gap:6px;background:#059669;color:#fff;padding:8px 14px;border-radius:50px;font-weight:700;text-decoration:none; font-size:14px;">🔗 Ver detalles</a>
+                  ${biz.whatsapp ? `<a href="${generateWhatsAppLink(biz)}" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#25d366;color:#fff;padding:8px 14px;border-radius:50px;font-weight:700;text-decoration:none; font-size:14px;">💬 Contactar</a>` : ''}
+                </div>
               </div>
             `);
           }
