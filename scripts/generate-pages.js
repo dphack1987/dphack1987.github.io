@@ -86,7 +86,14 @@ const generateNegocioSchema = (negocio, municipio) => {
           "@type": "AggregateRating",
           "ratingValue": negocio.rating.valor,
           "reviewCount": negocio.rating.cantidad
-        } : undefined
+        } : undefined,
+        "potentialAction": {
+          "@type": "ReserveAction",
+          "name": `Reservar en ${negocio.nombre}`,
+          "url": negocio.whatsapp ? `https://wa.me/${negocio.whatsapp}` : negocio.maps,
+          "target": negocio.whatsapp ? `https://wa.me/${negocio.whatsapp}` : negocio.maps,
+          "actionStatus": "https://schema.org/PotentialActionStatus"
+        }
       },
       generateBreadcrumbList('negocio', negocio)
     ]
