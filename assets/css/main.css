@@ -27,8 +27,7 @@ a{text-decoration:none;color:inherit}
   padding:0 16px;border-bottom:1px solid rgba(16,185,129,.1);flex-wrap:wrap}
 .nav-logo{position:absolute;left:16px;top:12px;display:flex;align-items:center;gap:12px;text-decoration:none}
 .nav-logo img{height:48px;width:auto;object-fit:contain}
-.nav-toggle{margin-left:auto;order:3}
-.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:none}
+.nav-toggle{margin-left:auto;order:3;display:none!important;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:none}
 .nav-toggle span{display:block;width:26px;height:2px;background:#064e3b;border-radius:2px;transition:all .3s}
 .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .nav-toggle.open span:nth-child(2){opacity:0}
@@ -56,7 +55,7 @@ a{text-decoration:none;color:inherit}
 .nav-drawer a:hover{background:#f0fdf4;color:#059669}
 @media(max-width:768px){
   .menu-bar{display:none!important}
-  .nav-toggle{display:flex;order:2;padding:12px 14px;border-radius:16px;border:1px solid rgba(16,185,129,.2);background:#ffffff;box-shadow:0 12px 30px rgba(16,185,129,.12);}
+  .nav-toggle{display:flex!important;order:2;padding:12px 14px;border-radius:16px;border:1px solid rgba(16,185,129,.2);background:#ffffff;box-shadow:0 12px 30px rgba(16,185,129,.12);}
   .nav-toggle span{width:28px;height:3px}
   .nav-drawer{position:fixed;inset:0;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);padding:120px 20px 20px;overflow-y:auto;z-index:10002;display:none;flex-direction:column;align-items:stretch;}
   .nav-drawer.open{display:flex}
