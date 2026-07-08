@@ -8,7 +8,7 @@
   --bg:#f0fdf4;--bg2:#ecfdf5;
   --text:#064e3b;--text2:#065f46;--text3:#6b7280;
   --sh:rgba(16,185,129,.12);--sh2:rgba(16,185,129,.22);
-  --r:16px;--r2:24px;--nav-h:120px;
+  --r:16px;--r2:24px;--nav-h:100px;
   --touch-target:48px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -23,10 +23,10 @@ a{text-decoration:none;color:inherit}
 .site-header{position:fixed;top:0;left:0;right:0;z-index:1000;
   background:rgba(255,255,255,.97);backdrop-filter:blur(20px) saturate(180%);
   box-shadow:0 4px 24px rgba(16,185,129,.12)}
-.header-top{position:relative;height:120px;display:flex;align-items:center;justify-content:flex-start;
+.header-top{position:relative;height:100px;display:flex;align-items:center;justify-content:flex-start;
   padding:0 16px;border-bottom:1px solid rgba(16,185,129,.1);flex-wrap:wrap}
-.nav-logo{position:absolute;left:16px;top:18px;display:flex;align-items:center;gap:12px;text-decoration:none}
-.nav-logo img{height:62px;width:auto;object-fit:contain}
+.nav-logo{position:absolute;left:16px;top:12px;display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo img{height:48px;width:auto;object-fit:contain}
 .nav-toggle{margin-left:auto;order:3}
 .nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:none}
 .nav-toggle span{display:block;width:26px;height:2px;background:#064e3b;border-radius:2px;transition:all .3s}
@@ -47,7 +47,7 @@ a{text-decoration:none;color:inherit}
 .menu-bar a:hover{background:linear-gradient(180deg,#fff176 0%,#f9e04b 100%);
   transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.25)}
 .menu-bar a.active{background:linear-gradient(180deg,#a5d6a7 0%,#66bb6a 100%);color:#1b5e20;border-color:#388e3c}
-.nav-drawer{display:none;position:fixed;top:132px;left:0;right:0;
+.nav-drawer{display:none;position:fixed;top:100px;left:0;right:0;
   background:rgba(255,255,255,.98);backdrop-filter:blur(20px);
   padding:20px 28px 32px;z-index:999;border-bottom:2px solid rgba(16,185,129,.15);
   box-shadow:0 16px 48px rgba(16,185,129,.12);flex-direction:column;gap:4px}
@@ -83,7 +83,7 @@ a{text-decoration:none;color:inherit}
     border-color:rgba(16,185,129,.35);
   }
   .nav-logo{position:relative;left:auto;top:auto;margin:0;order:1;}
-  .nav-logo img{height:52px}
+  .nav-logo img{height:40px}
   .header-top{justify-content:space-between;align-items:center;flex-wrap:nowrap;gap:10px;padding:12px 16px}
   .header-top::after{content:'';display:none}
 }
