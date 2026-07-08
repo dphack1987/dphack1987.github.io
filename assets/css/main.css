@@ -305,7 +305,7 @@ a,button,.nav-toggle,.filtro-btn{min-width:var(--touch-target);min-height:var(--
 .floating-transporte a:hover{transform:scale(1.08);box-shadow:0 12px 32px rgba(0,0,0,.35)}
 
 /* ── QUINDÍO COMERCIAL HERO + CARD ENHANCEMENTS ── */
-.page-hero--commercial{padding:32px 24px 20px;margin-bottom:0;background:linear-gradient(135deg,rgba(5,150,105,.1),rgba(245,158,11,.08));position:relative;overflow:hidden}
+.page-hero--commercial{padding-top:calc(var(--nav-h, 132px) + 32px);padding-right:24px;padding-bottom:20px;padding-left:24px;margin-bottom:0;background:linear-gradient(135deg,rgba(5,150,105,.1),rgba(245,158,11,.08));position:relative;overflow:hidden}
 .hero-content{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;max-width:1200px;margin:0 auto}
 .hero-copy{padding:28px 20px;border-radius:32px;background:rgba(255,255,255,.92);box-shadow:0 20px 60px rgba(6,78,59,.08)}
 .hero-badge{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;background:rgba(245,158,11,.15);color:var(--a1);font-weight:800;margin-bottom:16px}
@@ -365,7 +365,7 @@ a,button,.nav-toggle,.filtro-btn{min-width:var(--touch-target);min-height:var(--
 }
 
 .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;z-index:10001;overflow:auto;padding:24px}
-.modal{background:white;border-radius:24px;padding:32px;max-width:560px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.18);position:relative}
+.modal{background:white;border-radius:24px;padding:32px;max-width:480px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.18);position:relative}
 .modal h2{margin:0 0 12px;font-size:1.5rem}
 .modal p{margin:0 0 18px;color:var(--text3)}
 .modal .form-group{margin-bottom:18px}
