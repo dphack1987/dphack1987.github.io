@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>El Mapa Turístico del Quindío: La Guía Oficial 2026</title>
+  <meta name="description" content="El Mapa Turístico del Quindío - Guía Oficial 2026. Descubre alojamientos, sitios turísticos, gastronomía y transporte sin intermediarios en el Eje Cafetero.">
+  <meta name="keywords" content="Mapa Turístico del Quindío, Quindío, Eje Cafetero, Armenia, Circasia, Montenegro, sitios turísticos, alojamientos, gastronomía">
+  <link rel="canonical" href="https://www.mapaturisticodelquindio.com/">
+  <meta name="theme-color" content="#059669">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [ /* ... */ ]
+  }
+  </script>
+</head>
+<body>
+  <!-- original body omitted in backup -->
+</body>
+</html>

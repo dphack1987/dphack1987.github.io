@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quindío Comercial — Mapa Turístico del Quindío</title>
+  <meta name="description" content="Negocios comerciales en el Quindío: tiendas, restaurantes, cafés y servicios.">
+  <link rel="canonical" href="https://www.mapaturisticodelquindio.com/quindio-comercial.html">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
+  <header class="page-hero page-hero--commercial">
+    <div class="hero-content">
+      <div class="hero-copy">
+        <div class="hero-badge">🛍️ Quindío Comercial</div>
+        <h1>Explora negocios con historias visuales</h1>
+        <p>Encuentra tiendas, cafés, restaurantes y servicios con acciones rápidas, multimedia integrada y rutas directas desde tu ubicación.</p>
+        <div class="hero-stats">
+          <div class="stat-card"><strong>+200 negocios</strong><span>Restaurantes, cafés y comercios</span></div>
+          <div class="stat-card"><strong>Acción inmediata</strong><span>WhatsApp, ruta y multimedia</span></div>
+          <div class="stat-card"><strong>Inspiración visual</strong><span>Historias y banners dinámicos</span></div>
+        </div>
+      </div>
+      <div class="hero-media-panel">
+        <div class="hero-media-slider" id="commercial-hero-slider" aria-label="Banner dinámico de Quindío Comercial"></div>
+        <div class="story-strip" id="commercial-story-strip" aria-label="Historias destacadas"></div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="search-bar" role="search">
+      <input type="search" id="q" placeholder="🔍 Buscar negocio, municipio o servicio..." aria-label="Buscar">
+      <button onclick="buscar()">Buscar</button>
+    </div>
+    <div class="filtros">
+      <button class="filtro-btn active" onclick="filtrar('todos',this)">Todos</button>
+      <button class="filtro-btn" onclick="filtrar('Restaurante',this)">🍽️ Restaurantes</button>
+      <button class="filtro-btn" onclick="filtrar('Café',this)">☕ Cafés</button>
+      <button class="filtro-btn" onclick="filtrar('Tienda',this)">🛒 Tiendas</button>
+    </div>
+    <div style="margin-bottom:48px"><div id="mapa-interactivo"></div></div>
+    <div id="cards" class="cards-grid" role="list" aria-live="polite"></div>
+    <div id="empty" class="no-results" style="display:none"><div class="icon">🛍️</div><p>Sin resultados.</p></div>
+    <div class="cta-anunciate">
+      <h2>¿Tienes un negocio comercial?</h2>
+      <p>Publica tu tienda, restaurante o servicio y llega a miles de turistas y locales.</p>
+      <a href="./anunciate.html" class="btn-cta">📣 Publicar mi negocio</a>
+    </div>
+  </div>
+  <div id="media-modal" class="media-modal hidden" role="dialog" aria-modal="true" aria-label="Reproductor de medios">
+    <div class="media-modal-content">
+      <button class="media-close" type="button" onclick="closeMediaModal()" aria-label="Cerrar">×</button>
+      <div id="media-modal-body"></div>
+    </div>
+  </div>
+  <!-- Pautas -->
+  <div class="banner-strip">
+    <div class="banner-strip-inner">
+      <span class="banner-strip-label">Aliados</span>
+      <div class="banner-strip-track">
+        <div class="banner-item"><img src="./pautas_publicitarias/Tiendas_de_cafe/anatolia.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Gastronomia_tipica/restaurante_el_fogon.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Alquiler_de_fincas_quindio/finca_cafetera_el_ocaso.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Transportes/del_eje.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/agencias_de_turismo/agencia_operador_turistico_quindiotravel.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Tiendas_de_cafe/artesanias_turronycafe.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Gastronomia_tipica/restaurante_el_roble.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Alquiler_de_fincas_quindio/finca_la_floresta.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Transportes/radio_taxi.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Tiendas_de_cafe/cafe_la_terraza.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Gastronomia_tipica/restaurante_la_feria_del_platano.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Alquiler_de_fincas_quindio/hacienda_moraleja.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Tiendas_de_cafe/anatolia.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Gastronomia_tipica/restaurante_el_fogon.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Alquiler_de_fincas_quindio/finca_cafetera_el_ocaso.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Transportes/del_eje.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/agencias_de_turismo/agencia_operador_turistico_quindiotravel.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas_publicitarias/Tiendas_de_cafe/artesanias_turronycafe.png" alt="Anunciante" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col"><h4>🌿 Mapa Turístico</h4><p style="color:#6b7280;font-size:.9rem">La plataforma turística del Quindío.</p></div>
+      <div class="footer-col"><h4>Navegación</h4><a href="./index.html">Inicio</a><a href="./sitios-turisticos.html">Sitios Turísticos</a><a href="./alquiler-finca-hoteles.html">Alquiler Fincas</a><a href="./anunciate.html">Anúnciate</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 www.mapaturisticodelquindio.com</p></div>
+  </footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="./assets/js/datos.js"></script>
+  <script src="./assets/js/whatsapp.js"></script>
+  <script src="./assets/js/nav.js"></script>
+  <script src="./assets/js/quindio-comercial.js"></script>
+  <script>
+    let todos = NEGOCIOS.filter(n => ['gastronomia', 'cafe', 'comercial'].includes(n.categoria));
+    let lista = [...todos];
+    const map = L.map('mapa-interactivo', {scrollWheelZoom: false}).setView([4.58, -75.65], 10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '© OpenStreetMap'}).addTo(map);
+    todos.forEach(n => {if(!n.lat) return; L.marker([n.lat, n.lng]).addTo(map).bindPopup(`<b>${n.nombre}</b><br>${n.tipo}<br>${n.precio}<br><a href="${generateWhatsAppLink(n)}" target="_blank">💬 Contactar</a>`)});
+    function render(l){
+      const c = document.getElementById('cards'), e = document.getElementById('empty');
+      c.innerHTML = ''; if(!l.length){e.style.display = 'block'; return;} e.style.display = 'none';
+      l.forEach(n => {const d = document.createElement('article'); d.className = 'biz-card'; d.setAttribute('role','listitem');
+        d.innerHTML = renderCommercialCardHTML(n);
+        c.appendChild(d)});
+    }
+    render(lista);
+    initCommercialPage();
+    function filtrar(tipo,btn){document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); lista = tipo === 'todos' ? [...todos] : todos.filter(n => n.tipo === tipo); render(lista);}
+    function buscar(){const q = document.getElementById('q').value.toLowerCase().trim(); if(!q){render(todos); return;} render(todos.filter(n => n.nombre.toLowerCase().includes(q) || n.municipio.toLowerCase().includes(q) || n.servicios.some(s => s.toLowerCase().includes(q))));}
+    document.getElementById('q').addEventListener('keydown', e => {if(e.key === 'Enter') buscar();});
+  </script>
+</body>
+</html>

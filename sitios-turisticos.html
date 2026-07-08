@@ -1,15 +1,19 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
+<!DOCTYPE html><html lang="es"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sitios Turísticos del Quindío — Mapa Turístico</title>
   <meta name="description" content="Los mejores sitios turísticos del Quindío: Parque del Café, Valle del Cocora, Mirador Mano de Acaime, ecoparques y más.">
   <link rel="canonical" href="https://www.mapaturisticodelquindio.com/sitios-turisticos.html">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="./assets/css/main.css">
-</head>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Sitios Turísticos del Quindío — Mapa Turístico",
+  "url": "https://www.mapaturisticodelquindio.com/sitios-turisticos.html",
+  "description": "Los mejores sitios turísticos del Quindío: Parque del Café, Valle del Cocora, Mirador Mano de Acaime, ecoparques y más."
+}</script></head>
 <body>
   <header class="page-hero">
     <h1>🎡 Sitios Turísticos</h1>
@@ -101,5 +105,6 @@
 
     window.onListingsLoaded = function(items){ todos = items.filter(n => CATS.includes(n.categoria)); lista = [...todos]; todos.forEach(n=>{ if(!n.lat) return; L.marker([n.lat,n.lng]).addTo(map).bindPopup(`<b>${n.nombre}</b><br>${n.tipo}<br>${n.precio||''}<br><a href="${(window.generateWhatsAppLink && typeof window.generateWhatsAppLink==='function')?window.generateWhatsAppLink(n):('#')}" target="_blank">💬 WhatsApp</a>`)}); render(lista); };
   </script>
-</body>
-</html>
+
+
+</body></html>

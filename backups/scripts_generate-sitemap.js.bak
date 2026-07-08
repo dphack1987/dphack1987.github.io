@@ -1,0 +1,31 @@
+<original scripts/generate-sitemap.js backed up>
+
+const fs = require('fs');
+const path = require('path');
+
+const BASE_URL = 'https://www.mapaturisticodelquindio.com';
+const OUTPUT_PATH = path.join(__dirname, '../sitemap.xml');
+
+// Archivos HTML estáticos del sitio
+const STATIC_PAGES = [
+  '', // Index
+  'alojamientos.html',
+  'agencias-operadoras-turisticas.html',
+  'alquiler-finca-hoteles.html',
+  'anunciate.html',
+  'empresas-de-transporte.html',
+  'finca-para-alquilar-quindio.html',
+  'hospedaje-armenia.html',
+  'mapa-de-calarca-2026.html',
+  'mapa-de-circasia-2025.html',
+  'mapa-del-quindio.html',
+  'municipios-del-quindio.html',
+  'pauta.html',
+  'quindio-comercial.html',
+  'reservar-hotel-quindio.html',
+  'sitios-turisticos.html',
+  'top-pueblos.html',
+  'transporte-aeropuerto-armenia.html'
+];
+
+// ... (rest of original content)

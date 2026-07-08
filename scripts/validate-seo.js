@@ -14,7 +14,7 @@ function findHTML(dir) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
   for (const entry of entries) {
     const fullPath = path.join(dir, entry.name);
-    if (entry.isDirectory() && !['node_modules', '.git', 'assets', 'data'].includes(entry.name)) {
+    if (entry.isDirectory() && !['node_modules', '.git', 'assets', 'data', 'proposed_patches', 'backups'].includes(entry.name)) {
       findHTML(fullPath);
     } else if (entry.name.endsWith('.html')) {
       htmlFiles.push(fullPath);

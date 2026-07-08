@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mapa Calarcá 2026 — Mapa Turístico del Quindío</title>
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <meta http-equiv="refresh" content="0;url=https://mapa-calarca-2026.vercel.app/">
+  <script>/* original redirect script */</script>
+</head>
+<body>
+  <script src="./assets/js/nav.js"></script>
+  <p>Redirigiendo al <a href="https://mapa-calarca-2026.vercel.app/">Mapa Calarcá 2026</a>...</p>
+</body>
+</html>

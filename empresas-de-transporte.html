@@ -1,15 +1,19 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
+<!DOCTYPE html><html lang="es"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Empresas de Transporte del Quindío — Cómo Llegar</title>
   <meta name="description" content="Empresas de transporte en el Quindío. Rutas intermunicipales, transporte aéreo y más.">
   <link rel="canonical" href="https://www.mapaturisticodelquindio.com/empresas-de-transporte.html">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="./assets/css/main.css">
-</head>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Empresas de Transporte del Quindío — Cómo Llegar",
+  "url": "https://www.mapaturisticodelquindio.com/empresas-de-transporte.html",
+  "description": "Empresas de transporte en el Quindío. Rutas intermunicipales, transporte aéreo y más."
+}</script></head>
 <body>
   <header class="page-hero">
     <h1>🚍 Empresas de Transporte</h1>
@@ -86,5 +90,6 @@
 
     window.onListingsLoaded = function(items){ todos = items; todos.forEach(n=>{ if(!n.lat) return; L.marker([n.lat,n.lng]).addTo(map).bindPopup(`<b>${n.nombre}</b><br>${n.tipo}<br>${n.precio||''}<br><a href="tel:${n.telefono}">📞 Llamar</a>`)}); render(todos); }
   </script>
-</body>
-</html>
+
+
+</body></html>

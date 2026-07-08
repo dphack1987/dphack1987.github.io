@@ -1,15 +1,19 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
+<!DOCTYPE html><html lang="es"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Quindío Comercial — Mapa Turístico del Quindío</title>
   <meta name="description" content="Negocios comerciales en el Quindío: tiendas, restaurantes, cafés y servicios.">
   <link rel="canonical" href="https://www.mapaturisticodelquindio.com/quindio-comercial.html">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="./assets/css/main.css">
-</head>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Quindío Comercial — Mapa Turístico del Quindío",
+  "url": "https://www.mapaturisticodelquindio.com/quindio-comercial.html",
+  "description": "Negocios comerciales en el Quindío: tiendas, restaurantes, cafés y servicios."
+}</script></head>
 <body>
   <header class="page-hero page-hero--commercial">
     <div class="hero-content">
@@ -112,5 +116,5 @@
     function buscar(){const q = document.getElementById('q').value.toLowerCase().trim(); if(!q){render(todos); return;} render(todos.filter(n => n.nombre.toLowerCase().includes(q) || n.municipio.toLowerCase().includes(q) || n.servicios.some(s => s.toLowerCase().includes(q))));}
     document.getElementById('q').addEventListener('keydown', e => {if(e.key === 'Enter') buscar();});
   </script>
-</body>
-</html>
+
+</body></html>

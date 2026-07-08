@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alojamientos en el Quindío — Hoteles, Fincas y Hospedajes</title>
+  <meta name="description" content="Hoteles, fincas hotel y hospedajes del Quindío. Reserva directo por WhatsApp sin comisiones.">
+  <link rel="canonical" href="https://www.mapaturisticodelquindio.com/alojamientos.html">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
+  <header class="page-hero">
+    <h1>🏨 Alojamientos</h1>
+    <p>Hoteles, fincas hotel y hospedajes en todo el Quindío. Reserva directo, sin intermediarios.</p>
+  </header>
+  <div class="container">
+    <div class="search-bar" role="search">
+      <input type="search" id="q" placeholder="🔍 Buscar por nombre, municipio o servicio..." aria-label="Buscar">
+      <button onclick="buscar()">Buscar</button>
+    </div>
+    <div class="filtros">
+      <button class="filtro-btn active" onclick="filtrar('todos',this)">Todos</button>
+      <button class="filtro-btn" onclick="filtrar('Finca Hotel',this)">🏡 Finca Hotel</button>
+      <button class="filtro-btn" onclick="filtrar('Hotel Boutique',this)">🏨 Hotel Boutique</button>
+      <button class="filtro-btn" onclick="filtrar('Hospedaje',this)">🛏️ Hospedaje</button>
+    </div>
+    <div style="margin-bottom:48px"><div id="mapa-interactivo"></div></div>
+    <div id="cards" class="cards-grid" role="list" aria-live="polite"></div>
+    <div id="empty" class="no-results" style="display:none"><div class="icon">🏨</div><p>Sin resultados.</p></div>
+    <div style="background:white;border-radius:20px;padding:28px;margin:40px 0;box-shadow:0 6px 24px rgba(16,185,129,.1);border-left:4px solid #059669">
+      <h3 style="color:#064e3b;margin-bottom:8px">💡 Consejo para reservar</h3>
+      <p style="color:#6b7280">Contacta directamente al alojamiento por WhatsApp para obtener el mejor precio. Muchos ofrecen descuentos por reserva directa.</p>
+    </div>
+    <div class="cta-anunciate">
+      <h2>¿Tienes un alojamiento?</h2>
+      <p>Publica tu hotel, finca o hospedaje y recibe reservas directas de turistas.</p>
+      <a href="./anunciate.html" class="btn-cta">📣 Publicar mi alojamiento</a>
+    </div>
+  </div>
+  <!-- Pautas -->
+  <div class="pautas-section" style="margin:28px 0;">
+    <h3 style="margin:0 0 12px;color:var(--text);font-size:1.05rem">Aliados y anuncios</h3>
+    <div class="pautas-grid" data-list-pauta="alojamiento"></div>
+  </div>
+  <div class="banner-strip">
+    <div class="banner-strip-inner">
+      <span class="banner-strip-label">Aliados</span>
+      <div class="banner-strip-track">
+        <div class="banner-item"><img src="./pautas/p13.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p14.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p15.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p16.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p17.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p18.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p19.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p21.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p22.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p23.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p24.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p25.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p13.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p14.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p15.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p16.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p17.png" alt="Anunciante" loading="lazy"></div>
+        <div class="banner-item"><img src="./pautas/p18.png" alt="Anunciante" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col"><h4>🌿 Mapa Turístico</h4><p style="color:#6b7280;font-size:.9rem">La plataforma turística del Quindío.</p></div>
+      <div class="footer-col"><h4>Navegación</h4><a href="./index.html">Inicio</a><a href="./sitios-turisticos.html">Sitios Turísticos</a><a href="./alquiler-finca-hoteles.html">Alquiler Fincas</a><a href="./anunciate.html">Anúnciate</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 www.mapaturisticodelquindio.com</p></div>
+  </footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="./assets/js/datos.js"></script>
+  <script src="./assets/js/whatsapp.js"></script>
+  <script src="./assets/js/pautas.js"></script>
+  <script src="./assets/js/nav.js"></script>
+  <script src="./assets/js/image-paths.js"></script>
+  <script src="./assets/js/listings.js"></script>
+  <script>
+    let todos = NEGOCIOS.filter(n=>n.categoria==='alojamiento');
+    let lista = [...todos];
+    const map = L.map('mapa-interactivo',{scrollWheelZoom:false}).setView([4.58,-75.65],10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap'}).addTo(map);
+    todos.forEach(n=>{if(!n.lat)return;L.marker([n.lat,n.lng]).addTo(map).bindPopup(`<b>${n.nombre}</b><br>${n.tipo}<br>${n.precio}<br><a href="${generateWhatsAppLink(n)}" target="_blank">💬 Reservar</a>`)});
+    function render(l){
+      const c=document.getElementById('cards'),e=document.getElementById('empty');
+      c.innerHTML='';if(!l.length){e.style.display='block';return}e.style.display='none';
+      l.forEach(n=>{const d=document.createElement('article');d.className='biz-card';d.setAttribute('role','listitem');
+        d.innerHTML=`<div class="biz-card-img-wrap"><img src="${n.imagen}" alt="${n.nombre}" class="biz-card-img" loading="lazy"><span class="biz-badge ${n.nivel}">${n.nivel==='premium'?'⭐ Premium':'✓ Verificado'}</span></div>
+        <div class="biz-card-body"><div class="biz-tipo">${n.tipo} · ${n.municipio}</div><h3>${n.nombre}</h3><p>${n.descripcion}</p>
+        <div class="biz-servicios">${n.servicios.slice(0,4).map(s=>`<span class="biz-tag">${s}</span>`).join('')}</div>
+        <div class="biz-precio">💰 ${n.precio}</div>
+        <div class="biz-actions"><a href="${generateWhatsAppLink(n)}" target="_blank" rel="noopener" class="btn-wa">💬 Reservar</a><a href="${n.maps}" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a><a href="tel:${n.telefono}" class="btn-tel">📞</a></div></div>`;
+        c.appendChild(d)});
+    }
+    render(lista);
+    function filtrar(tipo,btn){document.querySelectorAll('.filtro-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');lista=tipo==='todos'?[...todos]:todos.filter(n=>n.tipo===tipo);render(lista)}
+    function buscar(){const q=document.getElementById('q').value.toLowerCase().trim();if(!q){render(todos);return}render(todos.filter(n=>n.nombre.toLowerCase().includes(q)||n.municipio.toLowerCase().includes(q)||n.servicios.some(s=>s.toLowerCase().includes(q))))}
+    document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter')buscar()});
+  </script>
+</body>
+</html>

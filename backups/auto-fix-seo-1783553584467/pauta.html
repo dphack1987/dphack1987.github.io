@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pauta turística</title>
+  <meta name="description" content="Ficha de pauta con imágenes, video y recorrido 360 para conocer mejor el lugar en el Quindío.">
+  <link rel="canonical" href="https://www.mapaturisticodelquindio.com/pauta.html">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
+  <script src="./assets/js/nav.js"></script>
+  <main class="container" id="pauta-root">
+    <a href="./index.html" class="back-link">← Volver al inicio</a>
+    <header class="page-hero">
+      <h1 id="pauta-title">Cargando...</h1>
+      <p id="pauta-subtitle">Detalles del servicio turístico</p>
+      <div id="pauta-meta" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:18px;color:var(--text2);"></div>
+      <div class="pauta-detail-actions" style="justify-content:center;margin-top:20px;">
+        <a id="pauta-whatsapp" href="#" target="_blank" rel="noopener" class="btn-wa">💬 WhatsApp</a>
+        <a id="pauta-map-link" href="#" target="_blank" rel="noopener" class="btn-maps">📍 Ver mapa</a>
+        <button id="pauta-360-button" class="pauta-360-button" style="display:none">🕶️ Ver tour 360</button>
+      </div>
+    </header>
+    <div class="pauta-detail-grid">
+      <div class="pauta-detail-media">
+        <img id="pauta-main-img" src="./assets/images/decoraciones/9081966_4092826.jpg" alt="Imagen principal" loading="lazy">
+        <div class="pauta-gallery" id="pauta-gallery"></div>
+        <div id="pauta-video" class="pauta-video" style="display:none;">
+          <h2 style="font-size:1.2rem;font-weight:800;color:var(--text);margin-bottom:12px;">Video del lugar</h2>
+          <iframe id="pauta-video-frame" src="" title="Video del servicio" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div>
+        <section style="background:white;border-radius:24px;padding:32px;box-shadow:0 16px 50px rgba(16,185,129,.12);">
+          <h2 style="font-size:1.6rem;font-weight:800;color:var(--text);margin-bottom:16px;">Información detalla del servicio</h2>
+          <div id="pauta-description" style="color:var(--text3);line-height:1.8;"></div>
+        </section>
+        <section style="margin-top:24px;background:white;border-radius:24px;padding:32px;box-shadow:0 16px 50px rgba(16,185,129,.12);">
+          <h3 style="font-size:1.3rem;font-weight:800;margin-bottom:14px;color:var(--text);">Servicios incluidos</h3>
+          <div id="pauta-services" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;color:var(--text2);"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <div class="pauta-360-overlay" id="pauta-360-overlay">
+    <div class="pauta-360-panel">
+      <div class="pauta-360-header">
+        <strong style="font-size:1rem;color:var(--text);">Tour interactivo 360</strong>
+        <button id="pauta-360-close" class="pauta-360-close">Cerrar</button>
+      </div>
+      <div class="pauta-360-body">
+        <iframe id="pauta-360-frame" src="" title="Tour 360" allow="vr;gyroscope;fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+  <script src="./assets/js/pauta-detail.js"></script>
+</body>
+</html>
