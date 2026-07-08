@@ -12,14 +12,40 @@
   <link rel="stylesheet" href="./assets/css/styles-update.css">
 </head>
 <body>
-  <header class="page-hero">
-    <h1>🏡 Alquiler Finca Hoteles</h1>
-    <p>Fincas turísticas y fincas hoteles en el Quindío. Reserva directa sin comisiones.</p>
-    <div class="page-hero-actions">
-      <a href="https://mapa-armenia-2026.vercel.app/" target="_blank" rel="noopener" class="btn-cta">🗺️ Ver mapa Armenia 2026</a>
-      <a href="#fincas-gallery" class="btn-cta btn-cta--secondary">🏡 Ver pautas protagonistas</a>
+  <section class="hero" id="inicio">
+    <div class="hero-bg" style="background-image:url('./assets/images/paisajes/D5VTOP7OQ5EYDJZUEMFDPXZ22E.jpg')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-decor"></div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge">🏡 Alquiler de Fincas</div>
+        <h1 class="hero-title">Fincas y Fincas Hoteles<br><em>del Quindío</em><br>2026</h1>
+        <p class="hero-desc">Encuentra fincas turísticas y fincas hoteles en el Quindío con reserva directa sin comisiones. Reserva por WhatsApp directamente.</p>
+        <div class="hero-btns">
+          <a href="https://mapa-armenia-2026.vercel.app/" target="_blank" rel="noopener" class="btn-hero">🗺️ Ver mapa Armenia</a>
+          <a href="#fincas-gallery" class="btn-hero-outline">🏡 Ver pautas protagonistas</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="hero-stat-num">11+</div><div class="hero-stat-label">Fincas seleccionadas</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">0%</div><div class="hero-stat-label">Comisiones</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">24/7</div><div class="hero-stat-label">WhatsApp directo</div></div>
+        </div>
+      </div>
+      <div class="hero-img-wrap">
+        <div class="hero-slider" id="hero-slider" aria-label="Publicidad de fincas del Quindío">
+          <div class="hero-slide active" aria-hidden="false">
+            <img src="./assets/images/paisajes/48159.jpg" alt="Finca del Quindío" loading="eager">
+            <div class="hero-slide-meta">
+              <span>Publicidad destacada</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-slider-counter" aria-hidden="true">
+          <span id="hero-slide-current">1</span>/<span id="hero-slide-total">1</span>
+        </div>
+      </div>
     </div>
-  </header>
+  </section>
   <div class="container">
     <div class="search-bar" role="search">
       <input type="search" id="q" placeholder="🔍 Buscar finca, municipio o servicio..." aria-label="Buscar">
@@ -107,6 +133,7 @@
   <script src="./assets/js/listings.js"></script>
   <script src="./assets/js/nav.js"></script>
   <script src="./assets/js/image-paths.js"></script>
+  <script src="./assets/js/hero-slides-fincas.js"></script>
   <script src="./assets/js/pautas_fincas_gallery.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function(){
