@@ -24,6 +24,8 @@ const HERO_SLIDES = [
   './pautas_publicitarias/atractivos_turisticos/panaca.png',
   './pautas_publicitarias/atractivos_turisticos/parque_los_arrieros.png',
   './pautas_publicitarias/atractivos_turisticos/quinti_casa_patasarriba.png',
+  './pautas_publicitarias/atractivos_turisticos/recorrido_cacaotero.png',
+  './pautas_publicitarias/atractivos_turisticos/recorrido_de_la_cultura_cafetera.png',
 
   './pautas_publicitarias/Gastronomia_tipica/restaurante_el_fogon.png',
   './pautas_publicitarias/Gastronomia_tipica/restaurante_el_roble.png',
@@ -64,12 +66,13 @@ const HERO_SLIDES = [
 
   './pautas_publicitarias/comida_de_mar/restaurante_magangue.png',
   './pautas_publicitarias/Deportes y entretenimiento/camino_al_futbol.png',
-  './pautas_publicitarias/Deportes y entretenimiento/Complejo_Turistico_y_Deportivo_Soledén.png',
+  './pautas_publicitarias/Deportes y entretenimiento/Complejo_Turístico_y_Deportivo_Soledén.png',
   './pautas_publicitarias/glamping/eco_parque_peñas_blancas.png',
   './pautas_publicitarias/glamping/hacienda_moraleja.png',
   './pautas_publicitarias/grupos_musicales/orquesta_quinta_base.png',
   './pautas_publicitarias/postres_y_dulces/reina__querida.png',
-  './pautas_publicitarias/seguros/seguros_confia.png'
+  './pautas_publicitarias/seguros/seguros_confia.png',
+  './pautas_publicitarias/artesanias/ceramicas_alfarero.jpg'
 ];
 
 // Hero Slider Functionality

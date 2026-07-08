@@ -1,19 +1,19 @@
 const commercialHeroItems = [
   {
     type: 'image',
-    src: './pautas/p1.png',
+    src: './pautas_publicitarias/Tiendas_de_cafe/anatolia.png',
     title: 'Cafés especiales y ambiente local',
     subtitle: 'Descubre el mejor café del Quindío con servicio directo por WhatsApp.'
   },
   {
     type: 'image',
-    src: './pautas/p2.png',
+    src: './pautas_publicitarias/Gastronomia_tipica/restaurante_el_fogon.png',
     title: 'Sabores típicos con historia',
     subtitle: 'Platos, postres y rutas gastronómicas para turistas exigentes.'
   },
   {
     type: 'image',
-    src: './pautas/p3.png',
+    src: './pautas_publicitarias/artesanias/artesanias_turronycafe.png',
     title: 'Tiendas artesanales vibrantes',
     subtitle: 'Lleva un recuerdo auténtico de la región.'
   }
@@ -24,25 +24,25 @@ const commercialStories = [
     id: 'story-1',
     title: 'Menú estrella',
     subtitle: 'Sabores del Quindío',
-    image: './pautas/p4.png',
+    image: './pautas_publicitarias/Gastronomia_tipica/restaurante_el_roble.png',
     content: '<p>Conoce el menú que más piden los turistas: platos típicos, café artesanal y postres caseros.</p>',
-    media: ['./pautas/p4.png', './pautas/p5.png', './pautas/p6.png']
+    media: ['./pautas_publicitarias/Gastronomia_tipica/restaurante_el_roble.png', './pautas_publicitarias/Gastronomia_tipica/restaurante_la_feria_del_platano.png', './pautas_publicitarias/postres_y_dulces/reina__querida.png']
   },
   {
     id: 'story-2',
     title: 'Ambiente ideal',
     subtitle: 'Café y confort',
-    image: './pautas/p7.png',
+    image: './pautas_publicitarias/Tiendas_de_cafe/cafe_la_terraza.png',
     content: '<p>Ambientes creados para encuentros, trabajo remoto y después de un paseo turístico.</p>',
-    media: ['./pautas/p7.png', './pautas/p8.png', './pautas/p9.png']
+    media: ['./pautas_publicitarias/Tiendas_de_cafe/cafe_la_terraza.png', './pautas_publicitarias/Tiendas_de_cafe/cafe_sensorial.png', './pautas_publicitarias/Tiendas_de_cafe/queso_y_cafe.png']
   },
   {
     id: 'story-3',
     title: 'Compras rápidas',
     subtitle: 'Productos locales',
-    image: './pautas/p10.png',
+    image: './pautas_publicitarias/artesanias/ceramicas_alfarero.jpg',
     content: '<p>Encuentra ropa, artesanías y regalos en tiendas que atienden por reserva o WhatsApp.</p>',
-    media: ['./pautas/p10.png', './pautas/p11.png', './pautas/p12.png']
+    media: ['./pautas_publicitarias/artesanias/ceramicas_alfarero.jpg', './pautas_publicitarias/artesanias/artesanias_turronycafe.png', './pautas_publicitarias/Centros Comerciales/centro_comercial_unicentro.png']
   }
 ];
 
