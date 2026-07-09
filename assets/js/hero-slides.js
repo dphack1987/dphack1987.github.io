@@ -68,38 +68,84 @@ const HERO_SLIDES = [
 
 // Hero Slider Functionality
 let currentSlideIndex = 0;
-let slideInterval;
+let slideInterval = null;
+const AUTOPLAY_INTERVAL = 4000; // 4 segundos
 
 function initHeroSlider() {
   const sliderContainer = document.getElementById('hero-slider');
   const counterCurrent = document.getElementById('hero-slide-current');
   const counterTotal = document.getElementById('hero-slide-total');
+  const prevBtn = document.getElementById('hero-slide-prev');
+  const nextBtn = document.getElementById('hero-slide-next');
 
-  if (!sliderContainer) return;
+  // Debug log
+  console.log('Initializing hero slider', {
+    sliderContainer: !!sliderContainer,
+    heroSlidesCount: HERO_SLIDES?.length || 0,
+    prevBtn: !!prevBtn,
+    nextBtn: !!nextBtn
+  });
 
-  // Clear existing slide
+  if (!sliderContainer || !HERO_SLIDES || HERO_SLIDES.length === 0) {
+    console.error('Hero slider container or HERO_SLIDES not found');
+    return;
+  }
+
+  // Clear existing content
   sliderContainer.innerHTML = '';
 
   // Add all slides from HERO_SLIDES
   HERO_SLIDES.forEach((imageSrc, index) => {
     const slide = document.createElement('div');
-    slide.className = `hero-slide ${index === 0 ? 'active' : ''}`;
-    slide.setAttribute('aria-hidden', index !== 0);
-    slide.innerHTML = `
-      <img src="${imageSrc}" alt="Publicidad del Quindío - Slide ${index + 1}" loading="${index === 0 ? 'eager' : 'lazy'}">
-      <div class="hero-slide-meta">
-        <span>Publicidad destacada</span>
-      </div>
-    `;
+    slide.className = 'hero-slide' + (index === 0 ? ' active' : '');
+    slide.setAttribute('aria-hidden', index !== 0 ? 'true' : 'false');
+    slide.innerHTML = '<img src="' + imageSrc + '" alt="Publicidad del Quindío - Slide ' + (index + 1) + '" loading="' + (index === 0 ? 'eager' : 'lazy') + '"><div class="hero-slide-meta"><span>Publicidad destacada</span></div>';
     sliderContainer.appendChild(slide);
   });
 
   // Update counter
-  counterTotal.textContent = HERO_SLIDES.length;
-  counterCurrent.textContent = 1;
+  if (counterTotal) counterTotal.textContent = HERO_SLIDES.length;
+  if (counterCurrent) counterCurrent.textContent = '1';
+
+  // Attach button events
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function() {
+      console.log('Previous button clicked');
+      goToSlide(currentSlideIndex - 1);
+      resetAutoplay();
+    });
+  } else {
+    console.warn('Previous button not found');
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function() {
+      console.log('Next button clicked');
+      goToSlide(currentSlideIndex + 1);
+      resetAutoplay();
+    });
+  } else {
+    console.warn('Next button not found');
+  }
+
+  // Pause autoplay on mouse enter, resume on mouse leave
+  sliderContainer.addEventListener('mouseenter', stopAutoplay);
+  sliderContainer.addEventListener('mouseleave', startAutoplay);
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft') {
+      goToSlide(currentSlideIndex - 1);
+      resetAutoplay();
+    } else if (e.key === 'ArrowRight') {
+      goToSlide(currentSlideIndex + 1);
+      resetAutoplay();
+    }
+  });
 
   // Start autoplay
   startAutoplay();
+  console.log('Hero slider initialized successfully');
 }
 
 function goToSlide(index) {
@@ -113,8 +159,12 @@ function goToSlide(index) {
   slides[currentSlideIndex].setAttribute('aria-hidden', 'true');
 
   // Calculate new index
-  if (index >= slides.length) index = 0;
-  if (index < 0) index = slides.length - 1;
+  if (index >= slides.length) {
+    index = 0;
+  }
+  if (index < 0) {
+    index = slides.length - 1;
+  }
 
   // Update current index
   currentSlideIndex = index;
@@ -124,17 +174,35 @@ function goToSlide(index) {
   slides[currentSlideIndex].setAttribute('aria-hidden', 'false');
 
   // Update counter
-  counterCurrent.textContent = currentSlideIndex + 1;
+  if (counterCurrent) {
+    counterCurrent.textContent = currentSlideIndex + 1;
+  }
+  
+  console.log('Slide changed to: ' + (currentSlideIndex + 1));
 }
 
 function startAutoplay() {
   // Clear existing interval if any
-  if (slideInterval) clearInterval(slideInterval);
+  if (slideInterval) {
+    clearInterval(slideInterval);
+  }
 
   // Start new interval
-  slideInterval = setInterval(() => {
+  slideInterval = setInterval(function() {
     goToSlide(currentSlideIndex + 1);
-  }, 3000); // Change slide every 3 seconds
+  }, AUTOPLAY_INTERVAL);
+}
+
+function stopAutoplay() {
+  if (slideInterval) {
+    clearInterval(slideInterval);
+    slideInterval = null;
+  }
+}
+
+function resetAutoplay() {
+  stopAutoplay();
+  startAutoplay();
 }
 
 // Initialize slider when DOM is loaded
