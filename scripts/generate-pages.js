@@ -5,6 +5,107 @@ const masterData = JSON.parse(
   fs.readFileSync(path.join(__dirname, '../data/master-data.json'), 'utf8')
 );
 
+// ============================================
+// FUNCIONES DE GEO-PROXIMIDAD (SEO INTERNO)
+// ============================================
+
+/**
+ * Calcula distancia en km entre dos puntos usando Haversine formula
+ * @param {number} lat1 - Latitud punto 1
+ * @param {number} lon1 - Longitud punto 1
+ * @param {number} lat2 - Latitud punto 2
+ * @param {number} lon2 - Longitud punto 2
+ * @returns {number} Distancia en km
+ */
+function calcularDistancia(lat1, lon1, lat2, lon2) {
+  const R = 6371; // Radio de la tierra en km
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+  const a = 
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+    Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+}
+
+/**
+ * Encuentra negocios cercanos ordenados por distancia
+ * @param {Object} negocioActual - Negocio para el cual buscar cercanos
+ * @param {number} maxResultados - Cantidad máxima de resultados
+ * @param {number} maxDistanciaKm - Distancia máxima en km
+ * @returns {Array} Array de negocios cercanos con distancia calculada
+ */
+function obtenerNegociosCercanos(negocioActual, maxResultados = 5, maxDistanciaKm = 15) {
+  if (!negocioActual.lat || !negocioActual.lng) {
+    return [];
+  }
+
+  // Filtrar negocios cercanos (excluyendo el actual)
+  const negociosCercanos = masterData.negocios
+    .filter(n => n.slug !== negocioActual.slug && n.lat && n.lng)
+    .map(negocio => ({
+      ...negocio,
+      distancia: calcularDistancia(
+        negocioActual.lat,
+        negocioActual.lng,
+        negocio.lat,
+        negocio.lng
+      )
+    }))
+    .filter(n => n.distancia <= maxDistanciaKm)
+    .sort((a, b) => a.distancia - b.distancia)
+    .slice(0, maxResultados);
+
+  return negociosCercanos;
+}
+
+/**
+ * Genera sección HTML de "Negocios Cercanos" con keywords SEO
+ * @param {Object} negocio - Negocio actual
+ * @param {Object} municipio - Municipio actual
+ * @returns {string} HTML de la sección
+ */
+function generarSeccionNegociosCercanos(negocio, municipio) {
+  const cercanos = obtenerNegociosCercanos(negocio);
+  
+  if (cercanos.length === 0) {
+    return ''; // No mostrar sección si no hay cercanos
+  }
+
+  const tipoNegocio = negocio.tipo || negocio.categoria;
+  const linksHTML = cercanos
+    .map(n => {
+      const municipioCercano = masterData.municipios.find(m => m.id === n.municipioId);
+      const nombreMunicipio = municipioCercano ? municipioCercano.nombre : 'Quindío';
+      // Keywords: tipo de negocio + nombre + municipio
+      const anchorText = `${n.tipo || n.categoria} ${n.nombre} en ${nombreMunicipio}`;
+      return `
+        <li style="margin-bottom: 12px;">
+          <a href="../negocios/${n.slug}" style="color: #059669; text-decoration: none; font-weight: 600; hover: underline;">
+            ${n.nombre}
+          </a>
+          <span style="color: #9ca3af; font-size: 14px;">• ${n.municipioId === municipio.id ? 'En la misma ciudad' : `A ${n.distancia.toFixed(1)} km`}</span>
+        </li>
+      `;
+    })
+    .join('');
+
+  return `
+    <section style="margin-top: 48px; padding: 40px; background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%); border-radius: 24px;">
+      <h2 style="color: #064e3b; font-size: 24px; font-weight: 800; margin-bottom: 24px;">
+        🏘️ Más ${tipoNegocio}s en ${municipio.nombre}
+      </h2>
+      <p style="color: #6b7280; margin-bottom: 20px;">
+        Descubre otros ${tipoNegocio}s similares en las cercanías de ${negocio.nombre}.
+      </p>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        ${linksHTML}
+      </ul>
+    </section>
+  `;
+}
+
 // Generar BreadcrumbList Schema
 const generateBreadcrumbList = (type, item) => {
   const items = [
@@ -357,8 +458,9 @@ const TEMPLATES = {
   ${JSON.stringify(generateNegocioSchema(negocio, municipio), null, 2)}
   </script>
 </head>
-<body>
+<body data-negocio-slug="${negocio.slug}" data-municipio="${municipio.id}">
   <script src="../assets/js/nav.js"></script>
+  <script src="../assets/js/analytics-sheets.js"></script>
   <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 24px;">
     <h1 style="color: #064e3b; font-size: 36px; font-weight: 800; margin-bottom: 24px;">${negocio.nombre}</h1>
     <div style="padding:32px;background:white;border-radius:24px;box-shadow:0 8px 32px rgba(16,185,129,0.12);">
@@ -376,6 +478,7 @@ const TEMPLATES = {
         <a href="https://wa.me/${negocio.whatsapp}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; padding: 14px 32px; background: #25D366; color: white; font-weight: 800; text-decoration: none; border-radius: 50px; transition: transform 0.3s;">💬 Contactar por WhatsApp</a>
       ` : ''}
     </div>
+    ${generarSeccionNegociosCercanos(negocio, municipio)}
   </div>
   <footer class="footer">
     <img src="../assets/images/logo_mapa/logo.png" alt="Mapa Turístico del Quindío" class="footer-logo">
