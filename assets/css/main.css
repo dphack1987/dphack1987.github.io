@@ -11,6 +11,61 @@
   --r:16px;--r2:24px;--nav-h:100px;
   --touch-target:48px;
 }
+
+/* ── LANGUAGE SWITCHER ── */
+.lang-switcher {
+  position: fixed;
+  top: 0;
+  right: 16px;
+  z-index: 1001;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+}
+.lang-buttons {
+  display: flex;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 6px 8px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 12px rgba(16, 185, 129, 0.12);
+}
+.lang-btn {
+  padding: 6px 10px;
+  border: none;
+  background: transparent;
+  color: #059669;
+  font-weight: 700;
+  font-size: 0.75rem;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.lang-btn:hover {
+  background: rgba(5, 150, 105, 0.1);
+}
+.lang-btn.active {
+  background: #059669;
+  color: white;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.4);
+}
+@media (max-width: 768px) {
+  .lang-switcher {
+    top: 56px;
+    right: 12px;
+  }
+  .lang-buttons {
+    padding: 4px 6px;
+  }
+  .lang-btn {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+  }
+}
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Inter','Poppins',system-ui,sans-serif;
