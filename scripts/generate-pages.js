@@ -6,11 +6,41 @@ const masterData = JSON.parse(
 );
 
 // ============================================
+// SISTEMA DE CACHÉ PARA DISTANCIAS
+// ============================================
+// Mejora performance: evita recalcular distancias múltiples veces
+const distanceCache = {};
+const cacheStats = {
+  hits: 0,
+  misses: 0,
+  calculations: 0
+};
+
+function getCachedDistance(lat1, lon1, lat2, lon2) {
+  // Crear key única (con rounding para usar menos memoria)
+  const key = `${lat1.toFixed(4)}_${lon1.toFixed(4)}_${lat2.toFixed(4)}_${lon2.toFixed(4)}`;
+  
+  if (distanceCache[key] !== undefined) {
+    cacheStats.hits++;
+    return distanceCache[key];
+  }
+  
+  cacheStats.misses++;
+  return null;
+}
+
+function setCachedDistance(lat1, lon1, lat2, lon2, distance) {
+  const key = `${lat1.toFixed(4)}_${lon1.toFixed(4)}_${lat2.toFixed(4)}_${lon2.toFixed(4)}`;
+  distanceCache[key] = distance;
+}
+
+// ============================================
 // FUNCIONES DE GEO-PROXIMIDAD (SEO INTERNO)
 // ============================================
 
 /**
  * Calcula distancia en km entre dos puntos usando Haversine formula
+ * Con caché para evitar recálculos
  * @param {number} lat1 - Latitud punto 1
  * @param {number} lon1 - Longitud punto 1
  * @param {number} lat2 - Latitud punto 2
@@ -18,6 +48,13 @@ const masterData = JSON.parse(
  * @returns {number} Distancia en km
  */
 function calcularDistancia(lat1, lon1, lat2, lon2) {
+  // Verificar caché primero
+  const cached = getCachedDistance(lat1, lon1, lat2, lon2);
+  if (cached !== null) {
+    return cached;
+  }
+
+  // Calcular si no está en caché
   const R = 6371; // Radio de la tierra en km
   const dLat = (lat2 - lat1) * Math.PI / 180;
   const dLon = (lon2 - lon1) * Math.PI / 180;
@@ -26,7 +63,13 @@ function calcularDistancia(lat1, lon1, lat2, lon2) {
     Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
     Math.sin(dLon / 2) * Math.sin(dLon / 2);
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  return R * c;
+  const distance = R * c;
+  
+  // Guardar en caché
+  setCachedDistance(lat1, lon1, lat2, lon2, distance);
+  cacheStats.calculations++;
+  
+  return distance;
 }
 
 /**

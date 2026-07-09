@@ -11,7 +11,11 @@
     "validate-seo": "node ./scripts/validate-seo.js",
     "verify-canonical": "node ./scripts/verify-canonical.js",
     "ping-gsc": "node ./scripts/ping-gsc.js",
-    "build": "npm run generate-data && npm run generate-geojson && npm run generate-pages && npm run generate-sitemap && npm run verify-canonical"
+    "validate-pages": "node ./scripts/validate-pages.js",
+    "enhance-schema": "node ./scripts/enhance-schema.js",
+    "audit-performance": "node ./scripts/audit-performance.js",
+    "build": "npm run generate-data && npm run generate-geojson && npm run generate-pages && npm run generate-sitemap && npm run verify-canonical",
+    "test": "npm run validate-pages && npm run audit-performance"
   },
   "keywords": ["turismo", "quindio", "mapa", "programmatic-seo", "eje-cafetero"],
   "author": "",
