@@ -17,6 +17,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jsdom": "^26.0.0"
+    "jsdom": "^26.0.0",
+    "http-server": "^14.1.1",
+    "lighthouse": "^13.4.0",
+    "sharp": "^0.32.0"
   }
 }
