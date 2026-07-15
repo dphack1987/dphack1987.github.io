@@ -1267,3 +1267,25 @@ a,button,.nav-toggle,.filtro-btn{min-width:var(--touch-target);min-height:var(--
   .cat-grid { grid-template-columns: 1fr; }
   .paisajes-strip { grid-template-columns: 1fr; }
 }
+/* --- INICIO PARCHE ZENYTHOS 2.0 (INTEGRACIÓN) --- */
+
+/* Asegurar visibilidad del panel Don Chucho sin colisiones */
+.don-chucho-panel.open {
+    display: flex !important;
+}
+
+/* Ajuste de z-index para modales para asegurar prioridad sobre el header */
+.modal-backdrop {
+    z-index: 20000 !important;
+}
+
+/* Mejora de la scrollbar en el menu-bar si es necesario */
+.menu-bar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.menu-bar::-webkit-scrollbar {
+    display: none;
+}
+
+/* --- FIN PARCHE ZENYTHOS 2.0 --- */
