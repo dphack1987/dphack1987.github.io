@@ -1636,9 +1636,9 @@ const NEGOCIOS = [
     "email": "",
     "url": "",
     "maps": "https://maps.google.com/?q=Centro+Comercial+SanSur+Armenia",
-    "imagen": "./pautas_publicitarias/Centros Comerciales/centro_comercial_sansur.png",
+    "imagen": "./pautas_publicitarias/Centros_Comerciales/centro_comercial_sansur.png",
     "galeria": [
-      "./pautas_publicitarias/Centros Comerciales/centro_comercial_sansur.png"
+      "./pautas_publicitarias/Centros_Comerciales/centro_comercial_sansur.png"
     ],
     "nivel": "premium",
     "palabrasClave": [
@@ -1703,9 +1703,9 @@ const NEGOCIOS = [
     "email": "",
     "url": "",
     "maps": "https://www.unicentrodearmenia.com",
-    "imagen": "./pautas_publicitarias/Centros Comerciales/centro_comercial_unicentro.png",
+    "imagen": "./pautas_publicitarias/Centros_Comerciales/centro_comercial_unicentro.png",
     "galeria": [
-      "./pautas_publicitarias/Centros Comerciales/centro_comercial_unicentro.png"
+      "./pautas_publicitarias/Centros_Comerciales/centro_comercial_unicentro.png"
     ],
     "nivel": "premium",
     "palabrasClave": [
@@ -2553,9 +2553,9 @@ const NEGOCIOS = [
     "email": "",
     "url": "",
     "maps": "https://maps.google.com/?q=Camino+al+Fútbol+Armenia",
-    "imagen": "./pautas_publicitarias/Deportes y entretenimiento/camino_al_futbol.png",
+    "imagen": "./pautas_publicitarias/Deportes_y_entretenimiento/camino_al_futbol.png",
     "galeria": [
-      "./pautas_publicitarias/Deportes y entretenimiento/camino_al_futbol.png"
+      "./pautas_publicitarias/Deportes_y_entretenimiento/camino_al_futbol.png"
     ],
     "nivel": "estandar",
     "palabrasClave": [
