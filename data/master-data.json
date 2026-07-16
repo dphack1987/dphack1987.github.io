@@ -17,8 +17,12 @@
       "palabrasClave": [
         "Armenia Quindío",
         "Eje Cafetero",
-        "Ciudad de la eterna primavera"
+        "Ciudad de la eterna primavera",
+        "hoteles en Armenia",
+        "transporte Armenia",
+        "sitios turísticos Armenia"
       ],
+      "textoSeo": "Armenia es la base ideal para descubrir hoteles, restaurantes, transporte y atractivos del Quindío. Desde la ciudad puedes llegar con facilidad a fincas, parques y rutas del Eje Cafetero.",
       "banner": "./assets/images/paisajes/48159.jpg",
       "author": {
         "name": "Equipo Mapa Turístico del Quindío",
@@ -46,8 +50,12 @@
         "Circasia",
         "Quindío",
         "Eje Cafetero",
-        "Pueblo más bonito"
+        "Pueblo más bonito",
+        "hoteles en Circasia",
+        "rutas en Circasia",
+        "qué ver en Circasia"
       ],
+      "textoSeo": "Circasia combina arquitectura, paisaje y tradición en un municipio perfecto para recorrer en un día o en una escapada de fin de semana por el Quindío.",
       "banner": "./assets/images/paisajes/56855.jpg",
       "author": {
         "name": "Equipo Mapa Turístico del Quindío",
@@ -75,8 +83,12 @@
         "Salento",
         "Quindío",
         "Valle del Cocora",
-        "Palmas de cera"
+        "Palmas de cera",
+        "hoteles en Salento",
+        "viaje a Salento",
+        "turismo en Salento"
       ],
+      "textoSeo": "Salento es uno de los municipios más visitados del Quindío, ideal para turismo de naturaleza, fotografía, gastronomía y escapadas románticas.",
       "banner": "./assets/images/paisajes/10834.jpg",
       "author": {
         "name": "Equipo Mapa Turístico del Quindío",
@@ -103,8 +115,12 @@
       "palabrasClave": [
         "Montenegro",
         "Quindío",
-        "Parque Nacional del Café"
+        "Parque Nacional del Café",
+        "qué hacer en Montenegro",
+        "hoteles en Montenegro",
+        "turismo Montenegro"
       ],
+      "textoSeo": "Montenegro ofrece una mezcla de cultura cafetera, naturaleza y actividades para familias y viajeros que buscan vivir el Quindío de forma activa.",
       "banner": "./assets/images/paisajes/5860.jpg",
       "author": {
         "name": "Equipo Mapa Turístico del Quindío",
@@ -131,8 +147,12 @@
       "palabrasClave": [
         "Filandia",
         "Quindío",
-        "Pueblo más romántico"
+        "Pueblo más romántico",
+        "hoteles en Filandia",
+        "qué ver en Filandia",
+        "turismo Filandia"
       ],
+      "textoSeo": "Filandia es perfecto para quienes buscan paisaje, tranquilidad y un ambiente romántico en el corazón del Quindío.",
       "banner": "./assets/images/paisajes/D5VTOP7OQ5EYDJZUEMFDPXZ22E.jpg",
       "author": {
         "name": "Equipo Mapa Turístico del Quindío",
@@ -159,8 +179,12 @@
       "palabrasClave": [
         "Calarcá",
         "Quindío",
-        "Capital mundial del café"
+        "Capital mundial del café",
+        "hoteles en Calarcá",
+        "transportes Calarcá",
+        "turismo Calarcá"
       ],
+      "textoSeo": "Calarcá es un punto estratégico para disfrutar del café, la gastronomía, el hospedaje y las rutas del Quindío con mucha comodidad.",
       "banner": "./assets/images/paisajes/48159.jpg",
       "author": {
         "name": "Equipo Mapa Turístico del Quindío",
@@ -187,8 +211,12 @@
       "palabrasClave": [
         "La Tebaida",
         "Quindío",
-        "Descanso"
+        "Descanso",
+        "hoteles en La Tebaida",
+        "qué hacer en La Tebaida",
+        "turismo La Tebaida"
       ],
+      "textoSeo": "La Tebaida ofrece tranquilidad, naturaleza y espacios ideales para descansar en el Quindío con una experiencia más pausada.",
       "banner": "./assets/images/paisajes/56855.jpg",
       "author": {
         "name": "Equipo Mapa Turístico del Quindío",
@@ -215,8 +243,12 @@
       "palabrasClave": [
         "Ginebra",
         "Quindío",
-        "Pueblo acogedor"
+        "Pueblo acogedor",
+        "hoteles en Ginebra",
+        "rutas en Ginebra",
+        "turismo en Ginebra"
       ],
+      "textoSeo": "Ginebra es una opción perfecta para quienes buscan un destino más tranquilo, cercano a la naturaleza y cercano a las rutas del Quindío.",
       "banner": "./assets/images/paisajes/10834.jpg",
       "author": {
         "name": "Equipo Mapa Turístico del Quindío",

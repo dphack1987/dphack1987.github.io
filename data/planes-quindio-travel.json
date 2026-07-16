@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "plan-express-quindio",
+    "title": "Plan Express Quindío",
+    "category": "Transporte especial",
+    "description": "Ideal para quienes quieren recorrer Armenia, Montenegro y Salento con comodidad, paradas estratégicas y un recorrido pensado para disfrutar el viaje sin prisas.",
+    "duration": "6-8 horas",
+    "price": "A convenir",
+    "image": "./planes_turisticos_transporte_especial/plan_1_especial.png",
+    "highlights": ["Traslado privado", "Paradas personalizadas", "Perfecto para parejas y familias"]
+  },
+  {
+    "slug": "plan-cafe-y-paisajes",
+    "title": "Plan Café y Paisajes",
+    "category": "Transporte especial",
+    "description": "Una experiencia completa para conectar cultura cafetera, miradores, pueblos y gastronomía en el corazón del Eje Cafetero.",
+    "duration": "8-10 horas",
+    "price": "A convenir",
+    "image": "./planes_turisticos_transporte_especial/plan_2_especial.png",
+    "highlights": ["Ruta cultural", "Paradas fotográficas", "Incluye logística orientada a turismo"]
+  },
+  {
+    "slug": "plan-fin-de-semana-quindio",
+    "title": "Plan Fin de Semana Quindío",
+    "category": "Transporte especial",
+    "description": "Diseñado para escapadas rápidas con transporte confiable, recomendaciones de ruta y un recorrido relajado para disfrutar el departamento.",
+    "duration": "2 días",
+    "price": "A convenir",
+    "image": "./planes_turisticos_transporte_especial/plan_3_especial.png",
+    "highlights": ["Escapada relajada", "Ruta flexible", "Ideal para grupos pequeños"]
+  },
+  {
+    "slug": "plan-taxi-urbano",
+    "title": "Plan Taxi Urbano",
+    "category": "Transporte taxi",
+    "description": "Movilidad ágil y segura para visitar puntos de interés dentro de la ciudad con servicio cómodo y confiable.",
+    "duration": "3-5 horas",
+    "price": "A convenir",
+    "image": "./planes_turisticos_transporte_taxi/plan_1_taxi.png",
+    "highlights": ["Servicio puntual", "Ideal para recorridos cortos", "Conducción local"]
+  },
+  {
+    "slug": "plan-taxi-rural",
+    "title": "Plan Taxi Rural",
+    "category": "Transporte taxi",
+    "description": "Perfecto para conectar municipios, atractivos, restaurantes y puntos de interés con un servicio práctico para turistas.",
+    "duration": "5-7 horas",
+    "price": "A convenir",
+    "image": "./planes_turisticos_transporte_taxi/plan_2_taxi.png",
+    "highlights": ["Conexión entre municipios", "Rutas adaptadas", "Muy útil para turismo local"]
+  },
+  {
+    "slug": "plan-taxi-experiencia",
+    "title": "Plan Taxi Experiencia",
+    "category": "Transporte taxi",
+    "description": "Una opción cómoda para disfrutar la región con mayor libertad de movimiento y asistencia en cada etapa del recorrido.",
+    "duration": "Full day",
+    "price": "A convenir",
+    "image": "./planes_turisticos_transporte_taxi/plan_3_taxi.png",
+    "highlights": ["Recorrido flexible", "Acompañamiento turístico", "Opciones para grupos"]
+  }
+]

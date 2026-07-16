@@ -4,111 +4,133 @@ const path = require('path');
 const pautasDir = path.join(__dirname, '..', 'pautas_publicitarias');
 const outputFile = path.join(__dirname, '..', 'assets', 'js', 'hero-slides.js');
 
-const allImages = [];
+function gatherImages(dir, relativePath = '') {
+  let images = [];
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
 
-function scanDirectory(dir, relativePath = '') {
-  const items = fs.readdirSync(dir);
-  for (const item of items) {
-    const fullPath = path.join(dir, item);
-    const stat = fs.statSync(fullPath);
-    if (stat.isDirectory()) {
-      scanDirectory(fullPath, path.join(relativePath, item));
-    } else if (
-      item.toLowerCase().endsWith('.png') ||
-      item.toLowerCase().endsWith('.jpg') ||
-      item.toLowerCase().endsWith('.jpeg')
-    ) {
-      const imagePath = path.join('./pautas_publicitarias', relativePath, item).replace(/\\/g, '/');
-      allImages.push(imagePath);
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      images = images.concat(gatherImages(fullPath, path.join(relativePath, entry.name)));
+    } else if (/\.(png|jpg|jpeg)$/i.test(entry.name)) {
+      images.push(path.join('./pautas_publicitarias', relativePath, entry.name).replace(/\\/g, '/'));
     }
   }
+
+  return images;
 }
 
-console.log('Scanning pautas_publicitarias...');
-scanDirectory(pautasDir);
-console.log(`Found ${allImages.length} images`);
+const allImages = gatherImages(pautasDir);
+const uniqueImages = Array.from(new Set(allImages));
 
-const outputContent = `// Lista generada de imágenes publicitarias (png/jpg) en pautas_publicitarias
-const HERO_SLIDES = ${JSON.stringify(allImages, null, 2)};
+const outputContent = `(function() {
+  const HERO_SLIDES = ${JSON.stringify(uniqueImages, null, 2)};
+  let currentSlideIndex = 0;
+  let slideInterval = null;
+  const AUTOPLAY_INTERVAL = 5000;
 
-// Hero Slider Functionality
-let currentSlideIndex = 0;
-let slideInterval;
+  function initHeroSlider() {
+    const sliderContainer = document.getElementById('hero-slider');
+    const counterCurrent = document.getElementById('hero-slide-current');
+    const counterTotal = document.getElementById('hero-slide-total');
+    const prevBtn = document.getElementById('hero-slide-prev');
+    const nextBtn = document.getElementById('hero-slide-next');
 
-function initHeroSlider() {
-  const sliderContainer = document.getElementById('hero-slider');
-  const counterCurrent = document.getElementById('hero-slide-current');
-  const counterTotal = document.getElementById('hero-slide-total');
+    if (!sliderContainer || !HERO_SLIDES.length) return;
 
-  if (!sliderContainer) return;
+    sliderContainer.innerHTML = '';
 
-  // Clear existing slide
-  sliderContainer.innerHTML = '';
+    HERO_SLIDES.forEach((imageSrc, index) => {
+      const slide = document.createElement('div');
+      slide.className = 'hero-slide' + (index === 0 ? ' active' : '');
+      slide.setAttribute('aria-hidden', index === 0 ? 'false' : 'true');
+      slide.innerHTML = '<img src="' + imageSrc + '" alt="Publicidad del Quindío - Slide ' + (index + 1) + '" loading="' + (index === 0 ? 'eager' : 'lazy') + '"><div class="hero-slide-meta"><span>Publicidad destacada</span></div>';
+      sliderContainer.appendChild(slide);
+    });
 
-  // Add all slides from HERO_SLIDES
-  HERO_SLIDES.forEach((imageSrc, index) => {
-    const slide = document.createElement('div');
-    slide.className = \`hero-slide \${index === 0 ? 'active' : ''}\`;
-    slide.setAttribute('aria-hidden', index !== 0);
-    slide.innerHTML = \`
-      <img src="\${imageSrc}" alt="Publicidad del Quindío - Slide \${index + 1}" loading="\${index === 0 ? 'eager' : 'lazy'}">
-      <div class="hero-slide-meta">
-        <span>Publicidad destacada</span>
-      </div>
-    \`;
-    sliderContainer.appendChild(slide);
-  });
+    if (counterTotal) counterTotal.textContent = HERO_SLIDES.length;
+    if (counterCurrent) counterCurrent.textContent = '1';
 
-  // Update counter
-  counterTotal.textContent = HERO_SLIDES.length;
-  counterCurrent.textContent = 1;
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function() {
+        goToSlide(currentSlideIndex - 1);
+        resetAutoplay();
+      });
+    }
 
-  // Start autoplay
-  startAutoplay();
-}
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function() {
+        goToSlide(currentSlideIndex + 1);
+        resetAutoplay();
+      });
+    }
 
-function goToSlide(index) {
-  const slides = document.querySelectorAll('.hero-slide');
-  const counterCurrent = document.getElementById('hero-slide-current');
+    sliderContainer.addEventListener('mouseenter', stopAutoplay);
+    sliderContainer.addEventListener('mouseleave', startAutoplay);
 
-  if (!slides.length) return;
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'ArrowLeft') {
+        goToSlide(currentSlideIndex - 1);
+        resetAutoplay();
+      } else if (event.key === 'ArrowRight') {
+        goToSlide(currentSlideIndex + 1);
+        resetAutoplay();
+      }
+    });
 
-  // Remove active class from current slide
-  slides[currentSlideIndex].classList.remove('active');
-  slides[currentSlideIndex].setAttribute('aria-hidden', 'true');
+    startAutoplay();
+  }
 
-  // Calculate new index
-  if (index >= slides.length) index = 0;
-  if (index < 0) index = slides.length - 1;
+  function goToSlide(index) {
+    const slides = document.querySelectorAll('.hero-slide');
+    const counterCurrent = document.getElementById('hero-slide-current');
 
-  // Update current index
-  currentSlideIndex = index;
+    if (!slides.length) return;
 
-  // Add active class to new slide
-  slides[currentSlideIndex].classList.add('active');
-  slides[currentSlideIndex].setAttribute('aria-hidden', 'false');
+    if (slides[currentSlideIndex]) {
+      slides[currentSlideIndex].classList.remove('active');
+      slides[currentSlideIndex].setAttribute('aria-hidden', 'true');
+    }
 
-  // Update counter
-  counterCurrent.textContent = currentSlideIndex + 1;
-}
+    if (index >= slides.length) index = 0;
+    if (index < 0) index = slides.length - 1;
 
-function startAutoplay() {
-  // Clear existing interval if any
-  if (slideInterval) clearInterval(slideInterval);
+    currentSlideIndex = index;
 
-  // Start new interval
-  slideInterval = setInterval(() => {
-    goToSlide(currentSlideIndex + 1);
-  }, 3000); // Change slide every 3 seconds
-}
+    if (slides[currentSlideIndex]) {
+      slides[currentSlideIndex].classList.add('active');
+      slides[currentSlideIndex].setAttribute('aria-hidden', 'false');
+    }
 
-// Initialize slider when DOM is loaded
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initHeroSlider);
-} else {
-  initHeroSlider();
-}
+    if (counterCurrent) counterCurrent.textContent = currentSlideIndex + 1;
+  }
+
+  function startAutoplay() {
+    if (slideInterval) clearInterval(slideInterval);
+    slideInterval = setInterval(function() {
+      goToSlide(currentSlideIndex + 1);
+    }, AUTOPLAY_INTERVAL);
+  }
+
+  function stopAutoplay() {
+    if (slideInterval) {
+      clearInterval(slideInterval);
+      slideInterval = null;
+    }
+  }
+
+  function resetAutoplay() {
+    stopAutoplay();
+    startAutoplay();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHeroSlider);
+  } else {
+    initHeroSlider();
+  }
+})();
 `;
 
 fs.writeFileSync(outputFile, outputContent, 'utf8');
-console.log('Generated:', outputFile);
+console.log('Generated ' + uniqueImages.length + ' slides at ' + outputFile);

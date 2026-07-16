@@ -197,9 +197,10 @@
       
       // Agregar marcadores de negocios desde datos.js
       if (typeof NEGOCIOS !== 'undefined') {
+        const markers = [];
+
         NEGOCIOS.forEach(biz => {
           if (biz.lat && biz.lng) {
-            // Create custom icon with logo
             let iconOptions = {
               iconSize: [32, 32],
               iconAnchor: [16, 32],
@@ -211,10 +212,9 @@
             }
             
             const customIcon = L.icon(iconOptions);
-            
             const marker = L.marker([biz.lat, biz.lng], { icon: customIcon }).addTo(map);
+            markers.push(marker);
             
-            // Generate popup content with logo, link to negocio page, and WhatsApp
             const negocioPageUrl = biz.slug ? `./negocios/${biz.slug}.html` : '#';
             marker.bindPopup(`
               <div style="min-width:240px; max-width:300px;">
@@ -229,6 +229,15 @@
             `);
           }
         });
+
+        if (markers.length) {
+          const validCoords = markers.map(marker => marker.getLatLng());
+          const bounds = L.latLngBounds(validCoords);
+          if (bounds.isValid()) {
+            map.fitBounds(bounds.pad(0.2));
+          }
+          console.info(`[Mapa] ${markers.length} marcadores cargados desde ${NEGOCIOS.length} pautantes.`);
+        }
       }
     }
   }

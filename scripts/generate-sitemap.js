@@ -27,6 +27,7 @@ const STATIC_PAGES = [
   'mapa-de-circasia-2025.html',
   'mapa-del-quindio.html',
   'municipios-del-quindio.html',
+  'planes-turisticos.html',
   'pauta.html',
   'quindio-comercial.html',
   'reservar-hotel-quindio.html',

@@ -125,7 +125,7 @@ function generarSeccionNegociosCercanos(negocio, municipio) {
       const anchorText = `${n.tipo || n.categoria} ${n.nombre} en ${nombreMunicipio}`;
       return `
         <li style="margin-bottom: 12px;">
-          <a href="../negocios/${n.slug}" style="color: #059669; text-decoration: none; font-weight: 600; hover: underline;">
+          <a href="../negocios/${n.slug}.html" style="color: #059669; text-decoration: none; font-weight: 600; hover: underline;">
             ${n.nombre}
           </a>
           <span style="color: #9ca3af; font-size: 14px;">• ${n.municipioId === municipio.id ? 'En la misma ciudad' : `A ${n.distancia.toFixed(1)} km`}</span>
@@ -382,9 +382,11 @@ const TEMPLATES = {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${municipio.nombre} - Qué Ver y Hacer | Mapa Turístico del Quindío 2026</title>
-  <meta name="description" content="Descubre ${municipio.nombre}: atractivos turísticos, alojamientos, restaurantes y más. Guía completa del Quindío sin intermediarios.">
+  <meta name="description" content="Descubre ${municipio.nombre} en el Quindío: atractivos turísticos, alojamientos, restaurantes, transporte y experiencias para tu viaje.">
   <meta name="keywords" content="${municipio.palabrasClave.join(', ')}">
-  <link rel="canonical" href="https://www.mapaturisticodelquindio.com/municipios/${municipio.slug}">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <link rel="alternate" hreflang="es" href="https://www.mapaturisticodelquindio.com/municipios/${municipio.slug}.html">
+  <link rel="canonical" href="https://www.mapaturisticodelquindio.com/municipios/${municipio.slug}.html">
   <meta name="theme-color" content="#059669">
   <link rel="stylesheet" href="../assets/css/main.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
@@ -403,6 +405,15 @@ const TEMPLATES = {
   </section>
 
   <!-- Guía de Experto -->
+  <section style="padding: 32px 24px 0;">
+    <div style="max-width: 900px; margin: 0 auto;">
+      <div style="background: white; border-radius: 24px; padding: 32px; box-shadow: 0 10px 30px rgba(16, 185, 129, 0.12);">
+        <h2 style="color: #064e3b; font-size: 24px; font-weight: 800; margin: 0 0 12px;">¿Qué hacer en ${municipio.nombre}?</h2>
+        <p style="color: #374151; font-size: 17px; line-height: 1.8; margin: 0;">${municipio.textoSeo || municipio.descripcionLong}</p>
+      </div>
+    </div>
+  </section>
+
   <section style="padding: 64px 24px; background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);">
     <div style="max-width: 900px; margin: 0 auto;">
       <div style="background: white; border-radius: 24px; padding: 40px; box-shadow: 0 10px 40px rgba(16, 185, 129, 0.15);">
@@ -492,9 +503,11 @@ const TEMPLATES = {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${negocio.nombre} - ${municipio.nombre} | Mapa Turístico del Quindío</title>
-  <meta name="description" content="${negocio.descripcionLong}">
+  <meta name="description" content="${negocio.nombre} en ${municipio.nombre}, Quindío. Descubre servicios, contacto directo y opciones para tu viaje.">
   <meta name="keywords" content="${negocio.palabrasClave.join(', ')}">
-  <link rel="canonical" href="https://www.mapaturisticodelquindio.com/negocios/${negocio.slug}">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <link rel="alternate" hreflang="es" href="https://www.mapaturisticodelquindio.com/negocios/${negocio.slug}.html">
+  <link rel="canonical" href="https://www.mapaturisticodelquindio.com/negocios/${negocio.slug}.html">
   <link rel="stylesheet" href="../assets/css/main.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
   <script type="application/ld+json">
@@ -520,6 +533,10 @@ const TEMPLATES = {
       ${negocio.whatsapp ? `
         <a href="https://wa.me/${negocio.whatsapp}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; padding: 14px 32px; background: #25D366; color: white; font-weight: 800; text-decoration: none; border-radius: 50px; transition: transform 0.3s;">💬 Contactar por WhatsApp</a>
       ` : ''}
+      <div style="margin-top: 24px; padding: 20px; background: #f8fafc; border-radius: 16px; border: 1px solid #e5e7eb;">
+        <h3 style="color: #064e3b; font-weight: 800; margin: 0 0 8px;">📍 ¿Por qué elegir ${negocio.nombre}?</h3>
+        <p style="color: #374151; font-size: 16px; line-height: 1.7; margin: 0;">${negocio.textoSeo || `Este negocio en ${municipio.nombre} destaca por su ubicación, atención y conexión con el turismo del Quindío, siendo una opción útil para viajeros que buscan comodidad, cultura o experiencias auténticas.`}</p>
+      </div>
     </div>
     ${generarSeccionNegociosCercanos(negocio, municipio)}
   </div>
@@ -564,8 +581,8 @@ masterData.negocios.forEach(negocio => {
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.mapaturisticodelquindio.com/</loc><lastmod>${masterData.lastUpdated.split('T')[0]}</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  ${masterData.municipios.map(m => `<url><loc>https://www.mapaturisticodelquindio.com/municipios/${m.slug}</loc><lastmod>${masterData.lastUpdated.split('T')[0]}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>`).join('\n')}
-  ${masterData.negocios.map(n => `<url><loc>https://www.mapaturisticodelquindio.com/negocios/${n.slug}</loc><lastmod>${n.fechaActualizacion}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>`).join('\n')}
+  ${masterData.municipios.map(m => `<url><loc>https://www.mapaturisticodelquindio.com/municipios/${m.slug}.html</loc><lastmod>${masterData.lastUpdated.split('T')[0]}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>`).join('\n')}
+  ${masterData.negocios.map(n => `<url><loc>https://www.mapaturisticodelquindio.com/negocios/${n.slug}.html</loc><lastmod>${n.fechaActualizacion || masterData.lastUpdated.split('T')[0]}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>`).join('\n')}
 </urlset>`;
 
 fs.writeFileSync(path.join(__dirname, '../sitemap.xml'), sitemap);

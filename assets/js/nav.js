@@ -17,6 +17,7 @@
     { label: 'Alquiler Finca hoteles', url: 'alquiler-finca-hoteles.html' },
     { label: 'Mapa del Quindío', url: 'mapa-del-quindio.html' },
     { label: 'Quindío Comercial', url: 'quindio-comercial.html' },
+    { label: 'Planes Turísticos', url: 'planes-turisticos.html' },
     { label: 'Municipios del Quindío', url: 'municipios-del-quindio.html' },
     { label: 'Agencias Operadoras Turísticas', url: 'agencias-operadoras-turisticas.html' },
     { label: 'Atractivos Turísticos', url: 'sitios-turisticos.html' },
