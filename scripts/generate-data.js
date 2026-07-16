@@ -43,31 +43,15 @@ const ITINERARIOS = [
 // FUNCIONES SEO
 // ------------------------------
 function generateMetaTitle(categoria, municipio) {
-  const titles = [
-    `¿Buscas ${categoria} en ${municipio}? Encuentra los mejores aquí sin comisiones`,
-    `${categoria} en ${municipio} | Mapa Turístico del Quindío 2026`,
-    `Mejores ${categoria} en ${municipio} - Guía Completa 2026`,
-    `${categoria} económicos en ${municipio} 2026 | Ofertas y Precios`
-  ];
-  return titles[Math.floor(Math.random() * titles.length)].slice(0, 60);
+  return `${categoria} en ${municipio} | Mapa Turístico del Quindío 2026`.slice(0, 60);
 }
 
 function generateMetaDescription(categoria, municipio) {
-  const descriptions = [
-    `Descubre los mejores ${categoria} en ${municipio}. Contacto directo sin comisiones. Guía completa 2026 del Quindío.`,
-    `Encuentra ${categoria} en ${municipio} con fotos reales y contacto directo. ¡No pagues comisiones!`,
-    `Precios de ${categoria} en ${municipio} 2026. Guía turística completa del Quindío.`
-  ];
-  return descriptions[Math.floor(Math.random() * descriptions.length)].slice(0, 155);
+  return `Descubre los mejores ${categoria} en ${municipio} con contacto directo, precios claros y reserva sin comisiones en el Quindío.`.slice(0, 155);
 }
 
 function generateH1(categoria, municipio) {
-  const options = [
-    `${categoria} en ${municipio}`,
-    `Mejores ${categoria} de ${municipio}`,
-    `${categoria} económicos en ${municipio} 2026`
-  ];
-  return options[Math.floor(Math.random() * options.length)];
+  return `${categoria} en ${municipio}`;
 }
 
 function generateSchemaOrg(biz) {

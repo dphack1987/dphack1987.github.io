@@ -29,6 +29,13 @@ htmlFiles.forEach(filePath => {
   const doc = dom.window.document;
   const relativePath = path.relative(publicDir, filePath);
 
+  const robots = doc.querySelector('meta[name="robots"]');
+  const robotsContent = robots ? robots.getAttribute('content') || '' : '';
+  if (/noindex/i.test(robotsContent)) {
+    console.log(`${relativePath}: Página con noindex ignorada en validación SEO.`);
+    return;
+  }
+
   // Validar title
   const title = doc.querySelector('title');
   if (!title || title.textContent.trim().length < 10) {

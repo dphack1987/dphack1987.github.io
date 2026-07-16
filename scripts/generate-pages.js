@@ -16,6 +16,69 @@ const cacheStats = {
   calculations: 0
 };
 
+function buildSeoText(text, fallback, maxLength = 155) {
+  if (!text || typeof text !== 'string') {
+    text = fallback || '';
+  }
+
+  text = text.trim();
+
+  if (text.length === 0 && fallback) {
+    text = fallback;
+  }
+
+  if (text.length > maxLength) {
+    return `${text.slice(0, maxLength - 3).trim()}...`;
+  }
+
+  return text;
+}
+
+function buildSeoTitle(text, fallback, maxLength = 60) {
+  if (!text || typeof text !== 'string') {
+    text = fallback || '';
+  }
+
+  text = text.trim();
+  if (text.length === 0) {
+    return fallback || '';
+  }
+
+  if (text.length > maxLength) {
+    return `${text.slice(0, maxLength - 3).trim()}...`;
+  }
+
+  return text;
+}
+
+function buildSeoDescription(text, fallback, maxLength = 155) {
+  const candidate = (text && text.trim()) || '';
+  if (candidate.length >= 50 && candidate.length <= maxLength) {
+    return candidate;
+  }
+
+  const fallbackText = fallback && fallback.trim() ? fallback.trim() : candidate;
+  if (fallbackText.length >= 50) {
+    return buildSeoText(fallbackText, '', maxLength);
+  }
+
+  const merged = `${candidate}${candidate && fallbackText ? ' ' : ''}${fallbackText}`.trim();
+  if (merged.length >= 50) {
+    return buildSeoText(merged, '', maxLength);
+  }
+
+  const padded = `${merged} Descubre más detalles y reserva directamente con WhatsApp.`;
+  return buildSeoText(padded, '', maxLength);
+}
+
+function escapeHtmlAttribute(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
 function getCachedDistance(lat1, lon1, lat2, lon2) {
   // Crear key única (con rounding para usar menos memoria)
   const key = `${lat1.toFixed(4)}_${lon1.toFixed(4)}_${lat2.toFixed(4)}_${lon2.toFixed(4)}`;
@@ -375,15 +438,27 @@ const generateMunicipioSchema = (municipio) => {
 };
 
 const TEMPLATES = {
-  municipio: (municipio) => `
+  municipio: (municipio) => {
+    const titleText = buildSeoTitle(
+      `${municipio.nombre} - Qué Ver y Hacer | Mapa Turístico del Quindío 2026`,
+      `Descubre ${municipio.nombre} en el Quindío`,
+      60
+    );
+    const descriptionText = buildSeoDescription(
+      municipio.textoSeo || municipio.descripcionLong,
+      `Descubre ${municipio.nombre} en el Quindío, Quindío. Encuentra los mejores planes, atractivos y servicios turísticos en esta región de la Zona Cafetera.`,
+      155
+    );
+
+    return `
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${municipio.nombre} - Qué Ver y Hacer | Mapa Turístico del Quindío 2026</title>
-  <meta name="description" content="${(municipio.textoSeo || municipio.descripcionLong || `Descubre ${municipio.nombre} en el Quindío`).substring(0, 155)}">
-  <meta name="keywords" content="${municipio.palabrasClave.join(', ')}">
+  <title>${escapeHtmlAttribute(titleText)}</title>
+  <meta name="description" content="${escapeHtmlAttribute(descriptionText)}">
+  <meta name="keywords" content="${escapeHtmlAttribute(municipio.palabrasClave.join(', '))}">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="alternate" hreflang="es" href="https://www.mapaturisticodelquindio.com/municipios/${municipio.slug}.html">
   <link rel="canonical" href="https://www.mapaturisticodelquindio.com/municipios/${municipio.slug}.html">
@@ -493,18 +568,26 @@ const TEMPLATES = {
   </script>
 </body>
 </html>
-  `,
+  `},
   negocio: (negocio) => {
     const municipio = masterData.municipios.find(m => m.id === negocio.municipioId) || masterData.municipios[0];
+    const rawTitle = `${negocio.nombre} en ${municipio.nombre} | Mapa Turístico del Quindío`;
+    const titleText = buildSeoTitle(rawTitle, `${negocio.nombre} en ${municipio.nombre}`, 60);
+    const descriptionText = buildSeoDescription(
+      negocio.textoSeo || negocio.descripcionLong,
+      `${negocio.nombre} en ${municipio.nombre}, Quindío. Reserva directo con un contacto seguro y descubre su oferta turística en el corazón del Eje Cafetero.`,
+      155
+    );
+
     return `
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${negocio.nombre} - ${municipio.nombre} | Mapa Turístico del Quindío</title>
-  <meta name="description" content="${(negocio.textoSeo || negocio.descripcionLong || `${negocio.nombre} en ${municipio.nombre}, Quindío`).substring(0, 155)}">
-  <meta name="keywords" content="${negocio.palabrasClave.join(', ')}">
+  <title>${escapeHtmlAttribute(titleText)}</title>
+  <meta name="description" content="${escapeHtmlAttribute(descriptionText)}">
+  <meta name="keywords" content="${escapeHtmlAttribute(negocio.palabrasClave.join(', '))}">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="alternate" hreflang="es" href="https://www.mapaturisticodelquindio.com/negocios/${negocio.slug}.html">
   <link rel="canonical" href="https://www.mapaturisticodelquindio.com/negocios/${negocio.slug}.html">
@@ -553,7 +636,7 @@ const TEMPLATES = {
   </script>
 </body>
 </html>
-  `}
+  `},
 };
 
 // Asegurar directorios existan
