@@ -200,7 +200,11 @@
         const markers = [];
 
         NEGOCIOS.forEach(biz => {
-          if (biz.lat && biz.lng) {
+          const lat = Number(biz.lat);
+          const lng = Number(biz.lng);
+          const hasValidCoords = Number.isFinite(lat) && Number.isFinite(lng) && lat >= -90 && lat <= 90 && lng >= -180 && lng <= 180;
+
+          if (hasValidCoords) {
             let iconOptions = {
               iconSize: [32, 32],
               iconAnchor: [16, 32],
@@ -212,7 +216,7 @@
             }
             
             const customIcon = L.icon(iconOptions);
-            const marker = L.marker([biz.lat, biz.lng], { icon: customIcon }).addTo(map);
+            const marker = L.marker([lat, lng], { icon: customIcon }).addTo(map);
             markers.push(marker);
             
             const negocioPageUrl = biz.slug ? `./negocios/${biz.slug}.html` : '#';
@@ -227,6 +231,8 @@
                 </div>
               </div>
             `);
+          } else {
+            console.warn(`[Mapa] Coordenadas inválidas para ${biz.nombre || 'negocio sin nombre'}.`, biz);
           }
         });
 

@@ -3381,6 +3381,8 @@
       "municipioId": "armenia",
       "descripcion": "Agencia de viajes y turismo en Armenia, Quindío.",
       "descripcionLong": "Agencia de viajes y turismo en Armenia, Quindío.",
+      "lat": 4.5339,
+      "lng": -75.6811,
       "direccion": "",
       "servicios": [
         "Tours",
@@ -3439,6 +3441,8 @@
       "municipioId": "armenia",
       "descripcion": "Guía de turismo local en Armenia y alrededores.",
       "descripcionLong": "Guía de turismo local en Armenia y alrededores.",
+      "lat": 4.5339,
+      "lng": -75.6811,
       "direccion": "",
       "servicios": [
         "Guianza",
@@ -3496,6 +3500,8 @@
       "municipioId": "armenia",
       "descripcion": "Tienda de artesanía, bisutería y dulcería en Armenia.",
       "descripcionLong": "Tienda de artesanía, bisutería y dulcería en Armenia.",
+      "lat": 4.5339,
+      "lng": -75.6811,
       "direccion": "",
       "servicios": [
         "Artesanías",
@@ -3553,6 +3559,8 @@
       "municipioId": "circasia",
       "descripcion": "Puesto de alfarería en el Centro Artesanal Plaza de Bolívar, Circasia.",
       "descripcionLong": "Puesto de alfarería en el Centro Artesanal Plaza de Bolívar, Circasia.",
+      "lat": 4.6167,
+      "lng": -75.6333,
       "direccion": "",
       "servicios": [
         "Cerámica",

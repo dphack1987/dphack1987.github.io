@@ -12,73 +12,110 @@ const HERO_SLIDES = [
 
 // Hero Slider Functionality
 let currentSlideIndex = 0;
-let slideInterval;
+let slideInterval = null;
 
-function initHeroSlider() {
-  const sliderContainer = document.getElementById('hero-slider');
+function clearAutoplay() {
+  if (slideInterval) {
+    clearInterval(slideInterval);
+    slideInterval = null;
+  }
+}
+
+function getSafeSlides() {
+  return (Array.isArray(HERO_SLIDES) ? HERO_SLIDES : [])
+    .filter((item) => typeof item === 'string' && item.trim())
+    .map((item) => item.trim());
+}
+
+function updateCounter(totalSlides, currentValue) {
   const counterCurrent = document.getElementById('hero-slide-current');
   const counterTotal = document.getElementById('hero-slide-total');
 
-  if (!sliderContainer) return;
+  if (counterCurrent) {
+    counterCurrent.textContent = String(currentValue);
+  }
 
-  // Clear existing slide
-  sliderContainer.innerHTML = '';
+  if (counterTotal) {
+    counterTotal.textContent = String(totalSlides);
+  }
+}
 
-  // Add all slides from HERO_SLIDES
-  HERO_SLIDES.forEach((imageSrc, index) => {
-    const slide = document.createElement('div');
-    slide.className = `hero-slide ${index === 0 ? 'active' : ''}`;
-    slide.setAttribute('aria-hidden', index !== 0);
-    slide.innerHTML = `
-      <img src="${imageSrc}" alt="Finca del Quindío - Slide ${index + 1}" loading="${index === 0 ? 'eager' : 'lazy'}">
-      <div class="hero-slide-meta">
-        <span>Publicidad destacada</span>
-      </div>
-    `;
-    sliderContainer.appendChild(slide);
-  });
+function initHeroSlider() {
+  try {
+    const sliderContainer = document.getElementById('hero-slider');
+    const slides = getSafeSlides();
 
-  // Update counter
-  counterTotal.textContent = HERO_SLIDES.length;
-  counterCurrent.textContent = 1;
+    if (!sliderContainer) return;
 
-  // Start autoplay
-  startAutoplay();
+    currentSlideIndex = 0;
+    clearAutoplay();
+    sliderContainer.innerHTML = '';
+
+    if (!slides.length) {
+      updateCounter(0, 0);
+      return;
+    }
+
+    slides.forEach((imageSrc, index) => {
+      const slide = document.createElement('div');
+      slide.className = `hero-slide ${index === 0 ? 'active' : ''}`;
+      slide.setAttribute('aria-hidden', index !== 0);
+      slide.innerHTML = `
+        <img src="${imageSrc}" alt="Finca del Quindío - Slide ${index + 1}" loading="${index === 0 ? 'eager' : 'lazy'}" onerror="this.style.display='none';">
+        <div class="hero-slide-meta">
+          <span>Publicidad destacada</span>
+        </div>
+      `;
+      sliderContainer.appendChild(slide);
+    });
+
+    updateCounter(slides.length, 1);
+    startAutoplay();
+  } catch (error) {
+    console.warn('[Hero Slider] No fue posible inicializar el carrusel de fincas.', error);
+  }
 }
 
 function goToSlide(index) {
-  const slides = document.querySelectorAll('.hero-slide');
-  const counterCurrent = document.getElementById('hero-slide-current');
+  const slides = Array.from(document.querySelectorAll('.hero-slide'));
 
   if (!slides.length) return;
 
-  // Remove active class from current slide
-  slides[currentSlideIndex].classList.remove('active');
-  slides[currentSlideIndex].setAttribute('aria-hidden', 'true');
+  const normalizedIndex = Number.isInteger(index)
+    ? index
+    : currentSlideIndex + 1;
 
-  // Calculate new index
-  if (index >= slides.length) index = 0;
-  if (index < 0) index = slides.length - 1;
+  const nextIndex = normalizedIndex >= slides.length
+    ? 0
+    : normalizedIndex < 0
+      ? slides.length - 1
+      : normalizedIndex;
 
-  // Update current index
-  currentSlideIndex = index;
+  const currentSlide = slides[currentSlideIndex];
+  const nextSlide = slides[nextIndex];
 
-  // Add active class to new slide
-  slides[currentSlideIndex].classList.add('active');
-  slides[currentSlideIndex].setAttribute('aria-hidden', 'false');
+  if (currentSlide) {
+    currentSlide.classList.remove('active');
+    currentSlide.setAttribute('aria-hidden', 'true');
+  }
 
-  // Update counter
-  counterCurrent.textContent = currentSlideIndex + 1;
+  if (nextSlide) {
+    nextSlide.classList.add('active');
+    nextSlide.setAttribute('aria-hidden', 'false');
+  }
+
+  currentSlideIndex = nextIndex;
+  updateCounter(slides.length, currentSlideIndex + 1);
 }
 
 function startAutoplay() {
-  // Clear existing interval if any
-  if (slideInterval) clearInterval(slideInterval);
+  clearAutoplay();
 
-  // Start new interval
-  slideInterval = setInterval(() => {
+  if (typeof window === 'undefined' || !window.setInterval) return;
+
+  slideInterval = window.setInterval(() => {
     goToSlide(currentSlideIndex + 1);
-  }, 3000); // Change slide every 3 seconds
+  }, 3000);
 }
 
 // Initialize slider when DOM is loaded

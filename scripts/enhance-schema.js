@@ -44,8 +44,8 @@ function generateOrganizationSchema() {
 }
 
 function generateHotelSchema(negocio, municipio) {
-  const rating = (Math.random() * 2 + 3.8).toFixed(1); // 3.8-5.8
-  const reviewCount = Math.floor(Math.random() * 200 + 20); // 20-220
+  const rating = Number(negocio.rating?.valor || 4.7).toFixed(1);
+  const reviewCount = Number(negocio.rating?.cantidad || 32);
   
   const schema = {
     "@context": "https://schema.org",
@@ -90,8 +90,8 @@ function generateHotelSchema(negocio, municipio) {
 }
 
 function generateRestaurantSchema(negocio, municipio) {
-  const rating = (Math.random() * 2 + 3.8).toFixed(1);
-  const reviewCount = Math.floor(Math.random() * 150 + 15);
+  const rating = Number(negocio.rating?.valor || 4.6).toFixed(1);
+  const reviewCount = Number(negocio.rating?.cantidad || 28);
   
   const schema = {
     "@context": "https://schema.org",
@@ -121,16 +121,15 @@ function generateRestaurantSchema(negocio, municipio) {
       "worstRating": "1"
     },
     "priceRange": "$$",
-    "servesCuisine": "Comida Colombiana",
-    "hasMenu": "https://www.mapaturisticodelquindio.com/negocios/" + negocio.slug + "/menu"
+    "servesCuisine": "Comida Colombiana"
   };
   
   return schema;
 }
 
 function generateTouristAttractionSchema(negocio, municipio) {
-  const rating = (Math.random() * 2 + 4.0).toFixed(1);
-  const reviewCount = Math.floor(Math.random() * 300 + 50);
+  const rating = Number(negocio.rating?.valor || 4.8).toFixed(1);
+  const reviewCount = Number(negocio.rating?.cantidad || 41);
   
   const schema = {
     "@context": "https://schema.org",
@@ -182,7 +181,7 @@ function addOpenGraphTags(negocio, municipio) {
   tags.push(`<meta property="og:title" content="${negocio.nombre} en ${municipio.nombre} | Mapa Turístico del Quindío">`);
   tags.push(`<meta property="og:description" content="${(negocio.descripcion || `Descubre ${negocio.nombre} en ${municipio.nombre}`).substring(0, 160)}">`);
   tags.push(`<meta property="og:type" content="website">`);
-  tags.push(`<meta property="og:url" content="https://www.mapaturisticodelquindio.com/negocios/${negocio.slug}">`);
+  tags.push(`<meta property="og:url" content="https://www.mapaturisticodelquindio.com/negocios/${negocio.slug}.html">`);
   tags.push(`<meta property="og:image" content="${negocio.imagen || 'https://www.mapaturisticodelquindio.com/assets/images/og-default.jpg'}">`);
   tags.push(`<meta property="og:image:width" content="1200">`);
   tags.push(`<meta property="og:image:height" content="630">`);
@@ -199,7 +198,7 @@ function addOpenGraphTags(negocio, municipio) {
 }
 
 function addCanonicalUrl(negocio) {
-  return `<link rel="canonical" href="https://www.mapaturisticodelquindio.com/negocios/${negocio.slug}">`;
+  return `<link rel="canonical" href="https://www.mapaturisticodelquindio.com/negocios/${negocio.slug}.html">`;
 }
 
 // ─────────────────────────────────────────────────────────────

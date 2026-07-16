@@ -1636,9 +1636,9 @@ const NEGOCIOS = [
     "email": "",
     "url": "",
     "maps": "https://maps.google.com/?q=Centro+Comercial+SanSur+Armenia",
-    "imagen": "./pautas_publicitarias/Centros_Comerciales/centro_comercial_sansur.png",
+    "imagen": "./pautas_publicitarias/Centros Comerciales/centro_comercial_sansur.png",
     "galeria": [
-      "./pautas_publicitarias/Centros_Comerciales/centro_comercial_sansur.png"
+      "./pautas_publicitarias/Centros Comerciales/centro_comercial_sansur.png"
     ],
     "nivel": "premium",
     "palabrasClave": [
@@ -1703,9 +1703,9 @@ const NEGOCIOS = [
     "email": "",
     "url": "",
     "maps": "https://www.unicentrodearmenia.com",
-    "imagen": "./pautas_publicitarias/Centros_Comerciales/centro_comercial_unicentro.png",
+    "imagen": "./pautas_publicitarias/Centros Comerciales/centro_comercial_unicentro.png",
     "galeria": [
-      "./pautas_publicitarias/Centros_Comerciales/centro_comercial_unicentro.png"
+      "./pautas_publicitarias/Centros Comerciales/centro_comercial_unicentro.png"
     ],
     "nivel": "premium",
     "palabrasClave": [
@@ -2553,9 +2553,9 @@ const NEGOCIOS = [
     "email": "",
     "url": "",
     "maps": "https://maps.google.com/?q=Camino+al+Fútbol+Armenia",
-    "imagen": "./pautas_publicitarias/Deportes_y_entretenimiento/camino_al_futbol.png",
+    "imagen": "./pautas_publicitarias/Deportes y entretenimiento/camino_al_futbol.png",
     "galeria": [
-      "./pautas_publicitarias/Deportes_y_entretenimiento/camino_al_futbol.png"
+      "./pautas_publicitarias/Deportes y entretenimiento/camino_al_futbol.png"
     ],
     "nivel": "estandar",
     "palabrasClave": [
@@ -3339,6 +3339,8 @@ const NEGOCIOS = [
     "municipioId": "armenia",
     "descripcion": "Agencia de viajes y turismo en Armenia, Quindío.",
     "descripcionLong": "Agencia de viajes y turismo en Armenia, Quindío.",
+    "lat": 4.5339,
+    "lng": -75.6811,
     "direccion": "",
     "servicios": [
       "Tours",
@@ -3399,6 +3401,8 @@ const NEGOCIOS = [
     "municipioId": "armenia",
     "descripcion": "Guía de turismo local en Armenia y alrededores.",
     "descripcionLong": "Guía de turismo local en Armenia y alrededores.",
+    "lat": 4.5339,
+    "lng": -75.6811,
     "direccion": "",
     "servicios": [
       "Guianza",
@@ -3458,6 +3462,8 @@ const NEGOCIOS = [
     "municipioId": "armenia",
     "descripcion": "Tienda de artesanía, bisutería y dulcería en Armenia.",
     "descripcionLong": "Tienda de artesanía, bisutería y dulcería en Armenia.",
+    "lat": 4.5339,
+    "lng": -75.6811,
     "direccion": "",
     "servicios": [
       "Artesanías",
@@ -3517,6 +3523,8 @@ const NEGOCIOS = [
     "municipioId": "circasia",
     "descripcion": "Puesto de alfarería en el Centro Artesanal Plaza de Bolívar, Circasia.",
     "descripcionLong": "Puesto de alfarería en el Centro Artesanal Plaza de Bolívar, Circasia.",
+    "lat": 4.6167,
+    "lng": -75.6333,
     "direccion": "",
     "servicios": [
       "Cerámica",

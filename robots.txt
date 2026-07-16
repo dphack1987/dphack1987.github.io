@@ -1,4 +1,8 @@
 User-agent: *
+Allow: /
+Allow: /municipios/
+Allow: /negocios/
+Allow: /assets/
 Disallow: /proposed_patches/
 Disallow: /*copia*
 Disallow: /sitio-liberado/

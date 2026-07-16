@@ -23,7 +23,7 @@ const verifyCanonicalTags = () => {
 
       // Determine expected canonical URL (both with and without .html)
       let expectedCanonicals = [];
-      if (file === 'index.html' || file === 'mapa-del-quindio.html' || file === 'municipios-del-quindio.html' || file === 'quindio-comercial.html' || file === 'alojamientos.html' || file === 'agencias-operadoras-turisticas.html' || file === 'alquiler-finca-hoteles.html' || file === 'anunciate.html' || file === 'empresas-de-transporte.html' || file === 'finca-para-alquilar-quindio.html' || file === 'hospedaje-armenia.html' || file === 'mapa-de-calarca-2026.html' || file === 'mapa-de-circasia-2025.html' || file === 'pauta.html' || file === 'reservar-hotel-quindio.html' || file === 'sitios-turisticos.html' || file === 'top-pueblos.html' || file === 'transporte-aeropuerto-armenia.html') {
+      if (dir === '.') {
         if (file === 'index.html') {
           expectedCanonicals = [BASE_URL, `${BASE_URL}/`];
         } else {

@@ -171,7 +171,7 @@ const generateBreadcrumbList = (type, item) => {
       "@type": "ListItem",
       "position": 3,
       "name": item.nombre,
-      "item": `https://www.mapaturisticodelquindio.com/municipios/${item.slug}`
+      "item": `https://www.mapaturisticodelquindio.com/municipios/${item.slug}.html`
     });
   } else if (type === 'negocio') {
     const municipio = masterData.municipios.find(m => m.id === item.municipioId) || masterData.municipios[0];
@@ -179,13 +179,13 @@ const generateBreadcrumbList = (type, item) => {
       "@type": "ListItem",
       "position": 3,
       "name": municipio.nombre,
-      "item": `https://www.mapaturisticodelquindio.com/municipios/${municipio.slug}`
+      "item": `https://www.mapaturisticodelquindio.com/municipios/${municipio.slug}.html`
     });
     items.push({
       "@type": "ListItem",
       "position": 4,
       "name": item.nombre,
-      "item": `https://www.mapaturisticodelquindio.com/negocios/${item.slug}`
+      "item": `https://www.mapaturisticodelquindio.com/negocios/${item.slug}.html`
     });
   }
 
@@ -358,7 +358,7 @@ const generateMunicipioSchema = (municipio) => {
           "@type": "Place",
           "name": "Quindío, Colombia"
         },
-        "url": `https://www.mapaturisticodelquindio.com/municipios/${municipio.slug}`,
+        "url": `https://www.mapaturisticodelquindio.com/municipios/${municipio.slug}.html`,
         "author": {
           "@type": "Organization",
           "name": municipio.author.name,
@@ -382,7 +382,7 @@ const TEMPLATES = {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${municipio.nombre} - Qué Ver y Hacer | Mapa Turístico del Quindío 2026</title>
-  <meta name="description" content="Descubre ${municipio.nombre} en el Quindío: atractivos turísticos, alojamientos, restaurantes, transporte y experiencias para tu viaje.">
+  <meta name="description" content="${(municipio.textoSeo || municipio.descripcionLong || `Descubre ${municipio.nombre} en el Quindío`).substring(0, 155)}">
   <meta name="keywords" content="${municipio.palabrasClave.join(', ')}">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="alternate" hreflang="es" href="https://www.mapaturisticodelquindio.com/municipios/${municipio.slug}.html">
@@ -503,7 +503,7 @@ const TEMPLATES = {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${negocio.nombre} - ${municipio.nombre} | Mapa Turístico del Quindío</title>
-  <meta name="description" content="${negocio.nombre} en ${municipio.nombre}, Quindío. Descubre servicios, contacto directo y opciones para tu viaje.">
+  <meta name="description" content="${(negocio.textoSeo || negocio.descripcionLong || `${negocio.nombre} en ${municipio.nombre}, Quindío`).substring(0, 155)}">
   <meta name="keywords" content="${negocio.palabrasClave.join(', ')}">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="alternate" hreflang="es" href="https://www.mapaturisticodelquindio.com/negocios/${negocio.slug}.html">
