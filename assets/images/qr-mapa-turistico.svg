@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#ffffff"/>
+  <rect x="40" y="40" width="160" height="160" fill="#0f172a"/>
+  <rect x="72" y="72" width="96" height="96" fill="#ffffff"/>
+  <rect x="312" y="40" width="160" height="160" fill="#0f172a"/>
+  <rect x="344" y="72" width="96" height="96" fill="#ffffff"/>
+  <rect x="40" y="312" width="160" height="160" fill="#0f172a"/>
+  <rect x="72" y="344" width="96" height="96" fill="#ffffff"/>
+  <rect x="200" y="200" width="112" height="112" fill="#0f172a"/>
+  <rect x="232" y="232" width="48" height="48" fill="#ffffff"/>
+  <rect x="200" y="40" width="48" height="48" fill="#0f172a"/>
+  <rect x="264" y="40" width="48" height="48" fill="#0f172a"/>
+  <rect x="200" y="312" width="48" height="48" fill="#0f172a"/>
+  <rect x="264" y="312" width="48" height="48" fill="#0f172a"/>
+  <rect x="40" y="200" width="48" height="48" fill="#0f172a"/>
+  <rect x="104" y="200" width="48" height="48" fill="#0f172a"/>
+  <rect x="424" y="200" width="48" height="48" fill="#0f172a"/>
+  <rect x="360" y="200" width="48" height="48" fill="#0f172a"/>
+  <rect x="200" y="424" width="48" height="48" fill="#0f172a"/>
+  <rect x="264" y="424" width="48" height="48" fill="#0f172a"/>
+  <rect x="424" y="424" width="48" height="48" fill="#0f172a"/>
+  <rect x="360" y="424" width="48" height="48" fill="#0f172a"/>
+  <text x="256" y="490" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#0f172a">Mapa Turístico del Quindío</text>
+</svg>

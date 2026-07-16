@@ -77,6 +77,47 @@
 
 
   // ------------------------------
+  // COMPARTIR ACCESO DEL QR
+  // ------------------------------
+  function initQrShare() {
+    const shareBtn = document.getElementById('share-qr-btn');
+    if (!shareBtn) return;
+
+    const shareUrl = window.location.href;
+
+    shareBtn.addEventListener('click', async () => {
+      const shareData = {
+        title: 'Mapa Turístico del Quindío',
+        text: 'Escanea este QR o abre este enlace para entrar al Mapa Turístico del Quindío.',
+        url: shareUrl
+      };
+
+      try {
+        if (navigator.share) {
+          await navigator.share(shareData);
+          shareBtn.textContent = '✅ Compartido';
+        } else if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(shareUrl);
+          shareBtn.textContent = '✅ Enlace copiado';
+        } else {
+          window.prompt('Copia este enlace para compartirlo:', shareUrl);
+          shareBtn.textContent = '📤 Compartir QR';
+        }
+      } catch (error) {
+        if (error?.name !== 'AbortError') {
+          console.error('No se pudo compartir el QR:', error);
+          shareBtn.textContent = '⚠️ Intenta de nuevo';
+        }
+      } finally {
+        setTimeout(() => {
+          shareBtn.textContent = '📤 Compartir QR';
+        }, 1800);
+      }
+    });
+  }
+
+
+  // ------------------------------
   // COTIZADOR DE VIAJES: "DON CHUCHO"
   // ------------------------------
   function initCotizador() {
@@ -316,6 +357,7 @@
       document.body.appendChild(container);
     }
 
+    initQrShare();
     initCotizador();
     initTransporte();
     initMapObserver();
