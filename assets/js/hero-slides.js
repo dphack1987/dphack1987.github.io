@@ -1,3 +1,6 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const sliderContainer = document.getElementById('hero-slider');
+    if (sliderContainer) {
 // Lista generada de imágenes publicitarias (png/jpg) en pautas_publicitarias
 const HERO_SLIDES = [
   "pautas_publicitarias/agencias_de_turismo/agencia_operador_turistico_quindiotravel.png",
@@ -211,3 +214,8 @@ if (document.readyState === 'loading') {
 } else {
   initHeroSlider();
 }
+
+    } else {
+        console.log('Hero slider no encontrado, omitiendo.');
+    }
+});
