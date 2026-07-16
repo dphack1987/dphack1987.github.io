@@ -65,9 +65,12 @@
     const personas = options.personas || "2-4";
     const fecha = options.fecha || "próximos días";
     const presupuesto = options.presupuesto || "consultar";
+    const origin = options.origin || "MapaQuindio";
+    const municipio = options.municipio || "Quindío";
+    const pageId = options.pageId || "general";
 
     const mensaje = encodeURIComponent(
-      `Hola ${negocio.nombre},\nvi tu perfil en el Mapa Turístico del Quindío 🗺️.\nMi nombre es ${nombre}, somos ${personas} personas, planeamos ir el ${fecha} y mi presupuesto es ${presupuesto}.`
+      `Hola ${negocio.nombre},\nvi tu perfil en el Mapa Turístico del Quindío 🗺️.\nMi nombre es ${nombre}, somos ${personas} personas, planeamos ir el ${fecha} y mi presupuesto es ${presupuesto}.\nOrigen: ${origin} | Municipio: ${municipio} | Página: ${pageId}`
     );
 
     const telefono = negocio.whatsapp || negocio.telefono || "";
