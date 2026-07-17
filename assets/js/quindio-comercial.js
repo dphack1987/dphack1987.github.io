@@ -72,6 +72,8 @@ window.renderCommercialCardHTML = function(n) {
   const galleryButton = mediaExists ? `<button type="button" class="btn-secondary" onclick="openMediaModal('${n.id}', 'gallery')">🖼️ Ver galería</button>` : '';
   const galleryBadge = mediaExists ? `<span class="biz-media-badge">+ Galería</span>` : '';
 
+  const servicios = Array.isArray(n.servicios) ? n.servicios : [];
+
   return `
     <div class="biz-card-img-wrap">
       <img src="${n.imagen}" alt="${n.nombre}" class="biz-card-img" loading="lazy">
@@ -82,7 +84,7 @@ window.renderCommercialCardHTML = function(n) {
       <div class="biz-tipo">${n.tipo} · ${n.municipio}</div>
       <h3>${n.nombre}</h3>
       <p>${n.descripcion || n.desc || ''}</p>
-      <div class="biz-servicios">${n.servicios.slice(0,4).map(s => `<span class="biz-tag">${s}</span>`).join('')}</div>
+      <div class="biz-servicios">${servicios.slice(0,4).map(s => `<span class="biz-tag">${s}</span>`).join('')}</div>
       <div class="biz-meta-row">
         <div class="biz-precio">💰 ${n.precio}</div>
         <div class="biz-actions-row">${galleryButton}${videoButton}${instaButton}</div>
