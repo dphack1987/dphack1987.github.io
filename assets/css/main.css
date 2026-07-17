@@ -109,8 +109,33 @@ a{text-decoration:none;color:inherit}
 .nav-drawer a{padding:14px 18px;border-radius:14px;font-weight:600;color:#064e3b;font-size:1rem;transition:all .2s}
 .nav-drawer a:hover{background:#f0fdf4;color:#059669}
 @media(max-width:768px){
+  .hero {
+    padding: 120px 16px 80px;
+  }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .hero-title {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+  .hero-desc {
+    font-size: 1rem;
+  }
+  .hero-btns {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .hero-btns a {
+    width: 100%;
+    text-align: center;
+  }
+  .hero-stats {
+    gap: 16px;
+    justify-content: center;
+  }
   .menu-bar{display:none!important}
-  .nav-toggle{display:flex!important;order:2;padding:12px 14px;border-radius:16px;border:1px solid rgba(16,185,129,.2);background:#ffffff;box-shadow:0 12px 30px rgba(16,185,129,.12);}
+  .nav-toggle{display:flex!important;order:2;padding:12px 14px;border-radius:16px;border:1px solid rgba(16,185,129,0.2);background:#ffffff;box-shadow:0 12px 30px rgba(16,185,129,.12);}
   .nav-toggle span{width:28px;height:3px}
   .nav-drawer{position:fixed;inset:0;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);padding:120px 20px 20px;overflow-y:auto;z-index:10002;display:none;flex-direction:column;align-items:stretch;}
   .nav-drawer.open{display:flex}
@@ -140,6 +165,9 @@ a{text-decoration:none;color:inherit}
   .nav-logo img{height:40px}
   .header-top{justify-content:space-between;align-items:center;flex-wrap:nowrap;gap:10px;padding:12px 16px}
   .header-top::after{content:'';display:none}
+  .cat-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  .paisajes-strip{grid-template-columns:repeat(2,1fr)}
+  .dest-grid{grid-template-columns:1fr}
 }
 
 /* ── PAGE HERO ── */
@@ -1270,8 +1298,23 @@ a,button,.nav-toggle,.filtro-btn{min-width:var(--touch-target);min-height:var(--
   .hero-stats { gap: 24px; }
 }
 @media (max-width: 480px) {
+  .hero {
+    padding: 100px 12px 60px;
+  }
+  .hero-title {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+  .hero-badge {
+    font-size: 0.75rem;
+    padding: 6px 16px;
+  }
   .cat-grid { grid-template-columns: 1fr; }
   .paisajes-strip { grid-template-columns: 1fr; }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
 }
 /* --- INICIO PARCHE ZENYTHOS 2.0 (INTEGRACIÓN) --- */
 
