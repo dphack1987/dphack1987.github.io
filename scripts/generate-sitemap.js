@@ -36,15 +36,27 @@ const STATIC_PAGES = [
   'transporte-aeropuerto-armenia.html'
 ].filter(p => isAllowedPath(p));
 
-const staticUrls = STATIC_PAGES.map(page => {
-  const loc = page === '' ? BASE_URL : `${BASE_URL}/${page}`;
+const staticUrls = [];
+
+// Agregar la URL principal primero con la máxima prioridad
+const homeFilePath = path.join(__dirname, '../index.html');
+let homeLastmod = new Date().toISOString().split('T')[0];
+if (fs.existsSync(homeFilePath)) {
+  const stats = fs.statSync(homeFilePath);
+  homeLastmod = stats.mtime.toISOString().split('T')[0];
+}
+staticUrls.push(`  <url>\n    <loc>${BASE_URL}/</loc>\n    <lastmod>${homeLastmod}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>`);
+
+// Agregar el resto de las páginas estáticas
+STATIC_PAGES.filter(page => page !== '').forEach(page => {
+  const loc = `${BASE_URL}/${page}`;
   let lastmod = new Date().toISOString().split('T')[0];
-  const filePath = path.join(__dirname, '../', page || 'index.html');
+  const filePath = path.join(__dirname, '../', page);
   if (fs.existsSync(filePath)) {
     const stats = fs.statSync(filePath);
     lastmod = stats.mtime.toISOString().split('T')[0];
   }
-  return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>${page === '' ? '1.0' : '0.9'}</priority>\n  </url>`;
+  staticUrls.push(`  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>`);
 });
 
 let municipioUrls = [];
