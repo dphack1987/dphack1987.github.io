@@ -10,7 +10,15 @@
       {
         "filename": "buen_vuelo_tours.png",
         "file": "./pautas_publicitarias/agencias_de_turismo/buen_vuelo_tours.png",
-        "matched": false
+        "matched": true,
+        "pautante": {
+          "id": "buen-vuelo-tours",
+          "nombre": "Buen Vuelo Tours",
+          "telefono": "+57 301 204 2819",
+          "whatsapp": "573012042819",
+          "maps": "https://maps.google.com/?q=Buen+Vuelo+Tours+Armenia",
+          "imagen_field": "./pautas_publicitarias/agencias_de_turismo/buen_vuelo_tours.png"
+        }
       },
       {
         "filename": "del_eje.png",
@@ -25,7 +33,15 @@
       {
         "filename": "juan_arrubla.png",
         "file": "./pautas_publicitarias/agencias_de_turismo/juan_arrubla.png",
-        "matched": false
+        "matched": true,
+        "pautante": {
+          "id": "juan-arrubla",
+          "nombre": "Juan Arrubla",
+          "telefono": "+57 321 899 5839",
+          "whatsapp": "573218995839",
+          "maps": "https://maps.google.com/?q=Juan+Arrubla+Armenia",
+          "imagen_field": "./pautas_publicitarias/agencias_de_turismo/juan_arrubla.png"
+        }
       },
       {
         "filename": "viajes_turismo_enlaces.png",
@@ -47,7 +63,7 @@
           "telefono": "+57 315 699 9060",
           "whatsapp": "573156999060",
           "maps": "https://maps.google.com/?q=Casa+Campestre+La+Cosecha+Quindio",
-          "imagen_field": "./pautas_publicitarias/Alquiler_de_fincas/casa_campestre_lacosecha.png"
+          "imagen_field": "./pautas_publicitarias/Alquiler_de_fincas_quindio/casa_campestre_lacosecha.png"
         }
       },
       {
@@ -60,13 +76,21 @@
           "telefono": "+57 313 425 3669",
           "whatsapp": "573134253669",
           "maps": "https://maps.google.com/?q=Finca+El+Ocaso+Salento",
-          "imagen_field": "./pautas_publicitarias/Alquiler_de_fincas/finca_cafetera_el_ocaso.png"
+          "imagen_field": "./pautas_publicitarias/Alquiler_de_fincas_quindio/finca_cafetera_el_ocaso.png"
         }
       },
       {
         "filename": "finca_la_floresta.png",
         "file": "./pautas_publicitarias/Alquiler_de_fincas_quindio/finca_la_floresta.png",
-        "matched": false
+        "matched": true,
+        "pautante": {
+          "id": "la-floresta-hotel-campestre",
+          "nombre": "La Floresta Hotel Campestre",
+          "telefono": "+57 312 328 1021",
+          "whatsapp": "573123281021",
+          "maps": "https://maps.google.com/?q=Km+3+vía+Armenia+al+aeropuerto",
+          "imagen_field": "./pautas_publicitarias/Alquiler_de_fincas_quindio/finca_la_floresta.png"
+        }
       },
       {
         "filename": "hacienda_moraleja.png",
@@ -78,36 +102,60 @@
           "telefono": "+57 320 683 4432",
           "whatsapp": "573206834432",
           "maps": "https://maps.google.com/?q=Hacienda+Moraleja+Calarca",
-          "imagen_field": "./pautas_publicitarias/Alquiler_de_fincas/hotel_delirio_campestre_quindio.png"
+          "imagen_field": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hacienda_moraleja.png"
         }
       },
       {
         "filename": "hotel_alma_nativa.png",
         "file": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_alma_nativa.png",
-        "matched": false
+        "matched": true,
+        "pautante": {
+          "id": "alma-nativa-hotel-campestre",
+          "nombre": "Alma Nativa Hotel Campestre",
+          "telefono": "+57 310 575 2469",
+          "whatsapp": "573105752469",
+          "maps": "https://maps.google.com/?q=Alma+Nativa+Hotel+Campestre+Calarca",
+          "imagen_field": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_alma_nativa.png"
+        }
       },
       {
         "filename": "hotel_cafe_cafe_campestre.png",
         "file": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_cafe_cafe_campestre.png",
         "matched": true,
         "pautante": {
-          "id": "la-floresta-hotel-campestre",
-          "nombre": "La Floresta Hotel Campestre",
-          "telefono": "+57 312 328 1021",
-          "whatsapp": "573123281021",
-          "maps": "https://maps.google.com/?q=Km+3+vía+Armenia+al+aeropuerto",
-          "imagen_field": "./pautas_publicitarias/Alquiler_de_fincas/hotel_cafe_cafe_campestre.png"
+          "id": "hotel-cafe-cafe",
+          "nombre": "Hotel Café Café Campestre",
+          "telefono": "+57 311 418 7558",
+          "whatsapp": "573114187558",
+          "maps": "https://maps.google.com/?q=Hotel+Café+Café+Campestre+Quindio",
+          "imagen_field": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_cafe_cafe_campestre.png"
         }
       },
       {
         "filename": "hotel_deliriocampestre.png",
         "file": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_deliriocampestre.png",
-        "matched": false
+        "matched": true,
+        "pautante": {
+          "id": "hotel-delirio-campestre",
+          "nombre": "Hotel Delirio Campestre Quindío",
+          "telefono": "+57 320 256 8458",
+          "whatsapp": "573202568458",
+          "maps": "https://maps.google.com/?q=Hotel+Delirio+Campestre+Quindio",
+          "imagen_field": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_deliriocampestre.png"
+        }
       },
       {
         "filename": "hotel_linaje_salvaje.png",
         "file": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_linaje_salvaje.png",
-        "matched": false
+        "matched": true,
+        "pautante": {
+          "id": "linaje-salvaje",
+          "nombre": "Linaje Salvaje",
+          "telefono": "+57 313 732 1433",
+          "whatsapp": "573137321433",
+          "maps": "https://maps.google.com/?q=Linaje+Salvaje+Quindio",
+          "imagen_field": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_linaje_salvaje.png"
+        }
       }
     ]
   },
@@ -117,12 +165,28 @@
       {
         "filename": "artesanias_turronycafe.png",
         "file": "./pautas_publicitarias/artesanias/artesanias_turronycafe.png",
-        "matched": false
+        "matched": true,
+        "pautante": {
+          "id": "artesanias-turron-y-cafe",
+          "nombre": "Artesanías Turrón y Café",
+          "telefono": "+57 310 398 3619",
+          "whatsapp": "573103983619",
+          "maps": "https://maps.google.com/?q=Artesanías+Turrón+y+Café+Armenia",
+          "imagen_field": "./pautas_publicitarias/artesanias/artesanias_turronycafe.png"
+        }
       },
       {
         "filename": "ceramicas_alfarero.jpg",
         "file": "./pautas_publicitarias/artesanias/ceramicas_alfarero.jpg",
-        "matched": false
+        "matched": true,
+        "pautante": {
+          "id": "ceramicas-el-alfarero",
+          "nombre": "Cerámicas El Alfarero",
+          "telefono": "+57 320 617 8498",
+          "whatsapp": "573206178498",
+          "maps": "https://maps.google.com/?q=Cerámicas+El+Alfarero+Circasia",
+          "imagen_field": "./pautas_publicitarias/artesanias/ceramicas_alfarero.jpg"
+        }
       }
     ]
   },
@@ -261,11 +325,11 @@
     ]
   },
   "centros_comerciales": {
-    "displayName": "Centros Comerciales",
+    "displayName": "Centros_Comerciales",
     "items": [
       {
         "filename": "centro_comercial_sansur.png",
-        "file": "./pautas_publicitarias/Centros Comerciales/centro_comercial_sansur.png",
+        "file": "./pautas_publicitarias/Centros_Comerciales/centro_comercial_sansur.png",
         "matched": true,
         "pautante": {
           "id": "centro-comercial-sansur",
@@ -278,8 +342,16 @@
       },
       {
         "filename": "centro_comercial_unicentro.png",
-        "file": "./pautas_publicitarias/Centros Comerciales/centro_comercial_unicentro.png",
-        "matched": false
+        "file": "./pautas_publicitarias/Centros_Comerciales/centro_comercial_unicentro.png",
+        "matched": true,
+        "pautante": {
+          "id": "unicentro-armenia",
+          "nombre": "Unicentro Armenia",
+          "telefono": "+57 300 000 0101",
+          "whatsapp": "5730000000101",
+          "maps": "https://www.unicentrodearmenia.com",
+          "imagen_field": "./pautas_publicitarias/Centros_Comerciales/centro_comercial_unicentro.png"
+        }
       }
     ]
   },
@@ -416,11 +488,11 @@
     ]
   },
   "deportes_y_entretenimiento": {
-    "displayName": "Deportes y entretenimiento",
+    "displayName": "Deportes_y_entretenimiento",
     "items": [
       {
         "filename": "camino_al_futbol.png",
-        "file": "./pautas_publicitarias/Deportes y entretenimiento/camino_al_futbol.png",
+        "file": "./pautas_publicitarias/Deportes_y_entretenimiento/camino_al_futbol.png",
         "matched": true,
         "pautante": {
           "id": "camino-al-futbol",
@@ -433,7 +505,7 @@
       },
       {
         "filename": "Complejo_Turístico_y_Deportivo_Soledén.png",
-        "file": "./pautas_publicitarias/Deportes y entretenimiento/Complejo_Turístico_y_Deportivo_Soledén.png",
+        "file": "./pautas_publicitarias/Deportes_y_entretenimiento/Complejo_Turístico_y_Deportivo_Soledén.png",
         "matched": true,
         "pautante": {
           "id": "complejo-soleden",
@@ -508,7 +580,7 @@
           "telefono": "+57 320 683 4432",
           "whatsapp": "573206834432",
           "maps": "https://maps.google.com/?q=Hacienda+Moraleja+Calarca",
-          "imagen_field": "./pautas_publicitarias/Alquiler_de_fincas/hotel_delirio_campestre_quindio.png"
+          "imagen_field": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hacienda_moraleja.png"
         }
       }
     ]
@@ -539,22 +611,17 @@
         "file": "./pautas_publicitarias/hoteles_armenia/hotel_el_bosque_armenia.png",
         "matched": true,
         "pautante": {
-          "id": "hotel-el-bosque",
-          "nombre": "Hotel El Bosque",
-          "telefono": "+57 317 647 1482",
-          "whatsapp": "573176471482",
-          "maps": "https://maps.google.com/?q=Hotel+El+Bosque+Armenia",
+          "id": "armont",
+          "nombre": "Hotel Armont",
+          "telefono": "+57 300 000 0001",
+          "whatsapp": "573000000001",
+          "maps": "https://maps.google.com/?q=Hotel+Armont+Calarca",
           "imagen_field": "./pautas_publicitarias/hoteles_armenia/hotel_el_bosque_armenia.png"
         }
       },
       {
         "filename": "hotel_isa_victory.png",
         "file": "./pautas_publicitarias/hoteles_armenia/hotel_isa_victory.png",
-        "matched": false
-      },
-      {
-        "filename": "hotel_san_jeronimo.png",
-        "file": "./pautas_publicitarias/hoteles_armenia/hotel_san_jeronimo.png",
         "matched": true,
         "pautante": {
           "id": "isa-victory-hotel",
@@ -562,7 +629,7 @@
           "telefono": "+57 320 770 7079",
           "whatsapp": "573207707079",
           "maps": "https://maps.google.com/?q=Isa+Victory+Hotel+Armenia",
-          "imagen_field": "./pautas_publicitarias/hoteles_armenia/hotel_san_jerónimo.png"
+          "imagen_field": "./pautas_publicitarias/hoteles_armenia/hotel_isa_victory.png"
         }
       }
     ]
@@ -628,7 +695,7 @@
           "nombre": "Artesanías Turrón y Café",
           "telefono": "+57 310 398 3619",
           "whatsapp": "573103983619",
-          "maps": "https://maps.google.com/?q=Artesan%C3%ADas+Turr%C3%B3n+y+Caf%C3%A9+Armenia",
+          "maps": "https://maps.google.com/?q=Artesanías+Turrón+y+Café+Armenia",
           "imagen_field": "./pautas_publicitarias/artesanias/artesanias_turronycafe.png"
         }
       },

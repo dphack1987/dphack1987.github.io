@@ -1,73 +1,7 @@
 (function() {
-  const HERO_SLIDES = [
-    "/pautas_publicitarias/agencias_de_turismo/agencia_operador_turistico_quindiotravel.png",
-    "/pautas_publicitarias/agencias_de_turismo/buen_vuelo_tours.png",
-    "/pautas_publicitarias/agencias_de_turismo/del_eje.png",
-    "/pautas_publicitarias/agencias_de_turismo/juan_arrubla.png",
-    "/pautas_publicitarias/agencias_de_turismo/viajes_turismo_enlaces.png",
-    "/pautas_publicitarias/Alquiler_de_fincas_quindio/casa_campestre_lacosecha.png",
-    "/pautas_publicitarias/Alquiler_de_fincas_quindio/finca_cafetera_el_ocaso.png",
-    "/pautas_publicitarias/Alquiler_de_fincas_quindio/finca_la_floresta.png",
-    "/pautas_publicitarias/Alquiler_de_fincas_quindio/hacienda_moraleja.png",
-    "/pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_alma_nativa.png",
-    "/pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_cafe_cafe_campestre.png",
-    "/pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_deliriocampestre.png",
-    "/pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_linaje_salvaje.png",
-    "/pautas_publicitarias/artesanias/artesanias_turronycafe.png",
-    "/pautas_publicitarias/artesanias/ceramicas_alfarero.jpg",
-    "/pautas_publicitarias/atractivos_turisticos/cascadas_rio_verde.png",
-    "/pautas_publicitarias/atractivos_turisticos/Complejo_Turístico_y_Deportivo_Soledén.png",
-    "/pautas_publicitarias/atractivos_turisticos/eco_parque_peñas_blancas.png",
-    "/pautas_publicitarias/atractivos_turisticos/finca_las_flores.png",
-    "/pautas_publicitarias/atractivos_turisticos/Granja_agricola_mama_lulu.png",
-    "/pautas_publicitarias/atractivos_turisticos/jardin_botanico_del_quindio.png",
-    "/pautas_publicitarias/atractivos_turisticos/laberinto_mil_caminos.png",
-    "/pautas_publicitarias/atractivos_turisticos/mirador_encanto_filandia.png",
-    "/pautas_publicitarias/atractivos_turisticos/panaca.png",
-    "/pautas_publicitarias/atractivos_turisticos/parque_los_arrieros.png",
-    "/pautas_publicitarias/atractivos_turisticos/quinti_casa_patasarriba.png",
-    "/pautas_publicitarias/atractivos_turisticos/recorrido_cacaotero.png",
-    "/pautas_publicitarias/atractivos_turisticos/recorrido_de_la_cultura_cafetera.png",
-    "/pautas_publicitarias/Centros Comerciales/centro_comercial_sansur.png",
-    "/pautas_publicitarias/Centros Comerciales/centro_comercial_unicentro.png",
-    "/pautas_publicitarias/Cocteles_licores/boutique_licores_doscielos.png",
-    "/pautas_publicitarias/Cocteles_licores/cantina_el_desmadre.png",
-    "/pautas_publicitarias/Cocteles_licores/lafogata_circasia.png",
-    "/pautas_publicitarias/Cocteles_licores/la_fogata.png",
-    "/pautas_publicitarias/Comidas_Rapidas/arepa_town.png",
-    "/pautas_publicitarias/Comidas_Rapidas/jhon_chewing_food.png",
-    "/pautas_publicitarias/Comidas_Rapidas/mostricos.png",
-    "/pautas_publicitarias/Comidas_Rapidas/sanduches_sandukes.png",
-    "/pautas_publicitarias/comida_de_mar/restaurante_magangue.png",
-    "/pautas_publicitarias/Deportes y entretenimiento/camino_al_futbol.png",
-    "/pautas_publicitarias/Deportes y entretenimiento/Complejo_Turístico_y_Deportivo_Soledén.png",
-    "/pautas_publicitarias/Gastronomia_tipica/restaurante_el_fogon.png",
-    "/pautas_publicitarias/Gastronomia_tipica/restaurante_el_roble.png",
-    "/pautas_publicitarias/Gastronomia_tipica/restaurante_la_feria_del_platano.png",
-    "/pautas_publicitarias/glamping/eco_parque_peñas_blancas.png",
-    "/pautas_publicitarias/glamping/hacienda_moraleja.png",
-    "/pautas_publicitarias/grupos_musicales/orquesta_quinta_base.png",
-    "/pautas_publicitarias/hoteles_armenia/hotel_el_bosque_armenia.png",
-    "/pautas_publicitarias/hoteles_armenia/hotel_isa_victory.png",
-    "/pautas_publicitarias/hoteles_armenia/hotel_san_jeronimo.png",
-    "/pautas_publicitarias/postres_y_dulces/reina__querida.png",
-    "/pautas_publicitarias/seguros/seguros_confia.png",
-    "/pautas_publicitarias/Tiendas_de_cafe/anatolia.png",
-    "/pautas_publicitarias/Tiendas_de_cafe/artesanias_turronycafe.png",
-    "/pautas_publicitarias/Tiendas_de_cafe/cafe_la_terraza.png",
-    "/pautas_publicitarias/Tiendas_de_cafe/cafe_sensorial.png",
-    "/pautas_publicitarias/Tiendas_de_cafe/queso_y_cafe.png",
-    "/pautas_publicitarias/Tiendas_de_cafe/tienda_de_cafe_y_academia_cafeina.png",
-    "/pautas_publicitarias/Transportes/del_eje.png",
-    "/pautas_publicitarias/Transportes/radio_taxi.png",
-    "/pautas_publicitarias/Transportes/rutas_y_turismo.png",
-    "/pautas_publicitarias/Transportes/transportes_joselu.png",
-    "/pautas_publicitarias/Transportes/transportes_mocca.png",
-    "/pautas_publicitarias/Transportes/transportes_union_cafetera.png"
-  ];
-
-  const uniqueSlides = Array.from(new Set(HERO_SLIDES));
-  const MAX_INITIAL_SLIDES = 8;
+  const SLIDES_DATA_URL = '/assets/js/hero-slides-data.json';
+  const MAX_INITIAL_SLIDES = 5;
+  let slidesData = [];
   let currentSlideIndex = 0;
   let slideInterval = null;
   let slidesLoaded = false;
@@ -81,44 +15,66 @@
     return '/' + trimmed.replace(/^\.?\//, '');
   }
 
-  function createSlideElement(imageSrc, index) {
+  function createSlideElement(slideData, index) {
     const slide = document.createElement('div');
     slide.className = 'hero-slide' + (index === 0 ? ' active' : '');
+    slide.setAttribute('role', 'presentation');
     slide.setAttribute('aria-hidden', index === 0 ? 'false' : 'true');
-    slide.innerHTML = '<img src="' + resolveAssetPath(imageSrc) + '" alt="Publicidad del Quindío - Slide ' + (index + 1) + '" loading="' + (index === 0 ? 'eager' : 'lazy') + '"><div class="hero-slide-meta"><span>Publicidad destacada</span></div>';
+    slide.innerHTML =
+      '<img src="' + resolveAssetPath(slideData.src) + '" alt="' + slideData.alt + '" loading="' + (index === 0 ? 'eager' : 'lazy') + '" aria-hidden="true">' +
+      '<div class="hero-slide-meta"><span>' + slideData.caption + '</span></div>';
     return slide;
   }
 
   function appendSlides(container, startIndex, endIndex) {
     for (let i = startIndex; i < endIndex; i++) {
-      const slide = createSlideElement(uniqueSlides[i], i);
+      if (!slidesData[i]) continue;
+      const slide = createSlideElement(slidesData[i], i);
       container.appendChild(slide);
     }
-    if (endIndex >= uniqueSlides.length) {
+    if (endIndex >= slidesData.length) {
       slidesLoaded = true;
     }
   }
 
   function ensureAllSlidesLoaded() {
     if (slidesLoaded || !sliderContainerRef) return;
-    appendSlides(sliderContainerRef, MAX_INITIAL_SLIDES, uniqueSlides.length);
+    appendSlides(sliderContainerRef, MAX_INITIAL_SLIDES, slidesData.length);
     slidesLoaded = true;
   }
 
-  function initHeroSlider() {
+  function loadSlidesData() {
+    return fetch(SLIDES_DATA_URL, { cache: 'force-cache' })
+      .then(response => {
+        if (!response.ok) throw new Error('Failed to load hero slides data');
+        return response.json();
+      })
+      .then(data => {
+        slidesData = Array.isArray(data) ? data : [];
+      })
+      .catch(error => {
+        console.error('Error loading hero slides data:', error);
+        slidesData = [];
+      });
+  }
+
+  async function initHeroSlider() {
     sliderContainerRef = document.getElementById('hero-slider');
     const counterCurrent = document.getElementById('hero-slide-current');
     const counterTotal = document.getElementById('hero-slide-total');
     const prevBtn = document.getElementById('hero-slide-prev');
     const nextBtn = document.getElementById('hero-slide-next');
 
-    if (!sliderContainerRef || !uniqueSlides.length) return;
+    if (!sliderContainerRef) return;
+
+    await loadSlidesData();
+    if (!slidesData.length) return;
 
     sliderContainerRef.innerHTML = '';
-    appendSlides(sliderContainerRef, 0, Math.min(uniqueSlides.length, MAX_INITIAL_SLIDES));
-    if (uniqueSlides.length <= MAX_INITIAL_SLIDES) slidesLoaded = true;
+    appendSlides(sliderContainerRef, 0, Math.min(slidesData.length, MAX_INITIAL_SLIDES));
+    if (slidesData.length <= MAX_INITIAL_SLIDES) slidesLoaded = true;
 
-    if (counterTotal) counterTotal.textContent = uniqueSlides.length;
+    if (counterTotal) counterTotal.textContent = slidesData.length;
     if (counterCurrent) counterCurrent.textContent = '1';
 
     if (prevBtn) {
@@ -139,6 +95,16 @@
 
     sliderContainerRef.addEventListener('mouseenter', stopAutoplay);
     sliderContainerRef.addEventListener('mouseleave', startAutoplay);
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        if (entries.some(entry => entry.isIntersecting)) {
+          ensureAllSlidesLoaded();
+          observer.disconnect();
+        }
+      }, { rootMargin: '200px' });
+      observer.observe(sliderContainerRef);
+    }
 
     document.addEventListener('keydown', function(event) {
       if (event.key === 'ArrowLeft') {
