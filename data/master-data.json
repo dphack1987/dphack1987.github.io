@@ -24,6 +24,19 @@
       ],
       "textoSeo": "Armenia es la base ideal para descubrir hoteles, restaurantes, transporte y atractivos del Quindío. Desde la ciudad puedes llegar con facilidad a fincas, parques y rutas del Eje Cafetero.",
       "banner": "./assets/images/paisajes/48159.jpg",
+      "ctaPrincipal": {
+        "texto": "Reservar alojamiento en Armenia",
+        "url": "./alojamientos.html"
+      },
+      "ctaSecundaria": {
+        "texto": "Solicitar transporte",
+        "url": "./empresas-de-transporte.html"
+      },
+      "destacados": [
+        "Alojamientos",
+        "Transporte",
+        "Sitios turísticos"
+      ],
       "author": {
         "name": "Equipo Mapa Turístico del Quindío",
         "email": "contacto@mapaturisticodelquindio.com",
@@ -57,6 +70,19 @@
       ],
       "textoSeo": "Circasia combina arquitectura, paisaje y tradición en un municipio perfecto para recorrer en un día o en una escapada de fin de semana por el Quindío.",
       "banner": "./assets/images/paisajes/56855.jpg",
+      "ctaPrincipal": {
+        "texto": "Explorar Circasia",
+        "url": "./alojamientos.html"
+      },
+      "ctaSecundaria": {
+        "texto": "Ver sitios turísticos",
+        "url": "./sitios-turisticos.html"
+      },
+      "destacados": [
+        "Pueblo patrimonial",
+        "Cultura",
+        "Naturaleza"
+      ],
       "author": {
         "name": "Equipo Mapa Turístico del Quindío",
         "email": "contacto@mapaturisticodelquindio.com",
@@ -90,6 +116,19 @@
       ],
       "textoSeo": "Salento es uno de los municipios más visitados del Quindío, ideal para turismo de naturaleza, fotografía, gastronomía y escapadas románticas.",
       "banner": "./assets/images/paisajes/10834.jpg",
+      "ctaPrincipal": {
+        "texto": "Planear viaje a Salento",
+        "url": "./alojamientos.html"
+      },
+      "ctaSecundaria": {
+        "texto": "Ver rutas y sitios",
+        "url": "./sitios-turisticos.html"
+      },
+      "destacados": [
+        "Valle del Cocora",
+        "Gastronomía",
+        "Fotografía"
+      ],
       "author": {
         "name": "Equipo Mapa Turístico del Quindío",
         "email": "contacto@mapaturisticodelquindio.com",

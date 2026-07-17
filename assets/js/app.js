@@ -215,17 +215,29 @@
   function loadMapScripts() {
     if (mapLoaded) return;
 
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const mapElement = document.getElementById('mapa-interactivo');
+    if (!mapElement) return;
+
+    mapLoaded = true;
+
     const leafletCSS = document.createElement('link');
     leafletCSS.rel = 'stylesheet';
     leafletCSS.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    leafletCSS.media = 'print';
+    leafletCSS.onload = () => leafletCSS.media = 'all';
     document.head.appendChild(leafletCSS);
 
     const leafletJS = document.createElement('script');
     leafletJS.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-    leafletJS.onload = initMap;
+    leafletJS.async = true;
+    leafletJS.onload = () => {
+      if (!prefersReducedMotion) {
+        mapElement.classList.add('is-map-ready');
+      }
+      initMap();
+    };
     document.head.appendChild(leafletJS);
-    
-    mapLoaded = true;
   }
 
   function initMap() {
@@ -296,18 +308,21 @@
     const mapElement = document.getElementById('mapa-interactivo');
     if (!mapElement) return;
 
-    mapIntersectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          loadMapScripts();
-          mapIntersectionObserver.disconnect();
-        }
-      });
-    }, { rootMargin: '200px' });
-    
-    mapIntersectionObserver.observe(mapElement);
-    
-    // Cargar también al hacer hover/toque en móvil
+    if ('IntersectionObserver' in window) {
+      mapIntersectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            loadMapScripts();
+            mapIntersectionObserver.disconnect();
+          }
+        });
+      }, { rootMargin: '180px 0px' });
+
+      mapIntersectionObserver.observe(mapElement);
+    } else {
+      loadMapScripts();
+    }
+
     mapElement.addEventListener('mouseenter', loadMapScripts, { once: true });
     mapElement.addEventListener('touchstart', loadMapScripts, { once: true });
   }

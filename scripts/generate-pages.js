@@ -79,6 +79,26 @@ function escapeHtmlAttribute(value) {
     .replace(/>/g, '&gt;');
 }
 
+function buildSeoMetaTags(titleText, descriptionText, canonicalUrl, keywords = []) {
+  const safeTitle = escapeHtmlAttribute(titleText || '');
+  const safeDescription = escapeHtmlAttribute(descriptionText || '');
+  const safeCanonical = escapeHtmlAttribute(canonicalUrl || '');
+  const safeKeywords = escapeHtmlAttribute((keywords || []).join(', '));
+
+  return `
+  <meta name="description" content="${safeDescription}">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta property="og:title" content="${safeTitle}">
+  <meta property="og:description" content="${safeDescription}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="${safeCanonical}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${safeTitle}">
+  <meta name="twitter:description" content="${safeDescription}">
+  ${safeKeywords ? `<meta name="keywords" content="${safeKeywords}">` : ''}
+  `;
+}
+
 function getCachedDistance(lat1, lon1, lat2, lon2) {
   // Crear key única (con rounding para usar menos memoria)
   const key = `${lat1.toFixed(4)}_${lon1.toFixed(4)}_${lat2.toFixed(4)}_${lon2.toFixed(4)}`;
@@ -449,6 +469,7 @@ const TEMPLATES = {
       `Descubre ${municipio.nombre} en el Quindío, Quindío. Encuentra los mejores planes, atractivos y servicios turísticos en esta región de la Zona Cafetera.`,
       155
     );
+    const canonicalUrl = `https://www.mapaturisticodelquindio.com/municipios/${municipio.slug}.html`;
 
     return `
 <!DOCTYPE html>
@@ -457,11 +478,9 @@ const TEMPLATES = {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${escapeHtmlAttribute(titleText)}</title>
-  <meta name="description" content="${escapeHtmlAttribute(descriptionText)}">
-  <meta name="keywords" content="${escapeHtmlAttribute(municipio.palabrasClave.join(', '))}">
-  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-  <link rel="alternate" hreflang="es" href="https://www.mapaturisticodelquindio.com/municipios/${municipio.slug}.html">
-  <link rel="canonical" href="https://www.mapaturisticodelquindio.com/municipios/${municipio.slug}.html">
+  ${buildSeoMetaTags(titleText, descriptionText, canonicalUrl, municipio.palabrasClave)}
+  <link rel="alternate" hreflang="es" href="${canonicalUrl}">
+  <link rel="canonical" href="${canonicalUrl}">
   <meta name="theme-color" content="#059669">
   <link rel="stylesheet" href="../assets/css/main.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
@@ -502,6 +521,18 @@ const TEMPLATES = {
         <p style="color: #374151; font-size: 18px; line-height: 1.8; margin: 0;">
           ${CONSEJOS_LOCAL[municipio.id] || `Consejo de Local: ¡Disfruta ${municipio.nombre}! Lleva protector solar, agua y tu cámara. Las mejores fotos son al amanecer.`}
         </p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 0 24px 24px;">
+    <div style="max-width: 1000px; margin: 0 auto; background: linear-gradient(135deg, #064e3b 0%, #059669 100%); border-radius: 24px; padding: 28px; color: white; box-shadow: 0 16px 50px rgba(5, 150, 105, 0.2);">
+      <h2 style="margin: 0 0 10px; font-size: 24px; font-weight: 800;">Reserva directa y sin intermediarios</h2>
+      <p style="margin: 0 0 20px; color: rgba(255,255,255,0.92); line-height: 1.7;">Planea tu visita a ${municipio.nombre} con alojamiento, transporte y experiencias cercanas en un solo lugar.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+        <a href="../alojamientos.html" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; border-radius: 999px; background: white; color: #064e3b; font-weight: 700; text-decoration: none;">🏨 Ver alojamientos</a>
+        <a href="../empresas-de-transporte.html" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; border-radius: 999px; background: rgba(255,255,255,0.16); color: white; font-weight: 700; text-decoration: none; border: 1px solid rgba(255,255,255,0.25);">🚍 Solicitar transporte</a>
+        <a href="../sitios-turisticos.html" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; border-radius: 999px; background: rgba(255,255,255,0.16); color: white; font-weight: 700; text-decoration: none; border: 1px solid rgba(255,255,255,0.25);">🎡 Ver sitios turísticos</a>
       </div>
     </div>
   </section>
@@ -578,6 +609,7 @@ const TEMPLATES = {
       `${negocio.nombre} en ${municipio.nombre}, Quindío. Reserva directo con un contacto seguro y descubre su oferta turística en el corazón del Eje Cafetero.`,
       155
     );
+    const canonicalUrl = `https://www.mapaturisticodelquindio.com/negocios/${negocio.slug}.html`;
 
     return `
 <!DOCTYPE html>
@@ -586,11 +618,9 @@ const TEMPLATES = {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${escapeHtmlAttribute(titleText)}</title>
-  <meta name="description" content="${escapeHtmlAttribute(descriptionText)}">
-  <meta name="keywords" content="${escapeHtmlAttribute(negocio.palabrasClave.join(', '))}">
-  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-  <link rel="alternate" hreflang="es" href="https://www.mapaturisticodelquindio.com/negocios/${negocio.slug}.html">
-  <link rel="canonical" href="https://www.mapaturisticodelquindio.com/negocios/${negocio.slug}.html">
+  ${buildSeoMetaTags(titleText, descriptionText, canonicalUrl, negocio.palabrasClave)}
+  <link rel="alternate" hreflang="es" href="${canonicalUrl}">
+  <link rel="canonical" href="${canonicalUrl}">
   <link rel="stylesheet" href="../assets/css/main.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
   <script type="application/ld+json">
@@ -614,7 +644,11 @@ const TEMPLATES = {
         </div>
       ` : ''}
       ${negocio.whatsapp ? `
-        <a href="https://wa.me/${negocio.whatsapp}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; padding: 14px 32px; background: #25D366; color: white; font-weight: 800; text-decoration: none; border-radius: 50px; transition: transform 0.3s;">💬 Contactar por WhatsApp</a>
+        <div style="margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px;">
+          <a href="https://wa.me/${negocio.whatsapp}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; background: #25D366; color: white; font-weight: 800; text-decoration: none; border-radius: 50px; transition: transform 0.3s;">💬 Contactar por WhatsApp</a>
+          <a href="../municipios/${municipio.slug}.html" style="display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; background: #064e3b; color: white; font-weight: 800; text-decoration: none; border-radius: 50px; transition: transform 0.3s;">🏡 Ver ${municipio.nombre}</a>
+          <a href="../alojamientos.html" style="display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; background: #f59e0b; color: white; font-weight: 800; text-decoration: none; border-radius: 50px; transition: transform 0.3s;">🛏️ Buscar alojamiento</a>
+        </div>
       ` : ''}
       <div style="margin-top: 24px; padding: 20px; background: #f8fafc; border-radius: 16px; border: 1px solid #e5e7eb;">
         <h3 style="color: #064e3b; font-weight: 800; margin: 0 0 8px;">📍 ¿Por qué elegir ${negocio.nombre}?</h3>

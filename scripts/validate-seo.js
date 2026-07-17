@@ -69,6 +69,22 @@ htmlFiles.forEach(filePath => {
   if (!schema) {
     warnings.push(`${relativePath}: Falta Schema JSON-LD`);
   }
+
+  // Validar imágenes con alt descriptivo
+  const images = Array.from(doc.querySelectorAll('img'));
+  const missingAltImages = images.filter(img => !img.getAttribute('alt') || !img.getAttribute('alt').trim());
+  if (missingAltImages.length > 0) {
+    warnings.push(`${relativePath}: ${missingAltImages.length} imagen(es) sin alt descriptivo`);
+  }
+
+  // Validar enlaces internos mínimos
+  const internalLinks = Array.from(doc.querySelectorAll('a[href]')).filter(link => {
+    const href = link.getAttribute('href') || '';
+    return href.startsWith('/') || href.startsWith('./') || href.startsWith('../') || href.endsWith('.html');
+  });
+  if (internalLinks.length < 2) {
+    warnings.push(`${relativePath}: pocas opciones de navegación interna detectadas`);
+  }
 });
 
 console.log(`📄 Analizadas ${htmlFiles.length} páginas`);
