@@ -1,13 +1,13 @@
 // Lista generada de imágenes publicitarias de fincas
 const HERO_SLIDES = [
-  "pautas_publicitarias/Alquiler_de_fincas_quindio/casa_campestre_lacosecha.png",
-  "pautas_publicitarias/Alquiler_de_fincas_quindio/finca_cafetera_el_ocaso.png",
-  "pautas_publicitarias/Alquiler_de_fincas_quindio/finca_la_floresta.png",
-  "pautas_publicitarias/Alquiler_de_fincas_quindio/hacienda_moraleja.png",
-  "pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_alma_nativa.png",
-  "pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_cafe_cafe_campestre.png",
-  "pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_deliriocampestre.png",
-  "pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_linaje_salvaje.png"
+  "/pautas_publicitarias/Alquiler_de_fincas_quindio/casa_campestre_lacosecha.png",
+  "/pautas_publicitarias/Alquiler_de_fincas_quindio/finca_cafetera_el_ocaso.png",
+  "/pautas_publicitarias/Alquiler_de_fincas_quindio/finca_la_floresta.png",
+  "/pautas_publicitarias/Alquiler_de_fincas_quindio/hacienda_moraleja.png",
+  "/pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_alma_nativa.png",
+  "/pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_cafe_cafe_campestre.png",
+  "/pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_deliriocampestre.png",
+  "/pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_linaje_salvaje.png"
 ];
 
 // Hero Slider Functionality
@@ -19,6 +19,13 @@ function clearAutoplay() {
     clearInterval(slideInterval);
     slideInterval = null;
   }
+}
+
+function resolveAssetPath(src) {
+  if (!src || typeof src !== 'string') return src;
+  const trimmed = src.trim();
+  if (/^(https?:)?\/\//i.test(trimmed) || trimmed.startsWith('/')) return trimmed;
+  return '/' + trimmed.replace(/^\.?\//, '');
 }
 
 function getSafeSlides() {
@@ -61,7 +68,7 @@ function initHeroSlider() {
       slide.className = `hero-slide ${index === 0 ? 'active' : ''}`;
       slide.setAttribute('aria-hidden', index !== 0);
       slide.innerHTML = `
-        <img src="${imageSrc}" alt="Finca del Quindío - Slide ${index + 1}" loading="${index === 0 ? 'eager' : 'lazy'}" onerror="this.style.display='none';">
+        <img src="${resolveAssetPath(imageSrc)}" alt="Finca del Quindío - Slide ${index + 1}" loading="${index === 0 ? 'eager' : 'lazy'}" onerror="this.style.display='none';">
         <div class="hero-slide-meta">
           <span>Publicidad destacada</span>
         </div>

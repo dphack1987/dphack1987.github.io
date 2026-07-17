@@ -13,7 +13,7 @@ function gatherImages(dir, relativePath = '') {
     if (entry.isDirectory()) {
       images = images.concat(gatherImages(fullPath, path.join(relativePath, entry.name)));
     } else if (/\.(png|jpg|jpeg)$/i.test(entry.name)) {
-      images.push(path.join('./pautas_publicitarias', relativePath, entry.name).replace(/\\/g, '/'));
+      images.push('/' + path.posix.join('pautas_publicitarias', relativePath, entry.name).replace(/\\/g, '/'));
     }
   }
 
@@ -28,6 +28,13 @@ const outputContent = `(function() {
   let currentSlideIndex = 0;
   let slideInterval = null;
   const AUTOPLAY_INTERVAL = 5000;
+
+  function resolveAssetPath(src) {
+    if (!src || typeof src !== 'string') return src;
+    const trimmed = src.trim();
+    if (/^(https?:)?\/\//i.test(trimmed) || trimmed.startsWith('/')) return trimmed;
+    return '/' + trimmed.replace(/^\.?\//, '');
+  }
 
   function initHeroSlider() {
     const sliderContainer = document.getElementById('hero-slider');
@@ -44,7 +51,7 @@ const outputContent = `(function() {
       const slide = document.createElement('div');
       slide.className = 'hero-slide' + (index === 0 ? ' active' : '');
       slide.setAttribute('aria-hidden', index === 0 ? 'false' : 'true');
-      slide.innerHTML = '<img src="' + imageSrc + '" alt="Publicidad del Quindío - Slide ' + (index + 1) + '" loading="' + (index === 0 ? 'eager' : 'lazy') + '"><div class="hero-slide-meta"><span>Publicidad destacada</span></div>';
+      slide.innerHTML = '<img src="' + resolveAssetPath(imageSrc) + '" alt="Publicidad del Quindío - Slide ' + (index + 1) + '" loading="' + (index === 0 ? 'eager' : 'lazy') + '"><div class="hero-slide-meta"><span>Publicidad destacada</span></div>';
       sliderContainer.appendChild(slide);
     });
 

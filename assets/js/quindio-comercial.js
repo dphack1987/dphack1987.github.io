@@ -1,19 +1,26 @@
+function resolveAssetPath(src) {
+  if (!src || typeof src !== 'string') return src;
+  const trimmed = src.trim();
+  if (/^(https?:)?\/\//i.test(trimmed) || trimmed.startsWith('/')) return trimmed;
+  return '/' + trimmed.replace(/^\.?\//, '');
+}
+
 const commercialHeroItems = [
   {
     type: 'image',
-    src: './pautas_publicitarias/Tiendas_de_cafe/anatolia.png',
+    src: resolveAssetPath('./pautas_publicitarias/Tiendas_de_cafe/anatolia.png'),
     title: 'Cafés especiales y ambiente local',
     subtitle: 'Descubre el mejor café del Quindío con servicio directo por WhatsApp.'
   },
   {
     type: 'image',
-    src: './pautas_publicitarias/Gastronomia_tipica/restaurante_el_fogon.png',
+    src: resolveAssetPath('./pautas_publicitarias/Gastronomia_tipica/restaurante_el_fogon.png'),
     title: 'Sabores típicos con historia',
     subtitle: 'Platos, postres y rutas gastronómicas para turistas exigentes.'
   },
   {
     type: 'image',
-    src: './pautas_publicitarias/artesanias/artesanias_turronycafe.png',
+    src: resolveAssetPath('./pautas_publicitarias/artesanias/artesanias_turronycafe.png'),
     title: 'Tiendas artesanales vibrantes',
     subtitle: 'Lleva un recuerdo auténtico de la región.'
   }
@@ -24,25 +31,37 @@ const commercialStories = [
     id: 'story-1',
     title: 'Menú estrella',
     subtitle: 'Sabores del Quindío',
-    image: './pautas_publicitarias/Gastronomia_tipica/restaurante_el_roble.png',
+    image: resolveAssetPath('./pautas_publicitarias/Gastronomia_tipica/restaurante_el_roble.png'),
     content: '<p>Conoce el menú que más piden los turistas: platos típicos, café artesanal y postres caseros.</p>',
-    media: ['./pautas_publicitarias/Gastronomia_tipica/restaurante_el_roble.png', './pautas_publicitarias/Gastronomia_tipica/restaurante_la_feria_del_platano.png', './pautas_publicitarias/postres_y_dulces/reina__querida.png']
+    media: [
+      resolveAssetPath('./pautas_publicitarias/Gastronomia_tipica/restaurante_el_roble.png'),
+      resolveAssetPath('./pautas_publicitarias/Gastronomia_tipica/restaurante_la_feria_del_platano.png'),
+      resolveAssetPath('./pautas_publicitarias/postres_y_dulces/reina__querida.png')
+    ]
   },
   {
     id: 'story-2',
     title: 'Ambiente ideal',
     subtitle: 'Café y confort',
-    image: './pautas_publicitarias/Tiendas_de_cafe/cafe_la_terraza.png',
+    image: resolveAssetPath('./pautas_publicitarias/Tiendas_de_cafe/cafe_la_terraza.png'),
     content: '<p>Ambientes creados para encuentros, trabajo remoto y después de un paseo turístico.</p>',
-    media: ['./pautas_publicitarias/Tiendas_de_cafe/cafe_la_terraza.png', './pautas_publicitarias/Tiendas_de_cafe/cafe_sensorial.png', './pautas_publicitarias/Tiendas_de_cafe/queso_y_cafe.png']
+    media: [
+      resolveAssetPath('./pautas_publicitarias/Tiendas_de_cafe/cafe_la_terraza.png'),
+      resolveAssetPath('./pautas_publicitarias/Tiendas_de_cafe/cafe_sensorial.png'),
+      resolveAssetPath('./pautas_publicitarias/Tiendas_de_cafe/queso_y_cafe.png')
+    ]
   },
   {
     id: 'story-3',
     title: 'Compras rápidas',
     subtitle: 'Productos locales',
-    image: './pautas_publicitarias/artesanias/ceramicas_alfarero.jpg',
+    image: resolveAssetPath('./pautas_publicitarias/artesanias/ceramicas_alfarero.jpg'),
     content: '<p>Encuentra ropa, artesanías y regalos en tiendas que atienden por reserva o WhatsApp.</p>',
-    media: ['./pautas_publicitarias/artesanias/ceramicas_alfarero.jpg', './pautas_publicitarias/artesanias/artesanias_turronycafe.png', './pautas_publicitarias/Centros Comerciales/centro_comercial_unicentro.png']
+    media: [
+      resolveAssetPath('./pautas_publicitarias/artesanias/ceramicas_alfarero.jpg'),
+      resolveAssetPath('./pautas_publicitarias/artesanias/artesanias_turronycafe.png'),
+      resolveAssetPath('./pautas_publicitarias/Centros Comerciales/centro_comercial_unicentro.png')
+    ]
   }
 ];
 
@@ -89,7 +108,7 @@ function renderHeroSlider() {
   slider.innerHTML = commercialHeroItems.map((item, index) => {
     return `
       <div class="hero-slide${index === 0 ? ' active' : ''}" data-index="${index}">
-        ${item.type === 'video' ? `<video src="${item.src}" autoplay muted loop playsinline poster="${item.poster || ''}" class="hero-slide-video"></video>` : `<img src="${item.src}" alt="${item.title}" loading="lazy">`}
+        ${item.type === 'video' ? `<video src="${resolveAssetPath(item.src)}" autoplay muted loop playsinline poster="${item.poster || ''}" class="hero-slide-video"></video>` : `<img src="${resolveAssetPath(item.src)}" alt="${item.title}" loading="lazy">`}
         <div class="hero-slide-copy">
           <strong>${item.title}</strong>
           <p>${item.subtitle}</p>
@@ -112,7 +131,7 @@ function renderStoryStrip() {
   if (!strip) return;
   strip.innerHTML = commercialStories.map(story => `
     <button type="button" class="story-item" onclick="openStory('${story.id}')">
-      <span class="story-thumb"><img src="${story.image}" alt="${story.title}" loading="lazy"></span>
+      <span class="story-thumb"><img src="${resolveAssetPath(story.image)}" alt="${story.title}" loading="lazy"></span>
       <span class="story-copy"><strong>${story.title}</strong><small>${story.subtitle}</small></span>
     </button>`).join('');
 }
@@ -141,11 +160,11 @@ window.openMediaModal = function(id, mode, story) {
   if (mode === 'video' && item && item.video) {
     content += `<video class="media-video" src="${item.video}" autoplay muted loop playsinline controls></video>`;
   } else if (mode === 'gallery' && item && Array.isArray(item.media) && item.media.length) {
-    content += '<div class="media-gallery">' + item.media.map(src => `<img src="${src}" loading="lazy" alt="Galería">`).join('') + '</div>';
+    content += '<div class="media-gallery">' + item.media.map(src => `<img src="${resolveAssetPath(src)}" loading="lazy" alt="Galería">`).join('') + '</div>';
   } else if (mode === 'story' && story) {
     content += `<div class="story-modal-copy"><h2>${story.title}</h2>${story.content}</div>`;
     if (Array.isArray(story.media) && story.media.length) {
-      content += '<div class="media-gallery">' + story.media.map(src => `<img src="${src}" loading="lazy" alt="Historia">`).join('') + '</div>';
+      content += '<div class="media-gallery">' + story.media.map(src => `<img src="${resolveAssetPath(src)}" loading="lazy" alt="Historia">`).join('') + '</div>';
     }
   } else {
     content += '<p>No hay medios disponibles.</p>';

@@ -18,7 +18,7 @@ function scanDirectory(dir, relativePath = '') {
       item.toLowerCase().endsWith('.jpg') ||
       item.toLowerCase().endsWith('.jpeg')
     ) {
-      const imagePath = path.join('./pautas_publicitarias', 'Alquiler_de_fincas_quindio', relativePath, item).replace(/\\/g, '/');
+      const imagePath = '/' + path.posix.join('pautas_publicitarias', 'Alquiler_de_fincas_quindio', relativePath, item).replace(/\\/g, '/');
       allImages.push(imagePath);
     }
   }
@@ -34,6 +34,13 @@ const HERO_SLIDES = ${JSON.stringify(allImages, null, 2)};
 // Hero Slider Functionality
 let currentSlideIndex = 0;
 let slideInterval;
+
+function resolveAssetPath(src) {
+  if (!src || typeof src !== 'string') return src;
+  const trimmed = src.trim();
+  if (/^(https?:)?\/\//i.test(trimmed) || trimmed.startsWith('/')) return trimmed;
+  return '/' + trimmed.replace(/^\.?\//, '');
+}
 
 function initHeroSlider() {
   const sliderContainer = document.getElementById('hero-slider');
@@ -51,7 +58,7 @@ function initHeroSlider() {
     slide.className = \`hero-slide \${index === 0 ? 'active' : ''}\`;
     slide.setAttribute('aria-hidden', index !== 0);
     slide.innerHTML = \`
-      <img src="\${imageSrc}" alt="Finca del Quindío - Slide \${index + 1}" loading="\${index === 0 ? 'eager' : 'lazy'}">
+      <img src="\${resolveAssetPath(imageSrc)}" alt="Finca del Quindío - Slide \${index + 1}" loading="\${index === 0 ? 'eager' : 'lazy'}">
       <div class="hero-slide-meta">
         <span>Publicidad destacada</span>
       </div>
