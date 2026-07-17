@@ -66,7 +66,14 @@
 
     const clean = trimmed.split('?')[0].split('#')[0];
     const direct = PATH_FIXES[clean] || PATH_FIXES['./' + clean.replace(/^\.\//, '')] || PATH_FIXES[clean.replace(/^\.\//, '')];
-    if (direct) return direct;
+    if (direct) {
+      return direct.replace(/^\.?\//, '/');
+    }
+
+    const absoluteRoot = clean.replace(/^(?:\.\.\/|\.\/)+/, '/');
+    if (/^(?:\/)?(pautas_publicitarias|pautas|assets)\//.test(clean)) {
+      return absoluteRoot.startsWith('/') ? absoluteRoot : `/${absoluteRoot}`;
+    }
 
     if (clean.includes('/Alquiler_de_fincas/')) return clean.replace('/Alquiler_de_fincas/', '/Alquiler_de_fincas_quindio/');
     if (clean.includes('/Centros_Comerciales/')) return clean.replace('/Centros_Comerciales/', '/Centros Comerciales/');

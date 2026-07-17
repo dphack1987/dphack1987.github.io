@@ -67,8 +67,11 @@
   ];
 
   const uniqueSlides = Array.from(new Set(HERO_SLIDES));
+  const MAX_INITIAL_SLIDES = 8;
   let currentSlideIndex = 0;
   let slideInterval = null;
+  let slidesLoaded = false;
+  let sliderContainerRef = null;
   const AUTOPLAY_INTERVAL = 5000;
 
   function resolveAssetPath(src) {
@@ -78,30 +81,49 @@
     return '/' + trimmed.replace(/^\.?\//, '');
   }
 
+  function createSlideElement(imageSrc, index) {
+    const slide = document.createElement('div');
+    slide.className = 'hero-slide' + (index === 0 ? ' active' : '');
+    slide.setAttribute('aria-hidden', index === 0 ? 'false' : 'true');
+    slide.innerHTML = '<img src="' + resolveAssetPath(imageSrc) + '" alt="Publicidad del Quindío - Slide ' + (index + 1) + '" loading="' + (index === 0 ? 'eager' : 'lazy') + '"><div class="hero-slide-meta"><span>Publicidad destacada</span></div>';
+    return slide;
+  }
+
+  function appendSlides(container, startIndex, endIndex) {
+    for (let i = startIndex; i < endIndex; i++) {
+      const slide = createSlideElement(uniqueSlides[i], i);
+      container.appendChild(slide);
+    }
+    if (endIndex >= uniqueSlides.length) {
+      slidesLoaded = true;
+    }
+  }
+
+  function ensureAllSlidesLoaded() {
+    if (slidesLoaded || !sliderContainerRef) return;
+    appendSlides(sliderContainerRef, MAX_INITIAL_SLIDES, uniqueSlides.length);
+    slidesLoaded = true;
+  }
+
   function initHeroSlider() {
-    const sliderContainer = document.getElementById('hero-slider');
+    sliderContainerRef = document.getElementById('hero-slider');
     const counterCurrent = document.getElementById('hero-slide-current');
     const counterTotal = document.getElementById('hero-slide-total');
     const prevBtn = document.getElementById('hero-slide-prev');
     const nextBtn = document.getElementById('hero-slide-next');
 
-    if (!sliderContainer || !uniqueSlides.length) return;
+    if (!sliderContainerRef || !uniqueSlides.length) return;
 
-    sliderContainer.innerHTML = '';
-
-    uniqueSlides.forEach((imageSrc, index) => {
-      const slide = document.createElement('div');
-      slide.className = 'hero-slide' + (index === 0 ? ' active' : '');
-      slide.setAttribute('aria-hidden', index === 0 ? 'false' : 'true');
-      slide.innerHTML = '<img src="' + resolveAssetPath(imageSrc) + '" alt="Publicidad del Quindío - Slide ' + (index + 1) + '" loading="' + (index === 0 ? 'eager' : 'lazy') + '"><div class="hero-slide-meta"><span>Publicidad destacada</span></div>';
-      sliderContainer.appendChild(slide);
-    });
+    sliderContainerRef.innerHTML = '';
+    appendSlides(sliderContainerRef, 0, Math.min(uniqueSlides.length, MAX_INITIAL_SLIDES));
+    if (uniqueSlides.length <= MAX_INITIAL_SLIDES) slidesLoaded = true;
 
     if (counterTotal) counterTotal.textContent = uniqueSlides.length;
     if (counterCurrent) counterCurrent.textContent = '1';
 
     if (prevBtn) {
       prevBtn.addEventListener('click', function() {
+        ensureAllSlidesLoaded();
         goToSlide(currentSlideIndex - 1);
         resetAutoplay();
       });
@@ -109,19 +131,22 @@
 
     if (nextBtn) {
       nextBtn.addEventListener('click', function() {
+        ensureAllSlidesLoaded();
         goToSlide(currentSlideIndex + 1);
         resetAutoplay();
       });
     }
 
-    sliderContainer.addEventListener('mouseenter', stopAutoplay);
-    sliderContainer.addEventListener('mouseleave', startAutoplay);
+    sliderContainerRef.addEventListener('mouseenter', stopAutoplay);
+    sliderContainerRef.addEventListener('mouseleave', startAutoplay);
 
     document.addEventListener('keydown', function(event) {
       if (event.key === 'ArrowLeft') {
+        ensureAllSlidesLoaded();
         goToSlide(currentSlideIndex - 1);
         resetAutoplay();
       } else if (event.key === 'ArrowRight') {
+        ensureAllSlidesLoaded();
         goToSlide(currentSlideIndex + 1);
         resetAutoplay();
       }

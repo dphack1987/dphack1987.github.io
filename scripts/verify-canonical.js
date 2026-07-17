@@ -27,12 +27,12 @@ const verifyCanonicalTags = () => {
         if (file === 'index.html') {
           expectedCanonicals = [BASE_URL, `${BASE_URL}/`];
         } else {
-          expectedCanonicals = [`${BASE_URL}/${file.replace('.html', '')}`, `${BASE_URL}/${file}`];
+          expectedCanonicals = [`${BASE_URL}/${file}`];
         }
       } else if (dir === 'municipios') {
-        expectedCanonicals = [`${BASE_URL}/municipios/${file.replace('.html', '')}`, `${BASE_URL}/municipios/${file}`];
+        expectedCanonicals = [`${BASE_URL}/municipios/${file}`];
       } else if (dir === 'negocios') {
-        expectedCanonicals = [`${BASE_URL}/negocios/${file.replace('.html', '')}`, `${BASE_URL}/negocios/${file}`];
+        expectedCanonicals = [`${BASE_URL}/negocios/${file}`];
       }
 
       // Check if canonical tag exists
