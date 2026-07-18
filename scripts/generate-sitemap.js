@@ -33,7 +33,11 @@ const STATIC_PAGES = [
   'reservar-hotel-quindio.html',
   'sitios-turisticos.html',
   'top-pueblos.html',
-  'transporte-aeropuerto-armenia.html'
+  'transporte-aeropuerto-armenia.html',
+  'cultura-cafetera-quindio.html',
+  'parques-aventura-quindio.html',
+  'guia-turismo-quindio.html',
+  '404.html'
 ].filter(p => isAllowedPath(p));
 
 const staticUrls = [];

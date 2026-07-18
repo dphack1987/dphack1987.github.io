@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Página no encontrada | Mapa Turístico del Quindío</title>
+  <meta name="description" content="Oops, página no encontrada. Vuelve a la Home del Mapa Turístico del Quindío.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://www.mapaturisticodelquindio.com/404.html">
+  <meta name="theme-color" content="#059669">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Página no encontrada",
+    "description": "Oops, página no encontrada. Vuelve a la Home del Mapa Turístico del Quindío.",
+    "url": "https://www.mapaturisticodelquindio.com/404.html"
+  }
+  </script>
+  <meta http-equiv="refresh" content="5; url=/">
+</head>
+<body>
+  <script src="./assets/js/nav.js"></script>
+
+  <section style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:80px 24px;background:linear-gradient(135deg,#f0fdf4 0%,#ecfdf5 100%);">
+    <div style="max-width:600px;text-align:center;">
+      <div style="font-size:120px;font-weight:900;font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#059669,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:20px;">404</div>
+      <h1 style="font-family:'Poppins',sans-serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:900;color:#064e3b;letter-spacing:-1px;margin-bottom:12px;">Página no encontrada</h1>
+      <p style="color:#6b7280;font-size:1.15rem;line-height:1.8;margin-bottom:36px;">¡No te preocupes! Te redirigiremos a la página principal en <span id="countdown">5</span> segundos. O haz clic en el botón de abajo.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="./index.html" style="display:inline-flex;align-items:center;gap:8px;padding:16px 40px;border-radius:50px;background:linear-gradient(135deg,#059669,#047857);color:white;font-weight:800;font-size:1.05rem;box-shadow:0 12px 40px rgba(5,150,105,0.35);transition:all .3s;text-decoration:none;">🏠 Volver a la Home</a>
+        <a href="./alojamientos.html" style="display:inline-flex;align-items:center;gap:8px;padding:16px 40px;border-radius:50px;background:white;color:#059669;font-weight:800;font-size:1.05rem;box-shadow:0 10px 30px rgba(0,0,0,0.1);transition:all .3s;text-decoration:none;border:2px solid rgba(5,150,105,0.2);">🏨 Ver alojamientos</a>
+      </div>
+      <div style="margin-top:36px;padding:24px;background:white;border-radius:20px;box-shadow:0 8px 30px rgba(0,0,0,0.08);">
+        <h3 style="font-family:'Poppins',sans-serif;font-size:1.2rem;font-weight:800;color:#064e3b;margin-bottom:12px;">¿Buscas algo en específico?</h3>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <a href="./cultura-cafetera-quindio.html" style="padding:10px 20px;border-radius:50px;background:rgba(5,150,105,0.1);color:#059669;font-weight:700;text-decoration:none;">☕ Cultura Cafetera</a>
+          <a href="./parques-aventura-quindio.html" style="padding:10px 20px;border-radius:50px;background:rgba(5,150,105,0.1);color:#059669;font-weight:700;text-decoration:none;">🧗 Parques y Aventura</a>
+          <a href="./guia-turismo-quindio.html" style="padding:10px 20px;border-radius:50px;background:rgba(5,150,105,0.1);color:#059669;font-weight:700;text-decoration:none;">🗺️ Guía Turística</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Cuenta regresiva para redirigir
+    let countdown = 5;
+    const countdownEl = document.getElementById('countdown');
+    const interval = setInterval(() => {
+      countdown--;
+      if (countdownEl) countdownEl.textContent = countdown;
+      if (countdown <= 0) {
+        clearInterval(interval);
+        window.location.href = './';
+      }
+    }, 1000);
+  </script>
+
+  <footer>
+    <div style="padding:24px 20px;background:#022c22;text-align:center;color:rgba(255,255,255,0.7);font-size:0.9rem;">
+      &copy; 2026 Mapa Turístico del Quindío. Todos los derechos reservados.
+    </div>
+  </footer>
+</body>
+</html>

@@ -195,11 +195,26 @@ function obtenerNegociosCercanos(negocioActual, maxResultados = 5, maxDistanciaK
 function generarSeccionNegociosCercanos(negocio, municipio) {
   const cercanos = obtenerNegociosCercanos(negocio);
   
-  if (cercanos.length === 0) {
-    return ''; // No mostrar sección si no hay cercanos
+  const tipoNegocio = negocio.tipo || negocio.categoria;
+  const categoria = negocio.categoria || 'negocio';
+
+  // Obtener página de destino por categoría
+  let paginaDestino = '../index.html';
+  let textoEnlace = `Ver más ${categoria}s en el Quindío`;
+  if (categoria === 'alojamiento') {
+    paginaDestino = '../alojamientos.html';
+    textoEnlace = `Ver otros alojamientos en ${municipio.nombre}`;
+  } else if (categoria === 'sitio-turistico') {
+    paginaDestino = '../sitios-turisticos.html';
+    textoEnlace = `Ver más sitios turísticos en ${municipio.nombre}`;
+  } else if (categoria === 'transporte') {
+    paginaDestino = '../empresas-de-transporte.html';
+    textoEnlace = `Ver más transportes en ${municipio.nombre}`;
+  } else if (categoria === 'gastronomia') {
+    paginaDestino = '../quindio-comercial.html';
+    textoEnlace = `Ver más gastronomía en ${municipio.nombre}`;
   }
 
-  const tipoNegocio = negocio.tipo || negocio.categoria;
   const linksHTML = cercanos
     .map(n => {
       const municipioCercano = masterData.municipios.find(m => m.id === n.municipioId);
@@ -228,6 +243,11 @@ function generarSeccionNegociosCercanos(negocio, municipio) {
       <ul style="list-style: none; padding: 0; margin: 0;">
         ${linksHTML}
       </ul>
+      <div style="margin-top: 24px;">
+        <a href="${paginaDestino}" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: #059669; color: white; font-weight: 700; text-decoration: none; border-radius: 50px; transition: all 0.3s;">
+          🔍 ${textoEnlace}
+        </a>
+      </div>
     </section>
   `;
 }
