@@ -1,0 +1,13 @@
+/* Encapsulated styles for plans panel - minimal, non-intrusive */
+.pt-panel{max-width:1200px;margin:20px auto;padding:18px;background:transparent;border-radius:12px;display:block}
+.pt-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.pt-block{min-width:160px}
+.pt-label{display:block;font-weight:700;color:#064e3b;margin-bottom:6px}
+.pt-select,.pt-input{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(15,23,42,.06);background:white;color:#064e3b}
+.pt-actions{margin-top:12px}
+.pt-btn{padding:10px 14px;border-radius:10px;border:1px solid rgba(5,150,105,0.12);background:#fff;color:#064e3b;font-weight:700;cursor:pointer;margin-right:8px}
+.pt-btn-primary{background:linear-gradient(135deg,#059669,#10b981);color:white;border:none}
+.pt-btn-ws{background:#25D366;color:white;text-decoration:none;display:inline-flex;align-items:center}
+.pt-itinerary{margin-top:12px;padding:12px;border-radius:10px;background:#f8fafc;border:1px solid rgba(15,23,42,.04);color:#334155}
+.pt-quote{margin-top:12px;padding:12px;border-radius:10px;background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46;font-weight:700}
+@media(max-width:720px){.pt-row{flex-direction:column}.pt-block{width:100%}}

@@ -1,0 +1,44 @@
+{
+  "plan-express-quindio": {
+    "baja": {
+      "Económico": { "Sin Transporte": 467500, "Doble": 875600, "Triple": 737000, "Cuádruple": 662200 },
+      "Intermedio": { "Sin Transporte": 486200, "Doble": 902000, "Triple": 753500, "Cuádruple": 676500 },
+      "Intermedio VIP": { "Sin Transporte": 649000, "Doble": 1061500, "Triple": 907500, "Cuádruple": 836000 },
+      "VIP": { "Sin Transporte": 1061500, "Doble": 1468500, "Triple": 1281500, "Cuádruple": 1188000 }
+    },
+    "alta": {
+      "Económico": { "Sin Transporte": 473000, "Doble": 885500, "Triple": 742500, "Cuádruple": 671000 },
+      "Intermedio": { "Sin Transporte": 495000, "Doble": 913000, "Triple": 759000, "Cuádruple": 687500 },
+      "Intermedio VIP": { "Sin Transporte": 709500, "Doble": 1122000, "Triple": 979000, "Cuádruple": 891000 },
+      "VIP": { "Sin Transporte": 1424500, "Doble": 1832600, "Triple": 1595000, "Cuádruple": 1474000 }
+    }
+  },
+  "plan-cafe-y-paisajes": {
+    "baja": {
+      "Económico": { "Sin Transporte": 621500, "Doble": 1584000, "Triple": 1254000, "Cuádruple": 1083500 },
+      "Intermedio": { "Sin Transporte": 660000, "Doble": 1628000, "Triple": 1287000, "Cuádruple": 1111000 },
+      "Intermedio VIP": { "Sin Transporte": 984500, "Doble": 1947000, "Triple": 1600500, "Cuádruple": 1430000 },
+      "VIP": { "Sin Transporte": 1804000, "Doble": 2766500, "Triple": 2343000, "Cuádruple": 2145000 }
+    },
+    "alta": {
+      "Económico": { "Sin Transporte": 627000, "Doble": 1589500, "Triple": 1265000, "Cuádruple": 1094500 },
+      "Intermedio": { "Sin Transporte": 676500, "Doble": 1644500, "Triple": 1303500, "Cuádruple": 1122500 },
+      "Intermedio VIP": { "Sin Transporte": 1100000, "Doble": 2073500, "Triple": 1738000, "Cuádruple": 1545500 },
+      "VIP": { "Sin Transporte": 2535500, "Doble": 3498000, "Triple": 2970000, "Cuádruple": 2717000 }
+    }
+  },
+  "plan-fin-de-semana-quindio": {
+    "baja": {
+      "Económico": { "Sin Transporte": 854700, "Doble": 2222000, "Triple": 1758900, "Cuádruple": 1523500 },
+      "Intermedio": { "Sin Transporte": 918500, "Doble": 2288000, "Triple": 1815000, "Cuádruple": 1562000 },
+      "Intermedio VIP": { "Sin Transporte": 1405800, "Doble": 2788500, "Triple": 2282500, "Cuádruple": 2035000 },
+      "VIP": { "Sin Transporte": 2634500, "Doble": 4015000, "Triple": 3399000, "Cuádruple": 3091000 }
+    },
+    "alta": {
+      "Económico": { "Sin Transporte": 869000, "Doble": 2244000, "Triple": 1776500, "Cuádruple": 1540000 },
+      "Intermedio": { "Sin Transporte": 946000, "Doble": 2310000, "Triple": 1859000, "Cuádruple": 1606000 },
+      "Intermedio VIP": { "Sin Transporte": 1589500, "Doble": 2970000, "Triple": 2497000, "Cuádruple": 2197800 },
+      "VIP": { "Sin Transporte": 3729500, "Doble": 5115000, "Triple": 4356000, "Cuádruple": 3960000 }
+    }
+  }
+}

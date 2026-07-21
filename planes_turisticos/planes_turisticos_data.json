@@ -1,0 +1,403 @@
+{
+    "vigencia": "Hasta 20 de enero de 2027",
+    "condiciones_transporte": "Transportes internos se refiere desde el terminal de transportes o aeropuerto de Armenia y no incluye transporte en carro propio.",
+    "alta_temporada_definicion": "Semana Santa, semana receso escolar, 10 junio al 30 julio, puentes y días de fiesta, 20 dic al 20 enero 2027.",
+    "planes": [
+        {
+            "id": 1,
+            "nombre": "Vive El Eje Cafetero Temático",
+            "duracion": "1 Noche / 2 Días",
+            "incluye": "Dos (2) días, una (1) noche de alojamiento, 1 desayuno, 1 cena, Parque del Café Pasaporte Múltiple, Parque Panaca Pasaporte Terra, tarjeta de asistencia médica, transportes internos.",
+            "tarifas": {
+                "placa_blanca": {
+                    "baja": {
+                        "Económico": {
+                            "Sin transporte": 467500,
+                            "Doble": 875600,
+                            "Triple": 737000,
+                            "Cuádruple": 662200,
+                            "Niños 2-10": 649000
+                        },
+                        "Intermedio": {
+                            "Sin transporte": 486200,
+                            "Doble": 902000,
+                            "Triple": 753500,
+                            "Cuádruple": 676500,
+                            "Niños 2-10": 665500
+                        },
+                        "Intermedio VIP": {
+                            "Sin transporte": 649000,
+                            "Doble": 1061500,
+                            "Triple": 907500,
+                            "Cuádruple": 836000,
+                            "Niños 2-10": 819500
+                        },
+                        "VIP": {
+                            "Sin transporte": 1061500,
+                            "Doble": 1468500,
+                            "Triple": 1281500,
+                            "Cuádruple": 1188000,
+                            "Niños 2-10": 1171500
+                        }
+                    },
+                    "alta": {
+                        "Económico": {
+                            "Sin transporte": 473000,
+                            "Doble": 885500,
+                            "Triple": 742500,
+                            "Cuádruple": 671000,
+                            "Niños 2-10": 657800
+                        },
+                        "Intermedio": {
+                            "Sin transporte": 495000,
+                            "Doble": 913000,
+                            "Triple": 759000,
+                            "Cuádruple": 687500,
+                            "Niños 2-10": 671000
+                        },
+                        "Intermedio VIP": {
+                            "Sin transporte": 709500,
+                            "Doble": 1122000,
+                            "Triple": 979000,
+                            "Cuádruple": 891000,
+                            "Niños 2-10": 877800
+                        },
+                        "VIP": {
+                            "Sin transporte": 1424500,
+                            "Doble": 1832600,
+                            "Triple": 1595000,
+                            "Cuádruple": 1474000,
+                            "Niños 2-10": 1457500
+                        }
+                    }
+                },
+                "radio_taxi": {
+                    "baja": {
+                        "Económico": {
+                            "Sin transporte": 467500,
+                            "Doble": 875600,
+                            "Triple": 734800,
+                            "Cuádruple": 662200,
+                            "Niños 2-10": 655600
+                        },
+                        "Intermedio": {
+                            "Sin transporte": 486200,
+                            "Doble": 896500,
+                            "Triple": 750200,
+                            "Cuádruple": 674300,
+                            "Niños 2-10": 671000
+                        },
+                        "Intermedio VIP": {
+                            "Sin transporte": 649000,
+                            "Doble": 1058200,
+                            "Triple": 907500,
+                            "Cuádruple": 833800,
+                            "Niños 2-10": 822800
+                        },
+                        "VIP": {
+                            "Sin transporte": 709500,
+                            "Doble": 1122000,
+                            "Triple": 1280400,
+                            "Cuádruple": 1185800,
+                            "Niños 2-10": 1028500
+                        }
+                    },
+                    "alta": {
+                        "Económico": {
+                            "Sin transporte": 473000,
+                            "Doble": 880000,
+                            "Triple": 739200,
+                            "Cuádruple": 665500,
+                            "Niños 2-10": 658900
+                        },
+                        "Intermedio": {
+                            "Sin transporte": 495000,
+                            "Doble": 904200,
+                            "Triple": 759000,
+                            "Cuádruple": 682000,
+                            "Niños 2-10": 677600
+                        },
+                        "Intermedio VIP": {
+                            "Sin transporte": 1058200,
+                            "Doble": 1468500,
+                            "Triple": 976800,
+                            "Cuádruple": 891000,
+                            "Niños 2-10": 874500
+                        },
+                        "VIP": {
+                            "Sin transporte": 1424500,
+                            "Doble": 1833700,
+                            "Triple": 1592800,
+                            "Cuádruple": 1474000,
+                            "Niños 2-10": 1117600
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "id": 2,
+            "nombre": "Turismo de Naturaleza y Diversión",
+            "duracion": "2 Noches / 3 Días",
+            "incluye": "2 noches de alojamiento en finca hotel, 2 desayunos, 2 cenas, Pasaporte Múltiple Parque del Café, Parque Panaca, tarjeta de asistencia médica, transportes internos.",
+            "tarifas": {
+                "placa_blanca": {
+                    "baja": {
+                        "Económico": {
+                            "Sin transporte": 621500,
+                            "Doble": 1584000,
+                            "Triple": 1254000,
+                            "Cuádruple": 1083500,
+                            "Niños 2-10": 1071400
+                        },
+                        "Intermedio": {
+                            "Sin transporte": 660000,
+                            "Doble": 1628000,
+                            "Triple": 1287000,
+                            "Cuádruple": 1111000,
+                            "Niños 2-10": 1097800
+                        },
+                        "Intermedio VIP": {
+                            "Sin transporte": 984500,
+                            "Doble": 1947000,
+                            "Triple": 1600500,
+                            "Cuádruple": 1430000,
+                            "Niños 2-10": 1417900
+                        },
+                        "VIP": {
+                            "Sin transporte": 1804000,
+                            "Doble": 2766500,
+                            "Triple": 2343000,
+                            "Cuádruple": 2145000,
+                            "Niños 2-10": 2132900
+                        }
+                    },
+                    "alta": {
+                        "Económico": {
+                            "Sin transporte": 627000,
+                            "Doble": 1589500,
+                            "Triple": 1265000,
+                            "Cuádruple": 1094500,
+                            "Niños 2-10": 1082400
+                        },
+                        "Intermedio": {
+                            "Sin transporte": 676500,
+                            "Doble": 1644500,
+                            "Triple": 1303500,
+                            "Cuádruple": 1122000,
+                            "Niños 2-10": 1109900
+                        },
+                        "Intermedio VIP": {
+                            "Sin transporte": 1100000,
+                            "Doble": 2073500,
+                            "Triple": 1738000,
+                            "Cuádruple": 1545500,
+                            "Niños 2-10": 1537800
+                        },
+                        "VIP": {
+                            "Sin transporte": 2535500,
+                            "Doble": 3498000,
+                            "Triple": 2970000,
+                            "Cuádruple": 2717000,
+                            "Niños 2-10": 2704900
+                        }
+                    }
+                },
+                "radio_taxi": {
+                    "baja": {
+                        "Económico": {
+                            "Sin transporte": 618200,
+                            "Doble": 1028500,
+                            "Triple": 885500,
+                            "Cuádruple": 808500,
+                            "Niños 2-10": 801900
+                        },
+                        "Intermedio": {
+                            "Sin transporte": 657800,
+                            "Doble": 1069200,
+                            "Triple": 918500,
+                            "Cuádruple": 836000,
+                            "Niños 2-10": 834900
+                        },
+                        "Intermedio VIP": {
+                            "Sin transporte": 984500,
+                            "Doble": 1394800,
+                            "Triple": 1232000,
+                            "Cuádruple": 1149500,
+                            "Niños 2-10": 1137400
+                        },
+                        "VIP": {
+                            "Sin transporte": 1815000,
+                            "Doble": 2216500,
+                            "Triple": 1980000,
+                            "Cuádruple": 1853500,
+                            "Niños 2-10": 1841400
+                        }
+                    },
+                    "alta": {
+                        "Económico": {
+                            "Sin transporte": 627000,
+                            "Doble": 1039500,
+                            "Triple": 896500,
+                            "Cuádruple": 819500,
+                            "Niños 2-10": 807400
+                        },
+                        "Intermedio": {
+                            "Sin transporte": 674300,
+                            "Doble": 1089000,
+                            "Triple": 935000,
+                            "Cuádruple": 852500,
+                            "Niños 2-10": 840400
+                        },
+                        "Intermedio VIP": {
+                            "Sin transporte": 1177000,
+                            "Doble": 1518000,
+                            "Triple": 1369500,
+                            "Cuádruple": 1265000,
+                            "Niños 2-10": 1252900
+                        },
+                        "VIP": {
+                            "Sin transporte": 2541000,
+                            "Doble": 2948000,
+                            "Triple": 2607000,
+                            "Cuádruple": 2431000,
+                            "Niños 2-10": 2417800
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "id": 3,
+            "nombre": "Turismo de Cultura Paisaje Cultural",
+            "duracion": "3 Noches / 4 Días",
+            "incluye": "3 noches de alojamiento en finca hotel, 3 desayunos, 3 cenas, Pasaporte Múltiple Parque del Café, Parque Panaca, Salento y Valle de Cocora, Filandia Mirador, Museo Canasto, Calle del Tiempo Detenida, tarjeta de asistencia médica, transportes internos.",
+            "tarifas": {
+                "placa_blanca": {
+                    "baja": {
+                        "Económico": {
+                            "Sin transporte": 854700,
+                            "Doble": 2222000,
+                            "Triple": 1758900,
+                            "Cuádruple": 1523500,
+                            "Niños 2-10": 1485000
+                        },
+                        "Intermedio": {
+                            "Sin transporte": 918500,
+                            "Doble": 2288000,
+                            "Triple": 1815000,
+                            "Cuádruple": 1562000,
+                            "Niños 2-10": 1529000
+                        },
+                        "Intermedio VIP": {
+                            "Sin transporte": 1405800,
+                            "Doble": 2788500,
+                            "Triple": 2282500,
+                            "Cuádruple": 2035000,
+                            "Niños 2-10": 1991000
+                        },
+                        "VIP": {
+                            "Sin transporte": 2634500,
+                            "Doble": 4015000,
+                            "Triple": 3399000,
+                            "Cuádruple": 3091000,
+                            "Niños 2-10": 3058000
+                        }
+                    },
+                    "alta": {
+                        "Económico": {
+                            "Sin transporte": 869000,
+                            "Doble": 2244000,
+                            "Triple": 1776500,
+                            "Cuádruple": 1540000,
+                            "Niños 2-10": 1534500
+                        },
+                        "Intermedio": {
+                            "Sin transporte": 946000,
+                            "Doble": 2310000,
+                            "Triple": 1859000,
+                            "Cuádruple": 1606000,
+                            "Niños 2-10": 1556500
+                        },
+                        "Intermedio VIP": {
+                            "Sin transporte": 1589500,
+                            "Doble": 2970000,
+                            "Triple": 2497000,
+                            "Cuádruple": 2197800,
+                            "Niños 2-10": 2175800
+                        },
+                        "VIP": {
+                            "Sin transporte": 3729000,
+                            "Doble": 5115000,
+                            "Triple": 4356000,
+                            "Cuádruple": 3960000,
+                            "Niños 2-10": 3916000
+                        }
+                    }
+                },
+                "radio_taxi": {
+                    "baja": {
+                        "Económico": {
+                            "Sin transporte": 854700,
+                            "Doble": 1523500,
+                            "Triple": 1287000,
+                            "Cuádruple": 1155000,
+                            "Niños 2-10": 1141800
+                        },
+                        "Intermedio": {
+                            "Sin transporte": 918500,
+                            "Doble": 1584000,
+                            "Triple": 1336500,
+                            "Cuádruple": 1265000,
+                            "Niños 2-10": 1251800
+                        },
+                        "Intermedio VIP": {
+                            "Sin transporte": 1408000,
+                            "Doble": 2073500,
+                            "Triple": 1815000,
+                            "Cuádruple": 1683000,
+                            "Niños 2-10": 1666500
+                        },
+                        "VIP": {
+                            "Sin transporte": 2640000,
+                            "Doble": 3300000,
+                            "Triple": 2926000,
+                            "Cuádruple": 2739000,
+                            "Niños 2-10": 2717000
+                        }
+                    },
+                    "alta": {
+                        "Económico": {
+                            "Sin transporte": 869000,
+                            "Doble": 1551000,
+                            "Triple": 1303500,
+                            "Cuádruple": 1210000,
+                            "Niños 2-10": 1196800
+                        },
+                        "Intermedio": {
+                            "Sin transporte": 946000,
+                            "Doble": 1633500,
+                            "Triple": 1419000,
+                            "Cuádruple": 1320000,
+                            "Niños 2-10": 1298000
+                        },
+                        "Intermedio VIP": {
+                            "Sin transporte": 1595000,
+                            "Doble": 2266000,
+                            "Triple": 2035000,
+                            "Cuádruple": 1859000,
+                            "Niños 2-10": 1837000
+                        },
+                        "VIP": {
+                            "Sin transporte": 3734500,
+                            "Doble": 4397800,
+                            "Triple": 3872000,
+                            "Cuádruple": 3619000,
+                            "Niños 2-10": 3597000
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

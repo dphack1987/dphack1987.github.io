@@ -18,6 +18,7 @@
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/planes-enhanced.css">
   <style>
     body { background:#f8fafc; }
     .plans-shell { max-width: 1200px; margin: 0 auto; padding: 56px 24px 80px; }
@@ -64,6 +65,52 @@
 
     <section id="plans-container" class="plans-grid"></section>
 
+    <!-- Enhanced controls: itinerary generator and quick quote -->
+    <aside id="pt-panel" class="pt-panel" aria-label="Cotizador e itinerario">
+      <div class="pt-row">
+        <div class="pt-block">
+          <label for="pt-plan-select" class="pt-label">Seleccionar plan</label>
+          <select id="pt-plan-select" class="pt-select"></select>
+        </div>
+        <div class="pt-block">
+          <label for="pt-nights" class="pt-label">Noches</label>
+          <input id="pt-nights" class="pt-input" type="number" min="0" max="10" value="1">
+        </div>
+        <div class="pt-block">
+          <label for="pt-accommodation" class="pt-label">Acomodación</label>
+          <select id="pt-accommodation" class="pt-select">
+            <option value="Económico">Económico</option>
+            <option value="Intermedio">Intermedio</option>
+            <option value="Intermedio VIP">Intermedio VIP</option>
+            <option value="VIP">VIP</option>
+          </select>
+        </div>
+        <div class="pt-block">
+          <label for="pt-season" class="pt-label">Temporada</label>
+          <select id="pt-season" class="pt-select">
+            <option value="baja">Temporada baja</option>
+            <option value="alta">Temporada alta</option>
+          </select>
+        </div>
+        <div class="pt-block">
+          <label for="pt-transport" class="pt-label">Transporte</label>
+          <select id="pt-transport" class="pt-select">
+            <option value="Placa blanca">Placa blanca</option>
+            <option value="Radio taxi">Radio taxi</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="pt-row pt-actions">
+        <button id="pt-generate-itinerary" class="pt-btn">Generar itinerario</button>
+        <button id="pt-calculate" class="pt-btn pt-btn-primary">Calcular tarifa</button>
+        <a id="pt-wa-quote" class="pt-btn pt-btn-ws" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
+      </div>
+
+      <div id="pt-itinerary" class="pt-itinerary" aria-live="polite"></div>
+      <div id="pt-quote" class="pt-quote" aria-live="polite"></div>
+    </aside>
+
     <div class="plans-note">
       <strong>Reserva directa:</strong> estos planes están orientados a promover la oferta de Quindío Travel en el sitio, manteniendo el estilo visual actual y reforzando la conexión con los servicios de transporte y turismo del Quindío.
     </div>
@@ -78,6 +125,7 @@
   </script>
 
   <script type="module" src="./scripts/planes.js"></script>
+  <script type="module" src="./scripts/planes-enhanced.js"></script>
 </body>
 </html>
 

@@ -1,0 +1,73 @@
+{
+  "plan-express-quindio": {
+    "baja": {
+      "Económico": { "Placa blanca": 467500, "Doble": 875600, "Triple": 737000, "Cuádruple": 662200, "Niños 2-10": 649000 },
+      "Intermedio": { "Placa blanca": 486200, "Doble": 902000, "Triple": 753500, "Cuádruple": 676500, "Niños 2-10": 665500 },
+      "Intermedio VIP": { "Placa blanca": 649000, "Doble": 1061500, "Triple": 907500, "Cuádruple": 836000, "Niños 2-10": 819500 },
+      "VIP": { "Placa blanca": 1061500, "Doble": 1468500, "Triple": 1281500, "Cuádruple": 1188000, "Niños 2-10": 1171500 }
+    },
+    "alta": {
+      "Económico": { "Placa blanca": 473000, "Doble": 885500, "Triple": 742500, "Cuádruple": 671000, "Niños 2-10": 657800 },
+      "Intermedio": { "Placa blanca": 495000, "Doble": 913000, "Triple": 759000, "Cuádruple": 687500, "Niños 2-10": 671000 },
+      "Intermedio VIP": { "Placa blanca": 709500, "Doble": 1122000, "Triple": 979000, "Cuádruple": 891000, "Niños 2-10": 877800 },
+      "VIP": { "Placa blanca": 1424500, "Doble": 1832600, "Triple": 1595000, "Cuádruple": 1474000, "Niños 2-10": 1457500 }
+    },
+    "Placa blanca": true
+  },
+  "plan-cafe-y-paisajes": {
+    "baja": {
+      "Económico": { "Placa blanca": 621500, "Doble": 1584000, "Triple": 1254000, "Cuádruple": 1083500, "Niños 2-10": 1071400 },
+      "Intermedio": { "Placa blanca": 660000, "Doble": 1628000, "Triple": 1287000, "Cuádruple": 1111000, "Niños 2-10": 1097800 },
+      "Intermedio VIP": { "Placa blanca": 984500, "Doble": 1947000, "Triple": 1600500, "Cuádruple": 1430000, "Niños 2-10": 1417900 },
+      "VIP": { "Placa blanca": 1804000, "Doble": 2766500, "Triple": 2343000, "Cuádruple": 2145000, "Niños 2-10": 2132900 }
+    },
+    "alta": {
+      "Económico": { "Placa blanca": 627000, "Doble": 1589500, "Triple": 1265000, "Cuádruple": 1094500, "Niños 2-10": 1082400 },
+      "Intermedio": { "Placa blanca": 676500, "Doble": 1644500, "Triple": 1303500, "Cuádruple": 1122000, "Niños 2-10": 1109900 },
+      "Intermedio VIP": { "Placa blanca": 1100000, "Doble": 2073500, "Triple": 1738000, "Cuádruple": 1545500, "Niños 2-10": 1537800 },
+      "VIP": { "Placa blanca": 2535500, "Doble": 3498000, "Triple": 2970000, "Cuádruple": 2717000, "Niños 2-10": 2704900 }
+    },
+    "radio_taxi": {
+      "baja": {
+        "Económico": { "Radio taxi": 618200, "Doble": 1028500, "Triple": 885500, "Cuádruple": 808500, "Niños 2-10": 801900 },
+        "Intermedio": { "Radio taxi": 657800, "Doble": 1069200, "Triple": 918500, "Cuádruple": 836000, "Niños 2-10": 834900 },
+        "Intermedio VIP": { "Radio taxi": 984500, "Doble": 1394800, "Triple": 1232000, "Cuádruple": 1149500, "Niños 2-10": 1137400 },
+        "VIP": { "Radio taxi": 1815000, "Doble": 2216500, "Triple": 1980000, "Cuádruple": 1853500, "Niños 2-10": 1841400 }
+      },
+      "alta": {
+        "Económico": { "Radio taxi": 627000, "Doble": 1039500, "Triple": 896500, "Cuádruple": 819500, "Niños 2-10": 807400 },
+        "Intermedio": { "Radio taxi": 674300, "Doble": 1089000, "Triple": 935000, "Cuádruple": 852500, "Niños 2-10": 840400 },
+        "Intermedio VIP": { "Radio taxi": 1177000, "Doble": 1518000, "Triple": 1369500, "Cuádruple": 1265000, "Niños 2-10": 1252900 },
+        "VIP": { "Radio taxi": 2541000, "Doble": 2948000, "Triple": 2607000, "Cuádruple": 2431000, "Niños 2-10": 2417800 }
+      }
+    }
+  },
+  "plan-fin-de-semana-quindio": {
+    "baja": {
+      "Económico": { "Placa blanca": 854700, "Doble": 2222000, "Triple": 1758900, "Cuádruple": 1523500, "Niños 2-10": 1485000 },
+      "Intermedio": { "Placa blanca": 918500, "Doble": 2288000, "Triple": 1815000, "Cuádruple": 1562000, "Niños 2-10": 1529000 },
+      "Intermedio VIP": { "Placa blanca": 1405800, "Doble": 2788500, "Triple": 2282500, "Cuádruple": 2035000, "Niños 2-10": 1991000 },
+      "VIP": { "Placa blanca": 2634500, "Doble": 4015000, "Triple": 3399000, "Cuádruple": 3091000, "Niños 2-10": 3058000 }
+    },
+    "alta": {
+      "Económico": { "Placa blanca": 869000, "Doble": 2244000, "Triple": 1776500, "Cuádruple": 1540000, "Niños 2-10": 1534500 },
+      "Intermedio": { "Placa blanca": 946000, "Doble": 2310000, "Triple": 1859000, "Cuádruple": 1606000, "Niños 2-10": 1556500 },
+      "Intermedio VIP": { "Placa blanca": 1589500, "Doble": 2970000, "Triple": 2497000, "Cuádruple": 2197800, "Niños 2-10": 2175800 },
+      "VIP": { "Placa blanca": 3729000, "Doble": 5115000, "Triple": 4356000, "Cuádruple": 3960000, "Niños 2-10": 3916000 }
+    },
+    "radio_taxi": {
+      "baja": {
+        "Económico": { "Radio taxi": 854700, "Doble": 1523500, "Triple": 1287000, "Cuádruple": 1155000, "Niños 2-10": 1141800 },
+        "Intermedio": { "Radio taxi": 918500, "Doble": 1584000, "Triple": 1336500, "Cuádruple": 1265000, "Niños 2-10": 1251800 },
+        "Intermedio VIP": { "Radio taxi": 1408000, "Doble": 2073500, "Triple": 1815000, "Cuádruple": 1683000, "Niños 2-10": 1666500 },
+        "VIP": { "Radio taxi": 2640000, "Doble": 3300000, "Triple": 2926000, "Cuádruple": 2739000, "Niños 2-10": 2717000 }
+      },
+      "alta": {
+        "Económico": { "Radio taxi": 869000, "Doble": 1551000, "Triple": 1303500, "Cuádruple": 1210000, "Niños 2-10": 1196800 },
+        "Intermedio": { "Radio taxi": 946000, "Doble": 1633500, "Triple": 1419000, "Cuádruple": 1320000, "Niños 2-10": 1298000 },
+        "Intermedio VIP": { "Radio taxi": 1595000, "Doble": 2266000, "Triple": 2035000, "Cuádruple": 1859000, "Niños 2-10": 1837000 },
+        "VIP": { "Radio taxi": 3734500, "Doble": 4397800, "Triple": 3872000, "Cuádruple": 3619000, "Niños 2-10": 3597000 }
+      }
+    }
+  }
+}
