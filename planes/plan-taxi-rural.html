@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Plan Taxi Rural — Detalle | Quindío Travel</title>
+  <meta name="description" content="Plan Taxi Rural: conexión entre municipios y rutas adaptadas — itinerario, tarifas y fotos. Reserva por WhatsApp.">
+  <link rel="canonical" href="https://www.mapaturisticodelquindio.com/planes/plan-taxi-rural.html">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/plan-detail.css">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"TouristTrip",
+    "name":"Plan Taxi Rural",
+    "description":"Perfecto para conectar municipios, atractivos y restaurantes con rutas adaptadas.",
+    "image":["/planes_turisticos/planes_turisticos_transporte_taxi/plan_2_taxi.png"],
+    "offers": {"@type":"Offer","priceCurrency":"COP","availability":"https://schema.org/InStock","url":"https://www.mapaturisticodelquindio.com/planes/plan-taxi-rural.html"}
+  }
+  </script>
+</head>
+<body>
+  <script src="/assets/js/nav.js"></script>
+  <main class="pd-shell">
+    <header class="pd-hero">
+      <div class="pd-hero-left">
+        <h1>Plan Taxi Rural</h1>
+        <p class="pd-sub">Conexión rural — 5-7 horas</p>
+        <p class="pd-brief">Rutas adaptadas entre municipios y atractivos, con atención a grupos y horarios.</p>
+        <div class="pd-cta-row">
+          <a id="pd-wa-top" class="pd-wa" target="_blank" rel="noopener">Contactar por WhatsApp</a>
+          <a href="/planes-turisticos.html" class="pd-back">Volver a planes</a>
+        </div>
+      </div>
+      <div class="pd-hero-right">
+        <img src="/planes_turisticos/planes_turisticos_transporte_taxi/plan_2_taxi.png" alt="Plan Taxi Rural" loading="lazy">
+      </div>
+    </header>
+
+    <section class="pd-grid">
+      <div class="pd-column">
+        <h2>Galería</h2>
+        <div id="pd-gallery" class="pd-gallery" aria-label="Galería de imágenes del plan"></div>
+
+        <h2>Itinerario</h2>
+        <div id="pd-itinerary" class="pd-itinerary"></div>
+
+        <h2>Preguntas frecuentes</h2>
+        <div class="pd-faq">
+          <details><summary>¿Qué incluye el transporte interno?</summary><p>Traslados entre atractivos y servicios descritos en el plan. El transporte desde aeropuerto no siempre está incluido.</p></details>
+        </div>
+      </div>
+
+      <aside class="pd-side">
+        <h3>Calculadora rápida</h3>
+        <label>Temporada <select id="pd-season"><option value="baja">Baja</option><option value="alta">Alta</option></select></label>
+        <label>Acomodación <select id="pd-accom"><option>Económico</option><option>Intermedio</option><option>Intermedio VIP</option><option>VIP</option></select></label>
+        <label>Transporte <select id="pd-transport"><option>Placa blanca</option><option>Radio taxi</option></select></label>
+        <label>Noches <input id="pd-nights" type="number" min="1" value="1"></label>
+        <button id="pd-calc" class="pd-btn">Calcular tarifa</button>
+        <div id="pd-quote" class="pd-quote"></div>
+        <a id="pd-wa-quote" class="pd-wa pd-wa-quote" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
+      </aside>
+    </section>
+  </main>
+
+  <script type="module" src="/scripts/plan-detail.js"></script>
+</body>
+</html>

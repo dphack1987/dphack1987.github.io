@@ -1,0 +1,1 @@
+﻿Get-ChildItem -Filter "*.html" | ForEach-Object { $f=$_.Name; $c=Get-Content $_.FullName -Raw -Encoding UTF8; "Archivo: $f"; if($c -match "<title>.*?</title>"){"  [OK] Title"}else{"  [ERROR] Falta Title"}; if($c -match "description"){"  [OK] Desc"}else{"  [ERROR] Falta Desc"}; if($c -match "<h1"){"  [OK] H1"}else{"  [ERROR] Falta H1"}; "-----------------------------------" }

@@ -24,7 +24,10 @@ function renderPlanCard(plan, transport) {
         <ul style="padding-left:18px; color:#475569; line-height:1.6; margin:0 0 16px;">
           ${highlights}
         </ul>
-        <a class="btn-ws" href="${wa}" target="_blank" rel="noopener">Contactar por WhatsApp →</a>
+        <div style="display:flex; gap:10px; align-items:center;">
+          <a class="btn-ws" href="${wa}" target="_blank" rel="noopener">Contactar por WhatsApp →</a>
+          <a class="btn-detail" href="/planes/${plan.slug}.html" style="background:#eef2ff;color:#3730a3;padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:700;">Ver detalle</a>
+        </div>
       </div>
     </article>
   `;
