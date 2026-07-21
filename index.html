@@ -92,7 +92,10 @@
           <button class="filtro-btn" data-filter="relax" style="padding: 16px 24px; border: 2px solid #059669; border-radius: 16px; background: white; color: #059669; font-weight: 700; cursor: pointer; transition: all 0.3s;">🧘 Relax</button>
           <button class="filtro-btn" data-filter="familia" style="padding: 16px 24px; border: 2px solid #059669; border-radius: 16px; background: white; color: #059669; font-weight: 700; cursor: pointer; transition: all 0.3s;">👨‍👩‍👧‍👦 Familia</button>
         </div>
-        <button id="limpiar-filtros-btn" style="width: 100%; padding: 12px; background: transparent; color: #6b7280; font-size: 16px; font-weight: 600; border: 1px dashed #d1d5db; border-radius: 12px; cursor: pointer; transition: all 0.3s;">Limpiar filtros</button>
+        <div style="display: flex; gap: 12px;">
+          <button id="generar-itinerario-btn" style="flex: 2; padding: 14px; background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: white; font-size: 16px; font-weight: 700; border: none; border-radius: 12px; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 15px rgba(5,150,105,0.3);">Generar mi itinerario ideal</button>
+          <button id="limpiar-filtros-btn" style="flex: 1; padding: 14px; background: transparent; color: #6b7280; font-size: 16px; font-weight: 600; border: 1px dashed #d1d5db; border-radius: 12px; cursor: pointer; transition: all 0.3s;">Limpiar</button>
+        </div>
       </div>
     </div>
   </section>
@@ -498,9 +501,22 @@
           btn.style.background = '#059669';
           btn.style.color = 'white';
         }
-        renderizarNegociosFiltrados();
       });
     });
+
+    const generarBtn = document.getElementById('generar-itinerario-btn');
+    if (generarBtn) {
+      generarBtn.addEventListener('click', () => {
+        if (filtrosSeleccionados.size === 0) {
+          alert('Por favor selecciona al menos una preferencia para generar tu itinerario.');
+          return;
+        }
+        renderizarNegociosFiltrados();
+        if (negociosFiltradosContainer) {
+          negociosFiltradosContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    }
 
     if (limpiarBtn) {
       limpiarBtn.addEventListener('click', () => {
