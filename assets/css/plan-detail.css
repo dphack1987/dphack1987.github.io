@@ -1,0 +1,20 @@
+/* plan-detail.css - encapsulated styles for plan detail pages */
+.pd-shell{max-width:1200px;margin:28px auto;padding:18px}
+.pd-hero{display:flex;gap:24px;align-items:center;margin-bottom:18px}
+.pd-hero-left h1{font-family:'Poppins',sans-serif;font-size:2rem;margin:0;color:#064e3b}
+.pd-sub{font-weight:800;color:#10b981}
+.pd-brief{color:#475569}
+.pd-cta-row{margin-top:12px;display:flex;gap:10px}
+.pd-wa{background:#25D366;color:white;padding:10px 12px;border-radius:10px;text-decoration:none;font-weight:700}
+.pd-back{background:#fff;border:1px solid rgba(15,23,42,.06);padding:10px 12px;border-radius:10px;text-decoration:none;color:#064e3b}
+.pd-hero-right img{max-width:320px;border-radius:12px}
+.pd-grid{display:grid;grid-template-columns:1fr 340px;gap:20px}
+.pd-gallery{display:flex;flex-direction:column;gap:8px}
+.pd-gallery img{width:100%;max-width:640px;border-radius:10px}
+.pd-itinerary{background:#f8fafc;padding:12px;border-radius:8px}
+.pd-side{background:#fff;padding:12px;border-radius:10px;border:1px solid rgba(15,23,42,.04)}
+.pd-side label{display:block;margin-bottom:8px;font-weight:700;color:#064e3b}
+.pd-input,.pd-select{width:100%;padding:8px;border-radius:8px;border:1px solid rgba(15,23,42,.06)}
+.pd-btn{display:inline-block;padding:10px 12px;border-radius:8px;background:linear-gradient(135deg,#059669,#10b981);color:white;border:none;font-weight:700;cursor:pointer}
+.pd-quote{margin-top:10px;padding:10px;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:8px;color:#065f46;font-weight:700}
+@media(max-width:900px){.pd-grid{grid-template-columns:1fr}.pd-hero{flex-direction:column;align-items:flex-start}.pd-hero-right img{max-width:100%}}
