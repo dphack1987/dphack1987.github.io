@@ -19,7 +19,21 @@
     "imagen": "./pautas_publicitarias/hoteles_armenia/hotel_el_bosque_armenia.png",
     "nivel": "estandar",
     "lat": 4.5167,
-    "lng": -75.6333
+    "lng": -75.6333,
+    "duracion_estimada": "1 noche / Check-in 3:00 p.m.",
+    "horario": "Recepción 24 horas",
+    "ideal_para": [
+      "Familias",
+      "Parejas",
+      "Descanso"
+    ],
+    "recomendaciones": "Presentar documento de identidad al ingreso. Consultar políticas de mascotas si aplica.",
+    "orden_sugerido": 4,
+    "tags_itinerario": [
+      "noche",
+      "hospedaje",
+      "descanso"
+    ]
   },
   {
     "id": "casa-campestre-la-cosecha",
@@ -40,7 +54,21 @@
     "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/casa_campestre_lacosecha.png",
     "nivel": "premium",
     "lat": 4.4923,
-    "lng": -75.7153
+    "lng": -75.7153,
+    "duracion_estimada": "1 noche / Check-in 3:00 p.m.",
+    "horario": "Recepción 24 horas",
+    "ideal_para": [
+      "Familias",
+      "Parejas",
+      "Descanso"
+    ],
+    "recomendaciones": "Presentar documento de identidad al ingreso. Consultar políticas de mascotas si aplica.",
+    "orden_sugerido": 4,
+    "tags_itinerario": [
+      "noche",
+      "hospedaje",
+      "descanso"
+    ]
   },
   {
     "id": "finca-cafetera-el-ocaso",
@@ -61,7 +89,21 @@
     "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/finca_cafetera_el_ocaso.png",
     "nivel": "premium",
     "lat": 4.6374,
-    "lng": -75.5699
+    "lng": -75.5699,
+    "duracion_estimada": "1 noche / Check-in 3:00 p.m.",
+    "horario": "Recepción 24 horas",
+    "ideal_para": [
+      "Familias",
+      "Parejas",
+      "Descanso"
+    ],
+    "recomendaciones": "Presentar documento de identidad al ingreso. Consultar políticas de mascotas si aplica.",
+    "orden_sugerido": 4,
+    "tags_itinerario": [
+      "noche",
+      "hospedaje",
+      "descanso"
+    ]
   },
   {
     "id": "la-floresta-hotel-campestre",
@@ -86,7 +128,21 @@
     "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/finca_la_floresta.png",
     "nivel": "premium",
     "lat": 4.5291,
-    "lng": -75.7120
+    "lng": -75.712,
+    "duracion_estimada": "1 noche / Check-in 3:00 p.m.",
+    "horario": "Recepción 24 horas",
+    "ideal_para": [
+      "Familias",
+      "Parejas",
+      "Descanso"
+    ],
+    "recomendaciones": "Presentar documento de identidad al ingreso. Consultar políticas de mascotas si aplica.",
+    "orden_sugerido": 4,
+    "tags_itinerario": [
+      "noche",
+      "hospedaje",
+      "descanso"
+    ]
   },
   {
     "id": "hacienda-moraleja",
@@ -108,7 +164,21 @@
     "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hacienda_moraleja.png",
     "nivel": "estandar",
     "lat": 4.53,
-    "lng": -75.62
+    "lng": -75.62,
+    "duracion_estimada": "1 noche / Check-in 3:00 p.m.",
+    "horario": "Recepción 24 horas",
+    "ideal_para": [
+      "Familias",
+      "Parejas",
+      "Descanso"
+    ],
+    "recomendaciones": "Presentar documento de identidad al ingreso. Consultar políticas de mascotas si aplica.",
+    "orden_sugerido": 4,
+    "tags_itinerario": [
+      "noche",
+      "hospedaje",
+      "descanso"
+    ]
   },
   {
     "id": "alma-nativa-hotel-campestre",
@@ -129,7 +199,21 @@
     "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_alma_nativa.png",
     "nivel": "premium",
     "lat": 4.52,
-    "lng": -75.61
+    "lng": -75.61,
+    "duracion_estimada": "1 noche / Check-in 3:00 p.m.",
+    "horario": "Recepción 24 horas",
+    "ideal_para": [
+      "Familias",
+      "Parejas",
+      "Descanso"
+    ],
+    "recomendaciones": "Presentar documento de identidad al ingreso. Consultar políticas de mascotas si aplica.",
+    "orden_sugerido": 4,
+    "tags_itinerario": [
+      "noche",
+      "hospedaje",
+      "descanso"
+    ]
   },
   {
     "id": "hotel-cafe-cafe",
@@ -151,7 +235,21 @@
     "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_cafe_cafe_campestre.png",
     "nivel": "premium",
     "lat": 4.5401,
-    "lng": -75.6912
+    "lng": -75.6912,
+    "duracion_estimada": "1 noche / Check-in 3:00 p.m.",
+    "horario": "Recepción 24 horas",
+    "ideal_para": [
+      "Familias",
+      "Parejas",
+      "Descanso"
+    ],
+    "recomendaciones": "Presentar documento de identidad al ingreso. Consultar políticas de mascotas si aplica.",
+    "orden_sugerido": 4,
+    "tags_itinerario": [
+      "noche",
+      "hospedaje",
+      "descanso"
+    ]
   },
   {
     "id": "hotel-delirio-campestre",
@@ -173,7 +271,21 @@
     "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_deliriocampestre.png",
     "nivel": "estandar",
     "lat": 4.5642,
-    "lng": -75.7489
+    "lng": -75.7489,
+    "duracion_estimada": "1 noche / Check-in 3:00 p.m.",
+    "horario": "Recepción 24 horas",
+    "ideal_para": [
+      "Familias",
+      "Parejas",
+      "Descanso"
+    ],
+    "recomendaciones": "Presentar documento de identidad al ingreso. Consultar políticas de mascotas si aplica.",
+    "orden_sugerido": 4,
+    "tags_itinerario": [
+      "noche",
+      "hospedaje",
+      "descanso"
+    ]
   },
   {
     "id": "linaje-salvaje",
@@ -194,8 +306,22 @@
     "maps": "https://maps.google.com/?q=Linaje+Salvaje+Quindio",
     "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/hotel_linaje_salvaje.png",
     "nivel": "estandar",
-    "lat": 4.5010,
-    "lng": -75.5591
+    "lat": 4.501,
+    "lng": -75.5591,
+    "duracion_estimada": "1 noche / Check-in 3:00 p.m.",
+    "horario": "Recepción 24 horas",
+    "ideal_para": [
+      "Familias",
+      "Parejas",
+      "Descanso"
+    ],
+    "recomendaciones": "Presentar documento de identidad al ingreso. Consultar políticas de mascotas si aplica.",
+    "orden_sugerido": 4,
+    "tags_itinerario": [
+      "noche",
+      "hospedaje",
+      "descanso"
+    ]
   },
   {
     "id": "hotel-el-bosque",
@@ -217,7 +343,21 @@
     "imagen": "./pautas_publicitarias/hoteles_armenia/hotel_el_bosque_armenia.png",
     "nivel": "premium",
     "lat": 4.533,
-    "lng": -75.68
+    "lng": -75.68,
+    "duracion_estimada": "1 noche / Check-in 3:00 p.m.",
+    "horario": "Recepción 24 horas",
+    "ideal_para": [
+      "Familias",
+      "Parejas",
+      "Descanso"
+    ],
+    "recomendaciones": "Presentar documento de identidad al ingreso. Consultar políticas de mascotas si aplica.",
+    "orden_sugerido": 4,
+    "tags_itinerario": [
+      "noche",
+      "hospedaje",
+      "descanso"
+    ]
   },
   {
     "id": "isa-victory-hotel",
@@ -241,7 +381,21 @@
     "imagen": "./pautas_publicitarias/hoteles_armenia/hotel_isa_victory.png",
     "nivel": "premium",
     "lat": 4.54,
-    "lng": -75.68
+    "lng": -75.68,
+    "duracion_estimada": "1 noche / Check-in 3:00 p.m.",
+    "horario": "Recepción 24 horas",
+    "ideal_para": [
+      "Familias",
+      "Parejas",
+      "Descanso"
+    ],
+    "recomendaciones": "Presentar documento de identidad al ingreso. Consultar políticas de mascotas si aplica.",
+    "orden_sugerido": 4,
+    "tags_itinerario": [
+      "noche",
+      "hospedaje",
+      "descanso"
+    ]
   },
   {
     "id": "hotel-san-jeronimo",
@@ -263,7 +417,21 @@
     "imagen": "./pautas_publicitarias/hoteles_armenia/hotel_san_jeronimo/hotel_san_jeronimo.png",
     "nivel": "estandar",
     "lat": 4.5344,
-    "lng": -75.6808
+    "lng": -75.6808,
+    "duracion_estimada": "1 noche / Check-in 3:00 p.m.",
+    "horario": "Recepción 24 horas",
+    "ideal_para": [
+      "Familias",
+      "Parejas",
+      "Descanso"
+    ],
+    "recomendaciones": "Presentar documento de identidad al ingreso. Consultar políticas de mascotas si aplica.",
+    "orden_sugerido": 4,
+    "tags_itinerario": [
+      "noche",
+      "hospedaje",
+      "descanso"
+    ]
   },
   {
     "id": "cascadas-rio-verde",
@@ -287,7 +455,21 @@
     "imagen": "./pautas_publicitarias/atractivos_turisticos/cascadas_rio_verde.png",
     "nivel": "premium",
     "lat": 4.7667,
-    "lng": -75.65
+    "lng": -75.65,
+    "duracion_estimada": "3 a 4 horas",
+    "horario": "Lunes a Domingo: 9:00 a.m. - 5:00 p.m.",
+    "ideal_para": [
+      "Aventureros",
+      "Familias",
+      "Fotógrafos"
+    ],
+    "recomendaciones": "Llevar calzado cómodo, protector solar y ropa de cambio si hay actividades de agua.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "dia",
+      "aventura",
+      "experiencia"
+    ]
   },
   {
     "id": "complejo-soleden",
@@ -310,7 +492,21 @@
     "imagen": "./pautas_publicitarias/atractivos_turisticos/Complejo_Turístico_y_Deportivo_Soledén.png",
     "nivel": "premium",
     "lat": 4.5448,
-    "lng": -75.6863
+    "lng": -75.6863,
+    "duracion_estimada": "3 a 4 horas",
+    "horario": "Lunes a Domingo: 9:00 a.m. - 5:00 p.m.",
+    "ideal_para": [
+      "Aventureros",
+      "Familias",
+      "Fotógrafos"
+    ],
+    "recomendaciones": "Llevar calzado cómodo, protector solar y ropa de cambio si hay actividades de agua.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "dia",
+      "aventura",
+      "experiencia"
+    ]
   },
   {
     "id": "ecoparque-penas-blancas",
@@ -332,7 +528,21 @@
     "imagen": "./pautas_publicitarias/atractivos_turisticos/parque_los_arrieros.png",
     "nivel": "premium",
     "lat": 4.5,
-    "lng": -75.63
+    "lng": -75.63,
+    "duracion_estimada": "3 a 4 horas",
+    "horario": "Lunes a Domingo: 9:00 a.m. - 5:00 p.m.",
+    "ideal_para": [
+      "Aventureros",
+      "Familias",
+      "Fotógrafos"
+    ],
+    "recomendaciones": "Llevar calzado cómodo, protector solar y ropa de cambio si hay actividades de agua.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "dia",
+      "aventura",
+      "experiencia"
+    ]
   },
   {
     "id": "finca-las-flores",
@@ -353,7 +563,21 @@
     "imagen": "./pautas_publicitarias/atractivos_turisticos/quinti_casa_patasarriba.png",
     "nivel": "estandar",
     "lat": 4.0167,
-    "lng": -75.7667
+    "lng": -75.7667,
+    "duracion_estimada": "3 a 4 horas",
+    "horario": "Lunes a Domingo: 9:00 a.m. - 5:00 p.m.",
+    "ideal_para": [
+      "Aventureros",
+      "Familias",
+      "Fotógrafos"
+    ],
+    "recomendaciones": "Llevar calzado cómodo, protector solar y ropa de cambio si hay actividades de agua.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "dia",
+      "aventura",
+      "experiencia"
+    ]
   },
   {
     "id": "la-pequena-granja-mama-lulu",
@@ -375,7 +599,21 @@
     "imagen": "./pautas_publicitarias/atractivos_turisticos/recorrido_cacaotero.png",
     "nivel": "premium",
     "lat": 4.6167,
-    "lng": -75.7667
+    "lng": -75.7667,
+    "duracion_estimada": "3 a 4 horas",
+    "horario": "Lunes a Domingo: 9:00 a.m. - 5:00 p.m.",
+    "ideal_para": [
+      "Aventureros",
+      "Familias",
+      "Fotógrafos"
+    ],
+    "recomendaciones": "Llevar calzado cómodo, protector solar y ropa de cambio si hay actividades de agua.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "dia",
+      "aventura",
+      "experiencia"
+    ]
   },
   {
     "id": "jardin-botanico-del-quindio",
@@ -397,7 +635,21 @@
     "imagen": "./pautas_publicitarias/atractivos_turisticos/Complejo_Turístico_y_Deportivo_Soledén.png",
     "nivel": "premium",
     "lat": 4.5167,
-    "lng": -75.6333
+    "lng": -75.6333,
+    "duracion_estimada": "3 a 4 horas",
+    "horario": "Lunes a Domingo: 9:00 a.m. - 5:00 p.m.",
+    "ideal_para": [
+      "Aventureros",
+      "Familias",
+      "Fotógrafos"
+    ],
+    "recomendaciones": "Llevar calzado cómodo, protector solar y ropa de cambio si hay actividades de agua.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "dia",
+      "aventura",
+      "experiencia"
+    ]
   },
   {
     "id": "el-laberinto-mil-caminos",
@@ -418,7 +670,21 @@
     "imagen": "./pautas_publicitarias/atractivos_turisticos/parque_los_arrieros.png",
     "nivel": "estandar",
     "lat": 4.6,
-    "lng": -75.77
+    "lng": -75.77,
+    "duracion_estimada": "3 a 4 horas",
+    "horario": "Lunes a Domingo: 9:00 a.m. - 5:00 p.m.",
+    "ideal_para": [
+      "Aventureros",
+      "Familias",
+      "Fotógrafos"
+    ],
+    "recomendaciones": "Llevar calzado cómodo, protector solar y ropa de cambio si hay actividades de agua.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "dia",
+      "aventura",
+      "experiencia"
+    ]
   },
   {
     "id": "mirador-encanto-filandia",
@@ -439,7 +705,21 @@
     "imagen": "./pautas_publicitarias/atractivos_turisticos/quinti_casa_patasarriba.png",
     "nivel": "estandar",
     "lat": 4.6736,
-    "lng": -75.6547
+    "lng": -75.6547,
+    "duracion_estimada": "3 a 4 horas",
+    "horario": "Lunes a Domingo: 9:00 a.m. - 5:00 p.m.",
+    "ideal_para": [
+      "Aventureros",
+      "Familias",
+      "Fotógrafos"
+    ],
+    "recomendaciones": "Llevar calzado cómodo, protector solar y ropa de cambio si hay actividades de agua.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "dia",
+      "aventura",
+      "experiencia"
+    ]
   },
   {
     "id": "turismo-panaca",
@@ -461,7 +741,21 @@
     "imagen": "./pautas_publicitarias/atractivos_turisticos/Complejo_Turístico_y_Deportivo_Soledén.png",
     "nivel": "premium",
     "lat": 4.62,
-    "lng": -75.77
+    "lng": -75.77,
+    "duracion_estimada": "3 a 4 horas",
+    "horario": "Lunes a Domingo: 9:00 a.m. - 5:00 p.m.",
+    "ideal_para": [
+      "Aventureros",
+      "Familias",
+      "Fotógrafos"
+    ],
+    "recomendaciones": "Llevar calzado cómodo, protector solar y ropa de cambio si hay actividades de agua.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "dia",
+      "aventura",
+      "experiencia"
+    ]
   },
   {
     "id": "parque-los-arrieros",
@@ -483,7 +777,21 @@
     "imagen": "./pautas_publicitarias/atractivos_turisticos/parque_los_arrieros.png",
     "nivel": "premium",
     "lat": 4.61,
-    "lng": -75.77
+    "lng": -75.77,
+    "duracion_estimada": "3 a 4 horas",
+    "horario": "Lunes a Domingo: 9:00 a.m. - 5:00 p.m.",
+    "ideal_para": [
+      "Aventureros",
+      "Familias",
+      "Fotógrafos"
+    ],
+    "recomendaciones": "Llevar calzado cómodo, protector solar y ropa de cambio si hay actividades de agua.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "dia",
+      "aventura",
+      "experiencia"
+    ]
   },
   {
     "id": "qinti-parque-montana",
@@ -506,7 +814,21 @@
     "imagen": "./pautas_publicitarias/atractivos_turisticos/quinti_casa_patasarriba.png",
     "nivel": "premium",
     "lat": 4.7667,
-    "lng": -75.66
+    "lng": -75.66,
+    "duracion_estimada": "3 a 4 horas",
+    "horario": "Lunes a Domingo: 9:00 a.m. - 5:00 p.m.",
+    "ideal_para": [
+      "Aventureros",
+      "Familias",
+      "Fotógrafos"
+    ],
+    "recomendaciones": "Llevar calzado cómodo, protector solar y ropa de cambio si hay actividades de agua.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "dia",
+      "aventura",
+      "experiencia"
+    ]
   },
   {
     "id": "finca-la-alejandra",
@@ -528,7 +850,21 @@
     "imagen": "./pautas_publicitarias/atractivos_turisticos/recorrido_cacaotero.png",
     "nivel": "premium",
     "lat": 4.02,
-    "lng": -75.77
+    "lng": -75.77,
+    "duracion_estimada": "3 a 4 horas",
+    "horario": "Lunes a Domingo: 9:00 a.m. - 5:00 p.m.",
+    "ideal_para": [
+      "Aventureros",
+      "Familias",
+      "Fotógrafos"
+    ],
+    "recomendaciones": "Llevar calzado cómodo, protector solar y ropa de cambio si hay actividades de agua.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "dia",
+      "aventura",
+      "experiencia"
+    ]
   },
   {
     "id": "centro-comercial-sansur",
@@ -555,7 +891,18 @@
     "imagen": "./pautas_publicitarias/Centros_Comerciales/centro_comercial_sansur.png",
     "nivel": "premium",
     "lat": 4.52,
-    "lng": -75.69
+    "lng": -75.69,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Sábado: 9:00 a.m. - 6:00 p.m.",
+    "ideal_para": [
+      "Todo público"
+    ],
+    "recomendaciones": "Disfrutar de la experiencia con total tranquilidad.",
+    "orden_sugerido": 3,
+    "tags_itinerario": [
+      "general",
+      "turismo"
+    ]
   },
   {
     "id": "unicentro-armenia",
@@ -582,7 +929,18 @@
     "imagen": "./pautas_publicitarias/Centros_Comerciales/centro_comercial_unicentro.png",
     "nivel": "premium",
     "lat": 4.55,
-    "lng": -75.68
+    "lng": -75.68,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Sábado: 9:00 a.m. - 6:00 p.m.",
+    "ideal_para": [
+      "Todo público"
+    ],
+    "recomendaciones": "Disfrutar de la experiencia con total tranquilidad.",
+    "orden_sugerido": 3,
+    "tags_itinerario": [
+      "general",
+      "turismo"
+    ]
   },
   {
     "id": "dos-cielos-boutique",
@@ -602,7 +960,21 @@
     "imagen": "./pautas_publicitarias/Cocteles_licores/boutique_licores_doscielos.png",
     "nivel": "premium",
     "lat": 4.53,
-    "lng": -75.68
+    "lng": -75.68,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Domingo: 12:00 m. - 10:00 p.m.",
+    "ideal_para": [
+      "Amantes de la buena mesa",
+      "Familias",
+      "Parejas"
+    ],
+    "recomendaciones": "Probar los platos típicos de la región y preguntar por la especialidad de la casa.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "almuerzo",
+      "cena",
+      "gastronomia"
+    ]
   },
   {
     "id": "cantina-el-desmadre",
@@ -623,7 +995,21 @@
     "imagen": "./pautas_publicitarias/Cocteles_licores/cantina_el_desmadre.png",
     "nivel": "estandar",
     "lat": 4.54,
-    "lng": -75.69
+    "lng": -75.69,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Domingo: 12:00 m. - 10:00 p.m.",
+    "ideal_para": [
+      "Amantes de la buena mesa",
+      "Familias",
+      "Parejas"
+    ],
+    "recomendaciones": "Probar los platos típicos de la región y preguntar por la especialidad de la casa.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "almuerzo",
+      "cena",
+      "gastronomia"
+    ]
   },
   {
     "id": "la-fogata-steak-house",
@@ -645,7 +1031,21 @@
     "imagen": "./pautas_publicitarias/Cocteles_licores/la_fogata.png",
     "nivel": "premium",
     "lat": 4.53,
-    "lng": -75.68
+    "lng": -75.68,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Domingo: 12:00 m. - 10:00 p.m.",
+    "ideal_para": [
+      "Amantes de la buena mesa",
+      "Familias",
+      "Parejas"
+    ],
+    "recomendaciones": "Probar los platos típicos de la región y preguntar por la especialidad de la casa.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "almuerzo",
+      "cena",
+      "gastronomia"
+    ]
   },
   {
     "id": "la-fogata-express",
@@ -665,7 +1065,21 @@
     "imagen": "./pautas_publicitarias/Cocteles_licores/lafogata_circasia.png",
     "nivel": "estandar",
     "lat": 4.6167,
-    "lng": -75.6333
+    "lng": -75.6333,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Domingo: 12:00 m. - 10:00 p.m.",
+    "ideal_para": [
+      "Amantes de la buena mesa",
+      "Familias",
+      "Parejas"
+    ],
+    "recomendaciones": "Probar los platos típicos de la región y preguntar por la especialidad de la casa.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "almuerzo",
+      "cena",
+      "gastronomia"
+    ]
   },
   {
     "id": "restaurante-magangue-altavista",
@@ -686,7 +1100,21 @@
     "imagen": "./pautas_publicitarias/comida_de_mar/restaurante_magangue.png",
     "nivel": "estandar",
     "lat": 4.535,
-    "lng": -75.68
+    "lng": -75.68,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Domingo: 12:00 m. - 10:00 p.m.",
+    "ideal_para": [
+      "Amantes de la buena mesa",
+      "Familias",
+      "Parejas"
+    ],
+    "recomendaciones": "Probar los platos típicos de la región y preguntar por la especialidad de la casa.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "almuerzo",
+      "cena",
+      "gastronomia"
+    ]
   },
   {
     "id": "arepa-town",
@@ -707,7 +1135,21 @@
     "imagen": "./pautas_publicitarias/Comidas_Rapidas/arepa_town.png",
     "nivel": "estandar",
     "lat": 4.52,
-    "lng": -75.69
+    "lng": -75.69,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Domingo: 12:00 m. - 10:00 p.m.",
+    "ideal_para": [
+      "Amantes de la buena mesa",
+      "Familias",
+      "Parejas"
+    ],
+    "recomendaciones": "Probar los platos típicos de la región y preguntar por la especialidad de la casa.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "almuerzo",
+      "cena",
+      "gastronomia"
+    ]
   },
   {
     "id": "john-chewing-food",
@@ -727,7 +1169,21 @@
     "imagen": "./pautas_publicitarias/Comidas_Rapidas/jhon_chewing_food.png",
     "nivel": "estandar",
     "lat": 4.53,
-    "lng": -75.69
+    "lng": -75.69,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Domingo: 12:00 m. - 10:00 p.m.",
+    "ideal_para": [
+      "Amantes de la buena mesa",
+      "Familias",
+      "Parejas"
+    ],
+    "recomendaciones": "Probar los platos típicos de la región y preguntar por la especialidad de la casa.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "almuerzo",
+      "cena",
+      "gastronomia"
+    ]
   },
   {
     "id": "mostricos",
@@ -747,7 +1203,21 @@
     "imagen": "./pautas_publicitarias/Comidas_Rapidas/mostricos.png",
     "nivel": "premium",
     "lat": 4.54,
-    "lng": -75.68
+    "lng": -75.68,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Domingo: 12:00 m. - 10:00 p.m.",
+    "ideal_para": [
+      "Amantes de la buena mesa",
+      "Familias",
+      "Parejas"
+    ],
+    "recomendaciones": "Probar los platos típicos de la región y preguntar por la especialidad de la casa.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "almuerzo",
+      "cena",
+      "gastronomia"
+    ]
   },
   {
     "id": "sandukes",
@@ -768,7 +1238,21 @@
     "imagen": "./pautas_publicitarias/Comidas_Rapidas/sanduches_sandukes.png",
     "nivel": "estandar",
     "lat": 4.53,
-    "lng": -75.68
+    "lng": -75.68,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Domingo: 12:00 m. - 10:00 p.m.",
+    "ideal_para": [
+      "Amantes de la buena mesa",
+      "Familias",
+      "Parejas"
+    ],
+    "recomendaciones": "Probar los platos típicos de la región y preguntar por la especialidad de la casa.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "almuerzo",
+      "cena",
+      "gastronomia"
+    ]
   },
   {
     "id": "el-fogon-cuyabro",
@@ -789,7 +1273,21 @@
     "imagen": "./pautas_publicitarias/Gastronomia_tipica/restaurante_el_fogon.png",
     "nivel": "premium",
     "lat": 4.535,
-    "lng": -75.68
+    "lng": -75.68,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Domingo: 12:00 m. - 10:00 p.m.",
+    "ideal_para": [
+      "Amantes de la buena mesa",
+      "Familias",
+      "Parejas"
+    ],
+    "recomendaciones": "Probar los platos típicos de la región y preguntar por la especialidad de la casa.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "almuerzo",
+      "cena",
+      "gastronomia"
+    ]
   },
   {
     "id": "el-roble",
@@ -810,7 +1308,21 @@
     "imagen": "./pautas_publicitarias/Gastronomia_tipica/restaurante_el_roble.png",
     "nivel": "estandar",
     "lat": 4.6,
-    "lng": -75.65
+    "lng": -75.65,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Domingo: 12:00 m. - 10:00 p.m.",
+    "ideal_para": [
+      "Amantes de la buena mesa",
+      "Familias",
+      "Parejas"
+    ],
+    "recomendaciones": "Probar los platos típicos de la región y preguntar por la especialidad de la casa.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "almuerzo",
+      "cena",
+      "gastronomia"
+    ]
   },
   {
     "id": "la-feria-del-platano",
@@ -831,7 +1343,21 @@
     "imagen": "./pautas_publicitarias/Gastronomia_tipica/restaurante_la_feria_del_platano.png",
     "nivel": "premium",
     "lat": 4.53,
-    "lng": -75.68
+    "lng": -75.68,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Domingo: 12:00 m. - 10:00 p.m.",
+    "ideal_para": [
+      "Amantes de la buena mesa",
+      "Familias",
+      "Parejas"
+    ],
+    "recomendaciones": "Probar los platos típicos de la región y preguntar por la especialidad de la casa.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "almuerzo",
+      "cena",
+      "gastronomia"
+    ]
   },
   {
     "id": "anatolia",
@@ -851,7 +1377,21 @@
     "imagen": "./pautas_publicitarias/Tiendas_de_cafe/anatolia.png",
     "nivel": "premium",
     "lat": 4.54,
-    "lng": -75.68
+    "lng": -75.68,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Domingo: 12:00 m. - 10:00 p.m.",
+    "ideal_para": [
+      "Amantes de la buena mesa",
+      "Familias",
+      "Parejas"
+    ],
+    "recomendaciones": "Probar los platos típicos de la región y preguntar por la especialidad de la casa.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "almuerzo",
+      "cena",
+      "gastronomia"
+    ]
   },
   {
     "id": "camino-al-futbol",
@@ -872,7 +1412,18 @@
     "imagen": "./pautas_publicitarias/Deportes_y_entretenimiento/camino_al_futbol.png",
     "nivel": "estandar",
     "lat": 4.53,
-    "lng": -75.68
+    "lng": -75.68,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Sábado: 9:00 a.m. - 6:00 p.m.",
+    "ideal_para": [
+      "Todo público"
+    ],
+    "recomendaciones": "Disfrutar de la experiencia con total tranquilidad.",
+    "orden_sugerido": 3,
+    "tags_itinerario": [
+      "general",
+      "turismo"
+    ]
   },
   {
     "id": "orquesta-quinta-base",
@@ -892,7 +1443,18 @@
     "imagen": "./pautas_publicitarias/grupos_musicales/orquesta_quinta_base.png",
     "nivel": "premium",
     "lat": 4.53,
-    "lng": -75.68
+    "lng": -75.68,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Sábado: 9:00 a.m. - 6:00 p.m.",
+    "ideal_para": [
+      "Todo público"
+    ],
+    "recomendaciones": "Disfrutar de la experiencia con total tranquilidad.",
+    "orden_sugerido": 3,
+    "tags_itinerario": [
+      "general",
+      "turismo"
+    ]
   },
   {
     "id": "reina-querida",
@@ -914,7 +1476,21 @@
     "imagen": "./pautas_publicitarias/postres_y_dulces/reina__querida.png",
     "nivel": "premium",
     "lat": 4.54,
-    "lng": -75.68
+    "lng": -75.68,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Domingo: 12:00 m. - 10:00 p.m.",
+    "ideal_para": [
+      "Amantes de la buena mesa",
+      "Familias",
+      "Parejas"
+    ],
+    "recomendaciones": "Probar los platos típicos de la región y preguntar por la especialidad de la casa.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "almuerzo",
+      "cena",
+      "gastronomia"
+    ]
   },
   {
     "id": "confia-seguros",
@@ -936,7 +1512,18 @@
     "imagen": "./pautas_publicitarias/seguros/seguros_confia.png",
     "nivel": "premium",
     "lat": 4.534,
-    "lng": -75.681
+    "lng": -75.681,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Sábado: 9:00 a.m. - 6:00 p.m.",
+    "ideal_para": [
+      "Todo público"
+    ],
+    "recomendaciones": "Disfrutar de la experiencia con total tranquilidad.",
+    "orden_sugerido": 3,
+    "tags_itinerario": [
+      "general",
+      "turismo"
+    ]
   },
   {
     "id": "diana-seguros",
@@ -958,7 +1545,18 @@
     "imagen": "./assets/images/decoraciones/2151973988.jpg",
     "nivel": "estandar",
     "lat": 4.534,
-    "lng": -75.681
+    "lng": -75.681,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Sábado: 9:00 a.m. - 6:00 p.m.",
+    "ideal_para": [
+      "Todo público"
+    ],
+    "recomendaciones": "Disfrutar de la experiencia con total tranquilidad.",
+    "orden_sugerido": 3,
+    "tags_itinerario": [
+      "general",
+      "turismo"
+    ]
   },
   {
     "id": "cafe-la-terraza",
@@ -979,7 +1577,21 @@
     "imagen": "./pautas_publicitarias/Tiendas_de_cafe/cafe_la_terraza.png",
     "nivel": "premium",
     "lat": 4.53,
-    "lng": -75.68
+    "lng": -75.68,
+    "duracion_estimada": "1 hora",
+    "horario": "Lunes a Sábado: 8:00 a.m. - 8:00 p.m.",
+    "ideal_para": [
+      "Cafeteros",
+      "Turistas",
+      "Amigos"
+    ],
+    "recomendaciones": "Solicitar método de filtrado artesanal para apreciar las notas de cata.",
+    "orden_sugerido": 1,
+    "tags_itinerario": [
+      "manana",
+      "cafe",
+      "tarde"
+    ]
   },
   {
     "id": "cafe-sensorial",
@@ -1001,7 +1613,21 @@
     "imagen": "./pautas_publicitarias/Tiendas_de_cafe/cafe_sensorial.png",
     "nivel": "premium",
     "lat": 4.535,
-    "lng": -75.685
+    "lng": -75.685,
+    "duracion_estimada": "1 hora",
+    "horario": "Lunes a Sábado: 8:00 a.m. - 8:00 p.m.",
+    "ideal_para": [
+      "Cafeteros",
+      "Turistas",
+      "Amigos"
+    ],
+    "recomendaciones": "Solicitar método de filtrado artesanal para apreciar las notas de cata.",
+    "orden_sugerido": 1,
+    "tags_itinerario": [
+      "manana",
+      "cafe",
+      "tarde"
+    ]
   },
   {
     "id": "queso-y-cafe",
@@ -1023,7 +1649,21 @@
     "imagen": "./pautas_publicitarias/Tiendas_de_cafe/queso_y_cafe.png",
     "nivel": "estandar",
     "lat": 4.54,
-    "lng": -75.68
+    "lng": -75.68,
+    "duracion_estimada": "1 hora",
+    "horario": "Lunes a Sábado: 8:00 a.m. - 8:00 p.m.",
+    "ideal_para": [
+      "Cafeteros",
+      "Turistas",
+      "Amigos"
+    ],
+    "recomendaciones": "Solicitar método de filtrado artesanal para apreciar las notas de cata.",
+    "orden_sugerido": 1,
+    "tags_itinerario": [
+      "manana",
+      "cafe",
+      "tarde"
+    ]
   },
   {
     "id": "cafeina-coffee-shop",
@@ -1046,7 +1686,21 @@
     "imagen": "./pautas_publicitarias/Tiendas_de_cafe/tienda_de_cafe_y_academia_cafeina.png",
     "nivel": "premium",
     "lat": 4.53,
-    "lng": -75.69
+    "lng": -75.69,
+    "duracion_estimada": "1 hora",
+    "horario": "Lunes a Sábado: 8:00 a.m. - 8:00 p.m.",
+    "ideal_para": [
+      "Cafeteros",
+      "Turistas",
+      "Amigos"
+    ],
+    "recomendaciones": "Solicitar método de filtrado artesanal para apreciar las notas de cata.",
+    "orden_sugerido": 1,
+    "tags_itinerario": [
+      "manana",
+      "cafe",
+      "tarde"
+    ]
   },
   {
     "id": "radio-taxi-quindio",
@@ -1067,7 +1721,18 @@
     "imagen": "./pautas_publicitarias/Transportes/radio_taxi.png",
     "nivel": "premium",
     "lat": 4.53,
-    "lng": -75.68
+    "lng": -75.68,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Sábado: 9:00 a.m. - 6:00 p.m.",
+    "ideal_para": [
+      "Todo público"
+    ],
+    "recomendaciones": "Disfrutar de la experiencia con total tranquilidad.",
+    "orden_sugerido": 3,
+    "tags_itinerario": [
+      "general",
+      "turismo"
+    ]
   },
   {
     "id": "joselu-transporte",
@@ -1088,7 +1753,18 @@
     "imagen": "./pautas_publicitarias/Transportes/transportes_joselu.png",
     "nivel": "estandar",
     "lat": 4.53,
-    "lng": -75.68
+    "lng": -75.68,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Sábado: 9:00 a.m. - 6:00 p.m.",
+    "ideal_para": [
+      "Todo público"
+    ],
+    "recomendaciones": "Disfrutar de la experiencia con total tranquilidad.",
+    "orden_sugerido": 3,
+    "tags_itinerario": [
+      "general",
+      "turismo"
+    ]
   },
   {
     "id": "mocca-aventura-y-cafe",
@@ -1109,7 +1785,18 @@
     "imagen": "./pautas_publicitarias/Transportes/transportes_mocca.png",
     "nivel": "premium",
     "lat": 4.53,
-    "lng": -75.68
+    "lng": -75.68,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Sábado: 9:00 a.m. - 6:00 p.m.",
+    "ideal_para": [
+      "Todo público"
+    ],
+    "recomendaciones": "Disfrutar de la experiencia con total tranquilidad.",
+    "orden_sugerido": 3,
+    "tags_itinerario": [
+      "general",
+      "turismo"
+    ]
   },
   {
     "id": "transportes-union-cafetera",
@@ -1131,7 +1818,18 @@
     "imagen": "./pautas_publicitarias/Transportes/transportes_union_cafetera.png",
     "nivel": "premium",
     "lat": 4.53,
-    "lng": -75.68
+    "lng": -75.68,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Sábado: 9:00 a.m. - 6:00 p.m.",
+    "ideal_para": [
+      "Todo público"
+    ],
+    "recomendaciones": "Disfrutar de la experiencia con total tranquilidad.",
+    "orden_sugerido": 3,
+    "tags_itinerario": [
+      "general",
+      "turismo"
+    ]
   },
   {
     "id": "buen-vuelo-tours",
@@ -1151,7 +1849,18 @@
     "whatsapp": "573012042819",
     "maps": "https://maps.google.com/?q=Buen+Vuelo+Tours+Armenia",
     "imagen": "./pautas_publicitarias/agencias_de_turismo/buen_vuelo_tours.png",
-    "nivel": "estandar"
+    "nivel": "estandar",
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Sábado: 9:00 a.m. - 6:00 p.m.",
+    "ideal_para": [
+      "Todo público"
+    ],
+    "recomendaciones": "Disfrutar de la experiencia con total tranquilidad.",
+    "orden_sugerido": 3,
+    "tags_itinerario": [
+      "general",
+      "turismo"
+    ]
   },
   {
     "id": "juan-arrubla",
@@ -1170,7 +1879,18 @@
     "whatsapp": "573218995839",
     "maps": "https://maps.google.com/?q=Juan+Arrubla+Armenia",
     "imagen": "./pautas_publicitarias/agencias_de_turismo/juan_arrubla.png",
-    "nivel": "estandar"
+    "nivel": "estandar",
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Sábado: 9:00 a.m. - 6:00 p.m.",
+    "ideal_para": [
+      "Todo público"
+    ],
+    "recomendaciones": "Disfrutar de la experiencia con total tranquilidad.",
+    "orden_sugerido": 3,
+    "tags_itinerario": [
+      "general",
+      "turismo"
+    ]
   },
   {
     "id": "artesanias-turron-y-cafe",
@@ -1189,7 +1909,18 @@
     "whatsapp": "573103983619",
     "maps": "https://maps.google.com/?q=Artesanías+Turrón+y+Café+Armenia",
     "imagen": "./pautas_publicitarias/artesanias/artesanias_turronycafe.png",
-    "nivel": "estandar"
+    "nivel": "estandar",
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Sábado: 9:00 a.m. - 6:00 p.m.",
+    "ideal_para": [
+      "Todo público"
+    ],
+    "recomendaciones": "Disfrutar de la experiencia con total tranquilidad.",
+    "orden_sugerido": 3,
+    "tags_itinerario": [
+      "general",
+      "turismo"
+    ]
   },
   {
     "id": "ceramicas-el-alfarero",
@@ -1208,6 +1939,17 @@
     "whatsapp": "573206178498",
     "maps": "https://maps.google.com/?q=Cerámicas+El+Alfarero+Circasia",
     "imagen": "./pautas_publicitarias/artesanias/ceramicas_alfarero.jpg",
-    "nivel": "estandar"
+    "nivel": "estandar",
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Sábado: 9:00 a.m. - 6:00 p.m.",
+    "ideal_para": [
+      "Todo público"
+    ],
+    "recomendaciones": "Disfrutar de la experiencia con total tranquilidad.",
+    "orden_sugerido": 3,
+    "tags_itinerario": [
+      "general",
+      "turismo"
+    ]
   }
 ]
