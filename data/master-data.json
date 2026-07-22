@@ -402,8 +402,8 @@
       "emoji": "🌾",
       "description": "Municipio agrícola y tranquilo del Quindío con paisajes verdes.",
       "descripcionLong": "Córdoba es un municipio agrícola y tranquilo del Quindío, caracterizado por sus paisajes verdes, producción agrícola y ambiente rural. Es un destino ideal para quienes buscan paz y contacto con la naturaleza.",
-      "lat": 4.4000,
-      "lng": -75.6500,
+      "lat": 4.4,
+      "lng": -75.65,
       "altura": 1550,
       "poblacion": 4000,
       "gentilicio": "Cordobés",
@@ -499,7 +499,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -558,7 +558,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -617,7 +617,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -680,7 +680,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -740,7 +740,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -799,7 +799,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -859,7 +859,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -919,7 +919,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -979,7 +979,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -1039,7 +1039,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -1101,7 +1101,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -1161,7 +1161,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -1223,7 +1223,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -1284,7 +1284,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -1344,7 +1344,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -1403,7 +1403,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -1463,7 +1463,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -1523,7 +1523,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -1582,7 +1582,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -1641,7 +1641,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -1701,7 +1701,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -1761,7 +1761,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -1822,7 +1822,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -1882,7 +1882,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -1947,7 +1947,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -2012,7 +2012,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -2070,7 +2070,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -2129,7 +2129,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -2189,7 +2189,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -2247,7 +2247,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -2306,7 +2306,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -2365,7 +2365,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -2423,7 +2423,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -2481,7 +2481,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -2540,7 +2540,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -2599,7 +2599,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -2658,7 +2658,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -2717,7 +2717,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -2775,7 +2775,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -2834,7 +2834,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -2892,7 +2892,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -2952,7 +2952,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -3012,7 +3012,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -3072,7 +3072,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -3131,7 +3131,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -3191,7 +3191,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -3251,7 +3251,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -3312,7 +3312,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -3371,7 +3371,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -3430,7 +3430,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -3489,7 +3489,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -3549,7 +3549,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -3580,8 +3580,6 @@
       "municipioId": "armenia",
       "descripcion": "Agencia de viajes y turismo en Armenia, Quindío.",
       "descripcionLong": "Agencia de viajes y turismo en Armenia, Quindío.",
-      "lat": 4.5339,
-      "lng": -75.6811,
       "direccion": "",
       "servicios": [
         "Tours",
@@ -3609,7 +3607,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -3640,8 +3638,6 @@
       "municipioId": "armenia",
       "descripcion": "Guía de turismo local en Armenia y alrededores.",
       "descripcionLong": "Guía de turismo local en Armenia y alrededores.",
-      "lat": 4.5339,
-      "lng": -75.6811,
       "direccion": "",
       "servicios": [
         "Guianza",
@@ -3668,7 +3664,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -3699,8 +3695,6 @@
       "municipioId": "armenia",
       "descripcion": "Tienda de artesanía, bisutería y dulcería en Armenia.",
       "descripcionLong": "Tienda de artesanía, bisutería y dulcería en Armenia.",
-      "lat": 4.5339,
-      "lng": -75.6811,
       "direccion": "",
       "servicios": [
         "Artesanías",
@@ -3727,7 +3721,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -3758,8 +3752,6 @@
       "municipioId": "circasia",
       "descripcion": "Puesto de alfarería en el Centro Artesanal Plaza de Bolívar, Circasia.",
       "descripcionLong": "Puesto de alfarería en el Centro Artesanal Plaza de Bolívar, Circasia.",
-      "lat": 4.6167,
-      "lng": -75.6333,
       "direccion": "",
       "servicios": [
         "Cerámica",
@@ -3786,7 +3778,7 @@
         "Eje Cafetero"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-07",
+      "fechaActualizacion": "2026-07-22",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
@@ -3809,61 +3801,120 @@
       "transporte": []
     },
     {
-      "id": "reservar-hotel-quindio",
-      "nombre": "Reservar Hotel Quindío",
-      "slug": "reservar-hotel-quindio",
-      "categoria": "alojamiento",
-      "tipo": "Servicio de reservas",
-      "municipioId": "armenia",
-      "descripcion": "Servicio integral de reservas de hoteles y alojamientos en todo el Quindío. Encuentra las mejores opciones de hospedaje con asistencia personalizada.",
-      "descripcionLong": "Servicio integral de reservas de hoteles y alojamientos en todo el Quindío. Ofrecemos asistencia personalizada para encontrar las mejores opciones de hospedaje según tus necesidades y presupuesto.",
-      "lat": 4.5339,
-      "lng": -75.6811,
-      "direccion": "Armenia, Quindío",
+      "id": "finca-la-abundancia",
+      "nombre": "Coffee Tour Finca La Abundancia",
+      "slug": "coffee-tour-finca-la-abundancia",
+      "categoria": "sitio-turistico",
+      "tipo": "Coffee Tour",
+      "municipioId": "salento",
+      "descripcion": "Recorrido guiado artesanal y participativo de la semilla a la taza. Caminata por cafetales de café arábico bajo sombra, cosecha manual, proceso húmedo, secado, tosturización en vivo y catación guiada. Experiencia familiar con grupos pequeños, atención bilingüe (español e inglés). Ubicación entre Salento y Filandia.",
+      "descripcionLong": "Recorrido guiado artesanal y participativo de la semilla a la taza. Caminata por cafetales de café arábico bajo sombra, cosecha manual, proceso húmedo, secado, tosturización en vivo y catación guiada. Experiencia familiar con grupos pequeños, atención bilingüe (español e inglés). Ubicación entre Salento y Filandia.",
+      "direccion": "",
+      "lat": 4.6374,
+      "lng": -75.5699,
       "servicios": [
-        "Reservas de hoteles",
-        "Asesoría personalizada",
-        "Comparación de precios",
-        "Disponibilidad en tiempo real",
-        "Atención 24/7"
+        "Tour del café",
+        "Cosecha de café",
+        "Proceso húmedo",
+        "Tosturización en vivo",
+        "Catación guiada",
+        "Venta de café tostado"
       ],
-      "precioRango": "Variable según hotel",
-      "telefono": "+57 300 000 0000",
-      "whatsapp": "573000000000",
-      "email": "reservas@mapaturisticodelquindio.com",
-      "url": "https://www.mapaturisticodelquindio.com",
-      "maps": "https://maps.google.com/?q=Armenia+Quindío",
-      "imagen": "./assets/images/paisajes/48159.jpg",
+      "precioRango": "Consultar",
+      "telefono": "+57 312 8415370",
+      "whatsapp": "573128415370",
+      "email": "",
+      "url": "",
+      "maps": "https://maps.google.com/?q=Coffee+Tour+Finca+La+Abundancia+Salento",
+      "imagen": "./pautas_publicitarias/atractivos_turisticos/finca_la_abundancia.png",
       "galeria": [
-        "./assets/images/paisajes/48159.jpg",
-        "./assets/images/paisajes/10834.jpg"
+        "./pautas_publicitarias/atractivos_turisticos/finca_la_abundancia.png"
       ],
       "nivel": "premium",
       "palabrasClave": [
-        "Reservar Hotel Quindío",
-        "Reservas de alojamiento",
-        "Hoteles en Quindío",
-        "Armenia",
+        "Coffee Tour Finca La Abundancia",
+        "Coffee Tour",
+        "sitio-turistico",
+        "salento",
         "Quindío",
         "Eje Cafetero"
       ],
-      "textoSeo": "Reserva fácilmente hoteles y alojamientos en todo el Quindío con nuestro servicio personalizado. Encuentra las mejores opciones de hospedaje con asistencia experta.",
-      "fechaPublicacion": "2026-07-22",
+      "fechaPublicacion": "2026-01-15",
       "fechaActualizacion": "2026-07-22",
       "rating": {
-        "valor": 4.9,
-        "cantidad": 156
+        "valor": 4.8,
+        "cantidad": 24
       },
       "author": {
         "name": "Equipo Mapa Turístico del Quindío",
         "url": "https://www.mapaturisticodelquindio.com"
       },
       "schema": {
-        "@type": "TravelAgency",
-        "priceRange": "$$-$$$",
+        "@type": "TouristAttraction",
+        "priceRange": "$$",
         "servesCuisine": [
           "Colombiana",
-          "Internacional"
+          "Cafetera"
+        ],
+        "openingHours": [
+          "Mo-Su 00:00-23:59"
+        ]
+      },
+      "transporte": []
+    },
+    {
+      "id": "super-forcha-tebaida",
+      "nombre": "Súper Forcha de La Tebaida",
+      "slug": "super-forcha-de-la-tebaida",
+      "categoria": "gastronomia",
+      "tipo": "Restaurante",
+      "municipioId": "la-tebaida",
+      "descripcion": "Restaurante conocido por el mejor chorizo de Colombia, acompañado de forcha (bebida tradicional fermentada) en un ambiente decorado con antigüedades. Ubicado Km 1 desde La Tebaida hacia el Valle, frente a la vía Panamericana.",
+      "descripcionLong": "Restaurante conocido por el mejor chorizo de Colombia, acompañado de forcha (bebida tradicional fermentada) en un ambiente decorado con antigüedades. Ubicado Km 1 desde La Tebaida hacia el Valle, frente a la vía Panamericana.",
+      "direccion": "",
+      "lat": 4.45,
+      "lng": -75.9,
+      "servicios": [
+        "Forcha",
+        "Chorizo",
+        "Comida típica",
+        "Ambiente con antigüedades"
+      ],
+      "precioRango": "Consultar",
+      "telefono": "+57 323 226 3486",
+      "whatsapp": "573232263486",
+      "email": "",
+      "url": "",
+      "maps": "https://maps.google.com/?q=Súper+Forcha+La+Tebaida",
+      "imagen": "./pautas_publicitarias/Gastronomia_tipica/forcha_tebaida.png",
+      "galeria": [
+        "./pautas_publicitarias/Gastronomia_tipica/forcha_tebaida.png"
+      ],
+      "nivel": "estandar",
+      "palabrasClave": [
+        "Súper Forcha de La Tebaida",
+        "Restaurante",
+        "gastronomia",
+        "la-tebaida",
+        "Quindío",
+        "Eje Cafetero"
+      ],
+      "fechaPublicacion": "2026-01-15",
+      "fechaActualizacion": "2026-07-22",
+      "rating": {
+        "valor": 4.8,
+        "cantidad": 24
+      },
+      "author": {
+        "name": "Equipo Mapa Turístico del Quindío",
+        "url": "https://www.mapaturisticodelquindio.com"
+      },
+      "schema": {
+        "@type": "Restaurant",
+        "priceRange": "$$",
+        "servesCuisine": [
+          "Colombiana",
+          "Cafetera"
         ],
         "openingHours": [
           "Mo-Su 00:00-23:59"

@@ -303,7 +303,7 @@
         "tipo": "Hotel",
         "municipioId": "armenia",
         "descripcion": "A better rest just one place. Cra 14 #14-14 Armenia-Quindío.",
-        "imagen": "./pautas_publicitarias/hoteles_armenia/hotel_san_jeronimo.png",
+        "imagen": "./pautas_publicitarias/hoteles_armenia/hotel_san_jeronimo/hotel_san_jeronimo.png",
         "nivel": "estandar",
         "rating": {
           "valor": 4.8,
@@ -641,7 +641,7 @@
         "tipo": "Centro comercial",
         "municipioId": "armenia",
         "descripcion": "Eventos y promociones para toda la familia. Cra 18 # 59-37, Armenia, Quindío.",
-        "imagen": "./pautas_publicitarias/Centros Comerciales/centro_comercial_sansur.png",
+        "imagen": "./pautas_publicitarias/Centros_Comerciales/centro_comercial_sansur.png",
         "nivel": "premium",
         "rating": {
           "valor": 4.8,
@@ -667,7 +667,7 @@
         "tipo": "Centro comercial",
         "municipioId": "armenia",
         "descripcion": "Un espacio para tod@s.",
-        "imagen": "./pautas_publicitarias/Centros Comerciales/centro_comercial_unicentro.png",
+        "imagen": "./pautas_publicitarias/Centros_Comerciales/centro_comercial_unicentro.png",
         "nivel": "premium",
         "rating": {
           "valor": 4.8,
@@ -1031,7 +1031,7 @@
         "tipo": "Formación deportiva",
         "municipioId": "armenia",
         "descripcion": "Formación deportiva de alto nivel / Formación integral. Formación, espíritu y valores.",
-        "imagen": "./pautas_publicitarias/Deportes y entretenimiento/camino_al_futbol.png",
+        "imagen": "./pautas_publicitarias/Deportes_y_entretenimiento/camino_al_futbol.png",
         "nivel": "estandar",
         "rating": {
           "valor": 4.8,
@@ -1358,8 +1358,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -75.6811,
-          4.5339
+          null,
+          null
         ]
       },
       "properties": {
@@ -1384,8 +1384,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -75.6811,
-          4.5339
+          null,
+          null
         ]
       },
       "properties": {
@@ -1410,8 +1410,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -75.6811,
-          4.5339
+          null,
+          null
         ]
       },
       "properties": {
@@ -1436,8 +1436,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -75.6333,
-          4.6167
+          null,
+          null
         ]
       },
       "properties": {
@@ -1455,6 +1455,58 @@
         },
         "whatsapp": "573206178498",
         "maps": "https://maps.google.com/?q=Cerámicas+El+Alfarero+Circasia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.5699,
+          4.6374
+        ]
+      },
+      "properties": {
+        "id": "finca-la-abundancia",
+        "nombre": "Coffee Tour Finca La Abundancia",
+        "categoria": "sitio-turistico",
+        "tipo": "Coffee Tour",
+        "municipioId": "salento",
+        "descripcion": "Recorrido guiado artesanal y participativo de la semilla a la taza. Caminata por cafetales de café arábico bajo sombra, cosecha manual, proceso húmedo, secado, tosturización en vivo y catación guiada. Experiencia familiar con grupos pequeños, atención bilingüe (español e inglés). Ubicación entre Salento y Filandia.",
+        "imagen": "./pautas_publicitarias/atractivos_turisticos/finca_la_abundancia.png",
+        "nivel": "premium",
+        "rating": {
+          "valor": 4.8,
+          "cantidad": 24
+        },
+        "whatsapp": "573128415370",
+        "maps": "https://maps.google.com/?q=Coffee+Tour+Finca+La+Abundancia+Salento"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.9,
+          4.45
+        ]
+      },
+      "properties": {
+        "id": "super-forcha-tebaida",
+        "nombre": "Súper Forcha de La Tebaida",
+        "categoria": "gastronomia",
+        "tipo": "Restaurante",
+        "municipioId": "la-tebaida",
+        "descripcion": "Restaurante conocido por el mejor chorizo de Colombia, acompañado de forcha (bebida tradicional fermentada) en un ambiente decorado con antigüedades. Ubicado Km 1 desde La Tebaida hacia el Valle, frente a la vía Panamericana.",
+        "imagen": "./pautas_publicitarias/Gastronomia_tipica/forcha_tebaida.png",
+        "nivel": "estandar",
+        "rating": {
+          "valor": 4.8,
+          "cantidad": 24
+        },
+        "whatsapp": "573232263486",
+        "maps": "https://maps.google.com/?q=Súper+Forcha+La+Tebaida"
       }
     },
     {
@@ -1591,6 +1643,91 @@
         "tipo": "municipio",
         "emoji": "🌴",
         "banner": "./assets/images/paisajes/10834.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.7333,
+          4.6167
+        ]
+      },
+      "properties": {
+        "id": "quimbaya",
+        "nombre": "Quimbaya",
+        "tipo": "municipio",
+        "emoji": "🏡",
+        "banner": "./assets/images/paisajes/67890.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.7167,
+          4.4833
+        ]
+      },
+      "properties": {
+        "id": "buenavista",
+        "nombre": "Buenavista",
+        "tipo": "municipio",
+        "emoji": "🌄",
+        "banner": "./assets/images/paisajes/78901.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.7167,
+          4.3333
+        ]
+      },
+      "properties": {
+        "id": "pijao",
+        "nombre": "Pijao",
+        "tipo": "municipio",
+        "emoji": "☕",
+        "banner": "./assets/images/paisajes/89012.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.65,
+          4.4
+        ]
+      },
+      "properties": {
+        "id": "cordoba",
+        "nombre": "Córdoba",
+        "tipo": "municipio",
+        "emoji": "🌾",
+        "banner": "./assets/images/paisajes/90123.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.5333,
+          4.5667
+        ]
+      },
+      "properties": {
+        "id": "genova",
+        "nombre": "Génova",
+        "tipo": "municipio",
+        "emoji": "🏔️",
+        "banner": "./assets/images/paisajes/01234.jpg"
       }
     }
   ]

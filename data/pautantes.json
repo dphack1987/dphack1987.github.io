@@ -1951,5 +1951,79 @@
       "general",
       "turismo"
     ]
+  },
+  {
+    "id": "finca-la-abundancia",
+    "nombre": "Coffee Tour Finca La Abundancia",
+    "categoria": "sitio-turistico",
+    "tipo": "Coffee Tour",
+    "municipio": "salento",
+    "desc": "Recorrido guiado artesanal y participativo de la semilla a la taza. Caminata por cafetales de café arábico bajo sombra, cosecha manual, proceso húmedo, secado, tosturización en vivo y catación guiada. Experiencia familiar con grupos pequeños, atención bilingüe (español e inglés). Ubicación entre Salento y Filandia.",
+    "servicios": [
+      "Tour del café",
+      "Cosecha de café",
+      "Proceso húmedo",
+      "Tosturización en vivo",
+      "Catación guiada",
+      "Venta de café tostado"
+    ],
+    "precio": "Consultar",
+    "telefono": "+57 312 8415370",
+    "whatsapp": "573128415370",
+    "maps": "https://maps.google.com/?q=Coffee+Tour+Finca+La+Abundancia+Salento",
+    "imagen": "./pautas_publicitarias/atractivos_turisticos/finca_la_abundancia.png",
+    "nivel": "premium",
+    "lat": 4.6374,
+    "lng": -75.5699,
+    "duracion_estimada": "3 a 4 horas",
+    "horario": "Lunes a Domingo: 9:00 a.m. - 5:00 p.m.",
+    "ideal_para": [
+      "Cafelovers",
+      "Familias",
+      "Grupos pequeños"
+    ],
+    "recomendaciones": "Reservar con anticipación. Coordinar transporte si se requiere. Disponible almuerzo típico casero bajo previa petición.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "dia",
+      "experiencia",
+      "cultura"
+    ]
+  },
+  {
+    "id": "super-forcha-tebaida",
+    "nombre": "Súper Forcha de La Tebaida",
+    "categoria": "gastronomia",
+    "tipo": "Restaurante",
+    "municipio": "la-tebaida",
+    "desc": "Restaurante conocido por el mejor chorizo de Colombia, acompañado de forcha (bebida tradicional fermentada) en un ambiente decorado con antigüedades. Ubicado Km 1 desde La Tebaida hacia el Valle, frente a la vía Panamericana.",
+    "servicios": [
+      "Forcha",
+      "Chorizo",
+      "Comida típica",
+      "Ambiente con antigüedades"
+    ],
+    "precio": "Consultar",
+    "telefono": "+57 323 226 3486",
+    "whatsapp": "573232263486",
+    "maps": "https://maps.google.com/?q=Súper+Forcha+La+Tebaida",
+    "imagen": "./pautas_publicitarias/Gastronomia_tipica/forcha_tebaida.png",
+    "nivel": "estandar",
+    "lat": 4.45,
+    "lng": -75.9,
+    "duracion_estimada": "1 a 2 horas",
+    "horario": "Lunes a Domingo: 11:00 a.m. - 8:00 p.m.",
+    "ideal_para": [
+      "Gastrónomos",
+      "Familias",
+      "Grupos"
+    ],
+    "recomendaciones": "Probar el chorizo con forcha, la especialidad de la casa. Apreciar las antigüedades decorativas.",
+    "orden_sugerido": 3,
+    "tags_itinerario": [
+      "comida",
+      "experiencia",
+      "cultura"
+    ]
   }
 ]

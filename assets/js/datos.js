@@ -154,7 +154,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -215,7 +215,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -276,7 +276,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -341,7 +341,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -403,7 +403,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -464,7 +464,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -526,7 +526,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -588,7 +588,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -650,7 +650,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -712,7 +712,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -776,7 +776,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -838,7 +838,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -902,7 +902,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -965,7 +965,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -1027,7 +1027,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -1088,7 +1088,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -1150,7 +1150,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -1212,7 +1212,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -1273,7 +1273,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -1334,7 +1334,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -1396,7 +1396,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -1458,7 +1458,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -1521,7 +1521,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -1583,7 +1583,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -1650,7 +1650,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -1717,7 +1717,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -1777,7 +1777,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -1838,7 +1838,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -1900,7 +1900,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -1960,7 +1960,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -2021,7 +2021,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -2082,7 +2082,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -2142,7 +2142,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -2202,7 +2202,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -2263,7 +2263,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -2324,7 +2324,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -2385,7 +2385,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -2446,7 +2446,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -2506,7 +2506,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -2567,7 +2567,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -2627,7 +2627,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -2689,7 +2689,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -2751,7 +2751,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -2813,7 +2813,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -2874,7 +2874,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -2936,7 +2936,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -2998,7 +2998,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -3061,7 +3061,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -3122,7 +3122,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -3183,7 +3183,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -3244,7 +3244,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -3306,7 +3306,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -3339,8 +3339,6 @@ const NEGOCIOS = [
     "municipioId": "armenia",
     "descripcion": "Agencia de viajes y turismo en Armenia, Quindío.",
     "descripcionLong": "Agencia de viajes y turismo en Armenia, Quindío.",
-    "lat": 4.5339,
-    "lng": -75.6811,
     "direccion": "",
     "servicios": [
       "Tours",
@@ -3368,7 +3366,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -3401,8 +3399,6 @@ const NEGOCIOS = [
     "municipioId": "armenia",
     "descripcion": "Guía de turismo local en Armenia y alrededores.",
     "descripcionLong": "Guía de turismo local en Armenia y alrededores.",
-    "lat": 4.5339,
-    "lng": -75.6811,
     "direccion": "",
     "servicios": [
       "Guianza",
@@ -3429,7 +3425,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -3462,8 +3458,6 @@ const NEGOCIOS = [
     "municipioId": "armenia",
     "descripcion": "Tienda de artesanía, bisutería y dulcería en Armenia.",
     "descripcionLong": "Tienda de artesanía, bisutería y dulcería en Armenia.",
-    "lat": 4.5339,
-    "lng": -75.6811,
     "direccion": "",
     "servicios": [
       "Artesanías",
@@ -3490,7 +3484,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -3523,8 +3517,6 @@ const NEGOCIOS = [
     "municipioId": "circasia",
     "descripcion": "Puesto de alfarería en el Centro Artesanal Plaza de Bolívar, Circasia.",
     "descripcionLong": "Puesto de alfarería en el Centro Artesanal Plaza de Bolívar, Circasia.",
-    "lat": 4.6167,
-    "lng": -75.6333,
     "direccion": "",
     "servicios": [
       "Cerámica",
@@ -3551,7 +3543,7 @@ const NEGOCIOS = [
       "Eje Cafetero"
     ],
     "fechaPublicacion": "2026-01-15",
-    "fechaActualizacion": "2026-07-07",
+    "fechaActualizacion": "2026-07-22",
     "rating": {
       "valor": 4.8,
       "cantidad": 24
@@ -3574,6 +3566,132 @@ const NEGOCIOS = [
     "transporte": [],
     "desc": "Puesto de alfarería en el Centro Artesanal Plaza de Bolívar, Circasia.",
     "municipio": "circasia"
+  },
+  {
+    "id": "finca-la-abundancia",
+    "nombre": "Coffee Tour Finca La Abundancia",
+    "slug": "coffee-tour-finca-la-abundancia",
+    "categoria": "sitio-turistico",
+    "tipo": "Coffee Tour",
+    "municipioId": "salento",
+    "descripcion": "Recorrido guiado artesanal y participativo de la semilla a la taza. Caminata por cafetales de café arábico bajo sombra, cosecha manual, proceso húmedo, secado, tosturización en vivo y catación guiada. Experiencia familiar con grupos pequeños, atención bilingüe (español e inglés). Ubicación entre Salento y Filandia.",
+    "descripcionLong": "Recorrido guiado artesanal y participativo de la semilla a la taza. Caminata por cafetales de café arábico bajo sombra, cosecha manual, proceso húmedo, secado, tosturización en vivo y catación guiada. Experiencia familiar con grupos pequeños, atención bilingüe (español e inglés). Ubicación entre Salento y Filandia.",
+    "direccion": "",
+    "lat": 4.6374,
+    "lng": -75.5699,
+    "servicios": [
+      "Tour del café",
+      "Cosecha de café",
+      "Proceso húmedo",
+      "Tosturización en vivo",
+      "Catación guiada",
+      "Venta de café tostado"
+    ],
+    "precioRango": "Consultar",
+    "telefono": "+57 312 8415370",
+    "whatsapp": "573128415370",
+    "email": "",
+    "url": "",
+    "maps": "https://maps.google.com/?q=Coffee+Tour+Finca+La+Abundancia+Salento",
+    "imagen": "./pautas_publicitarias/atractivos_turisticos/finca_la_abundancia.png",
+    "galeria": [
+      "./pautas_publicitarias/atractivos_turisticos/finca_la_abundancia.png"
+    ],
+    "nivel": "premium",
+    "palabrasClave": [
+      "Coffee Tour Finca La Abundancia",
+      "Coffee Tour",
+      "sitio-turistico",
+      "salento",
+      "Quindío",
+      "Eje Cafetero"
+    ],
+    "fechaPublicacion": "2026-01-15",
+    "fechaActualizacion": "2026-07-22",
+    "rating": {
+      "valor": 4.8,
+      "cantidad": 24
+    },
+    "author": {
+      "name": "Equipo Mapa Turístico del Quindío",
+      "url": "https://www.mapaturisticodelquindio.com"
+    },
+    "schema": {
+      "@type": "TouristAttraction",
+      "priceRange": "$$",
+      "servesCuisine": [
+        "Colombiana",
+        "Cafetera"
+      ],
+      "openingHours": [
+        "Mo-Su 00:00-23:59"
+      ]
+    },
+    "transporte": [],
+    "desc": "Recorrido guiado artesanal y participativo de la semilla a la taza. Caminata por cafetales de café arábico bajo sombra, cosecha manual, proceso húmedo, secado, tosturización en vivo y catación guiada. Experiencia familiar con grupos pequeños, atención bilingüe (español e inglés). Ubicación entre Salento y Filandia.",
+    "municipio": "salento"
+  },
+  {
+    "id": "super-forcha-tebaida",
+    "nombre": "Súper Forcha de La Tebaida",
+    "slug": "super-forcha-de-la-tebaida",
+    "categoria": "gastronomia",
+    "tipo": "Restaurante",
+    "municipioId": "la-tebaida",
+    "descripcion": "Restaurante conocido por el mejor chorizo de Colombia, acompañado de forcha (bebida tradicional fermentada) en un ambiente decorado con antigüedades. Ubicado Km 1 desde La Tebaida hacia el Valle, frente a la vía Panamericana.",
+    "descripcionLong": "Restaurante conocido por el mejor chorizo de Colombia, acompañado de forcha (bebida tradicional fermentada) en un ambiente decorado con antigüedades. Ubicado Km 1 desde La Tebaida hacia el Valle, frente a la vía Panamericana.",
+    "direccion": "",
+    "lat": 4.45,
+    "lng": -75.9,
+    "servicios": [
+      "Forcha",
+      "Chorizo",
+      "Comida típica",
+      "Ambiente con antigüedades"
+    ],
+    "precioRango": "Consultar",
+    "telefono": "+57 323 226 3486",
+    "whatsapp": "573232263486",
+    "email": "",
+    "url": "",
+    "maps": "https://maps.google.com/?q=Súper+Forcha+La+Tebaida",
+    "imagen": "./pautas_publicitarias/Gastronomia_tipica/forcha_tebaida.png",
+    "galeria": [
+      "./pautas_publicitarias/Gastronomia_tipica/forcha_tebaida.png"
+    ],
+    "nivel": "estandar",
+    "palabrasClave": [
+      "Súper Forcha de La Tebaida",
+      "Restaurante",
+      "gastronomia",
+      "la-tebaida",
+      "Quindío",
+      "Eje Cafetero"
+    ],
+    "fechaPublicacion": "2026-01-15",
+    "fechaActualizacion": "2026-07-22",
+    "rating": {
+      "valor": 4.8,
+      "cantidad": 24
+    },
+    "author": {
+      "name": "Equipo Mapa Turístico del Quindío",
+      "url": "https://www.mapaturisticodelquindio.com"
+    },
+    "schema": {
+      "@type": "Restaurant",
+      "priceRange": "$$",
+      "servesCuisine": [
+        "Colombiana",
+        "Cafetera"
+      ],
+      "openingHours": [
+        "Mo-Su 00:00-23:59"
+      ]
+    },
+    "transporte": [],
+    "desc": "Restaurante conocido por el mejor chorizo de Colombia, acompañado de forcha (bebida tradicional fermentada) en un ambiente decorado con antigüedades. Ubicado Km 1 desde La Tebaida hacia el Valle, frente a la vía Panamericana.",
+    "municipio": "la-tebaida"
   }
 ];
 
