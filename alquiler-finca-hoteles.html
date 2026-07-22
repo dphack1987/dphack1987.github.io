@@ -172,13 +172,16 @@
           const telefono = n.telefono || '';
           const whatsappMsg = encodeURIComponent(`Hola, vi ${nombre} en MapaTurísticoDelQuindío y quiero reservar`);
           const waLink = telefono ? `https://wa.me/${telefono.replace(/\D/g,'')}?text=${whatsappMsg}` : `https://wa.me/?text=${whatsappMsg}`;
+          // Generar enlace a subpágina si existe el campo id
+          const subpageLink = n.id ? `./negocios/${n.id}.html` : '#';
           d.innerHTML = `
-            <div class="biz-card-img-wrap"><img src="${n.imagen||''}" alt="${nombre}" class="biz-card-img" loading="lazy"></div>
+            <div class="biz-card-img-wrap"><a href="${subpageLink}"><img src="${n.imagen||''}" alt="${nombre}" class="biz-card-img" loading="lazy"></a></div>
             <div class="biz-card-body">
               <div style="display:flex;justify-content:space-between;align-items:center"><div class="biz-tipo">${n.tipo||''}</div><div class="biz-badge ${n.nivel||''}">${n.nivel === 'premium' ? '⭐ Premium' : (n.nivel||'')}</div></div>
-              <h3>${nombre}</h3>
+              <h3><a href="${subpageLink}" style="color:inherit;text-decoration:none">${nombre}</a></h3>
               <div class="biz-precio">${n.precio? '💰 '+n.precio : ''}</div>
               <div style="margin-top:10px;display:flex;gap:8px">
+                <a href="${subpageLink}" class="btn-cta">📋 Ver detalles</a>
                 <a href="${waLink}" target="_blank" rel="noopener" class="btn-wa">💬 WhatsApp</a>
                 <button class="btn-cta btn-cotizar" data-nombre="${encodeURIComponent(nombre)}" data-precio="${precioBase}">Cotizar</button>
                 <a href="${n.maps||'#'}" target="_blank" class="btn-maps">📍 Llegar</a>
@@ -248,11 +251,12 @@
         items.slice(0,3).forEach(n => {
           const d = document.createElement('article'); d.className = 'biz-card recommendation-card';
           const link = n.maps && /^https?:\/\//.test(n.maps) ? n.maps : (n.maps ? 'https://' + n.maps : '#');
-          d.innerHTML = `<div class="biz-card-img-wrap"><img src="${n.imagen||''}" alt="${n.nombre}" class="biz-card-img" loading="lazy"></div>
+          const subpageLink = n.id ? `./negocios/${n.id}.html` : '#';
+          d.innerHTML = `<div class="biz-card-img-wrap"><a href="${subpageLink}"><img src="${n.imagen||''}" alt="${n.nombre}" class="biz-card-img" loading="lazy"></a></div>
             <div class="biz-card-body"><div class="biz-card-meta"><span class="biz-chip">${n.lujo ? 'Escapada Premium' : 'Selección'}</span><span class="biz-chip">${n.piscina ? 'Piscina' : 'Confort'}</span></div>
-            <h3>${n.nombre}</h3><p>${n.descripcion}</p>
+            <h3><a href="${subpageLink}" style="color:inherit;text-decoration:none">${n.nombre}</a></h3><p>${n.descripcion}</p>
             <div class="biz-precio">${n.precio ? '💰 '+n.precio : 'Consultar precio'}</div>
-            <div class="biz-actions"><a href="${window.generateWhatsAppLink(n)}" target="_blank" rel="noopener" class="btn-wa">💬 WhatsApp</a><a href="${link}" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a></div></div>`;
+            <div class="biz-actions"><a href="${subpageLink}" class="btn-cta">📋 Ver detalles</a><a href="${window.generateWhatsAppLink(n)}" target="_blank" rel="noopener" class="btn-wa">💬 WhatsApp</a><a href="${link}" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a></div></div>`;
           container.appendChild(d);
         });
       }

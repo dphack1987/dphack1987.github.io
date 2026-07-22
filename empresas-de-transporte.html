@@ -87,11 +87,12 @@
       const c=document.getElementById('cards'),e=document.getElementById('empty');
       c.innerHTML='';if(!l.length){e.style.display='block';return}e.style.display='none';
       l.forEach(n=>{const d=document.createElement('article');d.className='biz-card';
-        d.innerHTML=`<div class="biz-card-img-wrap"><img src="${n.imagen}" alt="${n.nombre}" class="biz-card-img" loading="lazy"><span class="biz-badge ${n.nivel}">${n.nivel==='premium'?'⭐ Premium':'✓ Verificado'}</span></div>
-        <div class="biz-card-body"><div class="biz-tipo">${n.tipo} · ${n.municipio}</div><h3>${n.nombre}</h3><p>${n.descripcion}</p>
+        const subpageLink = n.id ? `./negocios/${n.id}.html` : '#';
+        d.innerHTML=`<div class="biz-card-img-wrap"><a href="${subpageLink}"><img src="${n.imagen}" alt="${n.nombre}" class="biz-card-img" loading="lazy"></a><span class="biz-badge ${n.nivel}">${n.nivel==='premium'?'⭐ Premium':'✓ Verificado'}</span></div>
+        <div class="biz-card-body"><div class="biz-tipo">${n.tipo} · ${n.municipio}</div><h3><a href="${subpageLink}" style="color:inherit;text-decoration:none">${n.nombre}</a></h3><p>${n.descripcion}</p>
         <div class="biz-servicios">${(n.servicios||[]).slice(0,3).map(s=>`<span class="biz-tag">${s}</span>`).join('')}</div>
         <div class="biz-precio">${n.precio? '💰 '+n.precio : ''}</div>
-        <div class="biz-actions"><a href="tel:${n.telefono}" class="btn-tel" style="flex:1;justify-content:center">📞 Llamar</a><a href="${n.maps||'#'}" target="_blank" rel="noopener" class="btn-maps">📍 Ubicación</a></div></div>`;
+        <div class="biz-actions"><a href="${subpageLink}" class="btn-cta">📋 Ver detalles</a><a href="tel:${n.telefono}" class="btn-tel" style="flex:1;justify-content:center">📞 Llamar</a><a href="${n.maps||'#'}" target="_blank" rel="noopener" class="btn-maps">📍 Ubicación</a></div></div>`;
         c.appendChild(d)});
     }
     function buscar(){const q=document.getElementById('q').value.toLowerCase().trim();if(!q){render(todos);return}render(todos.filter(n=>n.nombre.toLowerCase().includes(q)|| (n.descripcion||'').toLowerCase().includes(q) || (n.servicios||[]).some(s=>s.toLowerCase().includes(q))))}

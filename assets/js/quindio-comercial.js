@@ -71,18 +71,19 @@ window.renderCommercialCardHTML = function(n) {
   const videoButton = n.video ? `<button type="button" class="btn-secondary" onclick="openMediaModal('${n.id}', 'video')">▶ Ver video</button>` : '';
   const galleryButton = mediaExists ? `<button type="button" class="btn-secondary" onclick="openMediaModal('${n.id}', 'gallery')">🖼️ Ver galería</button>` : '';
   const galleryBadge = mediaExists ? `<span class="biz-media-badge">+ Galería</span>` : '';
+  const subpageLink = n.id ? `./negocios/${n.id}.html` : '#';
 
   const servicios = Array.isArray(n.servicios) ? n.servicios : [];
 
   return `
     <div class="biz-card-img-wrap">
-      <img src="${n.imagen}" alt="${n.nombre}" class="biz-card-img" loading="lazy">
+      <a href="${subpageLink}"><img src="${n.imagen}" alt="${n.nombre}" class="biz-card-img" loading="lazy"></a>
       ${galleryBadge}
       <span class="biz-badge ${n.nivel}">${n.nivel === 'premium' ? '⭐ Premium' : '✓ Verificado'}</span>
     </div>
     <div class="biz-card-body">
       <div class="biz-tipo">${n.tipo} · ${n.municipio}</div>
-      <h3>${n.nombre}</h3>
+      <h3><a href="${subpageLink}" style="color:inherit;text-decoration:none">${n.nombre}</a></h3>
       <p>${n.descripcion || n.desc || ''}</p>
       <div class="biz-servicios">${servicios.slice(0,4).map(s => `<span class="biz-tag">${s}</span>`).join('')}</div>
       <div class="biz-meta-row">
@@ -90,6 +91,7 @@ window.renderCommercialCardHTML = function(n) {
         <div class="biz-actions-row">${galleryButton}${videoButton}${instaButton}</div>
       </div>
       <div class="biz-actions">
+        <a href="${subpageLink}" class="btn-cta">📋 Ver detalles</a>
         <a href="${generateWhatsAppLink(n)}" target="_blank" rel="noopener" class="btn-wa">💬 Reservar</a>
         <a href="${n.maps}" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a>
         ${n.telefono ? `<a href="tel:${n.telefono}" class="btn-tel">📞</a>` : ''}
