@@ -249,8 +249,9 @@ a{text-decoration:none;color:inherit}
 .biz-card-body{padding:24px;flex:1;display:flex;flex-direction:column}
 .biz-tipo{font-size:.78rem;font-weight:700;color:var(--g1);
   text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
-.biz-card-body h3{font-size:1.15rem;font-weight:800;color:var(--text);margin-bottom:8px}
-.biz-card-body p{color:var(--text3);font-size:.9rem;line-height:1.6;flex:1;margin-bottom:16px}
+.biz-card-body h3{font-size:1.15rem;font-weight:800;color:var(--text);margin-bottom:8px;word-wrap:break-word;overflow-wrap:break-word}
+.biz-card-body h3 a{word-wrap:break-word;overflow-wrap:break-word}
+.biz-card-body p{color:var(--text3);font-size:.9rem;line-height:1.6;flex:1;margin-bottom:16px;word-wrap:break-word;overflow-wrap:break-word}
 .biz-servicios{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
 .biz-tag{padding:4px 10px;background:#f0fdf4;color:var(--g1);
   border-radius:50px;font-size:.72rem;font-weight:600}
@@ -271,6 +272,7 @@ a{text-decoration:none;color:inherit}
   transition:all .3s;cursor:pointer;text-decoration:none;
   display:flex;align-items:center;gap:6px}
 .btn-tel:hover{border-color:var(--g1)}
+.biz-actions .btn-cta{padding:10px 16px;font-size:.85rem;min-width:auto;flex:0 0 auto}
 
 /* ── MAPA ── */
 #mapa-interactivo{width:100%;height:500px;border-radius:var(--r2);
@@ -364,6 +366,10 @@ a,button,.nav-toggle,.filtro-btn{min-width:var(--touch-target);min-height:var(--
   .cta-anunciate{padding:36px 24px}
   .form-card{padding:28px 20px}
   .biz-actions{flex-direction:column}
+  .biz-actions .btn-cta{width:100%;justify-content:center}
+  .biz-actions .btn-wa{width:100%;justify-content:center}
+  .biz-actions .btn-maps{width:100%;justify-content:center}
+  .biz-actions .btn-tel{width:100%;justify-content:center}
 }
 @media(max-width:480px){
   .municipios-grid{grid-template-columns:1fr}

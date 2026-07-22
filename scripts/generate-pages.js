@@ -34,7 +34,7 @@ function buildSeoText(text, fallback, maxLength = 155) {
   return text;
 }
 
-function buildSeoTitle(text, fallback, maxLength = 60) {
+function buildSeoTitle(text, fallback, maxLength = 80) {
   if (!text || typeof text !== 'string') {
     text = fallback || '';
   }
@@ -44,8 +44,10 @@ function buildSeoTitle(text, fallback, maxLength = 60) {
     return fallback || '';
   }
 
+  // Aumentar maxLength para títulos SEO - Google permite hasta ~60-70 caracteres
+  // pero para este caso aumentamos a 80 para evitar cortes innecesarios
   if (text.length > maxLength) {
-    return `${text.slice(0, maxLength - 3).trim()}...`;
+    return text.slice(0, maxLength).trim();
   }
 
   return text;
@@ -482,7 +484,7 @@ const TEMPLATES = {
     const titleText = buildSeoTitle(
       `${municipio.nombre} - Qué Ver y Hacer | Mapa Turístico del Quindío 2026`,
       `Descubre ${municipio.nombre} en el Quindío`,
-      60
+      80
     );
     const descriptionText = buildSeoDescription(
       municipio.textoSeo || municipio.descripcionLong,
@@ -623,7 +625,7 @@ const TEMPLATES = {
   negocio: (negocio) => {
     const municipio = masterData.municipios.find(m => m.id === negocio.municipioId) || masterData.municipios[0];
     const rawTitle = `${negocio.nombre} en ${municipio.nombre} | Mapa Turístico del Quindío`;
-    const titleText = buildSeoTitle(rawTitle, `${negocio.nombre} en ${municipio.nombre}`, 60);
+    const titleText = buildSeoTitle(rawTitle, `${negocio.nombre} en ${municipio.nombre}`, 80);
     const descriptionText = buildSeoDescription(
       negocio.textoSeo || negocio.descripcionLong,
       `${negocio.nombre} en ${municipio.nombre}, Quindío. Reserva directo con un contacto seguro y descubre su oferta turística en el corazón del Eje Cafetero.`,
