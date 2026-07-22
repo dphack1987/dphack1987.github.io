@@ -1,0 +1,18 @@
+{
+    "slug": "hotel-san-jeronimo",
+    "nombre": "Hotel San Jerónimo",
+    "municipio": "Armenia",
+    "ubicacion": "Cra 14 #14-14 Armenia-Quindío",
+    "contacto": {
+        "telefono": "+57 310 831 4719",
+        "whatsapp": "573108314719",
+        "email": "hotelsanjeronimoarmenia@gmail.com",
+        "web_oficial": ""
+    },
+    "descripcion": "A better rest just one place. Hotel con desayuno, modernidad, WiFi y aire acondicionado.",
+    "experiencias": [],
+    "multimedia": {
+        "fotos": [],
+        "videos": []
+    }
+}

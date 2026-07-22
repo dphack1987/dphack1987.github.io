@@ -1,0 +1,18 @@
+{
+    "slug": "hotel-el-bosque",
+    "nombre": "Hotel El Bosque",
+    "municipio": "Armenia",
+    "ubicacion": "Armenia Quindío",
+    "contacto": {
+        "telefono": "+57 317 647 1482",
+        "whatsapp": "573176471482",
+        "email": "",
+        "web_oficial": ""
+    },
+    "descripcion": "Lo mejor en calidad y precio en el centro de la ciudad de Armenia, Quindío. Hotel con habitaciones, WiFi, desayuno y parqueadero.",
+    "experiencias": [],
+    "multimedia": {
+        "fotos": [],
+        "videos": []
+    }
+}

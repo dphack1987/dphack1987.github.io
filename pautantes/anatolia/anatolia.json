@@ -1,0 +1,18 @@
+{
+    "slug": "anatolia",
+    "nombre": "Anatolia",
+    "municipio": "Armenia",
+    "ubicacion": "Avenida 19 # 35 norte 41, Armenia, Quindio",
+    "contacto": {
+        "telefono": "+57 311 701 1653",
+        "whatsapp": "573117011653",
+        "email": "",
+        "web_oficial": ""
+    },
+    "descripcion": "Un encuentro de sabores en Quindio. Restaurante en Armenia, Quindío.",
+    "experiencias": [],
+    "multimedia": {
+        "fotos": [],
+        "videos": []
+    }
+}

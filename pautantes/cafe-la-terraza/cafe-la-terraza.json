@@ -1,0 +1,18 @@
+{
+    "slug": "cafe-la-terraza",
+    "nombre": "Café La Terraza",
+    "municipio": "Armenia",
+    "ubicacion": "¡Visítanos en la Plaza de Bolívar! Cll 20 entre Carreras 14 y 15",
+    "contacto": {
+        "telefono": "+57 316 446 9365",
+        "whatsapp": "573164469365",
+        "email": "",
+        "web_oficial": ""
+    },
+    "descripcion": "Tu café de origen, siempre fresco y delicioso. Abierto todos los días.",
+    "experiencias": [],
+    "multimedia": {
+        "fotos": [],
+        "videos": []
+    }
+}

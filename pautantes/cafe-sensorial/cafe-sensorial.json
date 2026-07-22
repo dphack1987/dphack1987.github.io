@@ -1,0 +1,18 @@
+{
+    "slug": "cafe-sensorial",
+    "nombre": "Café Sensorial",
+    "municipio": "Armenia",
+    "ubicacion": "Parque Fundadores – Local 07",
+    "contacto": {
+        "telefono": "+57 311 711 3473",
+        "whatsapp": "573117113473",
+        "email": "",
+        "web_oficial": ""
+    },
+    "descripcion": "Tu historia en cada taza / Aroma, tradición. Medium Roast. Especialidades: Espresso, Latte, Cold Brew.",
+    "experiencias": [],
+    "multimedia": {
+        "fotos": [],
+        "videos": []
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "slug": "hotel-cafe-cafe",
+    "nombre": "Hotel Café Café Campestre",
+    "municipio": "Armenia",
+    "ubicacion": "Armenia, Quindío",
+    "contacto": {
+        "telefono": "+57 311 418 7558",
+        "whatsapp": "573114187558",
+        "email": "",
+        "web_oficial": "www.hotelcampestrecafecafe.com"
+    },
+    "descripcion": "Tradición, naturaleza y confort en el Quindío. Hotel campestre con habitaciones, WiFi, desayuno y parqueadero.",
+    "experiencias": [],
+    "multimedia": {
+        "fotos": [],
+        "videos": []
+    }
+}

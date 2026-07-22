@@ -1,0 +1,18 @@
+{
+    "slug": "cafeina-coffee-shop",
+    "nombre": "Tienda de Café & Academia Cafeína",
+    "municipio": "Armenia",
+    "ubicacion": "Calle 17N #10-30 Barrio El Nogal, Armenia, Quindío",
+    "contacto": {
+        "telefono": "+57 317 439 3457",
+        "whatsapp": "573174393457",
+        "email": "cafeinacoffeeshop@gmail.com",
+        "web_oficial": ""
+    },
+    "descripcion": "Cafeína Coffee Shop. Tienda de café & academia. Capacitaciones personalizadas: barismo, catas y calidad del café, tostión, mantenimiento de máquinas, tienda de café especial.",
+    "experiencias": [],
+    "multimedia": {
+        "fotos": [],
+        "videos": []
+    }
+}
