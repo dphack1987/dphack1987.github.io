@@ -34,6 +34,7 @@
       <button class="filtro-btn active" onclick="filtrar('todos',this)">Todos</button>
       <button class="filtro-btn" onclick="filtrar('sitio-turistico',this)">🎡 Atracciones</button>
       <button class="filtro-btn" onclick="filtrar('agencia',this)">🧭 Actividades</button>
+      <button class="filtro-btn" onclick="filtrar('premium',this)">⭐ Premium</button>
     </div>
     <div style="margin-bottom:48px"><div id="mapa-interactivo"></div></div>
     <div id="cards" class="cards-grid" role="list" aria-live="polite" data-list-category="atractivos_y_experiencias"></div>
@@ -107,7 +108,7 @@
         <div class="biz-actions"><a href="${subpageLink}" class="btn-cta">📋 Ver detalles</a><a href="${(window.generateWhatsAppLink && typeof window.generateWhatsAppLink==='function')?window.generateWhatsAppLink(n):('#')}" target="_blank" rel="noopener" class="btn-wa">💬 WhatsApp</a><a href="${n.maps||'#'}" target="_blank" rel="noopener" class="btn-maps">📍 Llegar</a><a href="tel:${n.telefono}" class="btn-tel">📞</a></div></div>`;
         c.appendChild(d)});
     }
-    function filtrar(cat,btn){document.querySelectorAll('.filtro-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');lista=cat==='todos'?[...todos]:todos.filter(n=>n.categoria===cat);render(lista)}
+    function filtrar(cat,btn){document.querySelectorAll('.filtro-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');if(cat==='todos'){lista=[...todos]}else if(cat==='premium'){lista=todos.filter(n=>n.nivel==='premium')}else{lista=todos.filter(n=>n.categoria===cat)}render(lista)}
     function buscar(){const q=document.getElementById('q').value.toLowerCase().trim();if(!q){render(todos);return}render(todos.filter(n=>n.nombre.toLowerCase().includes(q)|| (n.descripcion||'').toLowerCase().includes(q) || (n.municipio||'').toLowerCase().includes(q) || (n.servicios||[]).some(s=>s.toLowerCase().includes(q))))}
     document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter')buscar()});
 

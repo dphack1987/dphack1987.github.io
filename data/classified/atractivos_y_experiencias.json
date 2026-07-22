@@ -121,5 +121,25 @@
     "ubicacion": "Montenegro, Quindío",
     "website": "www.panaca.co",
     "imagen": "./pautas_publicitarias/atractivos_turisticos/panaca.png"
+  },
+  {
+    "id": "turismo-panaca",
+    "nombre": "Turismo PANACA",
+    "tipo": "Parque temático",
+    "descripcion": "Diseñamos experiencias que se sienten, se viven y se recuerdan. En Turismo PANACA creamos planes para viajar, aprender y compartir.",
+    "ubicacion": "Quimbaya, Quindío",
+    "telefono": "+57 317 442 6044",
+    "whatsapp": "573174426044",
+    "imagen": "./pautas_publicitarias/atractivos_turisticos/panaca.png"
+  },
+  {
+    "id": "finca-la-abundancia",
+    "nombre": "Coffee Tour Finca La Abundancia",
+    "tipo": "Coffee Tour",
+    "descripcion": "Recorrido guiado artesanal y participativo de la semilla a la taza. Caminata por cafetales de café arábico bajo sombra, cosecha manual, proceso húmedo, secado, tosturización en vivo y catación guiada.",
+    "ubicacion": "Salento, Quindío",
+    "telefono": "+57 312 8415370",
+    "whatsapp": "573128415370",
+    "imagen": "./pautas_publicitarias/atractivos_turisticos/finca_la_abundancia.png"
   }
 ]
