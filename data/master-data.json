@@ -3921,6 +3921,126 @@
         ]
       },
       "transporte": []
+    },
+    {
+      "id": "recuca",
+      "nombre": "Recuca",
+      "slug": "recuca",
+      "categoria": "sitio-turistico",
+      "tipo": "Recorrido de cultura cafetera",
+      "municipioId": "calarca",
+      "descripcion": "Experiencia del café con visitas guiadas en Calarcá. Tours culturales sobre el proceso del café, historia de la región y tradiciones cafeteras.",
+      "descripcionLong": "Experiencia del café con visitas guiadas en Calarcá. Tours culturales sobre el proceso del café, historia de la región y tradiciones cafeteras.",
+      "direccion": "",
+      "lat": 4.5167,
+      "lng": -75.6333,
+      "servicios": [
+        "Tour del café",
+        "Visitas guiadas",
+        "Experiencia cultural",
+        "Degustación"
+      ],
+      "precioRango": "Consultar",
+      "telefono": "+57 310 830 3779",
+      "whatsapp": "573108303779",
+      "email": "",
+      "url": "",
+      "maps": "https://maps.google.com/?q=Recuca+Calarca",
+      "imagen": "./pautas_publicitarias/atractivos_turisticos/recuca.png",
+      "galeria": [
+        "./pautas_publicitarias/atractivos_turisticos/recuca.png"
+      ],
+      "nivel": "premium",
+      "palabrasClave": [
+        "Recuca",
+        "Recorrido de cultura cafetera",
+        "sitio-turistico",
+        "calarca",
+        "Quindío",
+        "Eje Cafetero"
+      ],
+      "fechaPublicacion": "2026-01-15",
+      "fechaActualizacion": "2026-07-22",
+      "rating": {
+        "valor": 4.8,
+        "cantidad": 24
+      },
+      "author": {
+        "name": "Equipo Mapa Turístico del Quindío",
+        "url": "https://www.mapaturisticodelquindio.com"
+      },
+      "schema": {
+        "@type": "TouristAttraction",
+        "priceRange": "$$",
+        "servesCuisine": [
+          "Colombiana",
+          "Cafetera"
+        ],
+        "openingHours": [
+          "Mo-Su 00:00-23:59"
+        ]
+      },
+      "transporte": []
+    },
+    {
+      "id": "panaca",
+      "nombre": "PANACA",
+      "slug": "panaca",
+      "categoria": "sitio-turistico",
+      "tipo": "Parque temático agrícola",
+      "municipioId": "montenegro",
+      "descripcion": "Parque diseñado para viajar, aprender y compartir experiencias de agricultura y emprendimiento rural. Exposiciones interactivas de animales y agricultura.",
+      "descripcionLong": "Parque diseñado para viajar, aprender y compartir experiencias de agricultura y emprendimiento rural. Exposiciones interactivas de animales y agricultura.",
+      "direccion": "",
+      "lat": 4.5667,
+      "lng": -75.75,
+      "servicios": [
+        "Parque temático",
+        "Exposiciones agrícolas",
+        "Actividades familiares",
+        "Educación rural"
+      ],
+      "precioRango": "Consultar",
+      "telefono": "+57 317 442 6044",
+      "whatsapp": "573174426044",
+      "email": "",
+      "url": "",
+      "maps": "https://maps.google.com/?q=PANACA+Montenegro",
+      "imagen": "./pautas_publicitarias/atractivos_turisticos/panaca.png",
+      "galeria": [
+        "./pautas_publicitarias/atractivos_turisticos/panaca.png"
+      ],
+      "nivel": "premium",
+      "palabrasClave": [
+        "PANACA",
+        "Parque temático agrícola",
+        "sitio-turistico",
+        "montenegro",
+        "Quindío",
+        "Eje Cafetero"
+      ],
+      "fechaPublicacion": "2026-01-15",
+      "fechaActualizacion": "2026-07-22",
+      "rating": {
+        "valor": 4.8,
+        "cantidad": 24
+      },
+      "author": {
+        "name": "Equipo Mapa Turístico del Quindío",
+        "url": "https://www.mapaturisticodelquindio.com"
+      },
+      "schema": {
+        "@type": "TouristAttraction",
+        "priceRange": "$$",
+        "servesCuisine": [
+          "Colombiana",
+          "Cafetera"
+        ],
+        "openingHours": [
+          "Mo-Su 00:00-23:59"
+        ]
+      },
+      "transporte": []
     }
   ],
   "categorias": [

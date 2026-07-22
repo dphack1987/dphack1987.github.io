@@ -2025,5 +2025,77 @@
       "experiencia",
       "cultura"
     ]
+  },
+  {
+    "id": "recuca",
+    "nombre": "Recuca",
+    "categoria": "sitio-turistico",
+    "tipo": "Recorrido de cultura cafetera",
+    "municipio": "calarca",
+    "desc": "Experiencia del café con visitas guiadas en Calarcá. Tours culturales sobre el proceso del café, historia de la región y tradiciones cafeteras.",
+    "servicios": [
+      "Tour del café",
+      "Visitas guiadas",
+      "Experiencia cultural",
+      "Degustación"
+    ],
+    "precio": "Consultar",
+    "telefono": "+57 310 830 3779",
+    "whatsapp": "573108303779",
+    "maps": "https://maps.google.com/?q=Recuca+Calarca",
+    "imagen": "./pautas_publicitarias/atractivos_turisticos/recuca.png",
+    "nivel": "premium",
+    "lat": 4.5167,
+    "lng": -75.6333,
+    "duracion_estimada": "2 a 3 horas",
+    "horario": "Lunes a Domingo: 9:00 a.m. - 5:00 p.m.",
+    "ideal_para": [
+      "Familias",
+      "Grupos",
+      "Cultural"
+    ],
+    "recomendaciones": "Reservar con anticipación. Llevar calzado cómodo para caminatas por los cafetales.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "dia",
+      "cultura",
+      "experiencia"
+    ]
+  },
+  {
+    "id": "panaca",
+    "nombre": "PANACA",
+    "categoria": "sitio-turistico",
+    "tipo": "Parque temático agrícola",
+    "municipio": "montenegro",
+    "desc": "Parque diseñado para viajar, aprender y compartir experiencias de agricultura y emprendimiento rural. Exposiciones interactivas de animales y agricultura.",
+    "servicios": [
+      "Parque temático",
+      "Exposiciones agrícolas",
+      "Actividades familiares",
+      "Educación rural"
+    ],
+    "precio": "Consultar",
+    "telefono": "+57 317 442 6044",
+    "whatsapp": "573174426044",
+    "maps": "https://maps.google.com/?q=PANACA+Montenegro",
+    "imagen": "./pautas_publicitarias/atractivos_turisticos/panaca.png",
+    "nivel": "premium",
+    "lat": 4.5667,
+    "lng": -75.75,
+    "duracion_estimada": "4 a 6 horas",
+    "horario": "Miércoles a Domingo: 9:00 a.m. - 6:00 p.m.",
+    "ideal_para": [
+      "Familias",
+      "Niños",
+      "Grupos"
+    ],
+    "recomendaciones": "Llegar temprano para disfrutar todas las exposiciones. Consultar horarios especiales festivos.",
+    "orden_sugerido": 2,
+    "tags_itinerario": [
+      "dia",
+      "familia",
+      "diversion"
+    ]
   }
 ]
