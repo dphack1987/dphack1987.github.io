@@ -298,6 +298,166 @@
         "@type": "City",
         "sameAs": "https://es.wikipedia.org/wiki/Ginebra_(Quind%C3%ADo)"
       }
+    },
+    {
+      "id": "quimbaya",
+      "nombre": "Quimbaya",
+      "slug": "quimbaya-quindio",
+      "emoji": "🏡",
+      "description": "Municipio tradicional del Quindío con arquitectura paisa y cultura cafetera.",
+      "descripcionLong": "Quimbaya es un municipio tradicional del Quindío conocido por su arquitectura paisa, cultura cafetera y ambiente tranquilo. Fundado en 1922, es un destino ideal para quienes buscan autenticidad en el Eje Cafetero.",
+      "lat": 4.6167,
+      "lng": -75.7333,
+      "altura": 1450,
+      "poblacion": 28000,
+      "gentilicio": "Quimbayuno",
+      "palabrasClave": [
+        "Quimbaya",
+        "Quindío",
+        "Arquitectura paisa",
+        "hoteles en Quimbaya",
+        "cultura cafetera",
+        "turismo Quimbaya"
+      ],
+      "textoSeo": "Quimbaya ofrece una experiencia auténtica del Eje Cafetero con su arquitectura tradicional, fincas cafeteras y ambiente tranquilo, ideal para desconectar y disfrutar de la cultura del café.",
+      "banner": "./assets/images/paisajes/67890.jpg",
+      "author": {
+        "name": "Equipo Mapa Turístico del Quindío",
+        "email": "contacto@mapaturisticodelquindio.com",
+        "url": "https://www.mapaturisticodelquindio.com"
+      },
+      "schema": {
+        "@type": "City",
+        "sameAs": "https://es.wikipedia.org/wiki/Quimbaya"
+      }
+    },
+    {
+      "id": "buenavista",
+      "nombre": "Buenavista",
+      "slug": "buenavista-quindio",
+      "emoji": "🌄",
+      "description": "Pueblo con vistas panorámicas y naturaleza exuberante en el Quindío.",
+      "descripcionLong": "Buenavista es un municipio del Quindío caracterizado por sus vistas panorámicas, naturaleza exuberante y ambiente rural. Es un destino perfecto para el ecoturismo y el descanso en medio del paisaje cafetero.",
+      "lat": 4.4833,
+      "lng": -75.7167,
+      "altura": 1600,
+      "poblacion": 3500,
+      "gentilicio": "Buenavisteño",
+      "palabrasClave": [
+        "Buenavista",
+        "Quindío",
+        "Vistas panorámicas",
+        "hoteles en Buenavista",
+        "ecoturismo",
+        "naturaleza"
+      ],
+      "textoSeo": "Buenavista es el destino ideal para los amantes de la naturaleza y las vistas panorámicas, con senderos, reservas naturales y una experiencia tranquila en el corazón del Quindío.",
+      "banner": "./assets/images/paisajes/78901.jpg",
+      "author": {
+        "name": "Equipo Mapa Turístico del Quindío",
+        "email": "contacto@mapaturisticodelquindio.com",
+        "url": "https://www.mapaturisticodelquindio.com"
+      },
+      "schema": {
+        "@type": "City",
+        "sameAs": "https://es.wikipedia.org/wiki/Buenavista_(Quind%C3%ADo)"
+      }
+    },
+    {
+      "id": "pijao",
+      "nombre": "Pijao",
+      "slug": "pijao-quindio",
+      "emoji": "☕",
+      "description": "Municipio cafetero tradicional con paisajes montañosos en el Quindío.",
+      "descripcionLong": "Pijao es un municipio cafetero tradicional del Quindío, ubicado en zona montañosa con paisajes impresionantes. Conocido por su producción de café y tradiciones culturales, ofrece una experiencia auténtica del Eje Cafetero.",
+      "lat": 4.3333,
+      "lng": -75.7167,
+      "altura": 1700,
+      "poblacion": 5000,
+      "gentilicio": "Pijao",
+      "palabrasClave": [
+        "Pijao",
+        "Quindío",
+        "Café tradicional",
+        "hoteles en Pijao",
+        "paisajes montañosos",
+        "turismo rural"
+      ],
+      "textoSeo": "Pijao es joya cafetera del Quindío con paisajes montañosos, fincas tradicionales y una experiencia rural auténtica. Perfecto para quienes buscan desconectar en la naturaleza.",
+      "banner": "./assets/images/paisajes/89012.jpg",
+      "author": {
+        "name": "Equipo Mapa Turístico del Quindío",
+        "email": "contacto@mapaturisticodelquindio.com",
+        "url": "https://www.mapaturisticodelquindio.com"
+      },
+      "schema": {
+        "@type": "City",
+        "sameAs": "https://es.wikipedia.org/wiki/Pijao"
+      }
+    },
+    {
+      "id": "cordoba",
+      "nombre": "Córdoba",
+      "slug": "cordoba-quindio",
+      "emoji": "🌾",
+      "description": "Municipio agrícola y tranquilo del Quindío con paisajes verdes.",
+      "descripcionLong": "Córdoba es un municipio agrícola y tranquilo del Quindío, caracterizado por sus paisajes verdes, producción agrícola y ambiente rural. Es un destino ideal para quienes buscan paz y contacto con la naturaleza.",
+      "lat": 4.4000,
+      "lng": -75.6500,
+      "altura": 1550,
+      "poblacion": 4000,
+      "gentilicio": "Cordobés",
+      "palabrasClave": [
+        "Córdoba",
+        "Quindío",
+        "Agricultura",
+        "hoteles en Córdoba",
+        "paisajes verdes",
+        "turismo rural"
+      ],
+      "textoSeo": "Córdoba ofrece un escape rural tranquilo con paisajes verdes, agricultura tradicional y una experiencia auténtica del campo quindiano, ideal para descansar y reconectar.",
+      "banner": "./assets/images/paisajes/90123.jpg",
+      "author": {
+        "name": "Equipo Mapa Turístico del Quindío",
+        "email": "contacto@mapaturisticodelquindio.com",
+        "url": "https://www.mapaturisticodelquindio.com"
+      },
+      "schema": {
+        "@type": "City",
+        "sameAs": "https://es.wikipedia.org/wiki/C%C3%B3rdoba_(Quind%C3%ADo)"
+      }
+    },
+    {
+      "id": "genova",
+      "nombre": "Génova",
+      "slug": "genova-quindio",
+      "emoji": "🏔️",
+      "description": "Municipio montañoso con reservas naturales y biodiversidad en el Quindío.",
+      "descripcionLong": "Génova es un municipio montañoso del Quindío conocido por sus reservas naturales, biodiversidad y paisajes impresionantes. Es un destino privilegiado para el ecoturismo y la observación de naturaleza.",
+      "lat": 4.5667,
+      "lng": -75.5333,
+      "altura": 1800,
+      "poblacion": 3000,
+      "gentilicio": "Genovano",
+      "palabrasClave": [
+        "Génova",
+        "Quindío",
+        "Reservas naturales",
+        "hoteles en Génova",
+        "biodiversidad",
+        "ecoturismo"
+      ],
+      "textoSeo": "Génova es el paraíso natural del Quindío con reservas ecológicas, senderos montañosos y biodiversidad excepcional. El destino perfecto para amantes de la naturaleza y el ecoturismo.",
+      "banner": "./assets/images/paisajes/01234.jpg",
+      "author": {
+        "name": "Equipo Mapa Turístico del Quindío",
+        "email": "contacto@mapaturisticodelquindio.com",
+        "url": "https://www.mapaturisticodelquindio.com"
+      },
+      "schema": {
+        "@type": "City",
+        "sameAs": "https://es.wikipedia.org/wiki/G%C3%A9nova_(Quind%C3%ADo)"
+      }
     }
   ],
   "negocios": [

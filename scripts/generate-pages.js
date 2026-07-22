@@ -81,6 +81,18 @@ function escapeHtmlAttribute(value) {
     .replace(/>/g, '&gt;');
 }
 
+function getTipoEstablecimiento(categoria) {
+  const tipos = {
+    'alojamiento': 'alojamiento',
+    'gastronomia': 'restaurante',
+    'transporte': 'servicio de transporte',
+    'turismo': 'destino turístico',
+    'comercio': 'establecimiento comercial',
+    'servicios': 'servicio'
+  };
+  return tipos[categoria] || 'establecimiento';
+}
+
 function buildSeoMetaTags(titleText, descriptionText, canonicalUrl, keywords = []) {
   const safeTitle = escapeHtmlAttribute(titleText || '');
   const safeDescription = escapeHtmlAttribute(descriptionText || '');
@@ -1011,7 +1023,7 @@ const TEMPLATES = {
         <div class="visit-3d-placeholder">
           <div class="visit-3d-placeholder-icon">🏠</div>
           <div class="visit-3d-placeholder-text">Visita Virtual 3D</div>
-          <div class="visit-3d-placeholder-sub">Próximamente podrás explorar este alojamiento en un entorno 3D interactivo</div>
+          <div class="visit-3d-placeholder-sub">Próximamente podrás explorar este ${getTipoEstablecimiento(negocio.categoria)} en un entorno 3D interactivo</div>
         </div>
       </div>
     </div>
