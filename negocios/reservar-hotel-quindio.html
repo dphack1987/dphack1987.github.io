@@ -145,6 +145,192 @@
   ]
 }
   </script>
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .gallery-item {
+      position: relative;
+      aspect-ratio: 4/3;
+      background: #f8fafc;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px dashed #d1d5db;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    .gallery-item.has-image {
+      border: none;
+      background: transparent;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+    .gallery-item.has-image img {
+      display: block;
+    }
+    .gallery-placeholder {
+      font-size: 48px;
+      opacity: 0.3;
+    }
+    .gallery-placeholder-text {
+      color: #6b7280;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .info-section {
+      background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+      border-radius: 24px;
+      padding: 32px;
+      margin-top: 32px;
+      border: 1px solid rgba(5, 150, 105, 0.16);
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .info-item {
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+    .info-item h4 {
+      color: #064e3b;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .info-item p {
+      color: #374151;
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s;
+      font-size: 14px;
+    }
+    .contact-btn-whatsapp {
+      background: #25D366;
+      color: white;
+    }
+    .contact-btn-whatsapp:hover {
+      background: #1ebe5d;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    }
+    .contact-btn-phone {
+      background: #059669;
+      color: white;
+    }
+    .contact-btn-phone:hover {
+      background: #047857;
+      transform: translateY(-2px);
+    }
+    .contact-btn-email {
+      background: #f59e0b;
+      color: white;
+    }
+    .contact-btn-email:hover {
+      background: #d97706;
+      transform: translateY(-2px);
+    }
+    .visit-3d-section {
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      border-radius: 24px;
+      padding: 32px;
+      margin-top: 32px;
+      color: white;
+      text-align: center;
+    }
+    .visit-3d-section h2 {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .visit-3d-section p {
+      font-size: 16px;
+      opacity: 0.9;
+      margin-bottom: 24px;
+    }
+    .visit-3d-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      aspect-ratio: 16/9;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    .visit-3d-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 32px;
+      text-align: center;
+    }
+    .visit-3d-placeholder-icon {
+      font-size: 64px;
+      opacity: 0.5;
+    }
+    .visit-3d-placeholder-text {
+      font-size: 18px;
+      font-weight: 600;
+      opacity: 0.8;
+    }
+    .visit-3d-placeholder-sub {
+      font-size: 14px;
+      opacity: 0.6;
+      max-width: 400px;
+    }
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+      .visit-3d-section h2 {
+        font-size: 22px;
+      }
+    }
+  </style>
 </head>
 <body data-negocio-slug="reservar-hotel-quindio" data-municipio="armenia">
   <script src="../assets/js/nav.js"></script>
@@ -155,12 +341,27 @@
       <img src="./assets/images/paisajes/48159.jpg" alt="Reservar Hotel Quindío" style="width:100%;border-radius:16px; margin-bottom: 24px;" loading="lazy">
       <p style="margin-top:16px;color:#374151; font-size: 18px; line-height: 1.8;">Servicio integral de reservas de hoteles y alojamientos en todo el Quindío. Ofrecemos asistencia personalizada para encontrar las mejores opciones de hospedaje según tus necesidades y presupuesto.</p>
       
-        <div style="margin-top: 24px;">
+      <!-- Galería de Imágenes -->
+      <div class="gallery-grid">
+        
+            <div class="gallery-item has-image">
+              <img src="./assets/images/paisajes/48159.jpg" alt="Reservar Hotel Quindío - Imagen 1" loading="lazy">
+            </div>
+          
+            <div class="gallery-item has-image">
+              <img src="./assets/images/paisajes/10834.jpg" alt="Reservar Hotel Quindío - Imagen 2" loading="lazy">
+            </div>
+          
+      </div>
+      
+      
+        <div style="margin-top: 32px;">
           <h3 style="color: #064e3b; font-weight: 700; margin-bottom: 12px;">🛠️ Servicios</h3>
           <div style="display: flex; flex-wrap: wrap; gap: 8px;">
             <span style="background: #dcfce7; color: #064e3b; padding: 6px 12px; border-radius: 20px; font-size: 14px; font-weight: 600;">Reservas de hoteles</span><span style="background: #dcfce7; color: #064e3b; padding: 6px 12px; border-radius: 20px; font-size: 14px; font-weight: 600;">Asesoría personalizada</span><span style="background: #dcfce7; color: #064e3b; padding: 6px 12px; border-radius: 20px; font-size: 14px; font-weight: 600;">Comparación de precios</span><span style="background: #dcfce7; color: #064e3b; padding: 6px 12px; border-radius: 20px; font-size: 14px; font-weight: 600;">Disponibilidad en tiempo real</span><span style="background: #dcfce7; color: #064e3b; padding: 6px 12px; border-radius: 20px; font-size: 14px; font-weight: 600;">Atención 24/7</span>
           </div>
         </div>
+      
       
       
         <div style="margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px;">
@@ -169,11 +370,81 @@
           <a href="../alojamientos.html" style="display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; background: #f59e0b; color: white; font-weight: 800; text-decoration: none; border-radius: 50px; transition: transform 0.3s;">🛏️ Buscar alojamiento</a>
         </div>
       
+      
       <div style="margin-top: 24px; padding: 20px; background: #f8fafc; border-radius: 16px; border: 1px solid #e5e7eb;">
         <h3 style="color: #064e3b; font-weight: 800; margin: 0 0 8px;">📍 ¿Por qué elegir Reservar Hotel Quindío?</h3>
         <p style="color: #374151; font-size: 16px; line-height: 1.7; margin: 0;">Reserva fácilmente hoteles y alojamientos en todo el Quindío con nuestro servicio personalizado. Encuentra las mejores opciones de hospedaje con asistencia experta.</p>
       </div>
     </div>
+    
+    <!-- Información Detallada -->
+    <div class="info-section">
+      <h2 style="color: #064e3b; font-size: 28px; font-weight: 800; margin-bottom: 8px;">📋 Información Completa</h2>
+      <p style="color: #6b7280; font-size: 16px; margin-bottom: 24px;">Todo lo que necesitas saber para planificar tu visita</p>
+      
+      <div class="info-grid">
+        <div class="info-item">
+          <h4>📍 Dirección</h4>
+          <p>Armenia, Quindío</p>
+          
+            <div class="contact-buttons">
+              <a href="https://maps.google.com/?q=Armenia+Quindío" target="_blank" rel="noopener" class="contact-btn contact-btn-phone">🗺️ Ver en Maps</a>
+            </div>
+          
+        </div>
+        
+        <div class="info-item">
+          <h4>📞 Contactos</h4>
+          <div class="contact-buttons">
+            
+              <a href="https://wa.me/573000000000" target="_blank" rel="noopener" class="contact-btn contact-btn-whatsapp">💬 WhatsApp</a>
+            
+            
+              <a href="tel:+57 300 000 0000" class="contact-btn contact-btn-phone">📞 Llamar</a>
+            
+            
+              <a href="mailto:reservas@mapaturisticodelquindio.com" class="contact-btn contact-btn-email">✉️ Email</a>
+            
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <h4>💰 Rango de Precios</h4>
+          <p>Variable según hotel</p>
+        </div>
+        
+        <div class="info-item">
+          <h4>⭐ Valoración</h4>
+          <p>4.9/5 (156 reseñas)</p>
+        </div>
+        
+        <div class="info-item">
+          <h4>🏷️ Categoría</h4>
+          <p>Servicio de reservas</p>
+        </div>
+        
+        <div class="info-item">
+          <h4>🌐 Sitio Web</h4>
+          
+            <a href="https://www.mapaturisticodelquindio.com" target="_blank" rel="noopener" class="contact-btn contact-btn-phone">🔗 Visitar sitio web</a>
+          
+        </div>
+      </div>
+    </div>
+    
+    <!-- Visita 3D -->
+    <div class="visit-3d-section">
+      <h2>🎮 Visita Virtual 3D</h2>
+      <p>Explora Reservar Hotel Quindío como si estuvieras allí</p>
+      <div class="visit-3d-container">
+        <div class="visit-3d-placeholder">
+          <div class="visit-3d-placeholder-icon">🏠</div>
+          <div class="visit-3d-placeholder-text">Visita Virtual 3D</div>
+          <div class="visit-3d-placeholder-sub">Próximamente podrás explorar este alojamiento en un entorno 3D interactivo</div>
+        </div>
+      </div>
+    </div>
+    
     
     <section style="margin-top: 48px; padding: 40px; background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%); border-radius: 24px;">
       <h2 style="color: #064e3b; font-size: 24px; font-weight: 800; margin-bottom: 24px;">
