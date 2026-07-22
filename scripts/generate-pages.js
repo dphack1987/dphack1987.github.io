@@ -822,6 +822,49 @@ const TEMPLATES = {
       opacity: 0.6;
       max-width: 400px;
     }
+    .logo-section {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border-radius: 24px;
+      padding: 32px;
+      margin-top: 32px;
+      text-align: center;
+      border: 2px solid rgba(245, 158, 11, 0.2);
+    }
+    .logo-section h2 {
+      color: #92400e;
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .logo-item {
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      max-width: 200px;
+    }
+    .logo-item img {
+      max-width: 120px;
+      max-height: 80px;
+      object-fit: contain;
+    }
+    .logo-item span {
+      color: #374151;
+      font-size: 14px;
+      font-weight: 600;
+    }
     @media (max-width: 768px) {
       .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -831,6 +874,15 @@ const TEMPLATES = {
       }
       .visit-3d-section h2 {
         font-size: 22px;
+      }
+      .logo-section h2 {
+        font-size: 20px;
+      }
+      .logo-container {
+        flex-direction: column;
+      }
+      .logo-item {
+        max-width: 100%;
       }
     }
   </style>
@@ -960,6 +1012,18 @@ const TEMPLATES = {
           <div class="visit-3d-placeholder-icon">🏠</div>
           <div class="visit-3d-placeholder-text">Visita Virtual 3D</div>
           <div class="visit-3d-placeholder-sub">Próximamente podrás explorar este alojamiento en un entorno 3D interactivo</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Logo del Negocio -->
+    <div class="logo-section">
+      <h2>🏷️ Logo Oficial</h2>
+      <p style="color: #6b7280; font-size: 16px; margin-bottom: 24px;">Identidad visual de ${negocio.nombre}</p>
+      <div class="logo-container">
+        <div class="logo-item">
+          <img src="${negocio.imagen}" alt="Logo de ${negocio.nombre}" loading="lazy">
+          <span>${negocio.nombre}</span>
         </div>
       </div>
     </div>
