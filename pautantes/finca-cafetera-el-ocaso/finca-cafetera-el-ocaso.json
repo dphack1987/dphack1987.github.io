@@ -31,7 +31,10 @@
         }
     ],
     "multimedia": {
-        "fotos": [],
+        "fotos": [
+            "foto_casa_ocaso.png"
+        ],
+        "logo": "logo_ocaso.png",
         "videos": [
             "https://www.youtube.com/watch?v=uE5cEDRVIhA"
         ]
