@@ -3647,6 +3647,69 @@
         ]
       },
       "transporte": []
+    },
+    {
+      "id": "reservar-hotel-quindio",
+      "nombre": "Reservar Hotel Quindío",
+      "slug": "reservar-hotel-quindio",
+      "categoria": "alojamiento",
+      "tipo": "Servicio de reservas",
+      "municipioId": "armenia",
+      "descripcion": "Servicio integral de reservas de hoteles y alojamientos en todo el Quindío. Encuentra las mejores opciones de hospedaje con asistencia personalizada.",
+      "descripcionLong": "Servicio integral de reservas de hoteles y alojamientos en todo el Quindío. Ofrecemos asistencia personalizada para encontrar las mejores opciones de hospedaje según tus necesidades y presupuesto.",
+      "lat": 4.5339,
+      "lng": -75.6811,
+      "direccion": "Armenia, Quindío",
+      "servicios": [
+        "Reservas de hoteles",
+        "Asesoría personalizada",
+        "Comparación de precios",
+        "Disponibilidad en tiempo real",
+        "Atención 24/7"
+      ],
+      "precioRango": "Variable según hotel",
+      "telefono": "+57 300 000 0000",
+      "whatsapp": "573000000000",
+      "email": "reservas@mapaturisticodelquindio.com",
+      "url": "https://www.mapaturisticodelquindio.com",
+      "maps": "https://maps.google.com/?q=Armenia+Quindío",
+      "imagen": "./assets/images/paisajes/48159.jpg",
+      "galeria": [
+        "./assets/images/paisajes/48159.jpg",
+        "./assets/images/paisajes/10834.jpg"
+      ],
+      "nivel": "premium",
+      "palabrasClave": [
+        "Reservar Hotel Quindío",
+        "Reservas de alojamiento",
+        "Hoteles en Quindío",
+        "Armenia",
+        "Quindío",
+        "Eje Cafetero"
+      ],
+      "textoSeo": "Reserva fácilmente hoteles y alojamientos en todo el Quindío con nuestro servicio personalizado. Encuentra las mejores opciones de hospedaje con asistencia experta.",
+      "fechaPublicacion": "2026-07-22",
+      "fechaActualizacion": "2026-07-22",
+      "rating": {
+        "valor": 4.9,
+        "cantidad": 156
+      },
+      "author": {
+        "name": "Equipo Mapa Turístico del Quindío",
+        "url": "https://www.mapaturisticodelquindio.com"
+      },
+      "schema": {
+        "@type": "TravelAgency",
+        "priceRange": "$$-$$$",
+        "servesCuisine": [
+          "Colombiana",
+          "Internacional"
+        ],
+        "openingHours": [
+          "Mo-Su 00:00-23:59"
+        ]
+      },
+      "transporte": []
     }
   ],
   "categorias": [
