@@ -905,7 +905,7 @@ const TEMPLATES = {
   <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 24px;">
     <h1 style="color: #064e3b; font-size: 36px; font-weight: 800; margin-bottom: 24px;">${negocio.nombre}</h1>
     <div style="padding:32px;background:white;border-radius:24px;box-shadow:0 8px 32px rgba(16,185,129,0.12);">
-      <img src="${negocio.imagen}" alt="${negocio.nombre}" style="width:100%;border-radius:16px; margin-bottom: 24px;" loading="lazy">
+      <img src="${negocio.imagen.startsWith('./') ? '../' + negocio.imagen.slice(2) : negocio.imagen}" alt="${negocio.nombre}" style="width:100%;border-radius:16px; margin-bottom: 24px;" loading="lazy">
       <p style="margin-top:16px;color:#374151; font-size: 18px; line-height: 1.8;">${negocio.descripcionLong}</p>
       
       <!-- Galería de Imágenes -->
@@ -913,7 +913,7 @@ const TEMPLATES = {
         ${negocio.galeria && negocio.galeria.length > 0 ? 
           negocio.galeria.map((img, index) => `
             <div class="gallery-item has-image">
-              <img src="${img}" alt="${negocio.nombre} - Imagen ${index + 1}" loading="lazy">
+              <img src="${img.startsWith('./') ? '../' + img.slice(2) : img}" alt="${negocio.nombre} - Imagen ${index + 1}" loading="lazy">
             </div>
           `).join('') :
           `
@@ -1051,7 +1051,7 @@ const TEMPLATES = {
       <p style="color: #6b7280; font-size: 16px; margin-bottom: 24px;">Identidad visual de ${negocio.nombre}</p>
       <div class="logo-container">
         <div class="logo-item">
-          <img src="${negocio.logo}" alt="Logo de ${negocio.nombre}" loading="lazy">
+          <img src="${negocio.logo.startsWith('./') ? '../' + negocio.logo.slice(2) : negocio.logo}" alt="Logo de ${negocio.nombre}" loading="lazy">
           <span>${negocio.nombre}</span>
         </div>
       </div>
