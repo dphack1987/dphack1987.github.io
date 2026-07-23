@@ -945,6 +945,22 @@ const TEMPLATES = {
           </div>
         </div>
       ` : ''}
+
+      ${negocio.experiencias && negocio.experiencias.length > 0 ? `
+        <div style="margin-top: 32px;">
+          <h3 style="color: #064e3b; font-weight: 800; margin-bottom: 16px; font-size: 22px;">✨ Experiencias</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+            ${negocio.experiencias.map(exp => `
+              <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 20px; border-radius: 16px; border: 1px solid rgba(245, 158, 11, 0.2);">
+                <h4 style="color: #92400e; font-weight: 700; margin: 0 0 8px;">${exp.titulo}</h4>
+                ${exp.duracion ? `<p style="color: #374151; font-size: 14px; margin: 0 0 4px;">⏱️ ${exp.duracion}</p>` : ''}
+                ${exp.precio ? `<p style="color: #064e3b; font-weight: 700; margin: 0 0 12px;">💰 ${exp.precio}</p>` : ''}
+                ${exp.detalle ? `<p style="color: #374151; font-size: 15px; line-height: 1.6;">${exp.detalle}</p>` : ''}
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      ` : ''}
       
       ${negocio.whatsapp ? `
         <div style="margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px;">
@@ -1029,16 +1045,42 @@ const TEMPLATES = {
     </div>
     
     <!-- Logo del Negocio -->
+    ${negocio.logo ? `
     <div class="logo-section">
       <h2>🏷️ Logo Oficial</h2>
       <p style="color: #6b7280; font-size: 16px; margin-bottom: 24px;">Identidad visual de ${negocio.nombre}</p>
       <div class="logo-container">
         <div class="logo-item">
-          <img src="${negocio.imagen}" alt="Logo de ${negocio.nombre}" loading="lazy">
+          <img src="${negocio.logo}" alt="Logo de ${negocio.nombre}" loading="lazy">
           <span>${negocio.nombre}</span>
         </div>
       </div>
     </div>
+    ` : ''}
+
+    <!-- Videos -->
+    ${negocio.multimedia && negocio.multimedia.videos && negocio.multimedia.videos.length > 0 ? `
+    <div style="margin-top: 32px; padding: 32px; background: white; border-radius: 24px; box-shadow: 0 8px 32px rgba(16,185,129,0.12);">
+      <h2 style="color: #064e3b; font-size: 24px; font-weight: 800; margin-bottom: 16px;">🎥 Videos</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
+        ${negocio.multimedia.videos.map(video => {
+          let embedUrl = video;
+          if (video.includes('youtube.com/watch')) {
+            const videoId = video.split('v=')[1].split('&')[0];
+            embedUrl = `https://www.youtube.com/embed/${videoId}`;
+          } else if (video.includes('youtu.be/')) {
+            const videoId = video.split('youtu.be/')[1].split('?')[0];
+            embedUrl = `https://www.youtube.com/embed/${videoId}`;
+          }
+          return `
+            <div style="aspect-ratio: 16/9; border-radius: 16px; overflow: hidden; background: #000;">
+              <iframe width="100%" height="100%" src="${embedUrl}" title="Video de ${negocio.nombre}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    </div>
+    ` : ''}
     
     ${generarSeccionNegociosCercanos(negocio, municipio)}
   </div>

@@ -587,25 +587,55 @@
       "categoria": "alojamiento",
       "tipo": "Finca cafetera",
       "municipioId": "salento",
-      "descripcion": "Finca cafetera / Café - tour - hotel en Salento, Quindío.",
-      "descripcionLong": "Finca cafetera / Café - tour - hotel en Salento, Quindío.",
-      "direccion": "",
+      "descripcion": "Emblemática finca cafetera en funcionamiento rodeada por los imponentes paisajes del Quindío y arquitectura tradicional de la colonización antioqueña. Ofrece experiencias inmersivas de turismo vivencial, caficultura sostenible y alojamiento rural en un entorno natural único.",
+      "descripcionLong": "Emblemática finca cafetera en funcionamiento rodeada por los imponentes paisajes del Quindío y arquitectura tradicional de la colonización antioqueña. Ofrece experiencias inmersivas de turismo vivencial, caficultura sostenible y alojamiento rural en un entorno natural único.",
+      "direccion": "Vereda Palestina, Kilómetro 3.8 vía Salento (costado derecho después de la cancha de baloncesto), Salento, Quindío",
       "lat": 4.6374,
       "lng": -75.5699,
       "servicios": [
-        "Tour del café",
-        "Alojamiento",
-        "Desayuno"
+        "Tour del café tradicional",
+        "Coffee tour premium",
+        "Alojamiento rural",
+        "Desayuno típico"
+      ],
+      "experiencias": [
+        {
+          "titulo": "Coffee Tour Tradicional",
+          "duracion": "1 hora y 30 minutos",
+          "precio": "Desde $60.000 COP",
+          "detalle": "Recorrido guiado por plantaciones, proceso de beneficio (despulpado, lavado y secado artesanal), estación de compostaje y degustación de café sostenible de la finca."
+        },
+        {
+          "titulo": "Coffee Tour Premium",
+          "duracion": "Aprox. 3 horas",
+          "precio": "Desde $120.000 COP",
+          "detalle": "Inmersión profunda en la caficultura, visita a la zona de tostado y sesión sensorial avanzada / cata técnica de cafés especiales."
+        },
+        {
+          "titulo": "Alojamiento Rural",
+          "duracion": "Estadía por noche",
+          "precio": "Consultar disponibilidad",
+          "detalle": "Hospedaje en auténtica casa típica cafetera con comodidades tradicionales, avistamiento de fauna y flora local."
+        }
       ],
       "precioRango": "Consultar",
-      "telefono": "+57 313 425 3669",
-      "whatsapp": "573134253669",
-      "email": "",
-      "url": "",
+      "telefono": "+57 312 298 668",
+      "whatsapp": "57312298668",
+      "email": "contacto@fincaelocasosalento.com",
+      "url": "https://web.fincaelocasosalento.com/",
       "maps": "https://maps.google.com/?q=Finca+El+Ocaso+Salento",
-      "imagen": "./pautas_publicitarias/Alquiler_de_fincas_quindio/finca_cafetera_el_ocaso.png",
+      "imagen": "./pautantes/finca-cafetera-el-ocaso/foto_casa_ocaso.png",
+      "logo": "./pautantes/finca-cafetera-el-ocaso/logo_ocaso.png",
+      "multimedia": {
+        "fotos": [
+          "./pautantes/finca-cafetera-el-ocaso/foto_casa_ocaso.png"
+        ],
+        "videos": [
+          "https://www.youtube.com/watch?v=uE5cEDRVIhA"
+        ]
+      },
       "galeria": [
-        "./pautas_publicitarias/Alquiler_de_fincas_quindio/finca_cafetera_el_ocaso.png"
+        "./pautantes/finca-cafetera-el-ocaso/foto_casa_ocaso.png"
       ],
       "nivel": "premium",
       "palabrasClave": [
@@ -614,10 +644,12 @@
         "alojamiento",
         "salento",
         "Quindío",
-        "Eje Cafetero"
+        "Eje Cafetero",
+        "café",
+        "turismo vivencial"
       ],
       "fechaPublicacion": "2026-01-15",
-      "fechaActualizacion": "2026-07-22",
+      "fechaActualizacion": "2026-07-23",
       "rating": {
         "valor": 4.8,
         "cantidad": 24
