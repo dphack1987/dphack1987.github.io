@@ -511,6 +511,7 @@ const TEMPLATES = {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="naver-site-verification" content="b6ab2590fd6ec109c2f6f585005116d136650f56" />
   <title>${escapeHtmlAttribute(titleText)}</title>
   ${buildSeoMetaTags(titleText, descriptionText, canonicalUrl, municipio.palabrasClave)}
   <link rel="alternate" hreflang="es" href="${canonicalUrl}">
@@ -651,6 +652,7 @@ const TEMPLATES = {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="naver-site-verification" content="b6ab2590fd6ec109c2f6f585005116d136650f56" />
   <title>${escapeHtmlAttribute(titleText)}</title>
   ${buildSeoMetaTags(titleText, descriptionText, canonicalUrl, negocio.palabrasClave)}
   <link rel="alternate" hreflang="es" href="${canonicalUrl}">
