@@ -27,7 +27,7 @@
     { label: 'Finca Quindío', url: 'finca-para-alquilar-quindio.html' },
     { label: 'Transporte aeropuerto Armenia', url: 'transporte-aeropuerto-armenia.html' },
     { label: 'Mapa Calarcá 2026', url: 'mapa-de-calarca-2026.html' },
-    { label: 'Salento a Mano', url: 'https://www.salentoalamano.com', external: true },
+    { label: 'salentoalamano.com', url: 'https://www.salentoalamano.com', external: true },
     { label: 'Mapa Armenia 2026', url: 'https://mapa-armenia-2026.vercel.app/', external: true },
     { label: 'Anúnciate', url: 'anunciate.html' }
   ];
